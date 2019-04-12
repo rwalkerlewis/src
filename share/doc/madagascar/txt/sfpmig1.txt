@@ -1,0 +1,11 @@
+Program sfpmig1 | Slope-based prestack (t,xs,h) time migration . 
+[SYNOPSIS]
+sfpmig1 < csg.rsf sdip=sdip.rsf hdip=hdip.rsf > mig.rsf half=y nw=4 mzo=n
+[PARAMETERS]
+bool    | half | =y |  [y/n] | 	if y, the second axis is half-offset instead of full offset 
+file    | hdip | = |   | 	auxiliary input file name
+bool    | mzo | =n |  [y/n] | 	do migration to zero offset 
+int     | nw | =4 |   | 	interpolator size (2,3,4,6,8) 
+file    | sdip | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/lcasasan

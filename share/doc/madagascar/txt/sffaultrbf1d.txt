@@ -1,0 +1,10 @@
+Program sffaultrbf1d | Compute RBF across fault using fault attribute computed by Sobel filter. 
+[SYNOPSIS]
+sffaultrbf1d < in.rsf > out.rsf i0= scale=1.0 r0=1.0 useinput=y
+[PARAMETERS]
+int     | i0 | = |   | 	Reference trace position. 
+float   | r0 | =1.0 |   | 	Reference radial in RBF. 
+float   | scale | =1.0 |   | 	Fault attribute scaling factor (0.0 ~ factor). 
+bool    | useinput | =y |  [y/n] | 	Flag: whether use the input fault attribute. 
+[DIRECTORY]
+user/yunzhi

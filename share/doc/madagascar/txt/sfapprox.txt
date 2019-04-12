@@ -1,0 +1,12 @@
+Program sfapprox | Illustrating non-hyperbolic approximations 
+[SYNOPSIS]
+sfapprox > out.rsf np=300 nq=300 dp=1./(np-1) dq=4./(nq-1) dist= appr=
+[PARAMETERS]
+string  | appr | = |   | 	approximation type 
+string  | dist | = |   | 	distribution type 
+float   | dp | =1./(np-1) |   | 	
+float   | dq | =4./(nq-1) |   | 	
+int     | np | =300 |   | 	
+int     | nq | =300 |   | 	
+[DIRECTORY]
+user/fomels

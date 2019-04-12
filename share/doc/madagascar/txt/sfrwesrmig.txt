@@ -1,0 +1,12 @@
+Program sfrwesrmig | Riemannian Wavefield Extrapolation: shot-record migration. 
+[SYNOPSIS]
+sfrwesrmig abm=Fm.rsf abr=Fr.rsf < Fw_s.rsf > Fw_r.rsf img=Fi.rsf verb=n method=0 adj=n
+[PARAMETERS]
+file    | abm | = |   | 	auxiliary input file name
+file    | abr | = |   | 	auxiliary input file name
+bool    | adj | =n |  [y/n] | 	y=modeling; n=migration 
+file    | img | = |   | 	auxiliary input file name
+int     | method | =0 |   | 	extrapolation method 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+system/seismic

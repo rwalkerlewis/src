@@ -1,0 +1,26 @@
+Program sfshpwstack | Recursive stacking by plane-wave construction. 
+[SYNOPSIS]
+sfshpwstack < cmp.rsf velocity=velocity.rsf > stack.rsf dip=dip.rsf offset=offset.rsf half=y slowness=n verb=n eps=0.01 velocity=0.0f nmo=n order=1 mode=1 h0=0. eps1=0.01 jump=1 niter=10 restart=niter tol=1e-5 flo= fhi= nplo=6 nphi=6
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+float   | eps1 | =0.01 |   | 	stretch regularization 
+float   | fhi | = |   | 	High frequency in band, default is Nyquist 
+float   | flo | = |   | 	Low frequency in band, default is 0 
+float   | h0 | =0. |   | 	reference offset 
+bool    | half | =y |  [y/n] | 	if y, the second axis is half-offset instead of full offset 
+int     | jump | =1 |   | 	subsampling 
+int     | mode | =1 |   | 	1: predict backward, 2: predict forward then backward 
+int     | niter | =10 |   | 	number of iterations 
+bool    | nmo | =n |  [y/n] | 	if y, apply constant velocity NMO 
+int     | nphi | =6 |   | 	number of poles for high cutoff 
+int     | nplo | =6 |   | 	number of poles for low cutoff 
+string  | offset | = |   | 	auxiliary input file name
+int     | order | =1 |   | 	accuracy order 
+int     | restart | =niter |   | 	GMRES memory 
+bool    | slowness | =n |  [y/n] | 	if y, use slowness instead of velocity 
+float   | tol | =1e-5 |   | 	GMRES tolerance 
+float   | velocity | =0.0f |   | 	constant velocity 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/kregimbal

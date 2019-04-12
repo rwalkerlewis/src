@@ -1,0 +1,18 @@
+Program sfgsray2rays2d | Oriented zero-offset migration. 
+[SYNOPSIS]
+sfgsray2rays2d < time.rsf dept=dept.rsf ang=angl.rsf slow=slow.rsf slowz=slowz.rsf slowx=slowx.rsf ref3=fref3.rsf > imagt.rsf stride=1 tolz= tolx= tola= ref1= ref2=
+[PARAMETERS]
+file    | ang | = |   | 	auxiliary input file name
+file    | dept | = |   | 	auxiliary input file name
+string  | ref1 | = |   | 	
+string  | ref2 | = |   | 	
+string  | ref3 | = |   | 	auxiliary input file name
+file    | slow | = |   | 	auxiliary input file name
+file    | slowx | = |   | 	auxiliary input file name
+file    | slowz | = |   | 	auxiliary input file name
+int     | stride | =1 |   | 	
+float   | tola | = |   | 	
+float   | tolx | = |   | 	
+float   | tolz | = |   | 	
+[DIRECTORY]
+user/roman

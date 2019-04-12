@@ -1,0 +1,7 @@
+Program sfrsf2handvel | Convert RSF to velocity picks 
+[SYNOPSIS]
+sfrsf2handvel < in.rsf > out.rsf skip=4
+[PARAMETERS]
+int     | skip | =4 |   | 	number of distance bins 
+[DIRECTORY]
+user/salah

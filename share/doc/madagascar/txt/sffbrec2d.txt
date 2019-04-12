@@ -1,0 +1,27 @@
+Program sffbrec2d | 2-D forward modeling to generate shot records 
+[SYNOPSIS]
+sffbrec2d < vinit.rsf > shots.rsf check1=check1.rsf check2=check2.rsf kt=100 amp=1. fm=10 dt= nt= ns= ng= jsx= jsz=0 jgx=1 jgz=0 sxbeg= szbeg= gxbeg= gzbeg= csdgather=n
+[COMMENTS]
+Note: 	Clayton-Enquist absorbing boundary condition is applied!
+
+[PARAMETERS]
+float   | amp | =1. |   | 	maximum amplitude of ricker 
+file    | check1 | = |   | 	auxiliary output file name
+file    | check2 | = |   | 	auxiliary output file name
+bool    | csdgather | =n |  [y/n] | 	default, common shot-gather; if n, record at every point
+float   | dt | = |   | 	time interval 
+float   | fm | =10 |   | 	dominant freq of ricker 
+int     | gxbeg | = |   | 	x-begining index of receivers, starting from 0 
+int     | gzbeg | = |   | 	z-begining index of receivers, starting from 0 
+int     | jgx | =1 |   | 	receiver x-axis jump interval 
+int     | jgz | =0 |   | 	receiver z-axis jump interval 
+int     | jsx | = |   | 	source x-axis  jump interval  
+int     | jsz | =0 |   | 	source z-axis jump interval  
+int     | kt | =100 |   | 	check it at it=100 
+int     | ng | = |   | 	total receivers in each shot 
+int     | ns | = |   | 	total shots 
+int     | nt | = |   | 	total modeling time steps 
+int     | sxbeg | = |   | 	x-begining index of sources, starting from 0 
+int     | szbeg | = |   | 	z-begining index of sources, starting from 0 
+[DIRECTORY]
+user/pyang

@@ -1,0 +1,13 @@
+Program sfreplace | 
+[SYNOPSIS]
+sfreplace < loga.rsf > log_eo.rsf loc= num=
+[COMMENTS]
+1D dataset padding 
+
+Built for time-depth relationship manipulation. LSIM scan/pick is smooth intoducing non-real updates at top of pick.
+
+[PARAMETERS]
+int     | loc | = |   | 	Location of value used to replace
+int     | num | = |   | 	Number of values to replace at beginning of dataset
+[DIRECTORY]
+user/sbader

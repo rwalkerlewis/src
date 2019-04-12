@@ -1,0 +1,7 @@
+Program sfpwdchain2 | Chain of PWDs 
+[SYNOPSIS]
+sfpwdchain2 < inp.rsf sig=sig.rsf > out.rsf
+[PARAMETERS]
+file    | sig | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/pwd

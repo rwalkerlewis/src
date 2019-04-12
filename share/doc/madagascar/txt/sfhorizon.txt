@@ -1,0 +1,8 @@
+Program sfhorizon | horizon extraction  
+[SYNOPSIS]
+sfhorizon < in.rsf horizon=hor.rsf > out.rsf interp=
+[PARAMETERS]
+file    | horizon | = |   | 	auxiliary input file name
+string  | interp | = |   | 	< interpolation method: nearest, linear >
+[DIRECTORY]
+user/chen

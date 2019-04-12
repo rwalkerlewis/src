@@ -1,0 +1,21 @@
+Program sfwexzoimg | 3-D zero-offset modeling/migration with extended SSF 
+[SYNOPSIS]
+sfwexzoimg < Fm.rsf < Fd.rsf slo=Fs.rsf wfl=Fwr.rsf adj= save=0 verb=n eps=0.01 nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0 nw= dw= ow=0.
+[PARAMETERS]
+int     | adj | = |   | 	y=ADJ migration; n=FWD modeling 
+float   | dtmax | =0.004 |   | 	max time error 
+float   | dw | = |   | 	
+float   | eps | =0.01 |   | 	stability parameter 
+int     | nrmax | =1 |   | 	maximum references 
+int     | nw | = |   | 	
+float   | ow | =0. |   | 	
+int     | pmx | =0 |   | 	padding on x 
+int     | pmy | =0 |   | 	padding on y
+int     | save | =0 |   | 	save wfld flag 
+file    | slo | = |   | 	auxiliary input file name
+int     | tmx | =0 |   | 	taper on x
+int     | tmy | =0 |   | 	taper on y 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+file    | wfl | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/cwp

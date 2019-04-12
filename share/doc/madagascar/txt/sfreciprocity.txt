@@ -1,0 +1,5 @@
+Program sfreciprocity | Create a dipping layer model for HTI testing purposes.  Has fixed velocity structure, but can change dip of layer and degree of anisotropy.
+[SYNOPSIS]
+sfreciprocity < Fin.rsf > Fout.rsf
+[DIRECTORY]
+user/jeff

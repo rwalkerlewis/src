@@ -1,0 +1,7 @@
+Program sfrmtrace | Remove part of traces (resample) in order to make aliasing 
+[SYNOPSIS]
+sfrmtrace < in.rsf > out.rsf factor=2
+[PARAMETERS]
+int     | factor | =2 |   | 	zero part beginning point 
+[DIRECTORY]
+user/chenyk

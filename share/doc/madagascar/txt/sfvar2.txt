@@ -1,0 +1,8 @@
+Program sfvar2 | Variogram from irregular 2-D data. 
+[SYNOPSIS]
+sfvar2 < in.rsf > out.rsf nx= dx=
+[PARAMETERS]
+float   | dx | = |   | 	distance sampling 
+int     | nx | = |   | 	number of distance bins 
+[DIRECTORY]
+user/fomels

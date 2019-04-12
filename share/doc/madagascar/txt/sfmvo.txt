@@ -1,0 +1,12 @@
+Program sfmvo | Calculate MVO and PVO curve of CSEM data. 
+[SYNOPSIS]
+sfmvo < in.rsf > out.rsf opt=y log=y mvo=y f=0.08 nnw=1600 n=1
+[PARAMETERS]
+float   | f | =0.08 |   | 	calculate frequency 
+bool    | log | =y |  [y/n] | 	if y, calculate logarithm of MVO 
+bool    | mvo | =y |  [y/n] | 	if y, MVO curve; otherwise, PVO curve 
+int     | n | =1 |   | 	number of window period 
+int     | nnw | =1600 |   | 	sample window 
+bool    | opt | =y |  [y/n] | 	if y, determine optimal size for efficiency 
+[DIRECTORY]
+user/yliu

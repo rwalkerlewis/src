@@ -1,0 +1,12 @@
+Program sfstf2telewfld | None
+[SYNOPSIS]
+sfstf2telewfld < infile.rsf stf=stffile.rsf > outfile.rsf old=oldfile.rsf p1=0. z0=40. v0=8.0 dt=0.001
+[PARAMETERS]
+        | dt | =0.001 |   | 	
+file    | old | = |   | 	auxiliary output file name
+        | p1 | =0. |   | 	
+file    | stf | = |   | 	auxiliary input file name
+        | v0 | =8.0 |   | 	
+        | z0 | =40. |   | 	
+[DIRECTORY]
+user/jeff

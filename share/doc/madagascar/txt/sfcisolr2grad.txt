@@ -1,0 +1,14 @@
+Program sfcisolr2grad | Complex lowrank decomposition for 2-D isotropic wave propagation (including velocity gradient term). 
+[SYNOPSIS]
+sfcisolr2grad < vel.rsf grad1=grad1.rsf grad2=grad2.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt=
+[PARAMETERS]
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+file    | fft | = |   | 	auxiliary input file name
+file    | grad1 | = |   | 	auxiliary input file name
+file    | grad2 | = |   | 	auxiliary input file name
+file    | left | = |   | 	auxiliary output file name
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+[DIRECTORY]
+user/jsun

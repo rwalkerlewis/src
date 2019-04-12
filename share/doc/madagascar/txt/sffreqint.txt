@@ -1,0 +1,17 @@
+Program sffreqint | 1-D data regularization using freqlet transform 
+[SYNOPSIS]
+sffreqint < in.rsf > out.rsf freq=w.rsf coord=coord.rsf n1= d1= o1= niter=10 ncycle=1 eps=1.0 inv=n perc=50.0 type=
+[PARAMETERS]
+file    | coord | = |   | 	auxiliary input file name
+float   | d1 | = |   | 	output sampling 
+float   | eps | =1.0 |   | 	regularization parameter 
+file    | freq | = |   | 	auxiliary input file name
+bool    | inv | =n |  [y/n] | 	inversion flag 
+int     | n1 | = |   | 	output samples 
+int     | ncycle | =1 |   | 	number of IRLS iterations 
+int     | niter | =10 |   | 	number of iterations for inversion 
+float   | o1 | = |   | 	output origin 
+float   | perc | =50.0 |   | 	percentage for sharpening 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+[DIRECTORY]
+system/seismic

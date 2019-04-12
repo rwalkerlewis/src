@@ -1,0 +1,9 @@
+Program sfinterpt | Multiple-arrival interpolation (yet another).
+[SYNOPSIS]
+sfinterpt < in.rsf > out.rsf sx=0. sz=0. nw=4
+[PARAMETERS]
+int     | nw | =4 |   | 	Interpolation accuracy 
+float   | sx | =0. |   | 	
+float   | sz | =0. |   | 	Shot coordinate 
+[DIRECTORY]
+user/fomels

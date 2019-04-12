@@ -1,0 +1,16 @@
+Program sfjudgechaos | Judgement of chaos  
+[SYNOPSIS]
+sfjudgechaos < in.rsf > out.rsf mask=mask.rsf gx=2.0 delta=0.01 verb=n fixgrid=n ma=n
+[COMMENTS]
+Input  - Complex;
+Output - Float
+
+[PARAMETERS]
+float   | delta | =0.01 |   | 	The cell size of grid
+bool    | fixgrid | =n |  [y/n] | 	if y ,the total size of grid determined by gx 
+float   | gx | =2.0 |   | 	Total Size of fixed grid
+bool    | ma | =n |  [y/n] | 	if y ,output auxilily file = mask
+string  | mask | = |   | 	auxiliary output file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,12 @@
+Program sfregr | Linear regression 
+[SYNOPSIS]
+sfregr < inp.rsf reg=reg.rsf > out.rsf niter=10 method=2 verb=n n1iter=10 perc=90.0
+[PARAMETERS]
+int     | method | =2 |   | 	method (L1-like or L2) 
+int     | n1iter | =10 |   | 	number of POCS iterations 
+int     | niter | =10 |   | 	number of CG iterations 
+float   | perc | =90.0 |   | 	percentage for sharpening 
+file    | reg | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/fomels

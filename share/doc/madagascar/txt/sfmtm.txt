@@ -1,0 +1,17 @@
+Program sfmtm | 1-D and 2-D modified-trimmed-mean (MTM) filtering. 
+[SYNOPSIS]
+sfmtm < in.rsf > out.rsf nfw1= nfw2=1 pclip= boundary=n verb=n type=
+[COMMENTS]
+Also called range-trimmed-mean filter
+1D filter (nfw2=1); 2D filter (otherwise)
+median filter (pclip=0.); mean filter (pclip=100.)
+
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw1 | = |   | 	filter-window length in n1 direction (positive and odd integer)
+int     | nfw2 | =1 |   | 	filter-window length in n2 direction (default=1, 1D case)
+float   | pclip | = |   | 	0.0 <= pclip <= 100.0: median filter (pclip=0.); mean filter (pclip=100.) 
+string  | type | = |   | 	[rectangular,cross] 2-D window type, the default is rectangular  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

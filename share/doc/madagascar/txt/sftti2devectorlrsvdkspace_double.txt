@@ -1,0 +1,16 @@
+Program sftti2devectorlrsvdkspace_double | None
+[SYNOPSIS]
+sftti2devectorlrsvdkspace_double < vp0.rsf > Elasticx.rsf Elasticz=Elasticz.rsf ElasticPx=ElasticPx.rsf ElasticPz=ElasticPz.rsf ElasticSx=ElasticSx.rsf ElasticSz=ElasticSz.rsf seed=time(NULL eps=1.e-8 npk=60 ns= dt=
+[PARAMETERS]
+file    | ElasticPx | = |   | 	auxiliary output file name
+file    | ElasticPz | = |   | 	auxiliary output file name
+file    | ElasticSx | = |   | 	auxiliary output file name
+file    | ElasticSz | = |   | 	auxiliary output file name
+file    | Elasticz | = |   | 	auxiliary output file name
+        | dt | = |   | 	
+        | eps | =1.e-8 |   | 	tolerance
+        | npk | =60 |   | 	maximum rank
+        | ns | = |   | 	
+        | seed | =time(NULL |   | 	
+[DIRECTORY]
+user/chengjb

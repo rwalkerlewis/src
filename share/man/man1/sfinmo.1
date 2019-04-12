@@ -1,0 +1,101 @@
+.TH sfinmo 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinmo \- Inverse normal moveout. 
+.SH SYNOPSIS
+.B sfinmo < cmp.rsf velocity=velocity.rsf > nmod.rsf offset=offset.rsf mask=msk.rsf half=y slowness=n h0=0. eps=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I float  
+.B h0
+.B =0.
+.R  	reference offset
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	if y, the second axis is half-offset instead of full offset
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B offset
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B slowness
+.B =n
+.R  [y/n]	if y, use slowness instead of velocity
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/vela/strat
+.TP
+.I data/alaska/line31-81-m8r
+.TP
+.I geo384s/hw5/hradon
+.TP
+.I geo384s/hw5/pradon
+.TP
+.I jlu/vdseislet/nmo
+.TP
+.I rsf/bash/plot
+.TP
+.I rsf/reprobook/exam2
+.TP
+.I rsf/rsf/plot
+.TP
+.I rsf/rsf/sfwiggle
+.TP
+.I rsf/school2012/plot
+.TP
+.I rsf/school2016/synth
+.TP
+.I rsf/su/rsflab16
+.TP
+.I rsf/tutorial2017/radon
+.TP
+.I rsf/tutorial2017/synth
+.TP
+.I tccs/avo/avo
+.TP
+.I tccs/butterfly/synth2D-1-timer
+.TP
+.I tccs/butterfly/synth2D-2
+.TP
+.I tccs/butterfly/synth2D-3
+.TP
+.I tccs/dbortho/hyper
+.TP
+.I tccs/nmodeblend/bei
+.TP
+.I tccs/nmodeblend/simple
+.TP
+.I tccs/nmodeblend/synth
+.TP
+.I tccs/oc3/bei
+.TP
+.I tccs/oc3/fault
+.TP
+.I tccs/pmig/nmo
+.TP
+5 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfinmo.html
+.SH SOURCE
+.I system/seismic/Minmo.c
+.SH VERSION
+2.1-git

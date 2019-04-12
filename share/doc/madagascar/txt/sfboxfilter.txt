@@ -1,0 +1,9 @@
+Program sfboxfilter | 3D convolution with arbitrary filter 
+[SYNOPSIS]
+sfboxfilter < Fx.rsf > Fy.rsf flt=Ff.rsf verb=n stat=y
+[PARAMETERS]
+file    | flt | = |   | 	auxiliary input file name
+bool    | stat | =y |  [y/n] | 	stationary flag 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

@@ -1,0 +1,17 @@
+Program sfeicold2d | Extended IC 3D 
+[SYNOPSIS]
+sfeicold2d < Fs.rsf ur=Fr.rsf cc=Fc.rsf > Fi.rsf verb=n isreversed=n nhz=0 nhx=0 nht=0 gaus=n gsx=nhx*sf_d(ax) gsz=nhz*sf_d(az) gst=nht*sf_d(at)
+[PARAMETERS]
+file    | cc | = |   | 	auxiliary input file name
+bool    | gaus | =n |  [y/n] | 	Gaussian taper flag 
+float   | gst | =nht*sf_d(at) |   | 	
+float   | gsx | =nhx*sf_d(ax) |   | 	
+float   | gsz | =nhz*sf_d(az) |   | 	
+bool    | isreversed | =n |  [y/n] | 	reversed rec wfld? 
+int     | nht | =0 |   | 	
+int     | nhx | =0 |   | 	
+int     | nhz | =0 |   | 	
+file    | ur | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

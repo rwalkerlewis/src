@@ -1,0 +1,14 @@
+Program sfmpiencode | shot encoding with arbitrary phase and amplitude weights using MPI on a distributed cluster 
+[SYNOPSIS]
+sfmpiencode encode=Fencode.rsf verb=n dprefix= eprefix=
+[COMMENTS]
+* axes are x-y-w
+
+
+[PARAMETERS]
+string  | dprefix | = |   | 	printf like statement that can be evaluated to find the data files corresponding to shot records 
+file    | encode | = |   | 	auxiliary input file name
+string  | eprefix | = |   | 	printf like statement that can be evaluated for the output encodings 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/cwp

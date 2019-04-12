@@ -1,0 +1,5 @@
+Program sfwavegeompetsc | Rice HPCSS forward modeling. 
+[SYNOPSIS]
+sfwavegeompetsc
+[DIRECTORY]
+user/petsc

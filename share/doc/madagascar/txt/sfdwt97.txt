@@ -1,0 +1,8 @@
+Program sfdwt97 | 1-D CDF 9/7 biorthogonal digital wavelet transform 
+[SYNOPSIS]
+sfdwt97 < in.rsf > out.rsf inv=n adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y, do adjoint transform 
+bool    | inv | =n |  [y/n] | 	if y, do inverse transform 
+[DIRECTORY]
+user/yliu

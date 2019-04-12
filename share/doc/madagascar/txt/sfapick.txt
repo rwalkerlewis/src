@@ -1,0 +1,5 @@
+Program sfapick | Automatic event PICKing 
+[SYNOPSIS]
+sfapick < in.rsf > out.rsf
+[DIRECTORY]
+user/chen

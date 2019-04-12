@@ -1,0 +1,5 @@
+Program sfrtmgeom | Rice HPCSS reverse time migration. 
+[SYNOPSIS]
+sfrtmgeom
+[DIRECTORY]
+user/roman

@@ -1,0 +1,25 @@
+Program sfiwiiter0 | Image-domain waveform tomography. 
+[SYNOPSIS]
+sfiwiiter0 < in.rsf > out.rsf model=model.rsf us=us.rsf ur=ur.rsf weight=weight.rsf precon=precon.rsf miter=miter.rsf riter=riter.rsf verb=n nh=0 uts=0 npml=10 mass=n cgiter=10 shape=n reg=0. tol=1.e-6 rect1=1 rect2=1 order=
+[PARAMETERS]
+int     | cgiter | =10 |   | 	number of conjugate-gradient iterations 
+bool    | mass | =n |  [y/n] | 	if y, use discretization-based mass term 
+string  | miter | = |   | 	auxiliary output file name
+string  | model | = |   | 	auxiliary input file name
+int     | nh | =0 |   | 	horizontal space-lag 
+int     | npml | =10 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+string  | precon | = |   | 	auxiliary input file name
+int     | rect1 | =1 |   | 	smoothing radius on axis 1 
+int     | rect2 | =1 |   | 	smoothing radius on axis 2 
+float   | reg | =0. |   | 	regularization parameter 
+file    | riter | = |   | 	auxiliary output file name
+bool    | shape | =n |  [y/n] | 	regularization (default Tikhnov) 
+float   | tol | =1.e-6 |   | 	tolerance for shaping regularization 
+string  | ur | = |   | 	auxiliary input file name
+string  | us | = |   | 	auxiliary input file name
+int     | uts | =0 |   | 	number of OMP threads 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/sparse

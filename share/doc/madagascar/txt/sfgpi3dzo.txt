@@ -1,0 +1,10 @@
+Program sfgpi3dzo | Gaussian weighting for ZO 3D case
+[SYNOPSIS]
+sfgpi3dzo < inp.rsf > out.rsf v_a= v_b= beta=0.0 eps=0.001
+[PARAMETERS]
+float   | beta | =0.0 |   | 	
+float   | eps | =0.001 |   | 	
+float   | v_a | = |   | 	
+float   | v_b | = |   | 	
+[DIRECTORY]
+user/dmerzlikin

@@ -1,0 +1,39 @@
+.TH sffkamo 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sffkamo \- Computes Azimuth Move-Out (AMO) operator in the f-k log-stretch domain 
+.SH SYNOPSIS
+.B sffkamo < in.rsf > out.rsf h1= h2= f1= f2= maxe=10.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B f1
+.B =
+.R  	input azimuth in degrees
+.TP
+.I float  
+.B f2
+.B =
+.R  	output azimuth in degrees
+.TP
+.I float  
+.B h1
+.B =
+.R  	input offset
+.TP
+.I float  
+.B h2
+.B =
+.R  	output offset
+.TP
+.I float  
+.B maxe
+.B =10.
+.R  	stability constraint
+.SH USED IN
+.TP
+.I sep/fkamo/impresp
+.SH SOURCE
+.I system/seismic/Mfkamo.c
+.SH VERSION
+2.1-git

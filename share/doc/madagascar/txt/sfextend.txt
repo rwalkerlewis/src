@@ -1,0 +1,14 @@
+Program sfextend | 
+[SYNOPSIS]
+sfextend < loga.rsf > log_eo.rsf < refa.rsf switch= val= reflog=
+[COMMENTS]
+Dataset padding/clipping
+
+Built for log data manipulation - Before and after LSIM alignments to deal with edge-effects and extraneous values introduced from LSIM shifting
+
+[PARAMETERS]
+string  | reflog | = |   | 	Reference log (switch=3)
+int     | switch | = |   | 	(0 = Two-sided axis extension by first and last non-zero sample in dataset); (2 = Two-sided axis reduction); (3 = Matches starting value and number of samples between input and reference well log); (else = pad data to dataset size by first and last nonzero sample); (4 = Testing)
+int     | val | = |   | 	Sample manipulation (switch=0/2)
+[DIRECTORY]
+user/sbader

@@ -1,0 +1,9 @@
+Program sfpwdchain1 | Chain of PWDs - linear operator 
+[SYNOPSIS]
+sfpwdchain1 < inp.rsf dip=dip.rsf sig=sig.rsf > out.rsf adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | dip | = |   | 	auxiliary input file name
+file    | sig | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/pwd

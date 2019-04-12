@@ -1,0 +1,7 @@
+Program sfinstsnr | Instantaneous signal-to-noise ratio (SNR) estimation. 
+[SYNOPSIS]
+sfinstsnr < in.rsf > out.rsf en=en.rsf
+[PARAMETERS]
+file    | en | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/yliu

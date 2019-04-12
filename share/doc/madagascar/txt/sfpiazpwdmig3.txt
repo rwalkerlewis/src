@@ -1,0 +1,29 @@
+Program sfpiazpwdmig3 | Least-Squares 3D Path-Summation Integral, Azimuthal Plane-Wave Destruction and Kirchhoff Modeling/Migration Chain of Operators
+[SYNOPSIS]
+sfpiazpwdmig3 < inp.rsf > out.rsf dip=dip.rsf az=azin.rsf vel=velFile.rsf adj=n v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt vel= rho=1.-1./nt apt=nx angle=90.0 order=1 nj1=1 nj2=1 sm=y domod=y dopi=y doomp=n antialias=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	Adjoint flag 
+float   | angle | =90.0 |   | 	angle aperture 
+string  | antialias | = |   | 	antialiasing type [triangle,flat,steep,none] 
+int     | apt | =nx |   | 	integral aperture 
+file    | az | = |   | 	auxiliary input file name
+file    | dip | = |   | 	auxiliary input file name
+bool    | domod | =y |  [y/n] | 	if perform Kirchhoff modeling/migration 
+bool    | doomp | =n |  [y/n] | 	OpenMP 
+bool    | dopi | =y |  [y/n] | 	if perform PI filtering 
+float   | eps | =0.001 |   | 	Damper for pi 
+float   | epst2 | =0.001 |   | 	Damper for t2warp 
+int     | nj1 | =1 |   | 	antialiasing iline 
+int     | nj2 | =1 |   | 	antialiasing xline 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+int     | pad | =nt |   | 	output time samples 
+float   | passthr | =0.001 |   | 	Threshold for tail elimination 
+float   | rho | =1.-1./nt |   | 	Leaky integration constant 
+bool    | sm | =y |  [y/n] | 	if perform AzPWD filtering 
+float   | v_1 | = |   | 	Path-integral range 
+float   | v_2 | = |   | 	
+float   | v_3 | = |   | 	
+float   | v_4 | = |   | 	
+float   | vel | = |   | 	migration velocity for Kirchhoff 
+[DIRECTORY]
+user/dmerzlikin

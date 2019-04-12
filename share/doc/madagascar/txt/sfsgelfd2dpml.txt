@@ -1,0 +1,32 @@
+Program sfsgelfd2dpml | A k-space staggered-grid lowrank finite-difference for elastic and viscoelastic seismic-wave modeling
+[SYNOPSIS]
+sfsgelfd2dpml < vpfp.rsf vs=vsfp.rsf rho=rhofp.rsf Gpx=Gpxfp.rsf Gpz=Gpzfp.rsf Gsx=Gsxfp.rsf Gsz=Gszfp.rsf sxx=sxxfp.rsf sxz=sxzfp.rsf szx=szxfp.rsf szz=szzfp.rsf > snapfpx.rsf snapz=snapfpz.rsf snappx=snapfppx.rsf snappz=snapfppz.rsf snapsx=snapfpsx.rsf snapsz=snapfpsz.rsf order=12 dt= nt= fpeak=20.0 isrcx= isrcz= npml=30 verb=1 freesurface=0 igz=1 snap=1
+[PARAMETERS]
+file    | Gpx | = |   | 	auxiliary input file name
+file    | Gpz | = |   | 	auxiliary input file name
+file    | Gsx | = |   | 	auxiliary input file name
+file    | Gsz | = |   | 	auxiliary input file name
+float   | dt | = |   | 	
+float   | fpeak | =20.0 |   | 	
+int     | freesurface | =0 |   | 	recerver 
+int     | igz | =1 |   | 	
+int     | isrcx | = |   | 	
+int     | isrcz | = |   | 	
+int     | npml | =30 |   | 	
+int     | nt | = |   | 	
+int     | order | =12 |   | 	source 
+file    | rho | = |   | 	auxiliary input file name
+int     | snap | =1 |   | 	
+file    | snappx | = |   | 	auxiliary output file name
+file    | snappz | = |   | 	auxiliary output file name
+file    | snapsx | = |   | 	auxiliary output file name
+file    | snapsz | = |   | 	auxiliary output file name
+file    | snapz | = |   | 	auxiliary output file name
+file    | sxx | = |   | 	auxiliary input file name
+file    | sxz | = |   | 	auxiliary input file name
+file    | szx | = |   | 	auxiliary input file name
+file    | szz | = |   | 	auxiliary input file name
+int     | verb | =1 |   | 	freesurface 
+file    | vs | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/junyan

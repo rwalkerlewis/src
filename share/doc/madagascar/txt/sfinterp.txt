@@ -1,0 +1,10 @@
+Program sfinterp | 
+[SYNOPSIS]
+sfinterp < logrefa.rsf > logref_co.rsf
+[COMMENTS]
+1D linear missing data interpolation
+
+Linear interpolation of missing data (0 values) based on nearest nonzero samples
+
+[DIRECTORY]
+user/sbader

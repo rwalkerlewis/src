@@ -1,0 +1,15 @@
+Program sfescnband2 | Solution of escape equations by hybrid solver with narrow band for 2-D (an)isotropic media. 
+[SYNOPSIS]
+sfescnband2 < spdom.rsf > out.rsf vspl=vspline.rsf na=360 mdist=SF_HUGE morder=ESC2_MORDER atraced=n mtraced=n cmix=y tracebc=y verb=n
+[PARAMETERS]
+bool    | atraced | =n |  [y/n] | 	true - output map of all traced points 
+bool    | cmix | =y |  [y/n] | 	true - check for color mixing 
+float   | mdist | =SF_HUGE |   | 	Maximum distance between points in F-D stencil 
+int     | morder | =ESC2_MORDER |   | 	Maximum order in F-D stencil 
+bool    | mtraced | =n |  [y/n] | 	true - output map of points traced because of mdist criterion 
+int     | na | =360 |   | 	Number of phase angles 
+bool    | tracebc | =y |  [y/n] | 	n - do not trace B.C. points 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | vspl | = |   | 	Spline coefficients for velocity model (auxiliary input file name)
+[DIRECTORY]
+user/cram

@@ -1,0 +1,13 @@
+Program sfdtw-track | 
+[SYNOPSIS]
+sfdtw-track < _in.rsf error=_miss.rsf > _out.rsf strain=1
+[COMMENTS]
+problem finds the optimal trajectory 
+across accumulation errors using backtracking.  
+takes the same strain strain= as the accumulation step.
+
+[PARAMETERS]
+string  | error | = |   | 	auxiliary input file name
+float   | strain | =1 |   | 	maximum strain 
+[DIRECTORY]
+user/luke

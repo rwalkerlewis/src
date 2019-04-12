@@ -1,0 +1,11 @@
+Program sfcurv2 | Joint estimation of curvature and slope 
+[SYNOPSIS]
+sfcurv2 < in.rsf > out.rsf slope=slope.rsf niter=5 m=1 n=1 interp=
+[PARAMETERS]
+string  | interp | = |   | 	interpolation method: maxflat lagrange bspline 
+int     | m | =1 |   | 	b[-m, ... ,n] 
+int     | n | =1 |   | 	b[-m, ... ,n] 
+int     | niter | =5 |   | 	iterations 
+file    | slope | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/chen

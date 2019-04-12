@@ -1,0 +1,26 @@
+Program sfhradon | Time domain high-resolution hyperbolic Radon transform. 
+[SYNOPSIS]
+sfhradon < in.rsf > out.rsf vel=vel.rsf offset=offset.rsf inv=y adj=n solver=n v0= dv= nv= N1=10 N2=3 verb=0 h0= dh= nh=
+[COMMENTS]
+m(tau,p) = \sum_{ih=1}^{nh} d(tau=\sqrt{tau^2+h[ih]^2/p^2),h}
+inv=true do inverse
+adj=true do adjoint
+inv=false && adj=false do forward
+
+[PARAMETERS]
+int     | N1 | =10 |   | 	CG Iterations (Internal loop) 
+int     | N2 | =3 |   | 	Update of weights for the sparse solution, N1 = 1 LS , N2 > 3 for High Res (Sparse) solution 
+bool    | adj | =n |  [y/n] | 	if implement the adjoint transform instead of the inverse transform 
+float   | dh | = |   | 	
+float   | dv | = |   | 	
+float   | h0 | = |   | 	
+bool    | inv | =y |  [y/n] | 	if implement the inverse transform 
+int     | nh | = |   | 	
+int     | nv | = |   | 	
+string  | offset | = |   | 	auxiliary input file name
+bool    | solver | =n |  [y/n] | 	if use Madagascar bigsolver, default is not 
+float   | v0 | = |   | 	
+string  | vel | = |   | 	auxiliary input file name
+int     | verb | =0 |   | 	If output the debugging process 
+[DIRECTORY]
+user/chenyk

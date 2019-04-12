@@ -1,0 +1,31 @@
+Program vpvr | Plot impulse responses in 2 dimensions 
+[SYNOPSIS]
+vpvr > plot.vpl color=7 fat=5 dash=0.0 edash=0.1 vrscale=1. groupscale=1. phasescale=.5 norm=0. inc=0.5 line=n info=y disp=y group=y particle=n ellipse=y c11=0. c13=0. c33=0. c55=0. c66=0. log= only= title=
+[PARAMETERS]
+float   | c11 | =0. |   | 	
+float   | c13 | =0. |   | 	
+float   | c33 | =0. |   | 	
+float   | c55 | =0. |   | 	
+float   | c66 | =0. |   | 	
+int     | color | =7 |   | 	
+float   | dash | =0.0 |   | 	
+bool    | disp | =y |  [y/n] | 	if n, give phase velocity instead of dispersion relation 
+float   | edash | =0.1 |   | 	elliptical approximation dash 
+bool    | ellipse | =y |  [y/n] | 	if use elliptic approximation 
+int     | fat | =5 |   | 	
+bool    | group | =y |  [y/n] | 	if n, give group slowness instead of group velocity 
+float   | groupscale | =1. |   | 	scales only the group stuff 
+float   | inc | =0.5 |   | 	increment of phi sub w in degrees 
+bool    | info | =y |  [y/n] | 	if print in small letters the elastic constants across the top 
+bool    | line | =n |  [y/n] | 	if draw lines to indicate some important angles. (Angles at
+     which triplication "first" occurs, and angles at which pure P
+     and Sv modes exist) 
+string  | log | = |   | 	
+float   | norm | =0. |   | 	
+string  | only | = |   | 	(Pdisp, SVdisp, SHdisp, P, SV, SH) 
+bool    | particle | =n |  [y/n] | 	if show particle motion directions 
+float   | phasescale | =.5 |   | 	scales only the phase stuff 
+string  | title | = |   | 	
+float   | vrscale | =1. |   | 	scales everything by a factor 
+[DIRECTORY]
+user/dellinger

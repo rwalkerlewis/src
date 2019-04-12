@@ -1,0 +1,13 @@
+Program sffreqreg | Local frequency interpolation. 
+[SYNOPSIS]
+sffreqreg < in.rsf > out.rsf mask=mask.rsf nw= dw= w0=0. rect=10 niter=100 verb=n
+[PARAMETERS]
+float   | dw | = |   | 	frequency step 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	number of inversion iterations 
+int     | nw | = |   | 	number of frequencies 
+int     | rect | =10 |   | 	smoothing radius 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | w0 | =0. |   | 	first frequency 
+[DIRECTORY]
+user/yliu

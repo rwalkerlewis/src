@@ -1,0 +1,10 @@
+Program sfbeamspray | 2-D beam spraying. 
+[SYNOPSIS]
+sfbeamspray < in.rsf dip=dip.rsf cur=cur.rsf > out.rsf rect=3 eps=1.0
+[PARAMETERS]
+file    | cur | = |   | 	auxiliary input file name
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =1.0 |   | 	experimental 
+int     | rect | =3 |   | 	smoothing radius 
+[DIRECTORY]
+system/seismic

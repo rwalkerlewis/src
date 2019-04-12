@@ -1,0 +1,12 @@
+Program sffwipe | Phase encoding 
+[SYNOPSIS]
+sffwipe < in.rsf > out.rsf oldrec=oldrec.rsf newrec=newrec.rsf encoding=y nsim=ns nsource=1 seed=time(NULL)
+[PARAMETERS]
+bool    | encoding | =y |  [y/n] | 	
+file    | newrec | = |   | 	auxiliary output file name
+int     | nsim | =ns |   | 	
+int     | nsource | =1 |   | 	check 
+file    | oldrec | = |   | 	auxiliary input file name
+int     | seed | =time(NULL) |   | 	
+[DIRECTORY]
+user/zhiguang

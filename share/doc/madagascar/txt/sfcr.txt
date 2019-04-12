@@ -1,0 +1,11 @@
+Program sfcr | Column-row matrix decomposition 
+[SYNOPSIS]
+sfcr < row_in.rsf col_in=col_in.rsf > row_out.rsf col_out=col_out.rsf niter=10 tol=0.0f prec=y
+[PARAMETERS]
+file    | col_in | = |   | 	auxiliary input file name
+file    | col_out | = |   | 	auxiliary output file name
+int     | niter | =10 |   | 	number of iterations 
+bool    | prec | =y |  [y/n] | 	If apply preconditioning 
+float   | tol | =0.0f |   | 	CG tolerance 
+[DIRECTORY]
+user/fomels

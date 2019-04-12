@@ -1,0 +1,29 @@
+Program sfffdrtms | 2-D FFD isotropic RTM: MPI + OMP
+[SYNOPSIS]
+sfffdrtms geo=geo.rsf vel=vel.rsf source=source.rsf opt=y dt= nt= isz= irz=isz jr=1 jm=20 nr= nbt=44 nbb=44 nbl=44 nbr=44 ct=0.01 cb=0.01 cl=0.01 cr=0.01 sht=0 tskip=0 left=2400 right=800
+[PARAMETERS]
+float   | cb | =0.01 |   | 	decaying parameter
+float   | cl | =0.01 |   | 	decaying parameter
+float   | cr | =0.01 |   | 	decaying parameter
+float   | ct | =0.01 |   | 	decaying parameter
+float   | dt | = |   | 	time step size
+file    | geo | = |   | 	auxiliary input file name
+int     | irz | =isz |   | 	receiver depth
+int     | isz | = |   | 	source depth
+int     | jm | =20 |   | 	snap sampling
+int     | jr | =1 |   | 	receiver sampling
+int     | left | =2400 |   | 	left
+int     | nbb | =44 |   | 	boundary nodes
+int     | nbl | =44 |   | 	boundary nodes
+int     | nbr | =44 |   | 	boundary nodes
+int     | nbt | =44 |   | 	boundary nodes
+int     | nr | = |   | 	streamer total length
+int     | nt | = |   | 	total time length
+bool    | opt | =y |  [y/n] | 	optimal padding
+int     | right | =800 |   | 	right
+int     | sht | =0 |   | 	Time shift parameter
+file    | source | = |   | 	auxiliary input file name
+int     | tskip | =0 |   | 	Time shift parameter
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

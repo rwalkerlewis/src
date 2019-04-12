@@ -1,0 +1,17 @@
+Program sftime2depthweak | Time-to-depth conversion in media with weak lateral variations 2D (Sripanich and Fomel, 2017). 
+[SYNOPSIS]
+sftime2depthweak < in.rsf dvdx0=dveldx0.rsf dvdt0=dveldt0.rsf refvelocity=refvelocity.rsf > out.rsf outdt0=outdeltime.rsf outdx0=outdeldist.rsf outdv=outdelv.rsf zsubsample=100 nderiv=10 refderiv=1. smoothlen=nx/20 nsmooth=10
+[PARAMETERS]
+file    | dvdt0 | = |   | 	auxiliary input file name
+file    | dvdx0 | = |   | 	auxiliary input file name
+int     | nderiv | =10 |   | 	Derivative filter order 
+int     | nsmooth | =10 |   | 	Smoothing repeat 
+file    | outdt0 | = |   | 	auxiliary output file name
+file    | outdv | = |   | 	auxiliary output file name
+file    | outdx0 | = |   | 	auxiliary output file name
+float   | refderiv | =1. |   | 	Deriveative filter reference (0.5 < ref <= 1) 
+file    | refvelocity | = |   | 	auxiliary input file name
+int     | smoothlen | =nx/20 |   | 	Smoothing filter length 
+int     | zsubsample | =100 |   | 	Additional subsampling in depth for stability 
+[DIRECTORY]
+user/zone

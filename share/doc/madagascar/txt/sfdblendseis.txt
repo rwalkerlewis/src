@@ -1,0 +1,18 @@
+Program sfdblendseis | Blending, or Deblending using seislet domain thresholding.
+[SYNOPSIS]
+sfdblendseis < in.rsf > out.rsf shottime=shottime.rsf dip=dip.rsf init=init.rsf niter=30 thr=10 lambda=0.5 eps=0.01 order=1 verb=0 mode= type= thrtype=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+string  | init | = |   | 	auxiliary input file name
+float   | lambda | =0.5 |   | 	update step size 
+string  | mode | = |   | 	[b-blending,d-deblending] function mode, the default is d  
+int     | niter | =30 |   | 	number of iterations 
+int     | order | =1 |   | 	accuracy order for seislet transform
+file    | shottime | = |   | 	auxiliary input file name
+float   | thr | =10 |   | 	threshold value (coefficients preserved in percentage) 
+string  | thrtype | = |   | 	[soft,hard] thresholding type, the default is soft  
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+int     | verb | =0 |   | 	output verbosity information 
+[DIRECTORY]
+user/chenyk

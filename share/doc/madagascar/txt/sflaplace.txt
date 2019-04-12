@@ -1,0 +1,5 @@
+Program sflaplace | 2-D finite-difference Laplacian 
+[SYNOPSIS]
+sflaplace > out.rsf < img.rsf
+[DIRECTORY]
+user/songxl

@@ -1,0 +1,12 @@
+Program sfgeoconvert | 2-D regular geometry conversion 
+[SYNOPSIS]
+sfgeoconvert < in.rsf > out.rsf ns= nr= ds=0.05 dr=0.025 os=0. or=0.
+[PARAMETERS]
+float   | dr | =0.025 |   | 	receiver interval 
+float   | ds | =0.05 |   | 	shot interval 
+int     | nr | = |   | 	receiver number per shot 
+int     | ns | = |   | 	shot number 
+float   | or | =0. |   | 	receiver origin 
+float   | os | =0. |   | 	shot origin 
+[DIRECTORY]
+user/yliu

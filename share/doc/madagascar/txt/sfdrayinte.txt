@@ -1,0 +1,10 @@
+Program sfdrayinte | 2D Dynamic Ray Tracing 
+[SYNOPSIS]
+sfdrayinte < in.rsf > out.rsf deriv=deriv.rsf t0=0. shift=1. source=o[1]+(n[1]-1)/2*d[1]
+[PARAMETERS]
+string  | deriv | = |   | 	auxiliary input file name
+float   | shift | =1. |   | 	complex source shift 
+float   | source | =o[1]+(n[1]-1)/2*d[1] |   | 	source location 
+float   | t0 | =0. |   | 	time origin at source 
+[DIRECTORY]
+user/llisiw

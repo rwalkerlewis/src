@@ -1,0 +1,9 @@
+Program sfpwcsemb | Semblance from plane-wave construction datacube. 
+[SYNOPSIS]
+sfpwcsemb < in.rsf > out.rsf nfw= boundary=n verb=n
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw | = |   | 	calculation window in n1 direction (positive integer)
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

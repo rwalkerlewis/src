@@ -1,0 +1,18 @@
+Program sffraclr2test | Complex lowrank decomposition for 2-D constant-Q visco-acoustic wave equation. (Testing for exact disperison relation)
+[SYNOPSIS]
+sffraclr2test < vel.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt= c0= w0= rev=false mode=0 sign=0 approx=true
+[PARAMETERS]
+        | approx | =true |   | 	use Tieyuan's approximation
+        | c0 | = |   | 	reference velocity
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+file    | fft | = |   | 	auxiliary input file name
+file    | left | = |   | 	auxiliary output file name
+        | mode | =0 |   | 	mode of propagation: 0 is viscoacoustic (default); 1 is loss-dominated; 2 is dispersion dominated; 3 is acoustic
+        | npk | =20 |   | 	maximum rank
+        | rev | =false |   | 	reverse propagation
+        | seed | =time(NULL |   | 	
+        | sign | =0 |   | 	sign of solution: 0 is positive, 1 is negative
+        | w0 | = |   | 	reference frequency
+[DIRECTORY]
+user/jsun

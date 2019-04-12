@@ -1,0 +1,11 @@
+Program sflffd1_10 | 1-D Lowrank Fourier finite-difference wave extrapolation 
+[SYNOPSIS]
+sflffd1_10 < in.rsf vel=vel.rsf G=Gmatrix.rsf > out.rsf nt= dt= factor=0.5
+[PARAMETERS]
+file    | G | = |   | 	auxiliary input file name
+float   | dt | = |   | 	
+float   | factor | =0.5 |   | 	
+int     | nt | = |   | 	
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

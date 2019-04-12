@@ -1,0 +1,15 @@
+Program sfdistpaint3D | 3-D painting by plane-wave construction. 
+[SYNOPSIS]
+sfdistpaint3D < dip.rsf > out.rsf seed=seed.rsf flt=flt.rsf cost=cost.rsf verb=n eps=0.01 ref2=0 ref3=0 order=1 faultscale=100.
+[PARAMETERS]
+file    | cost | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+float   | faultscale | =100. |   | 	Fault attribute scaling factor (0.0 ~ factor) 
+file    | flt | = |   | 	auxiliary input file name
+int     | order | =1 |   | 	accuracy order 
+int     | ref2 | =0 |   | 	
+int     | ref3 | =0 |   | 	reference trace 
+file    | seed | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/pwd

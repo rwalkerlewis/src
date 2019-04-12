@@ -1,0 +1,8 @@
+Program sfssblend | blend reciever gathers (T-S-R) to generate simultaneous data 
+[SYNOPSIS]
+sfssblend < in.rsf delay=delay.rsf > out.rsf jt=1
+[PARAMETERS]
+file    | delay | = |   | 	auxiliary input file name
+int     | jt | =1 |   | 	subsampling nps 
+[DIRECTORY]
+user/chen

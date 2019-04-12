@@ -1,0 +1,138 @@
+.TH sfintbin 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfintbin \- Data binning by trace sorting. 
+.SH SYNOPSIS
+.B sfintbin < in.rsf > out.rsf inv=n xkey= ykey= xmin= xmax= ymin= ymax= head= xk= yk= map= mask=
+.SH COMMENTS
+
+If inv=n, the input is 2-D (n1 x ntr). The output is 3-D (n1 x n2 x n3), n2 and
+n3 correspond to two selected keys from the header file. 
+
+If inv=y, the input is 3-D, and the output is 2-D.
+
+if xkey < 0, the first axis indexes traces in a gather like cdpt.
+
+June 2015 program of the month:
+http://ahay.org/blog/2015/06/10/program-of-the-month-sfintbin/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B head
+.B =
+.R  	header file
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	inversion flag
+.TP
+.I string 
+.B map
+.B =
+.R  	output map file
+.TP
+.I string 
+.B mask
+.B =
+.R  	output mask file
+.TP
+.I string 
+.B xk
+.B =
+.R  	x key name
+.TP
+.I int    
+.B xkey
+.B =
+.R  	x key number (if no xk), default is fldr
+.TP
+.I int    
+.B xmax
+.B =
+.R  	x maximum
+.TP
+.I int    
+.B xmin
+.B =
+.R  	x minimum
+.TP
+.I string 
+.B yk
+.B =
+.R  	y key name
+.TP
+.I int    
+.B ykey
+.B =
+.R  	y key number (if no yk), default is tracf
+.TP
+.I int    
+.B ymax
+.B =
+.R  	y maximum
+.TP
+.I int    
+.B ymin
+.B =
+.R  	y minimum
+.SH USED IN
+.TP
+.I data/freeusp/land
+.TP
+.I data/nankai/data
+.TP
+.I data/nankai/shots
+.TP
+.I data/seam-phase1-2d/cvs
+.TP
+.I data/seam-phase1-2d/fetch
+.TP
+.I data/seam-phase1-2d/sfmshots
+.TP
+.I data/sigsbee/data2A
+.TP
+.I data/sigsbee/fs2B
+.TP
+.I data/sigsbee/nfs2B
+.TP
+.I data/sigsbee/ptest
+.TP
+.I data/sigsbee/pwemig
+.TP
+.I data/sigsbee/wemig
+.TP
+.I gallery/bp/lowrank
+.TP
+.I gallery/bp/model
+.TP
+.I gallery/bptti/model
+.TP
+.I gallery/hessvti/model
+.TP
+.I gallery/marmousi/model
+.TP
+.I gallery/model94/model
+.TP
+.I gallery/sigsbee/ffd
+.TP
+.I gallery/sigsbee/kirMulti
+.TP
+.I gallery/sigsbee/model
+.TP
+.I gallery/sigsbee/oway
+.TP
+.I gallery/statics94/model
+.TP
+.I geo384s/hw3/dmo
+.TP
+.I geo384s/hw3/nmo
+.TP
+26 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfintbin.html
+.SH SOURCE
+.I system/seismic/Mintbin.c
+.SH VERSION
+2.1-git

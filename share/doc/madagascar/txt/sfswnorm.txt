@@ -1,0 +1,11 @@
+Program sfswnorm | Sliding window normalization 
+[SYNOPSIS]
+sfswnorm < in.rsf > out.rsf size=0 sw=n log=n var_thres=0. perc=5
+[PARAMETERS]
+bool    | log | =n |  [y/n] | 	log scaling 
+float   | perc | =5 |   | 	threshold percentage of the maximum value 
+int     | size | =0 |   | 	sliding window radius 
+bool    | sw | =n |  [y/n] | 	sliding window 
+float   | var_thres | =0. |   | 	variance threshold (normalized) 
+[DIRECTORY]
+user/jsun

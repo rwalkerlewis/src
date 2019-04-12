@@ -1,0 +1,7 @@
+Program sfcdivdir | Direct division for complex data. 
+[SYNOPSIS]
+sfcdivdir < fnum.rsf den=fden.rsf > frat.rsf
+[PARAMETERS]
+file    | den | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/chenyk

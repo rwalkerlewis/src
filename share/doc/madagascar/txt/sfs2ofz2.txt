@@ -1,0 +1,10 @@
+Program sfs2ofz2 | Analytical plane-wave traveltime in a linear slowness squared model. 
+[SYNOPSIS]
+sfs2ofz2 > out.rsf n= gz=-6. gx=2. v0=4
+[PARAMETERS]
+float   | gx | =2. |   | 	slowness squared gradient 
+float   | gz | =-6. |   | 	
+int     | n | = |   | 	number of samples 
+float   | v0 | =4 |   | 	initial slowness squared 
+[DIRECTORY]
+system/seismic

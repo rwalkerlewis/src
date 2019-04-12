@@ -1,0 +1,13 @@
+Program sfzmarch | Phase-space traveltime (marching in z) 
+[SYNOPSIS]
+sfzmarch < vel.rsf > out.rsf na= da= a0= order=3 scheme=2 verb=n what=
+[PARAMETERS]
+float   | a0 | = |   | 	starting velocity 
+float   | da | = |   | 	angle sampling 
+int     | na | = |   | 	angle samples 
+int     | order | =3 |   | 	interpolation order 
+int     | scheme | =2 |   | 	finite-difference order 
+bool    | verb | =n |  [y/n] | 	verbosity 
+string  | what | = |   | 	what to compute (t,x,z,a) 
+[DIRECTORY]
+user/fomels

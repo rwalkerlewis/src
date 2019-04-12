@@ -1,0 +1,8 @@
+Program sfsos | Second order statistics
+[SYNOPSIS]
+sfsos < pin.rsf > pout.rsf mode=0
+[PARAMETERS]
+int     | mode | =0 |   | 	0	autocorrelation matrix 
+	1	covariance matrix
+[DIRECTORY]
+user/chen

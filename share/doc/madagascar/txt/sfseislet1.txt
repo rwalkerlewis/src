@@ -1,0 +1,12 @@
+Program sfseislet1 | 1-D seislet transform 
+[SYNOPSIS]
+sfseislet1 < in.rsf > out.rsf freq=dip.rsf inv=n adj=n unit=n verb=n type=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y, do adjoint transform 
+file    | freq | = |   | 	auxiliary input file name
+bool    | inv | =n |  [y/n] | 	if y, do inverse transform 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+bool    | unit | =n |  [y/n] | 	if y, use unitary scaling 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,29 @@
+Program sfbigmpiencode | shot encoding with arbitrary phase and amplitude weights using MPI on a distributed cluster 
+[SYNOPSIS]
+sfbigmpiencode encode=Fencode.rsf nx= ny= dy= dx= ox= oy= verb=n dprefix= eprefix= shots=
+[COMMENTS]
+
+
+Use mpiencode if your shots are on the same grid prior to encoding.
+
+Use bigmpiencode if your shots are not on a single grid prior to encoding.
+YOUR SHOTS MUST ALL FALL ONTO THE SAME REGULAR GRID.  BigMPIENCODE does not do any
+shot interpolation.
+
+Data axes - X, Y, W
+
+
+[PARAMETERS]
+string  | dprefix | = |   | 	printf like statement that can be evaluated to find the data files corresponding to shot records 
+float   | dx | = |   | 	dx of output grid points 
+float   | dy | = |   | 	dy of output grid points 
+file    | encode | = |   | 	auxiliary input file name
+string  | eprefix | = |   | 	printf like statement that can be evaluated for the output encodings 
+int     | nx | = |   | 	# of output grid x points 
+int     | ny | = |   | 	# of output grid y points 
+float   | ox | = |   | 	ox of output grid points 
+float   | oy | = |   | 	ox of output grid points 
+string  | shots | = |   | 	shot-file name, dimensions are 1xNS 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/cwp

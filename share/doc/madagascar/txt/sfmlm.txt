@@ -1,0 +1,8 @@
+Program sfmlm | 2D Multistage median filtering. 
+[SYNOPSIS]
+sfmlm < in.rsf > out.rsf nfw= boundary=n
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw | = |   | 	filter-window length (positive and odd integer)
+[DIRECTORY]
+user/yliu

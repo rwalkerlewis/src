@@ -1,0 +1,8 @@
+Program sfreversval | Reverse data value 
+[SYNOPSIS]
+sfreversval < in.rsf > out.rsf
+[COMMENTS]
+Data' = Max(Data) - Data
+
+[DIRECTORY]
+user/yliu

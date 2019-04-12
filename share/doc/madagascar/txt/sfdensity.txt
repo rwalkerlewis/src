@@ -1,0 +1,14 @@
+Program sfdensity | Compute density 
+[SYNOPSIS]
+sfdensity < Fin.rsf inY=FinY.rsf inZ=FinZ.rsf inW=FinW.rsf > Fout.rsf verb=n n1=20 n2=20 n3=20 n4=20
+[PARAMETERS]
+file    | inW | = |   | 	auxiliary input file name
+file    | inY | = |   | 	auxiliary input file name
+file    | inZ | = |   | 	auxiliary input file name
+int     | n1 | =20 |   | 	verbosity flag 
+int     | n2 | =20 |   | 	verbosity flag 
+int     | n3 | =20 |   | 	verbosity flag 
+int     | n4 | =20 |   | 	verbosity flag 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/jyan

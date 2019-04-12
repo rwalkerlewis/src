@@ -1,0 +1,34 @@
+Program sfitxmo3 | Forward and inverse normal moveout with interval velocity. 
+[SYNOPSIS]
+sfitxmo3 < inp.rsf > out.rsf c11=C11.rsf c22=C22.rsf c33=C33.rsf c44=C44.rsf c55=C55.rsf c66=C66.rsf c12=C12.rsf c13=C13.rsf c23=C23.rsf velocity=velocity.rsf time=testtime.rsf x=testx.rsf y=testy.rsf cij=n inv=n nx= dx= x0=0. ny= dy= y0=0. npx= dpx= px0=0. npy= dpy= py0=0. eps=0.01
+[PARAMETERS]
+file    | c11 | = |   | 	auxiliary input file name
+file    | c12 | = |   | 	auxiliary input file name
+file    | c13 | = |   | 	auxiliary input file name
+file    | c22 | = |   | 	auxiliary input file name
+file    | c23 | = |   | 	auxiliary input file name
+file    | c33 | = |   | 	auxiliary input file name
+file    | c44 | = |   | 	auxiliary input file name
+file    | c55 | = |   | 	auxiliary input file name
+file    | c66 | = |   | 	auxiliary input file name
+bool    | cij | =n |  [y/n] | 	
+float   | dpx | = |   | 	x slope sampling 
+float   | dpy | = |   | 	y slope sampling 
+float   | dx | = |   | 	x offset sampling 
+float   | dy | = |   | 	y offset sampling 
+float   | eps | =0.01 |   | 	stretch regularization 
+bool    | inv | =n |  [y/n] | 	
+int     | npx | = |   | 	x slope samples 
+int     | npy | = |   | 	y slope samples 
+int     | nx | = |   | 	x offset samples 
+int     | ny | = |   | 	y offset samples 
+float   | px0 | =0. |   | 	x first slope 
+float   | py0 | =0. |   | 	y first slope 
+file    | time | = |   | 	auxiliary output file name
+file    | velocity | = |   | 	auxiliary input file name
+file    | x | = |   | 	auxiliary output file name
+float   | x0 | =0. |   | 	x first offset 
+file    | y | = |   | 	auxiliary output file name
+float   | y0 | =0. |   | 	y first offset 
+[DIRECTORY]
+system/seismic

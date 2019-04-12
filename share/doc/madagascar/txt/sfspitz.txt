@@ -1,0 +1,15 @@
+Program sfspitz | Missing data interpolation in 2-D using F-X Prediction Error Filters
+[SYNOPSIS]
+sfspitz < in.rsf > out.rsf order=3 ntraces=1 verb=n norm=y
+[COMMENTS]
+based on Seismic trace interpolation in the F-X domain
+S.Spitz Geophysics 56, 785(1991). 
+
+
+[PARAMETERS]
+bool    | norm | =y |  [y/n] | 	normalization flag 
+int     | ntraces | =1 |   | 	number of traces to be interpolated 
+int     | order | =3 |   | 	linear PEF order
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/lcasasan

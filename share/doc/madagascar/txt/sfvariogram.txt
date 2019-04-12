@@ -1,0 +1,10 @@
+Program sfvariogram | Compute a variogram of data values. 
+[SYNOPSIS]
+sfvariogram < in.rsf > out.rsf dh=1 oh=0 nh=n1/dh-oh semi=y
+[PARAMETERS]
+int     | dh | =1 |   | 	interval (number) of variogram lag 
+int     | nh | =n1/dh-oh |   | 	number of variogram lag 
+int     | oh | =0 |   | 	origin (number) of variogram lag 
+bool    | semi | =y |  [y/n] | 	if y, output semivariogram 
+[DIRECTORY]
+user/yliu

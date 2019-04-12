@@ -1,0 +1,11 @@
+Program sfitaupmo2 | Inverse normal moveout in tau-p-x domain. 
+[SYNOPSIS]
+sfitaupmo2 < cmp.rsf velocity=velocity.rsf > nmod.rsf nx= dx= x0=0.0 nw=4
+[PARAMETERS]
+float   | dx | = |   | 	offset sampling 
+int     | nw | =4 |   | 	interpolator size (2,3,4,6,8) 
+int     | nx | = |   | 	number of offsets 
+file    | velocity | = |   | 	auxiliary input file name
+float   | x0 | =0.0 |   | 	first offset 
+[DIRECTORY]
+system/seismic

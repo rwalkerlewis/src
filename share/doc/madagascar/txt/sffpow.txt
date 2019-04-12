@@ -1,0 +1,16 @@
+Program sffpow | Time/frequency power estimation 
+[SYNOPSIS]
+sffpow < inp.rsf > out.rsf beta=beta.rsf niter=10 fmin=o1 fmax=o1+(n1-1)*d1 bmin=-1.0 bmax=1.0 nb=10 tol=SF_EPS verb=y time=n
+[PARAMETERS]
+file    | beta | = |   | 	auxiliary output file name
+float   | bmax | =1.0 |   | 	maximum value of beta 
+float   | bmin | =-1.0 |   | 	minimum value of beta 
+float   | fmax | =o1+(n1-1)*d1 |   | 	maximum frequency 
+float   | fmin | =o1 |   | 	minimum frequency 
+int     | nb | =10 |   | 	
+int     | niter | =10 |   | 	number of Newton iterations 
+bool    | time | =n |  [y/n] | 	time axis 
+float   | tol | =SF_EPS |   | 	accuracy tolerance for beta 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/fomels

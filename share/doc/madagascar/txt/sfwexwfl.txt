@@ -1,0 +1,18 @@
+Program sfwexwfl | 3-D wavefield extrapolation with extended SSF 
+[SYNOPSIS]
+sfwexwfl slo=Fs.rsf < Fd.rsf > Fw.rsf verb=n eps=0.01 datum=0 inv=1 causal=n nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0
+[PARAMETERS]
+bool    | causal | =n |  [y/n] | 	causality flag 
+int     | datum | =0 |   | 	datuming flag 
+float   | dtmax | =0.004 |   | 	max time error 
+float   | eps | =0.01 |   | 	stability parameter 
+int     | inv | =1 |   | 	down/upward flag 
+int     | nrmax | =1 |   | 	maximum references 
+int     | pmx | =0 |   | 	padding on x 
+int     | pmy | =0 |   | 	padding on y
+file    | slo | = |   | 	auxiliary input file name
+int     | tmx | =0 |   | 	taper on x
+int     | tmy | =0 |   | 	taper on y 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/cwp

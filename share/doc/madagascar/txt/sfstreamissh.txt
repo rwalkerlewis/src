@@ -1,0 +1,14 @@
+Program sfstreamissh | Missing data interpolating using streaming PEF on a helix 
+[SYNOPSIS]
+sfstreamissh < inp.rsf > out.rsf lag=lag.rsf known=known.rsf a= n= na=0 eps= var=0.0f seed=time(NULL)
+[PARAMETERS]
+ints    | a | = |   | 	filter shape  [dim]
+float   | eps | = |   | 	regularization 
+file    | known | = |   | 	auxiliary input file name
+string  | lag | = |   | 	auxiliary input file name
+ints    | n | = |   | 	 [dim]
+int     | na | =0 |   | 	PEF filter size (not including leading one) 
+int     | seed | =time(NULL) |   | 	random seed 
+float   | var | =0.0f |   | 	noise variance 
+[DIRECTORY]
+user/gee

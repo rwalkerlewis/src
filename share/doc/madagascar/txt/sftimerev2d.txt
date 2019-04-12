@@ -1,0 +1,14 @@
+Program sftimerev2d | 2-D correlative time reversal imaging of passive seismic data 
+[SYNOPSIS]
+sftimerev2d < in.rsf > out.rsf velocity=vel.rsf wave=wave.rsf verb=n abc=n snap=0 depth=0 ngrp=1 cb=0.0f
+[PARAMETERS]
+bool    | abc | =n |  [y/n] | 	absorbing boundary condition 
+float   | cb | =0.0f |   | 	
+int     | depth | =0 |   | 	geophone depth 
+int     | ngrp | =1 |   | 	number of groups 
+int     | snap | =0 |   | 	wavefield snapshot flag 
+file    | velocity | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+file    | wave | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/jsun

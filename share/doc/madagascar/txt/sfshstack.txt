@@ -1,0 +1,20 @@
+Program sfshstack | Shaping stack. 
+[SYNOPSIS]
+sfshstack < cmp.rsf velocity=velocity.rsf > stack.rsf offset=offset.rsf half=y slowness=n h0=0. eps=0.01 jump=1 niter=10 restart=niter tol=1e-5 flo= fhi= nplo=6 nphi=6
+[PARAMETERS]
+float   | eps | =0.01 |   | 	stretch regularization 
+float   | fhi | = |   | 	High frequency in band, default is Nyquist 
+float   | flo | = |   | 	Low frequency in band, default is 0 
+float   | h0 | =0. |   | 	reference offset 
+bool    | half | =y |  [y/n] | 	if y, the second axis is half-offset instead of full offset 
+int     | jump | =1 |   | 	subsampling 
+int     | niter | =10 |   | 	number of iterations 
+int     | nphi | =6 |   | 	number of poles for high cutoff 
+int     | nplo | =6 |   | 	number of poles for low cutoff 
+string  | offset | = |   | 	auxiliary input file name
+int     | restart | =niter |   | 	GMRES memory 
+bool    | slowness | =n |  [y/n] | 	if y, use slowness instead of velocity 
+float   | tol | =1e-5 |   | 	GMRES tolerance 
+file    | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/kregimbal

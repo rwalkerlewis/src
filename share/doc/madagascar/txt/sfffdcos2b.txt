@@ -1,0 +1,12 @@
+Program sfffdcos2b | 2-D Fourier finite-difference wave extrapolation 
+[SYNOPSIS]
+sfffdcos2b > out.rsf vel=vel.rsf < source.rsf opt=y dt= nt= nb=30 c=0.01
+[PARAMETERS]
+float   | c | =0.01 |   | 	decaying parameter
+float   | dt | = |   | 	
+int     | nb | =30 |   | 	
+int     | nt | = |   | 	
+bool    | opt | =y |  [y/n] | 	if y, determine optimal size for efficiency 
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

@@ -1,0 +1,28 @@
+Program sftkirmig | 2-D Kirchhoff pre-stack time migration/demigration. 
+[SYNOPSIS]
+sftkirmig < in.rsf vel=vel.rsf > out.rsf offset=offset.rsf ompchunk=1 ompnth=0 adj=y verb=n half=y amp=y ncdp=ncmp dcdp=dcmp cdp0=cmp0 ncmp=ncdp dcmp=dcdp cmp0=cdp0 antialias=1.0 apt=ncmp rho=1.-1./nt
+[COMMENTS]
+The axes in the data are {time,cmp,offset}
+The axes in the offset are {1,cmp,offset}
+The axes in the image are {time,cdp,offset}
+
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	yes: migration, no: modeling 
+bool    | amp | =y |  [y/n] | 	if y, use amplitue factor 
+float   | antialias | =1.0 |   | 	antialiasing 
+float   | apt | =ncmp |   | 	migration aperture 
+float   | cdp0 | =cmp0 |   | 	
+float   | cmp0 | =cdp0 |   | 	
+float   | dcdp | =dcmp |   | 	
+float   | dcmp | =dcdp |   | 	
+bool    | half | =y |  [y/n] | 	if y, the third axis is half-offset instead of full offset 
+int     | ncdp | =ncmp |   | 	
+int     | ncmp | =ncdp |   | 	
+string  | offset | = |   | 	auxiliary input file name
+int     | ompchunk | =1 |   | 	OpenMP data chunk size 
+int     | ompnth | =0 |   | 	OpenMP available threads 
+float   | rho | =1.-1./nt |   | 	Leaky integration constant 
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/seisinv

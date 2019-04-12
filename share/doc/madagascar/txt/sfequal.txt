@@ -1,0 +1,5 @@
+Program sfequal | Image enhancement by histogram equalization. 
+[SYNOPSIS]
+sfequal < in.rsf > out.rsf
+[DIRECTORY]
+system/generic

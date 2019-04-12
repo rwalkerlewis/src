@@ -1,0 +1,46 @@
+Program sfcpxeikonal | Iterative complex eikonal solver 
+[SYNOPSIS]
+sfcpxeikonal < in.rsf > out.rsf vel=vel.rsf witer=witer.rsf dwiter=dwiter.rsf dwsiter=dwsiter.rsf rhsiter=rhsiter.rsf upiter=upiter.rsf operiter=operiter.rsf matriter=matriter.rsf matiiter=matiiter.rsf x0iter=x0iter.rsf liniter=liniter.rsf titer=titer.rsf wtiter=wtiter.rsf gamiter=gamiter.rsf preciter=preciter.rsf maskr=maskr.rsf maski=maski.rsf ref=ref.rsf wght=wght.rsf cray=cray.rsf velocity=y verb=n niter=1 cgiter=200 nstep=10 tol=1.e-8 wupg=y term=n smooth=n repeat=1 reg=n eps=1.e-2 namda=0.1 alpha=1. pvar=y recom=y rect#=(1,1,...) symm= prec= bound=
+[PARAMETERS]
+float   | alpha | =1. |   | 	exponential scaling of preconditioning 
+string  | bound | = |   | 	avoid overshoot when update (default add) 
+int     | cgiter | =200 |   | 	number of conjugate gradient iterations 
+string  | cray | = |   | 	auxiliary input file name
+string  | dwiter | = |   | 	auxiliary output file name
+string  | dwsiter | = |   | 	auxiliary output file name
+float   | eps | =1.e-2 |   | 	stable division of preconditioner 
+string  | gamiter | = |   | 	auxiliary output file name
+string  | liniter | = |   | 	auxiliary output file name
+string  | maski | = |   | 	auxiliary input file name
+string  | maskr | = |   | 	auxiliary input file name
+string  | matiiter | = |   | 	auxiliary output file name
+string  | matriter | = |   | 	auxiliary output file name
+float   | namda | =0.1 |   | 	regularization parameter (Ticknov) 
+int     | niter | =1 |   | 	number of iterations 
+int     | nstep | =10 |   | 	number of linesearch 
+string  | operiter | = |   | 	auxiliary output file name
+string  | prec | = |   | 	rhs preconditioning (default angle) 
+string  | preciter | = |   | 	auxiliary output file name
+bool    | pvar | =y |  [y/n] | 	allow preconditioning to change over iterations 
+bool    | recom | =y |  [y/n] | 	recompute initial R according to w estimated from I 
+int     | rect# | =(1,1,...) |   | 	smoothing radius on #-th axis 
+file    | ref | = |   | 	auxiliary input file name
+bool    | reg | =n |  [y/n] | 	regularization (Ticknov) 
+int     | repeat | =1 |   | 	number of smoothings 
+string  | rhsiter | = |   | 	auxiliary output file name
+bool    | smooth | =n |  [y/n] | 	smooth update after conjugate-gradient 
+string  | symm | = |   | 	right-hand side evaluation L_R*I or L_I*R (default both) 
+bool    | term | =n |  [y/n] | 	early termination if line-search failure 
+string  | titer | = |   | 	auxiliary output file name
+float   | tol | =1.e-8 |   | 	thresholding for gradient scaling 
+string  | upiter | = |   | 	auxiliary output file name
+string  | vel | = |   | 	auxiliary input file name
+bool    | velocity | =y |  [y/n] | 	if y, the input is velocity; n, slowness squared 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | wght | = |   | 	auxiliary input file name
+string  | witer | = |   | 	auxiliary output file name
+string  | wtiter | = |   | 	auxiliary output file name
+bool    | wupg | =y |  [y/n] | 	compute w for angle preconditioning 
+string  | x0iter | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/llisiw

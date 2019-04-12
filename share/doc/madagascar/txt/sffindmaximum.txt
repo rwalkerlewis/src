@@ -1,0 +1,5 @@
+Program sffindmaximum | None
+[SYNOPSIS]
+sffindmaximum < in.rsf > out.rsf
+[DIRECTORY]
+user/zdzhang

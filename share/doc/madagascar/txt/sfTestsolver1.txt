@@ -1,0 +1,5 @@
+Program sfTestsolver1 | Test for conjugate gradient, steepest descent, jacobi iteration, gauss-seidel iteration, successive over relaxation (SOR) iteration 
+[SYNOPSIS]
+sfTestsolver1
+[DIRECTORY]
+user/chenyk

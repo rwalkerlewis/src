@@ -1,0 +1,12 @@
+Program sfucor | Interferometric cross-correlation of time series (zero-lag output) 
+[SYNOPSIS]
+sfucor < Fs.rsf ur=Fr.rsf > Fi.rsf ompchunk=1 verb=n nhz=0 nhx=0 nht=1
+[PARAMETERS]
+int     | nht | =1 |   | 	
+int     | nhx | =0 |   | 	
+int     | nhz | =0 |   | 	
+int     | ompchunk | =1 |   | 	OpenMP data chunk size 
+file    | ur | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

@@ -1,0 +1,13 @@
+Program sfafd2d | 2D coustic time-domain FD modeling with different boundary conditions
+[SYNOPSIS]
+sfafd2d < Fw.rsf > Fo.rsf vel=Fv.rsf ref=Fr.rsf verb=0 free=n ifoneway=y ifsponge=y nb=5
+[PARAMETERS]
+bool    | free | =n |  [y/n] | 	
+bool    | ifoneway | =y |  [y/n] | 	
+bool    | ifsponge | =y |  [y/n] | 	
+int     | nb | =5 |   | 	setup I/O files 
+file    | ref | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =0 |  [y/n] | 	
+[DIRECTORY]
+user/chenyk

@@ -1,0 +1,11 @@
+Program sffreqest | Local frequency estimation 
+[SYNOPSIS]
+sffreqest < in.rsf > out.rsf niter=100 hertz=n rect1=1 rect2=1 ... 
+[COMMENTS]
+rectN defines the size of the smoothing stencil in N-th dimension.
+
+[PARAMETERS]
+bool    | hertz | =n |  [y/n] | 	if y, convert output to Hertz 
+int     | niter | =100 |   | 	number of iterations 
+[DIRECTORY]
+user/fomels

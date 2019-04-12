@@ -1,0 +1,14 @@
+Program sfdtw-errors | 
+[SYNOPSIS]
+sfdtw-errors < _in.rsf ref=_ref.rsf > _out.rsf maxshift= exp=2
+[COMMENTS]
+program calculates the alignment errors 
+between a reference and matching trace 
+given a maximum shift (maxshift=) and an error exponent (exp=)
+
+[PARAMETERS]
+float   | exp | =2 |   | 	error exponent (g-f)^exp 
+int     | maxshift | = |   | 	maximum shift 
+string  | ref | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/luke

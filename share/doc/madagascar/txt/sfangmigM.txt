@@ -1,0 +1,32 @@
+Program sfangmigM | Angle-gather constant-velocity time migration with mask file. 
+[SYNOPSIS]
+sfangmigM < in.rsf > out.rsf semb=semb.rsf mask=mask.rsf vin=vin.rsf adj=n weighting=y na= amax= ng=na gmax=amax nxi=nx xi0=x0 dxi=dx ntau=nt tau0=t0 dtau=dt nh= h0= dh= ng=na gmax=amax nx=nxi x0=xi0 dx=dxi nt=ntau t0=tau0 dt=dtau eps=0.00001 l2=y
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y modeling, if n, migration 
+float   | amax | = |   | 	maximum dip angle 
+float   | dh | = |   | 	offset increment
+float   | dt | =dtau |   | 	time increment 
+float   | dtau | =dt |   | 	output vertical sampling 
+float   | dx | =dxi |   | 	data domain spatial increment 
+float   | dxi | =dx |   | 	output sampling 
+float   | eps | =0.00001 |   | 	epsilon for division in semblance calc
+float   | gmax | =amax |   | 	maximum reflection angle
+float   | h0 | = |   | 	initial offset 
+bool    | l2 | =y |  [y/n] | 	if y use l2 norm for semb, if n, use l1 norm 
+string  | mask | = |   | 	input file contining image mask locations, 0 = skip (auxiliary input file name)
+int     | na | = |   | 	number of dip angles 
+int     | ng | =na |   | 	number of reflection angles 
+int     | nh | = |   | 	number of offsets 
+int     | nt | =ntau |   | 	number time samples 
+int     | ntau | =nt |   | 	output vertical samples 
+int     | nx | =nxi |   | 	data domain spatial samples 
+int     | nxi | =nx |   | 	output samples 
+string  | semb | = |   | 	output file containing Semblance (auxiliary output file name)
+float   | t0 | =tau0 |   | 	time orgin 
+float   | tau0 | =t0 |   | 	output vertical orgin 
+string  | vin | = |   | 	input velocity file (auxiliary input file name)
+bool    | weighting | =y |  [y/n] | 	kirchhoff weighting? 
+float   | x0 | =xi0 |   | 	data domain spatial orgin 
+float   | xi0 | =x0 |   | 	output orgin 
+[DIRECTORY]
+user/luke

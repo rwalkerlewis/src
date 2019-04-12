@@ -1,0 +1,14 @@
+Program sfprestolt | Prestack Stolt modeling/migration. 
+[SYNOPSIS]
+sfprestolt < in.rsf > out.rsf inv=n depth=n stack=y nh= dh= vel= pad=nt extend=4
+[PARAMETERS]
+bool    | depth | =n |  [y/n] | 	y: depth migration, n: time migration 
+float   | dh | = |   | 	offset sampling 
+int     | extend | =4 |   | 	trace extension 
+bool    | inv | =n |  [y/n] | 	y: modeling, n: migration 
+int     | nh | = |   | 	number of offsets 
+int     | pad | =nt |   | 	padding on the time axis 
+bool    | stack | =y |  [y/n] | 	if y: stack migrated image 
+float   | vel | = |   | 	constant velocity 
+[DIRECTORY]
+system/seismic

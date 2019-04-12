@@ -1,0 +1,5 @@
+Program sfnmov | Least-squares fitting of t^2-t_0^2 surfaces for isotropic V_{nmo}.
+[SYNOPSIS]
+sfnmov < inp.rsf > out.rsf
+[DIRECTORY]
+system/seismic

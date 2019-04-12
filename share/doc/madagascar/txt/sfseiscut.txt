@@ -1,0 +1,13 @@
+Program sfseiscut | Seislet Transform Denoising using Mask Operator
+[SYNOPSIS]
+sfseiscut < in.rsf dip=dip.rsf > out.rsf slet=slet.rsf sletcut=sletcut.rsf cut=n2/4 eps=0.01 order1=1 eps=0.01 type=
+[PARAMETERS]
+int     | cut | =n2/4 |   | 	cut threshold value 
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+int     | order1 | =1 |   | 	accuracy order for seislet transform
+string  | slet | = |   | 	seismic domain (auxiliary output file name)
+string  | sletcut | = |   | 	cutted seislet domain (auxiliary output file name)
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+[DIRECTORY]
+user/chenyk

@@ -1,0 +1,19 @@
+Program sfwem2d_gpu | 2D ISOTROPIC wave-equation finite-difference migration on GPU 
+[SYNOPSIS]
+sfwem2d_gpu vel=Fvel.rsf < Fxig.rsf swf=Fswf.rsf rwf=Frwf.rsf > Fxigo.rsf swfout=Fswfo.rsf rwfout=Frwfo.rsf sillum=Fsillum.rsf rillum=Frillum.rsf gpu=0 nxtap=40 verbose=n wantwf=n wantillum=n nh=0
+[PARAMETERS]
+int     | gpu | =0 |   | 	ID of the GPU to be used 
+int     | nh | =0 |   | 	
+int     | nxtap | =40 |   | 	TAPER size 
+file    | rillum | = |   | 	auxiliary output file name
+file    | rwf | = |   | 	auxiliary input file name
+file    | rwfout | = |   | 	auxiliary output file name
+file    | sillum | = |   | 	auxiliary output file name
+file    | swf | = |   | 	auxiliary input file name
+file    | swfout | = |   | 	auxiliary output file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verbose | =n |  [y/n] | 	VERBOSITY flag 
+bool    | wantillum | =n |  [y/n] | 	Want output wavefields 
+bool    | wantwf | =n |  [y/n] | 	Want output wavefields 
+[DIRECTORY]
+user/rweiss

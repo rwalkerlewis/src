@@ -1,0 +1,11 @@
+Program sfcicop2d | Conventional IC 2D 
+[SYNOPSIS]
+sfcicop2d opr=Fopr.rsf < Fimg.rsf > Fwfl.rsf verb=n adj=n wflcausal=n oprcausal=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | opr | = |   | 	auxiliary input file name
+bool    | oprcausal | =n |  [y/n] | 	causal opr? 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+bool    | wflcausal | =n |  [y/n] | 	causal wfl? 
+[DIRECTORY]
+user/psava

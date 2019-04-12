@@ -1,0 +1,5 @@
+Program sfps_getstring | None
+[SYNOPSIS]
+sfps_getstring
+[DIRECTORY]
+trip/iwave/base/main

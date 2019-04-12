@@ -1,0 +1,7 @@
+Program sfpolymask | Mask a polygon. 
+[SYNOPSIS]
+sfpolymask < inp.rsf > out.rsf poly=poly.rsf
+[PARAMETERS]
+file    | poly | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/generic

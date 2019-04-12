@@ -1,0 +1,15 @@
+Program sfps2d | 2-D attenuating wavefield simulation using Fourier Pseudo Spectral method 
+[SYNOPSIS]
+sfps2d < Fv.rsf Qp=FQp.rsf > Fw.rsf nb=20 nt= dt= fm=20.0 kt=nt
+[COMMENTS]
+for computing fractional laplacian instead of fractional time derivative
+
+[PARAMETERS]
+file    | Qp | = |   | 	auxiliary input file name
+float   | dt | = |   | 	time sampling interval 
+float   | fm | =20.0 |   | 	dominant freq of Ricker wavelet 
+int     | kt | =nt |   | 	
+int     | nb | =20 |   | 	thickness of sponge ABC 
+int     | nt | = |   | 	number of time steps 
+[DIRECTORY]
+user/pyang

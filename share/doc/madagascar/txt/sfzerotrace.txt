@@ -1,0 +1,9 @@
+Program sfzerotrace | Zero part of traces in order to make aliasing 
+[SYNOPSIS]
+sfzerotrace < in.rsf > out.rsf beg=o2 j=2 l=1
+[PARAMETERS]
+float   | beg | =o2 |   | 	zero part beginning point 
+int     | j | =2 |   | 	jump step between two consecutive zero parts 
+int     | l | =1 |   | 	length of each zero part 
+[DIRECTORY]
+user/chenyk

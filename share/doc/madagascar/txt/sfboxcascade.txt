@@ -1,0 +1,8 @@
+Program sfboxcascade | Box filter cascade 
+[SYNOPSIS]
+sfboxcascade < inp.rsf > out.rsf rect=0 inter=n
+[PARAMETERS]
+int     | inter | =n |   | 	interrupt 
+int     | rect | =0 |   | 	smoothing radius 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,13 @@
+Program sffwigrad | 2D Gradient Calculation in Full Waveform Inversion 
+[SYNOPSIS]
+sffwigrad < in.rsf > out.rsf misfit=misfit.rsf source=source.rsf receiver=receiver.rsf record=record.rsf npml=20 omega= order=
+[PARAMETERS]
+file    | misfit | = |   | 	auxiliary output file name
+int     | npml | =20 |   | 	
+float   | omega | = |   | 	
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+file    | receiver | = |   | 	auxiliary input file name
+file    | record | = |   | 	auxiliary input file name
+file    | source | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

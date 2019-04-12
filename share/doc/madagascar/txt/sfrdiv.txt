@@ -1,0 +1,12 @@
+Program sfrdiv | Rough division. 
+[SYNOPSIS]
+sfrdiv < fnum.rsf den=fden.rsf > frat.rsf niter=100 niter2=1 verb=y eps=0.01 perc=50.0
+[PARAMETERS]
+file    | den | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+int     | niter | =100 |   | 	number of iterations 
+int     | niter2 | =1 |   | 	number of outer iterations 
+float   | perc | =50.0 |   | 	percentage for sharpening 
+bool    | verb | =y |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/fomels

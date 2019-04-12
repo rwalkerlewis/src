@@ -1,0 +1,27 @@
+Program sfpveltran3 | Slope-based tau-p 3D velocity transform for elliptical anisotropy.
+[SYNOPSIS]
+sfpveltran3 < input.rsf > velx.rsf vely=vely.rsf velxy=velxy.rsf cmp=cmp.rsf dipx=dipx.rsf dipy=dipy.rsf dipxy=dipxy.rsf map=n interval=n nvx= vx0= dvx= nvy=nvx vy0=vx0 dvy=dvx nvxy=101 vxy0=-0.1 dvxy=0.1 nw=4
+[COMMENTS]
+* The program returns the squared velocity vx,vy,vxy spectra or maps
+
+[PARAMETERS]
+string  | cmp | = |   | 	auxiliary input file name
+string  | dipx | = |   | 	auxiliary input file name
+string  | dipxy | = |   | 	auxiliary input file name
+string  | dipy | = |   | 	auxiliary input file name
+float   | dvx | = |   | 	vx squared velocity sampling 
+float   | dvxy | =0.1 |   | 	vxy   velocity sampling 
+float   | dvy | =dvx |   | 	vy squared  velocity sampling 
+bool    | interval | =n |  [y/n] | 	interval values by 3D stripping equations 
+bool    | map | =n |  [y/n] | 	output maps instead of coherency panels 
+int     | nvx | = |   | 	number of vx squared velocities 
+int     | nvxy | =101 |   | 	number of vxy velocities 
+int     | nvy | =nvx |   | 	number of vy squared velocities  
+int     | nw | =4 |   | 	interpolator size (2,3,4,6,8) 
+file    | velxy | = |   | 	auxiliary output file name
+file    | vely | = |   | 	auxiliary output file name
+float   | vx0 | = |   | 	vx squared velocity origin 
+float   | vxy0 | =-0.1 |   | 	vxy   velocity origin 
+float   | vy0 | =vx0 |   | 	vy squared  velocity origin 
+[DIRECTORY]
+system/seismic

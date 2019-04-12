@@ -1,0 +1,16 @@
+Program sfadjgradient2d_coupled | Gradient adjoint-state calculation for image-domain WET 
+[SYNOPSIS]
+sfadjgradient2d_coupled < Fvel1.rsf xig1=Fxig1.rsf us1=Fus1.rsf ur1=Fur1.rsf > Fgr1.rsf vel2=Fvel2.rsf xig2=Fxig2.rsf us2=Fus2.rsf ur2=Fur2.rsf gr2=Fgr2.rsf nxtap=40 verbose=n
+[PARAMETERS]
+file    | gr2 | = |   | 	auxiliary output file name
+int     | nxtap | =40 |   | 	TAPER size 
+file    | ur1 | = |   | 	auxiliary input file name
+file    | ur2 | = |   | 	auxiliary input file name
+file    | us1 | = |   | 	auxiliary input file name
+file    | us2 | = |   | 	auxiliary input file name
+file    | vel2 | = |   | 	auxiliary input file name
+bool    | verbose | =n |  [y/n] | 	VERBOSITY flag 
+file    | xig1 | = |   | 	auxiliary input file name
+file    | xig2 | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jeff

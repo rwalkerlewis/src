@@ -1,0 +1,8 @@
+Program sfsubplot | subplot by python
+[SYNOPSIS]
+sfsubplot < input.rsf np1=1 np2=n2
+[PARAMETERS]
+int     | np1 | =1 |   | 	subplot(np2,np1)
+int     | np2 | =n2 |   | 	subplot(np2,np1)
+[DIRECTORY]
+user/chen

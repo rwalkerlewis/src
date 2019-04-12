@@ -1,0 +1,45 @@
+Program sfopame2d | 2-D opam for elastic wave modeling and vector field decompostion 
+[SYNOPSIS]
+sfopame2d vp=fvelp.rsf vs=fvels.rsf < fsource.rsf > fwavup.rsf wavwp=fwavwp.rsf wavus=fwavus.rsf wavws=fwavws.rsf wavu=fwavu.rsf wavw=fwavw.rsf Guxxl=Guxxl.rsf Guxxr=Guxxr.rsf Gwxzpl=Gwxzpl.rsf Gwxzpr=Gwxzpr.rsf Guxzpl=Guxzpl.rsf Guxzpr=Guxzpr.rsf Gwzzl=Gwzzl.rsf Gwzzr=Gwzzr.rsf Guzzl=Guzzl.rsf Guzzr=Guzzr.rsf Gwxzsl=Gwxzsl.rsf Gwxzsr=Gwxzsr.rsf Gwxxl=Gwxxl.rsf Gwxxr=Gwxxr.rsf Guxzsl=Guxzsl.rsf Guxzsr=Guxzsr.rsf opt=0 dt= nt= isx= isz= nbt=44 nbb=44 nxl=44 nxr=44 czt=0.01 czb=0.01 cxl=0.01 cxr=0.01 cmplx=n pad1=1 snap=1
+[PARAMETERS]
+file    | Guxxl | = |   | 	auxiliary input file name
+file    | Guxxr | = |   | 	auxiliary input file name
+file    | Guxzpl | = |   | 	auxiliary input file name
+file    | Guxzpr | = |   | 	auxiliary input file name
+file    | Guxzsl | = |   | 	auxiliary input file name
+file    | Guxzsr | = |   | 	auxiliary input file name
+file    | Guzzl | = |   | 	auxiliary input file name
+file    | Guzzr | = |   | 	auxiliary input file name
+file    | Gwxxl | = |   | 	auxiliary input file name
+file    | Gwxxr | = |   | 	auxiliary input file name
+file    | Gwxzpl | = |   | 	auxiliary input file name
+file    | Gwxzpr | = |   | 	auxiliary input file name
+file    | Gwxzsl | = |   | 	auxiliary input file name
+file    | Gwxzsr | = |   | 	auxiliary input file name
+file    | Gwzzl | = |   | 	auxiliary input file name
+file    | Gwzzr | = |   | 	auxiliary input file name
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+float   | cxl | =0.01 |   | 	decaying parameter
+float   | cxr | =0.01 |   | 	decaying parameter
+float   | czb | =0.01 |   | 	decaying parameter
+float   | czt | =0.01 |   | 	decaying parameter
+float   | dt | = |   | 	
+int     | isx | = |   | 	
+int     | isz | = |   | 	
+int     | nbb | =44 |   | 	
+int     | nbt | =44 |   | 	
+int     | nt | = |   | 	
+int     | nxl | =44 |   | 	
+int     | nxr | =44 |   | 	assume ABC pars are the same 
+int     | opt | =0 |   | 	if y, determine optimal size for efficiency 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+int     | snap | =1 |   | 	
+file    | vp | = |   | 	auxiliary input file name
+file    | vs | = |   | 	auxiliary input file name
+file    | wavu | = |   | 	auxiliary output file name
+file    | wavus | = |   | 	auxiliary output file name
+file    | wavw | = |   | 	auxiliary output file name
+file    | wavwp | = |   | 	auxiliary output file name
+file    | wavws | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/junyan

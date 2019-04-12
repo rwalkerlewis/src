@@ -1,0 +1,8 @@
+Program sfshuffle2 | Shuffling an array 
+[SYNOPSIS]
+sfshuffle2 < bshuffle.rsf > ashuffle.rsf iteration=1 seed=2012
+[PARAMETERS]
+int     | iteration | =1 |   | 	
+int     | seed | =2012 |   | 	
+[DIRECTORY]
+user/parvaneh

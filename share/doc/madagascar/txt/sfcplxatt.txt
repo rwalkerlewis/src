@@ -1,0 +1,5 @@
+Program sfcplxatt | Statistical attributes for circular data. 
+[SYNOPSIS]
+sfcplxatt < in.rsf > out.rsf
+[DIRECTORY]
+user/browaeys

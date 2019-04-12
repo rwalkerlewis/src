@@ -1,0 +1,194 @@
+
+    <!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <html><head><title>RSF: sftahmute</title>
+    <style type="text/css"><!--
+    TT { font-family: lucidatypewriter, lucida console, courier }
+    --></style></head><body bgcolor="#f0f0f8">
+    
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#7799ee">
+    <td valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sftahmute</strong></big></big> (2.1-git)</font></td
+    ><td align=right valign=bottom
+    ><font color="#ffffff" face="helvetica, arial"><a href="./index.html">index</a><br><a href="https://github.com/ahay/src/blob/madagascar-2.1-git/user/karl/Mtahmute.c">user/karl/Mtahmute.c</a></font></td></tr></table>
+    Read Trace And Header (tah) from standard input, MUTE.
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#aa55cc">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">sftahmute < in.rsf > out.rsf xmute= tmute= verbose=1 ntaper=12</td></tr></table><br>
+tah is the abbreviation of Trace And Header.  Madagascar programs <br>
+that begin with sftah are a designed to:<br>
+1- read trace and headers from separate rsf files and write them to <br>
+standard output (ie sftahread)<br>
+2- filter programs that read and write standard input/output and <br>
+process the tah data (eg sftahnmo, sftahstack)<br>
+3- read tah data from standard input and write separate rsf files for <br>
+the trace and headers data (ie sftahwrite)<br>
+<br>
+These programs allow Seismic Unix (su) like processing in Madagascar.  <br>
+Some programs have su like names.<br>
+<br>
+Some programs in this suite are sftahread, sftahgethw, ftahhdrmath, <br>
+and sftahwrite.<br>
+<br>
+The sftahmute program is designed to mute data. Trace and header data <br>
+(tah) are read from standard input (usually a pipe).  The trace xmute <br>
+and tmute parameter define the mute start time.  They are interpolated <br>
+to determine the start time for the trace using the trace header <br>
+offset.  The ntaper defines the length in samples of the taper.<br>
+<br>
+EXAMPLE:<br>
+<br>
+sftahsort input=shots-receivers-23900_headfix.rsf           \<br>
+sort="xline:600,601 offset"                                 \<br>
+| sftahnmo tnmo=0,2,6,10.5,16 vnmo=1500,1500,2250,3250,3700 \<br>
+| sftahmute                                                 \<br>
+xmute=0,20000 tmute=0,20 ntaper=25                          \<br>
+| sftahnmo                                                  \<br>
+tnmo=0,2,6,10.5,16                                          \<br>
+vnmo=1500,1500,2250,3250,3700                               \<br>
+inv=y                                                       \<br>
+| sftahmakeskey pkey=xline skey=cdpt                        \<br>
+| sftahwrite                                                \<br>
+verbose=1                                                   \<br>
+label2=cdpt  o2=1 n2=100 d2=1                               \<br>
+label3=xline o3=600 n3=1 d3=1                               \<br>
+output=mutecmps.rsf                                         \<br>
+>/dev/null<br>
+<br>
+sfgrey <mutecmps.rsf | sfpen<br>
+<br>
+In this example the shot organized prestack data in the file <br>
+shots-receivers-23900_headfix.rsf are read in xline offset order by <br>
+sftahsort program.  The headers are in the file <br>
+shots-receivers-23900_headfix_hdr.rsf, the headers parameter default.<br>
+The headers are merged with the trace amplitudes and the tah data sent <br>
+down the pipe for nmo, mute, and inverse nmo.  This sequence was used <br>
+to apply the mute using times that were selected from a prestack <br>
+gather with moveout applied.<br>
+<br>
+The sftahnmo program uses the velocity function defined by the tnmo, <br>
+vnmo parameters and the offset header to apply normal moveout to <br>
+the traces.  <br>
+<br>
+sftahmute zeros the shallow data.  TLhe time samples above the line <br>
+through (time,offset) pairs (0,0)(20,20000), are set to zero. There <br>
+is a 25 point taper applied below the zero portion of the traces.<br>
+<br>
+A second sftahnmo execution applied inverse nmoout.  Other than inv=yes <br>
+the parameters are the same as in the first sftahnmo. <br>
+<br>
+The program sftahmakeskey is used to create a secondary key used <br>
+in the following sftahwrite to define the location to wrte the trace <br>
+in the output file. Sftahmakeskey makes a secondary key (skey=cdpt) <br>
+the count the traces starting in the a primary key gather (pkey=xline).<br>
+The input traces gathered by xline by sftahsort. Sftahmakeskey sets <br>
+cdpt to 1 when the trace has a new xline.  If the trace has the same <br>
+xline as the previous trace cdpt is incremented<br>
+<br>
+Sftahwrite writes the the trace data to mutecmp.rsf and the headers are <br>
+written to the file mutecmp_hdr.rsf.  The order of the data in the output <br>
+file is defined by the cdpt and xline trace headers, so the  data order<br>
+is (time,cmpt,xline).  Finally, the output volume is displayed using<br>
+sfgrey.<br>
+<br>
+
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ee77aa">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Parameters</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ntaper=12</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+       number of samples in the taper of the mute.<br>
+    <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>floats  <strong>tmute=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+	   List of floats the same length as list of floats in the xmute<br>
+	   parameter.  The (xmute,tmute) pairs are interpolated using the<br>
+	   trace headers offset to determine trace start time. The mute is<br>
+	   NOT moved based on the first live sample.<br>
+	   <br>
+  [numtmute]<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>verbose=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+       flag to control amount of print<br>
+       0 terse, 1 informative, 2 chatty, 3 debug<br>
+    <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>floats  <strong>xmute=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+	   List of floats the same length as list of floats in the tmute<br>
+	   parameter.  The (xmute,tmute) pairs are interpolated using the<br>
+	   trace headers offset to determine trace start time.  The mute is<br>
+	   NOT moved based on the first live sample.<br>
+	   <br>
+  [numxmute]<br>
+</font></td></tr></table>
+    
+</td></tr></table>
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#eeaa77">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Used In</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ffd8c8">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#000000" face="helvetica, arial"><big><strong>DATA</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ffd8c8"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+                        <a href="book/data/teapotdome/firstlook.html">teapotdome/firstlook</a><br>
+                        
+                        <a href="book/data/teapotdome/scdecon.html">teapotdome/scdecon</a><br>
+                        
+                        <a href="book/data/teapotdome/vels.html">teapotdome/vels</a><br>
+                        
+                        <a href="book/data/teapotdome/zomig.html">teapotdome/zomig</a><br>
+                        </td></tr></table></td></tr></table>
+    </body></html>

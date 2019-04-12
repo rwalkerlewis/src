@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.recipes.deblend2</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.recipes-module.html">Package&nbsp;recipes</a> ::
+        Module&nbsp;deblend2
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.recipes.deblend2-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.recipes.deblend2-module.html">Module rsf.recipes.deblend2</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">## This is a script for the test of deblending using sparsity promotion with shaping regularization (Using the SNR definition from Araz).</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">## Copyright (C) 2013</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">## Yangkang Chen, The Univeristy of Texas at Austin</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">## The are several assumptions for implementing the following scripts:</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">## 1. data1 and data2 have the same dimensions</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">## 2. data1 and data2 are sparse in fourier or seislet domains</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">## 3. the unblended data is known (in other words it's used for testing).</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">##    Otherwise, the unblended1(2) is substituted by blended1(2), in which case</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">##    The error diagram has no physical meanings.</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package rsf=rsf-module.html"><a title="rsf" class="py-name" href="#" onclick="return doclink('link-0', 'rsf', 'link-0');">rsf</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module rsf.proj=rsf.proj-module.html"><a title="rsf.proj" class="py-name" href="#" onclick="return doclink('link-1', 'proj', 'link-1');">proj</a></tt> <tt class="py-keyword">import</tt><tt class="py-op">*</tt> </tt>
+<a name="Grey"></a><div id="Grey-def"><a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="Grey-toggle" onclick="return toggle('Grey');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#Grey">Grey</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">other</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Grey-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Grey-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt id="link-2" class="py-name" targets="Function rsf.cluster.Result()=rsf.cluster-module.html#Result,Method rsf.proj.Project.Result()=rsf.proj.Project-class.html#Result,Function rsf.proj.Result()=rsf.proj-module.html#Result"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-2', 'Result', 'link-2');">Result</a></tt><tt class="py-op">(</tt><tt id="link-3" class="py-name" targets="Variable rsf.doc.data=rsf.doc-module.html#data"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-3', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'grey label2=Trace unit2="" label1=Time unit1="s" title="" wherexlabel=b wheretitle=t color=b %s'</tt><tt class="py-op">%</tt><tt id="link-4" class="py-name" targets="Method rsf.wxvpconvert.MainFrame.other()=rsf.wxvpconvert.MainFrame-class.html#other"><a title="rsf.wxvpconvert.MainFrame.other" class="py-name" href="#" onclick="return doclink('link-4', 'other', 'link-4');">other</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="Greyplot"></a><div id="Greyplot-def"><a name="L19"></a><tt class="py-lineno"> 19</tt> <a class="py-toggle" href="#" id="Greyplot-toggle" onclick="return toggle('Greyplot');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#Greyplot">Greyplot</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">other</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Greyplot-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Greyplot-expanded"><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt id="link-5" class="py-name" targets="Function rsf.cluster.Plot()=rsf.cluster-module.html#Plot,Function rsf.proj.Plot()=rsf.proj-module.html#Plot,Method rsf.proj.Project.Plot()=rsf.proj.Project-class.html#Plot"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-5', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-6', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'grey label2=Trace unit2="" label1=Time unit1="s" title="" wherexlabel=b wheretitle=t color=b %s'</tt><tt class="py-op">%</tt><tt id="link-7" class="py-name"><a title="rsf.wxvpconvert.MainFrame.other" class="py-name" href="#" onclick="return doclink('link-7', 'other', 'link-4');">other</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="Graph"></a><div id="Graph-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="Graph-toggle" onclick="return toggle('Graph');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#Graph">Graph</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">other</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Graph-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Graph-expanded"><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt id="link-8" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-8', 'Result', 'link-2');">Result</a></tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-9', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'graph label1="" label2="" unit1="" unit2=""  title="" wherexlabel=b wheretitle=t %s'</tt> <tt class="py-op">%</tt><tt id="link-10" class="py-name"><a title="rsf.wxvpconvert.MainFrame.other" class="py-name" href="#" onclick="return doclink('link-10', 'other', 'link-4');">other</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="Graphplot"></a><div id="Graphplot-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="Graphplot-toggle" onclick="return toggle('Graphplot');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#Graphplot">Graphplot</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">other</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Graphplot-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Graphplot-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt id="link-11" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-11', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-12', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'graph label1="" label2="" unit1="" unit2=""  title="" wherexlabel=b wheretitle=t %s'</tt> <tt class="py-op">%</tt><tt id="link-13" class="py-name"><a title="rsf.wxvpconvert.MainFrame.other" class="py-name" href="#" onclick="return doclink('link-13', 'other', 'link-4');">other</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="shapeslet"></a><div id="shapeslet-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="shapeslet-toggle" onclick="return toggle('shapeslet');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#shapeslet">shapeslet</a><tt class="py-op">(</tt><tt class="py-param">sig1</tt><tt class="py-op">,</tt><tt class="py-param">sig2</tt><tt class="py-op">,</tt><tt class="py-param">dip1</tt><tt class="py-op">,</tt><tt class="py-param">dip2</tt><tt class="py-op">,</tt><tt class="py-param">mute1</tt><tt class="py-op">,</tt><tt class="py-param">mute2</tt><tt class="py-op">,</tt><tt class="py-param">padno</tt><tt class="py-op">,</tt><tt class="py-param">n2</tt><tt class="py-op">,</tt><tt class="py-param">mode</tt><tt class="py-op">,</tt><tt class="py-param">thr</tt><tt class="py-op">,</tt><tt class="py-param">i</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-comment">#mute1(2) is a string, when there is no mute, mute1(2) is "cp"</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt id="link-14" class="py-name" targets="Function rsf.cluster.Flow()=rsf.cluster-module.html#Flow,Function rsf.flow.Flow()=rsf.flow-module.html#Flow,Module rsf.gui.Flow=rsf.gui.Flow-module.html,Class rsf.gui.Flow.Flow=rsf.gui.Flow.Flow-class.html,Function rsf.proj.Flow()=rsf.proj-module.html#Flow,Method rsf.proj.Project.Flow()=rsf.proj.Project-class.html#Flow"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-14', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">dip1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-string">         %s |pad n2=%g  |</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-string">         seislet dip=${SOURCES[1]} eps=0.1</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-string">                  adj=y inv=y unit=y type=b |</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-string">         threshold1 type=%s ifperc=1 thr=%f |</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-string">         seislet dip=${SOURCES[1]} eps=0.1</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-string">                        inv=y unit=y type=b |</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-string">         window n2=%g |%s</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">mute1</tt><tt class="py-op">,</tt><tt class="py-name">padno</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">,</tt><tt class="py-name">thr</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">mute1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt id="link-15" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-15', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-name">dip2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-string">         %s|pad n2=%g  |</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-string">         seislet dip=${SOURCES[1]} eps=0.1</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-string">                  adj=y inv=y unit=y type=b |</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-string">         threshold1 type=%s ifperc=1 thr=%f |</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-string">         seislet dip=${SOURCES[1]} eps=0.1</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-string">                        inv=y unit=y type=b |</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string">         window n2=%g | %s</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">mute2</tt><tt class="py-op">,</tt><tt class="py-name">padno</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">,</tt><tt class="py-name">thr</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">mute2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="shapefft"></a><div id="shapefft-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="shapefft-toggle" onclick="return toggle('shapefft');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#shapefft">shapefft</a><tt class="py-op">(</tt><tt class="py-param">sig1</tt><tt class="py-op">,</tt><tt class="py-param">sig2</tt><tt class="py-op">,</tt><tt class="py-param">mute1</tt><tt class="py-op">,</tt><tt class="py-param">mute2</tt><tt class="py-op">,</tt><tt class="py-param">mode</tt><tt class="py-op">,</tt><tt class="py-param">thr</tt><tt class="py-op">,</tt><tt class="py-param">i</tt><tt class="py-op">)</tt><tt class="py-op">:</tt><tt class="py-comment">#mute1(2) is a string, when there is no mute, mute1(2) is "cp"</tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt id="link-16" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-16', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-string">         %s|fft1 | fft3 axis=2 pad=1|</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-string">         threshold1 type=%s ifperc=1 thr=%f |</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-string">         fft3 inv=y axis=2 | fft1 inv=y |%s</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">mute1</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">,</tt><tt class="py-name">thr</tt><tt class="py-op">,</tt><tt class="py-name">mute1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt id="link-17" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-17', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-string">         %s|fft1 | fft3 axis=2 pad=1|</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-string">         threshold1 type=%s ifperc=1 thr=%f |</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string">         fft3 inv=y axis=2 | fft1 inv=y | %s</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">mute2</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">,</tt><tt class="py-name">thr</tt><tt class="py-op">,</tt><tt class="py-name">mute2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="shapefxdecon"></a><div id="shapefxdecon-def"><a name="L66"></a><tt class="py-lineno"> 66</tt> <a class="py-toggle" href="#" id="shapefxdecon-toggle" onclick="return toggle('shapefxdecon');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#shapefxdecon">shapefxdecon</a><tt class="py-op">(</tt><tt class="py-param">sig1</tt><tt class="py-op">,</tt><tt class="py-param">sig2</tt><tt class="py-op">,</tt><tt class="py-param">mute1</tt><tt class="py-op">,</tt><tt class="py-param">mute2</tt><tt class="py-op">,</tt><tt class="py-param">n2</tt><tt class="py-op">,</tt><tt class="py-param">i</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-comment">#mute1(2) is a string, when there is no mute, mute1(2) is "cp"</tt> </tt>
+</div><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt id="link-18" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-18', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-string">         %s | fxdecon n2w=%g</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-string">         |%s</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">mute1</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">mute1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt id="link-19" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-19', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-string">         %s | fxdecon n2w=%g</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-string">         |%s</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">mute2</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">mute2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">+</tt><tt class="py-string">"p%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="step"></a><div id="step-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="step-toggle" onclick="return toggle('step');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#step">step</a><tt class="py-op">(</tt><tt class="py-param">sig1</tt><tt class="py-op">,</tt><tt class="py-param">sig2</tt><tt class="py-op">,</tt><tt class="py-param">blended1</tt><tt class="py-op">,</tt><tt class="py-param">blended2</tt><tt class="py-op">,</tt><tt class="py-param">init1</tt><tt class="py-op">,</tt><tt class="py-param">init2</tt><tt class="py-op">,</tt><tt class="py-param">shottime1</tt><tt class="py-op">,</tt><tt class="py-param">shottime2</tt><tt class="py-op">,</tt><tt class="py-param">i</tt><tt class="py-op">,</tt><tt class="py-param">n2</tt><tt class="py-op">,</tt><tt class="py-param">fraction</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="step-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="step-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-comment">#    Flow(init1+'sigtemp'+'%g'%(i+1),[sig1,sig2],'cat axis=2 ${SOURCES[1]}')</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-comment">#    Flow(init1+'shottimetemp'+'%g'%(i+1),[shottime1,shottime2],'cat axis=2 ${SOURCES[1]}')</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-comment">#    Flow(init1+'blendedtemp'+'%g'%(i+1),[init1+'sigtemp'+'%g'%(i+1),init1+'shottimetemp'+'%g'%(i+1)],</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-comment">#       '''</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-comment">#       blend shot_time_in=${SOURCES[1]} shot_time_out=${SOURCES[1]}</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-comment">#       ''')</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-comment">#    Flow(init1+"%g"%(i+1),[init1+'blendedtemp'+'%g'%(i+1),blended1,sig1],</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-comment">#         '''</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-comment">#         window n2=%g | add scale=-1,1 ${SOURCES[1]} | add scale=%g,%g ${SOURCES[2]}</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-comment">#         '''%(n2,fraction,1))</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-comment">#    Flow(init2+"%g"%(i+1),[init1+'blendedtemp'+'%g'%(i+1),blended2,sig2],</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-comment">#         '''</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-comment">#         window n2=%g f2=%g | add scale=-1,1 ${SOURCES[1]} | add scale=%g,%g ${SOURCES[2]}</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-comment">#         '''%(n2,n2-1,fraction,1))</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt id="link-20" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-20', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">"%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-name">shottime1</tt><tt class="py-op">,</tt><tt class="py-name">shottime2</tt><tt class="py-op">,</tt><tt class="py-name">blended1</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-string">          blend shot_time_in=${SOURCES[2]} shot_time_out=${SOURCES[1]}</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-string">            | add scale=%f,%f,%f ${SOURCES[3]} ${SOURCES[4]}</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-name">fraction</tt><tt class="py-op">,</tt><tt class="py-name">fraction</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">-</tt><tt class="py-name">fraction</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt id="link-21" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-21', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">"%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">shottime2</tt><tt class="py-op">,</tt><tt class="py-name">shottime1</tt><tt class="py-op">,</tt><tt class="py-name">blended2</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-string">          blend shot_time_in=${SOURCES[2]} shot_time_out=${SOURCES[1]}</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-string">            | add scale=%f,%f,%f ${SOURCES[3]} ${SOURCES[4]}</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-name">fraction</tt><tt class="py-op">,</tt><tt class="py-name">fraction</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">-</tt><tt class="py-name">fraction</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">"%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">"%g"</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="deblendfft"></a><div id="deblendfft-def"><a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="deblendfft-toggle" onclick="return toggle('deblendfft');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#deblendfft">deblendfft</a><tt class="py-op">(</tt><tt class="py-param">unblended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">          <tt class="py-param">unblended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">          <tt class="py-param">blended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">          <tt class="py-param">blended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">          <tt class="py-param">init1</tt><tt class="py-op">,</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">          <tt class="py-param">init2</tt><tt class="py-op">,</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">          <tt class="py-param">deblended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">          <tt class="py-param">deblended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">          <tt class="py-param">shottime1</tt><tt class="py-op">,</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">          <tt class="py-param">shottime2</tt><tt class="py-op">,</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">          <tt class="py-param">mute1</tt><tt class="py-op">,</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">          <tt class="py-param">mute2</tt><tt class="py-op">,</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">          <tt class="py-param">n1</tt><tt class="py-op">,</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">          <tt class="py-param">n2</tt><tt class="py-op">,</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">          <tt class="py-param">niter</tt><tt class="py-op">,</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">          <tt class="py-param">mode</tt><tt class="py-op">,</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">          <tt class="py-param">thr</tt><tt class="py-op">,</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">          <tt class="py-param">clip</tt><tt class="py-op">,</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">          <tt class="py-param">fraction</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="deblendfft-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="deblendfft-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-name">sig1</tt><tt class="py-op">,</tt> <tt class="py-name">sig2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">,</tt><tt class="py-name">init2</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-name">sigs1</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-name">sigs2</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt class="py-name">snrsa</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-name">snrsb</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt id="link-22" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-22', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'zero'</tt><tt class="py-op">,</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt><tt class="py-string">'math output=0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt id="link-23" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-23', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'energy1'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt> <tt class="py-string">'zero'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt id="link-24" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-24', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'energy2'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended2</tt><tt class="py-op">,</tt> <tt class="py-string">'zero'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-name">old1</tt><tt class="py-op">,</tt><tt class="py-name">old2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-name">snra</tt><tt class="py-op">=</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snra%g'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-name">snrb</tt><tt class="py-op">=</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrb%g'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt id="link-25" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-25', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">snra</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'energy1'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]} | math a=${SOURCES[2]} output="a/input"'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt id="link-26" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-26', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">snrb</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended2</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'energy2'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]} | math a=${SOURCES[2]} output="a/input"'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-name">nsig1</tt><tt class="py-op">,</tt><tt class="py-name">nsig2</tt><tt class="py-op">)</tt><tt class="py-op">=</tt><tt id="link-27" class="py-name" targets="Function rsf.recipes.deblend2.step()=rsf.recipes.deblend2-module.html#step"><a title="rsf.recipes.deblend2.step" class="py-name" href="#" onclick="return doclink('link-27', 'step', 'link-27');">step</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-name">blended1</tt><tt class="py-op">,</tt><tt class="py-name">blended2</tt><tt class="py-op">,</tt><tt class="py-name">init1</tt><tt class="py-op">,</tt><tt class="py-name">init2</tt><tt class="py-op">,</tt><tt class="py-name">shottime1</tt><tt class="py-op">,</tt><tt class="py-name">shottime2</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">fraction</tt><tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt><tt class="py-op">=</tt><tt id="link-28" class="py-name" targets="Function rsf.recipes.deblend2.shapefft()=rsf.recipes.deblend2-module.html#shapefft"><a title="rsf.recipes.deblend2.shapefft" class="py-name" href="#" onclick="return doclink('link-28', 'shapefft', 'link-28');">shapefft</a></tt><tt class="py-op">(</tt><tt class="py-name">nsig1</tt><tt class="py-op">,</tt><tt class="py-name">nsig2</tt><tt class="py-op">,</tt><tt class="py-name">mute1</tt><tt class="py-op">,</tt><tt class="py-name">mute2</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">,</tt><tt class="py-name">thr</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt id="link-29" class="py-name" targets="Function rsf.recipes.deblend2.Greyplot()=rsf.recipes.deblend2-module.html#Greyplot"><a title="rsf.recipes.deblend2.Greyplot" class="py-name" href="#" onclick="return doclink('link-29', 'Greyplot', 'link-29');">Greyplot</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'title="Esti R 1 (iter=%g)" clip=%g'</tt><tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">clip</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt id="link-30" class="py-name"><a title="rsf.recipes.deblend2.Greyplot" class="py-name" href="#" onclick="return doclink('link-30', 'Greyplot', 'link-29');">Greyplot</a></tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'title="Esti R 2 (iter=%g)" clip=%g'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">clip</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">sigs1</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">sigs2</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-name">snrsa</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">snra</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">snrsb</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">snrb</tt><tt class="py-op">)</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt id="link-31" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-31', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsa'</tt><tt class="py-op">,</tt><tt class="py-name">snrsa</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=2 ${SOURCES[1:%g]}|math output="10*log(input)/log(10)" | transp | put n1=%g o1=0 d1=1 '</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsa</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsa</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">    <tt id="link-32" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-32', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsb'</tt><tt class="py-op">,</tt><tt class="py-name">snrsb</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=2 ${SOURCES[1:%g]}|math output="10*log(input)/log(10)" | transp |  put n1=%g o1=0 d1=1'</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt id="link-33" class="py-name" targets="Function rsf.recipes.deblend2.Graph()=rsf.recipes.deblend2-module.html#Graph"><a title="rsf.recipes.deblend2.Graph" class="py-name" href="#" onclick="return doclink('link-33', 'Graph', 'link-33');">Graph</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsa'</tt><tt class="py-op">,</tt><tt class="py-string">'title="Data error 1" label1=Iteration label2="c(n)" symbosz=5 symbol="o" min1=0 max1=%g d1=1'</tt><tt class="py-op">%</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">    <tt id="link-34" class="py-name"><a title="rsf.recipes.deblend2.Graph" class="py-name" href="#" onclick="return doclink('link-34', 'Graph', 'link-33');">Graph</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsb'</tt><tt class="py-op">,</tt><tt class="py-string">'title="Data error 2" label1=Iteration label2="c(n)" symbosz=5 symbol="o" min1=0 max1=%g d1=1'</tt><tt class="py-op">%</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-comment">#Making movie</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">    <tt id="link-35" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-35', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-sigs1'</tt><tt class="py-op">,</tt><tt class="py-name">sigs1</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt id="link-36" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-36', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-sigs2'</tt><tt class="py-op">,</tt><tt class="py-name">sigs2</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">    <tt id="link-37" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-37', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">deblended1</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'cp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">    <tt id="link-38" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-38', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">deblended2</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'cp'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"> </tt>
+<a name="deblendslet"></a><div id="deblendslet-def"><a name="L170"></a><tt class="py-lineno">170</tt> <a class="py-toggle" href="#" id="deblendslet-toggle" onclick="return toggle('deblendslet');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#deblendslet">deblendslet</a><tt class="py-op">(</tt><tt class="py-param">unblended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">          <tt class="py-param">unblended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">          <tt class="py-param">blended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">          <tt class="py-param">blended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">          <tt class="py-param">init1</tt><tt class="py-op">,</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">          <tt class="py-param">init2</tt><tt class="py-op">,</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">          <tt class="py-param">deblended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">          <tt class="py-param">deblended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">          <tt class="py-param">shottime1</tt><tt class="py-op">,</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">          <tt class="py-param">shottime2</tt><tt class="py-op">,</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">          <tt class="py-param">mute1</tt><tt class="py-op">,</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">          <tt class="py-param">mute2</tt><tt class="py-op">,</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">          <tt class="py-param">n1</tt><tt class="py-op">,</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">          <tt class="py-param">n2</tt><tt class="py-op">,</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">          <tt class="py-param">r1</tt><tt class="py-op">,</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">          <tt class="py-param">r2</tt><tt class="py-op">,</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">          <tt class="py-param">padno</tt><tt class="py-op">,</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">          <tt class="py-param">niter</tt><tt class="py-op">,</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">          <tt class="py-param">ddip</tt><tt class="py-op">,</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">          <tt class="py-param">mode</tt><tt class="py-op">,</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">          <tt class="py-param">thr</tt><tt class="py-op">,</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">          <tt class="py-param">clip</tt><tt class="py-op">,</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">          <tt class="py-param">fhi</tt><tt class="py-op">,</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">          <tt class="py-param">fraction</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="deblendslet-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="deblendslet-expanded"><a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">    <tt id="link-39" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-39', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'mask'</tt><tt class="py-op">,</tt><tt class="py-name">blended1</tt><tt class="py-op">,</tt><tt class="py-string">'math output=1 | pad n2=%g'</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">padno</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">    <tt class="py-name">sig1</tt><tt class="py-op">,</tt> <tt class="py-name">sig2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">,</tt><tt class="py-name">init2</tt><tt class="py-op">)</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">    <tt class="py-name">sigs1</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">    <tt class="py-name">sigs2</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">    <tt class="py-name">sigs</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt class="py-name">snrsa</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">    <tt class="py-name">snrsb</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">    <tt id="link-40" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-40', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'zero'</tt><tt class="py-op">,</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt><tt class="py-string">'math output=0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">    <tt id="link-41" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-41', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'energy1'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt> <tt class="py-string">'zero'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">    <tt id="link-42" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-42', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'energy2'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended2</tt><tt class="py-op">,</tt> <tt class="py-string">'zero'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-comment">#######################################################################################</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-comment"># update dip map every "ddip" iterations</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-comment">#######################################################################################</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">i</tt> <tt class="py-op">%</tt> <tt class="py-name">ddip</tt> <tt class="py-op">==</tt><tt class="py-number">0</tt> <tt class="py-op">:</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">            <tt class="py-name">dip1</tt><tt class="py-op">=</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'dip%g'</tt><tt class="py-op">%</tt><tt id="link-43" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-43', 'int', 'link-43');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">/</tt><tt class="py-name">ddip</tt><tt class="py-op">)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">            <tt class="py-name">dip2</tt><tt class="py-op">=</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'udip%g'</tt><tt class="py-op">%</tt><tt id="link-44" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-44', 'int', 'link-43');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">/</tt><tt class="py-name">ddip</tt><tt class="py-op">)</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">            <tt id="link-45" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-45', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">dip1</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'mask'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">                    <tt class="py-string">'''</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt class="py-string">                    bandpass fhi=%g | pad n2=%g |</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-string">                    dip mask=${SOURCES[1]} rect1=%g rect2=%g</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-string">                    '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">fhi</tt><tt class="py-op">,</tt><tt class="py-name">padno</tt><tt class="py-op">,</tt><tt class="py-name">r1</tt><tt class="py-op">,</tt><tt class="py-name">r2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">            <tt id="link-46" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-46', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">dip2</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'mask'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">                    <tt class="py-string">'''</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-string">                    bandpass fhi=%g | pad n2=%g |</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-string">                    dip mask=${SOURCES[1]} rect1=%g rect2=%g</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"><tt class="py-string">                    '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">fhi</tt><tt class="py-op">,</tt><tt class="py-name">padno</tt><tt class="py-op">,</tt><tt class="py-name">r1</tt><tt class="py-op">,</tt><tt class="py-name">r2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"><tt class="py-comment">#######################################################################################</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt class="py-name">old1</tt><tt class="py-op">,</tt><tt class="py-name">old2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-name">snra</tt><tt class="py-op">=</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snra%g'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-name">snrb</tt><tt class="py-op">=</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrb%g'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">        <tt id="link-47" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-47', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">snra</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'energy1'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]} | math a=${SOURCES[2]} output="a/input"'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt id="link-48" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-48', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">snrb</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended2</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'energy2'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]} | math a=${SOURCES[2]} output="a/input"'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-name">nsig1</tt><tt class="py-op">,</tt><tt class="py-name">nsig2</tt><tt class="py-op">)</tt><tt class="py-op">=</tt><tt id="link-49" class="py-name"><a title="rsf.recipes.deblend2.step" class="py-name" href="#" onclick="return doclink('link-49', 'step', 'link-27');">step</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-name">blended1</tt><tt class="py-op">,</tt><tt class="py-name">blended2</tt><tt class="py-op">,</tt><tt class="py-name">init1</tt><tt class="py-op">,</tt><tt class="py-name">init2</tt><tt class="py-op">,</tt><tt class="py-name">shottime1</tt><tt class="py-op">,</tt><tt class="py-name">shottime2</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">fraction</tt><tt class="py-op">)</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt><tt class="py-op">=</tt><tt id="link-50" class="py-name" targets="Function rsf.recipes.deblend2.shapeslet()=rsf.recipes.deblend2-module.html#shapeslet"><a title="rsf.recipes.deblend2.shapeslet" class="py-name" href="#" onclick="return doclink('link-50', 'shapeslet', 'link-50');">shapeslet</a></tt><tt class="py-op">(</tt><tt class="py-name">nsig1</tt><tt class="py-op">,</tt><tt class="py-name">nsig2</tt><tt class="py-op">,</tt><tt class="py-name">dip1</tt><tt class="py-op">,</tt><tt class="py-name">dip2</tt><tt class="py-op">,</tt><tt class="py-name">mute1</tt><tt class="py-op">,</tt><tt class="py-name">mute2</tt><tt class="py-op">,</tt><tt class="py-name">padno</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">,</tt><tt class="py-name">thr</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt id="link-51" class="py-name"><a title="rsf.recipes.deblend2.Greyplot" class="py-name" href="#" onclick="return doclink('link-51', 'Greyplot', 'link-29');">Greyplot</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'title="Esti R 1 (iter=%g)" clip=%g'</tt><tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">clip</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">        <tt id="link-52" class="py-name"><a title="rsf.recipes.deblend2.Greyplot" class="py-name" href="#" onclick="return doclink('link-52', 'Greyplot', 'link-29');">Greyplot</a></tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'title="Esti R 2 (iter=%g)" clip=%g'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">clip</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line"> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">        <tt class="py-name">sigs1</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-name">sigs2</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt id="link-53" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-53', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">'t'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'SideBySideAniso'</tt><tt class="py-op">)</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">        <tt class="py-name">sigs</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">+</tt><tt class="py-string">'t'</tt><tt class="py-op">)</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt class="py-name">snrsa</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">snra</tt><tt class="py-op">)</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">        <tt class="py-name">snrsb</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">snrb</tt><tt class="py-op">)</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">    <tt id="link-54" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-54', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsa'</tt><tt class="py-op">,</tt><tt class="py-name">snrsa</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=2 ${SOURCES[1:%g]}|math output="10*log(input)/log(10)" | transp | put n1=%g o1=0 d1=1 '</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsa</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">    <tt id="link-55" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-55', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsb'</tt><tt class="py-op">,</tt><tt class="py-name">snrsb</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=2 ${SOURCES[1:%g]}|math output="10*log(input)/log(10)" | transp |  put n1=%g o1=0 d1=1'</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">    <tt id="link-56" class="py-name"><a title="rsf.recipes.deblend2.Graph" class="py-name" href="#" onclick="return doclink('link-56', 'Graph', 'link-33');">Graph</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsa'</tt><tt class="py-op">,</tt><tt class="py-string">'title="Data error 1" label1=Iteration label2="c(n)" symbosz=5 symbol="o" min1=0 max1=%g d1=1'</tt><tt class="py-op">%</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">    <tt id="link-57" class="py-name"><a title="rsf.recipes.deblend2.Graph" class="py-name" href="#" onclick="return doclink('link-57', 'Graph', 'link-33');">Graph</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsb'</tt><tt class="py-op">,</tt><tt class="py-string">'title="Data error 2" label1=Iteration label2="c(n)" symbosz=5 symbol="o" min1=0 max1=%g d1=1'</tt><tt class="py-op">%</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"><tt class="py-comment">#Making movie</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">    <tt id="link-58" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-58', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-sigs1'</tt><tt class="py-op">,</tt><tt class="py-name">sigs1</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">    <tt id="link-59" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-59', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-sigs2'</tt><tt class="py-op">,</tt><tt class="py-name">sigs2</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">    <tt id="link-60" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-60', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-sigs'</tt><tt class="py-op">,</tt><tt class="py-name">sigs</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">    <tt id="link-61" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-61', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">deblended1</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'cp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">    <tt id="link-62" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-62', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">deblended2</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'cp'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"> </tt>
+<a name="deblendfxdecon"></a><div id="deblendfxdecon-def"><a name="L260"></a><tt class="py-lineno">260</tt> <a class="py-toggle" href="#" id="deblendfxdecon-toggle" onclick="return toggle('deblendfxdecon');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.deblend2-module.html#deblendfxdecon">deblendfxdecon</a><tt class="py-op">(</tt><tt class="py-param">unblended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">          <tt class="py-param">unblended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">          <tt class="py-param">blended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">          <tt class="py-param">blended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">          <tt class="py-param">init1</tt><tt class="py-op">,</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">          <tt class="py-param">init2</tt><tt class="py-op">,</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">          <tt class="py-param">deblended1</tt><tt class="py-op">,</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">          <tt class="py-param">deblended2</tt><tt class="py-op">,</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">          <tt class="py-param">shottime1</tt><tt class="py-op">,</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">          <tt class="py-param">shottime2</tt><tt class="py-op">,</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">          <tt class="py-param">mute1</tt><tt class="py-op">,</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">          <tt class="py-param">mute2</tt><tt class="py-op">,</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">          <tt class="py-param">n1</tt><tt class="py-op">,</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">          <tt class="py-param">n2</tt><tt class="py-op">,</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">          <tt class="py-param">niter</tt><tt class="py-op">,</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">          <tt class="py-param">clip</tt><tt class="py-op">,</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">          <tt class="py-param">fraction</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="deblendfxdecon-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="deblendfxdecon-expanded"><a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">    <tt class="py-name">sig1</tt><tt class="py-op">,</tt> <tt class="py-name">sig2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">,</tt><tt class="py-name">init2</tt><tt class="py-op">)</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">    <tt class="py-name">sigs1</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">    <tt class="py-name">sigs2</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">    <tt class="py-name">snrsa</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">    <tt class="py-name">snrsb</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">    <tt id="link-63" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-63', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'zero'</tt><tt class="py-op">,</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt><tt class="py-string">'math output=0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">    <tt id="link-64" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-64', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'energy1'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt> <tt class="py-string">'zero'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">    <tt id="link-65" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-65', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'energy2'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended2</tt><tt class="py-op">,</tt> <tt class="py-string">'zero'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"><tt class="py-comment">#######################################################################################</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">        <tt class="py-name">old1</tt><tt class="py-op">,</tt><tt class="py-name">old2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">        <tt class="py-name">snra</tt><tt class="py-op">=</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snra%g'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">        <tt class="py-name">snrb</tt><tt class="py-op">=</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrb%g'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">        <tt id="link-66" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-66', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">snra</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended1</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'energy1'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]} | math a=${SOURCES[2]} output="a/input"'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">        <tt id="link-67" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-67', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">snrb</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">unblended2</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'energy2'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'diff match=${SOURCES[1]} | math a=${SOURCES[2]} output="a/input"'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-name">nsig1</tt><tt class="py-op">,</tt><tt class="py-name">nsig2</tt><tt class="py-op">)</tt><tt class="py-op">=</tt><tt id="link-68" class="py-name"><a title="rsf.recipes.deblend2.step" class="py-name" href="#" onclick="return doclink('link-68', 'step', 'link-27');">step</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-name">blended1</tt><tt class="py-op">,</tt><tt class="py-name">blended2</tt><tt class="py-op">,</tt><tt class="py-name">init1</tt><tt class="py-op">,</tt><tt class="py-name">init2</tt><tt class="py-op">,</tt><tt class="py-name">shottime1</tt><tt class="py-op">,</tt><tt class="py-name">shottime2</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">fraction</tt><tt class="py-op">)</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt><tt class="py-op">=</tt><tt id="link-69" class="py-name" targets="Function rsf.recipes.deblend2.shapefxdecon()=rsf.recipes.deblend2-module.html#shapefxdecon"><a title="rsf.recipes.deblend2.shapefxdecon" class="py-name" href="#" onclick="return doclink('link-69', 'shapefxdecon', 'link-69');">shapefxdecon</a></tt><tt class="py-op">(</tt><tt class="py-name">nsig1</tt><tt class="py-op">,</tt><tt class="py-name">nsig2</tt><tt class="py-op">,</tt><tt class="py-name">mute1</tt><tt class="py-op">,</tt><tt class="py-name">mute2</tt><tt class="py-op">,</tt><tt class="py-name">n2</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line"> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line"> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">        <tt id="link-70" class="py-name"><a title="rsf.recipes.deblend2.Greyplot" class="py-name" href="#" onclick="return doclink('link-70', 'Greyplot', 'link-29');">Greyplot</a></tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'title="Esti R 1 (iter=%g)" clip=%g'</tt><tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">clip</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">        <tt id="link-71" class="py-name"><a title="rsf.recipes.deblend2.Greyplot" class="py-name" href="#" onclick="return doclink('link-71', 'Greyplot', 'link-29');">Greyplot</a></tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'title="Esti R 2 (iter=%g)" clip=%g'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">clip</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line"> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">        <tt class="py-name">sigs1</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sig1</tt><tt class="py-op">)</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">        <tt class="py-name">sigs2</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sig2</tt><tt class="py-op">)</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line">        <tt class="py-name">snrsa</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">snra</tt><tt class="py-op">)</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">        <tt class="py-name">snrsb</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">snrb</tt><tt class="py-op">)</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line"> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">    <tt id="link-72" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-72', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsa'</tt><tt class="py-op">,</tt><tt class="py-name">snrsa</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=2 ${SOURCES[1:%g]}|math output="10*log(input)/log(10)" | transp | put n1=%g o1=0 d1=1 '</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsa</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line">    <tt id="link-73" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-73', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsb'</tt><tt class="py-op">,</tt><tt class="py-name">snrsb</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=2 ${SOURCES[1:%g]}|math output="10*log(input)/log(10)" | transp |  put n1=%g o1=0 d1=1'</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">snrsb</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line"> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">    <tt id="link-74" class="py-name"><a title="rsf.recipes.deblend2.Graph" class="py-name" href="#" onclick="return doclink('link-74', 'Graph', 'link-33');">Graph</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsa'</tt><tt class="py-op">,</tt><tt class="py-string">'title="Data error 1" label1=Iteration label2="c(n)" symbosz=5 symbol="o" min1=0 max1=%g d1=1'</tt><tt class="py-op">%</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">    <tt id="link-75" class="py-name"><a title="rsf.recipes.deblend2.Graph" class="py-name" href="#" onclick="return doclink('link-75', 'Graph', 'link-33');">Graph</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-snrsb'</tt><tt class="py-op">,</tt><tt class="py-string">'title="Data error 2" label1=Iteration label2="c(n)" symbosz=5 symbol="o" min1=0 max1=%g d1=1'</tt><tt class="py-op">%</tt><tt class="py-name">niter</tt><tt class="py-op">)</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"><tt class="py-comment">#Making movie</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line">    <tt id="link-76" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-76', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">init1</tt><tt class="py-op">+</tt><tt class="py-string">'-sigs1'</tt><tt class="py-op">,</tt><tt class="py-name">sigs1</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line">    <tt id="link-77" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-77', 'Plot', 'link-5');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">init2</tt><tt class="py-op">+</tt><tt class="py-string">'-sigs2'</tt><tt class="py-op">,</tt><tt class="py-name">sigs2</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">    <tt id="link-78" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-78', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">deblended1</tt><tt class="py-op">,</tt><tt class="py-name">sig1</tt><tt class="py-op">,</tt><tt class="py-string">'cp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line">    <tt id="link-79" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-79', 'Flow', 'link-14');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">deblended2</tt><tt class="py-op">,</tt><tt class="py-name">sig2</tt><tt class="py-op">,</tt><tt class="py-string">'cp'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Program sfbil1_new | L1 regression 0 ~= d - G * m
+[SYNOPSIS]
+sfbil1_new < inp.rsf reg=reg.rsf > out.rsf verb=n niter=10 Liter=10 perc=90.0
+[COMMENTS]
+*
+* adapted from sfbil1
+* 
+[PARAMETERS]
+int     | Liter | =10 |   | 	number of CG iterations 
+int     | niter | =10 |   | 	number of POCS iterations 
+float   | perc | =90.0 |   | 	percentage for sharpening 
+file    | reg | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/lcasasan

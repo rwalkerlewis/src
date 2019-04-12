@@ -1,0 +1,5 @@
+Program sfadjtest1 | Ajoint test of prop1Pa and prop1P, prop2Na and prop2N
+[SYNOPSIS]
+sfadjtest1 < fft.rsf
+[DIRECTORY]
+user/jingwei

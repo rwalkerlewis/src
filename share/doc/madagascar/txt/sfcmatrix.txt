@@ -1,0 +1,7 @@
+Program sfcmatrix | multiply, for complex Matrix 
+[SYNOPSIS]
+sfcmatrix < inA.rsf B=inB.rsf > outC.rsf
+[PARAMETERS]
+file    | B | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jsun

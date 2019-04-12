@@ -1,0 +1,8 @@
+Program sfexpl2 | 2-D anisotropic diffusion by box cascade. 
+[SYNOPSIS]
+sfexpl2 < in.rsf > out.rsf rect= pclip=50.
+[PARAMETERS]
+float   | pclip | =50. |   | 	percentage clip for the gradient 
+int     | rect | = |   | 	vertical smoothing 
+[DIRECTORY]
+system/generic

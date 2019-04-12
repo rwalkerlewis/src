@@ -1,0 +1,9 @@
+Program sfrsin | Simple operations with real sinusoids 
+[SYNOPSIS]
+sfrsin < in.rsf > out.rsf root=root.rsf adj=n oper=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+string  | oper | = |   | 	operation to perform 
+file    | root | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,14 @@
+Program sffbdip | omnidirectional dip estimation  
+[SYNOPSIS]
+sffbdip < in.rsf > out.rsf rect1=0 rect2=0 niter=5 liter=20 radius=1.0 eta=0.75 idip=0.0 verb=n
+[PARAMETERS]
+float   | eta | =0.75 |   | 	steps for iteration 
+float   | idip | =0.0 |   | 	initial dip 
+int     | liter | =20 |   | 	number of linear iterations 
+int     | niter | =5 |   | 	number of iterations 
+float   | radius | =1.0 |   | 	interpolating radius for opwd 
+int     | rect1 | =0 |   | 	dip smoothness on 1st axis 
+int     | rect2 | =0 |   | 	dip smoothness on 2nd axis 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/chen

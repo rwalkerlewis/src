@@ -1,0 +1,11 @@
+Program sftrisolver | Tridiagonal matrix solver using chasing method
+[SYNOPSIS]
+sftrisolver < in.rsf rhs=rhs.rsf > out.rsf verb=n
+[COMMENTS]
+Ax=d-> LUx=d -> Ly=d -> Ux=y -> x
+
+[PARAMETERS]
+file    | rhs | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/chenyk

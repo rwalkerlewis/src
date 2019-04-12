@@ -1,0 +1,11 @@
+Program sfopsmigrk | Shot-recorder Oriented prestack migration data is (shots x recs x time). 
+[SYNOPSIS]
+sfopsmigrk < dist.rsf time=time.rsf dept=dept.rsf > imag.rsf data=data.rsf tolz=2.0 is_offset=n
+[PARAMETERS]
+file    | data | = |   | 	auxiliary input file name
+file    | dept | = |   | 	auxiliary input file name
+bool    | is_offset | =n |  [y/n] | 	
+file    | time | = |   | 	auxiliary input file name
+float   | tolz | =2.0 |   | 	
+[DIRECTORY]
+user/roman

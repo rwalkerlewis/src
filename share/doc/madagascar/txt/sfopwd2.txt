@@ -1,0 +1,8 @@
+Program sfopwd2 | 2-D omnidirectional plane wave destruction. 
+[SYNOPSIS]
+sfopwd2 < in.rsf dip=ang.rsf > out.rsf order=1
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+int     | order | =1 |   | 	accuracy 
+[DIRECTORY]
+user/pwd

@@ -1,0 +1,21 @@
+Program sfescst3 | Escape tables by stitching of escape solutions in supercells in 3-D. 
+[SYNOPSIS]
+sfescst3 < spdom.rsf > out.rsf vspl=vspline.rsf scgrid=scgrid.rsf scdaemon=scdaemon.rsf na=360 nb=180 mp=1 nc=0 aper=SF_HUGE parab=y mmaped=y rfail=y verb=n morder=1 inet=1 tdel=0
+[PARAMETERS]
+float   | aper | =SF_HUGE |   | 	Maximum aperture in x and y directions from current point (default - up to grid boundaries) 
+int     | inet | =1 |   | 	Network interface index 
+bool    | mmaped | =y |  [y/n] | 	n - do not use memory mapping for local data access 
+int     | morder | =1 |   | 	Order of interpolation accuracy in the angular domain (1-3) 
+int     | mp | =1 |   | 	Bufferization factor for multicore processing (number of points in buffer = mp*nc) 
+int     | na | =360 |   | 	Number of azimuth phase angles 
+int     | nb | =180 |   | 	Number of inclination phase angles 
+int     | nc | =0 |   | 	Number of threads to use for ray tracing (OMP_NUM_THREADS by default) 
+bool    | parab | =y |  [y/n] | 	y - use parabolic approximation of trajectories, n - straight line 
+bool    | rfail | =y |  [y/n] | 	n - do not quit if remote processing fails, try local processing 
+string  | scdaemon | = |   | 	Daemon for distributed computation (auxiliary input file name)
+string  | scgrid | = |   | 	Grid of supercells of local escape solutions (auxiliary input file name)
+int     | tdel | =0 |   | 	Optional delay time before connecting (seconds) 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | vspl | = |   | 	Spline coefficients for velocity model (auxiliary input file name)
+[DIRECTORY]
+user/cram

@@ -1,0 +1,10 @@
+Program sfdtw-flatten | flattens a gather or similar object to its stack using dtw, optionally writes out shifts, currently set up for (time,gather,space) for 2d imaging
+[SYNOPSIS]
+sfdtw-flatten < _in.rsf > _out.rsf shifts=_shifts.rsf exp=2 strain=1.0 maxshift=
+[PARAMETERS]
+float   | exp | =2 |   | 	error exponent (g-f)^exp 
+int     | maxshift | = |   | 	
+string  | shifts | = |   | 	output gather flattening shifts (auxiliary output file name)
+float   | strain | =1.0 |   | 	maximum strain 
+[DIRECTORY]
+user/luke

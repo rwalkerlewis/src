@@ -1,0 +1,25 @@
+Program sfwexmva | 3-D S/R WEMVA with extended split-step 
+[SYNOPSIS]
+sfwexmva slo=Bs.rsf < Pi.rsf < Ps.rsf swfl=Bws.rsf rwfl=Bwr.rsf cc=Fc.rsf verb=y adj= feic= eps=0.01 nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0 nhx=0 nhy=0 nhz=0 nht=0 dht=
+[PARAMETERS]
+int     | adj | = |   | 	y=ADJ Back-projection; n=FWD Forward Scattering 
+file    | cc | = |   | 	auxiliary input file name
+float   | dht | = |   | 	
+float   | dtmax | =0.004 |   | 	max time error 
+float   | eps | =0.01 |   | 	stability parameter 
+int     | feic | = |   | 	extended I.C. flag 
+int     | nht | =0 |   | 	number of lags on the t axis 
+int     | nhx | =0 |   | 	number of lags on the x axis 
+int     | nhy | =0 |   | 	number of lags on the y axis 
+int     | nhz | =0 |   | 	number of lags on the z axis 
+int     | nrmax | =1 |   | 	max number of refs 
+int     | pmx | =0 |   | 	padding on x 
+int     | pmy | =0 |   | 	padding on y 
+file    | rwfl | = |   | 	auxiliary input file name
+file    | slo | = |   | 	auxiliary input file name
+file    | swfl | = |   | 	auxiliary input file name
+int     | tmx | =0 |   | 	taper on x   
+int     | tmy | =0 |   | 	taper on y   
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/cwp

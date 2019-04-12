@@ -1,0 +1,14 @@
+Program sftti2dpseudosvlrsep | None
+[SYNOPSIS]
+sftti2dpseudosvlrsep < vp0.rsf > PseudoPureSVx.rsf PseudoPureSepSVx=PseudoPureSepSVx.rsf PseudoPureSepSVz=PseudoPureSepSVz.rsf PseudoPureSV=PseudoPureSV.rsf seed=time(NULL eps=1.e-6 npk=20 ns= dt=
+[PARAMETERS]
+file    | PseudoPureSV | = |   | 	auxiliary output file name
+file    | PseudoPureSepSVx | = |   | 	auxiliary output file name
+file    | PseudoPureSepSVz | = |   | 	auxiliary output file name
+        | dt | = |   | 	
+        | eps | =1.e-6 |   | 	tolerance
+        | npk | =20 |   | 	maximum rank
+        | ns | = |   | 	
+        | seed | =time(NULL |   | 	
+[DIRECTORY]
+user/chengjb

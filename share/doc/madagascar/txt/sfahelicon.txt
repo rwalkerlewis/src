@@ -1,0 +1,10 @@
+Program sfahelicon | Apply multidimensional nonstationary filter on a helix. 
+[SYNOPSIS]
+sfahelicon < in.rsf filt=filt.rsf > out.rsf n= dim=ndim lag=
+[PARAMETERS]
+int     | dim | =ndim |   | 	number of dimensions 
+file    | filt | = |   | 	auxiliary output file name
+string  | lag | = |   | 	file with filter lags
+ints    | n | = |   | 	 [dim]
+[DIRECTORY]
+user/gee

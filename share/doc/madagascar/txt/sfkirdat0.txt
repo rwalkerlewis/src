@@ -1,0 +1,12 @@
+Program sfkirdat0 | 2-D Post-stack Kirchhoff redatuming. 
+[SYNOPSIS]
+sfkirdat0 < in.rsf > out.rsf green=green.rsf verb=n datum= aperture=50 taper=10 length=0.025
+[PARAMETERS]
+int     | aperture | =50 |   | 	aperture (number of traces) 
+float   | datum | = |   | 	datum depth 
+file    | green | = |   | 	auxiliary input file name
+float   | length | =0.025 |   | 	filter length (in seconds) 
+int     | taper | =10 |   | 	taper (number of traces) 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/llisiw

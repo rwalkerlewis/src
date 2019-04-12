@@ -1,0 +1,9 @@
+Program sfepfad | ADaptive Eage Preserving Filter 
+[SYNOPSIS]
+sfepfad < in.rsf > out.rsf rect1=0 rect2=0 rect3=0
+[PARAMETERS]
+int     | rect1 | =0 |   | 	
+int     | rect2 | =0 |   | 	
+int     | rect3 | =0 |   | 	smoothing half window on the #-th dimension 
+[DIRECTORY]
+user/chen

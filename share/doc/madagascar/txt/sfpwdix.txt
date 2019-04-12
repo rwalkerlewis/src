@@ -1,0 +1,15 @@
+Program sfpwdix | Convert RMS to interval velocity using LS and plane-wave construction. 
+[SYNOPSIS]
+sfpwdix < vrms.rsf > vint.rsf weight=weight.rsf slope=slope.rsf vrmsout=vout.rsf niter=100 ncycle=10 rect1=1 verb=n eps=0. order=1
+[PARAMETERS]
+float   | eps | =0. |   | 	regularization parameter 
+int     | ncycle | =10 |   | 	number of cycles for anisotropic diffusion 
+int     | niter | =100 |   | 	maximum number of iterations 
+int     | order | =1 |   | 	accuracy order 
+int     | rect1 | =1 |   | 	vertical smoothing radius 
+file    | slope | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | vrmsout | = |   | 	optionally, output predicted vrms (auxiliary output file name)
+file    | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/pwd

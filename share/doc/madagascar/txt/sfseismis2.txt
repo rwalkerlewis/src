@@ -1,0 +1,19 @@
+Program sfseismis2 | Missing data interpolation in 2-D using seislet transform. 
+[SYNOPSIS]
+sfseismis2 < in.rsf > out.rsf dip=dip.rsf mask=mask.rsf niter=20 order=1 verb=n cut=n eps=0.01 order=1 cnum=n2 orderc=1. perc=99. ordert=1. ordert=1. type= oper=
+[PARAMETERS]
+int     | cnum | =n2 |   | 	Max cutting in cutting operator, default is n2 
+bool    | cut | =n |  [y/n] | 	cutting flag, the default is shaping 
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization parameter 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =20 |   | 	number of iterations 
+string  | oper | = |   | 	[destruction,construction,shaping,pocs,bregman] method, the default is shaping  
+int     | order | =1 |   | 	accuracy order 
+float   | orderc | =1. |   | 	Curve order for cutting operator, default is linear 
+float   | ordert | =1. |   | 	Curve order for thresholding operator, default is linear 
+float   | perc | =99. |   | 	percentage for soft-thresholding 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

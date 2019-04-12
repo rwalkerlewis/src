@@ -1,0 +1,14 @@
+Program sfpspig | 1-D finite-difference wave extrapolation 
+[SYNOPSIS]
+sfpspig < inp.rsf > out.rsf vel=vel.rsf grad=grad.rsf opt=y dt= nt= nv= lmdv= lmdvx=
+[PARAMETERS]
+float   | dt | = |   | 	
+file    | grad | = |   | 	auxiliary input file name
+float   | lmdv | = |   | 	
+float   | lmdvx | = |   | 	if y, determine optimal size for efficiency 
+int     | nt | = |   | 	
+int     | nv | = |   | 	
+bool    | opt | =y |  [y/n] | 	
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

@@ -1,0 +1,14 @@
+Program sfpolyfit | Fitting a polynomial by least-squares. 
+[SYNOPSIS]
+sfpolyfit < inp.rsf > out.rsf coef=coef.rsf coord=coord.rsf reg=reg.rsf eps=0.0f np=1 n1= d1= o1=
+[PARAMETERS]
+string  | coef | = |   | 	(optional) coefficients (auxiliary output file name)
+string  | coord | = |   | 	coordinates (auxiliary input file name)
+float   | d1 | = |   | 	sampling for regularly sampled 
+float   | eps | =0.0f |   | 	regularization parameter 
+int     | n1 | = |   | 	number of samples for regularly sampled 
+int     | np | =1 |   | 	polynomial order 
+float   | o1 | = |   | 	origin for regularly sampled 
+string  | reg | = |   | 	(optional) regularly sampled (auxiliary output file name)
+[DIRECTORY]
+user/fomels

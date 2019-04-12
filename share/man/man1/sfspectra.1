@@ -1,0 +1,81 @@
+.TH sfspectra 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfspectra \- Frequency spectra. 
+.SH SYNOPSIS
+.B sfspectra < in.rsf > out.rsf all=n opt=y
+.SH COMMENTS
+
+March 2012 program of the month:
+http://ahay.org/blog/2012/03/18/program-of-the-month-sfspectra/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B all
+.B =n
+.R  [y/n]	if y, compute average spectrum for all traces
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]	if y, determine optimal size for efficiency
+.SH USED IN
+.TP
+.I bei/dwnc/sigmoid
+.TP
+.I bei/ft1/autocor
+.TP
+.I bei/krch/sep73
+.TP
+.I cup/rna2d/real
+.TP
+.I data/freeusp/land
+.TP
+.I data/nankai/data
+.TP
+.I data/nankai/shots
+.TP
+.I gee/hlx/futterman
+.TP
+.I gee/mda/pefex
+.TP
+.I geo384h/hw4/match
+.TP
+.I geo384s/hw4/viking
+.TP
+.I rsf/reprobook/exam2
+.TP
+.I rsf/school/data
+.TP
+.I rsf/school2015/born
+.TP
+.I rsf/school2017/seismic
+.TP
+.I rsf/scons/rsfpy
+.TP
+.I rsf/su/rsfkasper
+.TP
+.I rsf/su/rsfkfupm
+.TP
+.I rsf/su/rsflab1
+.TP
+.I rsf/tutorials/cs
+.TP
+.I rsf/tutorials/spitz
+.TP
+.I rsf/tutorials/wavelet
+.TP
+.I sep/antial/sig
+.TP
+.I sep/bspl/chirp
+.TP
+.I sep/forwd/chirp
+.TP
+31 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfspectra.html
+.SH SOURCE
+.I system/generic/Mspectra.c
+.SH VERSION
+2.1-git

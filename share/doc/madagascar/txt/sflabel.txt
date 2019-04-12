@@ -1,0 +1,5 @@
+Program sflabel | Connected-component labeling 
+[SYNOPSIS]
+sflabel < inp.rsf > out.rsf
+[DIRECTORY]
+user/fomels

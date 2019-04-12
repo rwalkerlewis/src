@@ -1,0 +1,10 @@
+Program sfpad2 | Pad boundary 
+[SYNOPSIS]
+sfpad2 < Fin.rsf > Fout.rsf top=0 bottom=0 left=0 right=0
+[PARAMETERS]
+int     | bottom | =0 |   | 	
+int     | left | =0 |   | 	
+int     | right | =0 |   | 	
+int     | top | =0 |   | 	
+[DIRECTORY]
+user/zhiguang

@@ -1,0 +1,15 @@
+Program sfseispocs | Missing data interpolation using POCS added 2-D seislet transform. 
+[SYNOPSIS]
+sfseispocs < in.rsf > out.rsf dip=dip.rsf mask=mask.rsf convex=convex.rsf niter=20 order=1 verb=n eps=0.01 order=1 perc=90. type=
+[PARAMETERS]
+string  | convex | = |   | 	auxiliary input file name
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization parameter 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =20 |   | 	number of iterations 
+int     | order | =1 |   | 	accuracy order 
+float   | perc | =90. |   | 	percentage for smooth 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

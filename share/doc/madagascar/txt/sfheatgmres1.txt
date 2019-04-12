@@ -1,0 +1,11 @@
+Program sfheatgmres1 | Solution of 1-D heat equation with GMRES. 
+[SYNOPSIS]
+sfheatgmres1 < tinitial.rsf > solution.rsf alpha= dt= nt= Ta=0 Tb=0
+[PARAMETERS]
+float   | Ta | =0 |   | 	Boundary condition on the left 
+float   | Tb | =0 |   | 	Boundary condition on the right 
+float   | alpha | = |   | 	Conductivity 
+float   | dt | = |   | 	Time step 
+int     | nt | = |   | 	Number of time steps 
+[DIRECTORY]
+user/petsc

@@ -1,0 +1,8 @@
+Program sfcurv | Max/Min curvatures by azimuth curvature cube 
+[SYNOPSIS]
+sfcurv < in.rsf > out.rsf axis=2 mode=
+[PARAMETERS]
+int     | axis | =2 |   | 	azimuth dimension 
+string  | mode | = |   | 	max/min/mean/gauss/mpo/mne/dip/strike 
+[DIRECTORY]
+user/chen

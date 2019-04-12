@@ -1,0 +1,7 @@
+Program sfdmeig | Find eigenvalues and eigenvectors of an spd matrix. 
+[SYNOPSIS]
+sfdmeig < mat.rsf eval=evals.rsf > evecs.rsf
+[PARAMETERS]
+file    | eval | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/mccowan

@@ -1,0 +1,9 @@
+Program sfheal | Heal empty traces ddd
+[SYNOPSIS]
+sfheal < inFile.rsf > outFile.rsf
+[COMMENTS]
+Interpolation between two neighbours;
+An empty trace should be horizontal => transpose input before and after 
+
+[DIRECTORY]
+user/aklokov

@@ -1,0 +1,10 @@
+Program sfcompensate | Complex-valued compensation (between two wavefields) 
+[SYNOPSIS]
+sfcompensate < Fnum.rsf den=Fden.rsf > Fres.rsf verb=n cmplx=y perc=0.1
+[PARAMETERS]
+bool    | cmplx | =y |  [y/n] | 	use complex i/o 
+file    | den | = |   | 	auxiliary input file name
+float   | perc | =0.1 |   | 	precentage (of max) for protection when dividing 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

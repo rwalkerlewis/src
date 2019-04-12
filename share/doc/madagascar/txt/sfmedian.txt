@@ -1,0 +1,5 @@
+Program sfmedian | Compute median on the first axis. 
+[SYNOPSIS]
+sfmedian < in.rsf > out.rsf
+[DIRECTORY]
+user/fomels

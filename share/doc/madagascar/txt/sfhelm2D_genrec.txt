@@ -1,0 +1,13 @@
+Program sfhelm2D_genrec | Generate receiver file for Helmholtz solver. 
+[SYNOPSIS]
+sfhelm2D_genrec > out.rsf n1=1 n2=1 d1=0.1 d2=0.1 recz= recx0= recdx=
+[PARAMETERS]
+float   | d1 | =0.1 |   | 	
+float   | d2 | =0.1 |   | 	
+int     | n1 | =1 |   | 	
+int     | n2 | =1 |   | 	
+int     | recdx | = |   | 	
+int     | recx0 | = |   | 	
+int     | recz | = |   | 	
+[DIRECTORY]
+user/hzhu

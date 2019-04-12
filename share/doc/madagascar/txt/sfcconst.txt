@@ -1,0 +1,11 @@
+Program sfcconst | Gaussian beam and exact complex eikonal for constant velocity medium 
+[SYNOPSIS]
+sfcconst < in.rsf > out.rsf source=o2 s=0. v0=1. angle=45. what=
+[PARAMETERS]
+float   | angle | =45. |   | 	rotation angle (counter-clock wise with respect to vertically downward) 
+float   | s | =0. |   | 	complex source shift 
+float   | source | =o2 |   | 	real source point (on surface) 
+float   | v0 | =1. |   | 	constant velocity background 
+string  | what | = |   | 	what to compute (default exact solution) 
+[DIRECTORY]
+user/llisiw

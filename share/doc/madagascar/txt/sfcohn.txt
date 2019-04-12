@@ -1,0 +1,20 @@
+Program sfcohn | Coherence calculations in the presence of structural dip
+[SYNOPSIS]
+sfcohn < in.rsf > out.rsf idip=idip.rsf xdip=xdip.rsf ntw=5 nxw=5 nyw=5 twod=y verb=y op1=-2.0 dp1=0.5 np1=9 op2=-2.0 dp2=0.5 np2=9 mode=
+[PARAMETERS]
+float   | dp1 | =0.5 |   | 	
+float   | dp2 | =0.5 |   | 	
+string  | idip | = |   | 	inline dip (auxiliary output file name)
+string  | mode | = |   | 	coherence mode: c1, c2, c3 
+int     | np1 | =9 |   | 	inline slope 
+int     | np2 | =9 |   | 	xline slope 
+int     | ntw | =5 |   | 	half window size for coherence 
+int     | nxw | =5 |   | 	half window size for coherence 
+int     | nyw | =5 |   | 	half window size for coherence 
+float   | op1 | =-2.0 |   | 	
+float   | op2 | =-2.0 |   | 	
+bool    | twod | =y |  [y/n] | 	y: only twod coherence 
+bool    | verb | =y |  [y/n] | 	verbosity 
+string  | xdip | = |   | 	crossline dip (auxiliary output file name)
+[DIRECTORY]
+user/pyang

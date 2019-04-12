@@ -1,0 +1,61 @@
+.TH sfmf 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmf \- 1D median filtering. 
+.SH SYNOPSIS
+.B sfmf < in.rsf > out.rsf nfw= boundary=n
+.SH COMMENTS
+
+January 2015 program of the month:
+http://ahay.org/blog/2015/01/30/program-of-the-month-sfmf/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter-window length (positive and odd integer)
+.SH USED IN
+.TP
+.I rsf/reprobook/exam2
+.TP
+.I sep/pefmult/syn
+.TP
+.I tccs/deblend/fairfield-initmfnew
+.TP
+.I tccs/medianfilter/dragon
+.TP
+.I tccs/medianfilter/model
+.TP
+.I tccs/medianfilter/window
+.TP
+.I tccs/nmodeblend/bei
+.TP
+.I tccs/nmodeblend/simple
+.TP
+.I tccs/nmodeblend/synth
+.TP
+.I tccs/nmodeblend/timespace
+.TP
+.I tccs/strfilter/spray
+.TP
+.I tccs/svmf/bei
+.TP
+.I tccs/svmf/class
+.TP
+.I tccs/svmf/fairfield
+.TP
+.I tccs/svmf/test
+.TP
+.I tccs/svmf/testnoise
+.TP
+.I tccs/svmf/timespatial
+.SH SOURCE
+.I user/yliu/Mmf.c
+.SH VERSION
+2.1-git

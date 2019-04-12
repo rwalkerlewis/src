@@ -1,0 +1,11 @@
+Program sffd2d | 2-D Fourth-order Finite-difference wave extrapolation with ABC 
+[SYNOPSIS]
+sffd2d < Fw.rsf vel=Fv.rsf ref=Fr.rsf > Fo.rsf verb=0 nb=30 c=0.01
+[PARAMETERS]
+float   | c | =0.01 |   | 	decaying parameter 
+int     | nb | =30 |   | 	boundary length 
+file    | ref | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =0 |  [y/n] | 	setup I/O files 
+[DIRECTORY]
+user/jsun

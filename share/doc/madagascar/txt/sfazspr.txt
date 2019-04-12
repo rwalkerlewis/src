@@ -1,0 +1,13 @@
+Program sfazspr | Combining Sprays: Simply Input Sprays in In-line And Cross-line 
+[SYNOPSIS]
+sfazspr < in.rsf spry=in2.rsf az=azin.rsf > out.rsf order=1 nj1=1 nj2=1 sm=y adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | az | = |   | 	auxiliary input file name
+int     | nj1 | =1 |   | 	antialiasing iline 
+int     | nj2 | =1 |   | 	antialiasing xline 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+bool    | sm | =y |  [y/n] | 	if perform AzPWD filtering 
+file    | spry | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/dmerzlikin

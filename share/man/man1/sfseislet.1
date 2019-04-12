@@ -1,0 +1,111 @@
+.TH sfseislet 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfseislet \- Seislet transform 
+.SH SYNOPSIS
+.B sfseislet < in.rsf > out.rsf dip=dip.rsf inv=n adj=n eps=0.01 unit=n order=1 verb=n type=
+.SH COMMENTS
+
+April 2017 program of the month:
+http://ahay.org/blog/2017/04/19/program-of-the-month-sfseislet/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y, do adjoint transform
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is linear
+.TP
+.I bool   
+.B unit
+.B =n
+.R  [y/n]	if y, use unitary scaling
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cwp/geo2008InterferometricImagingCondition/circle
+.TP
+.I jlu/vdseislet/nmo
+.TP
+.I jlu/vdseislet/usp
+.TP
+.I tccs/dbortho/hyper
+.TP
+.I tccs/deblend/fairfield-initmfnew
+.TP
+.I tccs/deblend/linear
+.TP
+.I tccs/deblend/synthcomplex
+.TP
+.I tccs/deblend/synthhyper
+.TP
+.I tccs/dsd/conflict
+.TP
+.I tccs/dsd/demo
+.TP
+.I tccs/dsd/demo2
+.TP
+.I tccs/dsd/demo3.1perc
+.TP
+.I tccs/dsd/field1
+.TP
+.I tccs/dsd/field2
+.TP
+.I tccs/dsd/real
+.TP
+.I tccs/dsd/sig
+.TP
+.I tccs/eseis/demo2
+.TP
+.I tccs/eseis/demo4
+.TP
+.I tccs/eseis/field
+.TP
+.I tccs/eseis/sparse
+.TP
+.I tccs/fpwd/teapot
+.TP
+.I tccs/fwiseislet/encoding-spar
+.TP
+.I tccs/fwiseislet/noise-spar
+.TP
+.I tccs/fwiseislet/wavelet
+.TP
+.I tccs/ortho/orthocomplex
+.TP
+3 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfseislet.html
+.SH SOURCE
+.I user/pwd/Mseislet.c
+.SH VERSION
+2.1-git

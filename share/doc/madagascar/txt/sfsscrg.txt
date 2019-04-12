@@ -1,0 +1,9 @@
+Program sfsscrg | Extract common reciever gathers from simultaneous data 
+[SYNOPSIS]
+sfsscrg < in.rsf delay=delay.rsf > out.rsf jt=1 nt=n1
+[PARAMETERS]
+file    | delay | = |   | 	auxiliary input file name
+int     | jt | =1 |   | 	subsampling [nps] in observation 
+int     | nt | =n1 |   | 	
+[DIRECTORY]
+user/chen

@@ -1,0 +1,13 @@
+Program sfrankonetest | Test rank-1 approximation for lowrank decomposition matrices
+[SYNOPSIS]
+sfrankonetest < fft.rsf > alpha.rsf nz= dz= z0= nx= dx= x0= npk=
+[PARAMETERS]
+        | dx | = |   | 	
+        | dz | = |   | 	
+        | npk | = |   | 	maximum sample rows/columns
+        | nx | = |   | 	
+        | nz | = |   | 	
+        | x0 | = |   | 	
+        | z0 | = |   | 	
+[DIRECTORY]
+user/jingwei

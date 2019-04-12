@@ -1,0 +1,16 @@
+Program sfshotconstkirch | Prestack shot-profile Kirchhoff migration in constant velocity. 
+[SYNOPSIS]
+sfshotconstkirch < inp.rsf > out.rsf aal=y nx=ns dx=ds x0=s0 offset=n vel=
+[COMMENTS]
+
+Requires the input to be in (time,offset,shot)
+
+[PARAMETERS]
+bool    | aal | =y |  [y/n] | 	if y, apply antialiasing 
+float   | dx | =ds |   | 	
+int     | nx | =ns |   | 	
+bool    | offset | =n |  [y/n] | 	if y, the output is in offset 
+float   | vel | = |   | 	velocity 
+float   | x0 | =s0 |   | 	
+[DIRECTORY]
+system/seismic

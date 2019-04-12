@@ -1,0 +1,9 @@
+Program sfbil1 | Bi-variate L1 regression 
+[SYNOPSIS]
+sfbil1 < inp.rsf reg=reg.rsf > out.rsf niter=10 perc=90.0
+[PARAMETERS]
+int     | niter | =10 |   | 	number of POCS iterations 
+float   | perc | =90.0 |   | 	percentage for sharpening 
+file    | reg | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

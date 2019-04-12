@@ -1,0 +1,52 @@
+.TH sfroots 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfroots \- Find roots of a complex polynomial. 
+.SH SYNOPSIS
+.B sfroots < poly.rsf > root.rsf niter=10 tol=1.0e-6 verb=y sort=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B niter
+.B =10
+.R  	number of iterations
+.TP
+.I string 
+.B sort
+.B =
+.R  	attribute for sorting (phase,amplitude,real,imaginary)
+.TP
+.I float  
+.B tol
+.B =1.0e-6
+.R  	tolerance for convergence
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I tccs/eseis/demo2
+.TP
+.I tccs/eseis/field
+.TP
+.I tccs/eseis/nonseis
+.TP
+.I tccs/nar/chirp
+.TP
+.I tccs/nar/hou
+.TP
+.I tccs/nar/mirko
+.TP
+.I tccs/nar/trace
+.TP
+.I tccs/nar/vecta
+.TP
+.I tccs/seislet/plane
+.TP
+.I tccs/seislet/sin2
+.SH SOURCE
+.I system/generic/Mroots.c
+.SH VERSION
+2.1-git

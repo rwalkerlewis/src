@@ -1,0 +1,12 @@
+Program sfadjgradient2d_gpu | 2D ISOTROPIC wave-equation finite-difference migration on GPU 
+[SYNOPSIS]
+sfadjgradient2d_gpu < Fvel.rsf xig=Fxig.rsf swf=Fswf.rsf rwf=Frwf.rsf > Fgrd.rsf nxtap=40 verbose=n gpu=0
+[PARAMETERS]
+int     | gpu | =0 |   | 	ID of the GPU to be used 
+int     | nxtap | =40 |   | 	TAPER size 
+file    | rwf | = |   | 	auxiliary input file name
+file    | swf | = |   | 	auxiliary input file name
+bool    | verbose | =n |  [y/n] | 	VERBOSITY flag 
+file    | xig | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/rweiss

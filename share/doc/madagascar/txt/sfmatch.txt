@@ -1,0 +1,9 @@
+Program sfmatch | Simple matching filtering 
+[SYNOPSIS]
+sfmatch < inp.rsf > out.rsf other=oth.rsf adj=n nf=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+int     | nf | = |   | 	filter size 
+file    | other | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/generic

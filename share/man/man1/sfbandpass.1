@@ -1,0 +1,101 @@
+.TH sfbandpass 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbandpass \- Bandpass filtering. 
+.SH SYNOPSIS
+.B sfbandpass < in.rsf > out.rsf flo= fhi= phase=n verb=n nplo=6 nphi=6
+.SH COMMENTS
+
+November 2012 program of the month:
+http://ahay.org/blog/2012/11/03/program-of-the-month-sfbandpass/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B fhi
+.B =
+.R  	High frequency in band, default is Nyquist
+.TP
+.I float  
+.B flo
+.B =
+.R  	Low frequency in band, default is 0
+.TP
+.I int    
+.B nphi
+.B =6
+.R  	number of poles for high cutoff
+.TP
+.I int    
+.B nplo
+.B =6
+.R  	number of poles for low cutoff
+.TP
+.I bool   
+.B phase
+.B =n
+.R  [y/n]	y: minimum phase, n: zero phase
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/zicig
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2allA
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2oneA
+.TP
+.I cwp/geo2011WideAzimuthAngleDecomposition/seam357
+.TP
+.I cwp/jse2006RWEImagingOverturningReflections/sigsbee
+.TP
+.I data/freeusp/land
+.TP
+.I data/nankai/data
+.TP
+.I data/nankai/shots
+.TP
+.I data/teapotdome/scdecon
+.TP
+.I data/teapotdome/tahsubset
+.TP
+.I data/teapotdome/vels
+.TP
+.I data/teapotdome/zomig
+.TP
+.I data/viking/basicm8r
+.TP
+.I gallery/segsalt/model
+.TP
+.I gallery/sigsbee/kirMulti
+.TP
+.I gallery/teapot/angmig
+.TP
+.I gallery/teapot/zomig
+.TP
+.I gallery/twohalf/kirMulti
+.TP
+.I gee/hlx/solar
+.TP
+.I geo384h/hw4/match
+.TP
+.I geo384s/hw2/migration
+.TP
+.I geo384s/hw3/dmo
+.TP
+.I geo384s/hw3/nmo
+.TP
+.I geo384s/hw3/nmo3d
+.TP
+.I geo384s/hw6/rtm
+.TP
+93 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfbandpass.html
+.SH SOURCE
+.I system/generic/Mbandpass.c
+.SH VERSION
+2.1-git

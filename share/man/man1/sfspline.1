@@ -1,0 +1,85 @@
+.TH sfspline 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfspline \- 1-D cubic spline interpolation.
+.SH SYNOPSIS
+.B sfspline < in.rsf > out.rsf pattern=pattern.rsf fp= sort=n
+.SH COMMENTS
+
+Specify either n1= o1= d1= or pattern=
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I floats 
+.B fp
+.B =
+.R  	end-point derivatives  [2]
+.TP
+.I string 
+.B pattern
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B sort
+.B =n
+.R  [y/n]	if y, the coordinates need sorting
+.SH USED IN
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2allA
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2oneA
+.TP
+.I cwp/geo2009TTIModeSeparation/fold
+.TP
+.I gallery/bp/lowrank
+.TP
+.I gallery/gradient/fakirmig
+.TP
+.I gallery/gradient/lowrank
+.TP
+.I gallery/gradient/model
+.TP
+.I gallery/gradient/oway
+.TP
+.I gallery/marmousi/ffd
+.TP
+.I gallery/sigsbee/ffd
+.TP
+.I gallery/sigsbee/lowrank
+.TP
+.I gallery/sigsbee/lrostep
+.TP
+.I gallery/vofz/gazdag
+.TP
+.I gallery/vofz/kirch
+.TP
+.I gallery/vofz/lowrank
+.TP
+.I gallery/vofz/model
+.TP
+.I gallery/vofz/oway
+.TP
+.I gallery/vofz/stolt
+.TP
+.I gallery/vofz/vc
+.TP
+.I geo384s/hw6/rtm
+.TP
+.I geo384w/hw3/synth
+.TP
+.I geo384w/hw4/synth
+.TP
+.I geo384w/hw5/lsmig
+.TP
+.I osu/shalek/elastic2d
+.TP
+.I osu/shalek/mod2d
+.TP
+31 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfspline.html
+.SH SOURCE
+.I system/generic/Mspline.c
+.SH VERSION
+2.1-git

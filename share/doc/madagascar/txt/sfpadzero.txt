@@ -1,0 +1,8 @@
+Program sfpadzero | Interpolation from a coarser grid to finer grid with zero padded 
+[SYNOPSIS]
+sfpadzero < in.rsf > out.rsf scalex= scalez=
+[PARAMETERS]
+int     | scalex | = |   | 	
+int     | scalez | = |   | 	
+[DIRECTORY]
+user/zhiguang

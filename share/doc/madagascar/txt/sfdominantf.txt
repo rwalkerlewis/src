@@ -1,0 +1,5 @@
+Program sfdominantf | Calculate dominant frequency of amplitude spectra dataset.
+[SYNOPSIS]
+sfdominantf < in.rsf
+[DIRECTORY]
+user/yliu

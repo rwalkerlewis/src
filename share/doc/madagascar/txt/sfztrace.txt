@@ -1,0 +1,13 @@
+Program sfztrace | Multiple arrivals by depth marching. 
+[SYNOPSIS]
+sfztrace < in.rsf nt=nx*nz na=362 da=0.5 a0=-90. vel=y order=3 iorder=4
+[PARAMETERS]
+float   | a0 | =-90. |   | 	starting angle (in degrees) 
+float   | da | =0.5 |   | 	angle increment (in degrees) 
+int     | iorder | =4 |   | 	interpolation accuracy for grid 
+int     | na | =362 |   | 	number of angles 
+int     | nt | =nx*nz |   | 	ray length bound 
+int     | order | =3 |   | 	interpolation accuracy for velocity 
+bool    | vel | =y |  [y/n] | 	y, input is velocity; n, slowness 
+[DIRECTORY]
+user/fomels

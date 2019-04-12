@@ -1,0 +1,10 @@
+Program sfencode | shot encoding with arbitrary delays 
+[SYNOPSIS]
+sfencode < Fi.rsf del=Fd.rsf > Fo.rsf ompchunk=1 ompnth=0 verb=n
+[PARAMETERS]
+file    | del | = |   | 	auxiliary input file name
+int     | ompchunk | =1 |   | 	OpenMP data chunk size 
+int     | ompnth | =0 |   | 	OpenMP available threads 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

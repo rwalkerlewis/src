@@ -1,0 +1,17 @@
+Program sfdsr2 | 2-D prestack modeling/migration with split-step DSR. 
+[SYNOPSIS]
+sfdsr2 < in.rsf > out.rsf slowness=vel.rsf inv=n verb=n eps=0.01 nt=1 nr=1 dt=0.004 npad=0 nw= dw= w0=0.
+[PARAMETERS]
+float   | dt | =0.004 |   | 	time error 
+float   | dw | = |   | 	Frequency sampling (for modeling) 
+float   | eps | =0.01 |   | 	stability parameter 
+bool    | inv | =n |  [y/n] | 	If y, modeling; if n, migration 
+int     | npad | =0 |   | 	padding on offset wavenumber 
+int     | nr | =1 |   | 	maximum number of references 
+int     | nt | =1 |   | 	taper size 
+int     | nw | = |   | 	Length of frequency axis (for modeling) 
+file    | slowness | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | w0 | =0. |   | 	Frequency origin (for modeling) 
+[DIRECTORY]
+system/seismic

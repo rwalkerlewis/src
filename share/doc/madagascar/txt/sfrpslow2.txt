@@ -1,0 +1,9 @@
+Program sfrpslow2 | Full angle-dependent slowness volume for 3-D reduced phase space. 
+[SYNOPSIS]
+sfrpslow2 < spdom.rsf > out.rsf vspl=vspline.rsf na=360 verb=n
+[PARAMETERS]
+int     | na | =360 |   | 	Number of phase angles 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | vspl | = |   | 	Spline coefficients for velocity model (auxiliary input file name)
+[DIRECTORY]
+user/cram

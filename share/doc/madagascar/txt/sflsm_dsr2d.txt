@@ -1,0 +1,15 @@
+Program sflsm_dsr2d | 2-D prestack least-squares migration with split-step DSR. 
+[SYNOPSIS]
+sflsm_dsr2d < in.rsf > out.rsf slowness=vel.rsf error=error.rsf verb=n eps=0.01 niter=10 nt=1 nr=1 dt=0.004 npad=0
+[PARAMETERS]
+float   | dt | =0.004 |   | 	time error 
+float   | eps | =0.01 |   | 	stability parameter 
+file    | error | = |   | 	auxiliary output file name
+int     | niter | =10 |   | 	number of iterations 
+int     | npad | =0 |   | 	padding on offset wavenumber 
+int     | nr | =1 |   | 	maximum number of references 
+int     | nt | =1 |   | 	taper size 
+file    | slowness | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/seisinv

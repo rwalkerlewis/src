@@ -1,0 +1,11 @@
+Program sffbfreq | frequency response of linear phase filter bank 
+[SYNOPSIS]
+sffbfreq > out.rsf m=1 n=1 n1=50 nd=1 interp=
+[PARAMETERS]
+string  | interp | = |   | 	interpolation method: maxflat lagrange bspline 
+int     | m | =1 |   | 	b[-m, ... ,n] 
+int     | n | =1 |   | 	b[-m, ... ,n] 
+int     | n1 | =50 |   | 	samples in frequency domain is 2*n1+1 
+int     | nd | =1 |   | 	nd dimensional filter bank, nd should not be large, or you will need to buy a new disk array 
+[DIRECTORY]
+user/chen

@@ -1,0 +1,15 @@
+Program sffcoh1 | Fast C1 Coherence 
+[SYNOPSIS]
+sffcoh1 < in.rsf > out.rsf idip=idip.rsf xdip=xdip.rsf ntw=5 twod=y verb=y min1=-2 max1=2 min2=-2 max2=2
+[PARAMETERS]
+string  | idip | = |   | 	inline dip (auxiliary output file name)
+int     | max1 | =2 |   | 	inline slope 
+int     | max2 | =2 |   | 	xline slope 
+int     | min1 | =-2 |   | 	
+int     | min2 | =-2 |   | 	
+int     | ntw | =5 |   | 	half window size for coherence 
+bool    | twod | =y |  [y/n] | 	y: only twod coherence 
+bool    | verb | =y |  [y/n] | 	verbosity 
+string  | xdip | = |   | 	crossline dip (auxiliary output file name)
+[DIRECTORY]
+user/chen

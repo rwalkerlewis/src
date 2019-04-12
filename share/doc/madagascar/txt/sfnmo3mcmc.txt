@@ -1,0 +1,13 @@
+Program sfnmo3mcmc | 3D NMO GMA MCMC inversion with Metropolis rule (Mosegaard and Tarantola, 1995) 
+[SYNOPSIS]
+sfnmo3mcmc < inp.rsf t0sq=t0sqf.rsf rangecoef=rangecoeff.rsf > out.rsf seed=time(NULL) sigma=1.0 saveiter=20 prior=n nmodel=1000
+[PARAMETERS]
+int     | nmodel | =1000 |   | 	Get the number of MC models
+bool    | prior | =n |  [y/n] | 	generate prior or posterior 
+file    | rangecoef | = |   | 	auxiliary input file name
+int     | saveiter | =20 |   | 	save state every iter  
+int     | seed | =time(NULL) |   | 	random seed 
+float   | sigma | =1.0 |   | 	noise variance 
+file    | t0sq | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zone

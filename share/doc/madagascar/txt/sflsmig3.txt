@@ -1,0 +1,43 @@
+Program sflsmig3 | Least-Squares 3D Path-Summation Integral, Azimuthal Plane-Wave Destruction and Kirchhoff Modeling/Migration Chain of Operators
+[SYNOPSIS]
+sflsmig3 < inp.rsf > out.rsf dip=dip.rsf az=azin.rsf vx=fvx.rsf vy=fvy.rsf vel=velFile.rsf snapsf=snapsf.rsf adj=n v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt vel= rho=1.-1./nt apt=nx angle=90.0 order=1 nj1=1 nj2=1 sm=y domod=y dopi=y doanisodiff=y dothr=y doomp=n snaps=n dsnaps=1 initer=2 oniter=1 niter=10 repeat=1 anisoeps=1. thr= antialias= mode=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	Adjoint flag 
+float   | angle | =90.0 |   | 	angle aperture 
+float   | anisoeps | =1. |   | 	Anisotropic diffusion: regularization parameter 
+string  | antialias | = |   | 	antialiasing type [triangle,flat,steep,none] 
+int     | apt | =nx |   | 	integral aperture 
+file    | az | = |   | 	auxiliary input file name
+file    | dip | = |   | 	auxiliary input file name
+bool    | doanisodiff | =y |  [y/n] | 	if perform anisotropic diffusion regularization 
+bool    | domod | =y |  [y/n] | 	if perform Kirchhoff modeling/migration 
+bool    | doomp | =n |  [y/n] | 	OpenMP 
+bool    | dopi | =y |  [y/n] | 	if perform PI filtering 
+bool    | dothr | =y |  [y/n] | 	if perform sparse regularization 
+int     | dsnaps | =1 |   | 	snapshots interval 
+float   | eps | =0.001 |   | 	Damper for pi 
+float   | epst2 | =0.001 |   | 	Damper for t2warp 
+int     | initer | =2 |   | 	inner iterations 
+string  | mode | = |   | 	'soft', 'hard', 'nng' (default: soft)
+int     | niter | =10 |   | 	Anisotropic diffusion: number of conjugate-gradient iterations 
+int     | nj1 | =1 |   | 	antialiasing iline 
+int     | nj2 | =1 |   | 	antialiasing xline 
+int     | oniter | =1 |   | 	outer iterations 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+int     | pad | =nt |   | 	output time samples 
+float   | passthr | =0.001 |   | 	Threshold for tail elimination 
+int     | repeat | =1 |   | 	Anisotropic diffusion: number of smoothing iterations 
+float   | rho | =1.-1./nt |   | 	Leaky integration constant 
+bool    | sm | =y |  [y/n] | 	if perform AzPWD filtering 
+bool    | snaps | =n |  [y/n] | 	if do snapshots of outer iterations 
+file    | snapsf | = |   | 	auxiliary output file name
+float   | thr | = |   | 	Thresholding level 
+float   | v_1 | = |   | 	Path-integral range 
+float   | v_2 | = |   | 	
+float   | v_3 | = |   | 	
+float   | v_4 | = |   | 	
+float   | vel | = |   | 	migration velocity for Kirchhoff 
+file    | vx | = |   | 	auxiliary input file name
+file    | vy | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/dmerzlikin

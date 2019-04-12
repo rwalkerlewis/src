@@ -1,0 +1,210 @@
+
+    <!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <html><head><title>RSF: sftahpef</title>
+    <style type="text/css"><!--
+    TT { font-family: lucidatypewriter, lucida console, courier }
+    --></style></head><body bgcolor="#f0f0f8">
+    
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#7799ee">
+    <td valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sftahpef</strong></big></big> (2.1-git)</font></td
+    ><td align=right valign=bottom
+    ><font color="#ffffff" face="helvetica, arial"><a href="./index.html">index</a><br><a href="https://github.com/ahay/src/blob/madagascar-2.1-git/user/karl/Mtahpef.c">user/karl/Mtahpef.c</a></font></td></tr></table>
+    Trace And Header Prediction Error Filtering 
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#aa55cc">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">sftahpef < inp.rsf > out.rsf wiener=wien.rsf mix= verbose=1 minlag= maxlag= pnoise=0.001 nmix=1 mincorr= maxcorr=</td></tr></table><br>
+tah is the abbreviation of Trace And Header.  Madagascar programs <br>
+that begin with sftah are a designed to:<br>
+1- read trace and headers from separate rsf files and write them to <br>
+standard output (ie sftahread)<br>
+2- filter programs that read and write standard input/output and <br>
+process the tah data (eg sftahnmo, sftahstack)<br>
+3- read tah data from standard input and write separate rsf files for <br>
+the trace and headers data (ie sftahwrite)<br>
+<br>
+These programs allow Seismic Unix (su) like processing in Madagascar.  <br>
+Some programs have su like names.<br>
+<br>
+Some programs in this suite are sftahread, sftahgethw, ftahhdrmath, <br>
+and sftahwrite.<br>
+<br>
+The sftahpef applies prediction error filtering (often called decon)<br>
+<br>
+EXAMPLE:<br>
+<br>
+sftahsort                                                            //<br>
+verbose=0 input=npr3_field.rsf sort='fldr:214,254,10 tracf'          //<br>
+| sftahwindow ns=2047                                                //<br>
+| sftahgain   tpow=2                                                 //<br>
+| sftahmute  tmute=-.200,-.050,.200,3.00  xmute=0,880,1760,18000     //<br>
+ntaper=80                                                            //<br>
+| sftahpef                                                           //<br>
+verbose=1 minlag=.002 maxlag=.1  pnoise=.01 mincorr=0 maxcorr=3      //<br>
+| sftahagc  wagc=1.000 verbose=1                                     //<br>
+| sftahwrite verbose=1 mode=seq  output=pefshots.rsf                 //<br>
+>/dev/null<br>
+<br>
+sfgrey <pefshots.rsf | sfpen<br>
+<br>
+In this example unprocessed field traces are read by sftahsort from <br>
+the npr3_field.rsf file.  sftahsort was used select just a 5 shotpoints <br>
+(fldr 214 to 254 incrementing by 10) from a large dataset.  The headers<br>
+are in the file npr3_filed_hdr.rsf, the headers parameter default.  <br>
+The headers are merged with the trace amplitudes and the tah data sent <br>
+down the pipe for further processing.<br>
+<br>
+sftahwindow selects the first 2047 trace amplitudes.  The last two <br>
+samples on this data were bad, and are elliminated from further<br>
+processing.<br>
+<br>
+sftahgain multiplies the traces by time squared (t**2).  This <br>
+approximately compensates for spreading loss that makes amplitude at<br>
+large time smaller than amplitude at small time.<br>
+<br>
+sftahmute is applied to elliminate the data at small time/offset.  <br>
+<br>
+sftahpef applies prediction error filtering (or decon).  A prediction <br>
+gap or .002 seconds, or one sample) makes this decon "spiking" decon.<br>
+A three seconds window si selected to compute the autocorrelation and <br>
+a .1 second filter is computed and applied.<br>
+<br>
+After decon a 1 second agc was applies using the sftahagc.<br>
+<br>
+Data is written to the output file, pefshots.rsf, using sftahwrite.  <br>
+Traces headers are written to pefshots_hdr.rsf.  The output file data <br>
+order is sequential, or just in the order sftahwrite reads them from <br>
+standard input.<br>
+<br>
+<br>
+
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ee77aa">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Parameters</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>maxcorr=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	end of autocorrelation window in sec <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>maxlag=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	last lag of prediction filter (sec) <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>mincorr=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	start of autocorrelation window in sec <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>minlag=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	first lag of prediction filter (sec) <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>floats  <strong>mix=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	weights for moving average of the autocorrelations  [nmix]<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nmix=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	number of weights (floats) for moving averages <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>pnoise=0.001</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	relative additive noise level <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>verbose=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+       flag to control amount of print<br>
+       0 terse, 1 informative, 2 chatty, 3 debug<br>
+    <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>string  <strong>wiener=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	file to output Wiener filter (auxiliary output file name)<br>
+</font></td></tr></table>
+    
+</td></tr></table>
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#eeaa77">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Used In</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ffd8c8">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#000000" face="helvetica, arial"><big><strong>DATA</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ffd8c8"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+                        <a href="book/data/teapotdome/firstlook.html">teapotdome/firstlook</a><br>
+                        
+                        <a href="book/data/viking/decon.html">viking/decon</a><br>
+                        </td></tr></table></td></tr></table>
+    </body></html>

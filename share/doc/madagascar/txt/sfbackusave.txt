@@ -1,0 +1,14 @@
+Program sfbackusave | C-Wave Backus Averaging (See Marion et al., 1994)
+[SYNOPSIS]
+sfbackusave < deptha.rsf < slowa.rsf < rhoba.rsf > depth_bkn.rsf vel_bk=vel_bkn.rsf slow_bk=slow_bkn.rsf rhob_bk=rhob_bkn.rsf slowness= density= ratio= peak_f= depthsample=
+[PARAMETERS]
+string  | density | = |   | 	Density from Logs
+float   | depthsample | = |   | 	Depth Sampling
+float   | peak_f | = |   | 	Dom wavelength
+float   | ratio | = |   | 	Percent of dom wavelength
+file    | rhob_bk | = |   | 	auxiliary output file name
+file    | slow_bk | = |   | 	auxiliary output file name
+string  | slowness | = |   | 	Slowness from Logs
+file    | vel_bk | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/sbader

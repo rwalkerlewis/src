@@ -1,0 +1,20 @@
+Program sfcanisolr2abc | Lowrank decomposition for 2-D anisotropic wave propagation. 
+[SYNOPSIS]
+sfcanisolr2abc < velz.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt= nbt=0 nbb=0 nbl=0 nbr=0 ct=0.0 cb=0.0 cl=0.0 cr=0.0
+[PARAMETERS]
+        | cb | =0.0 |   | 	
+        | cl | =0.0 |   | 	
+        | cr | =0.0 |   | 	
+        | ct | =0.0 |   | 	
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+file    | fft | = |   | 	auxiliary input file name
+file    | left | = |   | 	auxiliary output file name
+        | nbb | =0 |   | 	
+        | nbl | =0 |   | 	
+        | nbr | =0 |   | 	
+        | nbt | =0 |   | 	
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+[DIRECTORY]
+user/jsun

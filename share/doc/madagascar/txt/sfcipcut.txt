@@ -1,0 +1,8 @@
+Program sfcipcut | cut at CIPs 
+[SYNOPSIS]
+sfcipcut < Fcub.rsf cip=Fcip.rsf > Fcut.rsf verb=n
+[PARAMETERS]
+file    | cip | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/cwp

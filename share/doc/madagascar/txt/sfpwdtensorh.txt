@@ -1,0 +1,15 @@
+Program sfpwdtensorh | structure tensor estimation based on plane wave destruction. 
+[SYNOPSIS]
+sfpwdtensorh < in.rsf in2=in2.rsf in3=in3.rsf > out.rsf out2=out2.rsf ux=uxf.rsf uy=uyf.rsf vx=vxf.rsf vy=vyf.rsf eps=0.00001 normalize=n
+[PARAMETERS]
+float   | eps | =0.00001 |   | 	
+file    | in2 | = |   | 	auxiliary input file name
+file    | in3 | = |   | 	auxiliary input file name
+bool    | normalize | =n |  [y/n] | 	
+file    | out2 | = |   | 	auxiliary output file name
+file    | ux | = |   | 	auxiliary output file name
+file    | uy | = |   | 	auxiliary output file name
+file    | vx | = |   | 	auxiliary output file name
+file    | vy | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/dmerzlikin

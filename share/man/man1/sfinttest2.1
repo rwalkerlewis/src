@@ -1,0 +1,48 @@
+.TH sfinttest2 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinttest2 \- Interpolation from a regular grid in 2-D. 
+.SH SYNOPSIS
+.B sfinttest2 < in.rsf > out.rsf coord=crd.rsf nw= kai=4.0 interp=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B coord
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B interp
+.B =
+.R  	interpolation (lagrange,cubic,kaiser,lanczos,cosine,welch,spline)
+.TP
+.I float  
+.B kai
+.B =4.0
+.R  	Kaiser window parameter
+.TP
+.I int    
+.B nw
+.B =
+.R  	interpolator size
+.SH USED IN
+.TP
+.I cwp/geo2011WideAzimuthAngleDecomposition/flatEICangle
+.TP
+.I rsf/rsf/radial
+.TP
+.I sep/bspl/chirp2
+.TP
+.I sep/forwd/chirp2
+.TP
+.I tccs/t2dweak/alaska
+.TP
+.I tccs/t2dweak/field
+.TP
+.I tccs/time2depth/masha2
+.TP
+.I tccs/time2depth2/beinew
+.SH SOURCE
+.I system/generic/Minttest2.c
+.SH VERSION
+2.1-git

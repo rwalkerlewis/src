@@ -1,0 +1,11 @@
+Program sffft3d | 3D FFT with centering and Hermitian scaling  
+[SYNOPSIS]
+sffft3d < Fi.rsf > Fo.rsf ompchunk=1 verb=n inv=n cnt=n axis=0
+[PARAMETERS]
+int     | axis | =0 |   | 	FFT axis or axes 
+bool    | cnt | =n |  [y/n] | 	centering 
+bool    | inv | =n |  [y/n] | 	forward/inverse 
+int     | ompchunk | =1 |   | 	OpenMP data chunk size 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

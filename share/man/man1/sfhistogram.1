@@ -1,0 +1,53 @@
+.TH sfhistogram 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhistogram \- Compute a histogram of integer- or float-valued input data.
+.SH SYNOPSIS
+.B sfhistogram < in.rsf > out.rsf n1= o1= d1=
+.SH COMMENTS
+
+The output grid is not centered on the bins; it marks their "left edge".
+I.e., the first sample holds the number of values between o1 and o1+d1. 
+
+February 2015 program of the month:
+http://ahay.org/blog/2015/03/01/program-of-the-month-sfhistogram/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =
+.R  	histogram sampling
+.TP
+.I int    
+.B n1
+.B =
+.R  	number of histogram samples
+.TP
+.I float  
+.B o1
+.B =
+.R  	histogram origin
+.SH USED IN
+.TP
+.I geo384h/hw1/dem
+.TP
+.I geo384h/hw3/compress
+.TP
+.I geo384s/hw1/clip
+.TP
+.I geo384s/hw2/land3d
+.TP
+.I rsf/rsf/sfnoise
+.TP
+.I rsf/school/austin
+.TP
+.I rsf/tutorials/petro1
+.TP
+.I sep/geostat/miss
+.TP
+.I tccs/phase/boon3
+.SH SOURCE
+.I system/generic/Mhistogram.c
+.SH VERSION
+2.1-git

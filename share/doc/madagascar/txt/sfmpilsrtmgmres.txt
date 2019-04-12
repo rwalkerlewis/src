@@ -1,0 +1,42 @@
+Program sfmpilsrtmgmres | 2-D Low-rank One-step Least Pre-stack Reverse-Time-Migration in the complex domain (both img and data are complex valued)
+[SYNOPSIS]
+sfmpilsrtmgmres src=Fsrc.rsf left=left.rsf right=right.rsf leftb=leftb.rsf rightb=rightb.rsf vel=Fvel.rsf start=Fstart.rsf verb=n adj=y gmres=n niter=5 mem=5 laplac=y mode= illum=n roll=n shtbgn= sht0=shtbgn shtend= shtint= spz= gpz= gpl= snapinter=1 srctrunc=0.4 rectz=1 rectx=1 repeat=0 top=40 bot=40 lft=40 rht=40 pad1=1
+[COMMENTS]
+img :  crosscorrelation with source normalization (stdout)
+
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	migration
+int     | bot | =40 |   | 	
+bool    | gmres | =n |  [y/n] | 	invoke gmres(m) iterations
+int     | gpl | = |   | 	
+int     | gpz | = |   | 	
+bool    | illum | =n |  [y/n] | 	if n, no source illumination applied 
+bool    | laplac | =y |  [y/n] | 	laplacian filtering
+file    | left | = |   | 	auxiliary input file name
+file    | leftb | = |   | 	auxiliary input file name
+int     | lft | =40 |   | 	
+int     | mem | =5 |   | 	
+int     | mode | = |   | 	
+int     | niter | =5 |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+int     | rectx | =1 |   | 	
+int     | rectz | =1 |   | 	
+int     | repeat | =0 |   | 	abc parameters 
+int     | rht | =40 |   | 	Set I/O file
+file    | right | = |   | 	auxiliary input file name
+file    | rightb | = |   | 	auxiliary input file name
+bool    | roll | =n |  [y/n] | 	if n, receiver is independent of source location and gpl=nx
+int     | sht0 | =shtbgn |   | 	actual shot origin on grid
+int     | shtbgn | = |   | 	
+int     | shtend | = |   | 	
+int     | shtint | = |   | 	
+int     | snapinter | =1 |   | 	snap interval 
+int     | spz | = |   | 	
+file    | src | = |   | 	auxiliary input file name
+float   | srctrunc | =0.4 |   | 	
+string  | start | = |   | 	auxiliary input file name
+int     | top | =40 |   | 	
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity
+[DIRECTORY]
+user/jsun

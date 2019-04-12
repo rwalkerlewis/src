@@ -1,0 +1,11 @@
+Program sfshift | Fourier-domain shift in 1,2 and 3 dimensions 
+[SYNOPSIS]
+sfshift < Fi.rsf > Fo.rsf ompchunk=1 verb=n del1=0. del2=0. del3=0.
+[PARAMETERS]
+float   | del1 | =0. |   | 	delay on axis 1 
+float   | del2 | =0. |   | 	delay on axis 2 
+float   | del3 | =0. |   | 	delay on axis 3 
+int     | ompchunk | =1 |   | 	OpenMP data chunk size 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

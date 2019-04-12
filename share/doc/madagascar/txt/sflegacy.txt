@@ -1,0 +1,10 @@
+Program sflegacy | Merging legacy and hires datasets 
+[SYNOPSIS]
+sflegacy < in.rsf > out.rsf rect=rect.rsf hweight=hweight.rsf lweight=lweight.rsf adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | hweight | = |   | 	auxiliary input file name
+file    | lweight | = |   | 	auxiliary input file name
+file    | rect | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

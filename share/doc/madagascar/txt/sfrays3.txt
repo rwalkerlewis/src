@@ -1,0 +1,26 @@
+Program sfrays3 | Ray tracing by a Runge-Kutta integrator in 3-D.
+[SYNOPSIS]
+sfrays3 < vel.rsf > rays.rsf shotfile=shots.rsf anglefile=angles.rsf vel=y order=4 nt= dt= sym=y escvar=n zshot=o[0] yshot=o[1] + 0.5*(n[1]-1)*d[1] xshot=o[2] + 0.5*(n[2]-1)*d[2] na= nb= a0=0. amax=360. b0=0. bmax=180. > rays.rsf
+[COMMENTS]
+Rays can be plotted with sfplotrays.
+
+[PARAMETERS]
+float   | a0 | =0. |   | 	First azimuth angle in degrees (if anglefile is not specified) 
+float   | amax | =360. |   | 	Maximum azimuth angle in degrees (if anglefile is not specified) 
+string  | anglefile | = |   | 	file with initial angles (auxiliary input file name)
+float   | b0 | =0. |   | 	First inclination angle in degrees (if anglefile is not specified) 
+float   | bmax | =180. |   | 	Maximum inclination angle in degrees (if anglefile is not specified) 
+float   | dt | = |   | 	Sampling in time 
+bool    | escvar | =n |  [y/n] | 	If y - output escape values, n - trajectories 
+int     | na | = |   | 	Number of azimuths (if anglefile is not specified) 
+int     | nb | = |   | 	Number of inclinations (if anglefile is not specified) 
+int     | nt | = |   | 	Number of time steps 
+int     | order | =4 |   | 	Interpolation order 
+string  | shotfile | = |   | 	file with shot locations (auxiliary input file name)
+bool    | sym | =y |  [y/n] | 	if y, use symplectic integrator 
+bool    | vel | =y |  [y/n] | 	If y, input is velocity; if n, slowness 
+float   | xshot | =o[2] + 0.5*(n[2]-1)*d[2] |   | 	shot location crossline (if shotfile is not specified) 
+float   | yshot | =o[1] + 0.5*(n[1]-1)*d[1] |   | 	shot location inline (if shotfile is not specified) 
+float   | zshot | =o[0] |   | 	shot location in depth (if shotfile is not specified) 
+[DIRECTORY]
+system/seismic

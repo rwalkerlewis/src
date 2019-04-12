@@ -1,0 +1,12 @@
+Program sfpcrsurv3 | Prepare survey info for 3-D angle-domain migration. 
+[SYNOPSIS]
+sfpcrsurv3 < data.rsf > survey.rsf sxsy=sxsy.rsf gxgy=gxgy.rsf verb=n tri=n esmax=0.2 ehmax=0.1
+[PARAMETERS]
+float   | ehmax | =0.1 |   | 	Maximum edge length in the receiver triangulation 
+float   | esmax | =0.2 |   | 	Maximum edge length in the shot triangulation 
+string  | gxgy | = |   | 	File with receiver coordinates (auxiliary input file name)
+string  | sxsy | = |   | 	File with shot coordinates (auxiliary input file name)
+bool    | tri | =n |  [y/n] | 	triangulation flag 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/cram

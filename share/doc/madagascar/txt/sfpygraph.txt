@@ -1,0 +1,30 @@
+Program sfpygraph | graph by python
+[SYNOPSIS]
+sfpygraph < input.rsf < xfile.rsf pclip=100 plotfat=1 markint=10 plotcol=0,1,2,3,4,5,6,7 dash=0 symbol=None legend=None x=None usetex=n min1=x1[0] max1=x1[n1-1] min2=min2 max2=max2 label1= unit1=None label2= unit2=None wantlegend=y wherelegend=1 format=pdf
+[PARAMETERS]
+string  | dash | =0 |   | 	dash styles 
+ 0	solid line 
+ 1	dash line 
+ 2	dotted line 
+ 3	dash dot
+string  | format | =pdf |   | 	
+string  | label1 | = |   | 	
+string  | label2 | = |   | 	
+string  | legend | =None |   | 	legends
+int     | markint | =10 |   | 	mark symbol interval
+float   | max1 | =x1[n1-1] |   | 	
+float   | max2 | =max2 |   | 	
+float   | min1 | =x1[0] |   | 	
+float   | min2 | =min2 |   | 	
+float   | pclip | =100 |   | 	clip percent
+string  | plotcol | =0,1,2,3,4,5,6,7 |   | 	plot color
+int     | plotfat | =1 |   | 	plot line width
+string  | symbol | =None |   | 	mark symbols
+string  | unit1 | =None |   | 	
+string  | unit2 | =None |   | 	
+bool    | usetex | =n |  [y/n] | 	use tex symbol
+bool    | wantlegend | =y |  [y/n] | 	
+int     | wherelegend | =1 |   | 	
+string  | x | =None |   | 	xpos
+[DIRECTORY]
+user/chen

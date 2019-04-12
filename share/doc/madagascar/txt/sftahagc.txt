@@ -1,0 +1,15 @@
+Program sftahagc | Read Trace And Header (tah) from standard input, MUTE 
+[SYNOPSIS]
+sftahagc < in.rsf > out.rsf xstart= tstart= verbose=1 ntaper=12 wagc=
+[PARAMETERS]
+int     | ntaper | =12 |   | 	
+floats  | tstart | = |   | 	 [numtstart]
+int     | verbose | =1 |   | 	
+
+       flag to control amount of print
+       0 terse, 1 informative, 2 chatty, 3 debug
+    
+float   | wagc | = |   | 	
+floats  | xstart | = |   | 	 [numxstart]
+[DIRECTORY]
+user/karl

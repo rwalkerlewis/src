@@ -1,0 +1,16 @@
+Program sfradon3 | 3to3 Radon transform (using 3to3 butterfly)
+[SYNOPSIS]
+sfradon3 < input.rsf > output.rsf ntau= np= nq= tau0= dtau= p0= dp= q0= dq= N=
+[PARAMETERS]
+        | N | = |   | 	number of partitions
+        | dp | = |   | 	
+        | dq | = |   | 	
+        | dtau | = |   | 	
+        | np | = |   | 	
+        | nq | = |   | 	
+        | ntau | = |   | 	
+        | p0 | = |   | 	
+        | q0 | = |   | 	
+        | tau0 | = |   | 	
+[DIRECTORY]
+user/jingwei

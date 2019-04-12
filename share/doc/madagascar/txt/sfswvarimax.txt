@@ -1,0 +1,14 @@
+Program sfswvarimax | Sliding window varimax 
+[SYNOPSIS]
+sfswvarimax < in.rsf > out.rsf sw=n size=0 thres=0. term=100. f1=0 f2=0 n1=nz0-fz n2=nx0-fx
+[PARAMETERS]
+int     | f1 | =0 |   | 	sliding window radius 
+int     | f2 | =0 |   | 	sliding window radius 
+int     | n1 | =nz0-fz |   | 	sliding window radius 
+int     | n2 | =nx0-fx |   | 	sliding window radius 
+int     | size | =0 |   | 	sliding window radius 
+bool    | sw | =n |  [y/n] | 	sliding window 
+float   | term | =100. |   | 	variance threshold (normalized) 
+float   | thres | =0. |   | 	variance threshold (normalized) 
+[DIRECTORY]
+user/jsun

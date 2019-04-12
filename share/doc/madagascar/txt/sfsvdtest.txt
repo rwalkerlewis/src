@@ -1,0 +1,10 @@
+Program sfsvdtest | Singular value decomposition to select rank-1 approximation
+[SYNOPSIS]
+sfsvdtest < matrix.rsf > alpha.rsf nz= nx= nkz= nkx=
+[PARAMETERS]
+        | nkx | = |   | 	
+        | nkz | = |   | 	
+        | nx | = |   | 	
+        | nz | = |   | 	
+[DIRECTORY]
+user/jingwei

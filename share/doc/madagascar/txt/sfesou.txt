@@ -1,0 +1,10 @@
+Program sfesou | source for quasistatic electric potential 
+[SYNOPSIS]
+sfesou < Fpre.rsf > Feso.rsf ske=Fske.rsf qke=Fqke.rsf verb=n zbnd=n
+[PARAMETERS]
+file    | qke | = |   | 	auxiliary input file name
+file    | ske | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+bool    | zbnd | =n |  [y/n] | 	boundary flag 
+[DIRECTORY]
+user/psava

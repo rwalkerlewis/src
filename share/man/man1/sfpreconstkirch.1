@@ -1,0 +1,93 @@
+.TH sfpreconstkirch 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpreconstkirch \- Prestack Kirchhoff modeling/migration in constant velocity. 
+.SH SYNOPSIS
+.B sfpreconstkirch < in.rsf > out.rsf inv=n zero=n aal=y nh= dh= h0= vel=
+.SH COMMENTS
+
+Requires the input to be in (time,cmp x,cmp y,offset)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B aal
+.B =y
+.R  [y/n]	if y, apply antialiasing
+.TP
+.I float  
+.B dh
+.B =
+.R  	offset sampling
+.TP
+.I float  
+.B h0
+.B =
+.R  	offset origin
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, modeling; if n, migration
+.TP
+.I int    
+.B nh
+.B =
+.R  	number of offsets
+.TP
+.I float  
+.B vel
+.B =
+.R  	velocity
+.TP
+.I bool   
+.B zero
+.B =n
+.R  [y/n]	if y, stack in migration
+.SH USED IN
+.TP
+.I bei/dpmv/matt
+.TP
+.I bei/dpmv/yalei
+.TP
+.I bei/krch/sep73
+.TP
+.I bei/trimo/mig
+.TP
+.I bei/trimo/mod
+.TP
+.I geo384w/hw4/synth
+.TP
+.I jlu/txyapf/french
+.TP
+.I sep/angle/agmig
+.TP
+.I sep/antial/mod
+.TP
+.I sep/antial/sig
+.TP
+.I sep/oc2/cup
+.TP
+.I sep/vc2/beivc
+.TP
+.I sep/vc2/elfvc
+.TP
+.I sep/vc2/sigvc
+.TP
+.I tccs/oc3/french
+.TP
+.I tccs/oc3/frenchint
+.TP
+.I tccs/ovc/psovc
+.TP
+.I tccs/shape/beivc
+.TP
+.I tccs/t2dweak/field
+.TP
+.I tccs/time2depth2/beinew
+.TP
+.I tccs/uncert/beivc
+.SH SOURCE
+.I system/seismic/Mpreconstkirch.c
+.SH VERSION
+2.1-git

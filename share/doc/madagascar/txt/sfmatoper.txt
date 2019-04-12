@@ -1,0 +1,15 @@
+Program sfmatoper | Matrix algebra operation
+[SYNOPSIS]
+sfmatoper < in.rsf mat=mat.rsf > out.rsf type=
+[COMMENTS]
+Implement C=Oper(A,B).
+Specially, when "Oper" stands for multiplication, C=AB,  where: 
+C is a m*k matrix, m corresponds to dimension 2 while k corrsponds to dimension 1.
+A is a m*n matrix, m corresponds to dimension 2 while n corrsponds to dimension 1.
+B is a n*k matrix, n corresponds to dimension 2 while k corrsponds to dimension 1.
+Like matlab matrix operation.
+[PARAMETERS]
+file    | mat | = |   | 	auxiliary input file name
+string  | type | = |   | 	[mul, add, sub, dotmul] operation type, the default is mul  
+[DIRECTORY]
+user/chenyk

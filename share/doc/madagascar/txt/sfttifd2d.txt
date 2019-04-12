@@ -1,0 +1,25 @@
+Program sfttifd2d | 2D TTI time-domain FD modeling 
+[SYNOPSIS]
+sfttifd2d < Fwav.rsf vel=Fvel.rsf sou=Fsou.rsf rec=Frec.rsf ang=Fang.rsf wfl=Fwfl.rsf > Fdat.rsf verb=n snap=n free=n expl=n dabc=n sout=n uses=n jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) atype=
+[PARAMETERS]
+file    | ang | = |   | 	auxiliary input file name
+string  | atype | = |   | 	
+bool    | dabc | =n |  [y/n] | 	absorbing BC 
+bool    | expl | =n |  [y/n] | 	"exploding reflector" 
+bool    | free | =n |  [y/n] | 	free surface 
+int     | jdata | =1 |   | 	
+int     | jsnap | =nt |   | 	
+int     | nqx | =sf_n(ax) |   | 	
+int     | nqz | =sf_n(az) |   | 	
+float   | oqx | =sf_o(ax) |   | 	
+float   | oqz | =sf_o(az) |   | 	
+file    | rec | = |   | 	auxiliary input file name
+bool    | snap | =n |  [y/n] | 	wavefield snapshots 
+file    | sou | = |   | 	auxiliary input file name
+bool    | sout | =n |  [y/n] | 	stress output 
+bool    | uses | =n |  [y/n] | 	use vsz 
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity 
+file    | wfl | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/psava

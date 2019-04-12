@@ -1,0 +1,16 @@
+Program sfepsf | 1-D and 2-D edge-preserving smoothing (EPS) filter. 
+[SYNOPSIS]
+sfepsf < in.rsf > out.rsf nfw1= nfw2=1 boundary=n verb=n weight=n sigma=3. type=
+[COMMENTS]
+1D filter (nfw2=1); 2D filter (otherwise)
+
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw1 | = |   | 	filter-window length in n1 direction (positive and odd integer) 
+int     | nfw2 | =1 |   | 	filter-window length in n2 direction (default=1, 1D case)
+float   | sigma | =3. |   | 	Gaussian weight radius (only for stack) 
+string  | type | = |   | 	[stack,median] filter choice, the default is stack (mean) 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+bool    | weight | =n |  [y/n] | 	Gaussian weight flag (only for stack) 
+[DIRECTORY]
+user/yliu

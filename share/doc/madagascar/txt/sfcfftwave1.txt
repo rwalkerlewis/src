@@ -1,0 +1,11 @@
+Program sfcfftwave1 | 1-D complex lowrank FFT wave extrapolation 
+[SYNOPSIS]
+sfcfftwave1 < inp.rsf > out.rsf left=left.rsf right=right.rsf prop=prop.rsf nt= dt=
+[PARAMETERS]
+float   | dt | = |   | 	
+file    | left | = |   | 	auxiliary input file name
+int     | nt | = |   | 	
+file    | prop | = |   | 	auxiliary input file name
+string  | right | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

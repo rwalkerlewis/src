@@ -1,0 +1,14 @@
+Program sfheatimplitest | Solving 1-D heat equation using implicit finite difference 
+[SYNOPSIS]
+sfheatimplitest > out.rsf nt= dt= nx= dx=
+[COMMENTS]
+\partial(u)/\partial(t)=a^2\partial^2(u)/\partial(x^2), 0<x<l & t>0,
+u(0,t)=u(l,t)=0, t>0, 
+u(x,0)=f(x), 0<=x<=l.  
+[PARAMETERS]
+float   | dt | = |   | 	temporal sampling 
+float   | dx | = |   | 	spatial sampling 
+int     | nt | = |   | 	number of temporal points 
+int     | nx | = |   | 	number of spatial points 
+[DIRECTORY]
+user/chenyk

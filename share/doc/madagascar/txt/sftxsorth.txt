@@ -1,0 +1,10 @@
+Program sftxsorth | Streaming orthogonalize signal and noise in t-x domain. 
+[SYNOPSIS]
+sftxsorth < in.rsf noise=noise.rsf > fnoi2.rsf sig2=fsig2.rsf gamma1= gamma2=
+[PARAMETERS]
+float   | gamma1 | = |   | 	Regularization in t direction, gamma_t in equations 18 and 20 
+float   | gamma2 | = |   | 	Regularization in x direction, gamma_x in equations 18 and 20 
+file    | noise | = |   | 	auxiliary input file name
+file    | sig2 | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,196 @@
+
+    <!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <html><head><title>RSF: sftahspecbal</title>
+    <style type="text/css"><!--
+    TT { font-family: lucidatypewriter, lucida console, courier }
+    --></style></head><body bgcolor="#f0f0f8">
+    
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#7799ee">
+    <td valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sftahspecbal</strong></big></big> (2.1-git)</font></td
+    ><td align=right valign=bottom
+    ><font color="#ffffff" face="helvetica, arial"><a href="./index.html">index</a><br><a href="https://github.com/ahay/src/blob/madagascar-2.1-git/user/karl/Mtahspecbal.c">user/karl/Mtahspecbal.c</a></font></td></tr></table>
+    Read Trace And Header (tah) from standard input, SPECtral BALance
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#aa55cc">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">sftahspecbal < in.rsf > out.rsf xstart= tstart= verbose=1 ntaper=12 wagc=-1 pnoise=0.01 fmin=5 fmax=95 finc=5</td></tr></table><br>
+THIS PROGRAM WAS WRITEN, BUT NEVER SUCESSFULLY TESTED.  RESULTS LOOK <br>
+POOR, BUT UNABLE TO SPEND TIME ON THE ALGORITHM, I ADDED IT TO THE <br>
+REPOSOTORY AND HOPE TO RETURN TO WORK ON IT AGAIN... SOMEDAY!<br>
+<br>
+tah is the abbreviation of Trace And Header.  Madagascar programs <br>
+that begin with sftah are a designed to:<br>
+1- read trace and headers from separate rsf files and write them to <br>
+standard output (ie sftahread)<br>
+2- filter programs that read and write standard input/output and <br>
+process the tah data (eg sftahnmo, sftahstack)<br>
+3- read tah data from standard input and write separate rsf files for <br>
+the trace and headers data (ie sftahwrite)<br>
+<br>
+These programs allow Seismic Unix (su) like processing in Madagascar.  <br>
+Some programs have su like names.<br>
+<br>
+Some programs in this suite are sftahread, sftahgethw, ftahhdrmath, <br>
+and sftahwrite.<br>
+<br>
+The sftahspecbal program is designed to improve the resolution and <br>
+appearance of the final imaged seismic section (ie after migration <br>
+and stack.  When applied to noisey land data early in the processing <br>
+sequence (after surface consisntant decon and before migration and <br>
+stack) it attenuates noise on post migration and stack data.  There<br>
+are several algorithms called spectral balancing, whitening, or <br>
+broading.  This program implenents a popular method.  Each input <br>
+trace is split into several narrow frequency bands by bandpass <br>
+filtering.  AGC is applied to rach frequency band, and the frequency<br>
+bands are summed.  User parameters control the filter bands and the<br>
+AGC length.  (reference <a href="http://www.xsgeo.com/course/spec.htm#content).">http://www.xsgeo.com/course/spec.htm#content).</a><br>
+<br>
+EXAMPLE:<br>
+<br>
+sftahsort input=shots-receivers-23900_headfix.rsf        \<br>
+sort="xline:600,601 offset"                              \<br>
+| sftahspecbal fmin=5 fmax=95 finc=5 wagc=.250 noise=.05 \<br>
+| sftahwrite                                             \<br>
+verbose=1                                                \<br>
+mode=seq                                                 \<br>
+output=specbalcmps.rsf                                   \<br>
+>/dev/null<br>
+<br>
+sfimage <specbalcmps.rsf | sfpen<br>
+<br>
+In this example the shot organized prestack data in the file <br>
+shots-receivers-23900_headfix.rsf are read in xline offset order by <br>
+sftahsort program.  The headers are in the file <br>
+shots-receivers-23900_headfix_hdr.rsf, the headers parameter default.<br>
+The headers are merged with the trace amplitudes and the tah data sent <br>
+down the pipe for spectral balancing.  <br>
+<br>
+sftahspecbal, spectral balance, was run by dividing the data into 5 Hz<br>
+frequency bands, applying .25 second agc, summing the scaled bands,<br>
+and dividing by the sum of the scalars.<br>
+<br>
+Sftahwrite writes the the trace data to specbalcmp.rsf and the headers <br>
+are written to the file specbalcmp_hdr.rsf.  The output traces are just<br>
+sequentially written to the output file.<br>
+kls<br>
+<br>
+PARAMETERS<br>
+<br>
+float fmin= NULL<br>
+<br>
+Center of the first frequency band.<br>
+	<br>
+
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ee77aa">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Parameters</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>finc=5</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	frequency band increment <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>fmax=95</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	maximum frequency band <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>fmin=5</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	minimum frequency band <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ntaper=12</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>pnoise=0.01</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	relative additive noise level <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>floats  <strong>tstart=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	 [numtstart]<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>verbose=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+       flag to control amount of print<br>
+       0 terse, 1 informative, 2 chatty, 3 debug<br>
+    <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>wagc=-1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+       length of the agc window in seconds<br>
+    <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>floats  <strong>xstart=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	 [numxstart]<br>
+</font></td></tr></table>
+    
+</td></tr></table>
+    </body></html>

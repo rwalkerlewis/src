@@ -1,0 +1,10 @@
+Program sfhcascade | Multidimensional convolution cascade.
+[SYNOPSIS]
+sfhcascade < in.rsf filt=filt.rsf > out.rsf n= rect=0 lag=
+[PARAMETERS]
+file    | filt | = |   | 	auxiliary input file name
+string  | lag | = |   | 	file with filter lags
+ints    | n | = |   | 	 [dim]
+int     | rect | =0 |   | 	smoothing radius 
+[DIRECTORY]
+user/gee

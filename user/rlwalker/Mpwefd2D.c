@@ -23,81 +23,20 @@ You can use several paragraphs for comments, no problem.*/
 /* Coefficients are:  (-1)^(k+1)/k * (n!)^2 / (n+k)!(n-k)!
    for n = order of approximation i.e. eighth order
    and k = coefficient number */
-/* CENTERED derivatives 8th order */
-#define C1 +0.598144530000  /*1.196289060000 */
-#define C2 -0.039876302100  /*0.079752604200 */
-#define C3 +0.004785156250  /*0.009570312500 */
-#define C4 -0.0003487723215 /*0.000697544643*/
-#define C5 +0.299072265000  /*1.196289060000/4 */
-#define C6 -0.019938151050  /*0.079752604200/4 */
-#define C7 +0.002392578125  /*0.009570312500/4 */
-#define C8 -0.00017438616075/*0.000697544643/4 */
 
-#define Dx(a,ix,iz,s) (C4*(a[ix+4][iz+4] + a[ix+4][iz-3] -	\
-                           a[ix-3][iz+4] - a[ix-3][iz-3]) +	\
-		       C3*(a[ix+3][iz+3] + a[ix+3][iz-2] -	\
-                           a[ix-2][iz+3] - a[ix-2][iz-2]) +		\
-		       C2*(a[ix+2][iz+2] + a[ix+2][iz-1] -		\
-                           a[ix-1][iz+2] - a[ix-1][iz-1]) +		\
-		       C1*(a[ix+1][iz+1] + a[ix+1][iz  ] -		\
-                           a[ix  ][iz+1] - a[ix  ][iz  ])  )*s
-#define Dz(a,ix,iz,s) (C4*(a[ix+4][iz+4] - a[ix+4][iz-3] +	\
-                           a[ix-3][iz+4] - a[ix-3][iz-3]) +	\
-		       C3*(a[ix+3][iz+3] - a[ix+3][iz-2] +	\
-                           a[ix-2][iz+3] - a[ix-2][iz-2]) +		\
-		       C2*(a[ix+2][iz+2] - a[ix+2][iz-1] +		\
-                           a[ix-1][iz+2] - a[ix-1][iz-1]) +		\
-		       C1*(a[ix+1][iz+1] - a[ix+1][iz  ] +		\
-                           a[ix  ][iz+1] - a[ix  ][iz  ])  )*s
-
-#define Dx3(a,ix,iy,iz,s) (C8*(a[iy+4][ix+4][iz+4] + a[iy-3][ix+4][iz+4] + \
-			       a[iy+4][ix+4][iz-3] + a[iy-3][ix+4][iz-3] - \
-			       a[iy-3][ix-3][iz-3] - a[iy+4][ix-3][iz-3] - \
-			       a[iy-3][ix-3][iz+4] - a[iy+4][ix-3][iz+4]) + \
-			   C7*(a[iy+3][ix+3][iz+3] + a[iy-2][ix+3][iz+3] + \
-			       a[iy+3][ix+3][iz-2] + a[iy-2][ix+3][iz-2] - \
-			       a[iy-2][ix-2][iz-2] - a[iy+3][ix-2][iz-2] - \
-			       a[iy-2][ix-2][iz+3] - a[iy+3][ix-2][iz+3]) + \
-			   C6*(a[iy+2][ix+2][iz+2] + a[iy-1][ix+2][iz+2] + \
-			       a[iy+2][ix+2][iz-1] + a[iy-1][ix+2][iz-1] - \
-			       a[iy-1][ix-1][iz-1] - a[iy+2][ix-1][iz-1] - \
-			       a[iy-1][ix-1][iz+2] - a[iy+2][ix-1][iz+2]) + \
-			   C5*(a[iy+1][ix+1][iz+1] + a[iy  ][ix+1][iz+1] + \
-			       a[iy+1][ix+1][iz  ] + a[iy  ][ix+1][iz  ] - \
-			       a[iy  ][ix  ][iz  ] - a[iy+1][ix  ][iz  ] - \
-			       a[iy  ][ix  ][iz+1] - a[iy+1][ix  ][iz+1])  )*s
-#define Dy3(a,ix,iy,iz,s) (C8*(a[iy+4][ix+4][iz+4] + a[iy+4][ix-3][iz-3] + \
-			       a[iy+4][ix+4][iz-3] + a[iy+4][ix-3][iz+4] - \
-			       a[iy-3][ix-3][iz-3] - a[iy-3][ix+4][iz+4] - \
-			       a[iy-3][ix-3][iz+4] - a[iy-3][ix+4][iz-3]) + \
-			   C7*(a[iy+3][ix+3][iz+3] + a[iy+3][ix-2][iz-2] + \
-			       a[iy+3][ix+3][iz-2] + a[iy+3][ix-2][iz+3] - \
-			       a[iy-2][ix-2][iz-2] - a[iy-2][ix+3][iz+3] - \
-			       a[iy-2][ix-2][iz+3] - a[iy-2][ix+3][iz-2]) + \
-			   C6*(a[iy+2][ix+2][iz+2] + a[iy+2][ix-1][iz-1] + \
-			       a[iy+2][ix+2][iz-1] + a[iy+2][ix-1][iz+2] - \
-			       a[iy-1][ix-1][iz-1] - a[iy-1][ix+2][iz+2] - \
-			       a[iy-1][ix-1][iz+2] - a[iy-1][ix+2][iz-1]) + \
-			   C5*(a[iy+1][ix+1][iz+1] + a[iy+1][ix  ][iz  ] + \
-			       a[iy+1][ix+1][iz  ] + a[iy+1][ix  ][iz+1] - \
-			       a[iy  ][ix  ][iz  ] - a[iy  ][ix+1][iz+1] - \
-			       a[iy  ][ix  ][iz+1] - a[iy  ][ix+1][iz  ])  )*s
-#define Dz3(a,ix,iy,iz,s) (C8*(a[iy+4][ix+4][iz+4] + a[iy-3][ix+4][iz+4] + \
-			       a[iy-3][ix-3][iz+4] + a[iy+4][ix-3][iz+4] - \
-			       a[iy-3][ix-3][iz-3] - a[iy+4][ix-3][iz-3] - \
-			       a[iy+4][ix+4][iz-3] - a[iy-3][ix+4][iz-3]) + \
-			   C7*(a[iy+3][ix+3][iz+3] + a[iy-2][ix+3][iz+3] + \
-			       a[iy-2][ix-2][iz+3] + a[iy+3][ix-2][iz+3] - \
-			       a[iy-2][ix-2][iz-2] - a[iy+3][ix-2][iz-2] - \
-			       a[iy+3][ix+3][iz-2] - a[iy-2][ix+3][iz-2]) + \
-			   C6*(a[iy+2][ix+2][iz+2] + a[iy-1][ix+2][iz+2] + \
-			       a[iy-1][ix-1][iz+2] + a[iy+2][ix-1][iz+2] - \
-			       a[iy-1][ix-1][iz-1] - a[iy+2][ix-1][iz-1] - \
-			       a[iy+2][ix+2][iz-1] - a[iy-1][ix+2][iz-1]) + \
-			   C5*(a[iy+1][ix+1][iz+1] + a[iy  ][ix+1][iz+1] + \
-			       a[iy  ][ix  ][iz+1] + a[iy+1][ix  ][iz+1] - \
-			       a[iy  ][ix  ][iz  ] - a[iy+1][ix  ][iz  ] - \
-			       a[iy+1][ix+1][iz  ] - a[iy  ][ix+1][iz  ])  )*s
+/* CENTERED derivatives */
+#define C1 +0.800000   /* +4/5    */
+#define C2 -0.200000   /* -1/5    */
+#define C3 +0.038095   /* +4/105  */
+#define C4 -0.003571   /* -5/280  */
+#define Dx(a,ix,iz,s) (C4*(a[ix+4][iz] - a[ix-4][iz]) +		\
+		       C3*(a[ix+3][iz] - a[ix-3][iz]) +		\
+		       C2*(a[ix+2][iz] - a[ix-2][iz]) +		\
+		       C1*(a[ix+1][iz] - a[ix-1][iz])  )*s
+#define Dz(a,ix,iz,s) (C4*(a[ix][iz+4] - a[ix][iz-4]) +		\
+		       C3*(a[ix][iz+3] - a[ix][iz-3]) +		\
+		       C2*(a[ix][iz+2] - a[ix][iz-2]) +		\
+		       C1*(a[ix][iz+1] - a[ix][iz-1])  )*s
 
 
 enum AniType {ORTHORHOMBIC=0,TRICLINIC=1};
@@ -754,27 +693,30 @@ for (ix=0; ix<fdm->nxpad; ix++) {
     /* field from t - dt/2 to t + dt/2                            */
     /*------------------------------------------------------------*/
        /* Calculate constituitive relations */
+#ifdef _OPENMP
+#pragma omp parallel for schedule(dynamic,fdm->ompchunk) \
+    private(iz,ix) \
+    shared(fdm,p,tzz,txz,txx,voz,vox,qoz,qox,alpha,biotmod,shm,lambdau,idz,idx)
+#endif       
    for (ix = NOP; ix < fdm->nxpad-NOP; ix++) {
      for (iz = NOP; iz < fdm->nzpad-NOP; iz++) {
        /* p(i+1/2,j+1/2), m */
        p[ix][iz]    =   p[ix][iz]   - ( alpha[ix][iz] * biotmod[ix][iz] * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) -
-                                                        biotmod[ix][iz] * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) );
+                                                        biotmod[ix][iz] * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) ) * dt;
 
        /* txz(i,j+1), m */
-       txz[ix][iz] =    txz[ix][iz] + shm[ix][iz] * ( Dz(vox,ix,iz,idz) + Dx(voz,ix,iz,idx) );
+       txz[ix][iz] =    txz[ix][iz] + shm[ix][iz] * ( Dz(vox,ix,iz,idz) + Dx(voz,ix,iz,idx) ) * dt;
 
-       /* tzx(i,j+1), m */
-       tzx[ix][iz] =    tzx[ix][iz] + shm[ix][iz] * ( Dx(voz,ix,iz,idx) + Dz(vox,ix,iz,idz) );
 
        /* txx(i+1/2,j+1/2), m */
-       txx[ix][iz] =    txx[ix][iz] + ( 2.0f * shm[ix][iz]   *   Dx(vox,ix,iz,idx) +
-                                            lambda[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) +
-                        ( alpha[ix][iz]  * biotmod[ix][iz] ) * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) );
+       txx[ix][iz] =    txx[ix][iz] +        ( shm[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dx(vox,ix,iz,idx) ) +
+                                           lambdau[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) +
+                        ( alpha[ix][iz]  * biotmod[ix][iz] ) * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) ) * dt;
 
        /* tzz(i+1/2,j+1/2), m */
-       tzz[ix][iz] =    tzz[ix][iz] + ( 2.0f * shm[ix][iz]   *   Dz(voz,ix,iz,idz) +
-                                            lambda[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) +
-                        ( alpha[ix][iz]  * biotmod[ix][iz] ) * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) );
+       tzz[ix][iz] =    tzz[ix][iz] +        ( shm[ix][iz]   * ( Dz(voz,ix,iz,idz) + Dz(voz,ix,iz,idz) ) +
+                                           lambdau[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) +
+                        ( alpha[ix][iz]  * biotmod[ix][iz] ) * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) ) * dt;
      }
    }
     /*------------------------------------------------------------*/
@@ -785,7 +727,7 @@ for (ix=0; ix<fdm->nxpad; ix++) {
       for (ix=0; ix < fdm->nxpad; ix++) {
     	  for (iz=0; iz < fdm->nb; iz++) {
     	    txx[ix][iz] = 0.0f;
-    	    txz[ix][iz] = 0.0f; 
+    	    txz[ix][iz] = 0.0f;
     	    tzx[ix][iz] = 0.0f;
     	    tzz[ix][iz] = 0.0f;
 	          p[ix][iz] = 0.0f;
@@ -833,32 +775,33 @@ vnormmax_ix = 0;
 vnormmax_iz = 0;
 pnormmax_ix = 0;
 pnormmax_iz = 0;
+#ifdef _OPENMP
+#pragma omp parallel for schedule(dynamic,fdm->ompchunk) \
+    private(iz,ix) \
+    shared(fdm,txx,tzz,txz,p,qoz,qox,voz,vox,qpz,qpx,vpz,vpx,r_bar,bro,fmo,fro,mro,idz,idx)
+#endif
     for (ix = NOP; ix<fdm->nxpad-NOP; ix++) {
       for (iz = NOP; iz<fdm->nzpad-NOP; iz++) {
 
         /* filtration velocity, t + dt */
-        qpx[ix][iz] = (   bro[ix][iz]*dt*( -1.0f*Dx(p,ix,iz,idx) ) -
-                          fro[ix][iz]*dt*( Dx(txx,ix,iz,idx) + Dz(txz,ix,iz,idz) ) +
-                        ( bro[ix][iz]*mro[ix][iz] - pow(bro[ix][iz],2.0f) - bro[ix][iz]*fmo[ix][iz]*dt/2.0f ) * qox[ix][iz] ) /
-                        ( bro[ix][iz]*mro[ix][iz] - pow(fro[ix][iz],2.0f) + bro[ix][iz]*fmo[ix][iz]*dt/2.0f );
+        qpx[ix][iz] =  ( (2.0*r_bar[ix][iz] - bro[ix][iz]*fmo[ix][iz]*dt)/(2.0*r_bar[ix][iz] + bro[ix][iz]*fmo[ix][iz]*dt) ) * qox[ix][iz] +
+                       ( (-1.0*fro[ix][iz]*dt)/(r_bar[ix][iz] + bro[ix][iz]*fmo[ix][iz]*dt) ) * ( Dx(txx,ix,iz,idx) + Dz(txz,ix,iz,idz) ) +
+                       ( (-1.0*bro[ix][iz]*dt)/(r_bar[ix][iz] + bro[ix][iz]*fmo[ix][iz]*dt) ) * Dx(p,ix,iz,idx);
 
-        qpz[ix][iz] = (   bro[ix][iz]*dt*( -1.0f*Dz(p,ix,iz,idz) ) -
-                          fro[ix][iz]*dt*( Dx(txz,ix,iz,idx) + Dz(tzz,ix,iz,idz) ) +
-                        ( bro[ix][iz]*mro[ix][iz] - pow(bro[ix][iz],2.0f) - bro[ix][iz]*fmo[ix][iz]*dt/2.0f ) * qoz[ix][iz] ) /
-                        ( bro[ix][iz]*mro[ix][iz] - pow(fro[ix][iz],2.0f) + bro[ix][iz]*fmo[ix][iz]*dt/2.0f );
+        qpz[ix][iz] =  ( (2.0*r_bar[ix][iz] - bro[ix][iz]*fmo[ix][iz]*dt)/(2.0*r_bar[ix][iz] + bro[ix][iz]*fmo[ix][iz]*dt) ) * qoz[ix][iz] +
+                       ( (-1.0*fro[ix][iz]*dt)/(r_bar[ix][iz] + bro[ix][iz]*fmo[ix][iz]*dt) ) * ( Dx(txz,ix,iz,idx) + Dz(tzz,ix,iz,idz) ) +
+                       ( (-1.0*bro[ix][iz]*dt)/(r_bar[ix][iz] + bro[ix][iz]*fmo[ix][iz]*dt) ) * Dz(p,ix,iz,idz);
+
 
         /* particle velocity, t + dt */
-        vpx[ix][iz] = (  dt*(mro[ix][iz] + fmo[ix][iz]*dt/2.0f)*( Dx(txx,ix,iz,idx) + Dz(txz,ix,iz,idz) ) -
-                         fro[ix][iz]*dt*( -1.0f*Dx(p,ix,iz,idx) ) +
-                         fro[ix][iz]*dt*fmo[ix][iz]*qox[ix][iz] )/
-                       ( bro[ix][iz]*mro[ix][iz] - pow(fro[ix][iz],2.0f) + bro[ix][iz]*fmo[ix][iz]*dt/2.0f )  +
-                         vox[ix][iz];
+        vpx[ix][iz] = vox[ix][iz] + ( (mro[ix][iz]*dt)/r_bar[ix][iz] ) * ( Dx(txx,ix,iz,idx) + Dz(txz,ix,iz,idz) ) +
+                                    ( (fro[ix][iz]*dt)/r_bar[ix][iz] ) * Dx(p,ix,iz,idx)  +
+                                    ( (fro[ix][iz]*fmo[ix][iz]*dt)/r_bar[ix][iz] ) * ( (qpx[ix][iz] + qox[ix][iz])/2 );
 
-        vpz[ix][iz] = (  dt*(mro[ix][iz] + fmo[ix][iz]*dt/2.0f)*( Dx(txz,ix,iz,idx) + Dz(tzz,ix,iz,idz) ) -
-                         fro[ix][iz]*dt*( -1.0f*Dz(p,ix,iz,idz) ) +
-                         fro[ix][iz]*dt*fmo[ix][iz]*qoz[ix][iz] ) /
-                       ( bro[ix][iz]*mro[ix][iz] - pow(fro[ix][iz],2.0f) + bro[ix][iz]*fmo[ix][iz]*dt/2.0f ) +
-                         voz[ix][iz];
+
+        vpz[ix][iz] = voz[ix][iz] + ( (mro[ix][iz]*dt)/r_bar[ix][iz] ) * ( Dx(txz,ix,iz,idx) + Dz(tzz,ix,iz,idz) ) +
+                                    ( (fro[ix][iz]*dt)/r_bar[ix][iz] ) * Dz(p,ix,iz,idz)  +
+                                    ( (fro[ix][iz]*fmo[ix][iz]*dt)/r_bar[ix][iz] ) * ( (qpz[ix][iz] + qoz[ix][iz])/2 );
 
        /* stability check */
        vnormtotal = powf( powf(vpx[ix][iz],2.0f) + powf(vpz[ix][iz],2.0f), 0.5f);
@@ -989,6 +932,23 @@ pnormmax_iz = 0;
       sponge2d_apply(wmx,spo,fdm);
       sponge2d_apply(wox,spo,fdm);
       sponge2d_apply(wpx,spo,fdm);
+
+      sponge2d_apply(vmz,spo,fdm);
+      sponge2d_apply(voz,spo,fdm);
+      sponge2d_apply(vpz,spo,fdm);
+
+      sponge2d_apply(qmz,spo,fdm);
+      sponge2d_apply(qoz,spo,fdm);
+      sponge2d_apply(qpz,spo,fdm);
+
+      sponge2d_apply(vmx,spo,fdm);
+      sponge2d_apply(vox,spo,fdm);
+      sponge2d_apply(vpx,spo,fdm);
+
+      sponge2d_apply(qmx,spo,fdm);
+      sponge2d_apply(qox,spo,fdm);
+      sponge2d_apply(qpx,spo,fdm);
+
     }
     /*------------------------------------------------------------*/
     /* cut wavefield and save */
@@ -1020,11 +980,11 @@ pnormmax_iz = 0;
       /* Save snapshots of wavefield if selected */
       if (snap && it%jsnap==0) {
         /* Export Vz */
-        cut2d(p,uc,fdm,acz,acx);
+        cut2d(voz,uc,fdm,acz,acx);
         sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
 
         /* Export Vx */
-        cut2d(txz,uc,fdm,acz,acx);
+        cut2d(vox,uc,fdm,acz,acx);
         sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
       }
       if (it%jdata==0) sf_floatwrite(dd[0],nr*nc,Fdat);

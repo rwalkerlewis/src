@@ -1,0 +1,29 @@
+.TH sfeacd2d 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfeacd2d \- Extended time-domain acoustic FD modeling 
+.SH SYNOPSIS
+.B sfeacd2d < Fw.rsf > Fo.rsf vel=Fv.rsf ref=Fr.rsf verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B ref
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	setup I/O files
+.SH USED IN
+.TP
+.I trip/test/flat
+.SH SOURCE
+.I user/hpcss/Meacd2d.c
+.SH VERSION
+2.1-git

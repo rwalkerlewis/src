@@ -1,0 +1,19 @@
+Program sfsmoothcur | Convert input slope and time derivative
+[SYNOPSIS]
+sfsmoothcur < DATA.rsf dipt=DIPT.rsf > MODEL.rsf dataout=DATA_OUT.rsf eps=1.0 niter=100 rect#=(1,1,...)
+[COMMENTS]
+* to its curvature field using LS and shaping regularization
+* applied to causint_lop d = L m
+
+Takes: rect1= rect2= ...
+
+rectN defines the size of the smoothing stencil in N-th dimension.
+
+[PARAMETERS]
+string  | dataout | = |   | 	optionally, output predicted data (auxiliary output file name)
+file    | dipt | = |   | 	auxiliary input file name
+float   | eps | =1.0 |   | 	dumping factor
+int     | niter | =100 |   | 	maximum number of iterations 
+int     | rect# | =(1,1,...) |   | 	smoothing radius on #-th axis 
+[DIRECTORY]
+user/lcasasan

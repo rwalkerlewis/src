@@ -1,0 +1,7 @@
+Program sfkdtree | Test k-D tree algorithm. 
+[SYNOPSIS]
+sfkdtree < inp.rsf > out.rsf point=
+[PARAMETERS]
+floats  | point | = |   | 	 [nd]
+[DIRECTORY]
+user/fomels

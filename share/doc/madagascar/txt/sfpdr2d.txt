@@ -1,0 +1,12 @@
+Program sfpdr2d | 2D Parametric Development of Reflections 
+[SYNOPSIS]
+sfpdr2d < dataFile.rsf > outFile.rsf aux=auxFile.rsf vel=velFile.rsf po=shotStart_ pn=recNum_ pd=recStep_ wh=11
+[PARAMETERS]
+string  | aux | = |   | 	output file containing semblance measure of CIGs stacking (auxiliary output file name)
+float   | pd | =recStep_ |   | 	increment of positions in stack section 
+int     | pn | =recNum_ |   | 	number of positions in stack section 
+float   | po | =shotStart_ |   | 	start position in stack section 
+string  | vel | = |   | 	velocity model file (velocity in m/s) (auxiliary input file name)
+int     | wh | =11 |   | 	height of a vertical window for semblance calculation 
+[DIRECTORY]
+user/aklokov

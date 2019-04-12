@@ -1,0 +1,5 @@
+Program sfwavegeom | Rice HPCSS forward modeling. 
+[SYNOPSIS]
+sfwavegeom
+[DIRECTORY]
+user/roman

@@ -1,0 +1,16 @@
+Program sffkgdmo | FK-domain Gardner's DMO for regularly sampled 2-D data 
+[SYNOPSIS]
+sffkgdmo < in.rsf > out.rsf inv=y shot=n eps=0.01 nb=85 db=1 xi=1
+[COMMENTS]
+
+The input/ouput is (offset,logstretch frequency, midpoint/shot wavenumber).
+
+[PARAMETERS]
+float   | db | =1 |   | 	angle increment 
+float   | eps | =0.01 |   | 	stretch regularization 
+bool    | inv | =y |  [y/n] | 	inversion flag 
+int     | nb | =85 |   | 	number of angles 
+bool    | shot | =n |  [y/n] | 	if shot gathers instead of midpoint gathers 
+float   | xi | =1 |   | 	continuation paremeter 
+[DIRECTORY]
+system/seismic

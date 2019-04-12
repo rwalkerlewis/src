@@ -1,0 +1,12 @@
+Program sfcompensatexf | Complex-valued compensation (between two wavefields) 
+[SYNOPSIS]
+sfcompensatexf < Fnum.rsf den=Fden.rsf > Fres.rsf verb=n cmplx=y niter=1 perc=0.1 pad1=1
+[PARAMETERS]
+bool    | cmplx | =y |  [y/n] | 	use complex i/o 
+file    | den | = |   | 	auxiliary input file name
+int     | niter | =1 |   | 	number of iterations 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+float   | perc | =0.1 |   | 	precentage (of max) for protection when dividing 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

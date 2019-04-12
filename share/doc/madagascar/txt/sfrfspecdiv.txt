@@ -1,0 +1,10 @@
+Program sfrfspecdiv | None
+[SYNOPSIS]
+sfrfspecdiv < infile.rsf file1=file1.rsf > outfile.rsf a=1.25 c=0.01 pd=10.
+[PARAMETERS]
+        | a | =1.25 |   | 	
+        | c | =0.01 |   | 	
+file    | file1 | = |   | 	auxiliary input file name
+        | pd | =10. |   | 	phase delay
+[DIRECTORY]
+user/jeff

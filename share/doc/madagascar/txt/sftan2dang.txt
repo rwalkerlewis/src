@@ -1,0 +1,12 @@
+Program sftan2dang | 2-D slowness vector to angle transformation. 
+[SYNOPSIS]
+sftan2dang < in.rsf > out.rsf na=360 da=0.5 oa=0.0 nr=2*nsx dr=0.5*dsx or=osx
+[PARAMETERS]
+float   | da | =0.5 |   | 	
+float   | dr | =0.5*dsx |   | 	line summation sampling 
+int     | na | =360 |   | 	
+int     | nr | =2*nsx |   | 	line summation samples 
+float   | oa | =0.0 |   | 	
+float   | or | =osx |   | 	line summation origin 
+[DIRECTORY]
+user/browaeys

@@ -1,0 +1,11 @@
+Program sfkarman2 | Estimation of von Karman autocorrelation 2D spectrum by nonlinear separable least squares. 
+[SYNOPSIS]
+sfkarman2 < in.rsf > out.rsf a0=1000. b0=0. c0=400. niter=100 verb=n
+[PARAMETERS]
+float   | a0 | =1000. |   | 	starting correlation length in xx 
+float   | b0 | =0. |   | 	starting correlation length in xy 
+float   | c0 | =400. |   | 	starting correlation length in yy 
+int     | niter | =100 |   | 	number of iterations 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/browaeys

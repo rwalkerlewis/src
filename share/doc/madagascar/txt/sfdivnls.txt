@@ -1,0 +1,12 @@
+Program sfdivnls | 2D divn by stationary LS 
+[SYNOPSIS]
+sfdivnls < inp.rsf den=den.rsf > out.rsf rect1=0 rect2=0 rect3=0 tls=n angle=n
+[PARAMETERS]
+bool    | angle | =n |  [y/n] | 	angle or slope 
+file    | den | = |   | 	auxiliary input file name
+int     | rect1 | =0 |   | 	
+int     | rect2 | =0 |   | 	
+int     | rect3 | =0 |   | 	smoothing radius 
+bool    | tls | =n |  [y/n] | 	total least squares 
+[DIRECTORY]
+user/chen

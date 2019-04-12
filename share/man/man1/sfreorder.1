@@ -1,0 +1,21 @@
+.TH sfreorder 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfreorder \- Reorder the data according to the path 
+.SH SYNOPSIS
+.B sfreorder < in.rsf path=path.rsf > out.rsf inv=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I file   
+.B path
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/zgeng/Mreorder.c
+.SH VERSION
+2.1-git

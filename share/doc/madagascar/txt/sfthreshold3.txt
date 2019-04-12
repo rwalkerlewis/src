@@ -1,0 +1,8 @@
+Program sfthreshold3 | Automatic soft or hard thresholding. 
+[SYNOPSIS]
+sfthreshold3 < in.rsf > out.rsf type= dist=
+[PARAMETERS]
+string  | dist | = |   | 	[gaussian,rayleigh] distribution type, the default is gaussian 
+string  | type | = |   | 	[soft,hard] thresholding type, the default is soft  
+[DIRECTORY]
+user/yliu

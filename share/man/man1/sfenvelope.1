@@ -1,0 +1,86 @@
+.TH sfenvelope 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfenvelope \- None
+.SH SYNOPSIS
+.B sfenvelope < in.rsf > out.rsf order=100 ref=1. hilb=n phase=90.
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B hilb
+.B =n
+.R  [y/n]	if y, compute Hilbert transform
+.TP
+.I int    
+.B order
+.B =100
+.R  	Hilbert transformer order
+.TP
+.I float  
+.B phase
+.B =90.
+.R  	phase shift (in degrees) to use with hilb=y
+.TP
+.I float  
+.B ref
+.B =1.
+.R  	Hilbert transformer reference (0.5 < ref <= 1)
+.SH USED IN
+.TP
+.I cup/rna2d/real
+.TP
+.I data/nankai/data
+.TP
+.I gallery/sigsbee/lrostep
+.TP
+.I geo384s/hw3/dmo
+.TP
+.I geo384s/hw6/rtm
+.TP
+.I jlu/vdseislet/nmo
+.TP
+.I milano/taupvel/cmp
+.TP
+.I milano/taupvel/synth
+.TP
+.I rsf/rsf/sfenvelope
+.TP
+.I rsf/tutorials/attr
+.TP
+.I rsf/tutorials/hilbert
+.TP
+.I tccs/crs/dome2
+.TP
+.I tccs/eseis/demo2
+.TP
+.I tccs/eseis/demo4
+.TP
+.I tccs/eseis/field
+.TP
+.I tccs/eseis/nonseis
+.TP
+.I tccs/eseis/sparse
+.TP
+.I tccs/flat/comaz
+.TP
+.I tccs/flat/flat
+.TP
+.I tccs/flat/flatelf
+.TP
+.I tccs/fraclapl/diffq
+.TP
+.I tccs/fraclapl/marmq
+.TP
+.I tccs/fraclapl/twolayer
+.TP
+.I tccs/gmresq/bpgas
+.TP
+.I tccs/gmresq/exploding
+.TP
+28 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfenvelope.html
+.SH SOURCE
+.I system/seismic/Menvelope.c
+.SH VERSION
+2.1-git

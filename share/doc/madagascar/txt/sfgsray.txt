@@ -1,0 +1,18 @@
+Program sfgsray | Gauss Seidel iterative solver for phase space escape positions, angle and traveltime 
+[SYNOPSIS]
+sfgsray < in.rsf > out.rsf slow=slow.rsf slowz=slowz.rsf slowx=slowx.rsf dslow=dslow.rsf dtout=dtout.rsf iq= niter=50 liter=0 tol=0.000002*nx*nz order=1 verb=n sph=n
+[PARAMETERS]
+string  | dslow | = |   | 	auxiliary input file name
+file    | dtout | = |   | 	auxiliary output file name
+int     | iq | = |   | 	switch for escape variable 0=x, 1=a, 2=t, 3=z, 4=l, 5=i 
+int     | liter | =0 |   | 	number of first iterations with low-order scheme 
+int     | niter | =50 |   | 	number of Gauss-Seidel iterations 
+int     | order | =1 |   | 	order of upwind 
+file    | slow | = |   | 	auxiliary input file name
+file    | slowx | = |   | 	auxiliary input file name
+file    | slowz | = |   | 	auxiliary input file name
+bool    | sph | =n |  [y/n] | 	true - half-sphere, false - flat B.C. on left/right 
+float   | tol | =0.000002*nx*nz |   | 	accuracy tolerance 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/browaeys

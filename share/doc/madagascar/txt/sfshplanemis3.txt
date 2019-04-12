@@ -1,0 +1,14 @@
+Program sfshplanemis3 | Missing data interpolation in 3-D using plane-wave shaping regularization. 
+[SYNOPSIS]
+sfshplanemis3 < in.rsf > out.rsf dip=dip.rsf mask=mask.rsf niter=100 order1=1 order2=1 ns1=1 ns2=1 eps=0.01
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	number of iterations 
+int     | ns1 | =1 |   | 	
+int     | ns2 | =1 |   | 	smoothing radius 
+int     | order1 | =1 |   | 	
+int     | order2 | =1 |   | 	accuracy order 
+[DIRECTORY]
+user/pwd

@@ -1,0 +1,50 @@
+.TH sfheadercut 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfheadercut \- Zero a portion of a dataset based on a header mask.
+.SH SYNOPSIS
+.B sfheadercut mask=head.rsf < in.rsf > out.rsf
+.SH COMMENTS
+
+The input data is a collection of traces n1xn2,
+mask is an integer array of size n2.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I rsf/rsf/sfdots
+.TP
+.I sep/oc2/cup
+.TP
+.I sep/plane/qint
+.TP
+.I tccs/apefint/misscurv
+.TP
+.I tccs/apefint/missing
+.TP
+.I tccs/merge/pcable
+.TP
+.I tccs/merge/pcable2
+.TP
+.I tccs/oc3/fault
+.TP
+.I tccs/oc3/frenchint
+.TP
+.I xjtu/test/fpocs2d
+.TP
+.I xjtu/test/fpocs3d
+.TP
+.I xjtu/test/lsinterp2d
+.TP
+.I xjtu/test/mwni2d
+.SH SOURCE
+.I system/main/headercut.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfheadercut
+.SH VERSION
+2.1-git headerwindow.c 1303 2005-08-17 02:08:33Z fomels

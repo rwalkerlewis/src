@@ -1,0 +1,13 @@
+Program sfepisort | Sort microseismic surface array recording traces by their distances or azimuths to a given epicenter. 
+[SYNOPSIS]
+sfepisort < in.rsf x=x_file.rsf y=y_file.rsf > out.rsf dist=dist_file.rsf theta=theta_file.rsf epi_x= epi_y= sort=
+[PARAMETERS]
+file    | dist | = |   | 	auxiliary output file name
+float   | epi_x | = |   | 	referenced epicenter coordinate x. 
+float   | epi_y | = |   | 	referenced epicenter coordinate y. 
+string  | sort | = |   | 	sort distance[d] (default) or angle[a] 
+file    | theta | = |   | 	auxiliary output file name
+file    | x | = |   | 	auxiliary input file name
+file    | y | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/yunzhi

@@ -1,0 +1,7 @@
+Program sflaplac3d | 3-D finite-difference Laplacian operation. 
+[SYNOPSIS]
+sflaplac3d < in.rsf > out.rsf adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+[DIRECTORY]
+system/generic

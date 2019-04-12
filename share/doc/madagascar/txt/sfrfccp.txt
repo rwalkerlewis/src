@@ -1,0 +1,8 @@
+Program sfrfccp | None
+[SYNOPSIS]
+sfrfccp < infile.rsf vp=vpfile.rsf vs=vsfile.rsf > outfile.rsf
+[PARAMETERS]
+file    | vp | = |   | 	auxiliary input file name
+file    | vs | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jeff

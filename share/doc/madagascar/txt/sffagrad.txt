@@ -1,0 +1,11 @@
+Program sffagrad | Calculating frequency attenuation gradient. 
+[SYNOPSIS]
+sffagrad < in.rsf > out.rsf grad=y lperc=65. hperc=85. freq= type=
+[PARAMETERS]
+float   | freq | = |   | 	Frequency corresponding to energy ratio, valid when type=ratio 
+bool    | grad | =y |  [y/n] | 	If y, output attenuation gradient; if n, output absorption factor 
+float   | hperc | =85. |   | 	High percentage of total energy 
+float   | lperc | =65. |   | 	Low percentage of total energy 
+string  | type | = |   | 	[low,full,ratio,attenuation] attribute type, the default is attenuation  
+[DIRECTORY]
+user/yliu

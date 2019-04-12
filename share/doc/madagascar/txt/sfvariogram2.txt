@@ -1,0 +1,12 @@
+Program sfvariogram2 | Compute a horizontal variogram of data slice. 
+[SYNOPSIS]
+sfvariogram2 < in.rsf > out.rsf verb=n dh1=1 nh1=n1/dh1 dh2=1 nh2=n2/dh2 semi=y
+[PARAMETERS]
+int     | dh1 | =1 |   | 	interval (jump) of variogram lag in first axis 
+int     | dh2 | =1 |   | 	interval (jump) of variogram lag in second axis 
+int     | nh1 | =n1/dh1 |   | 	number of variogram lag in first axis 
+int     | nh2 | =n2/dh2 |   | 	number of variogram lag in second axis 
+bool    | semi | =y |  [y/n] | 	if y, output semivariogram 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,9 @@
+Program sfsmspray | Smoothing by spraying 
+[SYNOPSIS]
+sfsmspray < inp.rsf > out.rsf adj=n ns=0 type=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+int     | ns | =0 |   | 	smoothing radius 
+string  | type | = |   | 	weight type (triangle, gauss) 
+[DIRECTORY]
+user/fomels

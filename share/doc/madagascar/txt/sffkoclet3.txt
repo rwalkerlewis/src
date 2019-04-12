@@ -1,0 +1,20 @@
+Program sffkoclet3 | 2-D seislet transform using frequency-wavenumber offset-azimuth continuation 
+[SYNOPSIS]
+sffkoclet3 < in.rsf > out.rsf inv=n adj=n dwt=n amp=n verb=y eps=0.01 maxe=10. dir= type=
+[COMMENTS]
+Forward transform (adj=n inv=y/n) m=T[d]
+Inverse transform (adj=y inv=y)   d=T^(-1)[d]
+Adjoint transform (adj=y inv=n)   d=T'[d]
+
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y, do adjoint transform 
+bool    | amp | =n |  [y/n] | 	if y, true amplitudes continuation 
+string  | dir | = |   | 	[azimuth,offset,both] direction, the default is both directions  
+bool    | dwt | =n |  [y/n] | 	if y, do wavelet transform 
+float   | eps | =0.01 |   | 	regularization 
+bool    | inv | =n |  [y/n] | 	if y, do inverse transform 
+float   | maxe | =10. |   | 	stability constraint 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal  
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

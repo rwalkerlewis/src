@@ -1,0 +1,10 @@
+Program sfllpf | Local prediction filter (n-dimensional) with an adjoint flag. 
+[SYNOPSIS]
+sfllpf basis=dat.rsf < mat.rsf > flt.rsf adj=n niter=100 verb=y
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	
+file    | basis | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	number of iterations 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/fomels

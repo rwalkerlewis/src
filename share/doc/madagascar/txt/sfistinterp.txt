@@ -1,0 +1,18 @@
+Program sfistinterp | n-D IST interpolation using a generalized shrinkage operator
+[SYNOPSIS]
+sfistinterp < in.rsf > out.rsf mask=Fmask.rsf verb=n niter=100 pclip=10. normp=0.9 n#= mode=
+[COMMENTS]
+Note: Acquistion geometry specified by mask operator
+
+[PARAMETERS]
+string  | mask | = |   | 	auxiliary input file name
+string  | mode | = |   | 	thresholding mode: 'hard', 'soft','pthresh','exp';
+       'hard', hard thresholding;	'soft', soft thresholding; 
+       'pthresh', generalized quasi-p; 'exp', exponential shrinkage 
+int     | n# | = |   | 	size of #-th axis 
+int     | niter | =100 |   | 	total number of iterations 
+float   | normp | =0.9 |   | 	quasi-norm: normp<2 
+float   | pclip | =10. |   | 	starting data clip percentile (default is 10)
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/pyang

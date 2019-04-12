@@ -1,0 +1,9 @@
+Program sfzero | Zero crossings with sub-pixel resolution. 
+[SYNOPSIS]
+sfzero < inp.rsf > out.rsf nzero=nzero.rsf nw=4 down=n
+[PARAMETERS]
+bool    | down | =n |  [y/n] | 	only zeros on the way down 
+int     | nw | =4 |   | 	Interpolation accuracy 
+file    | nzero | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/fomels

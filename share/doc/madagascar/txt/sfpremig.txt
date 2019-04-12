@@ -1,0 +1,51 @@
+Program sfpremig | Pseudo-spectral pre-stack source-receiver source independent diffraction imaging 
+[SYNOPSIS]
+sfpremig < Fi.rsf > Fo.rsf vel=Fv.rsf dat_v=Fd_v.rsf dat_2=Fi1.rsf snaps=snaps.rsf spx= spz= f0= t0= A= snap=0 cmplx=y pad1=1 abc=n roll=n born=n diff=n justrec=n nbt= nbb=nbt nbl=nbt nbr=nbt ct= cb=ct cl=ct cr=ct verb=n ps=n adj=n vref=1500 nt= dt= gpl=-1 gpl_v=-1 src=0 n_srcs=1 shtbgn= shtend= shtint= which=0 gpx=-1 gpz=-1 gpx_v=-1 gpz_v=-1 offset=0 split=1
+[PARAMETERS]
+floats  | A | = |   | 	wavelet amplitude  [n_srcs]
+bool    | abc | =n |  [y/n] | 	absorbing flag 
+bool    | adj | =n |  [y/n] | 	use pseudo-spectral 
+bool    | born | =n |  [y/n] | 	born modeling flag 
+float   | cb | =ct |   | 	
+float   | cl | =ct |   | 	
+bool    | cmplx | =y |  [y/n] | 	use complex fft 
+float   | cr | =ct |   | 	
+float   | ct | = |   | 	
+file    | dat_2 | = |   | 	auxiliary input file name
+string  | dat_v | = |   | 	auxiliary input file name
+bool    | diff | =n |  [y/n] | 	diffraction imaging flag 
+float   | dt | = |   | 	
+floats  | f0 | = |   | 	wavelet peak freq  [n_srcs]
+int     | gpl | =-1 |   | 	geophone length 
+int     | gpl_v | =-1 |   | 	geophone height 
+int     | gpx | =-1 |   | 	geophone position x 
+int     | gpx_v | =-1 |   | 	geophone position x 
+int     | gpz | =-1 |   | 	geophone position z 
+int     | gpz_v | =-1 |   | 	geophone position z 
+bool    | justrec | =n |  [y/n] | 	just need full waveform record (no born or rtdm) 
+int     | n_srcs | =1 |   | 	source type 
+int     | nbb | =nbt |   | 	
+int     | nbl | =nbt |   | 	
+int     | nbr | =nbt |   | 	
+int     | nbt | = |   | 	
+int     | nt | = |   | 	
+int     | offset | =0 |   | 	nearest offset 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+bool    | ps | =n |  [y/n] | 	use pseudo-spectral 
+bool    | roll | =n |  [y/n] | 	if n, receiver is independent of source location and gpl=nx
+int     | shtbgn | = |   | 	
+int     | shtend | = |   | 	
+int     | shtint | = |   | 	
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+int     | split | =1 |   | 	receiver split 
+ints    | spx | = |   | 	shot position x  [n_srcs]
+ints    | spz | = |   | 	shot position z  [n_srcs]
+int     | src | =0 |   | 	source type 
+floats  | t0 | = |   | 	wavelet time lag  [n_srcs]
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity 
+float   | vref | =1500 |   | 	reference velocity (default using water) 
+int     | which | =0 |   | 	
+[DIRECTORY]
+user/jsun

@@ -1,0 +1,11 @@
+Program sfhelm2D_forward | 2D Helmholtz forward solver by LU factorization. 
+[SYNOPSIS]
+sfhelm2D_forward < in.rsf > out.rsf source=source.rsf uts=0 hermite=n npml=20 order=
+[PARAMETERS]
+bool    | hermite | =n |  [y/n] | 	Hermite operator 
+int     | npml | =20 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+string  | source | = |   | 	auxiliary input file name
+int     | uts | =0 |   | 	
+[DIRECTORY]
+user/hzhu

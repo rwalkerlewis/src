@@ -1,0 +1,14 @@
+Program sfseisreg2 | Data regularization in 2-D using seislet transform. 
+[SYNOPSIS]
+sfseisreg2 < in.rsf > out.rsf dip=dip.rsf eps=0.01 interp=2 niter=50 order=1 order=1 verb=n head= type=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization parameter 
+string  | head | = |   | 	
+int     | interp | =2 |   | 	interpolation length 
+int     | niter | =50 |   | 	number of iterations 
+int     | order | =1 |   | 	accuracy order 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

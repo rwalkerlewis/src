@@ -1,0 +1,39 @@
+Program sfiwinlcg | Image-domain waveform tomography (Non-linear CG). 
+[SYNOPSIS]
+sfiwinlcg < in.rsf > out.rsf source=source.rsf data=data.rsf imask=imask.rsf weight=weight.rsf precon=precon.rsf grad=grad.rsf objt=objt.rsf imag=imag.rsf verb=y nh=0 load=n update=y uts=0 npml=10 prect1=5 prect2=1 prect3=5 pliter=20 plower=0.1 pupper=3. dorder=6 grect1=5 grect2=5 gliter=5 geps=0. gscale=0.1 miter=10 liter=5 delta=1.e-5 lower=1.5 upper=7.5 order= cost=
+[PARAMETERS]
+string  | cost | = |   | 	cost functional type (default Weibull) 
+string  | data | = |   | 	auxiliary input file name
+float   | delta | =1.e-5 |   | 	Nonlinear-CG convergence criteria 
+int     | dorder | =6 |   | 	image derivative accuracy order 
+float   | geps | =0. |   | 	regularization parameter for Gauss-Newton 
+int     | gliter | =5 |   | 	# of Gauss-Newton iterations 
+string  | grad | = |   | 	auxiliary output file name
+int     | grect1 | =5 |   | 	gradient smoothing radius on axis 1 
+int     | grect2 | =5 |   | 	gradient smoothing radius on axis 2 
+float   | gscale | =0.1 |   | 	gradient re-scale 
+string  | imag | = |   | 	auxiliary output file name
+string  | imask | = |   | 	auxiliary input file name
+int     | liter | =5 |   | 	Nonlinear-CG maximum # of line searches 
+bool    | load | =n |  [y/n] | 	load LU 
+float   | lower | =1.5 |   | 	lower bound of feasible set 
+int     | miter | =10 |   | 	Nonlinear-CG maximum # of iterations 
+int     | nh | =0 |   | 	horizontal space-lag 
+int     | npml | =10 |   | 	PML width 
+string  | objt | = |   | 	auxiliary output file name
+string  | order | = |   | 	discretization scheme (default optimal 25-point) 
+int     | pliter | =20 |   | 	slope estimation # of linear iterations 
+float   | plower | =0.1 |   | 	slope thresholding lower limit 
+string  | precon | = |   | 	auxiliary input file name
+int     | prect1 | =5 |   | 	slope smoothing radius on axis 1 
+int     | prect2 | =1 |   | 	slope smoothing radius on axis 2 
+int     | prect3 | =5 |   | 	slope smoothing radius on axis 3 
+float   | pupper | =3. |   | 	slope thresholding upper limit 
+string  | source | = |   | 	auxiliary input file name
+bool    | update | =y |  [y/n] | 	y, nonlinear CG; n, Gauss-Newton 
+float   | upper | =7.5 |   | 	upper bound of feasible set 
+int     | uts | =0 |   | 	number of OMP threads 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+string  | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/sparse

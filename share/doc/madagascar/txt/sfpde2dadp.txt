@@ -1,0 +1,21 @@
+Program sfpde2dadp | Numerical solution of linear pde 2-d (X-Z-a) for phase space escape positions, angle and traveltime 
+[SYNOPSIS]
+sfpde2dadp < in.rsf > out.rsf slow=slow.rsf slowz=slowz.rsf slowx=slowx.rsf iq= method= method_2d= niter=100 ixsmooth= izsmooth= xsmooth= zsmooth= is_xinf= is_zinf= tol=0.000002*nx*nz cvgce=
+[PARAMETERS]
+string  | cvgce | = |   | 	output file for convergence 
+int     | iq | = |   | 	switch for escape variable 0=x, 1=a, 2=t, 3=z 
+int     | is_xinf | = |   | 	
+int     | is_zinf | = |   | 	
+int     | ixsmooth | = |   | 	
+int     | izsmooth | = |   | 	
+int     | method | = |   | 	
+int     | method_2d | = |   | 	
+int     | niter | =100 |   | 	number of Gauss-Seidel iterations 
+file    | slow | = |   | 	auxiliary input file name
+file    | slowx | = |   | 	auxiliary input file name
+file    | slowz | = |   | 	auxiliary input file name
+float   | tol | =0.000002*nx*nz |   | 	accuracy tolerance 
+float   | xsmooth | = |   | 	
+float   | zsmooth | = |   | 	
+[DIRECTORY]
+user/browaeys

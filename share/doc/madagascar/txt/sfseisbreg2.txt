@@ -1,0 +1,15 @@
+Program sfseisbreg2 | Missing data interpolation in 2D using seislet and Bregman shaping iteration. 
+[SYNOPSIS]
+sfseisbreg2 < in.rsf > out.rsf dip=dip.rsf mask=mask.rsf niter=20 order=1 verb=n eps=0.01 perc=99. order=1 type= oper=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization parameter 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =20 |   | 	number of iterations 
+string  | oper | = |   | 	[bregman,thresholding] method, the default is bregman  
+int     | order | =1 |   | 	accuracy order 
+float   | perc | =99. |   | 	percentage for soft thresholding 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

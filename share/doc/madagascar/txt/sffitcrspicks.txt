@@ -1,0 +1,17 @@
+Program sffitcrspicks | 
+[SYNOPSIS]
+sffitcrspicks < in.rsf > out_tcrs.rsf crsparams= mask=
+[COMMENTS]
+Compute fitting of Non-hyperbolic CRS to first-arrivals T[m][h].
+
+Input: T[m][h] arrivals and in its sf-file  m[], Nm h[], Nh 
+Output: 
+tcrs=filname - t[m][h] crs surface
+prints three CRS parameters a[3] where: t[m][h] = a(0) m + a(1)m^2 + a(2) h^2
+
+
+[PARAMETERS]
+string  | crsparams | = |   | 	
+string  | mask | = |   | 	
+[DIRECTORY]
+user/roman

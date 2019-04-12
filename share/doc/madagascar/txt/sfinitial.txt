@@ -1,0 +1,7 @@
+Program sfinitial | Initialize a data 
+[SYNOPSIS]
+sfinitial < in.rsf > out.rsf sign=y
+[PARAMETERS]
+bool    | sign | =y |  [y/n] | 	if y, initialize data with "1", or with "0" 
+[DIRECTORY]
+user/yliu

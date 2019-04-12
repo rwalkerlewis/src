@@ -1,0 +1,8 @@
+Program sffault | fault detection  
+[SYNOPSIS]
+sffault < in.rsf > out.rsf lamda=0.9 sigma=1.0
+[PARAMETERS]
+float   | lamda | =0.9 |   | 	
+float   | sigma | =1.0 |   | 	
+[DIRECTORY]
+user/chen

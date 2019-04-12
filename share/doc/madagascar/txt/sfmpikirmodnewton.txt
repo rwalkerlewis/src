@@ -1,0 +1,54 @@
+Program sfmpikirmodnewton | Kirchhoff 2-D/2.5-D modeling in layered media with bending ray tracing.  
+[SYNOPSIS]
+sfmpikirmodnewton input=modl.rsf output=data.rsf curv=curv.rsf refl=refl.rsf aniso=vti.rsf velocity= xgradient= zgradient= xref= zref= newton=y lin=n adj=n absoff=n nt= dt=0.004 t0=0. ns=nx s0=x0 ds=dx nh=nx h0=0. dh=dx verb=n r0=1. debug=n fwdxini=n vstatus= niter=500 tol=0.00001 order=3 twod=n cmp=n freq=0.2/dt vel= gradx= gradz= velz= eta= refx= refz= vel2= gradx2= gradz2= rgrad= dip= type= type2=
+[PARAMETERS]
+bool    | absoff | =n |  [y/n] | 	y - h0 is not in shot coordinate system 
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | aniso | = |   | 	auxiliary input file name
+bool    | cmp | =n |  [y/n] | 	compute CMP instead of shot gathers 
+file    | curv | = |   | 	auxiliary input file name
+bool    | debug | =n |  [y/n] | 	debug flag 
+float   | dh | =dx |   | 	offset increment 
+string  | dip | = |   | 	reflector dip file 
+float   | ds | =dx |   | 	shot/midpoint increment 
+float   | dt | =0.004 |   | 	time sampling 
+float   | eta | = |   | 	parameter for VTI anisotropy 
+float   | freq | =0.2/dt |   | 	peak frequency for Ricker wavelet 
+bool    | fwdxini | =n |  [y/n] | 	use the result of previous iteration to be the xinitial of the next one 
+float   | gradx | = |   | 	horizontal velocity gradient 
+float   | gradx2 | = |   | 	converted velocity, horizontal gradient 
+float   | gradz | = |   | 	vertical velocity gradient 
+float   | gradz2 | = |   | 	converted velocity, vertical gradient 
+float   | h0 | =0. |   | 	first offset 
+file    | input | = |   | 	auxiliary input file name
+bool    | lin | =n |  [y/n] | 	if linear operator 
+bool    | newton | =y |  [y/n] | 	To switch between analytical and newton kirmod
+int     | nh | =nx |   | 	number of offsets 
+int     | niter | =500 |   | 	The number of iterations
+int     | ns | =nx |   | 	number of shots (midpoints if cmp=y) 
+int     | nt | = |   | 	time samples 
+int     | order | =3 |   | 	Interpolation order
+file    | output | = |   | 	auxiliary output file name
+float   | r0 | =1. |   | 	normal reflectivity (if constant) 
+string  | refl | = |   | 	auxiliary input file name
+float   | refx | = |   | 	reference x-coordinate for velocity 
+float   | refz | = |   | 	reference z-coordinate for velocity 
+string  | rgrad | = |   | 	AVO gradient file (B/A) 
+float   | s0 | =x0 |   | 	first shot (midpoint if cmp=y) 
+float   | t0 | =0. |   | 	time origin 
+double  | tol | =0.00001 |   | 	Assign a default value for tolerance
+bool    | twod | =n |  [y/n] | 	2-D or 2.5-D 
+string  | type | = |   | 	type of velocity, 'c': constant, 's': linear sloth, 'v': linear velocity, 'a': VTI anisotropy 
+string  | type2 | = |   | 	type of velocity for the converted (receiver side) branch 
+float   | vel | = |   | 	velocity 
+float   | vel2 | = |   | 	converted velocity 
+floats  | velocity | = |   | 	Assign velocity km/s [nc]
+float   | velz | = |   | 	vertical velocity for VTI anisotropy 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+int     | vstatus | = |   | 	Velocity status (0 for constant v,1 for gradient v, and 2 for vti)
+floats  | xgradient | = |   | 	 [nc]
+floats  | xref | = |   | 	Assign x-reference point [nc]
+floats  | zgradient | = |   | 	 [nc]
+floats  | zref | = |   | 	Assign z-reference point [nc]
+[DIRECTORY]
+user/zone

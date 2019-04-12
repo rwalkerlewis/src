@@ -1,0 +1,7 @@
+Program sfrsf2bin | RSF file to Binary file 
+[SYNOPSIS]
+sfrsf2bin < in.rsf bfile=
+[PARAMETERS]
+string  | bfile | = |   | 	
+[DIRECTORY]
+user/chenyk

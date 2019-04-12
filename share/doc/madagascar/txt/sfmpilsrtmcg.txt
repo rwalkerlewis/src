@@ -1,0 +1,35 @@
+Program sfmpilsrtmcg | 2-D Low-rank One-step Least-square Pre-stack Reverse-Time-Migration using CG in the complex domain (both img and data are complex valued)
+[SYNOPSIS]
+sfmpilsrtmcg src=Fsrc.rsf left=left.rsf right=right.rsf leftb=leftb.rsf rightb=rightb.rsf vel=Fvel.rsf start=Fstart.rsf verb=n niter=1 mode=0 illum=n roll=n shtbgn= sht0=shtbgn shtend= shtint= spz= gpz= gpl= snapinter=1 srctrunc=0.4 rectz=1 rectx=1 repeat=0 top=40 bot=40 lft=40 rht=40 pad1=1
+[PARAMETERS]
+int     | bot | =40 |   | 	
+int     | gpl | = |   | 	
+int     | gpz | = |   | 	
+bool    | illum | =n |  [y/n] | 	if n, no source illumination applied 
+file    | left | = |   | 	auxiliary input file name
+file    | leftb | = |   | 	auxiliary input file name
+int     | lft | =40 |   | 	
+int     | mode | =0 |   | 	
+int     | niter | =1 |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+int     | rectx | =1 |   | 	
+int     | rectz | =1 |   | 	
+int     | repeat | =0 |   | 	abc parameters 
+int     | rht | =40 |   | 	Set I/O file
+file    | right | = |   | 	auxiliary input file name
+file    | rightb | = |   | 	auxiliary input file name
+bool    | roll | =n |  [y/n] | 	if n, receiver is independent of source location and gpl=nx
+int     | sht0 | =shtbgn |   | 	actual shot origin on grid
+int     | shtbgn | = |   | 	
+int     | shtend | = |   | 	
+int     | shtint | = |   | 	
+int     | snapinter | =1 |   | 	snap interval 
+int     | spz | = |   | 	
+file    | src | = |   | 	auxiliary input file name
+float   | srctrunc | =0.4 |   | 	
+string  | start | = |   | 	auxiliary input file name
+int     | top | =40 |   | 	
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity
+[DIRECTORY]
+user/jsun

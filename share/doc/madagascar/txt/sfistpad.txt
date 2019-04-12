@@ -1,0 +1,20 @@
+Program sfistpad | n-D IST interpolation using a generalized shrinkage operator and zero-padding
+[SYNOPSIS]
+sfistpad < in.rsf > out.rsf mask=Fmask.rsf pad= verb=n pow2=n niter=100 pclip=10. normp=1. n#= mode=
+[COMMENTS]
+Note: Acquistion geometry specified by mask operator
+
+[PARAMETERS]
+string  | mask | = |   | 	auxiliary input file name
+string  | mode | = |   | 	thresholding mode: 'hard', 'soft','pthresh','exp';
+       'hard', hard thresholding;	   'soft', soft thresholding; 
+       'pthresh', generalized quasi-p;  'exp', exponential shrinkage 
+int     | n# | = |   | 	size of #-th axis 
+int     | niter | =100 |   | 	total number of iterations 
+float   | normp | =1. |   | 	quasi-norm: normp<2 
+ints    | pad | = |   | 	number of zeros to be padded for each axis  [dim]
+float   | pclip | =10. |   | 	starting data clip percentile (default is 10)
+bool    | pow2 | =n |  [y/n] | 	round up the length of each axis to be power of 2 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/pyang

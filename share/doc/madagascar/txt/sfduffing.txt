@@ -1,0 +1,19 @@
+Program sfduffing | Duffing differential equation solved by 4th order Runge-Kutta method. 
+[SYNOPSIS]
+sfduffing < in.rsf > out.rsf sfile=sfile.rsf gamma=0.75 omega=1 kxi=1 x0=0 y0=0 pow1=1 pow2=3 verb=n ricker=n
+[COMMENTS]
+Duffing equation: x'' + 0.5 x' - x + x^3 = gamma cos(omega t) + kxi input(t)
+
+[PARAMETERS]
+float   | gamma | =0.75 |   | 	strength of external force
+float   | kxi | =1 |   | 	adjustment for input signal
+float   | omega | =1 |   | 	angular frequence of external force
+int     | pow1 | =1 |   | 	power of first non-linear restitution term
+int     | pow2 | =3 |   | 	power of second non-linear restitution term
+bool    | ricker | =n |  [y/n] | 	if y need extenal input for external force 
+string  | sfile | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | x0 | =0 |   | 	initial value of x0
+float   | y0 | =0 |   | 	initial value of y0
+[DIRECTORY]
+user/yliu

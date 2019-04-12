@@ -1,0 +1,28 @@
+Program sfdespike1-ed | Despike filter:
+[SYNOPSIS]
+sfdespike1-ed < in.rsf > out.rsf window=20 sigma=3.0
+[COMMENTS]
+move outliers values to the tolerance
+parameter. The mean is calculated with moving
+windows 
+
+Example:
+
+
+if (a>3sigma) a=3sigma
+
+outlier
+* *              ^
+*    *            |
+*      *           |
+*        *          *
+****          * * * * *  *****
+
+
+
+
+[PARAMETERS]
+float   | sigma | =3.0 |   | 	
+int     | window | =20 |   | 	
+[DIRECTORY]
+user/ediazp

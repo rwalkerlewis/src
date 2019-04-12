@@ -1,0 +1,9 @@
+Program sfgbeamform | 2-D lateral smoothing. 
+[SYNOPSIS]
+sfgbeamform < in.rsf > out.rsf rect=3 adj=y repeat=2
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	adjoint flag 
+int     | rect | =3 |   | 	smoothing radius 
+int     | repeat | =2 |   | 	triangle convolutions 
+[DIRECTORY]
+user/fomels

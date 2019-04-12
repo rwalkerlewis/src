@@ -1,0 +1,5 @@
+Program sfacdfwi | None
+[SYNOPSIS]
+sfacdfwi
+[DIRECTORY]
+trip/iwave/acd/main

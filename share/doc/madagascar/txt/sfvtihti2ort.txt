@@ -1,0 +1,34 @@
+Program sfvtihti2ort | Combining VTI and HTI parameters to orthorhombic according to Schoenberg & Sayer (1995)
+[SYNOPSIS]
+sfvtihti2ort > c11o.rsf c22o=c22o.rsf c33o=c33o.rsf c44o=c44o.rsf c55o=c55o.rsf c66o=c66o.rsf c12o=c12o.rsf c13o=c13o.rsf c23o=c23o.rsf < c33.rsf c55=c55.rsf c11v=c11v.rsf c66v=c66v.rsf c12v=c12v.rsf c13v=c13v.rsf c11h=c11h.rsf c55h=c55h.rsf c12h=c12h.rsf c13h=c13h.rsf phi=phi.rsf c16o=c16o.rsf c26o=c26o.rsf c36o=c36o.rsf c45o=c45o.rsf rotate=n
+[COMMENTS]
+NOTE: HTI is defined in VTI grid with respect to the vertical (Ruger(1997)) 
+Refer to SEAM 2 notes for detailed description
+
+
+[PARAMETERS]
+file    | c11h | = |   | 	auxiliary input file name
+file    | c11v | = |   | 	auxiliary input file name
+file    | c12h | = |   | 	auxiliary input file name
+file    | c12o | = |   | 	auxiliary output file name
+file    | c12v | = |   | 	auxiliary input file name
+file    | c13h | = |   | 	auxiliary input file name
+file    | c13o | = |   | 	auxiliary output file name
+file    | c13v | = |   | 	auxiliary input file name
+file    | c16o | = |   | 	auxiliary output file name
+file    | c22o | = |   | 	auxiliary output file name
+file    | c23o | = |   | 	auxiliary output file name
+file    | c26o | = |   | 	auxiliary output file name
+file    | c33o | = |   | 	auxiliary output file name
+file    | c36o | = |   | 	auxiliary output file name
+file    | c44o | = |   | 	auxiliary output file name
+file    | c45o | = |   | 	auxiliary output file name
+file    | c55 | = |   | 	auxiliary input file name
+file    | c55h | = |   | 	auxiliary input file name
+file    | c55o | = |   | 	auxiliary output file name
+file    | c66o | = |   | 	auxiliary output file name
+file    | c66v | = |   | 	auxiliary input file name
+file    | phi | = |   | 	auxiliary input file name
+bool    | rotate | =n |  [y/n] | 	Doing azimuthal rotation (y-> mono, n-> ortho)
+[DIRECTORY]
+user/zone

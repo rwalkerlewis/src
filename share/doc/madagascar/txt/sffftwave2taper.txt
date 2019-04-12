@@ -1,0 +1,16 @@
+Program sffftwave2taper | Simple 2-D wave propagation with multi-threaded fftw3 
+[SYNOPSIS]
+sffftwave2taper < Fw.rsf > Fo.rsf ref=Fr.rsf snaps=snaps.rsf left=left.rsf right=right.rsf verb=n cmplx=n pad1=1 taper=0 thresh=0.92 snap=0
+[PARAMETERS]
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+file    | left | = |   | 	auxiliary input file name
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | ref | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+int     | taper | =0 |   | 	tapering in the frequency domain 
+float   | thresh | =0.92 |   | 	tapering threshold 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

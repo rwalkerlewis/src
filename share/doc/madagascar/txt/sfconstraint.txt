@@ -1,0 +1,14 @@
+Program sfconstraint | 
+[SYNOPSIS]
+sfconstraint < logrefa.rsf > logref_co.rsf value= wind=
+[COMMENTS]
+Hard constraint 2D map
+
+For use with LSIM if a specific alignment location is desired.
+Use with reference and real datasets and scale LSIM scan by output
+
+[PARAMETERS]
+float   | value | = |   | 	Location of hard constraint
+int     | wind | = |   | 	Number of samples of hard constraint
+[DIRECTORY]
+user/sbader

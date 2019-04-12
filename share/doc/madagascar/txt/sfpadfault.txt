@@ -1,0 +1,17 @@
+Program sfpadfault | Horizontally pad fault  
+[SYNOPSIS]
+sfpadfault < in.rsf slip=slip.rsf > out.rsf mask=mask.rsf bound=bound.rsf dip=dip.rsf shift=shift.rsf newdip=newdip.rsf ppbig=ppbig.rsf extend=y mode=y conf=1 order=2
+[PARAMETERS]
+file    | bound | = |   | 	auxiliary output file name
+int     | conf | =1 |   | 	
+file    | dip | = |   | 	auxiliary input file name
+bool    | extend | =y |  [y/n] | 	
+file    | mask | = |   | 	auxiliary output file name
+bool    | mode | =y |  [y/n] | 	
+file    | newdip | = |   | 	auxiliary output file name
+int     | order | =2 |   | 	
+file    | ppbig | = |   | 	auxiliary output file name
+file    | shift | = |   | 	auxiliary input file name
+file    | slip | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

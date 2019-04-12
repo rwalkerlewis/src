@@ -1,0 +1,12 @@
+Program sflrmf | Local radial median filtering. 
+[SYNOPSIS]
+sflrmf < in.rsf > out.rsf nfw= boundary=n vmin= vmax= tmin= tmax=
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw | = |   | 	filter window of median filter 
+float   | tmax | = |   | 	zero-offset time for mimumum velocity 
+float   | tmin | = |   | 	zero-offset time for maximum velocity 
+float   | vmax | = |   | 	maximum velocity 
+float   | vmin | = |   | 	minimum velocity 
+[DIRECTORY]
+user/yliu

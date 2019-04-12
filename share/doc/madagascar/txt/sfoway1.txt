@@ -1,0 +1,14 @@
+Program sfoway1 | Oriented one-way wave equation. 
+[SYNOPSIS]
+sfoway1 < in.rsf > out.rsf velocity=vel.rsf vgrad=vgrad.rsf eps=0.1 lagrange=n
+[COMMENTS]
+
+Axis order: x, p, t
+
+[PARAMETERS]
+float   | eps | =0.1 |   | 	stretch regularization 
+bool    | lagrange | =n |  [y/n] | 	Use Lagrangian method 
+file    | velocity | = |   | 	auxiliary input file name
+file    | vgrad | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

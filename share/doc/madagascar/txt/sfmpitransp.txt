@@ -1,0 +1,8 @@
+Program sfmpitransp | Large rectangular matrix in-place transpose with MPI 
+[SYNOPSIS]
+sfmpitransp indat=Fin.rsf transp=Fout.rsf
+[PARAMETERS]
+file    | indat | = |   | 	auxiliary input file name
+file    | transp | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/hwang

@@ -1,0 +1,29 @@
+Program sfiwilbfgs | Image-domain waveform tomography (L-BFGS). 
+[SYNOPSIS]
+sfiwilbfgs < in.rsf > out.rsf source=source.rsf data=data.rsf wdso=wdso.rsf wstk=wstk.rsf precon=precon.rsf grad=grad.rsf verb=y deriv=y nh=0 load=n uts=0 npml=10 beta=0. grect1=5 grect2=5 gscale=-1. nhess=6 miter=10 mline=5 epsilon=1.e-7 lower=1.5 upper=7.5 order=
+[PARAMETERS]
+float   | beta | =0. |   | 	stacking power cost function 
+string  | data | = |   | 	auxiliary input file name
+bool    | deriv | =y |  [y/n] | 	if y, apply derivative in z 
+float   | epsilon | =1.e-7 |   | 	L-BFGS termination epsilon 
+string  | grad | = |   | 	auxiliary output file name
+int     | grect1 | =5 |   | 	gradient smoothing radius on axis 1 
+int     | grect2 | =5 |   | 	gradient smoothing radius on axis 2 
+float   | gscale | =-1. |   | 	gradient re-scale (enabled if (0,1)) 
+bool    | load | =n |  [y/n] | 	load LU 
+float   | lower | =1.5 |   | 	lower bound of feasible set 
+int     | miter | =10 |   | 	L-BFGS maximum # of iterations 
+int     | mline | =5 |   | 	L-BFGS maximum # of line search 
+int     | nh | =0 |   | 	horizontal space-lag 
+int     | nhess | =6 |   | 	L-BFGS # of Hessian corrections 
+int     | npml | =10 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+string  | precon | = |   | 	auxiliary input file name
+string  | source | = |   | 	auxiliary input file name
+float   | upper | =7.5 |   | 	upper bound of feasible set 
+int     | uts | =0 |   | 	number of OMP threads 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+string  | wdso | = |   | 	auxiliary input file name
+string  | wstk | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/sparse

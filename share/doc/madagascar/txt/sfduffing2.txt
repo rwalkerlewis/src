@@ -1,0 +1,29 @@
+Program sfduffing2 | 2D/3D Velocity analysis by using Duffing differential equation solved by 4th order Runge-Kutta method. 
+[SYNOPSIS]
+sfduffing2 < cmp.rsf > outf.rsf restor=restor.rsf winsz=200 v0=1000 dv=20 vn=100 t0=o1 deltat0=dt t0n=n1 gamma=0.75 omega=1 kxi=1 x0=0 y0=0 pow1=1 pow2=3 phi=0. cosine=y delta=0.01 verb=n gx=2.0
+[COMMENTS]
+Duffing equation: x''/(omega^2)+0.5 x'/omega-x+x^3=gamma cos(omega t+phi)+kxi R(t)
+
+[PARAMETERS]
+bool    | cosine | =y |  [y/n] | 	if n need extenal input for periodic restoring force 
+float   | delta | =0.01 |   | 	The density of judgement grid
+float   | deltat0 | =dt |   | 	step lenth for t0 scan 
+float   | dv | =20 |   | 	step lenth for velocity scan 
+float   | gamma | =0.75 |   | 	strength of external force
+float   | gx | =2.0 |   | 	Size of grid
+float   | kxi | =1 |   | 	adjustment for input signal
+float   | omega | =1 |   | 	angular frequence of external force
+float   | phi | =0. |   | 	phase of cosine signal unit=pi
+int     | pow1 | =1 |   | 	power of first non-linear restitution term
+int     | pow2 | =3 |   | 	power of second non-linear restitution term
+string  | restor | = |   | 	auxiliary input file name
+float   | t0 | =o1 |   | 	t0 scan start point 
+int     | t0n | =n1 |   | 	numbers of t0scan
+float   | v0 | =1000 |   | 	init Vel for velocity scan 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+int     | vn | =100 |   | 	numbers of velscan
+int     | winsz | =200 |   | 	for each trace,the width of window. Unit:samples
+float   | x0 | =0 |   | 	initial value of x0
+float   | y0 | =0 |   | 	initial value of y0
+[DIRECTORY]
+user/yliu

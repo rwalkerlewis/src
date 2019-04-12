@@ -1,0 +1,12 @@
+Program sfcos2ang | Inverse cos to angle transformation 
+[SYNOPSIS]
+sfcos2ang < Fstk.rsf > Fang.rsf velocity=velocity.rsf na=nt da=90/(nt-1) a0=0. extend=4 top=n
+[PARAMETERS]
+float   | a0 | =0. |   | 	angle origin 
+float   | da | =90/(nt-1) |   | 	angle sampling 
+int     | extend | =4 |   | 	tmp extension 
+int     | na | =nt |   | 	number of angles
+bool    | top | =n |  [y/n] | 	velocity scaling option 
+file    | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

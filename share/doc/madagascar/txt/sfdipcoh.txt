@@ -1,0 +1,13 @@
+Program sfdipcoh | 3D Coherence cube 
+[SYNOPSIS]
+sfdipcoh < in.rsf > out.rsf dip1=dip1.rsf dip2=dip2.rsf nw=5 twod=y verb=y lag1=3 lag2=3
+[PARAMETERS]
+string  | dip1 | = |   | 	auxiliary input file name
+file    | dip2 | = |   | 	auxiliary input file name
+int     | lag1 | =3 |   | 	maximal time lag on 2nd axis 
+int     | lag2 | =3 |   | 	maximal time lag on 3rd axis 
+int     | nw | =5 |   | 	half window size for coherence 
+bool    | twod | =y |  [y/n] | 	y: only twod coherence 
+bool    | verb | =y |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/chen

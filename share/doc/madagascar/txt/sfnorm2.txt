@@ -1,0 +1,6 @@
+Program sfnorm2 | Computes square of L-2 norm in double precision.
+
+[SYNOPSIS]
+sfnorm2 < in.rsf
+[DIRECTORY]
+user/jeff

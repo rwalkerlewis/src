@@ -1,0 +1,39 @@
+Program sfrtmva2d | RTM with checkpointing in 2D acoustic media
+[SYNOPSIS]
+sfrtmva2d < Fv.rsf rho=Frho.rsf tau=Ftau.rsf tauo=Ftauo.rsf > Fw.rsf p1=Fp1.rsf p2=Fp2.rsf verb=n nb=20 nt= dt= fm=20.0 ns= ng= kt= nob=(int)log2f(nt) jsx= jsz=0 jgx=1 jgz=0 sxbeg= szbeg= gxbeg= gzbeg= csdgather=y vmute=1500 tdmute=2./(fm*dt)
+[COMMENTS]
+The real value of checkpointing technology resides in the backpropagation with
+viscoacoustic and viscoelastic wave equation, where the wavefield 
+reconstruction method using saved boundaries fails. Here, we only
+demonstrate how to implement it in acoustic media without dissipation.
+Note the backpropagation operator should be the adjoint of forward modeling!
+Here we just use forward modeling operator for the time being!
+
+[PARAMETERS]
+bool    | csdgather | =y |  [y/n] | 	default, common shot-gather; if n, record at every point
+float   | dt | = |   | 	time sampling interval 
+float   | fm | =20.0 |   | 	dominant freq of Ricker wavelet 
+int     | gxbeg | = |   | 	x-begining index of receivers, starting from 0 
+int     | gzbeg | = |   | 	z-begining index of receivers, starting from 0 
+int     | jgx | =1 |   | 	receiver x-axis jump interval 
+int     | jgz | =0 |   | 	receiver z-axis jump interval 
+int     | jsx | = |   | 	source x-axis  jump interval  
+int     | jsz | =0 |   | 	source z-axis jump interval  
+int     | kt | = |   | 	output px and pz component at kt 
+int     | nb | =20 |   | 	thickness of PML ABC 
+int     | ng | = |   | 	number of geophones/receivers per shot 
+int     | nob | =(int)log2f(nt) |   | 	number of buffers, default=optimal value 
+int     | ns | = |   | 	number of shots 
+int     | nt | = |   | 	number of time steps 
+file    | p1 | = |   | 	auxiliary output file name
+file    | p2 | = |   | 	auxiliary output file name
+file    | rho | = |   | 	auxiliary input file name
+int     | sxbeg | = |   | 	x-begining index of sources, starting from 0 
+int     | szbeg | = |   | 	z-begining index of sources, starting from 0 
+file    | tau | = |   | 	auxiliary input file name
+file    | tauo | = |   | 	auxiliary input file name
+int     | tdmute | =2./(fm*dt) |   | 	number of deleyed time samples to mute 
+bool    | verb | =n |  [y/n] | 	verbosity 
+float   | vmute | =1500 |   | 	muting velocity to remove the low-freq noise, unit=m/s
+[DIRECTORY]
+user/pyang

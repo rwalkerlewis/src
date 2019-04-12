@@ -1,0 +1,13 @@
+Program sfdtw-accumulate | 
+[SYNOPSIS]
+sfdtw-accumulate < _in.rsf > _out.rsf strain=1 dir=0
+[COMMENTS]
+accumulates or smooths alignment errors in the 
+forward direction, subject to 
+strain str=float is the maximum du/di
+
+[PARAMETERS]
+int     | dir | =0 |   | 	accumulation direction: 1 is forward, -1 is backward, 0 is both 
+float   | strain | =1 |   | 	maximum strain 
+[DIRECTORY]
+user/luke

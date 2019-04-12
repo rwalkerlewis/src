@@ -1,0 +1,14 @@
+Program sftxpscan | Velocity analysis using T-X-P domain. 
+[SYNOPSIS]
+sftxpscan < cmp.rsf > scan.rsf v0= dv= nv= extend=4 mute=12 str=0.5 smin=1.0 smax=2.0
+[PARAMETERS]
+float   | dv | = |   | 	step in velocity 
+int     | extend | =4 |   | 	trace extension 
+int     | mute | =12 |   | 	mute zone 
+int     | nv | = |   | 	number of scanned velocities 
+float   | smax | =2.0 |   | 	maximum heterogeneity 
+float   | smin | =1.0 |   | 	minimum heterogeneity 
+float   | str | =0.5 |   | 	maximum stretch allowed 
+float   | v0 | = |   | 	first scanned velocity 
+[DIRECTORY]
+system/seismic

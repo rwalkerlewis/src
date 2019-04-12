@@ -1,0 +1,20 @@
+Program sfpseudolrexp | Generate rank-1 approximation for lowrank wave propagation: lrexp
+[SYNOPSIS]
+sfpseudolrexp < fft.rsf > alpha.rsf flag= gpz= nt= dt= t0= nz= dz= z0= nx= dx= x0= seed= eps= npk=
+[PARAMETERS]
+        | dt | = |   | 	
+        | dx | = |   | 	
+        | dz | = |   | 	
+        | eps | = |   | 	tolerance
+        | flag | = |   | 	
+        | gpz | = |   | 	
+        | npk | = |   | 	maximum sample rows/columns
+        | nt | = |   | 	
+        | nx | = |   | 	
+        | nz | = |   | 	
+        | seed | = |   | 	seed for random number generator
+        | t0 | = |   | 	
+        | x0 | = |   | 	Get lowrank parameters
+        | z0 | = |   | 	
+[DIRECTORY]
+user/jingwei

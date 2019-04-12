@@ -1,0 +1,7 @@
+Program sffastft | Fast Fourier Transform. 
+[SYNOPSIS]
+sffastft < in.rsf > out.rsf inv=n
+[PARAMETERS]
+bool    | inv | =n |  [y/n] | 	if y, perform inverse transform 
+[DIRECTORY]
+user/mccowan

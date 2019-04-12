@@ -1,0 +1,11 @@
+Program sfisoimpulse | Impulse response for plane-wave migration in tilted coordinates 
+[SYNOPSIS]
+sfisoimpulse wave=wave.rsf t=0.8 ep=0.4 dl=0.2 vti=y
+[PARAMETERS]
+float   | dl | =0.2 |   | 	
+float   | ep | =0.4 |   | 	
+float   | t | =0.8 |   | 	
+bool    | vti | =y |  [y/n] | 	
+file    | wave | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/guojian

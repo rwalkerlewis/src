@@ -1,0 +1,10 @@
+Program sfcmatmult3 | Multiplication of two complex matrices for 3D data.
+[SYNOPSIS]
+sfcmatmult3 < in.rsf > out.rsf mat=mat.rsf
+[COMMENTS]
+I(n1,n2,f)*I(n2,n3,f)=D(n1,n3,f)
+
+[PARAMETERS]
+file    | mat | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/gchliu

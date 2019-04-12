@@ -1,0 +1,36 @@
+Program sfpgreywfl | Plot wavefields over a background image
+[SYNOPSIS]
+sfpgreywfl bg=None savefile= title= pclip=100 absclip=n scalebar=y barlabel= timetext=y bgcmap=viridis wflcmap=gray jsnap=1 aspect=1 tmin=None tmax=None figx=10 figy=8 xints=None yints=None fps=15 speedup=10 dpi=90 fontsize=16 verb=n
+[COMMENTS]
+Common usage examples
+	* Plot to screen using default parameters
+		sfpgreywfl < wavefield.rsf bg=velocity.rsf
+	* Save to file using custom parameters
+		sfpgreywfl < wavefield.rsf bg=velocity.rsf jsnap=10 bgcmap=gray wflcmap=seismic fps=10 verb=y savefile=output.mp4
+
+[PARAMETERS]
+bool    | absclip | =n |  [y/n] | 	Clipping is done for all gathers rather than per frame (y/n)
+int     | aspect | =1 |   | 	Aspect ratio
+string  | barlabel | = |   | 	Colorbar label
+string  | bg | =None |   | 	Background for animation. Zero if not supplied
+string  | bgcmap | =viridis |   | 	Background colormap. See https://matplotlib.org/users/colormaps.html
+float   | dpi | =90 |   | 	DPI
+float   | figx | =10 |   | 	Figure x size in inches
+float   | figy | =8 |   | 	Figure y size in inches
+float   | fontsize | =16 |   | 	Font size
+float   | fps | =15 |   | 	Frames per second (when saving file)
+int     | jsnap | =1 |   | 	Number of timesteps at which to plot wavefield
+float   | pclip | =100 |   | 	Clip amplitude percentage from (0-100)
+string  | savefile | = |   | 	Save animation to file. If not present, display animation.
+bool    | scalebar | =y |  [y/n] | 	Colorbar
+float   | speedup | =10 |   | 	Delay between frames (in milliseconds) will be speedup*dt
+bool    | timetext | =y |  [y/n] | 	Time text
+string  | title | = |   | 	Plot title
+float   | tmax | =None |   | 	Maximum time
+float   | tmin | =None |   | 	Minimum time
+bool    | verb | =n |  [y/n] | 	Verbosity flag
+string  | wflcmap | =gray |   | 	Wavefield colormap (should be sequential)
+int     | xints | =None |   | 	Max number of x intervals
+int     | yints | =None |   | 	Max number of y intervals
+[DIRECTORY]
+user/cdacosta

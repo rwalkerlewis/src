@@ -1,0 +1,7 @@
+Program sfmax2 | Picking local maxima in 2-D 
+[SYNOPSIS]
+sfmax2 < in.rsf > out.rsf np=n12
+[PARAMETERS]
+int     | np | =n12 |   | 	maximum number of picks 
+[DIRECTORY]
+user/fomels

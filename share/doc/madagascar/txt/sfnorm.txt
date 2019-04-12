@@ -1,0 +1,10 @@
+Program sfnorm | Normalize the data. 
+[SYNOPSIS]
+sfnorm > outp.rsf < inp.rsf apply=apply.rsf max=
+[COMMENTS]
+Normalize by dividing the data set by its absolute maximum value. 
+[PARAMETERS]
+file    | apply | = |   | 	auxiliary input file name
+float   | max | = |   | 	
+[DIRECTORY]
+user/chenyk

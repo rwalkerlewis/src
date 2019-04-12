@@ -1,0 +1,9 @@
+Program sfnconv | Non-stationary convolution 
+[SYNOPSIS]
+sfnconv < inp.rsf filt=flt.rsf > out.rsf lag=(ntau+1)/2 adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | filt | = |   | 	auxiliary input file name
+int     | lag | =(ntau+1)/2 |   | 	filter lag 
+[DIRECTORY]
+user/fomels

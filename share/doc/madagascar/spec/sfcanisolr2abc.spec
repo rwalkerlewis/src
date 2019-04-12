@@ -1,0 +1,32 @@
+[sfcanisolr2abc]
+Cat:    RSF/user/jsun
+Desc:   Lowrank decomposition for 2-D anisotropic wave propagation
+DocCmd: sfcanisolr2abc | cat
+Port:   stdin  rsf r req 	RSF standard input (containing velz data)
+Port:   stdout rsf w req 	RSF standard output (containing right data)
+Port:   fft rsf r  -  		auxiliary input file name (containing unspecified data)
+Port:   left rsf w  -  		auxiliary output file name (containing unspecified data)
+Param:  cb   -   -  		
+LDesc:  (defaults to: 0.0)
+Param:  cl   -   -  		
+LDesc:  (defaults to: 0.0)
+Param:  cr   -   -  		
+LDesc:  (defaults to: 0.0)
+Param:  ct   -   -  		
+LDesc:  (defaults to: 0.0)
+Param:  dt   -   -  		time step
+Param:  eps   -   -  		tolerance
+LDesc:  (defaults to: 1.e-4)
+Param:  nbb   -   -  		
+LDesc:  (defaults to: 0)
+Param:  nbl   -   -  		
+LDesc:  (defaults to: 0)
+Param:  nbr   -   -  		
+LDesc:  (defaults to: 0)
+Param:  nbt   -   -  		
+LDesc:  (defaults to: 0)
+Param:  npk   -   -  		maximum rank
+LDesc:  (defaults to: 20)
+Param:  seed   -   -  		
+LDesc:  (defaults to: time(NULL)
+

@@ -1,0 +1,14 @@
+Program sfhelm2D_lsm | 2D Frequency Domain Least Squares Reverse Time Migration. 
+[SYNOPSIS]
+sfhelm2D_lsm < in.rsf > out.rsf misfit=misfit.rsf receiver=receiver.rsf source=source.rsf record=record.rsf uts=0 npml=20 niter=0 order=
+[PARAMETERS]
+file    | misfit | = |   | 	auxiliary output file name
+int     | niter | =0 |   | 	Number of iterations 
+int     | npml | =20 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+string  | receiver | = |   | 	auxiliary input file name
+string  | record | = |   | 	auxiliary input file name
+string  | source | = |   | 	auxiliary input file name
+int     | uts | =0 |   | 	
+[DIRECTORY]
+user/hzhu

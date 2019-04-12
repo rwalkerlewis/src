@@ -1,0 +1,12 @@
+Program sfbilstack | Bilateral stacking. 
+[SYNOPSIS]
+sfbilstack < in.rsf > out.rsf weight=weight.rsf verb=n niter=20 bilat=n ax= bx=
+[PARAMETERS]
+float   | ax | = |   | 	Gaussian weight for the range distance 
+bool    | bilat | =n |  [y/n] | 	if y, bilateral smoothing 
+float   | bx | = |   | 	Exponential weight for the domain distance 
+int     | niter | =20 |   | 	number of iterations 
+bool    | verb | =n |  [y/n] | 	verbosity 
+file    | weight | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/yliu

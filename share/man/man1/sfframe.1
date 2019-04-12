@@ -1,0 +1,24 @@
+.TH sfframe 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfframe \- Create a frame for binning.
+.SH SYNOPSIS
+.B sfframe < in.rsf > out.rsf xyz=xyzs.rsf base=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B base
+.B =0.
+.R  	base to be subtracted from z
+.TP
+.I file   
+.B xyz
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I gee/iin/chevron
+.SH SOURCE
+.I user/gee/Mframe.c
+.SH VERSION
+2.1-git

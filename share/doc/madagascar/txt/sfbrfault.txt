@@ -1,0 +1,13 @@
+Program sfbrfault | Bridge fault zones with smooth transition 
+[SYNOPSIS]
+sfbrfault < in.rsf slip=slip.rsf > out.rsf shift=shift.rsf mask=mask.rsf replace=n mode=y width=9 order=1
+[PARAMETERS]
+file    | mask | = |   | 	auxiliary output file name
+bool    | mode | =y |  [y/n] | 	
+int     | order | =1 |   | 	
+bool    | replace | =n |  [y/n] | 	
+file    | shift | = |   | 	auxiliary input file name
+file    | slip | = |   | 	auxiliary input file name
+int     | width | =9 |   | 	
+[DIRECTORY]
+user/zhiguang

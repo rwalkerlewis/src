@@ -1,0 +1,8 @@
+Program sfimagsrc | Convolution with a Ricker wavelet. 
+[SYNOPSIS]
+sfimagsrc < in.rsf > out.rsf frequency= freq=0.2
+[PARAMETERS]
+float   | freq | =0.2 |   | 	peak frequency for Ricker wavelet (as fraction of Nyquist) 
+float   | frequency | = |   | 	peak frequency for Ricker wavelet (in Hz) 
+[DIRECTORY]
+user/jsun

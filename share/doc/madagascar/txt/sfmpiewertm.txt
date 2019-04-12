@@ -1,0 +1,50 @@
+Program sfmpiewertm | 2-D two-components elastic wavefield modeling operators with lowrank approximation. 
+[SYNOPSIS]
+sfmpiewertm input=Fvp0.rsf pleft=Fpl.rsf pright=Fpr.rsf sleft=Fsl.rsf sright=Fsr.rsf output=Fo1.rsf Recordx=Fo2.rsf Pwavez=Fpz.rsf Pwavex=Fpx.rsf Swavez=Fsz.rsf Swavex=Fsx.rsf ImagePP=Fimgpp.rsf ImagePS=Fimgps.rsf ImageSP=Fimgsp.rsf ImageSS=Fimgss.rsf mig=n nt=301 dt=0.001 snpint=10 abc=n nbt= nbb=nbt nbl=nbt nbr=nbt ct= cb=ct cl=ct cr=ct isx=nx/2 isz= t0=0.04 f0=30.0 A=1.0 src=1 shtbgn= shtend= shtint= gpz=nbt+5 cmplx=n pad1=1 verb=n mute=n wd=5 vref=1500
+[PARAMETERS]
+float   | A | =1.0 |   | 	wavelet amplitude 
+string  | ImagePP | = |   | 	auxiliary output file name
+string  | ImagePS | = |   | 	auxiliary output file name
+string  | ImageSP | = |   | 	auxiliary output file name
+string  | ImageSS | = |   | 	auxiliary output file name
+string  | Pwavex | = |   | 	auxiliary output file name
+string  | Pwavez | = |   | 	auxiliary output file name
+file    | Recordx | = |   | 	auxiliary output file name
+string  | Swavex | = |   | 	auxiliary output file name
+string  | Swavez | = |   | 	auxiliary output file name
+bool    | abc | =n |  [y/n] | 	absorbing flag 
+float   | cb | =ct |   | 	
+float   | cl | =ct |   | 	
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+float   | cr | =ct |   | 	
+float   | ct | = |   | 	
+float   | dt | =0.001 |   | 	
+float   | f0 | =30.0 |   | 	wavelet peak freq 
+int     | gpz | =nbt+5 |   | 	geophone depth 
+file    | input | = |   | 	auxiliary input file name
+int     | isx | =nx/2 |   | 	
+int     | isz | = |   | 	
+bool    | mig | =n |  [y/n] | 	migration flag 
+bool    | mute | =n |  [y/n] | 	muting first arrival 
+int     | nbb | =nbt |   | 	
+int     | nbl | =nbt |   | 	
+int     | nbr | =nbt |   | 	
+int     | nbt | = |   | 	
+int     | nt | =301 |   | 	
+file    | output | = |   | 	auxiliary output file name
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | pleft | = |   | 	auxiliary input file name
+file    | pright | = |   | 	auxiliary input file name
+int     | shtbgn | = |   | 	
+int     | shtend | = |   | 	
+int     | shtint | = |   | 	
+file    | sleft | = |   | 	auxiliary input file name
+int     | snpint | =10 |   | 	absorbing boundary condition
+int     | src | =1 |   | 	source mode: 1 - exploding force; 2 - equil-energy force 
+file    | sright | = |   | 	auxiliary input file name
+float   | t0 | =0.04 |   | 	wavelet time lag 
+bool    | verb | =n |  [y/n] | 	padding factor on the first axis 
+float   | vref | =1500 |   | 	water velocity 
+int     | wd | =5 |   | 	muting width 
+[DIRECTORY]
+user/jsun

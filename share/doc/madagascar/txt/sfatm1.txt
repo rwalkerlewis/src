@@ -1,0 +1,12 @@
+Program sfatm1 | 1D alpha-trimmed-mean filtering. 
+[SYNOPSIS]
+sfatm1 < in.rsf > out.rsf nfw= alpha= boundary=n
+[COMMENTS]
+median filter (alpha=0.5); mean filter (alpha=0.)
+
+[PARAMETERS]
+float   | alpha | = |   | 	0.0 <= alpha <= 0.5: median filter (alpha=0.5); mean filter (alpha=0.) 
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw | = |   | 	filter-window length (positive and odd integer)
+[DIRECTORY]
+user/yliu

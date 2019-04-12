@@ -1,0 +1,8 @@
+Program sffftone | Test 1-D Fourier transform. 
+[SYNOPSIS]
+sffftone < freq.rsf > space.rsf inv=n n1=
+[PARAMETERS]
+bool    | inv | =n |  [y/n] | 	inverse flag 
+int     | n1 | = |   | 	dimension (for inv=y) 
+[DIRECTORY]
+user/fomels

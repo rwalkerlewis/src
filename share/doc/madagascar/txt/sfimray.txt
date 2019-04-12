@@ -1,0 +1,9 @@
+Program sfimray | 2-D image ray tracing using HWT 
+[SYNOPSIS]
+sfimray < vel.rsf > dix.rsf nt= dt= order=3
+[PARAMETERS]
+float   | dt | = |   | 	
+int     | nt | = |   | 	
+int     | order | =3 |   | 	interpolation order 
+[DIRECTORY]
+user/fomels

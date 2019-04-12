@@ -1,0 +1,16 @@
+Program sfewdlr3d | 3D elastic recursive integral time extrapolation using KISS-FFT
+[SYNOPSIS]
+sfewdlr3d < Finp.rsf rnk=Frnk.rsf lft=Flft.rsf rht=Frht.rsf > Fout.rsf verb=n
+[COMMENTS]
+sou wavelet  (nx,ny,nc,nt)
+rec data     (nx,ny,nc,nt)
+sou geometry (nc,nx,ny)
+rec geometry (nc,nx,ny)
+
+[PARAMETERS]
+file    | lft | = |   | 	auxiliary input file name
+file    | rht | = |   | 	auxiliary input file name
+file    | rnk | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/jsun

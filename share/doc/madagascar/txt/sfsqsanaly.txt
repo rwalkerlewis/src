@@ -1,0 +1,12 @@
+Program sfsqsanaly | Analytic escape solutions in phase space for constant gradient of slowness squared 
+[SYNOPSIS]
+sfsqsanaly < in.rsf > out.rsf iq= gx= gz= sc= xc= zc=
+[PARAMETERS]
+float   | gx | = |   | 	x-gradient of slowness^2 
+float   | gz | = |   | 	z-gradient of slowness^2 
+int     | iq | = |   | 	switch for escape variable 0=x, 1=a, 2=t, 3=z 
+float   | sc | = |   | 	slowness constant 
+float   | xc | = |   | 	x reference 
+float   | zc | = |   | 	z reference 
+[DIRECTORY]
+user/browaeys

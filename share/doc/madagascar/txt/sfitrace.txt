@@ -1,0 +1,14 @@
+Program sfitrace | 
+[SYNOPSIS]
+sfitrace < xEscFile.rsf esct=tEscFile.rsf > xResFile.rsf zres=zResFile.rsf x0=0.f z0=0.f p0=0.f sa0=0.f dx=5*xStep dt=0.02f
+[PARAMETERS]
+float   | dt | =0.02f |   | 	time-range for point detection 
+float   | dx | =5*xStep |   | 	x-range for point detection 
+string  | esct | = |   | 	escape-time file (auxiliary input file name)
+float   | p0 | =0.f |   | 	migration angle 
+float   | sa0 | =0.f |   | 	scattering-angle 
+float   | x0 | =0.f |   | 	x-coordinate of the diffraction point 
+float   | z0 | =0.f |   | 	z-coordinate of the diffraction point 
+string  | zres | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/aklokov

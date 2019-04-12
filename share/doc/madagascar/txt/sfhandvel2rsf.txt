@@ -1,0 +1,22 @@
+Program sfhandvel2rsf | Converts 2D/3D velocity files from handvel.txt to handvel.rsf
+[SYNOPSIS]
+sfhandvel2rsf n1= o1= d1=
+[COMMENTS]
+
+- sfhandvel2rsf < handvels.txt o1=0 d1=.001 n1=3000 > handvel.rsf
+
+- The program converts time samples from ms to s
+
+- The rsf output file will have traces equal to the number
+of CMP locations in handvel.txt. You need to interploate
+between traces for a denser grid e.g. using sfremap1
+
+- This program uses sfspline for interpolation. 
+
+
+[PARAMETERS]
+float   | d1 | = |   | 	sampling in the first axis
+int     | n1 | = |   | 	size of the first axis
+float   | o1 | = |   | 	origin of the first axis
+[DIRECTORY]
+user/salah

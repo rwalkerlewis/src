@@ -1,0 +1,18 @@
+Program sfwavemixop | Complex 2-D wave propagation (with kiss-fft)
+[SYNOPSIS]
+sfwavemixop < Fw.rsf > Fo.rsf ref=Fr.rsf snaps=Fs.rsf left=left.rsf right=right.rsf alpha=Fa.rsf beta=Fb.rsf verb=n snap=0 correct=n type=0 pad1=1 mode=
+[PARAMETERS]
+file    | alpha | = |   | 	auxiliary input file name
+file    | beta | = |   | 	auxiliary input file name
+bool    | correct | =n |  [y/n] | 	jingwei's correction
+file    | left | = |   | 	auxiliary input file name
+string  | mode | = |   | 	default mode is pspi 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | ref | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+int     | type | =0 |   | 	type of propagation; 0 means no correction applied, and mode takes effect, 9 enables jjsf
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

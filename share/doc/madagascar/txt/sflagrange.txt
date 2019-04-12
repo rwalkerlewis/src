@@ -1,0 +1,12 @@
+Program sflagrange | A forward interpolation using Lagrange method. 
+[SYNOPSIS]
+sflagrange < in.rsf > out.rsf ox=o1 dx=d1 nx=n1
+[COMMENTS]
+Specify ox= dx= nx=
+
+[PARAMETERS]
+float   | dx | =d1 |   | 	
+int     | nx | =n1 |   | 	
+float   | ox | =o1 |   | 	
+[DIRECTORY]
+user/chenyk

@@ -1,0 +1,10 @@
+Program sffdtacc | 2-D Fourth-order Finite-difference wave extrapolation with timing option (no ABC)
+[SYNOPSIS]
+sffdtacc < Fw.rsf vel=Fv.rsf ref=Fr.rsf > Fo.rsf verb=0 timer=0
+[PARAMETERS]
+file    | ref | = |   | 	auxiliary input file name
+bool    | timer | =0 |  [y/n] | 	setup I/O files 
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =0 |  [y/n] | 	
+[DIRECTORY]
+user/jsun

@@ -1,0 +1,14 @@
+Program sfclfdc1 | 1D 10th-order Lowrank Onestep FD coefficient
+[SYNOPSIS]
+sfclfdc1 < velf.rsf > outm.rsf seed=time(NULL eps=1.e-4 npk=20 dt= SIZE= mode=0 perc=50 cpxexp=true
+[PARAMETERS]
+        | SIZE | = |   | 	stencil size
+        | cpxexp | =true |   | 	complex exponential
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+        | mode | =0 |   | 	symbol
+        | npk | =20 |   | 	maximum rank
+        | perc | =50 |   | 	cutoff percentage
+        | seed | =time(NULL |   | 	
+[DIRECTORY]
+user/jsun

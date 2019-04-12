@@ -1,0 +1,11 @@
+Program sfsmoothderw | Convert input to its derivative using LS and shaping regularization
+[SYNOPSIS]
+sfsmoothderw < data.rsf > modl.rsf weight=weight.rsf niter=100 rect#=(1,1,...)
+[COMMENTS]
+* applied to causint_lop 
+[PARAMETERS]
+int     | niter | =100 |   | 	maximum number of iterations 
+string  | rect# | =(1,1,...) |   | 	smoothing radius on #-th axis 
+string  | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

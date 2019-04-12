@@ -1,0 +1,15 @@
+Program sfoff2abs | Transform vector-offset to absolute-offset 
+[SYNOPSIS]
+sfoff2abs < Fd.rsf > Fm.rsf verb=n nw=4 nh=nhx + ohx/dhx oh=0 dh=dhx
+[COMMENTS]
+h = sqrt(hx^2+hy^2+hz^2)
+pcs 2005 
+
+[PARAMETERS]
+float   | dh | =dhx |   | 	
+int     | nh | =nhx + ohx/dhx |   | 	
+int     | nw | =4 |   | 	spline order 
+float   | oh | =0 |   | 	
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

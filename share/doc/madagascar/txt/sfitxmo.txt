@@ -1,0 +1,15 @@
+Program sfitxmo | Forward and inverse normal moveout with interval velocity. 
+[SYNOPSIS]
+sfitxmo < inp.rsf > out.rsf velocity=velocity.rsf inv=n nx= dx= x0=0. np= dp= p0=0. eps=0.01
+[PARAMETERS]
+float   | dp | = |   | 	slope sampling 
+float   | dx | = |   | 	offset sampling 
+float   | eps | =0.01 |   | 	stretch regularization 
+bool    | inv | =n |  [y/n] | 	
+int     | np | = |   | 	slope samples 
+int     | nx | = |   | 	offset samples 
+float   | p0 | =0. |   | 	first slope 
+file    | velocity | = |   | 	auxiliary input file name
+float   | x0 | =0. |   | 	first offset 
+[DIRECTORY]
+system/seismic

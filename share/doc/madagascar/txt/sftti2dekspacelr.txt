@@ -1,0 +1,12 @@
+Program sftti2dekspacelr | None
+[SYNOPSIS]
+sftti2dekspacelr < vp0.rsf > Elasticx.rsf Elasticz=Elasticz.rsf seed=time(NULL eps=1.e-6 npk=20 ns= dt=
+[PARAMETERS]
+file    | Elasticz | = |   | 	auxiliary output file name
+        | dt | = |   | 	
+        | eps | =1.e-6 |   | 	tolerance
+        | npk | =20 |   | 	maximum rank
+        | ns | = |   | 	
+        | seed | =time(NULL |   | 	
+[DIRECTORY]
+user/chengjb

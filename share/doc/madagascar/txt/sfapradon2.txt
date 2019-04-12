@@ -1,0 +1,13 @@
+Program sfapradon2 | apex shifted 2to3 Radon transform (using 2to2 butterfly)
+[SYNOPSIS]
+sfapradon2 < input.rsf > output.rsf ntau= np= tau0= dtau= p0= dp= N=
+[PARAMETERS]
+        | N | = |   | 	number of partitions
+        | dp | = |   | 	
+        | dtau | = |   | 	
+        | np | = |   | 	
+        | ntau | = |   | 	
+        | p0 | = |   | 	
+        | tau0 | = |   | 	
+[DIRECTORY]
+user/jingwei

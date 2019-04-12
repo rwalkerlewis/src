@@ -1,0 +1,21 @@
+Program sfkhshot | Kirchhoff shot migration 
+[SYNOPSIS]
+sfkhshot < Fin.rsf > Fout.rsf ttfile=Ftt.rsf verb=n theta=30. dtheta=theta/3 df=5. fmax=.5/d1 ntaper=11 tmin=3*d1 xs= nx=n2t ox=o2t dx=d2t nz=n1t oz=o1t dz=d1t
+[PARAMETERS]
+float   | df | =5. |   | 	anti-aliasing sampling 
+float   | dtheta | =theta/3 |   | 	taper zone 
+float   | dx | =d2t |   | 	
+float   | dz | =d1t |   | 	checking dimensions 
+float   | fmax | =.5/d1 |   | 	
+int     | ntaper | =11 |   | 	
+int     | nx | =n2t |   | 	
+int     | nz | =n1t |   | 	
+float   | ox | =o2t |   | 	
+float   | oz | =o1t |   | 	
+float   | theta | =30. |   | 	maximum dip 
+float   | tmin | =3*d1 |   | 	
+file    | ttfile | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | xs | = |   | 	image parameters 
+[DIRECTORY]
+user/effsilva

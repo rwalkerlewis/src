@@ -1,0 +1,16 @@
+Program sfatm2 | 2D alpha-trimmed-mean filtering. 
+[SYNOPSIS]
+sfatm2 < in.rsf > out.rsf nfw1= nfw2=nfw1 alpha= boundary=n verb=n type=
+[COMMENTS]
+1D filter (nfw2=1); 2D filter (otherwise)
+median filter (alpha=0.5); mean filter (alpha=0.)
+
+[PARAMETERS]
+float   | alpha | = |   | 	0.0 <= alpha <= 0.5: median filter (alpha=0.5); mean filter (alpha=0.)
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw1 | = |   | 	filter-window length in n1 direction (positive and odd integer)
+int     | nfw2 | =nfw1 |   | 	filter-window length in n2 direction (default=nfw1)
+string  | type | = |   | 	[rectangular,cross] 2-D window type, the default is rectangular  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,18 @@
+Program sfisaac1 | Pre-stack bending ray tracing in one-layered media
+[SYNOPSIS]
+sfisaac1 < refl.rsf > ttime.rsf xrefl=xrefl.rsf ns=nr ns2=nr ds=dr ds2=dr s0=r0 s02=r0 type=1 order=4 velocity=2.0 tol=1/(1000000*velocity) break=n
+[PARAMETERS]
+bool    | break | =n |  [y/n] | 	Go beyond zero or not
+float   | ds | =dr |   | 	source sampling for midpoint
+float   | ds2 | =dr |   | 	source sampling for offset
+int     | ns | =nr |   | 	number of sources for midpoint
+int     | ns2 | =nr |   | 	number of sources for offset
+int     | order | =4 |   | 	Interpolation order if choose to use sf_eno
+float   | s0 | =r0 |   | 	origin for midpoint
+float   | s02 | =r0 |   | 	origin for offset
+float   | tol | =1/(1000000*velocity) |   | 	Assign a default value for tolerance
+int     | type | =1 |   | 	Interpolation type 0=sf_eno and 1=central finite difference
+float   | velocity | =2.0 |   | 	Assign velocity km/s
+file    | xrefl | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/zone

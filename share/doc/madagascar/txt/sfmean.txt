@@ -1,0 +1,8 @@
+Program sfmean | 1-D sliding-window mean filtering 
+[SYNOPSIS]
+sfmean < in.rsf > out.rsf nfw= boundary=n
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw | = |   | 	filter-window length (positive integer)
+[DIRECTORY]
+user/yliu

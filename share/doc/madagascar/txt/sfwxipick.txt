@@ -1,0 +1,5 @@
+Program sfwxipick | Simple interactive picking
+[SYNOPSIS]
+sfwxipick
+[DIRECTORY]
+user/fomels

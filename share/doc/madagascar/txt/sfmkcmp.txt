@@ -1,0 +1,17 @@
+Program sfmkcmp | Make a synthtic two-layer CMP gather with known t0
+[SYNOPSIS]
+sfmkcmp < in.rsf > spcmp.rsf n1=1000 n2=20 dt=0.001 dx=50 o1=0 o2=0 v01=1000 v02=1000 t01=0.4 t02=0.8 verb=n
+[PARAMETERS]
+float   | dt | =0.001 |   | 	sampling on 1-th axis(time)
+float   | dx | =50 |   | 	sampling on 2-th axis(offset)
+int     | n1 | =1000 |   | 	number of n1
+int     | n2 | =20 |   | 	number of n2
+float   | o1 | =0 |   | 	
+float   | o2 | =0 |   | 	
+float   | t01 | =0.4 |   | 	t01 start point 
+float   | t02 | =0.8 |   | 	t02 start point 
+float   | v01 | =1000 |   | 	first event rms vel 
+float   | v02 | =1000 |   | 	second event rms vel 
+bool    | verb | =n |  [y/n] | 	dimensions 
+[DIRECTORY]
+user/yliu

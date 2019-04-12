@@ -1,0 +1,76 @@
+.TH sfomp 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfomp \- OpenMP wrapper for embarassingly parallel jobs. 
+.SH SYNOPSIS
+.B sfomp < inp.rsf > out.rsf split=ndim join=axis
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B join
+.B =axis
+.R  	axis to join (0 means add)
+.TP
+.I int    
+.B split
+.B =ndim
+.R  	axis to split
+.SH USED IN
+.TP
+.I data/teapotdome/scdecon
+.TP
+.I data/teapotdome/vels
+.TP
+.I data/teapotdome/zomig
+.TP
+.I gallery/constant/gazdag
+.TP
+.I gallery/constant/oway
+.TP
+.I gallery/constant/stolt
+.TP
+.I gallery/constant/vc
+.TP
+.I gallery/french/gazdag
+.TP
+.I gallery/french/oway
+.TP
+.I gallery/french/stolt
+.TP
+.I gallery/french/vc
+.TP
+.I gallery/vofz/gazdag
+.TP
+.I gallery/vofz/oway
+.TP
+.I gallery/vofz/stolt
+.TP
+.I gallery/vofz/vc
+.TP
+.I geo384s/hw2/groundroll
+.TP
+.I geo384s/hw2/migration
+.TP
+.I geo384s/hw3/dmo
+.TP
+.I geo384s/hw3/nmo
+.TP
+.I geo384s/hw4/alaska
+.TP
+.I geo384s/hw6/gazdag
+.TP
+.I geo384s/hw6/rtm
+.TP
+.I geo384w/hw5/lsmig
+.TP
+.I rsf/rsf/mona
+.TP
+.I rsf/school/clip_test
+.TP
+4 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfomp.html
+.SH SOURCE
+.I system/main/omp.c
+.SH VERSION
+2.1-git

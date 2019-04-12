@@ -1,0 +1,11 @@
+Program sfTTinv | None
+[SYNOPSIS]
+sfTTinv CCorrect=Ccor.rsf Cpredicted=Cpred.rsf common=commonoffset.rsf azimuth= offset=
+[PARAMETERS]
+file    | CCorrect | = |   | 	auxiliary output file name
+file    | Cpredicted | = |   | 	auxiliary output file name
+        | azimuth | = |   | 	command-line parameter
+file    | common | = |   | 	auxiliary output file name
+        | offset | = |   | 	command-line parameter
+[DIRECTORY]
+user/mehdi

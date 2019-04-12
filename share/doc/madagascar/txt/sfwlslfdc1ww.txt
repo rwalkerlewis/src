@@ -1,0 +1,20 @@
+Program sfwlslfdc1ww | None
+[SYNOPSIS]
+sfwlslfdc1ww < velf.rsf > outm.rsf sx=fsx.rsf Mexact=Mexactfile.rsf wfun=Mwfun.rsf Mapp=Mappfile.rsf wtfull=Mwtfull.rsf seed=time(NULL f0=15 a0=0.0001 taper=0.0 eps=1.e-4 npk=20 dt= wavnumcut=1.0 size=6
+[PARAMETERS]
+file    | Mapp | = |   | 	auxiliary output file name
+file    | Mexact | = |   | 	auxiliary output file name
+        | a0 | =0.0001 |   | 	weight parameters
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+        | f0 | =15 |   | 	dominant frequency
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+        | size | =6 |   | 	stencil length
+file    | sx | = |   | 	auxiliary output file name
+        | taper | =0.0 |   | 	taper for stability
+        | wavnumcut | =1.0 |   | 	wavenumber cut percentile
+file    | wfun | = |   | 	auxiliary output file name
+file    | wtfull | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/fangg

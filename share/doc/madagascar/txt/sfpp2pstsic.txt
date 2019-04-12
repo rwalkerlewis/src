@@ -1,0 +1,13 @@
+Program sfpp2pstsic | Compute angle gathers for time-shift imaging condition 
+[SYNOPSIS]
+sfpp2pstsic < Fstk.rsf velocity=Fvel.rsf vpvs=Fgam.rsf dip=Fdip.rsf > Fang.rsf na=nv da=1./(nv-1) a0=0. extend=4
+[PARAMETERS]
+float   | a0 | =0. |   | 	
+float   | da | =1./(nv-1) |   | 	
+file    | dip | = |   | 	auxiliary input file name
+int     | extend | =4 |   | 	tmp extension 
+int     | na | =nv |   | 	
+file    | velocity | = |   | 	auxiliary input file name
+file    | vpvs | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

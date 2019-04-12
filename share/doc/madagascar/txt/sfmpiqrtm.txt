@@ -1,0 +1,48 @@
+Program sfmpiqrtm | 2-D Low-rank One-step Least Pre-stack Reverse-Time-Migration in the complex domain (both img and data are complex valued)
+[SYNOPSIS]
+sfmpiqrtm src=Fsrc.rsf left=left.rsf right=right.rsf leftb=leftb.rsf rightb=rightb.rsf vel=Fvel.rsf norm=Fnorm.rsf tmpwf=Ftmpwf.rsf tmpwfb=Ftmpwfb.rsf verb=n adj=y mode= illum=n roll=n stable=0 sdiv=n reg=0.0f niter=100 eps=SF_EPS perc=0.1 freq_scal=n eps=SF_EPS perc=0.1 shtbgn= sht0=shtbgn shtend= shtint= spz= gpz= gpl= snapinter=1 srctrunc=0.4 rectz=1 rectx=1 repeat=0 top=40 bot=40 lft=40 rht=40 shtid=0 pad1=1
+[COMMENTS]
+img :  crosscorrelation with source normalization (stdout)
+
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	migration
+int     | bot | =40 |   | 	
+float   | eps | =SF_EPS |   | 	padding
+bool    | freq_scal | =n |  [y/n] | 	frequency amplitude spectrum scaling
+int     | gpl | = |   | 	
+int     | gpz | = |   | 	
+bool    | illum | =n |  [y/n] | 	if n, no source illumination applied 
+file    | left | = |   | 	auxiliary input file name
+file    | leftb | = |   | 	auxiliary input file name
+int     | lft | =40 |   | 	
+int     | mode | = |   | 	
+int     | niter | =100 |   | 	smooth division maximum iterations
+string  | norm | = |   | 	auxiliary output file name
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+float   | perc | =0.1 |   | 	percentage of maximum for padding
+int     | rectx | =1 |   | 	
+int     | rectz | =1 |   | 	
+float   | reg | =0.0f |   | 	regularization
+int     | repeat | =0 |   | 	abc parameters 
+int     | rht | =40 |   | 	shot output id 
+file    | right | = |   | 	auxiliary input file name
+file    | rightb | = |   | 	auxiliary input file name
+bool    | roll | =n |  [y/n] | 	if n, receiver is independent of source location and gpl=nx
+bool    | sdiv | =n |  [y/n] | 	smooth division
+int     | sht0 | =shtbgn |   | 	actual shot origin on grid
+int     | shtbgn | = |   | 	
+int     | shtend | = |   | 	
+int     | shtid | =0 |   | 	Set I/O file
+int     | shtint | = |   | 	
+int     | snapinter | =1 |   | 	snap interval 
+int     | spz | = |   | 	
+file    | src | = |   | 	auxiliary input file name
+float   | srctrunc | =0.4 |   | 	
+int     | stable | =0 |   | 	stable = 0 -> conventional imaging condition; 1 -> stable imaging condition for Q-compensation with global nomalization; 2 -> shot-by-shot normalization; 3 -> snapshot-by-snapshot compensation (most intensive); 4 -> deconvolution imaging condition 
+string  | tmpwf | = |   | 	auxiliary output file name
+string  | tmpwfb | = |   | 	auxiliary output file name
+int     | top | =40 |   | 	
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity
+[DIRECTORY]
+user/jsun

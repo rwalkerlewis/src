@@ -1,0 +1,14 @@
+Program sfwavemis2 | Missing data interpolation in 2-D using wavelet transform and compressive sensing. 
+[SYNOPSIS]
+sfwavemis2 < in.rsf > out.rsf mask=mask.rsf niter=20 perc=99. verb=n ordert=1. ordert=1. nbreg=1 oper= type=
+[PARAMETERS]
+string  | mask | = |   | 	auxiliary input file name
+int     | nbreg | =1 |   | 	number of iterations for Bregman iteration 
+int     | niter | =20 |   | 	number of iterations 
+string  | oper | = |   | 	[shaping,pocs,bregman] method, the default is shaping  
+float   | ordert | =1. |   | 	Curve order for thresholding parameter, default is linear 
+float   | perc | =99. |   | 	percentage for soft-thresholding 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

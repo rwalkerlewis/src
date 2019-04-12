@@ -1,0 +1,27 @@
+Program sfmpirfwigrad | Calculate acoustic Reflection FWI gradient with the prepared adjoint source (velocity-impedance scale separation) 
+[SYNOPSIS]
+sfmpirfwigrad Fvel=Fv.rsf Fd=Fd.rsf Fd0=Fd0.rsf Fwavelet=Fw.rsf Fadj=Fadj.rsf Fgrad=Fgrad.rsf ns= ds= s0= sz=3 nr=nx dr=dx r0=x0 rz=3 verb=n frectx=2 frectz=2 nb=20 coef=5. interval=1 acqui_type=1
+[PARAMETERS]
+file    | Fadj | = |   | 	auxiliary input file name
+file    | Fd | = |   | 	auxiliary input file name
+file    | Fd0 | = |   | 	auxiliary input file name
+file    | Fgrad | = |   | 	auxiliary output file name
+file    | Fvel | = |   | 	auxiliary input file name
+file    | Fwavelet | = |   | 	auxiliary input file name
+int     | acqui_type | =1 |   | 	acquisition type 
+float   | coef | =5. |   | 	maximum velocity of the medium 
+float   | dr | =dx |   | 	receiver interval 
+float   | ds | = |   | 	shot interval 
+int     | frectx | =2 |   | 	source smoothing in x 
+int     | frectz | =2 |   | 	source smoothing in z 
+int     | interval | =1 |   | 	wavefield storing interval 
+int     | nb | =20 |   | 	PML boundary width 
+int     | nr | =nx |   | 	number of receiver 
+int     | ns | = |   | 	shot number 
+float   | r0 | =x0 |   | 	receiver origin 
+int     | rz | =3 |   | 	receiver depth 
+float   | s0 | = |   | 	shot origin 
+int     | sz | =3 |   | 	source depth 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/zhiguang

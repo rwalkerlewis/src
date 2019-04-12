@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.recipes.itime</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.recipes-module.html">Package&nbsp;recipes</a> ::
+        Module&nbsp;itime
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.recipes.itime-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.recipes.itime-module.html">Module rsf.recipes.itime</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package rsf=rsf-module.html"><a title="rsf" class="py-name" href="#" onclick="return doclink('link-0', 'rsf', 'link-0');">rsf</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module rsf.proj=rsf.proj-module.html"><a title="rsf.proj" class="py-name" href="#" onclick="return doclink('link-1', 'proj', 'link-1');">proj</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">math</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="itimec"></a><div id="itimec-def"><a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="itimec-toggle" onclick="return toggle('itimec');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.itime-module.html#itimec">itimec</a><tt class="py-op">(</tt><tt class="py-param">out</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">,</tt> <tt class="py-param">cltf</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">,</tt><tt class="py-param">div</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="itimec-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="itimec-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">   <tt class="py-docstring">'''Instantaneous traveltimes as a function of t and f (CLTFT).</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">      cltf: parameters for sfcltft.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">      div:  parameters for smooth division.'''</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">   <tt id="link-2" class="py-name" targets="Function rsf.cluster.Flow()=rsf.cluster-module.html#Flow,Function rsf.flow.Flow()=rsf.flow-module.html#Flow,Module rsf.gui.Flow=rsf.gui.Flow-module.html,Class rsf.gui.Flow.Flow=rsf.gui.Flow.Flow-class.html,Function rsf.proj.Flow()=rsf.proj-module.html#Flow,Method rsf.proj.Project.Flow()=rsf.proj.Project-class.html#Flow"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-2', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-3" class="py-name" targets="Variable rsf.doc.data=rsf.doc-module.html#data"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-3', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_cltf'</tt><tt class="py-op">,</tt>  <tt id="link-4" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-4', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'rtoc | cltft %s '</tt> <tt class="py-op">%</tt><tt class="py-name">cltf</tt><tt class="py-op">)</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">   <tt id="link-5" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-5', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-6', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dcltf'</tt><tt class="py-op">,</tt> <tt id="link-7" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-7', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">       <tt class="py-string">'rtoc | math output="input*x1*I" | cltft %s '</tt> <tt class="py-op">%</tt><tt class="py-name">cltf</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">   <tt id="link-8" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-8', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt id="link-9" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-9', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dcltf'</tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-10', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_cltf'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'cdivn den=${SOURCES[1]} %s | imag'</tt><tt class="py-op">%</tt><tt class="py-name">div</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"> </tt>
+<a name="itime1"></a><div id="itime1-def"><a name="L17"></a><tt class="py-lineno">17</tt> <a class="py-toggle" href="#" id="itime1-toggle" onclick="return toggle('itime1');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.itime-module.html#itime1">itime1</a><tt class="py-op">(</tt><tt class="py-param">out</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">,</tt> <tt class="py-param">ltft</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">,</tt><tt class="py-param">div</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="itime1-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="itime1-expanded"><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">   <tt class="py-docstring">'''Instantaneous traveltimes as a function of t and f (LTFT).</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">      ltft: parameters for sfltft.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">      div:  parameters for smooth division.'''</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">   <tt id="link-11" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-11', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-12', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_ltft1'</tt><tt class="py-op">,</tt>  <tt id="link-13" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-13', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'ltft %s '</tt> <tt class="py-op">%</tt><tt class="py-name">ltft</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">   <tt id="link-14" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-14', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-15', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dltft1'</tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-16', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">       <tt class="py-string">'math output="input*x1" | ltft %s | math output="input*I" '</tt> <tt class="py-op">%</tt><tt class="py-name">ltft</tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">   <tt id="link-17" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-17', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt id="link-18" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-18', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dltft1'</tt><tt class="py-op">,</tt> <tt id="link-19" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-19', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_ltft1'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'cdivn den=${SOURCES[1]} %s | imag'</tt><tt class="py-op">%</tt><tt class="py-name">div</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="itime2"></a><div id="itime2-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="itime2-toggle" onclick="return toggle('itime2');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.itime-module.html#itime2">itime2</a><tt class="py-op">(</tt><tt class="py-param">out</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">,</tt> <tt class="py-param">ltft</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">,</tt><tt class="py-param">div</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="itime2-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="itime2-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">   <tt class="py-docstring">'''Instantaneous traveltimes as a function of t and f (LTFT).</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">      ltft: parameters for sfltft.</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">      div:  parameters for smooth division.'''</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">   <tt id="link-20" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-20', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-21', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_ltft2'</tt><tt class="py-op">,</tt> <tt id="link-22" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-22', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'ltft %s '</tt> <tt class="py-op">%</tt><tt class="py-name">ltft</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">   <tt id="link-23" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-23', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-24" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-24', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dltft2'</tt><tt class="py-op">,</tt> <tt id="link-25" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-25', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-string">'''math output="input*x1" | ltft %s | math output="I*input" '''</tt> <tt class="py-op">%</tt><tt class="py-name">ltft</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">   <tt id="link-26" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-26', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt id="link-27" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-27', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dltft2'</tt><tt class="py-op">,</tt> <tt id="link-28" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-28', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_ltft2'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-string">'cdivn den=${SOURCES[1]} %s | imag'</tt> <tt class="py-op">%</tt><tt class="py-name">div</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="itimef"></a><div id="itimef-def"><a name="L41"></a><tt class="py-lineno">41</tt> <a class="py-toggle" href="#" id="itimef-toggle" onclick="return toggle('itimef');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.itime-module.html#itimef">itimef</a><tt class="py-op">(</tt><tt class="py-param">out</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">,</tt> <tt class="py-param">ft</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">,</tt> <tt class="py-param">div</tt><tt class="py-op">=</tt><tt class="py-string">' '</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="itimef-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="itimef-expanded"><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">   <tt class="py-docstring">'''Instantaneous traveltimes as a function of t and f (FT)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-docstring">      ft:  fft1 parameters.</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">      div: parameters for smooth division.'''</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">   <tt id="link-29" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-29', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-30', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_ft'</tt><tt class="py-op">,</tt>  <tt id="link-31" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-31', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'fft1 %s'</tt> <tt class="py-op">%</tt><tt class="py-name">ft</tt> <tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">   <tt id="link-32" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-32', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt id="link-33" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-33', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dft'</tt><tt class="py-op">,</tt> <tt id="link-34" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-34', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-string">'math output="input*x1" | fft1 %s | math output="input*I"'</tt> <tt class="py-op">%</tt><tt class="py-name">ft</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">   <tt id="link-35" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-35', 'Flow', 'link-2');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt id="link-36" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-36', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_dft'</tt><tt class="py-op">,</tt> <tt id="link-37" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-37', 'data', 'link-3');">data</a></tt><tt class="py-op">+</tt><tt class="py-string">'_ft'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-string">'cdivn den=${SOURCES[1]} %s | imag | put label2="tau"'</tt> <tt class="py-op">%</tt><tt class="py-name">div</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-string">def itime1(out,data, ltft=' ',div=' ', eps=0.2):</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-string">   '''Instantaneous traveltimes as a function of t and f (LTFT).</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-string">      ltf: parameters for sfltft.</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-string">      div: parameters for smooth division.</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"><tt class="py-string">      eps: smoothness parameter for division.'''</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"><tt class="py-string">   </tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"><tt class="py-string">   Flow(data+'_ltft1', data,'ltft %s ' %ltft)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-string">   Flow(data+'_imag_der1', data+'_ltft1',</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-string">       'imag | transp plane=12 | smoothder eps=%g | transp plane=12 | rtoc' %eps)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-string">   Flow(out, [data+'_ltft1', data+'_imag_der1'],</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-string">        '''real | transp plane=12 | smoothder eps=%g | transp plane=12 |</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-string">           rtoc | math img=${SOURCES[1]} output="input + I*img" |    </tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"><tt class="py-string">           cdivn den=${SOURCES[1]} %s | imag</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-string">        '''%(eps,div))</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-string">        #   cmplx ${SOURCES[1]} | cdivn den=${SOURCES[1]} %s | imag</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-string">        #'''%(eps,div))</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

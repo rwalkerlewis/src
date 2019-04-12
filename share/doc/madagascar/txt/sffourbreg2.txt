@@ -1,0 +1,13 @@
+Program sffourbreg2 | Missing data interpolation in 2-D using Fourier Bregman shaping iteration. 
+[SYNOPSIS]
+sffourbreg2 < in.rsf > out.rsf mask=mask.rsf res=res.rsf ref=ref.rsf niter=20 verb=n error=n perc=99.
+[PARAMETERS]
+bool    | error | =n |  [y/n] | 	error verbosity flag 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =20 |   | 	number of iterations 
+float   | perc | =99. |   | 	percentage for soft-thresholding 
+file    | ref | = |   | 	auxiliary input file name
+string  | res | = |   | 	auxiliary output file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

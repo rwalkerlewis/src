@@ -1,0 +1,12 @@
+Program sfcfftexpmig2 | Complex 2-D exploding reflector migration (read in initial complex wavefield in depth) 
+[SYNOPSIS]
+sfcfftexpmig2 < wvfld.rsf > image.rsf left=left.rsf right=right.rsf verb=n nt= dt= pad1=1
+[PARAMETERS]
+float   | dt | = |   | 	
+file    | left | = |   | 	auxiliary input file name
+int     | nt | = |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | right | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

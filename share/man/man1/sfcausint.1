@@ -1,0 +1,76 @@
+.TH sfcausint 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcausint \- Causal integration on the first axis. 
+.SH SYNOPSIS
+.B sfcausint < in.rsf > out.rsf adj=n
+.SH COMMENTS
+
+December 2013 program of the month:
+http://ahay.org/blog/2013/12/01/program-of-the-month-sfcausint/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y, do adjoint integration
+.SH USED IN
+.TP
+.I bei/conj/causint
+.TP
+.I bei/ft1/autocor
+.TP
+.I cup/rna2d/real
+.TP
+.I data/marmousi2mp/modelproc
+.TP
+.I gallery/vofz/kirch
+.TP
+.I gallery/vofz/vc
+.TP
+.I gee/ajt/causint
+.TP
+.I geo384h/hw1/dem
+.TP
+.I geo384w/hw2/cmp
+.TP
+.I geo384w/hw3/synth
+.TP
+.I geo384w/hw4/sigsbee
+.TP
+.I geo384w/hw4/synth
+.TP
+.I jlu/vdseislet/demultiple
+.TP
+.I jlu/vdseislet/haskell
+.TP
+.I rsf/school/complex
+.TP
+.I rsf/school/single
+.TP
+.I rsf/school2009/local
+.TP
+.I rsf/school2012/plot
+.TP
+.I rsf/school2015/local
+.TP
+.I rsf/tutorials/well-tie
+.TP
+.I sep/antial/flt
+.TP
+.I sep/pefmult/haskell
+.TP
+.I sep/super/tau
+.TP
+.I tccs/eseis/nonseis
+.TP
+.I tccs/hyper/amarm
+.TP
+11 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfcausint.html
+.SH SOURCE
+.I system/generic/Mcausint.c
+.SH VERSION
+2.1-git

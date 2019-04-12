@@ -1,0 +1,16 @@
+Program sfpocssemb | POCS using semblance thresholding or amplitude thresholding.
+[SYNOPSIS]
+sfpocssemb < inp.rsf mask=m.rsf > outp.rsf spec2=spec2.rsf spec1=spec1.rsf snr=snr.rsf true=trued.rsf niter=10 ifsnr=0 pmin=-2 np=nx type=
+[PARAMETERS]
+int     | ifsnr | =0 |   | 	If compute SNR during iteration 
+file    | mask | = |   | 	auxiliary input file name
+int     | niter | =10 |   | 	Get the number of iterations 
+int     | np | =nx |   | 	number of p 
+float   | pmin | =-2 |   | 	minimum p 
+file    | snr | = |   | 	auxiliary output file name
+string  | spec1 | = |   | 	auxiliary output file name
+string  | spec2 | = |   | 	auxiliary output file name
+string  | true | = |   | 	auxiliary input file name
+string  | type | = |   | 	[amplitude, semblance] thresholding type, the default is amplitude thresholding  
+[DIRECTORY]
+user/chenyk

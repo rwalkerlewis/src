@@ -1,0 +1,31 @@
+.TH sfinterleave 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinterleave \- Combine several datasets by interleaving.
+.SH SYNOPSIS
+.B sfinterleave > out.rsf axis=3 [< file0.rsf] file1.rsf file2.rsf ...
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B axis
+.B =3
+.R  	Axis for interleaving
+.SH USED IN
+.TP
+.I data/marmousi2mp/modelproc
+.TP
+.I gee/lal/multiscale
+.TP
+.I sep/burg/tension
+.TP
+.I tccs/attr/vecta
+.TP
+.I tccs/elas/gradient
+.TP
+.I tccs/ltft/vecta
+.SH SOURCE
+.I system/main/interleave.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfinterleave
+.SH VERSION
+2.1-git

@@ -1,0 +1,28 @@
+Program sfffd2_den_omp | 2-D Fourier finite-difference wave extrapolation 
+[SYNOPSIS]
+sfffd2_den_omp > out.rsf vel=vel.rsf den=den.rsf < source.rsf snaps=snaps.rsf dt= nt= isx= isz= irz=isz jm=20 ax=2.0 az=2.0 factor=2.0/3.0 snap=y nbt=0 nbb=0 nbl=0 nbr=0 sht=0 ct=0.01 cb=0.01 cl=0.01 cr=0.01
+[PARAMETERS]
+float   | ax | =2.0 |   | 	suppress HF parameter
+float   | az | =2.0 |   | 	suppress HF parameter
+float   | cb | =0.01 |   | 	decaying parameter
+float   | cl | =0.01 |   | 	decaying parameter
+float   | cr | =0.01 |   | 	decaying parameter
+float   | ct | =0.01 |   | 	decaying parameter
+file    | den | = |   | 	auxiliary input file name
+float   | dt | = |   | 	
+float   | factor | =2.0/3.0 |   | 	suppress HF parameter
+int     | irz | =isz |   | 	
+int     | isx | = |   | 	
+int     | isz | = |   | 	
+int     | jm | =20 |   | 	
+int     | nbb | =0 |   | 	
+int     | nbl | =0 |   | 	
+int     | nbr | =0 |   | 	
+int     | nbt | =0 |   | 	
+int     | nt | = |   | 	
+int     | sht | =0 |   | 	
+bool    | snap | =y |  [y/n] | 	Output snapshots
+file    | snaps | = |   | 	auxiliary output file name
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

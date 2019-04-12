@@ -1,0 +1,9 @@
+Program sfpchain1 | Nonstationary Prony by chain of PEFs - linear operator 
+[SYNOPSIS]
+sfpchain1 < inp.rsf pef=pef.rsf sig=sig.rsf > out.rsf adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | pef | = |   | 	auxiliary input file name
+file    | sig | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

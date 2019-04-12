@@ -1,0 +1,17 @@
+Program sfitrack2d | Datuming by 2D Green functions in constant media 
+[SYNOPSIS]
+sfitrack2d cnn=Fnn.rsf cff=Fff.rsf < Fwin.rsf > Fwou.rsf verb=n velo=1.0 fast=y nin=y nou=y ox=0.0 oz=0.0 angMAX=90.0 gauANG=0.3*angMAX
+[PARAMETERS]
+float   | angMAX | =90.0 |   | 	
+file    | cff | = |   | 	auxiliary input file name
+file    | cnn | = |   | 	auxiliary input file name
+bool    | fast | =y |  [y/n] | 	fast execution 
+float   | gauANG | =0.3*angMAX |   | 	
+bool    | nin | =y |  [y/n] | 	
+bool    | nou | =y |  [y/n] | 	------------------------------------------------------------
+float   | ox | =0.0 |   | 	
+float   | oz | =0.0 |   | 	
+float   | velo | =1.0 |   | 	medium velocity 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

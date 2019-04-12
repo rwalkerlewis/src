@@ -1,0 +1,577 @@
+import rsf.doc
+
+sfcomp = rsf.doc.rsfprog('sfcomp','user/chen/Mcomp.c','''Compare 2 data set ''')
+sfcomp.par('ref',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfcomp.par('mode',rsf.doc.rsfpar('int','0','','''compare method: 
+	0 - normalized xcorrelation; 
+	1 - mean square error '''))
+sfcomp.version('2.1-git')
+sfcomp.synopsis('''sfcomp < in.rsf > out.rsf ref=ref.rsf mode=0''','''''')
+rsf.doc.progs['sfcomp']=sfcomp
+
+sfresample = rsf.doc.rsfprog('sfresample','user/chen/Mresample.c','''2D data resampling. ''')
+sfresample.par('o1',rsf.doc.rsfpar('float','o[0]','','''first sample sample on 1st axis '''))
+sfresample.par('d1',rsf.doc.rsfpar('float','d[0]','','''sample interval on 1st axis '''))
+sfresample.par('o2',rsf.doc.rsfpar('float','o[1]','','''first sample on 2nd axis '''))
+sfresample.par('d2',rsf.doc.rsfpar('float','d[1]','','''sample interval on 2nd axis '''))
+sfresample.version('2.1-git')
+sfresample.synopsis('''sfresample < in.rsf > out.rsf o1=o[0] d1=d[0] o2=o[1] d2=d[1]''','''''')
+rsf.doc.progs['sfresample']=sfresample
+
+sfaddevent = rsf.doc.rsfprog('sfaddevent','user/chen/Maddevent.c','''Add a dispersive event to a seismic profile ''')
+sfaddevent.par('wvtype',rsf.doc.rsfpar('int','0','','''0: ricker; 1: sinc; x: not support '''))
+sfaddevent.par('w0',rsf.doc.rsfpar('float','35.0','','''central frequency of Ricker wavelet or bandwidth of sinc wavelet '''))
+sfaddevent.par('event',rsf.doc.rsfpar('int','2','','''0: linear; 1: parabolic; 2:hyperbolic '''))
+sfaddevent.par('nfft',rsf.doc.rsfpar('int','','','''fft length '''))
+sfaddevent.par('t0',rsf.doc.rsfpar('float','0.3','','''event travel time at x=0 '''))
+sfaddevent.par('v0',rsf.doc.rsfpar('float','1500.0','','''event velocity at x=0, for reference frequency f0 '''))
+sfaddevent.par('a0',rsf.doc.rsfpar('float','1.0','','''event amplitude at t=a0ref (x=0) '''))
+sfaddevent.par('qv',rsf.doc.rsfpar('float','-1.0','','''Q factor for velocity dispersion '''))
+sfaddevent.par('qa',rsf.doc.rsfpar('float','qv','','''Q factor for amplitude attenuation '''))
+sfaddevent.par('f0',rsf.doc.rsfpar('float','w0','','''reference frequency for velocity dispersion and amplitude attenuation '''))
+sfaddevent.par('a0ref',rsf.doc.rsfpar('int','0','','''reference point for a0: 0 - t0; 1 - a0 '''))
+sfaddevent.version('2.1-git')
+sfaddevent.synopsis('''sfaddevent < in.rsf > out.rsf wvtype=0 w0=35.0 event=2 nfft= t0=0.3 v0=1500.0 a0=1.0 qv=-1.0 qa=qv f0=w0 a0ref=0''','''''')
+rsf.doc.progs['sfaddevent']=sfaddevent
+
+sfmflt = rsf.doc.rsfprog('sfmflt','user/chen/Mmflt.c','''3D Recursive median filter ''')
+sfmflt.par('rect1',rsf.doc.rsfpar('int','1','','''filter length on 1st axis '''))
+sfmflt.par('rect2',rsf.doc.rsfpar('int','0','','''filter length on 2nd axis '''))
+sfmflt.par('rect3',rsf.doc.rsfpar('int','0','','''filter length on 3nd axis '''))
+sfmflt.version('2.1-git')
+sfmflt.synopsis('''sfmflt < in.rsf > out.rsf rect1=1 rect2=0 rect3=0''','''''')
+rsf.doc.progs['sfmflt']=sfmflt
+
+sfsignal = rsf.doc.rsfprog('sfsignal','user/chen/Msignal.c','''Generate signal series ''')
+sfsignal.par('para',rsf.doc.rsfpar('floats','','',''' [4]'''))
+sfsignal.par('n',rsf.doc.rsfpar('int','100','','''length '''))
+sfsignal.par('o',rsf.doc.rsfpar('float','0.0','','''original '''))
+sfsignal.par('d',rsf.doc.rsfpar('float','0.004','','''interval '''))
+sfsignal.par('waveform',rsf.doc.rsfpar('string ',desc='''waveform: ricker,sinc,harmonic,randn,rand '''))
+sfsignal.version('2.1-git')
+sfsignal.synopsis('''sfsignal > out.rsf para= n=100 o=0.0 d=0.004 waveform=''','''''')
+rsf.doc.progs['sfsignal']=sfsignal
+
+sfpsss = rsf.doc.rsfprog('sfpsss','user/chen/Mpsss.c','''phase shift wave extrapolation. ''')
+sfpsss.par('vel',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfpsss.par('wave',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfpsss.par('jz',rsf.doc.rsfpar('int','40','','''depth step for wave data '''))
+sfpsss.par('rz',rsf.doc.rsfpar('int','0','','''receiver depth '''))
+sfpsss.par('nz',rsf.doc.rsfpar('int','nz0-rz','','''depth number '''))
+sfpsss.version('2.1-git')
+sfpsss.synopsis('''sfpsss < data.rsf > imag.rsf vel=modl.rsf wave=wave.rsf jz=40 rz=0 nz=nz0-rz''','''''')
+rsf.doc.progs['sfpsss']=sfpsss
+
+sfpsefd = rsf.doc.rsfprog('sfpsefd','user/chen/Mpsefd.c','''EFD phase shift wave extrapolation. ''')
+sfpsefd.par('vel',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfpsefd.par('wave',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfpsefd.par('jz',rsf.doc.rsfpar('int','40','','''depth step for wave data '''))
+sfpsefd.par('rz',rsf.doc.rsfpar('int','0','','''receiver depth '''))
+sfpsefd.par('nz',rsf.doc.rsfpar('int','nz0-rz','','''depth number '''))
+sfpsefd.version('2.1-git')
+sfpsefd.synopsis('''sfpsefd < data.rsf > imag.rsf vel=modl.rsf wave=wave.rsf jz=40 rz=0 nz=nz0-rz''','''''')
+rsf.doc.progs['sfpsefd']=sfpsefd
+
+sfmdfd4 = rsf.doc.rsfprog('sfmdfd4','user/chen/Mmdfd4.c','''2D finite difference modeling	''')
+sfmdfd4.par('wave',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfmdfd4.par('div',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfmdfd4.par('nt',rsf.doc.rsfpar('int','1000','','''time samples '''))
+sfmdfd4.par('dt',rsf.doc.rsfpar('float','0.004','','''time interval '''))
+sfmdfd4.par('jt',rsf.doc.rsfpar('int','40','','''wave movie time interval '''))
+sfmdfd4.par('wvlt',rsf.doc.rsfpar('int','0','','''wavelet type "ricker/harmonic/other" '''))
+sfmdfd4.par('w0',rsf.doc.rsfpar('float','35.0','','''central frequency for ricker/harmonic wavelet '''))
+sfmdfd4.par('sx',rsf.doc.rsfpar('int','0','','''x position index of the source '''))
+sfmdfd4.par('sz',rsf.doc.rsfpar('int','0','','''z position index of the source '''))
+sfmdfd4.par('rx0',rsf.doc.rsfpar('int','0','','''x position index of first receiver '''))
+sfmdfd4.par('nr',rsf.doc.rsfpar('int','1','','''receiver numbers '''))
+sfmdfd4.par('dr',rsf.doc.rsfpar('int','1','','''receiver interval of unit "dx" '''))
+sfmdfd4.par('rz',rsf.doc.rsfpar('int','0','','''z position index of receivers '''))
+sfmdfd4.par('wave',rsf.doc.rsfpar('string ',desc='''wavefield movie file (auxiliary output file name)'''))
+sfmdfd4.version('2.1-git')
+sfmdfd4.synopsis('''sfmdfd4 < modl.rsf > data.rsf wave=wave.rsf div=div.rsf nt=1000 dt=0.004 jt=40 wvlt=0 w0=35.0 sx=0 sz=0 rx0=0 nr=1 dr=1 rz=0''','''''')
+rsf.doc.progs['sfmdfd4']=sfmdfd4
+
+sfwavmod = rsf.doc.rsfprog('sfwavmod','user/chen/Mwavmod.c','''1-2-3D finite difference modeling ''')
+sfwavmod.par('vel',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfwavmod.par('sgrid',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfwavmod.par('ggrid',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfwavmod.par('wfl',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfwavmod.par('jt',rsf.doc.rsfpar('int','1','','''time interval in observation system '''))
+sfwavmod.par('jtm',rsf.doc.rsfpar('int','100','','''time interval of wave movie '''))
+sfwavmod.par('ot',rsf.doc.rsfpar('float','0.0','','''time delay '''))
+sfwavmod.par('verb',rsf.doc.rsfpar('bool','n','','''verbosity '''))
+sfwavmod.par('wfl',rsf.doc.rsfpar('string ',desc='''wavefield movie file (auxiliary output file name)'''))
+sfwavmod.version('2.1-git')
+sfwavmod.synopsis('''sfwavmod < in.rsf vel=vel.rsf sgrid=sgrid.rsf ggrid=ggrid.rsf > dat.rsf wfl=wfl.rsf jt=1 jtm=100 ot=0.0 verb=n''','''''')
+rsf.doc.progs['sfwavmod']=sfwavmod
+
+sfpwdfreq = rsf.doc.rsfprog('sfpwdfreq','user/chen/Mpwdfreq.c','''frequency response of PWD operator ''')
+sfpwdfreq.par('n1',rsf.doc.rsfpar('int','50','','''samples in frequency domain between (0:f_c] '''))
+sfpwdfreq.par('order',rsf.doc.rsfpar('int','1','','''order of PWD '''))
+sfpwdfreq.par('o3',rsf.doc.rsfpar('float','20','','''first dip angle '''))
+sfpwdfreq.par('d3',rsf.doc.rsfpar('float','30','','''dip angle increment '''))
+sfpwdfreq.par('n3',rsf.doc.rsfpar('int','1','','''number dip angle '''))
+sfpwdfreq.par('iir',rsf.doc.rsfpar('bool','n','','''y: iir; n: fir '''))
+sfpwdfreq.par('opwd',rsf.doc.rsfpar('bool','y','','''y: circle interpolating pwd; n: line interpolating pwd '''))
+sfpwdfreq.par('radius',rsf.doc.rsfpar('float','1.0','','''radius for circle interpolating pwd '''))
+sfpwdfreq.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sfpwdfreq.version('2.1-git')
+sfpwdfreq.synopsis('''sfpwdfreq > out.rsf n1=50 order=1 o3=20 d3=30 n3=1 iir=n opwd=y radius=1.0 interp=''','''''')
+rsf.doc.progs['sfpwdfreq']=sfpwdfreq
+
+sflphcoef = rsf.doc.rsfprog('sflphcoef','user/chen/Mlphcoef.c','''Linear PHase filter COEFficients ''')
+sflphcoef.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sflphcoef.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sflphcoef.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sflphcoef.version('2.1-git')
+sflphcoef.synopsis('''sflphcoef > out.rsf m=1 n=1 interp=''','''''')
+rsf.doc.progs['sflphcoef']=sflphcoef
+
+sffbfreq = rsf.doc.rsfprog('sffbfreq','user/chen/Mfbfreq.c','''frequency response of linear phase filter bank ''')
+sffbfreq.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sffbfreq.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sffbfreq.par('n1',rsf.doc.rsfpar('int','50','','''samples in frequency domain is 2*n1+1 '''))
+sffbfreq.par('nd',rsf.doc.rsfpar('int','1','','''nd dimensional filter bank, nd should not be large, or you will need to buy a new disk array '''))
+sffbfreq.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sffbfreq.version('2.1-git')
+sffbfreq.synopsis('''sffbfreq > out.rsf m=1 n=1 n1=50 nd=1 interp=''','''''')
+rsf.doc.progs['sffbfreq']=sffbfreq
+
+sflphfreq = rsf.doc.rsfprog('sflphfreq','user/chen/Mlphfreq.c','''frequency response of linear phase approximators ''')
+sflphfreq.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sflphfreq.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sflphfreq.par('iir',rsf.doc.rsfpar('bool','y','','''y:iir,  n:fir '''))
+sflphfreq.par('n1',rsf.doc.rsfpar('int','50','','''samples in frequency domain between (0:f_c] '''))
+sflphfreq.par('o2',rsf.doc.rsfpar('float','0.1','','''first phase shift '''))
+sflphfreq.par('d2',rsf.doc.rsfpar('float','0.3','','''phase shift increment '''))
+sflphfreq.par('n2',rsf.doc.rsfpar('int','1','','''number of phase shift '''))
+sflphfreq.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sflphfreq.version('2.1-git')
+sflphfreq.synopsis('''sflphfreq > out.rsf m=1 n=1 iir=y n1=50 o2=0.1 d2=0.3 n2=1 interp=''','''''')
+rsf.doc.progs['sflphfreq']=sflphfreq
+
+sfldip = rsf.doc.rsfprog('sfldip','user/chen/Mldip.c','''dip estimation by line interpolating pwd ''')
+sfldip.par('idip',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfldip.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sfldip.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sfldip.par('rect1',rsf.doc.rsfpar('int','0','','''dip smoothness on 1st axis '''))
+sfldip.par('rect2',rsf.doc.rsfpar('int','0','','''dip smoothness on 2nd axis '''))
+sfldip.par('niter',rsf.doc.rsfpar('int','5','','''number of iterations '''))
+sfldip.par('liter',rsf.doc.rsfpar('int','20','','''number of linear iterations '''))
+sfldip.par('eta',rsf.doc.rsfpar('float','1.0','','''steps for iteration '''))
+sfldip.par('verb',rsf.doc.rsfpar('bool','n','','''verbosity flag '''))
+sfldip.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sfldip.par('idip',rsf.doc.rsfpar('string ',desc='''auxiliary input file name'''))
+sfldip.version('2.1-git')
+sfldip.synopsis('''sfldip < in.rsf > out.rsf idip=p0.rsf m=1 n=1 rect1=0 rect2=0 niter=5 liter=20 eta=1.0 verb=n interp=''','''''')
+rsf.doc.progs['sfldip']=sfldip
+
+sfodip = rsf.doc.rsfprog('sfodip','user/chen/Modip.c','''omnidirectional dip estimation  ''')
+sfodip.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sfodip.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sfodip.par('rect1',rsf.doc.rsfpar('int','0','','''dip smoothness on 1st axis '''))
+sfodip.par('rect2',rsf.doc.rsfpar('int','0','','''dip smoothness on 2nd axis '''))
+sfodip.par('niter',rsf.doc.rsfpar('int','5','','''number of iterations '''))
+sfodip.par('liter',rsf.doc.rsfpar('int','20','','''number of linear iterations '''))
+sfodip.par('radius',rsf.doc.rsfpar('float','1.0','','''interpolating radius for opwd '''))
+sfodip.par('eta',rsf.doc.rsfpar('float','0.5','','''steps for iteration '''))
+sfodip.par('dip0',rsf.doc.rsfpar('float','0.0','','''starting dip '''))
+sfodip.par('verb',rsf.doc.rsfpar('bool','n','','''verbosity flag '''))
+sfodip.par('slope',rsf.doc.rsfpar('bool','n','','''slope (y) or dip (n) estimation '''))
+sfodip.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sfodip.version('2.1-git')
+sfodip.synopsis('''sfodip < in.rsf > out.rsf m=1 n=1 rect1=0 rect2=0 niter=5 liter=20 radius=1.0 eta=0.5 dip0=0.0 verb=n slope=n interp=''','''''')
+rsf.doc.progs['sfodip']=sfodip
+
+sfdipflt = rsf.doc.rsfprog('sfdipflt','user/chen/Mdipflt.c','''2D dip filter ''')
+sfdipflt.par('dip',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfdipflt.par('nf',rsf.doc.rsfpar('int','1','','''filter length '''))
+sfdipflt.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: [nearest],linear '''))
+sfdipflt.par('filt',rsf.doc.rsfpar('string ',desc='''filter type: [median],mean '''))
+sfdipflt.version('2.1-git')
+sfdipflt.synopsis('''sfdipflt < in.rsf > out.rsf dip=dip.rsf nf=1 interp= filt=''','''''')
+rsf.doc.progs['sfdipflt']=sfdipflt
+
+sffbank1 = rsf.doc.rsfprog('sffbank1','user/chen/Mfbank1.c','''1d filter bank  ''')
+sffbank1.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sffbank1.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sffbank1.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sffbank1.version('2.1-git')
+sffbank1.synopsis('''sffbank1 < in.rsf > out.rsf m=1 n=1 interp=''','''''')
+rsf.doc.progs['sffbank1']=sffbank1
+
+sffbank2 = rsf.doc.rsfprog('sffbank2','user/chen/Mfbank2.c','''2d filter bank  ''')
+sffbank2.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sffbank2.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sffbank2.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sffbank2.version('2.1-git')
+sffbank2.synopsis('''sffbank2 < in.rsf > out.rsf m=1 n=1 interp=''','''''')
+rsf.doc.progs['sffbank2']=sffbank2
+
+sffbdip = rsf.doc.rsfprog('sffbdip','user/chen/Mfbdip.c','''omnidirectional dip estimation  ''')
+sffbdip.par('rect1',rsf.doc.rsfpar('int','0','','''dip smoothness on 1st axis '''))
+sffbdip.par('rect2',rsf.doc.rsfpar('int','0','','''dip smoothness on 2nd axis '''))
+sffbdip.par('niter',rsf.doc.rsfpar('int','5','','''number of iterations '''))
+sffbdip.par('liter',rsf.doc.rsfpar('int','20','','''number of linear iterations '''))
+sffbdip.par('radius',rsf.doc.rsfpar('float','1.0','','''interpolating radius for opwd '''))
+sffbdip.par('eta',rsf.doc.rsfpar('float','0.75','','''steps for iteration '''))
+sffbdip.par('idip',rsf.doc.rsfpar('float','0.0','','''initial dip '''))
+sffbdip.par('verb',rsf.doc.rsfpar('bool','n','','''verbosity flag '''))
+sffbdip.version('2.1-git')
+sffbdip.synopsis('''sffbdip < in.rsf > out.rsf rect1=0 rect2=0 niter=5 liter=20 radius=1.0 eta=0.75 idip=0.0 verb=n''','''''')
+rsf.doc.progs['sffbdip']=sffbdip
+
+sffbpwd = rsf.doc.rsfprog('sffbpwd','user/chen/Mfbpwd.c','''omnidirectional plane-wave destruction  ''')
+sffbpwd.par('dip',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sffbpwd.par('radius',rsf.doc.rsfpar('float','1.0','','''interpolating radius for opwd '''))
+sffbpwd.version('2.1-git')
+sffbpwd.synopsis('''sffbpwd < in.rsf > out.rsf dip=fp.rsf radius=1.0''','''''')
+rsf.doc.progs['sffbpwd']=sffbpwd
+
+sfss = rsf.doc.rsfprog('sfss','user/chen/Mss.c','''generate simultaneous sources grid from delay file ''')
+sfss.par('n1',rsf.doc.rsfpar('int','1000','','''samples '''))
+sfss.par('o1',rsf.doc.rsfpar('float','0.0','','''sampling interval '''))
+sfss.par('d1',rsf.doc.rsfpar('float','0.004','','''original  '''))
+sfss.par('l1',rsf.doc.rsfpar('string ',desc='''label "Time" '''))
+sfss.par('u1',rsf.doc.rsfpar('string ',desc='''unit "s" '''))
+sfss.version('2.1-git')
+sfss.synopsis('''sfss < in.rsf > out.rsf n1=1000 o1=0.0 d1=0.004 l1= u1=''','''''')
+rsf.doc.progs['sfss']=sfss
+
+sfssblend = rsf.doc.rsfprog('sfssblend','user/chen/Mssblend.c','''blend reciever gathers (T-S-R) to generate simultaneous data ''')
+sfssblend.par('delay',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfssblend.par('jt',rsf.doc.rsfpar('int','1','','''subsampling nps '''))
+sfssblend.version('2.1-git')
+sfssblend.synopsis('''sfssblend < in.rsf delay=delay.rsf > out.rsf jt=1''','''''')
+rsf.doc.progs['sfssblend']=sfssblend
+
+sfsscrg = rsf.doc.rsfprog('sfsscrg','user/chen/Msscrg.c','''Extract common reciever gathers from simultaneous data ''')
+sfsscrg.par('delay',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfsscrg.par('jt',rsf.doc.rsfpar('int','1','','''subsampling [nps] in observation '''))
+sfsscrg.par('nt',rsf.doc.rsfpar('int','n1','',''''''))
+sfsscrg.version('2.1-git')
+sfsscrg.synopsis('''sfsscrg < in.rsf delay=delay.rsf > out.rsf jt=1 nt=n1''','''''')
+rsf.doc.progs['sfsscrg']=sfsscrg
+
+sfepfbe = rsf.doc.rsfprog('sfepfbe','user/chen/Mepfbe.c','''Bi-Exponential Edge Preserving Smoothing ''')
+sfepfbe.par('twod',rsf.doc.rsfpar('bool','n','','''y, 2D smoothing '''))
+sfepfbe.par('sigma',rsf.doc.rsfpar('float','1.0','','''normalizing parameter '''))
+sfepfbe.par('lamda',rsf.doc.rsfpar('float','0.8','','''lamda '''))
+sfepfbe.par('kernel',rsf.doc.rsfpar('string ',desc='''similarity: gaussian '''))
+sfepfbe.version('2.1-git')
+sfepfbe.synopsis('''sfepfbe < in.rsf > out.rsf twod=n sigma=1.0 lamda=0.8 kernel=''','''''')
+rsf.doc.progs['sfepfbe']=sfepfbe
+
+sfepfbil = rsf.doc.rsfprog('sfepfbil','user/chen/Mepfbil.c','''Bilateral filter ''')
+sfepfbil.par('twod',rsf.doc.rsfpar('bool','n','','''y, 2D smoothing '''))
+sfepfbil.par('sigmar',rsf.doc.rsfpar('float','1.0','','''sigma for range filter '''))
+sfepfbil.par('sigmad',rsf.doc.rsfpar('float','1.0','','''sigma for domain filter '''))
+sfepfbil.version('2.1-git')
+sfepfbil.synopsis('''sfepfbil < in.rsf > out.rsf twod=n sigmar=1.0 sigmad=1.0''','''''')
+rsf.doc.progs['sfepfbil']=sfepfbil
+
+sfepfws = rsf.doc.rsfprog('sfepfws','user/chen/Mepfws.c','''Edge preserving (smoothing) filter by window selection ''')
+sfepfws.par('nfw',rsf.doc.rsfpar('int','5','','''window size '''))
+sfepfws.par('order',rsf.doc.rsfpar('int','nfw-1','','''filter order (<= nfw, only for polynomial and fir filters) '''))
+sfepfws.par('filter',rsf.doc.rsfpar('string ',desc='''filter: mean,median,poly,fir '''))
+sfepfws.version('2.1-git')
+sfepfws.synopsis('''sfepfws < in.rsf > out.rsf nfw=5 order=nfw-1 filter=''','''''')
+rsf.doc.progs['sfepfws']=sfepfws
+
+sfepfad = rsf.doc.rsfprog('sfepfad','user/chen/Mepfad.c','''ADaptive Eage Preserving Filter ''')
+sfepfad.par('rect1',rsf.doc.rsfpar('int','0','',''''''))
+sfepfad.par('rect2',rsf.doc.rsfpar('int','0','',''''''))
+sfepfad.par('rect3',rsf.doc.rsfpar('int','0','','''smoothing half window on the #-th dimension '''))
+sfepfad.version('2.1-git')
+sfepfad.synopsis('''sfepfad < in.rsf > out.rsf rect1=0 rect2=0 rect3=0''','''''')
+rsf.doc.progs['sfepfad']=sfepfad
+
+sffrt = rsf.doc.rsfprog('sffrt','user/chen/Mfrt.c','''Frequency domain Radon transform. ''')
+sffrt.par('ref',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sffrt.par('curv',rsf.doc.rsfpar('int','0','','''0: linear; 1:parabolic '''))
+sffrt.par('inv',rsf.doc.rsfpar('bool','n','','''if y, perform inverse operation '''))
+sffrt.par('mtd',rsf.doc.rsfpar('int','0','','''0: fart; 1:firt; 2:fhrt; 3:fcrt '''))
+sffrt.par('mu',rsf.doc.rsfpar('float','0.05','','''mu: for firt, fhrt, fcrt '''))
+sffrt.par('eta',rsf.doc.rsfpar('float','0.05','','''eta: for fhrt, fcrt '''))
+sffrt.par('niter',rsf.doc.rsfpar('int','5','','''sparse iterations: for fhrt, fcrt '''))
+sffrt.par('np',rsf.doc.rsfpar('int','0','','''stepout number '''))
+sffrt.par('op',rsf.doc.rsfpar('float','0','','''first stepout (moveout at "ref") '''))
+sffrt.par('dp',rsf.doc.rsfpar('float','0','','''stepout interval '''))
+sffrt.par('x0',rsf.doc.rsfpar('float','maxoff','','''reference offset '''))
+sffrt.version('2.1-git')
+sffrt.synopsis('''sffrt < in.rsf > out.rsf ref=ref.rsf curv=0 inv=n mtd=0 mu=0.05 eta=0.05 niter=5 np=0 op=0 dp=0 x0=maxoff''','''''')
+rsf.doc.progs['sffrt']=sffrt
+
+sfpca = rsf.doc.rsfprog('sfpca','user/chen/Mpca.c','''KL transform. ''')
+sfpca.par('verb',rsf.doc.rsfpar('bool','y','','''verbosity '''))
+sfpca.par('nc',rsf.doc.rsfpar('int','n1','','''number of components [ 0 < nc < n1 ] '''))
+sfpca.par('eta',rsf.doc.rsfpar('float','0.9','','''energy ratio for signal subspace [ 0 eta < 1 ]'''))
+sfpca.version('2.1-git')
+sfpca.synopsis('''sfpca < in.rsf > out.rsf verb=y nc=n1 eta=0.9''','''''')
+rsf.doc.progs['sfpca']=sfpca
+
+sffault = rsf.doc.rsfprog('sffault','user/chen/Mfault.c','''fault detection  ''')
+sffault.par('lamda',rsf.doc.rsfpar('float','0.9','',''''''))
+sffault.par('sigma',rsf.doc.rsfpar('float','1.0','',''''''))
+sffault.version('2.1-git')
+sffault.synopsis('''sffault < in.rsf > out.rsf lamda=0.9 sigma=1.0''','''''')
+rsf.doc.progs['sffault']=sffault
+
+sffir = rsf.doc.rsfprog('sffir','user/chen/Mfir.c','''FIR filter ''')
+sffir.par('fir',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sffir.par('axis',rsf.doc.rsfpar('int','1','','''apply fir filter on which dimension '''))
+sffir.version('2.1-git')
+sffir.synopsis('''sffir < in.rsf > out.rsf fir=fir.rsf axis=1''','''''')
+rsf.doc.progs['sffir']=sffir
+
+sffastpwd = rsf.doc.rsfprog('sffastpwd','user/chen/Mfastpwd.c','''2-D dip estimation using analytical equation. ''')
+sffastpwd.par('rect1',rsf.doc.rsfpar('int','1','',''''''))
+sffastpwd.par('rect2',rsf.doc.rsfpar('int','1','','''smoothing radius '''))
+sffastpwd.par('niter',rsf.doc.rsfpar('int','100','','''number of iterations '''))
+sffastpwd.par('verb',rsf.doc.rsfpar('bool','y','','''verbosity '''))
+sffastpwd.par('eps',rsf.doc.rsfpar('float','0.0f','','''regularization '''))
+sffastpwd.version('2.1-git')
+sffastpwd.synopsis('''sffastpwd < inp.rsf > out.rsf rect1=1 rect2=1 niter=100 verb=y eps=0.0f''','''''')
+rsf.doc.progs['sffastpwd']=sffastpwd
+
+sffbgabor = rsf.doc.rsfprog('sffbgabor','user/chen/Mfbgabor.c','''Gabor transform by linear phase filter bank ''')
+sffbgabor.par('sigma',rsf.doc.rsfpar('float','1.0','','''sigma '''))
+sffbgabor.par('nf',rsf.doc.rsfpar('int','100','','''frequency samples [0, 0.5] '''))
+sffbgabor.version('2.1-git')
+sffbgabor.synopsis('''sffbgabor < in.rsf > out.rsf sigma=1.0 nf=100''','''''')
+rsf.doc.progs['sffbgabor']=sffbgabor
+
+sfapick = rsf.doc.rsfprog('sfapick','user/chen/Mapick.c','''Automatic event PICKing ''')
+sfapick.version('2.1-git')
+sfapick.synopsis('''sfapick < in.rsf > out.rsf''','''''')
+rsf.doc.progs['sfapick']=sfapick
+
+sforientation = rsf.doc.rsfprog('sforientation','user/chen/Morientation.c','''orientation estimation by structural gradient tensor ''')
+sforientation.par('weight',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sforientation.par('azimuth',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sforientation.par('rect1',rsf.doc.rsfpar('int','0','','''smoothness on 1st axis '''))
+sforientation.par('rect2',rsf.doc.rsfpar('int','0','','''smoothness on 2nd axis '''))
+sforientation.par('rect3',rsf.doc.rsfpar('int','0','','''smoothness on 3rd axis '''))
+sforientation.par('order',rsf.doc.rsfpar('int','2','','''approximating order of finite difference '''))
+sforientation.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sforientation.par('filt',rsf.doc.rsfpar('string ',desc='''filter type : ls, tls, tensor '''))
+sforientation.par('weight',rsf.doc.rsfpar('string ',desc='''auxiliary input file name'''))
+sforientation.par('azimuth',rsf.doc.rsfpar('string ',desc='''auxiliary output file name'''))
+sforientation.version('2.1-git')
+sforientation.synopsis('''sforientation < in.rsf > out.rsf weight=wgt.rsf azimuth=az.rsf rect1=0 rect2=0 rect3=0 order=2 interp= filt=''','''''')
+rsf.doc.progs['sforientation']=sforientation
+
+sfslopescan = rsf.doc.rsfprog('sfslopescan','user/chen/Mslopescan.c','''slope estimation by stack scan ''')
+sfslopescan.par('nw',rsf.doc.rsfpar('int','5','','''window size is 2*nw+1 '''))
+sfslopescan.par('rect1',rsf.doc.rsfpar('int','2','','''window size on the 1st dimension '''))
+sfslopescan.par('rect2',rsf.doc.rsfpar('int','2','','''window size on the 2nd dimension '''))
+sfslopescan.version('2.1-git')
+sfslopescan.synopsis('''sfslopescan < in.rsf > out.rsf nw=5 rect1=2 rect2=2''','''''')
+rsf.doc.progs['sfslopescan']=sfslopescan
+
+sfdivn2d = rsf.doc.rsfprog('sfdivn2d','user/chen/Mdivn2d.c','''2D divn ''')
+sfdivn2d.par('den',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfdivn2d.par('rect1',rsf.doc.rsfpar('int','1','',''''''))
+sfdivn2d.par('rect2',rsf.doc.rsfpar('int','1','','''smoothing radius '''))
+sfdivn2d.par('niter',rsf.doc.rsfpar('int','100','','''number of iterations '''))
+sfdivn2d.par('verb',rsf.doc.rsfpar('bool','n','','''verbosity '''))
+sfdivn2d.version('2.1-git')
+sfdivn2d.synopsis('''sfdivn2d < inp.rsf den=den.rsf > out.rsf rect1=1 rect2=1 niter=100 verb=n''','''''')
+rsf.doc.progs['sfdivn2d']=sfdivn2d
+
+sfdivnls = rsf.doc.rsfprog('sfdivnls','user/chen/Mdivnls.c','''2D divn by stationary LS ''')
+sfdivnls.par('den',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfdivnls.par('rect1',rsf.doc.rsfpar('int','0','',''''''))
+sfdivnls.par('rect2',rsf.doc.rsfpar('int','0','',''''''))
+sfdivnls.par('rect3',rsf.doc.rsfpar('int','0','','''smoothing radius '''))
+sfdivnls.par('tls',rsf.doc.rsfpar('bool','n','','''total least squares '''))
+sfdivnls.par('angle',rsf.doc.rsfpar('bool','n','','''angle or slope '''))
+sfdivnls.version('2.1-git')
+sfdivnls.synopsis('''sfdivnls < inp.rsf den=den.rsf > out.rsf rect1=0 rect2=0 rect3=0 tls=n angle=n''','''''')
+rsf.doc.progs['sfdivnls']=sfdivnls
+
+sfcurv2 = rsf.doc.rsfprog('sfcurv2','user/chen/Mcurv2.c','''Joint estimation of curvature and slope ''')
+sfcurv2.par('slope',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfcurv2.par('niter',rsf.doc.rsfpar('int','5','','''iterations '''))
+sfcurv2.par('m',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sfcurv2.par('n',rsf.doc.rsfpar('int','1','','''b[-m, ... ,n] '''))
+sfcurv2.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sfcurv2.version('2.1-git')
+sfcurv2.synopsis('''sfcurv2 < in.rsf > out.rsf slope=slope.rsf niter=5 m=1 n=1 interp=''','''''')
+rsf.doc.progs['sfcurv2']=sfcurv2
+
+sfhorizon = rsf.doc.rsfprog('sfhorizon','user/chen/Mhorizon.c','''horizon extraction  ''')
+sfhorizon.par('horizon',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfhorizon.par('interp',rsf.doc.rsfpar('string ',desc='''< interpolation method: nearest, linear >'''))
+sfhorizon.version('2.1-git')
+sfhorizon.synopsis('''sfhorizon < in.rsf horizon=hor.rsf > out.rsf interp=''','''''')
+rsf.doc.progs['sfhorizon']=sfhorizon
+
+sfcoherence = rsf.doc.rsfprog('sfcoherence','user/chen/Mcoherence.c','''3D Coherence Cube, C1, C2, C3 in one ''')
+sfcoherence.par('idip',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfcoherence.par('xdip',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfcoherence.par('ntw',rsf.doc.rsfpar('int','5','','''half window size for coherence '''))
+sfcoherence.par('nxw',rsf.doc.rsfpar('int','5','','''half window size for coherence '''))
+sfcoherence.par('nyw',rsf.doc.rsfpar('int','5','','''half window size for coherence '''))
+sfcoherence.par('twod',rsf.doc.rsfpar('bool','y','','''y: only twod coherence '''))
+sfcoherence.par('verb',rsf.doc.rsfpar('bool','y','','''verbosity '''))
+sfcoherence.par('op1',rsf.doc.rsfpar('float','-2.0','',''''''))
+sfcoherence.par('dp1',rsf.doc.rsfpar('float','0.5','',''''''))
+sfcoherence.par('np1',rsf.doc.rsfpar('int','9','','''inline slope '''))
+sfcoherence.par('op2',rsf.doc.rsfpar('float','-2.0','',''''''))
+sfcoherence.par('dp2',rsf.doc.rsfpar('float','0.5','',''''''))
+sfcoherence.par('np2',rsf.doc.rsfpar('int','9','','''xline slope '''))
+sfcoherence.par('idip',rsf.doc.rsfpar('string ',desc='''inline dip (auxiliary output file name)'''))
+sfcoherence.par('xdip',rsf.doc.rsfpar('string ',desc='''crossline dip (auxiliary output file name)'''))
+sfcoherence.par('mode',rsf.doc.rsfpar('string ',desc='''coherence mode: c1, c2, c3 '''))
+sfcoherence.version('2.1-git')
+sfcoherence.synopsis('''sfcoherence < in.rsf > out.rsf idip=idip.rsf xdip=xdip.rsf ntw=5 nxw=5 nyw=5 twod=y verb=y op1=-2.0 dp1=0.5 np1=9 op2=-2.0 dp2=0.5 np2=9 mode=''','''''')
+rsf.doc.progs['sfcoherence']=sfcoherence
+
+sfdipcoh = rsf.doc.rsfprog('sfdipcoh','user/chen/Mdipcoh.c','''3D Coherence cube ''')
+sfdipcoh.par('dip1',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfdipcoh.par('dip2',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
+sfdipcoh.par('nw',rsf.doc.rsfpar('int','5','','''half window size for coherence '''))
+sfdipcoh.par('twod',rsf.doc.rsfpar('bool','y','','''y: only twod coherence '''))
+sfdipcoh.par('verb',rsf.doc.rsfpar('bool','y','','''verbosity '''))
+sfdipcoh.par('lag1',rsf.doc.rsfpar('int','3','','''maximal time lag on 2nd axis '''))
+sfdipcoh.par('lag2',rsf.doc.rsfpar('int','3','','''maximal time lag on 3rd axis '''))
+sfdipcoh.par('dip1',rsf.doc.rsfpar('string ',desc='''auxiliary input file name'''))
+sfdipcoh.version('2.1-git')
+sfdipcoh.synopsis('''sfdipcoh < in.rsf > out.rsf dip1=dip1.rsf dip2=dip2.rsf nw=5 twod=y verb=y lag1=3 lag2=3''','''''')
+rsf.doc.progs['sfdipcoh']=sfdipcoh
+
+sffcoh1 = rsf.doc.rsfprog('sffcoh1','user/chen/Mfcoh1.c','''Fast C1 Coherence ''')
+sffcoh1.par('idip',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sffcoh1.par('xdip',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sffcoh1.par('ntw',rsf.doc.rsfpar('int','5','','''half window size for coherence '''))
+sffcoh1.par('twod',rsf.doc.rsfpar('bool','y','','''y: only twod coherence '''))
+sffcoh1.par('verb',rsf.doc.rsfpar('bool','y','','''verbosity '''))
+sffcoh1.par('min1',rsf.doc.rsfpar('int','-2','',''''''))
+sffcoh1.par('max1',rsf.doc.rsfpar('int','2','','''inline slope '''))
+sffcoh1.par('min2',rsf.doc.rsfpar('int','-2','',''''''))
+sffcoh1.par('max2',rsf.doc.rsfpar('int','2','','''xline slope '''))
+sffcoh1.par('idip',rsf.doc.rsfpar('string ',desc='''inline dip (auxiliary output file name)'''))
+sffcoh1.par('xdip',rsf.doc.rsfpar('string ',desc='''crossline dip (auxiliary output file name)'''))
+sffcoh1.version('2.1-git')
+sffcoh1.synopsis('''sffcoh1 < in.rsf > out.rsf idip=idip.rsf xdip=xdip.rsf ntw=5 twod=y verb=y min1=-2 max1=2 min2=-2 max2=2''','''''')
+rsf.doc.progs['sffcoh1']=sffcoh1
+
+sffcoh2 = rsf.doc.rsfprog('sffcoh2','user/chen/Mfcoh2.c','''Fast C2 Coherence ''')
+sffcoh2.par('idip',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sffcoh2.par('xdip',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sffcoh2.par('ntw',rsf.doc.rsfpar('int','5','','''half window size for time direction '''))
+sffcoh2.par('nxw',rsf.doc.rsfpar('int','5','','''half window size for x2 '''))
+sffcoh2.par('twod',rsf.doc.rsfpar('bool','y','','''y: only twod coherence '''))
+sffcoh2.par('verb',rsf.doc.rsfpar('bool','y','','''verbosity '''))
+sffcoh2.par('min1',rsf.doc.rsfpar('int','-2','',''''''))
+sffcoh2.par('max1',rsf.doc.rsfpar('int','2','','''inline slope '''))
+sffcoh2.par('min2',rsf.doc.rsfpar('int','-2','',''''''))
+sffcoh2.par('max2',rsf.doc.rsfpar('int','2','','''xline slope '''))
+sffcoh2.par('idip',rsf.doc.rsfpar('string ',desc='''inline dip (auxiliary output file name)'''))
+sffcoh2.par('xdip',rsf.doc.rsfpar('string ',desc='''crossline dip (auxiliary output file name)'''))
+sffcoh2.version('2.1-git')
+sffcoh2.synopsis('''sffcoh2 < in.rsf > out.rsf idip=idip.rsf xdip=xdip.rsf ntw=5 nxw=5 twod=y verb=y min1=-2 max1=2 min2=-2 max2=2''','''''')
+rsf.doc.progs['sffcoh2']=sffcoh2
+
+sfhorwrite = rsf.doc.rsfprog('sfhorwrite','user/chen/Mhorwrite.c','''save rsf data into horizon ASCII format, eq to dd form=ascii ''')
+sfhorwrite.par('head',rsf.doc.rsfpar('string ',desc='''header '''))
+sfhorwrite.par('tail',rsf.doc.rsfpar('string ',desc='''tail '''))
+sfhorwrite.par('fromat',rsf.doc.rsfpar('string ',desc='''format '''))
+sfhorwrite.version('2.1-git')
+sfhorwrite.synopsis('''sfhorwrite < in.rsf head= tail= fromat=''','''''')
+rsf.doc.progs['sfhorwrite']=sfhorwrite
+
+sfpsvp = rsf.doc.rsfprog('sfpsvp','user/chen/Mpsvp.c','''Ps to vplot ''')
+sfpsvp.par('sep',rsf.doc.rsfpar('string ',desc='''cmd separater '''))
+sfpsvp.version('2.1-git')
+sfpsvp.synopsis('''sfpsvp sep=''','''''')
+rsf.doc.progs['sfpsvp']=sfpsvp
+
+sfcurv = rsf.doc.rsfprog('sfcurv','user/chen/Mcurv.c','''Max/Min curvatures by azimuth curvature cube ''')
+sfcurv.par('axis',rsf.doc.rsfpar('int','2','','''azimuth dimension '''))
+sfcurv.par('mode',rsf.doc.rsfpar('string ',desc='''max/min/mean/gauss/mpo/mne/dip/strike '''))
+sfcurv.version('2.1-git')
+sfcurv.synopsis('''sfcurv < in.rsf > out.rsf axis=2 mode=''','''''')
+rsf.doc.progs['sfcurv']=sfcurv
+
+sfacurv = rsf.doc.rsfprog('sfacurv','user/chen/Macurv.c','''Azimuth CURVature ''')
+sfacurv.par('rect1',rsf.doc.rsfpar('int','1','','''smoothness on 1st axis '''))
+sfacurv.par('rect2',rsf.doc.rsfpar('int','1','','''smoothness on 2nd axis '''))
+sfacurv.par('rect3',rsf.doc.rsfpar('int','1','','''smoothness on 3rd axis '''))
+sfacurv.par('order',rsf.doc.rsfpar('int','2','','''approximating order of finite difference '''))
+sfacurv.par('nazmuth',rsf.doc.rsfpar('int','10','','''azimuth number '''))
+sfacurv.par('interp',rsf.doc.rsfpar('string ',desc='''interpolation method: maxflat lagrange bspline '''))
+sfacurv.version('2.1-git')
+sfacurv.synopsis('''sfacurv < in.rsf > out.rsf rect1=1 rect2=1 rect3=1 order=2 nazmuth=10 interp=''','''''')
+rsf.doc.progs['sfacurv']=sfacurv
+
+sfprefilt = rsf.doc.rsfprog('sfprefilt','user/chen/Mprefilt.py','''prefilter bank of pwd''')
+sfprefilt.par('coef',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfprefilt.par('pf',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfprefilt.par('nf',rsf.doc.rsfpar('int','1','',''''''))
+sfprefilt.par('iter',rsf.doc.rsfpar('int','5','',''''''))
+sfprefilt.par('eta',rsf.doc.rsfpar('float','0.05','',''''''))
+sfprefilt.version('2.1-git')
+sfprefilt.synopsis('''sfprefilt < input.rsf > dip.rsf coef=coef.rsf pf=pf.rsf nf=1 iter=5 eta=0.05''','''''')
+rsf.doc.progs['sfprefilt']=sfprefilt
+
+sfpygraph = rsf.doc.rsfprog('sfpygraph','user/chen/Mpygraph.py','''graph by python''')
+sfpygraph.par('pclip',rsf.doc.rsfpar('float','100','','''clip percent'''))
+sfpygraph.par('plotfat',rsf.doc.rsfpar('int','1','','''plot line width'''))
+sfpygraph.par('markint',rsf.doc.rsfpar('int','10','','''mark symbol interval'''))
+sfpygraph.par('plotcol',rsf.doc.rsfpar('string','0,1,2,3,4,5,6,7','','''plot color'''))
+sfpygraph.par('dash',rsf.doc.rsfpar('string','0','','''dash styles \n 0	solid line \n 1	dash line \n 2	dotted line \n 3	dash dot'''))
+sfpygraph.par('symbol',rsf.doc.rsfpar('string','None','','''mark symbols'''))
+sfpygraph.par('legend',rsf.doc.rsfpar('string','None','','''legends'''))
+sfpygraph.par('x',rsf.doc.rsfpar('string','None','','''xpos'''))
+sfpygraph.par('usetex',rsf.doc.rsfpar('bool','n','','''use tex symbol'''))
+sfpygraph.par('min1',rsf.doc.rsfpar('float','x1[0]','',''''''))
+sfpygraph.par('max1',rsf.doc.rsfpar('float','x1[n1-1]','',''''''))
+sfpygraph.par('min2',rsf.doc.rsfpar('float','min2','',''''''))
+sfpygraph.par('max2',rsf.doc.rsfpar('float','max2','',''''''))
+sfpygraph.par('label1',rsf.doc.rsfpar('string','','',''''''))
+sfpygraph.par('unit1',rsf.doc.rsfpar('string','None','',''''''))
+sfpygraph.par('label2',rsf.doc.rsfpar('string','','',''''''))
+sfpygraph.par('unit2',rsf.doc.rsfpar('string','None','',''''''))
+sfpygraph.par('wantlegend',rsf.doc.rsfpar('bool','y','',''''''))
+sfpygraph.par('wherelegend',rsf.doc.rsfpar('int','1','',''''''))
+sfpygraph.par('format',rsf.doc.rsfpar('string','pdf','',''''''))
+sfpygraph.version('2.1-git')
+sfpygraph.synopsis('''sfpygraph < input.rsf < xfile.rsf pclip=100 plotfat=1 markint=10 plotcol=0,1,2,3,4,5,6,7 dash=0 symbol=None legend=None x=None usetex=n min1=x1[0] max1=x1[n1-1] min2=min2 max2=max2 label1= unit1=None label2= unit2=None wantlegend=y wherelegend=1 format=pdf''','''''')
+rsf.doc.progs['sfpygraph']=sfpygraph
+
+sfsubplot = rsf.doc.rsfprog('sfsubplot','user/chen/Msubplot.py','''subplot by python''')
+sfsubplot.par('np1',rsf.doc.rsfpar('int','1','','''subplot(np2,np1)'''))
+sfsubplot.par('np2',rsf.doc.rsfpar('int','n2','','''subplot(np2,np1)'''))
+sfsubplot.version('2.1-git')
+sfsubplot.synopsis('''sfsubplot < input.rsf np1=1 np2=n2''','''''')
+rsf.doc.progs['sfsubplot']=sfsubplot
+
+sfshuffle = rsf.doc.rsfprog('sfshuffle','user/chen/Mshuffle.py','''shuffle the data''')
+sfshuffle.par('axis',rsf.doc.rsfpar('int','2','',''''''))
+sfshuffle.par('seed',rsf.doc.rsfpar('int','n2','',''''''))
+sfshuffle.par('inv',rsf.doc.rsfpar('bool','n','',''''''))
+sfshuffle.version('2.1-git')
+sfshuffle.synopsis('''sfshuffle < pi.rsf > po.rsf axis=2 seed=n2 inv=n''','''''')
+rsf.doc.progs['sfshuffle']=sfshuffle
+
+sfasc2rsf = rsf.doc.rsfprog('sfasc2rsf','user/chen/Masc2rsf.py','''ERROR : need numpy''')
+sfasc2rsf.version('2.1-git')
+sfasc2rsf.synopsis('''sfasc2rsf > po.rsf''','''''')
+rsf.doc.progs['sfasc2rsf']=sfasc2rsf
+
+sfsos = rsf.doc.rsfprog('sfsos','user/chen/Msos.py','''Second order statistics''')
+sfsos.par('mode',rsf.doc.rsfpar('int','0','','''0	autocorrelation matrix \n	1	covariance matrix'''))
+sfsos.version('2.1-git')
+sfsos.synopsis('''sfsos < pin.rsf > pout.rsf mode=0''','''''')
+rsf.doc.progs['sfsos']=sfsos
+
+sffpca = rsf.doc.rsfprog('sffpca','user/chen/Mfpca.py','''Fast PCA by iterative algorithm''')
+sffpca.par('nc',rsf.doc.rsfpar('int','1','','''component number'''))
+sffpca.par('niter',rsf.doc.rsfpar('int','1','','''iterations for each component'''))
+sffpca.par('seed',rsf.doc.rsfpar('int','2012','','''seed for random number'''))
+sffpca.version('2.1-git')
+sffpca.synopsis('''sffpca < pin.rsf > pout.rsf nc=1 niter=1 seed=2012''','''''')
+rsf.doc.progs['sffpca']=sffpca
+

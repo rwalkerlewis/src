@@ -1,0 +1,10 @@
+Program sfrec2ps | None
+[SYNOPSIS]
+sfrec2ps < infile.rsf > outfile.rsf alpha=6.2 beta=3.5 irot=0. adj=y
+[PARAMETERS]
+        | adj | =y |   | 	
+        | alpha | =6.2 |   | 	P-wave Velocity at surface
+        | beta | =3.5 |   | 	S-wave velocity at surface
+        | irot | =0. |   | 	Rotation of array w.r.t. 1st axis
+[DIRECTORY]
+user/jeff

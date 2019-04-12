@@ -1,0 +1,12 @@
+Program sfkarmans | Inversion for von Karman autocorrelation 1D spectrum. 
+[SYNOPSIS]
+sfkarmans < in.rsf > out.rsf prm=prm.rsf niter=100 x10=6. x20=-0.5 x30=200. verb=n
+[PARAMETERS]
+int     | niter | =100 |   | 	number of iterations 
+file    | prm | = |   | 	auxiliary output file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | x10 | =6. |   | 	initial nonlinear parameter x1 value 
+float   | x20 | =-0.5 |   | 	initial nonlinear parameter x2 value 
+float   | x30 | =200. |   | 	initial nonlinear parameter x3 value 
+[DIRECTORY]
+user/browaeys

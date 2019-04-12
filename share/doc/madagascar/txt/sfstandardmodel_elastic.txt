@@ -1,0 +1,5 @@
+Program sfstandardmodel_elastic | None
+[SYNOPSIS]
+sfstandardmodel_elastic
+[DIRECTORY]
+trip/iwave/grid/main

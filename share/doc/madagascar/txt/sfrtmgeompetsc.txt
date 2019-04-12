@@ -1,0 +1,5 @@
+Program sfrtmgeompetsc | Rice HPCSS reverse time migration. 
+[SYNOPSIS]
+sfrtmgeompetsc
+[DIRECTORY]
+user/petsc

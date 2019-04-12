@@ -1,0 +1,12 @@
+Program sflogzero | 
+[SYNOPSIS]
+sflogzero < loga.rsf > log_eo.rsf switch=
+[COMMENTS]
+1D dataset windowing
+
+Built for log data manipulation - Clips padded values at the beginning and end of well log data to zero
+
+[PARAMETERS]
+int     | switch | = |   | 	
+[DIRECTORY]
+user/sbader

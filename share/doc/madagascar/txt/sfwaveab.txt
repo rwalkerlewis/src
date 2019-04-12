@@ -1,0 +1,10 @@
+Program sfwaveab | 1-D finite-difference wave extrapolation 
+[SYNOPSIS]
+sfwaveab < inp.rsf > out.rsf vel=vel.rsf grad=grad.rsf what=2 nb=10
+[PARAMETERS]
+file    | grad | = |   | 	auxiliary input file name
+int     | nb | =10 |   | 	2nd or 4th order for FD
+file    | vel | = |   | 	auxiliary input file name
+int     | what | =2 |   | 	2nd or 4th order for FD
+[DIRECTORY]
+user/songxl

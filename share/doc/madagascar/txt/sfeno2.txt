@@ -1,0 +1,8 @@
+Program sfeno2 | Convert velocity to slowness and compute gradient using ENO interpolation 
+[SYNOPSIS]
+sfeno2 < vel.rsf > out.rsf order=3 is_inverse=1
+[PARAMETERS]
+bool    | is_inverse | =1 |  [y/n] | 	make vel to slowness 
+int     | order | =3 |   | 	interpolation order 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,11 @@
+Program sfcemd2 | Bivariate empirical mode decomposition using second algorithm. 
+[SYNOPSIS]
+sfcemd2 < inp.rsf > outp.rsf threshold=DEFAULT_THRESHOLD tolerance=DEFAULT_TOLERANCE miter=MAX_ITERATIONS mimf=0 nbdir=DEFAULT_NBPHASES
+[PARAMETERS]
+int     | mimf | =0 |   | 	Maximum number of IMFs, the default is as many as possible. 
+int     | miter | =MAX_ITERATIONS |   | 	Maximum number of iterations during sifting, the default is 1000. 
+int     | nbdir | =DEFAULT_NBPHASES |   | 	Number of directions used to compute the local mean, the default is 4. 
+float   | threshold | =DEFAULT_THRESHOLD |   | 	Sifting stoping parameter: threshold, the default is 0.05. 
+float   | tolerance | =DEFAULT_TOLERANCE |   | 	Sifting stoping parameter: tolerance, the default is 0.05. 
+[DIRECTORY]
+user/chenyk

@@ -1,0 +1,12 @@
+Program sfpchain | Nonstationary Prony by chain of PEFs 
+[SYNOPSIS]
+sfpchain < inp.rsf pef=pef.rsf > out.rsf nc=1 verb=(bool) (1 == nt) niter=0 liter=50 rect=1
+[PARAMETERS]
+int     | liter | =50 |   | 	number of linear iterations 
+int     | nc | =1 |   | 	number of components 
+int     | niter | =0 |   | 	number of iterations 
+file    | pef | = |   | 	auxiliary output file name
+int     | rect | =1 |   | 	smoothing in time 
+bool    | verb | =(bool) (1 == nt) |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,50 @@
+.TH sfheaderattr 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfheaderattr \- Display header attributes. 
+.SH SYNOPSIS
+.B sfheaderattr < head.rsf segy=y desc=n
+.SH COMMENTS
+
+Only nonzero values are reported.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B desc
+.B =n
+.R  [y/n]	if describe keys
+.TP
+.I bool   
+.B segy
+.B =y
+.R  [y/n]	if SEGY headers
+.SH USED IN
+.TP
+.I data/seam-phase1-2d/cvs
+.TP
+.I data/seam-phase1-2d/fetch
+.TP
+.I data/seam-phase1-2d/sfmshots
+.TP
+.I data/teapotdome/fetch
+.TP
+.I data/teapotdome/geom
+.TP
+.I data/teapotdome/scdecon
+.TP
+.I data/teapotdome/tahnmostack
+.TP
+.I data/teapotdome/tahscscale
+.TP
+.I data/teapotdome/tahsubset
+.TP
+.I data/teapotdome/vels
+.TP
+.I data/teapotdome/zomig
+.SH SOURCE
+.I system/seismic/Mheaderattr.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfheaderattr
+.SH VERSION
+2.1-git

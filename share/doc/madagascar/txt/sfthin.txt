@@ -1,0 +1,11 @@
+Program sfthin | Sparse deconvolution. 
+[SYNOPSIS]
+sfthin < seis.rsf > refl.rsf wave=wave.rsf conv=conv.rsf niter=100 eps=0.0001 pclip=4
+[PARAMETERS]
+string  | conv | = |   | 	auxiliary output file name
+float   | eps | =0.0001 |   | 	regularization for Wiener deconvolution 
+int     | niter | =100 |   | 	maximum number of iterations 
+float   | pclip | =4 |   | 	percentage to threshold 
+file    | wave | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

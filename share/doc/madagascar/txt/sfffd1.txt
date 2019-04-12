@@ -1,0 +1,10 @@
+Program sfffd1 | 1-D Fourier finite-difference wave extrapolation 
+[SYNOPSIS]
+sfffd1 < in.rsf vel=vel.rsf > out.rsf opt=y dt= nt=
+[PARAMETERS]
+float   | dt | = |   | 	
+int     | nt | = |   | 	
+bool    | opt | =y |  [y/n] | 	
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

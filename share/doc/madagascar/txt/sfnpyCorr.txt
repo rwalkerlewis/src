@@ -1,0 +1,15 @@
+Program sfnpyCorr | 
+[SYNOPSIS]
+sfnpyCorr < Fa.rsf flt=Fb.rsf > Fc.rsf norm=n nc=100
+[COMMENTS]
+Implements corr(a,b) along the fast axis 
+a [file] : is taken from stdin
+b [file] : is taken from  "flt"
+Requires both files to have the same sampling interval
+
+[PARAMETERS]
+file    | flt | = |   | 	auxiliary input file name
+int     | nc | =100 |   | 	number of correlation lags
+bool    | norm | =n |  [y/n] | 	normalize output
+[DIRECTORY]
+user/ediazp

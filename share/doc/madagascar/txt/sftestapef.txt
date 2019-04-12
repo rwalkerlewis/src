@@ -1,0 +1,11 @@
+Program sftestapef | Test linear adaptive PEF operator. 
+[SYNOPSIS]
+sftestapef < in.rsf > out.rsf sfilt=sfilt.rsf nfilt=nfilt.rsf adj=y verb=n sign=y
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	if y, perform adjoint operation 
+file    | nfilt | = |   | 	auxiliary input file name
+file    | sfilt | = |   | 	auxiliary input file name
+bool    | sign | =y |  [y/n] | 	if y, test signal PEF; otherwise, test noise PEF 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,39 @@
+Program vpvr3d | Plot impulse responses in 3 dimensions 
+[SYNOPSIS]
+vpvr3d > out.rsf > plot.vpl what= start=0. end=360. bottom=-90. top=90. order=n maxlevel=5 coslimit=25. xmin=-100. ymin=-100. zmin=-100. xmax=100. ymax=100. zmax=100. or=n skip=-1 xxmin=-100. yymin=-100. zzmin=-100. xxmax=100. yymax=100. zzmax=100. inc=4 inc2=iinc which=y norm=1. sing=
+[PARAMETERS]
+float   | bottom | =-90. |   | 	latitude start 
+float   | coslimit | =25. |   | 	aximum deviation in particle motion angle 
+float   | end | =360. |   | 	longitude end 
+int     | inc | =4 |   | 	density of gridding (How many tiles to cover 90 degree of longitude in initial tiling.) 
+int     | inc2 | =iinc |   | 	tiles bigger than 90 deg / iinc2 in any dimension will be subdivided to fit 
+int     | maxlevel | =5 |   | 	maximum number of re-subdivisions 
+float   | norm | =1. |   | 	amount to divide everything by 
+bool    | or | =n |  [y/n] | 	modifier: if or=y ORs instead of ANDS the clips. 
+bool    | order | =n |  [y/n] | 	try to swap around the surfaces to make them continuous 
+string  | sing | = |   | 	Log file 
+int     | skip | =-1 |   | 	modifier: skip=-1 don't clip this surface (-1 for none skipped)
+     			0 = fastest
+     			1 = intermediate
+     			2 = slowest
+     			3 = red (SH)
+     			4 = green (SV)
+     			5 = blue (P) 
+float   | start | =0. |   | 	longitude start 
+float   | top | =90. |   | 	latitude end 
+ints    | what | = |   | 	 [3]
+bool    | which | =y |  [y/n] | 	if y, plot impulse response; if n, plot slowness surface 
+float   | xmax | =100. |   | 	
+float   | xmin | =-100. |   | 	
+float   | xxmax | =100. |   | 	
+float   | xxmin | =-100. |   | 	
+float   | ymax | =100. |   | 	
+float   | ymin | =-100. |   | 	
+float   | yymax | =100. |   | 	
+float   | yymin | =-100. |   | 	
+float   | zmax | =100. |   | 	
+float   | zmin | =-100. |   | 	
+float   | zzmax | =100. |   | 	
+float   | zzmin | =-100. |   | 	
+[DIRECTORY]
+user/dellinger

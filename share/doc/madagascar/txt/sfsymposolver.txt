@@ -1,0 +1,13 @@
+Program sfsymposolver | Symmetric positive definite matrix equation solver using square root method (cholesky decomposition method)
+[SYNOPSIS]
+sfsymposolver < in.rsf rhs=rhs.rsf > out.rsf verb=n n=
+[COMMENTS]
+Ax=d-> LL'x=d -> Ly=d -> L'x=y -> x
+Input is the down triangle of A.
+
+[PARAMETERS]
+int     | n | = |   | 	
+file    | rhs | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/chenyk

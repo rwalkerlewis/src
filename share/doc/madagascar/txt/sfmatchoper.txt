@@ -1,0 +1,20 @@
+Program sfmatchoper | Local matching-radon operator. 
+[SYNOPSIS]
+sfmatchoper < in.rsf > out.rsf weight=weight.rsf np= dp= p0= shift= verb=n freq=y parab=n x0=1. rho=y anti=1. p1=0. niter=100 pclip=100.
+[PARAMETERS]
+float   | anti | =1. |   | 	antialiasing, only when freq=n 
+float   | dp | = |   | 	p sampling 
+bool    | freq | =y |  [y/n] | 	if y, parabolic Radon transform 
+int     | niter | =100 |   | 	number of iterations 
+int     | np | = |   | 	number of p values 
+float   | p0 | = |   | 	p origin 
+float   | p1 | =0. |   | 	reference slope, only when freq=n 
+bool    | parab | =n |  [y/n] | 	if y, parabolic Radon transform, only when freq=y 
+float   | pclip | =100. |   | 	
+bool    | rho | =y |  [y/n] | 	rho filtering, only when freq=n 
+int     | shift | = |   | 	
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | weight | = |   | 	auxiliary output file name
+float   | x0 | =1. |   | 	reference offset 
+[DIRECTORY]
+user/yliu

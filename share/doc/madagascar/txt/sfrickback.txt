@@ -1,0 +1,12 @@
+Program sfrickback | None linear Ricker wavelet spectral fit. 
+[SYNOPSIS]
+sfrickback < in.rsf > out.rsf ma=ma.rsf gamma=debug.rsf m= m= m= m= m= m= m= m= m= m= n= niter=100 verb=n
+[PARAMETERS]
+string  | gamma | = |   | 	auxiliary output file name
+floats  | m | = |   | 	 [n]
+file    | ma | = |   | 	auxiliary output file name
+int     | n | = |   | 	
+int     | niter | =100 |   | 	
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/tsai

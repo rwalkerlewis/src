@@ -1,0 +1,9 @@
+Program sffindmax1 | Find max value and its sampled position along fast dimension 
+[SYNOPSIS]
+sffindmax1 < in.rsf > out.rsf max_val=max_val.rsf shift=0 verb=n
+[PARAMETERS]
+string  | max_val | = |   | 	auxiliary output file name
+int     | shift | =0 |   | 	shift 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/lcasasan

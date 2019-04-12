@@ -1,0 +1,11 @@
+Program sfcosftwave1 | 1-D FFT wave extrapolation using Cosine FT 
+[SYNOPSIS]
+sfcosftwave1 < inp.rsf > out.rsf prop=prop.rsf left=left.rsf right=right.rsf nt= dt=
+[PARAMETERS]
+float   | dt | = |   | 	
+file    | left | = |   | 	auxiliary input file name
+int     | nt | = |   | 	
+file    | prop | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

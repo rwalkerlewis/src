@@ -1,0 +1,8 @@
+Program sfaimplfd1 | Implicit solution of 1-D acoustic wave equation. 
+[SYNOPSIS]
+sfaimplfd1 < vel.rsf > usol.rsf src=src.rsf niter=10
+[PARAMETERS]
+int     | niter | =10 |   | 	Number of solver iterations 
+string  | src | = |   | 	Source wavelet (auxiliary input file name)
+[DIRECTORY]
+user/petsc

@@ -1,0 +1,18 @@
+Program sfrevent | Compute reflection event 
+[SYNOPSIS]
+sfrevent < reflFile.rsf deriv=derivFile.rsf > dataFile.rsf tn=1001 hn=51 sn=1 to=0.f ho=0.f so=0.f td=0.004f hd=0.05f sd=0.025f eps=0.5 * hStep vel=2.f
+[PARAMETERS]
+string  | deriv | = |   | 	first derivative estimated along the reflection boundary (auxiliary input file name)
+float   | eps | =0.5 * hStep |   | 	receiver position accuracy (in km) 
+float   | hd | =0.05f |   | 	step in offset (in km) 
+int     | hn | =51 |   | 	number of offsets 
+float   | ho | =0.f |   | 	start offset (in s) 
+float   | sd | =0.025f |   | 	step in source position (in km) 
+int     | sn | =1 |   | 	number of sources 
+float   | so | =0.f |   | 	start source position (in s) 
+float   | td | =0.004f |   | 	step in time (in s) 
+int     | tn | =1001 |   | 	number of time samples 
+float   | to | =0.f |   | 	start time (in s) 
+float   | vel | =2.f |   | 	constant velocity value (in km/s) 
+[DIRECTORY]
+user/aklokov

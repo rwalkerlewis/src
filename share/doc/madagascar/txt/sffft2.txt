@@ -1,0 +1,11 @@
+Program sffft2 | Test 2-D Fourier transform. 
+[SYNOPSIS]
+sffft2 < freq.rsf > space.rsf inv=n n1= n2= cmplx=n pad1=1
+[PARAMETERS]
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+bool    | inv | =n |  [y/n] | 	inverse flag 
+int     | n1 | = |   | 	
+int     | n2 | = |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+[DIRECTORY]
+user/fomels

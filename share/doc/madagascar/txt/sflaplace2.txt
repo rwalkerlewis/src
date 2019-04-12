@@ -1,0 +1,5 @@
+Program sflaplace2 | 2-D Fourier finite-difference wave extrapolation 
+[SYNOPSIS]
+sflaplace2 > out.rsf < img.rsf
+[DIRECTORY]
+user/songxl

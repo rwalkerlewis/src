@@ -1,0 +1,7 @@
+Program sfnxtfftn | Look For next FFT number 
+[SYNOPSIS]
+sfnxtfftn nx=
+[PARAMETERS]
+int     | nx | = |   | 	
+[DIRECTORY]
+user/songxl

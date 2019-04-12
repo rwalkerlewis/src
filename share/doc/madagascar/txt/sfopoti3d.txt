@@ -1,0 +1,72 @@
+Program sfopoti3d | Modeling of pure acoustic wave in 3-D transversely isotropic meida using optimized pseudo-Laplacian operator 
+[SYNOPSIS]
+sfopoti3d > out.rsf vel=vel.rsf sigma=fsigma.rsf delta=fdelta.rsf seta=fseta.rsf phi=fphi.rsf < source.rsf Gxxl=Gxxl.rsf Gxxr=Gxxr.rsf Gyyl=Gyyl.rsf Gyyr=Gyyr.rsf Gzzl=Gzzl.rsf Gzzr=Gzzr.rsf Gxyl=Gxyl.rsf Gxyr=Gxyr.rsf Gxzl=Gxzl.rsf Gxzr=Gxzr.rsf Gyzl=Gyzl.rsf Gyzr=Gyzr.rsf Gxxxxl=Gxxxxl.rsf Gxxxxr=Gxxxxr.rsf Gyyyyl=Gyyyyl.rsf Gyyyyr=Gyyyyr.rsf Gzzzzl=Gzzzzl.rsf Gzzzzr=Gzzzzr.rsf Gxxxyl=Gxxxyl.rsf Gxxxyr=Gxxxyr.rsf Gxxxzl=Gxxxzl.rsf Gxxxzr=Gxxxzr.rsf Gxyyyl=Gxyyyl.rsf Gxyyyr=Gxyyyr.rsf Gyyyzl=Gyyyzl.rsf Gyyyzr=Gyyyzr.rsf Gxzzzl=Gxzzzl.rsf Gxzzzr=Gxzzzr.rsf Gyzzzl=Gyzzzl.rsf Gyzzzr=Gyzzzr.rsf Gxxyyl=Gxxyyl.rsf Gxxyyr=Gxxyyr.rsf Gxxzzl=Gxxzzl.rsf Gxxzzr=Gxxzzr.rsf Gyyzzl=Gyyzzl.rsf Gyyzzr=Gyyzzr.rsf Gxxyzl=Gxxyzl.rsf Gxxyzr=Gxxyzr.rsf Gxyyzl=Gxyyzl.rsf Gxyyzr=Gxyyzr.rsf Gxyzzl=Gxyzzl.rsf Gxyzzr=Gxyzzr.rsf opt=1 dt= nt= isx= isy= isz= nbt=30 nbb=30 nxl=30 nxr=30 nyl=30 nyr=30 czt=0.01 czb=0.01 cxl=0.01 cxr=0.01 cmplx=n pad1=1 snap=1
+[PARAMETERS]
+file    | Gxxl | = |   | 	auxiliary input file name
+file    | Gxxr | = |   | 	auxiliary input file name
+file    | Gxxxxl | = |   | 	auxiliary input file name
+file    | Gxxxxr | = |   | 	auxiliary input file name
+file    | Gxxxyl | = |   | 	auxiliary input file name
+file    | Gxxxyr | = |   | 	auxiliary input file name
+file    | Gxxxzl | = |   | 	auxiliary input file name
+file    | Gxxxzr | = |   | 	auxiliary input file name
+file    | Gxxyyl | = |   | 	auxiliary input file name
+file    | Gxxyyr | = |   | 	auxiliary input file name
+file    | Gxxyzl | = |   | 	auxiliary input file name
+file    | Gxxyzr | = |   | 	auxiliary input file name
+file    | Gxxzzl | = |   | 	auxiliary input file name
+file    | Gxxzzr | = |   | 	auxiliary input file name
+file    | Gxyl | = |   | 	auxiliary input file name
+file    | Gxyr | = |   | 	auxiliary input file name
+file    | Gxyyyl | = |   | 	auxiliary input file name
+file    | Gxyyyr | = |   | 	auxiliary input file name
+file    | Gxyyzl | = |   | 	auxiliary input file name
+file    | Gxyyzr | = |   | 	auxiliary input file name
+file    | Gxyzzl | = |   | 	auxiliary input file name
+file    | Gxyzzr | = |   | 	auxiliary input file name
+file    | Gxzl | = |   | 	auxiliary input file name
+file    | Gxzr | = |   | 	auxiliary input file name
+file    | Gxzzzl | = |   | 	auxiliary input file name
+file    | Gxzzzr | = |   | 	auxiliary input file name
+file    | Gyyl | = |   | 	auxiliary input file name
+file    | Gyyr | = |   | 	auxiliary input file name
+file    | Gyyyyl | = |   | 	auxiliary input file name
+file    | Gyyyyr | = |   | 	auxiliary input file name
+file    | Gyyyzl | = |   | 	auxiliary input file name
+file    | Gyyyzr | = |   | 	auxiliary input file name
+file    | Gyyzzl | = |   | 	auxiliary input file name
+file    | Gyyzzr | = |   | 	auxiliary input file name
+file    | Gyzl | = |   | 	auxiliary input file name
+file    | Gyzr | = |   | 	auxiliary input file name
+file    | Gyzzzl | = |   | 	auxiliary input file name
+file    | Gyzzzr | = |   | 	auxiliary input file name
+file    | Gzzl | = |   | 	auxiliary input file name
+file    | Gzzr | = |   | 	auxiliary input file name
+file    | Gzzzzl | = |   | 	auxiliary input file name
+file    | Gzzzzr | = |   | 	auxiliary input file name
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+float   | cxl | =0.01 |   | 	decaying parameter
+float   | cxr | =0.01 |   | 	decaying parameter
+float   | czb | =0.01 |   | 	decaying parameter
+float   | czt | =0.01 |   | 	decaying parameter
+file    | delta | = |   | 	auxiliary input file name
+float   | dt | = |   | 	
+int     | isx | = |   | 	
+int     | isy | = |   | 	
+int     | isz | = |   | 	
+int     | nbb | =30 |   | 	
+int     | nbt | =30 |   | 	
+int     | nt | = |   | 	
+int     | nxl | =30 |   | 	
+int     | nxr | =30 |   | 	
+int     | nyl | =30 |   | 	
+int     | nyr | =30 |   | 	assume ABC pars are the same 
+int     | opt | =1 |   | 	if y, determine optimal size for efficiency 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | phi | = |   | 	auxiliary input file name
+file    | seta | = |   | 	auxiliary input file name
+file    | sigma | = |   | 	auxiliary input file name
+int     | snap | =1 |   | 	
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/junyan

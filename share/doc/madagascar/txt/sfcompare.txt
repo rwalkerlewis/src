@@ -1,0 +1,5 @@
+Program sfcompare | None
+[SYNOPSIS]
+sfcompare
+[DIRECTORY]
+trip/iwave/trace/main

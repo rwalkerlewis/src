@@ -1,0 +1,13 @@
+Program sfeikfswp | Fast sweeping eikonal solver (2-D/3-D). 
+[SYNOPSIS]
+sfeikfswp < vel.rsf > time.rsf vel=y niter=2 zshot=0. yshot=o2 + 0.5*(n2-1)*d2 xshot=o3 + 0.5*(n3-1)*d3 shotfile= horizon=
+[PARAMETERS]
+string  | horizon | = |   | 	File with a reflection interface 
+int     | niter | =2 |   | 	number of sweeping iterations 
+string  | shotfile | = |   | 	File with shot locations (n2=number of shots, n1=3) 
+bool    | vel | =y |  [y/n] | 	if y, the input is velocity; n - slowness 
+float   | xshot | =o3 + 0.5*(n3-1)*d3 |   | 	
+float   | yshot | =o2 + 0.5*(n2-1)*d2 |   | 	
+float   | zshot | =0. |   | 	Shot location (used if no shotfile) 
+[DIRECTORY]
+user/bash

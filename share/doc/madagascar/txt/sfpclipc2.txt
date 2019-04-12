@@ -1,0 +1,14 @@
+Program sfpclipc2 | One-or Two-sided Percentile Data clipping (C language).
+[SYNOPSIS]
+sfpclipc2 < in.rsf > out.rsf upclip=99 lpclip=0
+[COMMENTS]
+For example: 
+A=1,2,3,...,100 
+sfpclipc2 upclip=98 lpclip=3 
+A'=3,3,3,...,98,98,98	
+
+[PARAMETERS]
+float   | lpclip | =0 |   | 	percentile lower cliping value 
+float   | upclip | =99 |   | 	percentile upper cliping value 
+[DIRECTORY]
+user/chenyk

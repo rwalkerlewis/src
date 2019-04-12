@@ -1,0 +1,7 @@
+Program sfesctbl2 | Esctape tables from solution of escape equations by the hybrid solver with narrow band. 
+[SYNOPSIS]
+sfesctbl2 < in.rsf > out.rsf verb=n
+[PARAMETERS]
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/cram

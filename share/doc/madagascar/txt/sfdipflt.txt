@@ -1,0 +1,10 @@
+Program sfdipflt | 2D dip filter 
+[SYNOPSIS]
+sfdipflt < in.rsf > out.rsf dip=dip.rsf nf=1 interp= filt=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+string  | filt | = |   | 	filter type: [median],mean 
+string  | interp | = |   | 	interpolation method: [nearest],linear 
+int     | nf | =1 |   | 	filter length 
+[DIRECTORY]
+user/chen

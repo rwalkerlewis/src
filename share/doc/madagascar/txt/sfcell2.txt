@@ -1,0 +1,19 @@
+Program sfcell2 | Second-order cell ray tracing with locally parabolic rays.
+[SYNOPSIS]
+sfcell2 < vel.rsf > time.rsf shotfile=shots.rsf anglefile=angles.rsf vel=y order=4 lsint=n nt=nx*nz nr= a0=0. amax=360. traj= > rays.rsf
+[COMMENTS]
+Rays and wavefronts can be displayed with sfplotrays.
+
+[PARAMETERS]
+float   | a0 | =0. |   | 	First angle in degrees (if anglefile is not specified) 
+float   | amax | =360. |   | 	Maximum angle in degrees (if anglefile is not specified) 
+string  | anglefile | = |   | 	file with initial angles (auxiliary input file name)
+bool    | lsint | =n |  [y/n] | 	if use least-squares interpolation 
+int     | nr | = |   | 	Number of angles (if anglefile is not specified) 
+int     | nt | =nx*nz |   | 	number of time steps 
+int     | order | =4 |   | 	Interpolation accuracy 
+string  | shotfile | = |   | 	file with shot locations (auxiliary input file name)
+string  | traj | = |   | 	
+bool    | vel | =y |  [y/n] | 	If y, the input is velocity; if n, slowness 
+[DIRECTORY]
+system/seismic

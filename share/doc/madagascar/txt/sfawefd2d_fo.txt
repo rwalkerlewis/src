@@ -1,0 +1,30 @@
+Program sfawefd2d_fo | Finite-difference time-domain (FDTD) wave propagation modeling in lossless acoustic 2D media.
+[SYNOPSIS]
+sfawefd2d_fo < Fwav.rsf vel=Fvel.rsf den=Fden.rsf sou=Fsou.rsf rec=Frec.rsf > Fdat.rsf datvz=Fdatvz.rsf wfl=Fwfl.rsf verb=n snap=n free=n expl=n dabc=n recvz=n srctype=1 jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax)
+[COMMENTS]
+
+This program fdelmodc can be used to model waves conforming the 2D wave equation in different media.
+This program computes a solution of the 2D acoustic wave equation
+defined through the first-order linearized systems of Newton's and Hooke's law.
+[PARAMETERS]
+bool    | dabc | =n |  [y/n] | 	absorbing BC 
+file    | datvz | = |   | 	auxiliary output file name
+file    | den | = |   | 	auxiliary input file name
+bool    | expl | =n |  [y/n] | 	exploding reflector 
+bool    | free | =n |  [y/n] | 	free surface flag 
+int     | jdata | =1 |   | 	
+int     | jsnap | =nt |   | 	
+int     | nqx | =sf_n(ax) |   | 	
+int     | nqz | =sf_n(az) |   | 	
+float   | oqx | =sf_o(ax) |   | 	
+float   | oqz | =sf_o(az) |   | 	
+file    | rec | = |   | 	auxiliary input file name
+bool    | recvz | =n |  [y/n] | 	vertical particle velocity data 
+bool    | snap | =n |  [y/n] | 	wavefield snapshots flag 
+file    | sou | = |   | 	auxiliary input file name
+int     | srctype | =1 |   | 	------------------------------------------------------------
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+file    | wfl | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/fbroggin

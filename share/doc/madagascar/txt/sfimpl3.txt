@@ -1,0 +1,16 @@
+Program sfimpl3 | 3-D anisotropic diffusion. 
+[SYNOPSIS]
+sfimpl3 < in.rsf > out.rsf rect1= rect2= rect3= tau=0.1 pclip=50. up=n verb=n nsnap=1 dist= snap=
+[PARAMETERS]
+string  | dist | = |   | 	inverse distance file (input) 
+int     | nsnap | =1 |   | 	number of snapshots 
+float   | pclip | =50. |   | 	percentage clip for the gradient 
+float   | rect1 | = |   | 	
+float   | rect2 | = |   | 	
+float   | rect3 | = |   | 	smoothing radius 
+string  | snap | = |   | 	snapshot file (output) 
+float   | tau | =0.1 |   | 	smoothing time 
+bool    | up | =n |  [y/n] | 	smoothing style 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+system/generic

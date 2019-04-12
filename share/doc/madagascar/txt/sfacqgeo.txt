@@ -1,0 +1,22 @@
+Program sfacqgeo | generating acquisition geometry file for sfmpicfftrtm  
+[SYNOPSIS]
+sfacqgeo > Fgeo.rsf nz= nx= ny= sou_z= sou_ox= sou_oy= sou_nx= sou_ny= sou_jx=(sou_nx>1)? (nx-sou_ox)/(sou_nx-1):0 sou_jy=(sou_ny>1)? (ny-sou_oy)/(sou_ny-1):0 rec_z= rec_nx= rec_ny= npad= noff= roll=
+[PARAMETERS]
+int     | noff | = |   | 	near offset 
+int     | npad | = |   | 	computational domain padding 
+int     | nx | = |   | 	dimension in x 
+int     | ny | = |   | 	dimension in y 
+int     | nz | = |   | 	dimension in z 
+int     | rec_nx | = |   | 	number of receivers in x   
+int     | rec_ny | = |   | 	number of receivers in y   
+int     | rec_z | = |   | 	receiver position in depth 
+int     | roll | = |   | 	acquisition pattern: 0-> fixed-spread, 1-> towed-streamer to the negative 
+int     | sou_jx | =(sou_nx>1)? (nx-sou_ox)/(sou_nx-1):0 |   | 	source interval in x 
+int     | sou_jy | =(sou_ny>1)? (ny-sou_oy)/(sou_ny-1):0 |   | 	source interval in y 
+int     | sou_nx | = |   | 	number of sources in x        
+int     | sou_ny | = |   | 	number of sources in y        
+int     | sou_ox | = |   | 	source starting location in x 
+int     | sou_oy | = |   | 	source starting location in y 
+int     | sou_z | = |   | 	source position in depth      
+[DIRECTORY]
+user/jsun

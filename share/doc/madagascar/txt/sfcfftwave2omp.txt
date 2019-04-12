@@ -1,0 +1,14 @@
+Program sfcfftwave2omp | Complex 2-D wave propagation (with multi-threaded FFTW3)
+[SYNOPSIS]
+sfcfftwave2omp < Fw.rsf > Fo.rsf ref=Fr.rsf left=left.rsf right=right.rsf verb=n cmplx=y os=y sub=n sub=y pad1=1
+[PARAMETERS]
+bool    | cmplx | =y |  [y/n] | 	outputs complex wavefield 
+file    | left | = |   | 	auxiliary input file name
+bool    | os | =y |  [y/n] | 	one-step flag 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | ref | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+bool    | sub | =y |  [y/n] | 	subtraction flag 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

@@ -1,0 +1,9 @@
+Program sfrotvol | 3D volume rotation about a vertical axis 
+[SYNOPSIS]
+sfrotvol < inFile.rsf > outFile.rsf xf=0.f yf=0.f theta=0.f
+[PARAMETERS]
+float   | theta | =0.f |   | 	rotation angle 
+float   | xf | =0.f |   | 	x-coord of the vertical axis 
+float   | yf | =0.f |   | 	y-coord of the vertical axis 
+[DIRECTORY]
+user/aklokov

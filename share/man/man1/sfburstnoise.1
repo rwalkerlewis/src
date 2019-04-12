@@ -1,0 +1,29 @@
+.TH sfburstnoise 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfburstnoise \- Synthetics with bursts of noise. 
+.SH SYNOPSIS
+.B sfburstnoise < in.rsf > out.rsf sigma=1. thresh=0.93 thresh2=0.4
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B sigma
+.B =1.
+.R  	noise magnitude
+.TP
+.I float  
+.B thresh
+.B =0.93
+.R  	noise threshold
+.TP
+.I float  
+.B thresh2
+.B =0.4
+.R  	noise threshold
+.SH USED IN
+.TP
+.I gee/noiz/burst
+.SH SOURCE
+.I user/gee/Mburstnoise.c
+.SH VERSION
+2.1-git

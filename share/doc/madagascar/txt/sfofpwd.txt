@@ -1,0 +1,11 @@
+Program sfofpwd | Objective function of dip estimation with PWD filters. 
+[SYNOPSIS]
+sfofpwd < in.rsf > of.rsf np=100 p0= dp=2*p0/(1.-np) order=1 nj=1
+[PARAMETERS]
+float   | dp | =2*p0/(1.-np) |   | 	dip sampling 
+int     | nj | =1 |   | 	antialiasing 
+int     | np | =100 |   | 	number of dips 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+float   | p0 | = |   | 	dip origin 
+[DIRECTORY]
+user/pwd

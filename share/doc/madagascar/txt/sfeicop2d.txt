@@ -1,0 +1,19 @@
+Program sfeicop2d | Extended IC 2D 
+[SYNOPSIS]
+sfeicop2d opr=Fopr.rsf cip=Fcip.rsf < Fimg.rsf > Fwfl.rsf verb=n adj=n wflcausal=n oprcausal=n nhz=0 nhx=0 nht=0 gaus=n gsx=0.25*sf_n(ahx)*sf_d(ahx) gsz=0.25*sf_n(ahz)*sf_d(ahz) gst=0.25*sf_n(aht)*sf_d(aht)
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | cip | = |   | 	auxiliary input file name
+bool    | gaus | =n |  [y/n] | 	Gaussian taper 
+float   | gst | =0.25*sf_n(aht)*sf_d(aht) |   | 	
+float   | gsx | =0.25*sf_n(ahx)*sf_d(ahx) |   | 	
+float   | gsz | =0.25*sf_n(ahz)*sf_d(ahz) |   | 	
+int     | nht | =0 |   | 	t lags 
+int     | nhx | =0 |   | 	x lags 
+int     | nhz | =0 |   | 	z lags 
+file    | opr | = |   | 	auxiliary input file name
+bool    | oprcausal | =n |  [y/n] | 	causal opr? 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+bool    | wflcausal | =n |  [y/n] | 	causal wfl? 
+[DIRECTORY]
+user/psava

@@ -1,0 +1,12 @@
+Program sfcgconst | Test Beam for constant velocity gradient 
+[SYNOPSIS]
+sfcgconst < in.rsf > out.rsf mask=mask.rsf source=o2 w=0. v0=1. b=0. p=1/v0
+[PARAMETERS]
+float   | b | =0. |   | 	velocity gradient 
+file    | mask | = |   | 	auxiliary output file name
+float   | p | =1/v0 |   | 	
+float   | source | =o2 |   | 	real source point 
+float   | v0 | =1. |   | 	surface velocity 
+float   | w | =0. |   | 	beam width 
+[DIRECTORY]
+user/llisiw

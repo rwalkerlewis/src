@@ -1,0 +1,9 @@
+Program sfaimplfd2 | Implicit solution of 2-D acoustic wave equation. 
+[SYNOPSIS]
+sfaimplfd2 < vel.rsf > usol.rsf src=src.rsf niter=10 fourth=y
+[PARAMETERS]
+bool    | fourth | =y |  [y/n] | 	Higher order flag 
+int     | niter | =10 |   | 	Number of solver iterations 
+string  | src | = |   | 	Source wavelet (auxiliary input file name)
+[DIRECTORY]
+user/petsc

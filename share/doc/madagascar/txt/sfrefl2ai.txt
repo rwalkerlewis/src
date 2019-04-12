@@ -1,0 +1,7 @@
+Program sfrefl2ai | Convert reflectivity to acoustic impedance. 
+[SYNOPSIS]
+sfrefl2ai < ref.rsf > ai.rsf a0=a0.rsf
+[PARAMETERS]
+file    | a0 | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

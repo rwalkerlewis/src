@@ -1,0 +1,25 @@
+Program sfsbslice | 
+[SYNOPSIS]
+sfsbslice < logrefa.rsf < deptha.rsf < log1a.rsf < log2a.rsf < log3a.rsf < log4a.rsf < log5a.rsf < log6a.rsf > logref_co.rsf depth_c=depth_co.rsf log1_c=log1_co.rsf log2_c=log2_co.rsf log3_c=log3_co.rsf log4_c=log4_co.rsf log5_c=log5_co.rsf log6_c=log6_co.rsf depth= log1= log2= log3= log4= log5= log6=
+[COMMENTS]
+Multiple 1D inputs clipped to length of reference input
+
+Built for log data manipulation - clips six input logs to the length of the reference well log
+
+[PARAMETERS]
+string  | depth | = |   | 	
+file    | depth_c | = |   | 	auxiliary output file name
+string  | log1 | = |   | 	
+file    | log1_c | = |   | 	auxiliary output file name
+string  | log2 | = |   | 	
+file    | log2_c | = |   | 	auxiliary output file name
+string  | log3 | = |   | 	
+file    | log3_c | = |   | 	auxiliary output file name
+string  | log4 | = |   | 	
+file    | log4_c | = |   | 	auxiliary output file name
+string  | log5 | = |   | 	
+file    | log5_c | = |   | 	auxiliary output file name
+string  | log6 | = |   | 	
+file    | log6_c | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/sbader

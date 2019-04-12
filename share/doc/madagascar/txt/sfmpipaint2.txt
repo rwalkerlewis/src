@@ -1,0 +1,10 @@
+Program sfmpipaint2 | 2-D painting by plane-wave construction with MPI parallelization. 
+[SYNOPSIS]
+sfmpipaint2 verb=n eps=0.01 i0=0 order=1
+[PARAMETERS]
+float   | eps | =0.01 |   | 	regularization 
+int     | i0 | =0 |   | 	reference trace 
+int     | order | =1 |   | 	accuracy order 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/zhiguang

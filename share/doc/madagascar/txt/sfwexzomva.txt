@@ -1,0 +1,17 @@
+Program sfwexzomva | 3-D S/R WEMVA with extended split-step 
+[SYNOPSIS]
+sfwexzomva slo=Bs.rsf < Pi.rsf < Ps.rsf wfl=Bwr.rsf verb=y adj= eps=0.01 nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0
+[PARAMETERS]
+int     | adj | = |   | 	y=ADJ Back-projection; n=FWD Forward Scattering 
+float   | dtmax | =0.004 |   | 	max time error 
+float   | eps | =0.01 |   | 	stability parameter 
+int     | nrmax | =1 |   | 	max number of refs 
+int     | pmx | =0 |   | 	padding on x 
+int     | pmy | =0 |   | 	padding on y 
+file    | slo | = |   | 	auxiliary input file name
+int     | tmx | =0 |   | 	taper on x   
+int     | tmy | =0 |   | 	taper on y   
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+file    | wfl | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/cwp

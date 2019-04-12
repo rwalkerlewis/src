@@ -1,0 +1,9 @@
+Program sfdespike3 | Remove spikes in by sliding 3-D medians. 
+[SYNOPSIS]
+sfdespike3 < in.rsf > out.rsf wide1=5 wide2=5 wide3=5
+[PARAMETERS]
+int     | wide1 | =5 |   | 	
+int     | wide2 | =5 |   | 	
+int     | wide3 | =5 |   | 	sliding window width 
+[DIRECTORY]
+user/gee

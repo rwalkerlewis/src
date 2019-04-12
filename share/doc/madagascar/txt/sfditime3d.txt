@@ -1,0 +1,33 @@
+Program sfditime3d | 3D Hybrid Radon transform for diffraction imaging in the time dip-angle domain 
+[SYNOPSIS]
+sfditime3d < in.rsf > out.rsf dweight=fileDweight.rsf reflMod=fileRefl.rsf verb=n adj=n isAA=n liter=100 niter=0 eps=0. verb=n invMod=2 dip0n= dip0d= dip0o= sdip0n= sdip0d= sdip0o= xin= xid= xio= sxin= sxid= sxio= dipn= dipo= dipd= sdipn= sdipo= sdipd=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+float   | dip0d | = |   | 	dip0 sampling (if adj=y) 
+int     | dip0n | = |   | 	number of dip0 values (if adj=y) 
+float   | dip0o | = |   | 	dip0 origin (if adj=y) 
+float   | dipd | = |   | 	dip sampling in x-direction 
+int     | dipn | = |   | 	number of dips in x-direction 
+float   | dipo | = |   | 	dip origin in x-direction 
+string  | dweight | = |   | 	input file containing data weights (auxiliary input file name)
+float   | eps | =0. |   | 	regularization parameter 
+int     | invMod | =2 |   | 	number of nonlinear iterations (for inversion) 
+bool    | isAA | =n |  [y/n] | 	if y, apply anti-aliasing 
+int     | liter | =100 |   | 	number of linear iterations (for inversion) 
+int     | niter | =0 |   | 	number of nonlinear iterations (for inversion) 
+file    | reflMod | = |   | 	auxiliary output file name
+float   | sdip0d | = |   | 	sdip0 sampling (if adj=y) 
+int     | sdip0n | = |   | 	number of sdip0 values (if adj=y) 
+float   | sdip0o | = |   | 	sdip0 origin (if adj=y) 
+float   | sdipd | = |   | 	dip sampling in y-direction 
+int     | sdipn | = |   | 	number of dips in y-direction 
+float   | sdipo | = |   | 	dip origin in y-direction 
+float   | sxid | = |   | 	xi sampling (if adj=y) 
+int     | sxin | = |   | 	number of xi values (if adj=y) 
+float   | sxio | = |   | 	xi origin (if adj=y) 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | xid | = |   | 	xi sampling (if adj=y) 
+int     | xin | = |   | 	number of xi values (if adj=y) 
+float   | xio | = |   | 	xi origin (if adj=y) 
+[DIRECTORY]
+user/aklokov

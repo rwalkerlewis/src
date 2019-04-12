@@ -1,0 +1,11 @@
+Program sfsc | Surface-consistent decomposition 
+[SYNOPSIS]
+sfsc < inp.rsf pred=pred.rsf error=error.rsf index=index.rsf > out.rsf niter=0 prec=y
+[PARAMETERS]
+string  | error | = |   | 	prediction (auxiliary output file name)
+file    | index | = |   | 	auxiliary input file name
+int     | niter | =0 |   | 	number of iterations 
+bool    | prec | =y |  [y/n] | 	if apply preconditioning 
+string  | pred | = |   | 	prediction (auxiliary output file name)
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,20 @@
+Program sffftfwi_sparse_2d | 2D frequency domain full waveform inversion with sparsity regularization. 
+[SYNOPSIS]
+sffftfwi_sparse_2d < in.rsf > out.rsf receiver=receiver.rsf source=source.rsf record=record.rsf dip=dip.rsf vout=vout.rsf misfit=misfit.rsf sparsity=y niter=10 npml=20 par=1 pclip=8. uts=0 order= type=
+[PARAMETERS]
+string  | dip | = |   | 	auxiliary input file name
+string  | misfit | = |   | 	auxiliary output file name
+int     | niter | =10 |   | 	number of iteration 
+int     | npml | =20 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+int     | par | =1 |   | 	seislet transform accuracy order 
+float   | pclip | =8. |   | 	soft thresholding parameter 
+string  | receiver | = |   | 	auxiliary input file name
+string  | record | = |   | 	auxiliary input file name
+string  | source | = |   | 	auxiliary input file name
+bool    | sparsity | =y |  [y/n] | 	if true, sparsity constriant; if false, normal FWI 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal 
+int     | uts | =0 |   | 	
+string  | vout | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/zhiguang

@@ -1,0 +1,15 @@
+Program sfdonf | 2D dip-oriented nonlocal (bilateral) smoothing. 
+[SYNOPSIS]
+sfdonf < in.rsf > out.rsf dip=dip.rsf nfw= nw= boundary=y verb=n bx= gauss=n repeat=1 ax=
+[PARAMETERS]
+float   | ax | = |   | 	Gaussian weight for the range distance 
+bool    | boundary | =y |  [y/n] | 	if y, boundary is data, whereas zero
+float   | bx | = |   | 	exponential weight for the domain distance (different if gaussian)
+file    | dip | = |   | 	auxiliary input file name
+bool    | gauss | =n |  [y/n] | 	if y, Gaussian weight, whereas Triangle weight 
+int     | nfw | = |   | 	filter-window length (positive and odd integer) 
+int     | nw | = |   | 	data-window length (positive and odd integer) 
+int     | repeat | =1 |   | 	repeat filtering several times 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

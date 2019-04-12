@@ -1,0 +1,9 @@
+Program sfhorwrite | save rsf data into horizon ASCII format, eq to dd form=ascii 
+[SYNOPSIS]
+sfhorwrite < in.rsf head= tail= fromat=
+[PARAMETERS]
+string  | fromat | = |   | 	format 
+string  | head | = |   | 	header 
+string  | tail | = |   | 	tail 
+[DIRECTORY]
+user/chen

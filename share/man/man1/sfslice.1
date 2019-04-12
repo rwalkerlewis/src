@@ -1,0 +1,75 @@
+.TH sfslice 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfslice \- Extract a slice using picked surface (usually from a stack or a semblance).
+.SH SYNOPSIS
+.B sfslice < in.rsf pick=pick.rsf > out.rsf
+.SH COMMENTS
+
+See also: sfpick.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B pick
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/vela/vscan
+.TP
+.I data/nankai/data
+.TP
+.I data/nankai/shots
+.TP
+.I gallery/constant/vc
+.TP
+.I gallery/french/vc
+.TP
+.I gallery/vofz/vc
+.TP
+.I gee/prc/bob
+.TP
+.I geo384s/hw2/migration
+.TP
+.I geo384s/hw3/dmo
+.TP
+.I geo384s/hw6/gazdag
+.TP
+.I geo384s/hw6/rtm
+.TP
+.I geo384w/hw4/sigsbee
+.TP
+.I geo384w/hw4/synth
+.TP
+.I geo384w/hw6/blake
+.TP
+.I sep/geostat/dix
+.TP
+.I sep/stoltst/elfst
+.TP
+.I sep/stoltst/imps
+.TP
+.I sep/vc2/beivc
+.TP
+.I sep/vc2/elfvc
+.TP
+.I sep/vc2/sigvc
+.TP
+.I tccs/avo/avo
+.TP
+.I tccs/avo/avo2
+.TP
+.I tccs/diffr/fault
+.TP
+.I tccs/diffr/gom
+.TP
+.I tccs/merge/apache
+.TP
+15 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfslice.html
+.SH SOURCE
+.I system/generic/Mslice.c
+.SH VERSION
+2.1-git

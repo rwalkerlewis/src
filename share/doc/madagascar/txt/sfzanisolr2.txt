@@ -1,0 +1,28 @@
+Program sfzanisolr2 | Lowrank decomposition for 2-D anisotropic wave propagation (Complex). 
+[SYNOPSIS]
+sfzanisolr2 < velz.rsf vels=vels.rsf fft=fft.rsf left=left.rsf > right.rsf mode=0 seed=time(NULL eps=1.e-4 npk=20 dt= os=true sub=false sub=true abc=0 nbt=0 nbb=0 nbl=0 nbr=0 ct=0.0 cb=0.0 cl=0.0 cr=0.0 taper=1.0 approx=2 relation=3
+[PARAMETERS]
+        | abc | =0 |   | 	absorbing boundary condition (0=no abc, 1=direction dependent, 2=direction independent)
+        | approx | =2 |   | 	Type of approximation (0=exact 1=zone 2=acoustic)
+        | cb | =0.0 |   | 	
+        | cl | =0.0 |   | 	
+        | cr | =0.0 |   | 	
+        | ct | =0.0 |   | 	
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+file    | fft | = |   | 	auxiliary input file name
+file    | left | = |   | 	auxiliary output file name
+        | mode | =0 |   | 	wave mode (0=p wave, 1=Sv wave)
+        | nbb | =0 |   | 	
+        | nbl | =0 |   | 	
+        | nbr | =0 |   | 	
+        | nbt | =0 |   | 	
+        | npk | =20 |   | 	maximum rank
+        | os | =true |   | 	
+        | relation | =3 |   | 	Type of q relationship (0=shale, 1=sand, 2=carbonate, default being smallest error)
+        | seed | =time(NULL |   | 	
+        | sub | =true |   | 	for twostep, default true
+        | taper | =1.0 |   | 	wavenumber tapering flag
+file    | vels | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jsun

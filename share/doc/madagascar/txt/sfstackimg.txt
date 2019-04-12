@@ -1,0 +1,5 @@
+Program sfstackimg | Stack multi-shots images 
+[SYNOPSIS]
+sfstackimg < Fin.rsf > Fout.rsf file0.rsf file1.rsf file2.rsf ...
+[DIRECTORY]
+user/fangg

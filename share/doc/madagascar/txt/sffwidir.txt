@@ -1,0 +1,10 @@
+Program sffwidir | Update the conjugate direction in full waveform inversion 
+[SYNOPSIS]
+sffwidir < in.rsf > out.rsf grad0=grad0.rsf grad1=grad1.rsf beta=beta.rsf option=
+[PARAMETERS]
+string  | beta | = |   | 	auxiliary output file name
+file    | grad0 | = |   | 	auxiliary input file name
+file    | grad1 | = |   | 	auxiliary input file name
+string  | option | = |   | 	CG update parameter (Polak, Fletcher-Reeves, Fletcher, Dai-Yuan) 
+[DIRECTORY]
+user/zhiguang

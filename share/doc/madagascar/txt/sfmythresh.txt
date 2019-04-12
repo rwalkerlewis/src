@@ -1,0 +1,11 @@
+Program sfmythresh | Generalized thresholding operator
+[SYNOPSIS]
+sfmythresh < in.rsf > out.rsf pclip=99. p=0.35 mode=
+[PARAMETERS]
+string  | mode | = |   | 	thresholding mode='hard', 'soft','pthresh' or 'exp';
+       'hard', hard thresholding;	'soft', soft thresholding; 
+       'pthresh', generalized quasi-p; 'exp', exponential shrinkage 
+float   | p | =0.35 |   | 	norm=p, where 0<p<=1 
+float   | pclip | =99. |   | 	percentage to clip 
+[DIRECTORY]
+user/pyang

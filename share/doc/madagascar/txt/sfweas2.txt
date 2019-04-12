@@ -1,0 +1,13 @@
+Program sfweas2 | 2-D analytic solution for acoustic wave equation 
+[SYNOPSIS]
+sfweas2 < Fin.rsf > Fout.rsf vel= nx= dx= spx= selt= ox=0.0 rule=
+[PARAMETERS]
+float   | dx | = |   | 	
+int     | nx | = |   | 	
+float   | ox | =0.0 |   | 	
+string  | rule | = |   | 	t, s : quadrature rules 
+float   | selt | = |   | 	selected time
+int     | spx | = |   | 	source point in x
+float   | vel | = |   | 	
+[DIRECTORY]
+user/fangg

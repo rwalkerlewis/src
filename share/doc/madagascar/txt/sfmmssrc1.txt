@@ -1,0 +1,12 @@
+Program sfmmssrc1 | 1D Source for the method of manufactured solution 
+[SYNOPSIS]
+sfmmssrc1 < Fvel.rsf > Fsrc.rsf mslt=Fslt.rsf nt= dt= slx=nx*dx*0.5 alpha=1.0e-2 beta=1.0
+[PARAMETERS]
+float   | alpha | =1.0e-2 |   | 	source parameter
+float   | beta | =1.0 |   | 	source parameter
+float   | dt | = |   | 	time step
+file    | mslt | = |   | 	auxiliary output file name
+int     | nt | = |   | 	number of time step
+float   | slx | =nx*dx*0.5 |   | 	center of source location: x
+[DIRECTORY]
+user/fangg

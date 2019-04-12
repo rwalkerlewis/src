@@ -1,0 +1,10 @@
+Program sfMCCCnew | None
+[SYNOPSIS]
+sfMCCCnew < infile.rsf > outfile.rsf times=timefile.rsf maxshift= nlen= vel=1500.
+[PARAMETERS]
+        | maxshift | = |   | 	Maximum allowed time shift
+        | nlen | = |   | 	Window length of shift vector (in samples)
+file    | times | = |   | 	auxiliary output file name
+        | vel | =1500. |   | 	Rupture speed for linear shift
+[DIRECTORY]
+user/jeff

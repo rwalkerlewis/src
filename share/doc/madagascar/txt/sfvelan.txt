@@ -1,0 +1,10 @@
+Program sfvelan | font.size
+[SYNOPSIS]
+sfvelan < Fsemb.rsf cmp=Fcmp.rsf offset=Foff.rsf > Fout.rsf useoffset=y half=y
+[PARAMETERS]
+file    | cmp | = |   | 	auxiliary input file name
+bool    | half | =y |  [y/n] | 	half or full offset?
+file    | offset | = |   | 	auxiliary input file name
+bool    | useoffset | =y |  [y/n] | 	if irregular offset, pass it
+[DIRECTORY]
+user/ediazp

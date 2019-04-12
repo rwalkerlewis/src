@@ -1,0 +1,16 @@
+Program sfcheckerboard | make a 2D/3D checkerboard model 
+[SYNOPSIS]
+sfcheckerboard > Fo.rsf nx=1 ny=1 nz=1 ox=0.0 oy=0.0 oz=0.0 dx=1.0 dy=1.0 dz=1.0 N=1
+[PARAMETERS]
+int     | N | =1 |   | 	------------------------------------------------------------
+float   | dx | =1.0 |   | 	
+float   | dy | =1.0 |   | 	
+float   | dz | =1.0 |   | 	get checkerboard size 
+int     | nx | =1 |   | 	
+int     | ny | =1 |   | 	
+int     | nz | =1 |   | 	
+float   | ox | =0.0 |   | 	
+float   | oy | =0.0 |   | 	
+float   | oz | =0.0 |   | 	
+[DIRECTORY]
+user/psava

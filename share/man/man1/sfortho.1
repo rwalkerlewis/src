@@ -1,0 +1,60 @@
+.TH sfortho 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfortho \- Orthogonolize signal and noise. 
+.SH SYNOPSIS
+.B sfortho < fnoi.rsf sig=fsig.rsf > fnoi2.rsf sig2=fsig2.rsf niter=100 verb=y eps=0.0f rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.0f
+.R  	regularization
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I file   
+.B sig
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sig2
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.SH USED IN
+.TP
+.I tccs/dbortho/hyper
+.TP
+.I tccs/dsd/field1
+.TP
+.I tccs/dsd/field2
+.TP
+.I tccs/ortho/orthocomplex
+.TP
+.I tccs/ortho/orthocsimul
+.TP
+.I tccs/ortho/orthofair
+.TP
+.I tccs/ortho/orthonine
+.TP
+.I tccs/ortho/orthorna
+.TP
+.I tccs/orthogroll/field
+.SH SOURCE
+.I user/fomels/Mortho.c
+.SH VERSION
+2.1-git

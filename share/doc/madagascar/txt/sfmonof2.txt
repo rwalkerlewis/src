@@ -1,0 +1,13 @@
+Program sfmonof2 | Gaussian wavelet estimation in 2-D. 
+[SYNOPSIS]
+sfmonof2 < in.rsf > out.rsf ma=ma.rsf a0=1. b0=0. c0=1. niter=100 nliter=1 verb=n
+[PARAMETERS]
+float   | a0 | =1. |   | 	starting sharpness in xx 
+float   | b0 | =0. |   | 	starting sharpness in xy 
+float   | c0 | =1. |   | 	starting sharpness in yy 
+file    | ma | = |   | 	auxiliary output file name
+int     | niter | =100 |   | 	number of iterations 
+int     | nliter | =1 |   | 	number of reweighting iterations 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+system/generic

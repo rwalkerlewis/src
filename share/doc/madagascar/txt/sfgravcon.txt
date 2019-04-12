@@ -1,0 +1,10 @@
+Program sfgravcon | Continuation for gravity data by using FFT or intergral iteration 
+[SYNOPSIS]
+sfgravcon < in.rsf > out.rsf verb=n iter=n z= niter=0
+[PARAMETERS]
+bool    | iter | =n |  [y/n] | 	if y, perform iteration method 
+int     | niter | =0 |   | 	continuation factor allocate memory 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | z | = |   | 	for iteration method 
+[DIRECTORY]
+user/yliu

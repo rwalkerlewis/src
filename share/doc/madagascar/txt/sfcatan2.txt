@@ -1,0 +1,5 @@
+Program sfcatan2 | Argument of complex data calculated by atan2. 
+[SYNOPSIS]
+sfcatan2 < in.rsf > out.rsf
+[DIRECTORY]
+user/browaeys

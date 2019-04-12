@@ -1,0 +1,13 @@
+Program sfsbclip1 | 
+[SYNOPSIS]
+sfsbclip1 < logrefa.rsf > logref_co.rsf value= clip=
+[COMMENTS]
+One-sided data clipping
+
+Built for log data manipulation - remove extraneous values introduced from LSIM shifting
+
+[PARAMETERS]
+float   | clip | = |   | 	Clipping value
+float   | value | = |   | 	Output if log is less than clip
+[DIRECTORY]
+user/sbader

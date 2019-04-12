@@ -1,0 +1,8 @@
+Program sfsemblance | Semblance over the specified axis. 
+[SYNOPSIS]
+sfsemblance < in.rsf > out.rsf weighted=n axis=2
+[PARAMETERS]
+int     | axis | =2 |   | 	which axis to stack 
+bool    | weighted | =n |  [y/n] | 	if use weighted semblance 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,31 @@
+Program sfshapebin | Data binning in 2-D slices by inverse interpolation. 
+[SYNOPSIS]
+sfshapebin < in.rsf > out.rsf pattern=pattern.rsf pin=pin.rsf pout=pout.rsf xkey= ykey= nx= ny= xmin= xmax= ymin= ymax= x0=xmin y0=ymin dx= dy= interp=2 niter=nm nliter=1 eps=1./nd gauss=n shape=y verb=y filt1=3. filt2=filt1 head=
+[PARAMETERS]
+float   | dx | = |   | 	bin size in x 
+float   | dy | = |   | 	bin size in y 
+float   | eps | =1./nd |   | 	regularization parameter 
+float   | filt1 | =3. |   | 	
+float   | filt2 | =filt1 |   | 	smoothing length for shaping 
+bool    | gauss | =n |  [y/n] | 	if y, use gaussian shaping (estimated from the data) 
+string  | head | = |   | 	
+int     | interp | =2 |   | 	interpolation length 
+int     | niter | =nm |   | 	number of iterations 
+int     | nliter | =1 |   | 	number of reweighting iterations 
+int     | nx | = |   | 	Number of bins in x 
+int     | ny | = |   | 	Number of bins in y 
+string  | pattern | = |   | 	auxiliary input file name
+string  | pin | = |   | 	auxiliary input file name
+string  | pout | = |   | 	auxiliary output file name
+bool    | shape | =y |  [y/n] | 	if y, use shaping regularization 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+float   | x0 | =xmin |   | 	
+int     | xkey | = |   | 	x key number 
+float   | xmax | = |   | 	
+float   | xmin | = |   | 	
+float   | y0 | =ymin |   | 	grid origin 
+int     | ykey | = |   | 	y key number 
+float   | ymax | = |   | 	
+float   | ymin | = |   | 	Grid dimensions 
+[DIRECTORY]
+system/generic

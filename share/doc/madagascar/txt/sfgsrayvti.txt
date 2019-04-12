@@ -1,0 +1,16 @@
+Program sfgsrayvti | Gauss Seidel iterative solver for phase space escape positions, angle and traveltime 
+[SYNOPSIS]
+sfgsrayvti < in.rsf > out.rsf vel=slow.rsf velz=slowz.rsf velx=slowx.rsf iq= niter=50 tol=0.000002*nx*nz vti_eps=0.0 vti_gamma=0.0 vti_delta=0.0 vti=
+[PARAMETERS]
+int     | iq | = |   | 	switch for escape variable 0=x, 1=a, 2=t, 3=z, 4=l 
+int     | niter | =50 |   | 	number of Gauss-Seidel iterations 
+float   | tol | =0.000002*nx*nz |   | 	accuracy tolerance 
+file    | vel | = |   | 	auxiliary input file name
+file    | velx | = |   | 	auxiliary input file name
+file    | velz | = |   | 	auxiliary input file name
+string  | vti | = |   | 	what to compute (p=qP, v=qSV, h=SH) 
+float   | vti_delta | =0.0 |   | 	VTI constants Thomsen  
+float   | vti_eps | =0.0 |   | 	
+float   | vti_gamma | =0.0 |   | 	
+[DIRECTORY]
+user/roman

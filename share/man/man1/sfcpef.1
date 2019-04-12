@@ -1,0 +1,32 @@
+.TH sfcpef 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcpef \- 1-D prediction-error filter estimation from complex data 
+.SH SYNOPSIS
+.B sfcpef < in.rsf > out.rsf single=y nf=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B nf
+.B =
+.R  	filter length
+.TP
+.I bool   
+.B single
+.B =y
+.R  [y/n]	single channel or multichannel
+.SH USED IN
+.TP
+.I tccs/eseis/demo2
+.TP
+.I tccs/eseis/field
+.TP
+.I tccs/eseis/nonseis
+.TP
+.I tccs/seislet/plane
+.TP
+.I tccs/seislet/sin2
+.SH SOURCE
+.I user/fomels/Mcpef.c
+.SH VERSION
+2.1-git

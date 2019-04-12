@@ -1,0 +1,43 @@
+Program sfmpirtmop | 2-D Low-rank One-step Least Pre-stack Reverse-Time-Migration in the complex domain (both img and data are complex valued)
+[SYNOPSIS]
+sfmpirtmop src=Fsrc.rsf left=left.rsf right=right.rsf leftb=leftb.rsf rightb=rightb.rsf vel=Fvel.rsf tmpwf=Ftmpwf.rsf verb=n justrec=n adj=y wantwf=n illum=n roll=n born=n shtbgn= sht0=shtbgn shtend= shtint= spz= gpz= gpl= snapinter=1 srctrunc=0.4 rectz=1 rectx=1 repeat=0 top=40 bot=40 lft=40 rht=40 mute=y vref=1500 wd=5 pad1=1
+[COMMENTS]
+img :  crosscorrelation with source normalization (stdout)
+
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	migration
+bool    | born | =n |  [y/n] | 	use exact born approximation
+int     | bot | =40 |   | 	
+int     | gpl | = |   | 	
+int     | gpz | = |   | 	
+bool    | illum | =n |  [y/n] | 	if n, no source illumination applied 
+bool    | justrec | =n |  [y/n] | 	just model for the seismic record
+file    | left | = |   | 	auxiliary input file name
+file    | leftb | = |   | 	auxiliary input file name
+int     | lft | =40 |   | 	
+bool    | mute | =y |  [y/n] | 	muting direct arrival
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+int     | rectx | =1 |   | 	
+int     | rectz | =1 |   | 	
+int     | repeat | =0 |   | 	abc parameters 
+int     | rht | =40 |   | 	muting for migration after modeling 
+file    | right | = |   | 	auxiliary input file name
+file    | rightb | = |   | 	auxiliary input file name
+bool    | roll | =n |  [y/n] | 	if n, receiver is independent of source location and gpl=nx
+int     | sht0 | =shtbgn |   | 	actual shot origin on grid
+int     | shtbgn | = |   | 	
+int     | shtend | = |   | 	
+int     | shtint | = |   | 	
+int     | snapinter | =1 |   | 	snap interval 
+int     | spz | = |   | 	
+file    | src | = |   | 	auxiliary input file name
+float   | srctrunc | =0.4 |   | 	
+file    | tmpwf | = |   | 	auxiliary output file name
+int     | top | =40 |   | 	
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity
+float   | vref | =1500 |   | 	
+bool    | wantwf | =n |  [y/n] | 	output forward and backward wavefield
+int     | wd | =5 |   | 	
+[DIRECTORY]
+user/jsun

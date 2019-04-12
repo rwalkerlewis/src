@@ -1,0 +1,9 @@
+Program sfrandcut | cut a random dataset from a 3D cube 
+[SYNOPSIS]
+sfrandcut < Fi.rsf > Fo.rsf rr=Fr.rsf verb=n axis=2
+[PARAMETERS]
+int     | axis | =2 |   | 	stack axis 
+file    | rr | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

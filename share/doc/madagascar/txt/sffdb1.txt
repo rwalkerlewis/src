@@ -1,0 +1,12 @@
+Program sffdb1 | 1-D Finite-difference wave extrapolation 
+[SYNOPSIS]
+sffdb1 < in.rsf vel=vel.rsf > out.rsf dt= nt= nb=20 abc=0 order=2
+[PARAMETERS]
+int     | abc | =0 |   | 	absorbing boundary condition 1: cos 0: exp
+float   | dt | = |   | 	
+int     | nb | =20 |   | 	
+int     | nt | = |   | 	
+int     | order | =2 |   | 	FD order: 2,4
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

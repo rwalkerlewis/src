@@ -1,0 +1,8 @@
+Program sfregrid3d | 3-D ENO interpolation 
+[SYNOPSIS]
+sfregrid3d < Fi.rsf > Fo.rsf pattern=Fp.rsf order=3
+[PARAMETERS]
+int     | order | =3 |   | 	
+string  | pattern | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/psava

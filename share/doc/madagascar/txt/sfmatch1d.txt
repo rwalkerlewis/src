@@ -1,0 +1,19 @@
+Program sfmatch1d | 1D Least-Sqaure Adaptive Matched-Filter for Multiple Suppression 
+[SYNOPSIS]
+sfmatch1d < in.rsf > out.rsf multiple=multiple.rsf w1=9 order=w1-2 w2=3 eps=0.01 verb=n transient=n method=
+[COMMENTS]
+	x = argmin || d - M x ||^2 
+
+	The Program uses internal (icaf.c) or transient convolution (tcaf.c)
+
+[PARAMETERS]
+float   | eps | =0.01 |   | 	dumping parameter  
+string  | method | = |   | 	method to use (old,new) 
+string  | multiple | = |   | 	auxiliary input file name
+int     | order | =w1-2 |   | 	matchied-filter order 
+bool    | transient | =n |  [y/n] | 	transient convolution [y/n] 
+bool    | verb | =n |  [y/n] | 	
+int     | w1 | =9 |   | 	data window length along 1st dimentions (time/depth) 
+int     | w2 | =3 |   | 	data window length along 1st dimentions (time/depth) 
+[DIRECTORY]
+user/lcasasan

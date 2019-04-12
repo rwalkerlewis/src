@@ -1,0 +1,20 @@
+Program sflomatch | Local Matched filter for coherent noise removal (1-D, 2-D, and 3-D). 
+[SYNOPSIS]
+sflomatch < dat.rsf > mcf.rsf match=mat.rsf mask=known.rsf w= a= k= gap= center= niter=1 perc=90.0 eps=0.01 verb=n dim=dim liter=aa->nh lag=
+[PARAMETERS]
+ints    | a | = |   | 	filter size  [dim1]
+ints    | center | = |   | 	filter center  [dim1]
+int     | dim | =dim |   | 	matched filter  dimensionality 
+float   | eps | =0.01 |   | 	dumping parameter x=(M'M+eps*I)M'd 
+ints    | gap | = |   | 	filter gap  [dim1]
+ints    | k | = |   | 	number of windows  [dim1]
+string  | lag | = |   | 	output file for filter lags 
+int     | liter | =aa->nh |   | 	number of linear iteration
+string  | mask | = |   | 	auxiliary input file name
+string  | match | = |   | 	auxiliary input file name
+int     | niter | =1 |   | 	number of POCS iterations: =1 L2 norm ; >1 L1 norm 
+float   | perc | =90.0 |   | 	percentage for sharpening [L1 norm]
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+ints    | w | = |   | 	window size  [dim1]
+[DIRECTORY]
+user/lcasasan

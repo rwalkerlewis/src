@@ -1,0 +1,5 @@
+Program sfmatlr | Flip a matrix 
+[SYNOPSIS]
+sfmatlr < Fin.rsf > Fout.rsf
+[DIRECTORY]
+user/chenyk

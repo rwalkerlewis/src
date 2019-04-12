@@ -1,0 +1,13 @@
+Program sflum2 | 2D LUM filter
+[SYNOPSIS]
+sflum2 < in.rsf > out.rsf nfw1= nfw2=nfw1 smnclip=(nfw1*nfw2+1)/2 shnclip=(nfw1*nfw2+1)/2 boundary=n verb=n type=
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw1 | = |   | 	filter-window length in n1 direction (positive and odd integer)
+int     | nfw2 | =nfw1 |   | 	filter-window length in n2 direction (default=nfw1)
+int     | shnclip | =(nfw1*nfw2+1)/2 |   | 	sharpener tuning parameter (1 <= shnclip <= (nfw1*nfw2+1)/2, the default is (nfw1*nfw2+1)/2)
+int     | smnclip | =(nfw1*nfw2+1)/2 |   | 	smoother tuning parameter (1 <= smnclip <= (nfw1*nfw2+1)/2, the default is (nfw1*nfw2+1)/2)
+string  | type | = |   | 	[rectangular,cross] 2-D window type, the default is rectangular  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

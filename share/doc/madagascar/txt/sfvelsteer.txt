@@ -1,0 +1,15 @@
+Program sfvelsteer | Velocity steering for 2D receivers array. 
+[SYNOPSIS]
+sfvelsteer < in.rsf > out.rsf nvx= dvx= ovx= nvy= dvy= ovy= iypi=0 iyps=ny-1 xp=
+[PARAMETERS]
+float   | dvx | = |   | 	vx sampling 
+float   | dvy | = |   | 	vy sampling 
+int     | iypi | =0 |   | 	first depth position where velocity steering is computed 
+int     | iyps | =ny-1 |   | 	last depth position where velocity steering is computed 
+int     | nvx | = |   | 	number of vx values 
+int     | nvy | = |   | 	number of vy values 
+float   | ovx | = |   | 	vx origin 
+float   | ovy | = |   | 	vy origin 
+float   | xp | = |   | 	lateral position where velocity steering is computed 
+[DIRECTORY]
+user/browaeys

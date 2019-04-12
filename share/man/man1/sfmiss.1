@@ -1,0 +1,98 @@
+.TH sfmiss 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmiss \- Multi-dimensional missing data interpolation. 
+.SH SYNOPSIS
+.B sfmiss < in.rsf filt=filt.rsf > out.rsf lag=lag.rsf mask=mask.rsf n= prec=y niter=100 exact=y eps=0. padin=0 padout=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter
+.TP
+.I bool   
+.B exact
+.B =y
+.R  [y/n]	If y, preserve the known data values (when prec=y)
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B lag
+.B =
+.R  	optional input file with filter lags (auxiliary input file name)
+.TP
+.I string 
+.B mask
+.B =
+.R  	optional input mask file for known data (auxiliary input file name)
+.TP
+.I ints   
+.B n
+.B =
+.R  	 [dim]
+.TP
+.I int    
+.B niter
+.B =100
+.R  	Number of iterations
+.TP
+.I int    
+.B padin
+.B =0
+.R  	Pad beginning
+.TP
+.I int    
+.B padout
+.B =0
+.R  	Pad end
+.TP
+.I bool   
+.B prec
+.B =y
+.R  [y/n]	If y, use preconditioning
+.SH USED IN
+.TP
+.I gee/lal/lace
+.TP
+.I gee/mda/elita
+.TP
+.I gee/mda/geostat
+.TP
+.I gee/mda/hole
+.TP
+.I gee/mda/miss3
+.TP
+.I gee/mda/morgan
+.TP
+.I gee/mda/seabeam
+.TP
+.I gee/prc/seabeam
+.TP
+.I gee/prc/sep95
+.TP
+.I sep/burg/gtens
+.TP
+.I sep/burg/tension
+.TP
+.I sep/geostat/miss
+.TP
+.I sep/precon/mis1
+.TP
+.I sep/precon/seab
+.TP
+.I sep/sparse2/test
+.TP
+.I sep/texture/fft
+.TP
+.I tccs/apefint/alias
+.TP
+.I tccs/apefint/ray
+.SH SOURCE
+.I user/gee/Mmiss.c
+.SH VERSION
+2.1-git

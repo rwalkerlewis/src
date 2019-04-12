@@ -1,0 +1,12 @@
+Program sfenergy | 
+[SYNOPSIS]
+sfenergy < input.rsf > log_eo.rsf wind=
+[COMMENTS]
+Estimate energy of input
+
+E(t) = \sum\limits_{k=(t-rac{R}{2})}^{(t+rac{R}{2})}A(k)^2
+
+[PARAMETERS]
+int     | wind | = |   | 	Rolling window size
+[DIRECTORY]
+user/sbader

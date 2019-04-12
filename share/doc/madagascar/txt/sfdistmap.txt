@@ -1,0 +1,7 @@
+Program sfdistmap | 
+[SYNOPSIS]
+sfdistmap < Fin.rsf > Fout.rsf verb=n
+[PARAMETERS]
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/jyan

@@ -1,0 +1,9 @@
+Program sfshifts | Multiple shifts. 
+[SYNOPSIS]
+sfshifts < inp.rsf > out.rsf np= dp= p0=
+[PARAMETERS]
+float   | dp | = |   | 	slope sampling 
+int     | np | = |   | 	number of slopes 
+float   | p0 | = |   | 	first slope 
+[DIRECTORY]
+system/seismic

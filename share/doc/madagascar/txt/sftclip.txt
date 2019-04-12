@@ -1,0 +1,8 @@
+Program sftclip | Clip to threshold. 
+[SYNOPSIS]
+sftclip < inp.rsf > out.rsf lowercut=0.2 uppercut=0.8
+[PARAMETERS]
+float   | lowercut | =0.2 |   | 	
+float   | uppercut | =0.8 |   | 	
+[DIRECTORY]
+system/generic

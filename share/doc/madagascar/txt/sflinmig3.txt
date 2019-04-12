@@ -1,0 +1,14 @@
+Program sflinmig3 | 3-D Kirchhoff time migration with antialiasing with adjoint flag. 
+[SYNOPSIS]
+sflinmig3 < in.rsf > mig.rsf vel=velFile.rsf n1= adj=y doomp=n rho=1.-1./nt apt=nx angle=90.0 vel= antialias=
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	adjoint flag 
+float   | angle | =90.0 |   | 	angle aperture 
+string  | antialias | = |   | 	antialiasing type [triangle,flat,steep,none] 
+int     | apt | =nx |   | 	integral aperture 
+bool    | doomp | =n |  [y/n] | 	perform OpenMP optimization 
+int     | n1 | = |   | 	
+float   | rho | =1.-1./nt |   | 	Leaky integration constant 
+float   | vel | = |   | 	migration velocity 
+[DIRECTORY]
+user/dmerzlikin

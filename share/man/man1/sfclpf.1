@@ -1,0 +1,72 @@
+.TH sfclpf 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfclpf \- Local prediction filter for complex numbers (n-dimensional). 
+.SH SYNOPSIS
+.B sfclpf < dat.rsf match=mat.rsf > flt.rsf pred=pre.rsf niter=100 verb=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I string 
+.B pred
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.TP
+.I cup/rna3d/real
+.TP
+.I cup/rna3d/shot
+.TP
+.I cup/rna3d/sin
+.TP
+.I jlu/txyapf/curve
+.TP
+.I jlu/txyapf/french
+.TP
+.I jlu/txyapf/real3d
+.TP
+.I jlu/txyapf/sigmoid
+.TP
+.I tccs/eseis/demo2
+.TP
+.I tccs/eseis/demo4
+.TP
+.I tccs/eseis/nonseis
+.TP
+.I tccs/eseis/sparse
+.TP
+.I tccs/nar/chirp
+.TP
+.I tccs/nar/hou
+.TP
+.I tccs/nar/mirko
+.TP
+.I tccs/nar/trace
+.TP
+.I tccs/nar/vecta
+.TP
+.I tccs/ortho/orthorna
+.SH SOURCE
+.I user/fomels/Mclpf.c
+.SH VERSION
+2.1-git

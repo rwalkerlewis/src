@@ -1,0 +1,12 @@
+Program sfrealign | 
+[SYNOPSIS]
+sfrealign < logrefa.rsf < log1a.rsf > log1_co.rsf log1=
+[COMMENTS]
+Residual well log realignment
+
+Built for log data manipulation - algined axis (o1/d1/n1) with reference well log
+
+[PARAMETERS]
+string  | log1 | = |   | 	
+[DIRECTORY]
+user/sbader

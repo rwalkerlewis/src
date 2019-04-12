@@ -1,0 +1,12 @@
+Program sfgradient | Linearized complex eikonal equation 
+[SYNOPSIS]
+sfgradient < vel.rsf > time.rsf s1=o[0] s2=o[1] s3=o[2] v0=1. b=0. s=0.
+[PARAMETERS]
+float   | b | =0. |   | 	
+float   | s | =0. |   | 	
+float   | s1 | =o[0] |   | 	
+float   | s2 | =o[1] |   | 	
+float   | s3 | =o[2] |   | 	
+float   | v0 | =1. |   | 	
+[DIRECTORY]
+user/llisiw

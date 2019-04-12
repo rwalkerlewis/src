@@ -1,0 +1,12 @@
+Program sfpwdnorm | 3-D plane wave destruction. 
+[SYNOPSIS]
+sfpwdnorm < in.rsf dip=dip.rsf > out.rsf n4=2 order=1 nj1=1 nj2=1 norm=y
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+int     | n4 | =2 |   | 	what to compute in 3-D. 0: in-line, 1: cross-line, 2: both 
+int     | nj1 | =1 |   | 	in-line aliasing 
+int     | nj2 | =1 |   | 	cross-line aliasing 
+bool    | norm | =y |  [y/n] | 	filter normalization 
+int     | order | =1 |   | 	accuracy 
+[DIRECTORY]
+user/lcasasan

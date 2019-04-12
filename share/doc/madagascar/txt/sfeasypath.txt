@@ -1,0 +1,5 @@
+Program sfeasypath | Finding the easy path 
+[SYNOPSIS]
+sfeasypath < in.rsf > out.rsf
+[DIRECTORY]
+user/zgeng

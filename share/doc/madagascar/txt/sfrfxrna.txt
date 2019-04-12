@@ -1,0 +1,15 @@
+Program sfrfxrna | Local prediction filter for complex numbers (n-dimensional). 
+[SYNOPSIS]
+sfrfxrna < dat.rsf > flt.rsf mask=mask.rsf pred=pre.rsf zshift=zshift.rsf zdata=zdata.rsf ns=1 niter=100 verb=y jump=1 ty=
+[PARAMETERS]
+int     | jump | =1 |   | 	jump 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	number of iterations 
+int     | ns | =1 |   | 	shifts of both sides npef=2*ns+1
+string  | pred | = |   | 	auxiliary output file name
+string  | ty | = |   | 	Prediction type: all=backward+forward
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+string  | zdata | = |   | 	auxiliary output file name
+string  | zshift | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/gchliu

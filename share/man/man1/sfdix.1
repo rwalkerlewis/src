@@ -1,0 +1,70 @@
+.TH sfdix 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdix \- Convert RMS to interval velocity using LS and shaping regularization. 
+.SH SYNOPSIS
+.B sfdix < vrms.rsf > vint.rsf weight=weight.rsf vrmsout=vout.rsf niter=100 rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B niter
+.B =100
+.R  	maximum number of iterations
+.TP
+.I string 
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I string 
+.B vrmsout
+.B =
+.R  	optionally, output predicted vrms (auxiliary output file name)
+.TP
+.I string 
+.B weight
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/vela/vscan
+.TP
+.I data/teapotdome/scdecon
+.TP
+.I data/teapotdome/vels
+.TP
+.I data/teapotdome/zomig
+.TP
+.I gallery/teapot/angmig
+.TP
+.I gallery/teapot/zomig
+.TP
+.I gee/prc/bob
+.TP
+.I geo384s/hw6/gazdag
+.TP
+.I geo384s/hw6/rtm
+.TP
+.I geo384w/hw6/blake
+.TP
+.I rsf/su/rsflab9
+.TP
+.I tccs/nmodeblend/bei
+.TP
+.I tccs/nmodeblend/synth
+.TP
+.I tccs/shape/beivc
+.TP
+.I tccs/t2dweak/alaska
+.TP
+.I tccs/t2dweak/field
+.TP
+.I tccs/time2depth/masha2
+.TP
+.I tccs/time2depth2/beinew
+.TP
+.I tccs/vscan/stack
+.SH SOURCE
+.I user/fomels/Mdix.c
+.SH VERSION
+2.1-git

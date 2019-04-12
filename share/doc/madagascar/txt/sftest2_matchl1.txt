@@ -1,0 +1,13 @@
+Program sftest2_matchl1 | L1 1D matched filter 
+[SYNOPSIS]
+sftest2_matchl1 < inp.rsf filt=filt.rsf > out.rsf mult=mult.rsf nb=3 verb=n niter=100 liter=nb perc=90.0
+[PARAMETERS]
+file    | filt | = |   | 	auxiliary output file name
+int     | liter | =nb |   | 	number of CG iterations 
+string  | mult | = |   | 	auxiliary input file name
+int     | nb | =3 |   | 	matched-filter order 
+int     | niter | =100 |   | 	number of POCS iterations 
+float   | perc | =90.0 |   | 	percentage for sharpening 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/lcasasan

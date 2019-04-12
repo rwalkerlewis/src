@@ -1,0 +1,19 @@
+Program sftrace2 | 2-D multiple arrivals by cell ray tracing. 
+[SYNOPSIS]
+sftrace2 < vel.rsf > outp.rsf size=size.rsf grid=grid.rsf na=60 da=3.1 a0=-90. maxsplit=10 minx=0.5*dx maxx=2.*dx mina=0.5*da maxa=2.*da vel=y order=3 lsint=n
+[PARAMETERS]
+float   | a0 | =-90. |   | 	initial angle (in degrees) 
+float   | da | =3.1 |   | 	angle increment (in degrees) 
+file    | grid | = |   | 	auxiliary output file name
+bool    | lsint | =n |  [y/n] | 	if use least-squares interpolation 
+float   | maxa | =2.*da |   | 	
+int     | maxsplit | =10 |   | 	maximum splitting for adaptive grid 
+float   | maxx | =2.*dx |   | 	
+float   | mina | =0.5*da |   | 	
+float   | minx | =0.5*dx |   | 	parameters for adaptive grid 
+int     | na | =60 |   | 	number of angles 
+int     | order | =3 |   | 	velocity interpolation order 
+file    | size | = |   | 	auxiliary output file name
+bool    | vel | =y |  [y/n] | 	y: velocity, n: slowness 
+[DIRECTORY]
+user/fomels

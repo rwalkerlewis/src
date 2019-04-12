@@ -1,0 +1,10 @@
+Program sfimpl1 | 1-D anisotropic diffusion.
+[SYNOPSIS]
+sfimpl1 < in.rsf > out.rsf rect1= tau=0.1 pclip=50. up=n
+[PARAMETERS]
+float   | pclip | =50. |   | 	percentage clip for the gradient 
+float   | rect1 | = |   | 	smoothing radius 
+float   | tau | =0.1 |   | 	smoothing time 
+bool    | up | =n |  [y/n] | 	smoothing style 
+[DIRECTORY]
+system/generic

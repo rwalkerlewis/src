@@ -1,0 +1,15 @@
+Program sfstfchain2 | Find a symmetric chain of Fourier weighting and scaling 
+[SYNOPSIS]
+sfstfchain2 < src.rsf > wht.rsf target=tgt.rsf fweight=fwht.rsf match=mch.rsf rect1=1 rect2=1 frect1=1 frect2=1 niter=0 liter=50
+[PARAMETERS]
+int     | frect1 | =1 |   | 	
+int     | frect2 | =1 |   | 	smoothing in frequency 
+file    | fweight | = |   | 	auxiliary output file name
+int     | liter | =50 |   | 	number of linear iterations 
+file    | match | = |   | 	auxiliary output file name
+int     | niter | =0 |   | 	number of iterations 
+int     | rect1 | =1 |   | 	
+int     | rect2 | =1 |   | 	smoothing in time 
+file    | target | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

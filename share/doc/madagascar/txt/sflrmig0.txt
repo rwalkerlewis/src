@@ -1,0 +1,8 @@
+Program sflrmig0 | Fast zero-offset time migration 
+[SYNOPSIS]
+sflrmig0 < inp.rsf > mig.rsf left=left.rsf right=right.rsf
+[PARAMETERS]
+file    | left | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

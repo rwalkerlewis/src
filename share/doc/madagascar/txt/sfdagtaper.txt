@@ -1,0 +1,7 @@
+Program sfdagtaper | Edge tapering for dip-angle gathers
+[SYNOPSIS]
+sfdagtaper < dataFile.rsf > outFile.rsf len=5.f
+[PARAMETERS]
+float   | len | =5.f |   | 	length of the taper function (in degree) 
+[DIRECTORY]
+user/aklokov

@@ -1,0 +1,13 @@
+Program sfgroll | Add linear-chirp ground-roll noise to the data 
+[SYNOPSIS]
+sfgroll < in.rsf > out.rsf begf=10. endf=5. theta=0.2 alpha=0.1 beg1=0. beg2=0. rep=n
+[PARAMETERS]
+float   | alpha | =0.1 |   | 	width parameter of ground roll 
+float   | beg1 | =0. |   | 	radial beginning point at first axis 
+float   | beg2 | =0. |   | 	radial beginning point at second axis 
+float   | begf | =10. |   | 	beginning frequency of ground roll 
+float   | endf | =5. |   | 	ending frequency of ground roll 
+bool    | rep | =n |  [y/n] | 	if y, replace data with noise 
+float   | theta | =0.2 |   | 	direction of central ground roll 
+[DIRECTORY]
+user/yliu

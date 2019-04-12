@@ -1,0 +1,8 @@
+Program sfgenmask | beg
+[SYNOPSIS]
+sfgenmask < dataa.rsf > log_eo.rsf beg= end=
+[PARAMETERS]
+int     | beg | = |   | 	
+int     | end | = |   | 	
+[DIRECTORY]
+user/sbader

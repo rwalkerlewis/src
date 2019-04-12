@@ -1,0 +1,9 @@
+Program sfdagapex | None
+[SYNOPSIS]
+sfdagapex < gathers_in.rsf dip=dips_in.rsf > fresnel_out.rsf mask= gray=
+[PARAMETERS]
+string  | dip | = |   | 	Image Dips (deg)(auxiliary input file name)
+float   | gray | = |   | 	
+float   | mask | = |   | 	
+[DIRECTORY]
+user/luke

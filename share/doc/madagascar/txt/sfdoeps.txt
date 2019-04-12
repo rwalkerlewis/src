@@ -1,0 +1,11 @@
+Program sfdoeps | 2D dip-oriented edge-preserving smoothing (DOEPS). 
+[SYNOPSIS]
+sfdoeps < in.rsf > out.rsf dip=dip.rsf nfw= nw= boundary=y verb=n
+[PARAMETERS]
+bool    | boundary | =y |  [y/n] | 	if y, boundary is data, whereas zero
+file    | dip | = |   | 	auxiliary input file name
+int     | nfw | = |   | 	filter-window length (positive and odd integer) 
+int     | nw | = |   | 	data-window length (positive and odd integer) 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

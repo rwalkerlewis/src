@@ -1,0 +1,10 @@
+Program sfdtw-apply | 
+[SYNOPSIS]
+sfdtw-apply < _in.rsf shifts=_shifts.rsf > _out.rsf
+[COMMENTS]
+program applies integer shifts (stored as floats!) to warp a matching trace.  Can match 1d shifts to a 1,2, or 3d volume , or 2d shifts to a 2, or 3 d volume, or 3d shifts to a 3d volume 
+
+[PARAMETERS]
+string  | shifts | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/luke

@@ -1,0 +1,9 @@
+Program sfswtdenoise | Denoising using stationary wavelet transform. 
+[SYNOPSIS]
+sfswtdenoise < in.rsf > out.rsf ratio=1. len_filter=2 n_layer=2
+[PARAMETERS]
+int     | len_filter | =2 |   | 	filter length 
+int     | n_layer | =2 |   | 	number of wavelet transform layers 
+float   | ratio | =1. |   | 	ratio for denoising 
+[DIRECTORY]
+system/generic

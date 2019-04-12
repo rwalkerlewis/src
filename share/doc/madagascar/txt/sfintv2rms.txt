@@ -1,0 +1,5 @@
+Program sfintv2rms | None
+[SYNOPSIS]
+sfintv2rms < in.rsf > out.rsf
+[DIRECTORY]
+user/zdzhang

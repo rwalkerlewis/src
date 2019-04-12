@@ -1,0 +1,44 @@
+.TH sft2warp 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sft2warp \- Time-squared warping. 
+.SH SYNOPSIS
+.B sft2warp < in.rsf > out.rsf inv=n adj=n pad=n1 eps=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	inversion flag
+.TP
+.I int    
+.B pad
+.B =n1
+.R  	output time samples
+.SH USED IN
+.TP
+.I tccs/ovc/nankai
+.TP
+.I tccs/ovc/psovc
+.TP
+.I tccs/ovc/toy
+.TP
+.I tccs/pi/barrolka
+.TP
+.I tccs/pi/bei
+.TP
+.I tccs/pi/simple-model
+.SH SOURCE
+.I system/generic/Mt2warp.c
+.SH VERSION
+2.1-git

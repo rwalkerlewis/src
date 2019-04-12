@@ -1,0 +1,9 @@
+Program sfcfftwave1in | 1-D complex lowrank FFT wave extrapolation using complex to complex fft BY INJECTION
+[SYNOPSIS]
+sfcfftwave1in < Fw.rsf > Fo.rsf refl=Fr.rsf left=left.rsf right=right.rsf
+[PARAMETERS]
+file    | left | = |   | 	auxiliary input file name
+file    | refl | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jsun

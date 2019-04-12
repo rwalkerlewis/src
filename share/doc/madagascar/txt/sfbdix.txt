@@ -1,0 +1,14 @@
+Program sfbdix | Convert RMS to interval velocity using LS and shaping regularization.
+[SYNOPSIS]
+sfbdix < vrms.rsf > vint.rsf weight=weight.rsf block=block.rsf vrmsout=vout.rsf perc=50.0 niter=100 rect1= rect2= ...
+[COMMENTS]
+rectN defines the size of the smoothing stencil in N-th dimension.
+
+[PARAMETERS]
+file    | block | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	maximum number of iterations 
+float   | perc | =50.0 |   | 	percentage for sharpening 
+string  | vrmsout | = |   | 	optionally, output predicted vrms (auxiliary output file name)
+file    | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

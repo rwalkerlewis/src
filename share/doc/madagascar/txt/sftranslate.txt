@@ -1,0 +1,13 @@
+Program sftranslate | 
+[SYNOPSIS]
+sftranslate < _in.rsf > _out.rsf trans=_trans.rsf adj=n x1=0. x2=0.
+[COMMENTS]
+program translates a 2D image
+
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y reverse translation, if n, translation 
+string  | trans | = |   | 	auxiliary input file name
+float   | x1 | =0. |   | 	fixed translation in first dimension 
+float   | x2 | =0. |   | 	fixed translation in second dimension 
+[DIRECTORY]
+user/luke

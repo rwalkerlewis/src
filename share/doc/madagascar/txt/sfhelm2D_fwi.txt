@@ -1,0 +1,16 @@
+Program sfhelm2D_fwi | 2D Frequency Domain Full Waveform Inversion. 
+[SYNOPSIS]
+sfhelm2D_fwi < in.rsf > out.rsf receiver=receiver.rsf source=source.rsf record=record.rsf dip=dip.rsf niter=0 uts=0 npml=20 precond=n radius= order=
+[PARAMETERS]
+string  | dip | = |   | 	auxiliary input file name
+int     | niter | =0 |   | 	
+int     | npml | =20 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+bool    | precond | =n |  [y/n] | 	
+int     | radius | = |   | 	
+string  | receiver | = |   | 	auxiliary input file name
+string  | record | = |   | 	auxiliary input file name
+string  | source | = |   | 	auxiliary input file name
+int     | uts | =0 |   | 	
+[DIRECTORY]
+user/hzhu

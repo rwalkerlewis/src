@@ -1,0 +1,59 @@
+Program sfpipwdmig2 | Chain of Path Integral, Plane-Wave Destruction and Kirchhoff migration (based on sfmig2)
+[SYNOPSIS]
+sfpipwdmig2 < inp.rsf > out.rsf vel=fvel.rsf dip=dip.rsf adj=n sm=y domod=y pi=y verb=n doomp=y apt=nx angle=90.0 hd=y ps=y dd=y half=y rho=1.-1./nt v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt order=1 nj1=1 antialias=
+[COMMENTS]
+
+works only for zero offset
+
+make sure nh = 1 dh = 1.0 h0 = 0.0 offset file is not used
+
+there are flags to disable PWD (Plane-Wave Destruction), P (Path-Integral Filter) and L (Kirchhoff modelling/migration)
+
+no regularization
+
+can be expressed for forward as: data = P PWD L ( reflections + diffractions ) or as a matrix
+
+.                     | reflections  |
+| P PWD L   P PWD L | |              | = | data |           
+.                     | diffractions |           
+
+can be expressed for adjoint as:
+
+adjoint reflections = L^T PWD^T P^T data
+
+adjoint diffractions = L^T PWD^T P^T data or as a matrix
+
+| reflections  |   | L^T PWD^T P^T |
+|              | = |               | | data |
+| diffractions |   | L^T PWD^T P^T |
+
+
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+float   | angle | =90.0 |   | 	angle aperture 
+string  | antialias | = |   | 	antialiasing type [triangle,flat,steep,none] 
+int     | apt | =nx |   | 	integral aperture 
+bool    | dd | =y |  [y/n] | 	differentiation in the data domain 
+file    | dip | = |   | 	auxiliary input file name
+bool    | domod | =y |  [y/n] | 	if perform modeling via Kirchhoff (if disabled -> chain = P PWD) 
+bool    | doomp | =y |  [y/n] | 	OMP flag - currently hard-coded to y 
+float   | eps | =0.001 |   | 	damper for pi 
+float   | epst2 | =0.001 |   | 	damper for t2warp 
+bool    | half | =y |  [y/n] | 	if y, the third axis is half-offset instead of full offset 
+bool    | hd | =y |  [y/n] | 	half derivative 
+int     | nj1 | =1 |   | 	antialiasing 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+int     | pad | =nt |   | 	output time samples 
+float   | passthr | =0.001 |   | 	threshold for tail elimination 
+bool    | pi | =y |  [y/n] | 	if perform Path-Integral filtering (if disabled -> chain = PWD L) 
+bool    | ps | =y |  [y/n] | 	amplitude correction 
+float   | rho | =1.-1./nt |   | 	leaky integration constant 
+bool    | sm | =y |  [y/n] | 	if perform Plane-Wave destruction (if disabled -> chain = P L) 
+float   | v_1 | = |   | 	no pass velocity 
+float   | v_2 | = |   | 	first pass velocity 
+float   | v_3 | = |   | 	second pass velocity 
+float   | v_4 | = |   | 	no pass velocity 
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbose flag 
+[DIRECTORY]
+user/dmerzlikin

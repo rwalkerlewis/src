@@ -1,0 +1,13 @@
+Program sffermatrecursion | 2D traveltime derivatives computation with the recursion from Fermat's principle (Sripanich and Fomel, 2017)
+[SYNOPSIS]
+sffermatrecursion < refl.rsf slow=slow.rsf vnmosq=vnmo.rsf t0sum=t0.rsf dip=dipf.rsf curv=curvf.rsf > vnmohet.rsf dipcurv=n order=3
+[PARAMETERS]
+file    | curv | = |   | 	auxiliary input file name
+file    | dip | = |   | 	auxiliary input file name
+bool    | dipcurv | =n |  [y/n] | 	if get dip/curvature from separate files 
+int     | order | =3 |   | 	Interpolation order
+file    | slow | = |   | 	auxiliary input file name
+file    | t0sum | = |   | 	auxiliary input file name
+file    | vnmosq | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zone

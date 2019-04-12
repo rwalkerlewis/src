@@ -1,0 +1,7 @@
+Program sfupsamp1 | 1-D linear interpolation 
+[SYNOPSIS]
+sfupsamp1 < in.rsf > out.rsf scale=
+[PARAMETERS]
+int     | scale | = |   | 	
+[DIRECTORY]
+user/zhiguang

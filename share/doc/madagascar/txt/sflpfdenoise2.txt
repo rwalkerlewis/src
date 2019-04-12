@@ -1,0 +1,13 @@
+Program sflpfdenoise2 | 2D denoising using edge-preserving local polynomial fitting (ELPF). 
+[SYNOPSIS]
+sflpfdenoise2 < in.rsf > out.rsf dip=dip.rsf nfw= nw= rect= boundary=y niter=100 verb=n
+[PARAMETERS]
+bool    | boundary | =y |  [y/n] | 	if y, boundary is data, whereas zero
+file    | dip | = |   | 	auxiliary input file name
+int     | nfw | = |   | 	filter-window length (positive and odd integer) 
+int     | niter | =100 |   | 	number of iterations 
+int     | nw | = |   | 	data-window length (positive and odd integer) 
+int     | rect | = |   | 	local smoothing radius 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

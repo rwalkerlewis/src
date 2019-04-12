@@ -1,0 +1,11 @@
+Program sfcflow | Fast mean-curvature flow. 
+[SYNOPSIS]
+sfcflow < in.rsf > out.rsf rect=3 order=3 tol=0.1 niter=100 band=1.
+[PARAMETERS]
+float   | band | =1. |   | 	narrow band 
+int     | niter | =100 |   | 	number of iterations 
+int     | order | =3 |   | 	interpolation order 
+int     | rect | =3 |   | 	smoothing radius 
+float   | tol | =0.1 |   | 	error tolerance 
+[DIRECTORY]
+user/fomels

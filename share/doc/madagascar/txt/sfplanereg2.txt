@@ -1,0 +1,13 @@
+Program sfplanereg2 | Data regularization in 2-D using plane-wave destruction. 
+[SYNOPSIS]
+sfplanereg2 < in.rsf > out.rsf dip=dip.rsf interp=2 niter=100 order=1 verb=n eps=0.01 head=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization parameter 
+string  | head | = |   | 	
+int     | interp | =2 |   | 	interpolation length 
+int     | niter | =100 |   | 	number of iterations 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/pwd

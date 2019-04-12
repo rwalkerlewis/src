@@ -1,0 +1,7 @@
+Program sfmpihello | MPI example, summation of vectors c = a + b 
+[SYNOPSIS]
+sfmpihello b=bin.rsf
+[PARAMETERS]
+file    | b | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/bash

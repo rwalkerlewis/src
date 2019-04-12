@@ -1,0 +1,35 @@
+Program sflrtti2de | 2-D two-components wavefield modeling using original elastic displacement wave equation in TTI media by lowrank method. 
+[SYNOPSIS]
+sflrtti2de < Fvp0.rsf pleft=Fpl.rsf pright=Fpr.rsf sleft=Fsl.rsf sright=Fsr.rsf > Fo1.rsf Elasticz=Fo2.rsf Pwavez=Fpz.rsf Pwavex=Fpx.rsf Swavez=Fsz.rsf Swavex=Fsx.rsf nt=301 dt=0.001 abc=n nbt= nbb=nbt nbl=nbt nbr=nbt ct= cb=ct cl=ct cr=ct isx=nx/2 isz=nz/2 t0=0.04 f0=30.0 A=1.0 cmplx=n sep=n pad1=1 src=1
+[PARAMETERS]
+float   | A | =1.0 |   | 	wavelet amplitude 
+file    | Elasticz | = |   | 	auxiliary output file name
+string  | Pwavex | = |   | 	auxiliary output file name
+string  | Pwavez | = |   | 	auxiliary output file name
+string  | Swavex | = |   | 	auxiliary output file name
+string  | Swavez | = |   | 	auxiliary output file name
+bool    | abc | =n |  [y/n] | 	absorbing flag 
+float   | cb | =ct |   | 	
+float   | cl | =ct |   | 	
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+float   | cr | =ct |   | 	
+float   | ct | = |   | 	
+float   | dt | =0.001 |   | 	absorbing boundary condition
+float   | f0 | =30.0 |   | 	wavelet peak freq 
+int     | isx | =nx/2 |   | 	
+int     | isz | =nz/2 |   | 	
+int     | nbb | =nbt |   | 	
+int     | nbl | =nbt |   | 	
+int     | nbr | =nbt |   | 	
+int     | nbt | = |   | 	
+int     | nt | =301 |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | pleft | = |   | 	auxiliary input file name
+file    | pright | = |   | 	auxiliary input file name
+bool    | sep | =n |  [y/n] | 	output separated wavefields 
+file    | sleft | = |   | 	auxiliary input file name
+int     | src | =1 |   | 	source mode: 1 - exploding force; 2 - equil-energy force 
+file    | sright | = |   | 	auxiliary input file name
+float   | t0 | =0.04 |   | 	wavelet time lag 
+[DIRECTORY]
+user/jsun

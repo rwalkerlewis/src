@@ -1,0 +1,18 @@
+Program sfspitzbl | Missing data interpolation in 2-D using F-X Prediction Error Filters
+[SYNOPSIS]
+sfspitzbl < in.rsf > out.rsf order=3 ntraces=1 f1=0.0 f2=1.0 verb=n norm=y
+[COMMENTS]
+based on Seismic trace interpolation in the F-X domain
+S.Spitz Geophysics 56, 785(1991). 
+This implementation is for bandlimited [f1 f2] signals
+
+
+[PARAMETERS]
+float   | f1 | =0.0 |   | 	lower  frequency in band limited signal >= 0.0  
+float   | f2 | =1.0 |   | 	higher frequency in band limited signal <= 1.0  (normalized nyquist)
+bool    | norm | =y |  [y/n] | 	normalization flag 
+int     | ntraces | =1 |   | 	number of traces to be interpolated 
+int     | order | =3 |   | 	linear PEF order
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/lcasasan

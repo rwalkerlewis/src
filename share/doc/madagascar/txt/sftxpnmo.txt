@@ -1,0 +1,10 @@
+Program sftxpnmo | Normal moveout in TXP domain. 
+[SYNOPSIS]
+sftxpnmo < cmp.rsf velocity=velocity.rsf > nmod.rsf str=0.5 mute=12 extend=4
+[PARAMETERS]
+int     | extend | =4 |   | 	trace extension 
+int     | mute | =12 |   | 	mute zone 
+float   | str | =0.5 |   | 	maximum stretch allowed 
+file    | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

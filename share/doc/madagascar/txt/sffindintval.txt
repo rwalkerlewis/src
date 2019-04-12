@@ -1,0 +1,9 @@
+Program sffindintval | Find a certain integer value position in an array [n1]
+[SYNOPSIS]
+sffindintval < in.rsf > out.rsf val= val2=val type=
+[PARAMETERS]
+string  | type | = |   | 	type of comparison eq (=) leq (<=) geq(>=) 
+int     | val | = |   | 	
+int     | val2 | =val |   | 	
+[DIRECTORY]
+user/lcasasan

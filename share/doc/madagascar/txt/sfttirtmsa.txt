@@ -1,0 +1,35 @@
+Program sfttirtmsa | 2-D TTI FFD RTM: MPI + OMP
+[SYNOPSIS]
+sfttirtmsa geo=geo.rsf velx=velx.rsf velz=velz.rsf yita=yita.rsf source=source.rsf seta=seta.rsf opt=y de=y dt= nt= isz= irz=isz jr=1 jm=20 tskip=1000 sht=0 nr= err=0.00001 nbt=102 nbb=102 nbl=128 nbr=127 ct=0.02 cb=0.02 cl=0.02 cr=0.02 ratio=2.0 left=nr*3/2*jr right=nr/2*jr
+[PARAMETERS]
+float   | cb | =0.02 |   | 	decaying parameter
+float   | cl | =0.02 |   | 	decaying parameter
+float   | cr | =0.02 |   | 	decaying parameter
+float   | ct | =0.02 |   | 	decaying parameter
+bool    | de | =y |  [y/n] | 	in angle
+float   | dt | = |   | 	time step size
+float   | err | =0.00001 |   | 	error control
+file    | geo | = |   | 	auxiliary input file name
+int     | irz | =isz |   | 	receiver depth
+int     | isz | = |   | 	source depth
+int     | jm | =20 |   | 	snap sampling
+int     | jr | =1 |   | 	receiver sampling
+int     | left | =nr*3/2*jr |   | 	left
+int     | nbb | =102 |   | 	boundary nodes
+int     | nbl | =128 |   | 	boundary nodes
+int     | nbr | =127 |   | 	boundary nodes
+int     | nbt | =102 |   | 	boundary nodes
+int     | nr | = |   | 	streamer total length
+int     | nt | = |   | 	total time length
+bool    | opt | =y |  [y/n] | 	optimal padding
+float   | ratio | =2.0 |   | 	v0/vmax
+int     | right | =nr/2*jr |   | 	right
+file    | seta | = |   | 	auxiliary input file name
+int     | sht | =0 |   | 	time shift
+file    | source | = |   | 	auxiliary input file name
+int     | tskip | =1000 |   | 	time skipped
+file    | velx | = |   | 	auxiliary input file name
+file    | velz | = |   | 	auxiliary input file name
+file    | yita | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

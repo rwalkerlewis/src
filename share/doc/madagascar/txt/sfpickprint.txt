@@ -1,0 +1,11 @@
+Program sfpickprint | Write predictive painting result into a txt file 
+[SYNOPSIS]
+sfpickprint < in.rsf pick=pick.rsf npick=npick.rsf semblance=semblance.rsf verb=y cut=0.
+[PARAMETERS]
+float   | cut | =0. |   | 	muting value in boundary 
+file    | npick | = |   | 	auxiliary input file name
+file    | pick | = |   | 	auxiliary input file name
+file    | semblance | = |   | 	auxiliary input file name
+bool    | verb | =y |  [y/n] | 	if y, print icdp/ncdp during operation 
+[DIRECTORY]
+user/zhiguang

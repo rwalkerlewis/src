@@ -1,0 +1,23 @@
+Program sfnnshapet | 2-D irregular data interpolation of traces using natural neighbors and shaping regularization. 
+[SYNOPSIS]
+sfnnshapet < in.rsf > out.rsf coord=coord.rsf pattern=pattern.rsf weight=weight.rsf n1= n2= d1=1. d2=1. o1=0. o2=0. niter=10 niter=niter eps=1.0e-6 rect1=1 rect2=1 rect3=1 nw=2 sym=n tol=1e-3
+[PARAMETERS]
+file    | coord | = |   | 	auxiliary input file name
+float   | d1 | =1. |   | 	
+float   | d2 | =1. |   | 	
+float   | eps | =1.0e-6 |   | 	division parameter 
+int     | n1 | = |   | 	
+int     | n2 | = |   | 	
+int     | niter | =niter |   | 	GMRES memory 
+int     | nw | =2 |   | 	interpolator size 
+float   | o1 | =0. |   | 	
+float   | o2 | =0. |   | 	
+string  | pattern | = |   | 	pattern file for output dimensions (auxiliary input file name)
+int     | rect1 | =1 |   | 	
+int     | rect2 | =1 |   | 	
+int     | rect3 | =1 |   | 	smoothing regularization 
+bool    | sym | =n |  [y/n] | 	if y, use symmetric shaping 
+float   | tol | =1e-3 |   | 	tolerance for stopping iteration 
+string  | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

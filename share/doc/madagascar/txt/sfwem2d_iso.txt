@@ -1,0 +1,17 @@
+Program sfwem2d_iso | 2D ISOTROPIC wave-equation finite-difference migration 
+[SYNOPSIS]
+sfwem2d_iso vel=Fvel.rsf < Fxig.rsf swf=Fswf.rsf rwf=Frwf.rsf > Fxigo.rsf swfout=Fswfo.rsf rwfout=Frwfo.rsf nxtap=40 verbose=n adj=y add=n wantwf=n nh=0
+[PARAMETERS]
+bool    | add | =n |  [y/n] | 	
+bool    | adj | =y |  [y/n] | 	ADJOINT flag 
+int     | nh | =0 |   | 	
+int     | nxtap | =40 |   | 	TAPER size 
+file    | rwf | = |   | 	auxiliary input file name
+file    | rwfout | = |   | 	auxiliary output file name
+file    | swf | = |   | 	auxiliary input file name
+file    | swfout | = |   | 	auxiliary output file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verbose | =n |  [y/n] | 	VERBOSITY flag 
+bool    | wantwf | =n |  [y/n] | 	Want output wavefields 
+[DIRECTORY]
+user/jeff

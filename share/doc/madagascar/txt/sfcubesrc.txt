@@ -1,0 +1,7 @@
+Program sfcubesrc | Simple 2-D wave propagation with multi-threaded fftw3 
+[SYNOPSIS]
+sfcubesrc < Fw.rsf > Fo.rsf ref=Fr.rsf
+[PARAMETERS]
+file    | ref | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jsun

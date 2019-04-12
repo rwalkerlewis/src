@@ -1,0 +1,9 @@
+Program sftimeshift | Apply variable time shifts using plane-wave construction. 
+[SYNOPSIS]
+sftimeshift < inp.rsf > out.rsf dip=dip.rsf eps=0.01 order=1
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+int     | order | =1 |   | 	accuracy order 
+[DIRECTORY]
+user/pwd

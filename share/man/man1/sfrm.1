@@ -1,0 +1,37 @@
+.TH sfrm 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrm \- Remove RSF files together with their data.
+.SH SYNOPSIS
+.B sfrm file1.rsf [file2.rsf ...] [-i] [-v] [-f] 
+.SH COMMENTS
+Mimics the standard Unix rm command.
+
+See also: sfmv, sfcp.
+
+.SH USED IN
+.TP
+.I gee/mda/mad
+.TP
+.I geostats/simulate/rfield
+.TP
+.I geostats/spatial_stats/correlogram
+.TP
+.I geostats/spatial_stats/covariance
+.TP
+.I geostats/spatial_stats/gr_variogram
+.TP
+.I geostats/spatial_stats/variogram
+.TP
+.I sep/fmsec/cvel
+.TP
+.I swag/tau/iso
+.TP
+.I tccs/attr/vecta
+.TP
+.I tccs/ltft/vecta
+.SH SOURCE
+.I system/main/rm.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfrm
+.SH VERSION
+2.1-git

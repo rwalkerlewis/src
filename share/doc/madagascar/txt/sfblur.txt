@@ -1,0 +1,16 @@
+Program sfblur | 2-D blurring and deblurring 
+[SYNOPSIS]
+sfblur < in.rsf > out.rsf adj=n inv=n spk=y niter=100 eps=1. rect= rect2=1.0 repeat=1 ncycle=1 perc=50.0
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+float   | eps | =1. |   | 	scaling 
+bool    | inv | =n |  [y/n] | 	inversion flag 
+int     | ncycle | =1 |   | 	number of nonlinear cycles 
+int     | niter | =100 |   | 	maximum number of iterations 
+float   | perc | =50.0 |   | 	percentage for sharpening 
+int     | rect | = |   | 	blurring radius 
+float   | rect2 | =1.0 |   | 	smoothing radius 
+int     | repeat | =1 |   | 	repeat smoothing 
+bool    | spk | =y |  [y/n] | 	spiky inversion 
+[DIRECTORY]
+user/fomels

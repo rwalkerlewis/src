@@ -1,0 +1,25 @@
+Program sfsgfdewe2d | 2-D staggered-grid elastic time-domain FD modeling 
+[SYNOPSIS]
+sfsgfdewe2d datax=dataxf.rsf dataz=datazf.rsf vp=vpf.rsf vs=vsf.rsf rho=rhof.rsf nshot=1 dshot=1 nx=nvx nabs=50 sx_ini= sz_ini=5 hsz=5 tmax= dt= peak=20
+[COMMENTS]
+
+10th order in space, 2th order in time. 
+
+[PARAMETERS]
+file    | datax | = |   | 	auxiliary output file name
+file    | dataz | = |   | 	auxiliary output file name
+int     | dshot | =1 |   | 	shot interval, multiple of receiver intervals 
+float   | dt | = |   | 	time interval 
+int     | hsz | =5 |   | 	vertical position of recerivers 
+int     | nabs | =50 |   | 	width of padded boundary 
+int     | nshot | =1 |   | 	number of shots 
+int     | nx | =nvx |   | 	coverage area for each shot 
+float   | peak | =20 |   | 	peak frequency for Ricker wavelet (in Hz) 
+file    | rho | = |   | 	auxiliary input file name
+int     | sx_ini | = |   | 	horizontal position of shot point 
+int     | sz_ini | =5 |   | 	vertical position of shot point 
+float   | tmax | = |   | 	record length 
+file    | vp | = |   | 	auxiliary input file name
+file    | vs | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

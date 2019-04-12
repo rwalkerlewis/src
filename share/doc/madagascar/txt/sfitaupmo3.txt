@@ -1,0 +1,15 @@
+Program sfitaupmo3 | 3-D Inverse taup normal moveout.
+[SYNOPSIS]
+sfitaupmo3 < cmp.rsf > nmod.rsf velocity=vel.rsf eps=0.01 slow=n interval=y extend=8
+[COMMENTS]
+
+velocity file contains velocity squared with n2=3 (vx,vy,vxy)
+
+[PARAMETERS]
+float   | eps | =0.01 |   | 	stretch regularization 
+int     | extend | =8 |   | 	trace extension 
+bool    | interval | =y |  [y/n] | 	use interval velocity 
+bool    | slow | =n |  [y/n] | 	slowness [y] or velocity [n] squared
+file    | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

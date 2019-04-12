@@ -1,0 +1,9 @@
+Program sfxcor3d | OpenMP time- or freq-domain reversed cross-correlation on the fourth axes, read entire cube into memory 
+[SYNOPSIS]
+sfxcor3d < Fs.rsf uu=Fr.rsf > Fi.rsf verb=n rev=n
+[PARAMETERS]
+bool    | rev | =n |  [y/n] | 	reverse the fourth axis of uu 
+file    | uu | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/jsun

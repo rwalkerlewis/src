@@ -1,0 +1,9 @@
+Program sftaupfit | Fitting tau-p approximations 
+[SYNOPSIS]
+sftaupfit < in.rsf coef=coef.rsf > out.rsf fit=fit.rsf type=
+[PARAMETERS]
+file    | coef | = |   | 	auxiliary input file name
+file    | fit | = |   | 	auxiliary output file name
+string  | type | = |   | 	Type of approximation (iso,vti) 
+[DIRECTORY]
+user/fomels

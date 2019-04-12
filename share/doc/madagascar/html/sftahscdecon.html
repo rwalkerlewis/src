@@ -1,0 +1,183 @@
+
+    <!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <html><head><title>RSF: sftahscdecon</title>
+    <style type="text/css"><!--
+    TT { font-family: lucidatypewriter, lucida console, courier }
+    --></style></head><body bgcolor="#f0f0f8">
+    
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#7799ee">
+    <td valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sftahscdecon</strong></big></big> (2.1-git)</font></td
+    ><td align=right valign=bottom
+    ><font color="#ffffff" face="helvetica, arial"><a href="./index.html">index</a><br><a href="https://github.com/ahay/src/blob/madagascar-2.1-git/user/karl/Mtahscdecon.c">user/karl/Mtahscdecon.c</a></font></td></tr></table>
+    Trace And Header Surface Consistant Decon.
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#aa55cc">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">sftahscdecon < in.rsf > out.rsf wiener=wien.rsf key= verbose=1 minlag= maxlag= pnoise=0.001</td></tr></table><br>
+tah is the abbreviation of Trace And Header.  Madagascar programs <br>
+that begin with sftah are a designed to:<br>
+1- read trace and headers from separate rsf files and write them to <br>
+standard output (ie sftahread)<br>
+2- filter programs that read and write standard input/output and <br>
+process the tah data (eg sftahnmo, sftahstack)<br>
+3- read tah data from standard input and write separate rsf files for <br>
+the trace and headers data (ie sftahwrite)<br>
+<br>
+These programs allow Seismic Unix (su) like processing in Madagascar.  <br>
+Some programs have su like names.<br>
+<br>
+Some programs in this suite are sftahread, sftahgethw, ftahhdrmath, <br>
+and sftahwrite.<br>
+<br>
+The sftahsfdecon program applies surface consistant decon.<br>
+<br>
+EXAMPLE:<br>
+<br>
+sftahsort \<br>
+input=npr3_field.rsf \<br>
+sort="sx,sy" \<br>
+| sftahgain  \<br>
+tpow=2 \<br>
+| sftahmute \<br>
+tmute=0.0,3.0 \<br>
+xmute=0,18000  \<br>
+| sftahscdecon \<br>
+key="sx,sy" \<br>
+length=140 \<br>
+pnoise=.001 \<br>
+verbose=0  \<br>
+|  sftahwrite output=shotdecon.rsf \<br>
+mode=seq \<br>
+>/dev/null<br>
+<br>
+sftahsort \<br>
+input=shotdecon.rsf \<br>
+sort="gx,gy"<br>
+| sftahscdecon \<br>
+key="gx,gy" \<br>
+length=140 \<br>
+pmoise=.001 \<br>
+verbose=0  \<br>
+|  sftahwrite output=s-g-decon.rsf \<br>
+mode=seq \<br>
+>/dev/null<br>
+<br>
+<br>
+Traces are in the file npr_field.rsf anf headers in the npr_field_hdr.rsf <br>
+file.  The headers are merged with the trace amplitudes and the tah data <br>
+sent down the pipe for spreading loss correction (sftahgain tpow=2),<br>
+a pre decon mute (sftahmute) and shot consistant decon.  Data is written<br>
+to the output file shotdecon.rsf and headers to shotdecon_hdr.rsf.  In<br>
+the next sequence the data is sorted in to common receiver domain so <br>
+receiver consistent decon can be applied.<br>
+<br>
+
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ee77aa">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Parameters</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>string  <strong>key=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+     list of keys to watch to determine traces in a gather that <br>
+     will have a single decon operator applies.  Typically data<br>
+     is sorted by gx,gy then sftahscdecon run with key="gx,gy".<br>
+     Then a second pass of scdecon is first sorting by sx,sy and <br>
+     running sftahscdecon with key="sx,sy".<br>
+   ([numkeys])<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>maxlag=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	last lag of prediction filter (sec) <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>minlag=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	first lag of prediction filter (sec) <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>pnoise=0.001</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	relative additive noise level <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>verbose=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+     flag to control amount of print<br>
+     0 terse, 1 informative, 2 chatty, 3 debug<br>
+  <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>string  <strong>wiener=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	file to output Wiener filter.  never tested!!! (auxiliary output file name)<br>
+</font></td></tr></table>
+    
+</td></tr></table>
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#eeaa77">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Used In</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ffd8c8">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#000000" face="helvetica, arial"><big><strong>DATA</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ffd8c8"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+                        <a href="book/data/teapotdome/scdecon.html">teapotdome/scdecon</a><br>
+                        
+                        <a href="book/data/teapotdome/vels.html">teapotdome/vels</a><br>
+                        
+                        <a href="book/data/teapotdome/zomig.html">teapotdome/zomig</a><br>
+                        </td></tr></table></td></tr></table>
+    </body></html>

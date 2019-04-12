@@ -1,0 +1,16 @@
+Program sfewedc3p | None
+[SYNOPSIS]
+sfewedc3p < c11.rsf c14=c14.rsf theta=q1.rsf verb=false tilt=false tric=false seed=time(NULL eps=1.e-6 npk=20 nb=0 dt=1.e-3
+[PARAMETERS]
+file    | c14 | = |   | 	auxiliary input file name
+        | dt | =1.e-3 |   | 	time step size
+        | eps | =1.e-6 |   | 	tolerance
+        | nb | =0 |   | 	boundary padding
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+file    | theta | = |   | 	auxiliary input file name
+        | tilt | =false |   | 	tilting of TTI
+        | tric | =false |   | 	triclinic anisotropy
+        | verb | =false |   | 	verbosity flag
+[DIRECTORY]
+user/jsun

@@ -1,0 +1,19 @@
+Program sfvelinv | Velocity transform for generating velocity spectra and its corresponding hyperbolic modeling. 
+[SYNOPSIS]
+sfvelinv < cmp.rsf > vtr.rsf adj=n niter=0 ns=nx ds=0.001 os=0.00000001 nx=ns dx=10. ox=0. robust=n perc=90. nliter=10 eps=1.
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adj = 0: from velocity-domain(t,s) to cmp-gather(t,x)
+       adj = 1: from cmp-gather(t,x) to velocity-domain(t,s) 
+float   | ds | =0.001 |   | 	slowness sampling 
+float   | dx | =10. |   | 	offset sampling 
+float   | eps | =1. |   | 	regularization parameter for robust inversion 
+int     | niter | =0 |   | 	number of iterations (invoked if adj=y) 
+int     | nliter | =10 |   | 	number of POCS iterations for robust inversion 
+int     | ns | =nx |   | 	number of slowness values 
+int     | nx | =ns |   | 	number of offset values 
+float   | os | =0.00000001 |   | 	slowness origin 
+float   | ox | =0. |   | 	offset origin 
+float   | perc | =90. |   | 	threshold percentage for robust inversion 
+bool    | robust | =n |  [y/n] | 	robust inversion 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,9 @@
+Program sfcic3d_ditthara | Conventional IC 3D 
+[SYNOPSIS]
+sfcic3d_ditthara < Fs.rsf ur=Fr.rsf > Fi.rsf verb=n isreversed=n
+[PARAMETERS]
+bool    | isreversed | =n |  [y/n] | 	received wavefield 
+file    | ur | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/ditthara

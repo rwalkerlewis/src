@@ -1,0 +1,15 @@
+Program sfpickmaxima | Picking local maxima on the first axis with evenly spaced windows. 
+[SYNOPSIS]
+sfpickmaxima < in.rsf > out.rsf semblance=semblance.rsf npicks=npicks.rsf min=o1 max=o1+(n1-1)*d1 np=n1 nw=1 space=100. parab=n removal=y
+[PARAMETERS]
+float   | max | =o1+(n1-1)*d1 |   | 	maximum value of time 
+float   | min | =o1 |   | 	minimum value of time 
+int     | np | =n1 |   | 	maximum number of picks 
+file    | npicks | = |   | 	auxiliary output file name
+int     | nw | =1 |   | 	number of windows 
+bool    | parab | =n |  [y/n] | 	if y, parabolic interpolation 
+bool    | removal | =y |  [y/n] | 	if y, remove adjacent events based on semblance 
+file    | semblance | = |   | 	auxiliary input file name
+float   | space | =100. |   | 	minimum distance bewteen picked events 
+[DIRECTORY]
+user/zhiguang

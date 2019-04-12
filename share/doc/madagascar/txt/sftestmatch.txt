@@ -1,0 +1,9 @@
+Program sftestmatch | Test linear matching operator. 
+[SYNOPSIS]
+sftestmatch < in.rsf > out.rsf filt=fil.rsf adj=y verb=n
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	if y, perform adjoint operation 
+file    | filt | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

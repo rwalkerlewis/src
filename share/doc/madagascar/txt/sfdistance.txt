@@ -1,0 +1,18 @@
+Program sfdistance | Computing distance function by fast marching eikonal solver (3-D). 
+[SYNOPSIS]
+sfdistance < points.rsf > dist.rsf velocity=vel.rsf n1= n2= n3=1 d1= d2= d3=d2 o1=0. o2=0. o3=0. order=2 vel=y
+[PARAMETERS]
+float   | d1 | = |   | 	
+float   | d2 | = |   | 	
+float   | d3 | =d2 |   | 	sampling 
+int     | n1 | = |   | 	
+int     | n2 | = |   | 	
+int     | n3 | =1 |   | 	dimensions 
+float   | o1 | =0. |   | 	
+float   | o2 | =0. |   | 	
+float   | o3 | =0. |   | 	origin 
+int     | order | =2 |  [1,2] | 	Accuracy order 
+bool    | vel | =y |  [y/n] | 	if y, the input is velocity; n, slowness squared 
+string  | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

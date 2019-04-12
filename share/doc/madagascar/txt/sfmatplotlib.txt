@@ -1,0 +1,5 @@
+Program sfmatplotlib | Plotting RSF files with matplotlib
+[SYNOPSIS]
+sfmatplotlib
+[DIRECTORY]
+user/fomels

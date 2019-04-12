@@ -1,0 +1,17 @@
+Program sfsclet | 2-D SC-seislet: Seislet transform with differential shot continuation
+[SYNOPSIS]
+sfsclet < in.rsf > out.rsf inv=y adj=y unit=n eps=0.1 verb=n type=
+[COMMENTS]
+Forward transform (adj=y inv=y)   m=T[d]
+Adjoint transform (adj=y inv=n)   m=T^(-1)'[d]
+Inverse transform (adj=n inv=y/n) d=T^(-1)[m]
+
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	if y, do adjoint transform 
+float   | eps | =0.1 |   | 	regularization parameter 
+bool    | inv | =y |  [y/n] | 	if y, do inverse transform 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+bool    | unit | =n |  [y/n] | 	if y, use unitary scaling 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

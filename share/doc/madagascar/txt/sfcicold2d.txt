@@ -1,0 +1,9 @@
+Program sfcicold2d | Conventional IC 2D 
+[SYNOPSIS]
+sfcicold2d < Fs.rsf ur=Fr.rsf > Fi.rsf verb=n isreversed=n
+[PARAMETERS]
+bool    | isreversed | =n |  [y/n] | 	received wavefield 
+file    | ur | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

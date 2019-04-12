@@ -1,0 +1,9 @@
+Program sfepfbil | Bilateral filter 
+[SYNOPSIS]
+sfepfbil < in.rsf > out.rsf twod=n sigmar=1.0 sigmad=1.0
+[PARAMETERS]
+float   | sigmad | =1.0 |   | 	sigma for domain filter 
+float   | sigmar | =1.0 |   | 	sigma for range filter 
+bool    | twod | =n |  [y/n] | 	y, 2D smoothing 
+[DIRECTORY]
+user/chen

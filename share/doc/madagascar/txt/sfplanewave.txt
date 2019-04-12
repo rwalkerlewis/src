@@ -1,0 +1,5 @@
+Program sfplanewave | None
+[SYNOPSIS]
+sfplanewave
+[DIRECTORY]
+trip/iwave/trace/main

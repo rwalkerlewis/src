@@ -1,0 +1,14 @@
+Program sfxcorr | Cross-correlation function  
+[SYNOPSIS]
+sfxcorr < in.rsf match=match.rsf > out.rsf lagfile=lagfile.rsf l=n1y-1
+[COMMENTS]
+C=XCORR(X,Y,L), computes the (auto/cross) correlation over the range of lags:
+-L to L, i.e., 2*L+1 lags. If L is left out, default is L=n1-1, 
+where n1 is the length of Y.
+
+[PARAMETERS]
+int     | l | =n1y-1 |   | 	maxlag of auto/cross correlation function
+string  | lagfile | = |   | 	auxiliary output file name
+file    | match | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/chenyk

@@ -1,0 +1,13 @@
+Program sfconverted | None
+[SYNOPSIS]
+sfconverted actual_weights=aw.rsf weights=w1.rsf Rps=Refl.rsf NoisyRps=NoisyRps.rsf Wip=Winvpred.rsf phi= theta=
+[PARAMETERS]
+file    | NoisyRps | = |   | 	auxiliary output file name
+file    | Rps | = |   | 	auxiliary output file name
+file    | Wip | = |   | 	auxiliary output file name
+file    | actual_weights | = |   | 	auxiliary output file name
+        | phi | = |   | 	command-line parameter
+        | theta | = |   | 	command-line parameter
+file    | weights | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/mehdi

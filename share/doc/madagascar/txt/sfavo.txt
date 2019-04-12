@@ -1,0 +1,8 @@
+Program sfavo | Compute intercept and gradient by least squares. 
+[SYNOPSIS]
+sfavo < cmp.rsf > avo.rsf offset=offset.rsf half=y
+[PARAMETERS]
+bool    | half | =y |  [y/n] | 	if y, the second axis is half-offset instead of full offset 
+string  | offset | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

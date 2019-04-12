@@ -1,0 +1,7 @@
+Program sfswapbyte | endianness conversion 
+[SYNOPSIS]
+sfswapbyte < Fin.rsf > Fout.rsf verb=n
+[PARAMETERS]
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/xuxin

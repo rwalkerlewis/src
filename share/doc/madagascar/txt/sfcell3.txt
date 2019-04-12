@@ -1,0 +1,21 @@
+Program sfcell3 | Second-order cell ray tracing with locally parabolic rays in 3-D.
+[SYNOPSIS]
+sfcell3 < vel.rsf > time.rsf shotfile=shots.rsf anglefile=angles.rsf vel=y order=4 nt=nx*nz na= nb= a0=0. amax=360. b0=0. bmax=180. traj= > rays.rsf
+[COMMENTS]
+Rays and wavefronts can be displayed with sfplotrays.
+
+[PARAMETERS]
+float   | a0 | =0. |   | 	First azimuth angle in degrees (if anglefile is not specified) 
+float   | amax | =360. |   | 	Maximum azimuth angle in degrees (if anglefile is not specified) 
+string  | anglefile | = |   | 	file with initial angles (auxiliary input file name)
+float   | b0 | =0. |   | 	First inclination angle in degrees (if anglefile is not specified) 
+float   | bmax | =180. |   | 	Maximum inclination angle in degrees (if anglefile is not specified) 
+int     | na | = |   | 	Number of azimuths (if anglefile is not specified) 
+int     | nb | = |   | 	Number of inclinations (if anglefile is not specified) 
+int     | nt | =nx*nz |   | 	number of time steps 
+int     | order | =4 |   | 	Interpolation accuracy 
+string  | shotfile | = |   | 	file with shot locations (auxiliary input file name)
+string  | traj | = |   | 	
+bool    | vel | =y |  [y/n] | 	If y, the input is velocity; if n, slowness 
+[DIRECTORY]
+system/seismic

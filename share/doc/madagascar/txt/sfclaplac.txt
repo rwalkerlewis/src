@@ -1,0 +1,5 @@
+Program sfclaplac | 2-D finite-difference Laplacian operation for complex numbers. 
+[SYNOPSIS]
+sfclaplac < in.rsf > out.rsf
+[DIRECTORY]
+user/jsun

@@ -1,0 +1,17 @@
+Program sffrt | Frequency domain Radon transform. 
+[SYNOPSIS]
+sffrt < in.rsf > out.rsf ref=ref.rsf curv=0 inv=n mtd=0 mu=0.05 eta=0.05 niter=5 np=0 op=0 dp=0 x0=maxoff
+[PARAMETERS]
+int     | curv | =0 |   | 	0: linear; 1:parabolic 
+float   | dp | =0 |   | 	stepout interval 
+float   | eta | =0.05 |   | 	eta: for fhrt, fcrt 
+bool    | inv | =n |  [y/n] | 	if y, perform inverse operation 
+int     | mtd | =0 |   | 	0: fart; 1:firt; 2:fhrt; 3:fcrt 
+float   | mu | =0.05 |   | 	mu: for firt, fhrt, fcrt 
+int     | niter | =5 |   | 	sparse iterations: for fhrt, fcrt 
+int     | np | =0 |   | 	stepout number 
+float   | op | =0 |   | 	first stepout (moveout at "ref") 
+file    | ref | = |   | 	auxiliary input file name
+float   | x0 | =maxoff |   | 	reference offset 
+[DIRECTORY]
+user/chen

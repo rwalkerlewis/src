@@ -1,0 +1,14 @@
+Program sfhelmlu | 2D Helmholtz solver by LU factorization. 
+[SYNOPSIS]
+sfhelmlu < in.rsf > out.rsf source=source.rsf verb=n save=n load=n uts=0 hermite=n npml=10 order=
+[PARAMETERS]
+bool    | hermite | =n |  [y/n] | 	Hermite operator 
+bool    | load | =n |  [y/n] | 	load LU 
+int     | npml | =10 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+bool    | save | =n |  [y/n] | 	save LU 
+string  | source | = |   | 	auxiliary input file name
+int     | uts | =0 |   | 	number of OMP threads 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/sparse

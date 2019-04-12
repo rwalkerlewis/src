@@ -1,0 +1,14 @@
+Program sfgdmo | Gardner's DMO for regularly sampled 2-D data (slow method) 
+[SYNOPSIS]
+sfgdmo < in.rsf > out.rsf eps=0.01 nb=171 b0=-85 db=1
+[COMMENTS]
+
+The input/ouput is (time,offset,midpoint).
+
+[PARAMETERS]
+float   | b0 | =-85 |   | 	first angle 
+float   | db | =1 |   | 	angle increment 
+float   | eps | =0.01 |   | 	stretch regularization 
+int     | nb | =171 |   | 	number of angles 
+[DIRECTORY]
+system/seismic

@@ -1,0 +1,10 @@
+Program sfhalfthr | Half thresholding using exact-value or percentile thresholding.
+[SYNOPSIS]
+sfhalfthr < in.rsf > out.rsf other=other.rsf ifverb=0 ifperc=1 thr=
+[PARAMETERS]
+int     | ifperc | =1 |   | 	0, exact-value thresholding; 1, percentile thresholding. 
+int     | ifverb | =0 |   | 	0, not print threshold value; 1, print threshold value. 
+string  | other | = |   | 	auxiliary output file name
+float   | thr | = |   | 	thresholding level 
+[DIRECTORY]
+user/chenyk

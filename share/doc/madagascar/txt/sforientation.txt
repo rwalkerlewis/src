@@ -1,0 +1,14 @@
+Program sforientation | orientation estimation by structural gradient tensor 
+[SYNOPSIS]
+sforientation < in.rsf > out.rsf weight=wgt.rsf azimuth=az.rsf rect1=0 rect2=0 rect3=0 order=2 interp= filt=
+[PARAMETERS]
+string  | azimuth | = |   | 	auxiliary output file name
+string  | filt | = |   | 	filter type : ls, tls, tensor 
+string  | interp | = |   | 	interpolation method: maxflat lagrange bspline 
+int     | order | =2 |   | 	approximating order of finite difference 
+int     | rect1 | =0 |   | 	smoothness on 1st axis 
+int     | rect2 | =0 |   | 	smoothness on 2nd axis 
+int     | rect3 | =0 |   | 	smoothness on 3rd axis 
+string  | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/chen

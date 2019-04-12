@@ -1,0 +1,5 @@
+Program sflrrtm | Lowrank prestack RTM as a linear operator
+[SYNOPSIS]
+sflrrtm
+[DIRECTORY]
+user/zhiguang

@@ -1,0 +1,16 @@
+Program sfbmcgauss | Correlated Gaussian joint probability distribution histogram generated with modified Box Mulller algorithm 
+[SYNOPSIS]
+sfbmcgauss > out.rsf n=100 m1=0.0 m2=0.0 s1=1.0 s2=1.0 r=0.0 nbin=51 dbin=0.1 obin=0.0 iseed=-33
+[PARAMETERS]
+float   | dbin | =0.1 |   | 	histogram bin size 
+int     | iseed | =-33 |   | 	random generator seed 
+float   | m1 | =0.0 |   | 	mean for deviate 1 
+float   | m2 | =0.0 |   | 	mean for deviate 2 
+int     | n | =100 |   | 	number of random deviates pairs 
+int     | nbin | =51 |   | 	number of bins for histogram 
+float   | obin | =0.0 |   | 	histogram origin 
+float   | r | =0.0 |   | 	correlation coefficient 
+float   | s1 | =1.0 |   | 	standard deviation for deviate 1 
+float   | s2 | =1.0 |   | 	standard deviation for deviate 2 
+[DIRECTORY]
+user/browaeys

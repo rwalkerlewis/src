@@ -1,0 +1,19 @@
+Program sfmdfd4 | 2D finite difference modeling	
+[SYNOPSIS]
+sfmdfd4 < modl.rsf > data.rsf wave=wave.rsf div=div.rsf nt=1000 dt=0.004 jt=40 wvlt=0 w0=35.0 sx=0 sz=0 rx0=0 nr=1 dr=1 rz=0
+[PARAMETERS]
+file    | div | = |   | 	auxiliary output file name
+int     | dr | =1 |   | 	receiver interval of unit "dx" 
+float   | dt | =0.004 |   | 	time interval 
+int     | jt | =40 |   | 	wave movie time interval 
+int     | nr | =1 |   | 	receiver numbers 
+int     | nt | =1000 |   | 	time samples 
+int     | rx0 | =0 |   | 	x position index of first receiver 
+int     | rz | =0 |   | 	z position index of receivers 
+int     | sx | =0 |   | 	x position index of the source 
+int     | sz | =0 |   | 	z position index of the source 
+float   | w0 | =35.0 |   | 	central frequency for ricker/harmonic wavelet 
+string  | wave | = |   | 	wavefield movie file (auxiliary output file name)
+int     | wvlt | =0 |   | 	wavelet type "ricker/harmonic/other" 
+[DIRECTORY]
+user/chen

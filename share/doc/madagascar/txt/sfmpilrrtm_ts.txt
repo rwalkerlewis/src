@@ -1,0 +1,37 @@
+Program sfmpilrrtm_ts | One-step lowrank RTM with time-shift imaging condition 
+[SYNOPSIS]
+sfmpilrrtm_ts Fimg2=Fimg2.rsf Fsrc=Fsrc.rsf Fpadvel=Fvel.rsf Ffwf=Ffwf.rsf Fbwf=Fbwf.rsf taper=0 thresh=0.92 wantwf=n verb=n pad1=1 nb= srctrunc=0.4 rectx=2 rectz=2 repeat=2 scalet=1 snap=100 snapshot=0 nds= gpz= spx= spz= rnx= ndr=1 nr0=0 ntau= dtau= tau0= ncut=0 path1= path2=
+[PARAMETERS]
+file    | Fbwf | = |   | 	auxiliary output file name
+file    | Ffwf | = |   | 	auxiliary output file name
+file    | Fimg2 | = |   | 	auxiliary output file name
+file    | Fpadvel | = |   | 	auxiliary input file name
+file    | Fsrc | = |   | 	auxiliary input file name
+float   | dtau | = |   | 	interval of time-shift 
+int     | gpz | = |   | 	depth of geophone 
+int     | nb | = |   | 	padded boundary width 
+int     | ncut | =0 |   | 	number of cutting samples for generating non-negative source wavelet 
+int     | ndr | =1 |   | 	receiver interval 
+int     | nds | = |   | 	source interval in number of dx 
+int     | nr0 | =0 |   | 	receiver starting point in rnx 
+int     | ntau | = |   | 	number of time-shift 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+string  | path1 | = |   | 	path of left matrices './mat/left' 
+string  | path2 | = |   | 	path of right matrices './mat/left' 
+int     | rectx | =2 |   | 	source smoothing in x-direction 
+int     | rectz | =2 |   | 	source smoothing in z-direction 
+int     | repeat | =2 |   | 	repeat numbers of source smoothing 
+int     | rnx | = |   | 	coverage area of one shot 
+int     | scalet | =1 |   | 	wavefield storage interval 
+int     | snap | =100 |   | 	wavefield output interval when wantwf=y 
+int     | snapshot | =0 |   | 	print out the wavefield snapshots of this shot 
+int     | spx | = |   | 	horizontal location of source 
+int     | spz | = |   | 	depth of source 
+float   | srctrunc | =0.4 |   | 	source truncation 
+int     | taper | =0 |   | 	if not 0, tapering in the frequency domain 
+float   | tau0 | = |   | 	origin of time-shift 
+float   | thresh | =0.92 |   | 	tapering threshold 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+bool    | wantwf | =n |  [y/n] | 	if true, output wavefield of a certain (snapshot=) shot 
+[DIRECTORY]
+user/zhiguang

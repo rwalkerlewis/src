@@ -1,0 +1,10 @@
+Program sfmcbmcgauss | Monte Carlo integration of cos(2t).P(x1,x2).P(y1,y2) 
+[SYNOPSIS]
+sfmcbmcgauss < in.rsf > out.rsf n=100 m1=0.0 s1=1.0 iseed=-33
+[PARAMETERS]
+int     | iseed | =-33 |   | 	random generator seed 
+float   | m1 | =0.0 |   | 	mean for deviates 
+int     | n | =100 |   | 	number of random deviates pairs 
+float   | s1 | =1.0 |   | 	standard deviation for deviates 
+[DIRECTORY]
+user/browaeys

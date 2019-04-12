@@ -1,0 +1,11 @@
+Program sfadjgradient2d | Gradient adjoint-state calculation for image-domain WET 
+[SYNOPSIS]
+sfadjgradient2d < Fvel.rsf xig=Fxig.rsf swf=Fswf.rsf rwf=Frwf.rsf > Fgrd.rsf nxtap=40 verbose=n
+[PARAMETERS]
+int     | nxtap | =40 |   | 	TAPER size 
+file    | rwf | = |   | 	auxiliary input file name
+file    | swf | = |   | 	auxiliary input file name
+bool    | verbose | =n |  [y/n] | 	VERBOSITY flag 
+file    | xig | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jeff

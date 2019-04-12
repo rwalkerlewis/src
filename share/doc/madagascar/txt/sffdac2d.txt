@@ -1,0 +1,14 @@
+Program sffdac2d | None
+[SYNOPSIS]
+sffdac2d slo=Fslo.rsf glo=Fglo.rsf vel=Fvel.rsf wavelet=Fwav.rsf frec=Frec.rsf verb=y npml= nthreads=
+[PARAMETERS]
+file    | frec | = |   | 	auxiliary output file name
+file    | glo | = |   | 	auxiliary input file name
+        | npml | = |   | 	Grid points for PML
+        | nthreads | = |   | 	Threads for OMP
+file    | slo | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+        | verb | =y |   | 	
+file    | wavelet | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zdzhang

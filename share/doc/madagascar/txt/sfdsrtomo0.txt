@@ -1,0 +1,22 @@
+Program sfdsrtomo0 | Prestack first-arrival traveltime tomography (DSR) 
+[SYNOPSIS]
+sfdsrtomo0 < in.rsf > out.rsf reco=reco.rsf mask=mask.rsf prec=prec.rsf grad=grad.rsf velocity=y limit=n shape=n verb=n niter=5 cgiter=10 thres=5.e-5 tol=1.e-3 nloop=10 eps=0. causal=y rect#=(1,1,...)
+[PARAMETERS]
+bool    | causal | =y |  [y/n] | 	if y, neglect non-causal branches of DSR 
+int     | cgiter | =10 |   | 	number of conjugate-gradient iterations 
+float   | eps | =0. |   | 	regularization parameter 
+string  | grad | = |   | 	auxiliary output file name
+bool    | limit | =n |  [y/n] | 	if y, limit computation within receiver coverage 
+string  | mask | = |   | 	auxiliary input file name
+int     | niter | =5 |   | 	number of inversion iterations 
+int     | nloop | =10 |   | 	number of bisection root-search 
+string  | prec | = |   | 	auxiliary input file name
+string  | reco | = |   | 	auxiliary input file name
+int     | rect# | =(1,1,...) |   | 	smoothing radius on #-th axis 
+bool    | shape | =n |  [y/n] | 	shaping regularization (default no) 
+float   | thres | =5.e-5 |   | 	threshold (percentage) 
+float   | tol | =1.e-3 |   | 	tolerance for bisection root-search 
+bool    | velocity | =y |  [y/n] | 	if y, the input is velocity; n, slowness-squared 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/llisiw

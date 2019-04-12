@@ -1,0 +1,19 @@
+Program sfhdefd | Heat diffusion equation FD modeling 
+[SYNOPSIS]
+sfhdefd < Fwav.rsf con=Fcon.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf verb=n snap=n free=n jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax)
+[PARAMETERS]
+file    | con | = |   | 	auxiliary input file name
+bool    | free | =n |  [y/n] | 	free surface flag
+int     | jdata | =1 |   | 	# of t steps at which to save receiver data 
+int     | jsnap | =nt |   | 	# of t steps at which to save wavefield 
+int     | nqx | =sf_n(ax) |   | 	
+int     | nqz | =sf_n(az) |   | 	
+float   | oqx | =sf_o(ax) |   | 	
+float   | oqz | =sf_o(az) |   | 	
+file    | rec | = |   | 	auxiliary input file name
+bool    | snap | =n |  [y/n] | 	wavefield snapshots flag 
+file    | sou | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+file    | wfl | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/psava

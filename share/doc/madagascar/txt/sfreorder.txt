@@ -1,0 +1,8 @@
+Program sfreorder | Reorder the data according to the path 
+[SYNOPSIS]
+sfreorder < in.rsf path=path.rsf > out.rsf inv=n
+[PARAMETERS]
+bool    | inv | =n |  [y/n] | 	if y, do inverse transform 
+file    | path | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zgeng

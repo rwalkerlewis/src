@@ -1,0 +1,16 @@
+Program sfaxplusy | Computes a*x + y, where x and y are datasets, and a is scalar
+
+[SYNOPSIS]
+sfaxplusy < in.rsf y=yfile.rsf > out.rsf afile=fa.rsf a=1 verb=n
+[COMMENTS]
+x and y are floats or sf_complex, single precision
+x is the stdin
+a is double precision
+Computations are done in double precision. 
+[PARAMETERS]
+double  | a | =1 |   | 	Scaling factor 
+file    | afile | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	Verbosity flag 
+file    | y | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jeff

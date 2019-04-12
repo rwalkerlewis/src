@@ -1,0 +1,26 @@
+Program sfdbfmig | 
+[SYNOPSIS]
+sfdbfmig < piFile.rsf escx=xEscFile.rsf esct=tEscFile.rsf > resFile.rsf ppn=pNum ppo=pStart ppd=pStep izn=zNum ixn=xNum izo=zStart ixo=xStart izd=zStep ixd=xStep sn=1 so=0.f sd=1.f isAA=y dx=xStep dt=0.008f xlim=2 * xStep xapert=xNum * xStep pj=1
+[PARAMETERS]
+float   | dt | =0.008f |   | 	time-range for point detection 
+float   | dx | =xStep |   | 	x-range for point detection 
+string  | esct | = |   | 	escape-time file (auxiliary input file name)
+string  | escx | = |   | 	escape-positions file (auxiliary input file name)
+bool    | isAA | =y |  [y/n] | 	if y, apply anti-aliasing 
+float   | ixd | =xStep |   | 	step in positions (in meters) 
+int     | ixn | =xNum |   | 	number of imaged positions 
+float   | ixo | =xStart |   | 	first imaged position (in meters) 
+float   | izd | =zStep |   | 	step in depth (in meters) 
+int     | izn | =zNum |   | 	number of imaged depth samples 
+float   | izo | =zStart |   | 	first imaged depth (in meters) 
+int     | pj | =1 |   | 	jump in points 
+float   | ppd | =pStep |   | 	step in processed partial images 
+int     | ppn | =pNum |   | 	number of processed partial images 
+float   | ppo | =pStart |   | 	first processed partial image 
+float   | sd | =1.f |   | 	step in scattering-angles 
+int     | sn | =1 |   | 	number of scattering-angles 
+float   | so | =0.f |   | 	first scattering-angle 
+float   | xapert | =xNum * xStep |   | 	migration aperture size 
+float   | xlim | =2 * xStep |   | 	maximum distance between depth-line points 
+[DIRECTORY]
+user/aklokov

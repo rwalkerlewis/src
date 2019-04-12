@@ -1,0 +1,9 @@
+Program sfR2to3 | None
+[SYNOPSIS]
+sfR2to3 < two.rsf > three.rsf common=commonoffset.rsf cut= offset=
+[PARAMETERS]
+file    | common | = |   | 	auxiliary output file name
+        | cut | = |   | 	command-line parameter
+        | offset | = |   | 	command-line parameter
+[DIRECTORY]
+user/mehdi

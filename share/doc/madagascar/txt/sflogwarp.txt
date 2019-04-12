@@ -1,0 +1,10 @@
+Program sflogwarp | Log warping. 
+[SYNOPSIS]
+sflogwarp < in.rsf > out.rsf inv=n pad=n1 t0=o1 eps=0.01
+[PARAMETERS]
+float   | eps | =0.01 |   | 	stretch regularization 
+bool    | inv | =n |  [y/n] | 	inversion flag 
+int     | pad | =n1 |   | 	output time samples 
+float   | t0 | =o1 |   | 	
+[DIRECTORY]
+system/generic

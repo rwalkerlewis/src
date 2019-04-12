@@ -1,0 +1,10 @@
+Program sfcrazgathc3 | Collapse/stack (partially) azimuthal axis of 3-D angle-domain migration angle gathers. 
+[SYNOPSIS]
+sfcrazgathc3 < gath.rsf > rgath.rsf verb=y norm=n nth=10 wd=5
+[PARAMETERS]
+bool    | norm | =n |  [y/n] | 	y - normalize after stacking 
+int     | nth | =10 |   | 	leave every nth azimuth 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+int     | wd | =5 |   | 	half-width of stacking base (total base is 2*wd + 1) 
+[DIRECTORY]
+user/cram

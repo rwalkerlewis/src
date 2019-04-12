@@ -1,0 +1,8 @@
+Program sfshifts2 | Apply linear time shifts on multiple traces. 
+[SYNOPSIS]
+sfshifts2 < in.rsf > shift.rsf s0= ds=
+[PARAMETERS]
+int     | ds | = |   | 	shift sampling 
+int     | s0 | = |   | 	first shift (in number of samples along 1st axis) 
+[DIRECTORY]
+user/zgeng

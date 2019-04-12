@@ -1,0 +1,11 @@
+Program sfsharpsimi | Sharpen similarity measure between two datasets. 
+[SYNOPSIS]
+sfsharpsimi < in.rsf > out.rsf other=other.rsf eps=0.01 niter=20 perc=98. verb=n
+[PARAMETERS]
+float   | eps | =0.01 |   | 	regularization parameter 
+int     | niter | =20 |   | 	number of iterations 
+file    | other | = |   | 	auxiliary input file name
+float   | perc | =98. |   | 	percentage for sharpen, default is 98
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,7 @@
+Program sfcplxcoh | Coherency based on complex statistical correlation. 
+[SYNOPSIS]
+sfcplxcoh < in.rsf > out.rsf nw=
+[PARAMETERS]
+int     | nw | = |   | 	half time-window size 
+[DIRECTORY]
+user/browaeys

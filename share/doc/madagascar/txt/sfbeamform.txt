@@ -1,0 +1,11 @@
+Program sfbeamform | 2-D beam forming. 
+[SYNOPSIS]
+sfbeamform < in.rsf dip=dip.rsf > out.rsf rect=3 adj=y gauss=n order=1
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	adjoint flag 
+file    | dip | = |   | 	auxiliary input file name
+bool    | gauss | =n |  [y/n] | 	use pseudo-gaussian 
+int     | order | =1 |   | 	PWD accuracy order 
+int     | rect | =3 |   | 	smoothing radius 
+[DIRECTORY]
+user/pwd

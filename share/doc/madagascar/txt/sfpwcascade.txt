@@ -1,0 +1,11 @@
+Program sfpwcascade | Plane-wave smoothing by box cascade. 
+[SYNOPSIS]
+sfpwcascade < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 order=1 rect=0
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+int     | order | =1 |   | 	accuracy order 
+int     | rect | =0 |   | 	smoothing radius 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/pwd

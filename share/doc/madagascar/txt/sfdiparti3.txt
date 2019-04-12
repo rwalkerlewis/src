@@ -1,0 +1,26 @@
+Program sfdiparti3 | diparti
+[SYNOPSIS]
+sfdiparti3 < piFile.rsf vel=velFile.rsf > resFile.rsf semb=sembFile.rsf apert=1000 sembWindow=11 gamma=1.f xppn=dipNum_ xppo=dipStart_ xppd=dipStep_ yppn=sdipNum_ yppo=sdipStart_ yppd=sdipStep_ itn=tNum_ ixn=xNum_ iyn=yNum_ ito=tStart_ ixo=xStart_ iyo=yStart_ itd=tStep_ ixd=xStep_ iyd=yStep_
+[PARAMETERS]
+float   | apert | =1000 |   | 	diffraction summation aperture 
+float   | gamma | =1.f |   | 	velocity-model-accuracy parameter 
+float   | itd | =tStep_ |   | 	step in time (in ms) 
+int     | itn | =tNum_ |   | 	number of imaged depth samples 
+float   | ito | =tStart_ |   | 	first imaged time (in ms) 
+float   | ixd | =xStep_ |   | 	step in positions (in m) 
+int     | ixn | =xNum_ |   | 	number of imaged positions 
+float   | ixo | =xStart_ |   | 	first imaged position (in m) 
+float   | iyd | =yStep_ |   | 	step in positions (in m) 
+int     | iyn | =yNum_ |   | 	number of imaged positions 
+float   | iyo | =yStart_ |   | 	first imaged position (in m) 
+string  | semb | = |   | 	output file containing semblance (auxiliary output file name)
+int     | sembWindow | =11 |   | 	vertical window for semblance calculation (in samples) 
+string  | vel | = |   | 	velocity model file (velocity in km/s) (auxiliary input file name)
+float   | xppd | =dipStep_ |   | 	step in processed partial images 
+int     | xppn | =dipNum_ |   | 	number of processed partial images 
+float   | xppo | =dipStart_ |   | 	first processed partial image 
+float   | yppd | =sdipStep_ |   | 	step in processed partial images 
+int     | yppn | =sdipNum_ |   | 	number of processed partial images 
+float   | yppo | =sdipStart_ |   | 	first processed partial image 
+[DIRECTORY]
+user/aklokov

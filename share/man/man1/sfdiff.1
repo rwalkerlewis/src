@@ -1,0 +1,27 @@
+.TH sfdiff 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdiff \- Compare the difference of two rsf data sets with the same size. 
+.SH SYNOPSIS
+.B sfdiff < inp1.rsf match=inp2.rsf > dif.rsf
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I tccs/dbortho/hyper
+.TP
+.I tccs/deblend/fairfield-initmfnew
+.TP
+.I tccs/deblend/linear
+.TP
+.I tccs/deblend/synthcomplex
+.TP
+.I tccs/deblend/synthhyper
+.SH SOURCE
+.I user/chenyk/Mdiff.c
+.SH VERSION
+2.1-git

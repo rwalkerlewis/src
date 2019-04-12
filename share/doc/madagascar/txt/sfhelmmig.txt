@@ -1,0 +1,18 @@
+Program sfhelmmig | 2D frequency-domain migration with space-lag imaging condition. 
+[SYNOPSIS]
+sfhelmmig < in.rsf > out.rsf source=source.rsf data=data.rsf us=us.rsf ur=ur.rsf timg=timg.rsf verb=n save=n load=n uts=0 nh=0 npml=10 order=
+[PARAMETERS]
+string  | data | = |   | 	auxiliary input file name
+bool    | load | =n |  [y/n] | 	load LU 
+int     | nh | =0 |   | 	horizontal space-lag 
+int     | npml | =10 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+bool    | save | =n |  [y/n] | 	save LU 
+string  | source | = |   | 	auxiliary input file name
+string  | timg | = |   | 	auxiliary output file name
+string  | ur | = |   | 	auxiliary output file name
+string  | us | = |   | 	auxiliary output file name
+int     | uts | =0 |   | 	number of OMP threads 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/sparse

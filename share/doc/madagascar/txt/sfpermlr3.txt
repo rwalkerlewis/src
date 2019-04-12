@@ -1,0 +1,16 @@
+Program sfpermlr3 | Lowrank decomposition for 2-D prestack exploding reflector in V(x,z)
+[SYNOPSIS]
+sfpermlr3 < vel.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL tol=1.e-4 npk=20 dt= eps=0.0 nh= equation=3 sub=true
+[PARAMETERS]
+        | dt | = |   | 	time step
+        | eps | =0.0 |   | 	regularization
+        | equation | =3 |   | 	equation type
+file    | fft | = |   | 	auxiliary input file name
+file    | left | = |   | 	auxiliary output file name
+        | nh | = |   | 	
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+        | sub | =true |   | 	if subtract one
+        | tol | =1.e-4 |   | 	tolerance
+[DIRECTORY]
+user/fomels

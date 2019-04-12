@@ -1,0 +1,13 @@
+Program sfaweop3d | 3D AWE modeling
+[SYNOPSIS]
+sfaweop3d sou=Fs.rsf rec=Fr.rsf vel=Fvel.rsf < Fd.rsf > Fm.rsf verb=n fsrf=n dabc=n adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+bool    | dabc | =n |  [y/n] | 	Absorbing BC 
+bool    | fsrf | =n |  [y/n] | 	free surface  
+string  | rec | = |   | 	auxiliary input file name
+string  | sou | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity  
+[DIRECTORY]
+user/psava

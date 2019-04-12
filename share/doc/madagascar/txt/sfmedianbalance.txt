@@ -1,0 +1,10 @@
+Program sfmedianbalance | Do median balancing.
+[SYNOPSIS]
+sfmedianbalance inp= out= inp= out= verb=n pclip=99
+[PARAMETERS]
+string  | inp | = |   | 	input file
+string  | out | = |   | 	output file
+float   | pclip | =99 |   | 	percentile clip
+bool    | verb | =n |  [y/n] | 	if y, print system commands, outputs
+[DIRECTORY]
+user/mlai

@@ -1,0 +1,16 @@
+Program sfpwsmooth3 | 3-D structural-oriented smoothing using plane-wave spray and weighted stacking. 
+[SYNOPSIS]
+sfpwsmooth3 < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 ns2= ns3= bilat=n gauss=n ax= bx= order=1
+[PARAMETERS]
+float   | ax | = |   | 	Gaussian weight for the range distance 
+bool    | bilat | =n |  [y/n] | 	if y, bilateral smoothing 
+float   | bx | = |   | 	exponential weight for the domain distance 
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+bool    | gauss | =n |  [y/n] | 	if y, gaussian weight; otherwise, triangle weight 
+int     | ns2 | = |   | 	spray radius (inline) 
+int     | ns3 | = |   | 	spray radius (crossline) 
+int     | order | =1 |   | 	accuracy order 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/yliu

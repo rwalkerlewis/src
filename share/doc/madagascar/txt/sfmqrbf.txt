@@ -1,0 +1,16 @@
+Program sfmqrbf | 
+[SYNOPSIS]
+sfmqrbf < cubea.rsf > rbf_out.rsf < othera.rsf xl= il= eps= boundary= other=
+[COMMENTS]
+Inverse Multiquadratic Radial Basis Function
+
+1/sqrt(1 + (eps*r)^2) where r is distance from source
+
+[PARAMETERS]
+int     | boundary | = |   | 	Scalar factor
+float   | eps | = |   | 	Scalar factor
+int     | il | = |   | 	n3 location of source
+string  | other | = |   | 	Boundary map
+int     | xl | = |   | 	n2 location of source
+[DIRECTORY]
+user/sbader

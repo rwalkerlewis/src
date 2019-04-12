@@ -1,0 +1,15 @@
+Program sfunfault | Unfault image 
+[SYNOPSIS]
+sfunfault < in.rsf slip=slip.rsf > out.rsf shift=shift.rsf dip=dip.rsf mask=mask.rsf inv=n mode=y niter=100 off=2 lam=1
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+bool    | inv | =n |  [y/n] | 	
+float   | lam | =1 |   | 	regularization 
+file    | mask | = |   | 	auxiliary output file name
+bool    | mode | =y |  [y/n] | 	
+int     | niter | =100 |   | 	number of iterations 
+int     | off | =2 |   | 	offset to fault 
+file    | shift | = |   | 	auxiliary input file name
+file    | slip | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

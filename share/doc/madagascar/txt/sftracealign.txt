@@ -1,0 +1,11 @@
+Program sftracealign | None
+[SYNOPSIS]
+sftracealign < infile.rsf monitor=monitorfile.rsf > outfile.rsf times=timefile.rsf maxshift= nlen= vel=1500.
+[PARAMETERS]
+        | maxshift | = |   | 	Maximum allowed time shift
+file    | monitor | = |   | 	auxiliary input file name
+        | nlen | = |   | 	Window length of shift vector (in samples)
+file    | times | = |   | 	auxiliary output file name
+        | vel | =1500. |   | 	Rupture speed for linear shift
+[DIRECTORY]
+user/jeff

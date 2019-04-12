@@ -1,0 +1,7 @@
+Program sfsvddenoise | SVD denoising 
+[SYNOPSIS]
+sfsvddenoise < in.rsf > out.rsf pclip=99.
+[PARAMETERS]
+float   | pclip | =99. |   | 	data clip percentile (default is 99)
+[DIRECTORY]
+user/yliu

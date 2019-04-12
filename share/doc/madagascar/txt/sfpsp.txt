@@ -1,0 +1,40 @@
+Program sfpsp | Pseudo-spectral wave extrapolation/migration using second-order two-way wave equation 
+[SYNOPSIS]
+sfpsp < Fi.rsf > Fo.rsf dat=Fd.rsf dat_v=Fd_v.rsf snaps=snaps.rsf spx= spz= f0= t0= A= snap=0 cmplx=y pad1=1 abc=n nbt= nbb=nbt nbl=nbt nbr=nbt ct= cb=ct cl=ct cr=ct verb=n ps=n mig=n vref=1500 nt= dt= gpl=-1 gpl_v=-1 src=0 n_srcs=1 gpx=-1 gpz=-1 gpx_v=-1 gpz_v=-1
+[PARAMETERS]
+floats  | A | = |   | 	wavelet amplitude  [n_srcs]
+bool    | abc | =n |  [y/n] | 	absorbing flag 
+float   | cb | =ct |   | 	
+float   | cl | =ct |   | 	
+bool    | cmplx | =y |  [y/n] | 	use complex fft 
+float   | cr | =ct |   | 	
+float   | ct | = |   | 	
+string  | dat | = |   | 	auxiliary input file name
+string  | dat_v | = |   | 	auxiliary input file name
+float   | dt | = |   | 	
+floats  | f0 | = |   | 	wavelet peak freq  [n_srcs]
+int     | gpl | =-1 |   | 	geophone length 
+int     | gpl_v | =-1 |   | 	geophone height 
+int     | gpx | =-1 |   | 	geophone position x 
+int     | gpx_v | =-1 |   | 	geophone position x 
+int     | gpz | =-1 |   | 	geophone position z 
+int     | gpz_v | =-1 |   | 	geophone position z 
+bool    | mig | =n |  [y/n] | 	use pseudo-spectral 
+int     | n_srcs | =1 |   | 	source type 
+int     | nbb | =nbt |   | 	
+int     | nbl | =nbt |   | 	
+int     | nbr | =nbt |   | 	
+int     | nbt | = |   | 	
+int     | nt | = |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+bool    | ps | =n |  [y/n] | 	use pseudo-spectral 
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+ints    | spx | = |   | 	shot position x  [n_srcs]
+ints    | spz | = |   | 	shot position z  [n_srcs]
+int     | src | =0 |   | 	source type 
+floats  | t0 | = |   | 	wavelet time lag  [n_srcs]
+bool    | verb | =n |  [y/n] | 	verbosity 
+float   | vref | =1500 |   | 	reference velocity (default using water) 
+[DIRECTORY]
+user/jsun

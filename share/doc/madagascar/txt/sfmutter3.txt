@@ -1,0 +1,12 @@
+Program sfmutter3 | 3D muting of scalor or vector data 
+[SYNOPSIS]
+sfmutter3 < Finp.rsf sou=Fsou.rsf rec=Frec.rsf > Fout.rsf verb=n t0=0 velw=1.5 eps=1000.
+[PARAMETERS]
+float   | eps | =1000. |   | 	decay parameter 
+file    | rec | = |   | 	auxiliary input file name
+file    | sou | = |   | 	auxiliary input file name
+float   | t0 | =0 |   | 	source delay time 
+float   | velw | =1.5 |   | 	water velocity 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/jsun

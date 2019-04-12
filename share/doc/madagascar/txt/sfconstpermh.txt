@@ -1,0 +1,15 @@
+Program sfconstpermh | Constant-velocity prestack exploding reflector in offset. 
+[SYNOPSIS]
+sfconstpermh < data.rsf > image.rsf mig=n snap=0 nz= dz= nt= dt= nh= dh= v=
+[PARAMETERS]
+float   | dh | = |   | 	offset sampling (if modeling) 
+float   | dt | = |   | 	time sampling (if modeling) 
+float   | dz | = |   | 	depth sampling (if migration) 
+bool    | mig | =n |  [y/n] | 	if n, modeling; if y, migration 
+int     | nh | = |   | 	offset samples (if modeling) 
+int     | nt | = |   | 	time samples (if modeling) 
+int     | nz | = |   | 	depth samples (if migration) 
+int     | snap | =0 |   | 	interval for snapshots 
+float   | v | = |   | 	velocity 
+[DIRECTORY]
+user/fomels

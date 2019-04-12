@@ -1,0 +1,24 @@
+.TH sfjacobi 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfjacobi \- Find eigenvalues of a symmetric matrix by Jacobi's iteration. 
+.SH SYNOPSIS
+.B sfjacobi < mat.rsf > val.rsf eig=eig.rsf niter=10
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B eig
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =10
+.R  
+.SH USED IN
+.TP
+.I tccs/lpf/regr
+.SH SOURCE
+.I system/generic/Mjacobi.c
+.SH VERSION
+2.1-git

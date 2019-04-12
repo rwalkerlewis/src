@@ -1,0 +1,18 @@
+Program sfpwddiffuse | Anisotropic diffusion by regularized inversion. Instead of a gradient PWDs in inline and crossline directions are used. 3D. 
+[SYNOPSIS]
+sfpwddiffuse < in.rsf dip=dip.rsf vx=fvx.rsf vy=fvy.rsf > out.rsf order=1 nj1=1 nj2=1 sm=y niter=10 repeat=1 eps=1. adj=n test=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag - when test=y 
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =1. |   | 	regularization parameter 
+int     | niter | =10 |   | 	number of conjugate-gradient iterations 
+int     | nj1 | =1 |   | 	antialiasing iline 
+int     | nj2 | =1 |   | 	antialiasing xline 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+int     | repeat | =1 |   | 	number of smoothing iterations 
+bool    | sm | =y |  [y/n] | 	if perform PWD filtering 
+bool    | test | =n |  [y/n] | 	test - applied in either forward or adjoint mode (no inversion) 
+file    | vx | = |   | 	auxiliary input file name
+file    | vy | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/dmerzlikin

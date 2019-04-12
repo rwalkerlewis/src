@@ -1,0 +1,10 @@
+Program sfcurvature | Curvature 
+[SYNOPSIS]
+sfcurvature < hor.rsf > cur.rsf rotation=n scale=1.0 vscale=1.0 what=
+[PARAMETERS]
+bool    | rotation | =n |  [y/n] | 	if y: rotation, if n: convergence 
+float   | scale | =1.0 |   | 	scaling (from time to depth) 
+float   | vscale | =1.0 |   | 	scaling (from time to depth) 
+string  | what | = |   | 	what to compute 
+[DIRECTORY]
+user/parvaneh

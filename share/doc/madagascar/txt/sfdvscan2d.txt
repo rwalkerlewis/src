@@ -1,0 +1,22 @@
+Program sfdvscan2d | Diffraction velocity analysis
+[SYNOPSIS]
+sfdvscan2d < dataFile_.rsf vel=velFile_.rsf > sembFile_.rsf gn=1 go=1.0 gd=1 coher=11 cigNum=1 dlim=fabs (dipStart_) isSemb=y
+[COMMENTS]
+
+Input:
+dataFile_.rsf - migrated dip-angle gathers
+
+Output:
+sembFile_.rsf - semblance spectrum
+
+[PARAMETERS]
+int     | cigNum | =1 |   | 	height of a vertical window for semblance calculation 
+int     | coher | =11 |   | 	height of a vertical window for semblance calculation 
+float   | dlim | =fabs (dipStart_) |   | 	defines dip-angle-window for the analysis 
+float   | gd | =1 |   | 	increment of Vm/V parameter 
+int     | gn | =1 |   | 	number of scanned Vm/V values  
+float   | go | =1.0 |   | 	start of Vm/V parameter 
+bool    | isSemb | =y |  [y/n] | 	y - output is semblance; n - stack power 
+string  | vel | = |   | 	velocity model file (velocity in km/s) (auxiliary input file name)
+[DIRECTORY]
+user/aklokov

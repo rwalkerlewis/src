@@ -1,0 +1,16 @@
+Program sfmpictshiftlr | Correct time-shift gathers with two-step lowrank propagator 
+[SYNOPSIS]
+sfmpictshiftlr left=left.rsf right=right.rsf dt=0.001 nb=60 par=0.01 cmplx=n abc=y pad1=1 taper=y thresh=0.92
+[PARAMETERS]
+bool    | abc | =y |  [y/n] | 	absorbing boundary condition 
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+float   | dt | =0.001 |   | 	time interval 
+file    | left | = |   | 	auxiliary input file name
+int     | nb | =60 |   | 	boundary width 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+float   | par | =0.01 |   | 	absorbing boundary coefficient 
+file    | right | = |   | 	auxiliary input file name
+bool    | taper | =y |  [y/n] | 	tapering 
+float   | thresh | =0.92 |   | 	thresholding 
+[DIRECTORY]
+user/zhiguang

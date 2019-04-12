@@ -1,0 +1,8 @@
+Program sfpreerror | Prediction error 
+[SYNOPSIS]
+sfpreerror < in.rsf predict=pre.rsf > out.rsf type=1
+[PARAMETERS]
+file    | predict | = |   | 	auxiliary input file name
+int     | type | =1 |   | 	if compute relative error, 1: yes, 0: no, default is yes. 
+[DIRECTORY]
+user/chenyk

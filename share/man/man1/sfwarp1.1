@@ -1,0 +1,73 @@
+.TH sfwarp1 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwarp1 \- Multicomponent data registration by 1-D warping. 
+.SH SYNOPSIS
+.B sfwarp1 < in.rsf > warped.rsf other=other.rsf warpout=warpout.rsf amplout=amplout.rsf warpin=warpin.rsf verb=n noamp=n accuracy= nliter=10 niter=100
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B accuracy
+.B =
+.R  [1-4]	interpolation accuracy
+.TP
+.I file   
+.B amplout
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	maximum number of linear iterations
+.TP
+.I int    
+.B nliter
+.B =10
+.R  	number of non-linear iterations
+.TP
+.I bool   
+.B noamp
+.B =n
+.R  [y/n]	if y, don't correct amplitudes
+.TP
+.I file   
+.B other
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B warpin
+.B =
+.R  	optional initial warp file (auxiliary input file name)
+.TP
+.I file   
+.B warpout
+.B =
+.R  	auxiliary output file name
+.SH USED IN
+.TP
+.I tccs/attr/vecta
+.TP
+.I tccs/ltft/vecta
+.TP
+.I tccs/merge/apache
+.TP
+.I tccs/merge/pcable
+.TP
+.I tccs/merge/pcable2
+.TP
+.I tccs/timelapse/duri
+.TP
+.I tccs/timelapse/long1
+.TP
+.I tccs/timelapse/timelapse
+.SH SOURCE
+.I user/fomels/Mwarp1.c
+.SH VERSION
+2.1-git

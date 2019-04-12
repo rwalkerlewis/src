@@ -1,0 +1,12 @@
+Program sfinterp2 | Multiple-arrival interpolation. 
+[SYNOPSIS]
+sfinterp2 < in.rsf size=size.rsf > out.rsf grid=grid.rsf sx=0. sz=0. nw=4 plane=0
+[PARAMETERS]
+file    | grid | = |   | 	auxiliary input file name
+int     | nw | =4 |   | 	Interpolation accuracy 
+int     | plane | =0 |   | 	0: point-source, 4: plane-wave 
+file    | size | = |   | 	auxiliary input file name
+float   | sx | =0. |   | 	
+float   | sz | =0. |   | 	Shot coordinates 
+[DIRECTORY]
+user/fomels

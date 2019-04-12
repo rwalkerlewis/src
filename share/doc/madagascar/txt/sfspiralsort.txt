@@ -1,0 +1,15 @@
+Program sfspiralsort | Sort microseismic surface array recording traces with a given epicenter along a spiral shape R = r0 + d(a-a0). 
+[SYNOPSIS]
+sfspiralsort < in.rsf x=x_file.rsf y=y_file.rsf > out.rsf dist=dist_file.rsf theta=theta_file.rsf epi_x= epi_y= radius0=1.0 angle0=0.0 dr=
+[PARAMETERS]
+float   | angle0 | =0.0 |   | 	Starting angle of spiral. 
+file    | dist | = |   | 	auxiliary output file name
+float   | dr | = |   | 	Spiral interval parameter. 
+float   | epi_x | = |   | 	referenced epicenter coordinate x. 
+float   | epi_y | = |   | 	referenced epicenter coordinate y. 
+float   | radius0 | =1.0 |   | 	Starting radius of spiral. 
+file    | theta | = |   | 	auxiliary output file name
+file    | x | = |   | 	auxiliary input file name
+file    | y | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/yunzhi

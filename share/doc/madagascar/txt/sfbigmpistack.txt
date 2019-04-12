@@ -1,0 +1,55 @@
+Program sfbigmpistack | remap and stacks rsf files using mpi 
+[SYNOPSIS]
+sfbigmpistack nx= ny= nz= debug=n verb=n dx= dy= dz= oz= oy= ox= nf= jf= of= prefix= shots= oname=
+[COMMENTS]
+
+Assumes that files are commonly named sequentially, e.g.:
+
+File001.rsf
+File002.rsf
+File003.rsf ...
+FileN.rsf
+
+Such that all files can be represented as a prefix, which 
+is a printf like statement that will be evaluated for all
+files to be included in a range.
+
+For the above example the prefix would be:
+
+prefix="File%03d.rsf" 
+
+The nf, jf, and of parameters specify a range of numbers to evaluate the 
+prefix for, giving the program filenames to be used for summing
+together.  For example:  
+
+nf=10,of=0,jf=1 --> (0,1,2,3,4,5,6,7,8,9,10)
+nf=10,of=5,jf=2 --> (5,7,9,11,13,15,17,19,21,23)
+
+If there are more files than processes, then this program will subdivide
+the files onto various processes, and run multiple rounds until
+everything is done.
+
+These must be 3D arrays (or 2D ,but with three dimensions), arrays must be
+X-Y-Z
+a1-a2-a3
+
+[PARAMETERS]
+bool    | debug | =n |  [y/n] | 	
+float   | dx | = |   | 	
+float   | dy | = |   | 	
+float   | dz | = |   | 	
+int     | jf | = |   | 	delta between files 
+int     | nf | = |   | 	number of files to stack 
+int     | nx | = |   | 	origin of files
+int     | ny | = |   | 	origin of files
+int     | nz | = |   | 	origin of files
+int     | of | = |   | 	origin of files
+string  | oname | = |   | 	name of output file 
+float   | ox | = |   | 	
+float   | oy | = |   | 	
+float   | oz | = |   | 	
+string  | prefix | = |   | 	printf like prefix 
+string  | shots | = |   | 	name of shot file 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/cwp

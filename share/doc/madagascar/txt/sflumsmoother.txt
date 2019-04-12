@@ -1,0 +1,9 @@
+Program sflumsmoother | 1D LUM smoother filter
+[SYNOPSIS]
+sflumsmoother < in.rsf > out.rsf nfw= nclip=(nfw+1)/2 boundary=n
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nclip | =(nfw+1)/2 |   | 	tuning parameter (1 <= nclip <= (nfw+1)/2, the default is (nfw+1)/2)
+int     | nfw | = |   | 	filter-window length (positive and odd integer)
+[DIRECTORY]
+user/yliu

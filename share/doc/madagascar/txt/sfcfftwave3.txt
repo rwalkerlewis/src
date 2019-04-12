@@ -1,0 +1,13 @@
+Program sfcfftwave3 | Simple 3-D lowrank onestep wave propagation 
+[SYNOPSIS]
+sfcfftwave3 < Fw.rsf > Fo.rsf ref=Fr.rsf snaps=snaps.rsf left=left.rsf right=right.rsf verb=y pad1=1 snap=0
+[PARAMETERS]
+file    | left | = |   | 	auxiliary input file name
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | ref | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+bool    | verb | =y |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

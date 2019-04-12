@@ -1,0 +1,21 @@
+.TH sfdespike 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdespike \- Remove spikes in by sliding 1-D medians. 
+.SH SYNOPSIS
+.B sfdespike < in.rsf > out.rsf wide=7
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B wide
+.B =7
+.R  	sliding window width
+.SH USED IN
+.TP
+.I gee/noiz/burst
+.TP
+.I rsf/tutorials/well-tie
+.SH SOURCE
+.I user/gee/Mdespike.c
+.SH VERSION
+2.1-git

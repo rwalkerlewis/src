@@ -1,0 +1,100 @@
+.TH sfunif3 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfunif3 \- Generate 3-D layered velocity model from specified interfaces. 
+.SH SYNOPSIS
+.B sfunif3 < surface.rsf > model.rsf x0= y0= z0= v00= dvdx= dvdy= dvdz= n1= d1= o1=0. layers=
+.SH COMMENTS
+
+Unless layers= is specified, velocity is a linear function of position inside
+each layer.
+
+Inspired by SU's unif2.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =
+.R  	Sampling of the depth axis
+.TP
+.I floats 
+.B dvdx
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B dvdy
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B dvdz
+.B =
+.R  	 [ninf]
+.TP
+.I string 
+.B layers
+.B =
+.R  	file with layer properties
+.TP
+.I int    
+.B n1
+.B =
+.R  	Number of samples on the depth axis
+.TP
+.I float  
+.B o1
+.B =0.
+.R  	Origin of the depth axis
+.TP
+.I floats 
+.B v00
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B x0
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B y0
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B z0
+.B =
+.R  	 [ninf]
+.SH USED IN
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/flat
+.TP
+.I gallery/french/gazdag
+.TP
+.I gallery/french/lowrank
+.TP
+.I gallery/french/model
+.TP
+.I gallery/french/oway
+.TP
+.I gallery/french/stolt
+.TP
+.I gallery/french/vc
+.TP
+.I jlu/txyapf/french
+.TP
+.I osu/shalek/elastic3d
+.TP
+.I rsf/rsf/unif3
+.TP
+.I tccs/decomp/frenchtri
+.TP
+.I tccs/elas/french-dc
+.TP
+.I tccs/oc3/french
+.SH SOURCE
+.I system/generic/Munif3.c
+.SH VERSION
+2.1-git

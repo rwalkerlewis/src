@@ -1,0 +1,8 @@
+Program sffbgabor | Gabor transform by linear phase filter bank 
+[SYNOPSIS]
+sffbgabor < in.rsf > out.rsf sigma=1.0 nf=100
+[PARAMETERS]
+int     | nf | =100 |   | 	frequency samples [0, 0.5] 
+float   | sigma | =1.0 |   | 	sigma 
+[DIRECTORY]
+user/chen

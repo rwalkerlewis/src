@@ -1,0 +1,13 @@
+Program sflocalsnr | Local signal-to-noise ratio (SNR) estimation. 
+[SYNOPSIS]
+sflocalsnr < in.rsf en=en.rsf > out.rsf nw= niter=100 verb=y eps=0.0f stack=y rect#=(1,1,...)
+[PARAMETERS]
+file    | en | = |   | 	auxiliary input file name
+float   | eps | =0.0f |   | 	regularization 
+int     | niter | =100 |   | 	number of inversion iterations 
+int     | nw | = |   | 	window length
+int     | rect# | =(1,1,...) |   | 	smoothing radius on #-th axis 
+bool    | stack | =y |  [y/n] | 	if y, window centre point, whereas window average
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

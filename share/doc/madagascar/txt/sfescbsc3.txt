@@ -1,0 +1,23 @@
+Program sfescbsc3 | Prepare supercells for stitching escape tables in 3-D. 
+[SYNOPSIS]
+sfescbsc3 < adom.rsf > out.rsf vspl=vspline.rsf verb=n nz= oz= dz= nx= ox= dx= ny= oy= dy= na= nb= df=0.1 nc=0 parab=y md=dz
+[PARAMETERS]
+float   | df | =0.1 |   | 	< Maximum distance to travel per step (fraction of the cell size) >
+float   | dx | = |   | 	Sampling of x axis 
+float   | dy | = |   | 	Sampling of y axis 
+float   | dz | = |   | 	Sampling of z axis 
+float   | md | =dz |   | 	Half-width of a supercell 
+int     | na | = |   | 	Number of samples in azimuth dimension 
+int     | nb | = |   | 	Number of samples in inclination dimension 
+int     | nc | =0 |   | 	Number of threads to use for ray tracing (OMP_NUM_THREADS by default) 
+int     | nx | = |   | 	Number of samples in x axis 
+int     | ny | = |   | 	Number of samples in y axis 
+int     | nz | = |   | 	Number of samples in z axis 
+float   | ox | = |   | 	Beginning of x axis 
+float   | oy | = |   | 	Beginning of y axis 
+float   | oz | = |   | 	Beginning of z axis 
+bool    | parab | =y |  [y/n] | 	y - use parabolic approximation of trajectories, n - straight line 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | vspl | = |   | 	Spline coefficients for velocity model (auxiliary input file name)
+[DIRECTORY]
+user/cram

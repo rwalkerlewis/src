@@ -1,0 +1,9 @@
+Program sfsumamp | Stack energy between two input horizons 
+[SYNOPSIS]
+sfsumamp < dataFile.rsf top=hTopFile.rsf bot=hBotFile.rsf > stackFile.rsf badSample=99999.f
+[PARAMETERS]
+float   | badSample | =99999.f |   | 	non-interpreted sample in the horizons 
+string  | bot | = |   | 	bottom horizon (auxiliary input file name)
+string  | top | = |   | 	top horizon (auxiliary input file name)
+[DIRECTORY]
+user/aklokov

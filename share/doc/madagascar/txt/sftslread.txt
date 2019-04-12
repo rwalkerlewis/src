@@ -1,0 +1,9 @@
+Program sftslread | Convert a TSL (MT, V5-2000 of Phoenix Geophysics) dataset to RSF. 
+[SYNOPSIS]
+sftslread > out.rsf tfile=tfile.rsf format=n data=
+[PARAMETERS]
+string  | data | = |   | 	input data 
+bool    | format | =n |  [y/n] | 	data format: [false] (TSL,TSH: 16) or [true] (TSn: 32) 
+string  | tfile | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/yliu

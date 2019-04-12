@@ -1,0 +1,16 @@
+Program sfderiv3 | Second order derivative along axis
+[SYNOPSIS]
+sfderiv3 < in.rsf > out.rsf axis=1 operator=2
+[COMMENTS]
+
+int axis=[1] axis to differentiate
+
+int operator=[2] 1 backward, 2 centered, 3 forward
+
+
+
+[PARAMETERS]
+int     | axis | =1 |   | 	
+int     | operator | =2 |   | 	
+[DIRECTORY]
+user/ediazp

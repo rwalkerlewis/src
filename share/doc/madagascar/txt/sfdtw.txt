@@ -1,0 +1,17 @@
+Program sfdtw | 
+[SYNOPSIS]
+sfdtw < _in.rsf ref=_ref.rsf > _out.rsf error=_error.rsf accum=_accum.rsf shifts=_shifts.rsf maxshift= exp=2 strain=1.0
+[COMMENTS]
+program calculates the shifts to warp a matching trace (input) 
+to a reference trace (ref=) of equal length and applies those shifts 
+
+[PARAMETERS]
+string  | accum | = |   | 	accumulation errors from forward and backtracking (auxiliary output file name)
+string  | error | = |   | 	misfit error (auxiliary output file name)
+float   | exp | =2 |   | 	error exponent (g-f)^exp 
+int     | maxshift | = |   | 	
+string  | ref | = |   | 	auxiliary input file name
+string  | shifts | = |   | 	output integer shifts as floats (auxiliary output file name)
+float   | strain | =1.0 |   | 	maximum strain 
+[DIRECTORY]
+user/luke

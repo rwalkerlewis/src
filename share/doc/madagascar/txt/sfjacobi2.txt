@@ -1,0 +1,8 @@
+Program sfjacobi2 | Find eigenvalues of a general complex matrix by Jacobi-like iteration. 
+[SYNOPSIS]
+sfjacobi2 < mat.rsf > val.rsf niter=10 verb=n
+[PARAMETERS]
+int     | niter | =10 |   | 	
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+system/generic

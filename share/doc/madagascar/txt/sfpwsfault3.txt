@@ -1,0 +1,15 @@
+Program sfpwsfault3 | 3-D fault detection from plane-wave spray. 
+[SYNOPSIS]
+sfpwsfault3 < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 ns2= ns3= niter=20 perc=98. order=1 type=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+int     | niter | =20 |   | 	number of iterations 
+int     | ns2 | = |   | 	
+int     | ns3 | = |   | 	spray radius 
+int     | order | =1 |   | 	accuracy order 
+float   | perc | =98. |   | 	percentage for sharpen, default is 98
+string  | type | = |   | 	[difference,sharpen_similarity] calculation type, the default is difference  
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/yliu

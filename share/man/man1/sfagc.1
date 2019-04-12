@@ -1,0 +1,81 @@
+.TH sfagc 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfagc \- Automatic gain control. 
+.SH SYNOPSIS
+.B sfagc < in.rsf > out.rsf repeat=1 rect#=(125,1,1,...)
+.SH COMMENTS
+
+October 2011 program of the month:
+http://ahay.org/blog/2011/10/01/program-of-the-month-sfagc/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B rect#
+.B =(125,1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat filtering several times
+.SH USED IN
+.TP
+.I bei/dpmv/krchdmo
+.TP
+.I bei/krch/wgkirch
+.TP
+.I bei/vela/vscan
+.TP
+.I data/freeusp/land
+.TP
+.I data/sigsbee/ptest
+.TP
+.I data/sigsbee/pwemig
+.TP
+.I data/viking/basicm8r
+.TP
+.I gallery/sigsbee/oway
+.TP
+.I gee/pch/steep
+.TP
+.I hansung/cgg/real
+.TP
+.I hansung/cgg/syn
+.TP
+.I jlu/vdseislet/usp
+.TP
+.I rsf/rsf/sfagc
+.TP
+.I rsf/school/data
+.TP
+.I rsf/school2017/seismic
+.TP
+.I sep/vc2/beivc
+.TP
+.I sep/vc2/elfvc
+.TP
+.I sep/vc2/sigvc
+.TP
+.I swag/itime/oz2
+.TP
+.I swag/itime/oz6
+.TP
+.I tccs/diffr/fault
+.TP
+.I tccs/diffr/gom
+.TP
+.I tccs/ltft/groll
+.TP
+.I tccs/pi/bei
+.TP
+.I tccs/shape/beivc
+.TP
+9 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfagc.html
+.SH SOURCE
+.I system/generic/Magc.c
+.SH VERSION
+2.1-git

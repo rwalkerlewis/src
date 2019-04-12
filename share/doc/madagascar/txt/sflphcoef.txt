@@ -1,0 +1,9 @@
+Program sflphcoef | Linear PHase filter COEFficients 
+[SYNOPSIS]
+sflphcoef > out.rsf m=1 n=1 interp=
+[PARAMETERS]
+string  | interp | = |   | 	interpolation method: maxflat lagrange bspline 
+int     | m | =1 |   | 	b[-m, ... ,n] 
+int     | n | =1 |   | 	b[-m, ... ,n] 
+[DIRECTORY]
+user/chen

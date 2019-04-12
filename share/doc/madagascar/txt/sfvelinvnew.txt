@@ -1,0 +1,30 @@
+Program sfvelinvnew | None
+[SYNOPSIS]
+sfvelinvnew < infile.rsf res=fres.rsf vel0=fm.rsf mres=fmres.rsf > outfile.rsf velout=vtr.rsf nv=nhx dv=0.01 ov=1.5 niter=20 savevel=0 flag=0 mflag=0 huber=0 irls=0 nstep=1 rwt=0. mwt=0. srate=0.01 eps=0.01 lamda=1000. delta=0.0001 step=0.000005 alpha=790.635 alpha= lip= reset=
+[PARAMETERS]
+        | alpha | = |   | 	smoothing parameter, typical value: 1 to 10 times estimated norm(x,inf)
+        | delta | =0.0001 |   | 	delta controls update step and convergent, small delta ensure convergence but with small decrease in data fit error
+        | dv | =0.01 |   | 	
+        | eps | =0.01 |   | 	
+        | flag | =0 |   | 	
+        | huber | =0 |   | 	
+        | irls | =0 |   | 	
+        | lamda | =1000. |   | 	lamda controls sparsity, bigger lamda, more sparsity
+        | lip | = |   | 	the estimated Lipschitz constrant of the dual objective, default: alpha*normest(A*A',1e-2)
+        | mflag | =0 |   | 	
+file    | mres | = |   | 	auxiliary output file name
+        | mwt | =0. |   | 	
+        | niter | =20 |   | 	
+        | nstep | =1 |   | 	
+        | nv | =nhx |   | 	
+        | ov | =1.5 |   | 	
+file    | res | = |   | 	auxiliary output file name
+        | reset | = |   | 	Nesterov's acceleration restart (theta is reset) or skip (theta is not reset)
+        | rwt | =0. |   | 	
+        | savevel | =0 |   | 	Flag to choose the algorithm
+        | srate | =0.01 |   | 	
+        | step | =0.000005 |   | 	step is very important in convergence and sparsity
+file    | vel0 | = |   | 	auxiliary input file name
+file    | velout | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/seisinv

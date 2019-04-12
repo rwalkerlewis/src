@@ -1,0 +1,10 @@
+Program sffrog | Simple 2-D wave propagation 
+[SYNOPSIS]
+sffrog < Fw.rsf > Fo.rsf vel=Fv.rsf ref=Fr.rsf verb=n type=0
+[PARAMETERS]
+file    | ref | = |   | 	auxiliary input file name
+int     | type | =0 |   | 	Laplacian type 
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/gee

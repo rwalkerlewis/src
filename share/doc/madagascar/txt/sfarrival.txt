@@ -1,0 +1,10 @@
+Program sfarrival | Multiple-arrival interpolation from down-marching. 
+[SYNOPSIS]
+sfarrival < in.rsf place=place.rsf > out.rsf depth=depth.rsf sx=0. nw=3
+[PARAMETERS]
+string  | depth | = |   | 	auxiliary input file name
+int     | nw | =3 |   | 	interpolation accuracy 
+file    | place | = |   | 	auxiliary input file name
+float   | sx | =0. |   | 	source x position 
+[DIRECTORY]
+user/fomels

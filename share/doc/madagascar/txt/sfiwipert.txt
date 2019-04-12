@@ -1,0 +1,9 @@
+Program sfiwipert | Image-domain waveform tomography (image perturbation). 
+[SYNOPSIS]
+sfiwipert < in.rsf > out.rsf pz=pz.rsf ph=ph.rsf thres=0.01
+[PARAMETERS]
+string  | ph | = |   | 	auxiliary input file name
+string  | pz | = |   | 	auxiliary input file name
+float   | thres | =0.01 |   | 	slope thresholding 
+[DIRECTORY]
+user/llisiw

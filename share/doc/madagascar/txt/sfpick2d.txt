@@ -1,0 +1,16 @@
+Program sfpick2d | 2D picking
+[SYNOPSIS]
+sfpick2d < dataFile_.rsf > outFile_.rsf eps=0 xApp=1
+[COMMENTS]
+
+Input:
+dataFile_.rsf - parameter spectrum (semblance) panel
+
+Output:
+outFile_.rsf - picked optimal values
+
+[PARAMETERS]
+float   | eps | =0 |   | 	smoothness measure 
+int     | xApp | =1 |   | 	x-aperture 
+[DIRECTORY]
+user/aklokov

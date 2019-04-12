@@ -1,0 +1,11 @@
+Program sfpsss | phase shift wave extrapolation. 
+[SYNOPSIS]
+sfpsss < data.rsf > imag.rsf vel=modl.rsf wave=wave.rsf jz=40 rz=0 nz=nz0-rz
+[PARAMETERS]
+int     | jz | =40 |   | 	depth step for wave data 
+int     | nz | =nz0-rz |   | 	depth number 
+int     | rz | =0 |   | 	receiver depth 
+file    | vel | = |   | 	auxiliary input file name
+file    | wave | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/chen

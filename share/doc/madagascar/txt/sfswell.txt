@@ -1,0 +1,14 @@
+Program sfswell | Add swell noise to the data.
+[SYNOPSIS]
+sfswell < in.rsf > out.rsf den=10. inten=0.1 slope=0.1 width=4 length=30 num=5 rep=n noise=n
+[PARAMETERS]
+float   | den | =10. |   | 	noise density (percent, default=10, Min=0, Max=100) 
+float   | inten | =0.1 |   | 	noise intensity (multiple peak value of data, default=0.1) 
+int     | length | =30 |   | 	max noise length (default=30) 
+bool    | noise | =n |  [y/n] | 	if y, output noise only 
+int     | num | =5 |   | 	noise number (default=5) 
+bool    | rep | =n |  [y/n] | 	if y, replace data with noise 
+float   | slope | =0.1 |   | 	noise slope (default=0.1) 
+int     | width | =4 |   | 	max noise width (default=4) 
+[DIRECTORY]
+user/yliu

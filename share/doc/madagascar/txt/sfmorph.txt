@@ -1,0 +1,7 @@
+Program sfmorph | Morphological operations on binary images 
+[SYNOPSIS]
+sfmorph < inp.rsf > out.rsf what=
+[PARAMETERS]
+string  | what | = |   | 	
+[DIRECTORY]
+user/fomels

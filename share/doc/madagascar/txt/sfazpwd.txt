@@ -1,0 +1,13 @@
+Program sfazpwd | Azimuthal Plane-Wave Destruction 
+[SYNOPSIS]
+sfazpwd < in.rsf dip=dip.rsf az=azin.rsf > out.rsf order=1 nj1=1 nj2=1 sm=y adj=n
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | az | = |   | 	auxiliary input file name
+file    | dip | = |   | 	auxiliary input file name
+int     | nj1 | =1 |   | 	antialiasing iline 
+int     | nj2 | =1 |   | 	antialiasing xline 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+bool    | sm | =y |  [y/n] | 	if perform AzPWD filtering 
+[DIRECTORY]
+user/dmerzlikin

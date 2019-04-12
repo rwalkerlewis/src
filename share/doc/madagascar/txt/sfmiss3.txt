@@ -1,0 +1,9 @@
+Program sfmiss3 | Missing data interpolation (N-dimensional) using shaping regularization. 
+[SYNOPSIS]
+sfmiss3 < in.rsf > out.rsf mask=mask.rsf niter=100 force=y
+[PARAMETERS]
+bool    | force | =y |  [y/n] | 	if y, keep known values 
+string  | mask | = |   | 	optional input mask file for known data (auxiliary input file name)
+int     | niter | =100 |   | 	Number of iterations 
+[DIRECTORY]
+user/fomels

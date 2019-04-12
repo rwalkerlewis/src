@@ -1,0 +1,10 @@
+Program sfclfdc1-bak | 1D 10th-order Lowrank Onestep FD coefficient
+[SYNOPSIS]
+sfclfdc1-bak < velf.rsf > outm.rsf seed=time(NULL eps=1.e-4 npk=20 dt=
+[PARAMETERS]
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+[DIRECTORY]
+user/jsun

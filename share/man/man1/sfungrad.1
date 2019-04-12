@@ -1,0 +1,24 @@
+.TH sfungrad 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfungrad \- Phase unwrapping by least squares. 
+.SH SYNOPSIS
+.B sfungrad < inp.rsf > out.rsf badness=bad.rsf niter=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B badness
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =0
+.R  	number of iterations
+.SH USED IN
+.TP
+.I gee/lsq/vesuvio
+.SH SOURCE
+.I user/gee/Mungrad.c
+.SH VERSION
+2.1-git

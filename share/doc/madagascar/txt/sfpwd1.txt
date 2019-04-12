@@ -1,0 +1,11 @@
+Program sfpwd1 | One side of plane wave destruction. 
+[SYNOPSIS]
+sfpwd1 < in.rsf dip=dip.rsf > out.rsf left=y order=1 nj1=1 nj2=1
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+bool    | left | =y |  [y/n] | 	if using left or right side of PWD 
+int     | nj1 | =1 |   | 	in-line aliasing 
+int     | nj2 | =1 |   | 	cross-line aliasing 
+int     | order | =1 |   | 	accuracy 
+[DIRECTORY]
+user/pwd

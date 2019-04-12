@@ -1,0 +1,12 @@
+Program sfdowmf | 2D dip-oriented weighted median filter (DOWMF). 
+[SYNOPSIS]
+sfdowmf < in.rsf > out.rsf dip=dip.rsf nw= rect=nw boundary=y var=n verb=n
+[PARAMETERS]
+bool    | boundary | =y |  [y/n] | 	if y, boundary is data, whereas zero
+file    | dip | = |   | 	auxiliary input file name
+int     | nw | = |   | 	data-window length (positive and odd integer) 
+int     | rect | =nw |   | 	Correlation window 
+bool    | var | =n |  [y/n] | 	if y, variance weights, whereas correlation weights
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

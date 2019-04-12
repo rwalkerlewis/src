@@ -1,0 +1,42 @@
+.TH sfimagsrc 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfimagsrc \- Convolution with a Ricker wavelet. 
+.SH SYNOPSIS
+.B sfimagsrc < in.rsf > out.rsf frequency= freq=0.2
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B freq
+.B =0.2
+.R  	peak frequency for Ricker wavelet (as fraction of Nyquist)
+.TP
+.I float  
+.B frequency
+.B =
+.R  	peak frequency for Ricker wavelet (in Hz)
+.SH USED IN
+.TP
+.I tccs/decomp/frenchtri
+.TP
+.I tccs/decomp/homoortho
+.TP
+.I tccs/decomp/homotri
+.TP
+.I tccs/elas/french-dc
+.TP
+.I tccs/elas/gradient
+.TP
+.I tccs/elas/homomono3d
+.TP
+.I tccs/elas/homotric3d-dc
+.TP
+.I tccs/elas/homotric3d
+.TP
+.I tccs/elas/twolayer3d
+.TP
+.I tccs/onestep/bpttirtm
+.SH SOURCE
+.I user/jsun/Mimagsrc.c
+.SH VERSION
+2.1-git

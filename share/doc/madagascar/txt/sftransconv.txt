@@ -1,0 +1,14 @@
+Program sftransconv | 
+[SYNOPSIS]
+sftransconv < _in.rsf > _out.rsf trans=_trans.rsf ker=_ker.rsf adj=n x1=0. x2=0.
+[COMMENTS]
+program translates a 2D image then convolves it with arbitrary kernel
+
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y reverse translation, if n, translation 
+string  | ker | = |   | 	convolution kernel file (auxiliary input file name)
+string  | trans | = |   | 	variable translations file with same sampling as input, added ndim dimension (auxiliary input file name)
+float   | x1 | =0. |   | 	fixed translation in first dimension 
+float   | x2 | =0. |   | 	fixed translation in second dimension 
+[DIRECTORY]
+user/luke

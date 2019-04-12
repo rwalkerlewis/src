@@ -1,0 +1,13 @@
+Program sfafac | Wilson-Burg factorization  
+[SYNOPSIS]
+sfafac < Fa.rsf > Ff.rsf lag=Fl.rsf ompchunk=1 verb=n stable=n niter=20 nn=1000 nf=32
+[PARAMETERS]
+string  | lag | = |   | 	auxiliary output file name
+int     | nf | =32 |   | 	factor coefficients 
+int     | niter | =20 |   | 	Wilson iterations 
+int     | nn | =1000 |   | 	Helix diameter 
+int     | ompchunk | =1 |   | 	OMP chunk size 
+bool    | stable | =n |  [y/n] | 	stability flag 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/gee

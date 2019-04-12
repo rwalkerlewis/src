@@ -1,0 +1,14 @@
+Program sflrvc0 | Lowrank decomposition for zero-offset time migration
+[SYNOPSIS]
+sflrvc0 vel=vel.rsf < fft.rsf left=left.rsf > right.rsf seed=time(NULL tol=1.e-4 npk=20 v0=0.0 fmin=dw tmax=t0+(nt-1
+[PARAMETERS]
+        | fmin | =dw |   | 	minimum frequency
+file    | left | = |   | 	auxiliary output file name
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+        | tmax | =t0+(nt-1 |   | 	
+        | tol | =1.e-4 |   | 	tolerance
+        | v0 | =0.0 |   | 	minimum velocity
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

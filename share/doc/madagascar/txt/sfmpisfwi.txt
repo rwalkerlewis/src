@@ -1,0 +1,64 @@
+Program sfmpisfwi | Acoustic Forward Modeling, FWI, and RTM (FWI has the options of seislet regularization, smoothing kernels, simultaneous source, and static phase encoding) 
+[SYNOPSIS]
+sfmpisfwi Fvel=Fv.rsf Fwavelet=Fw.rsf Fdip=Fdip.rsf Fcode=Fcode.rsf output=Fdat.rsf output=Finv.rsf Ferr=Ferr.rsf Fmod=Fmod.rsf Fgrad=Fgrad.rsf output=Fimg.rsf function=2 seislet=0 encode=0 verb=n nb=100 coef=0.002 acqui_type=1 ns= ds= s0= sz=5 nr=acpar->nx dr=acpar->dx r0=acpar->x0 rz=5 interval=1 fhi=0.5/acpar->dt flo=0. frectx=2 frectz=2 nsource=1 dsource=0 pclip=15 order=1 eps=0.1 onlygrad=n wt1=acpar->t0 wt2=acpar->t0+(acpar->nt-1)*acpar->dt woff1=acpar->r0 woff2=acpar->r0+(acpar->nr-1)*acpar->dr gain=1 waterz=51 grectx=3 grectz=3 drectx=1 drectz=1 nrepeat=1 tangent=0 sigma1=-1 sigma2=-1 v1=0. v2=10. niter= conv_error= npair=20 nls=20 factor=10 repeat=5 err_type=0 seislet_type=
+[PARAMETERS]
+file    | Fcode | = |   | 	auxiliary input file name
+file    | Fdip | = |   | 	auxiliary input file name
+file    | Ferr | = |   | 	auxiliary output file name
+file    | Fgrad | = |   | 	auxiliary output file name
+file    | Fmod | = |   | 	auxiliary output file name
+file    | Fvel | = |   | 	auxiliary input file name
+file    | Fwavelet | = |   | 	auxiliary input file name
+int     | acqui_type | =1 |   | 	if 1, fixed acquisition; if 2, marine acquisition; if 3, symmetric acquisition 
+float   | coef | =0.002 |   | 	absorbing boundary coefficient 
+float   | conv_error | = |   | 	final convergence error 
+float   | dr | =acpar->dx |   | 	receiver interval 
+int     | drectx | =1 |   | 	smoothing kernel radius in x 
+int     | drectz | =1 |   | 	smoothing kernel radius in z 
+float   | ds | = |   | 	shot interval 
+int     | dsource | =0 |   | 	interval of sources in a supershot 
+int     | encode | =0 |   | 	if 0, no phase encoding; if 1, phase encoding 
+float   | eps | =0.1 |   | 	seislet regularization parameter 
+int     | err_type | =0 |   | 	if 0, true misfit function; if 1, both smoothing kernel and original L2 norm misfits 
+float   | factor | =10 |   | 	step length increase factor 
+float   | fhi | =0.5/acpar->dt |   | 	high frequency in band, default is Nyquist 
+float   | flo | =0. |   | 	low frequency in band, default is zero 
+int     | frectx | =2 |   | 	source smoothing in x 
+int     | frectz | =2 |   | 	source smoothing in z 
+int     | function | =2 |   | 	if 1, forward modeling; if 2, FWI; if 3, RTM 
+float   | gain | =1 |   | 	vertical gain power of data residual 
+int     | grectx | =3 |   | 	gradient smoothing radius in x 
+int     | grectz | =3 |   | 	gradient smoothing radius in z 
+int     | interval | =1 |   | 	wavefield storing interval 
+int     | nb | =100 |   | 	boundary width 
+int     | niter | = |   | 	iteration number 
+int     | nls | =20 |   | 	line search number 
+int     | npair | =20 |   | 	number of l-BFGS pairs 
+int     | nr | =acpar->nx |   | 	number of receiver 
+int     | nrepeat | =1 |   | 	smoothing kernel repeat number 
+int     | ns | = |   | 	shot number 
+int     | nsource | =1 |   | 	number of sources in a supershot 
+bool    | onlygrad | =n |  [y/n] | 	only calculate gradident or not 
+int     | order | =1 |   | 	accuracy order of seislet transform 
+file    | output | = |   | 	auxiliary output file name
+float   | pclip | =15 |   | 	soft thresholding parameter 
+float   | r0 | =acpar->x0 |   | 	receiver origin 
+int     | repeat | =5 |   | 	after how many iterations the step length goes back to 1 
+int     | rz | =5 |   | 	receiver depth 
+float   | s0 | = |   | 	shot origin 
+int     | seislet | =0 |   | 	if 0, no seislet regularization; if 1, seislet regularization 
+string  | seislet_type | = |   | 	[haar, linear, biorthogonal] 
+float   | sigma1 | =-1 |   | 	smoothing kernel radius moving step in z 
+float   | sigma2 | =-1 |   | 	smoothing kernel radius moving step in x 
+int     | sz | =5 |   | 	source depth 
+int     | tangent | =0 |   | 	if 1, calculate prediction corrector 
+float   | v1 | =0. |   | 	lower limit of estimated velocity 
+float   | v2 | =10. |   | 	upper limit of estimated velocity 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+int     | waterz | =51 |   | 	water layer depth 
+float   | woff1 | =acpar->r0 |   | 	window data residual: rmin 
+float   | woff2 | =acpar->r0+(acpar->nr-1)*acpar->dr |   | 	window data residual: rmax 
+float   | wt1 | =acpar->t0 |   | 	window data residual: tmin 
+float   | wt2 | =acpar->t0+(acpar->nt-1)*acpar->dt |   | 	window data residual: tmax 
+[DIRECTORY]
+user/zhiguang

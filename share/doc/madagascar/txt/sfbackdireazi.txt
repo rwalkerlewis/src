@@ -1,0 +1,7 @@
+Program sfbackdireazi | Background directivity(Azimuth). 
+[SYNOPSIS]
+sfbackdireazi < Zz.rsf > Zo.rsf verb=0
+[PARAMETERS]
+bool    | verb | =0 |  [y/n] | 	
+[DIRECTORY]
+user/parvaneh

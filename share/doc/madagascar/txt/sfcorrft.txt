@@ -1,0 +1,11 @@
+Program sfcorrft | Trace-by-trace or data-by-trace correlation using Fourier transform. 
+[SYNOPSIS]
+sfcorrft < in.rsf > corr.rsf other=other.rsf axis=1
+[COMMENTS]
+other can be a dataset with the same dimensions as in (except for axis) or a single trace.
+If other is not specified, auto-correlation is assumed.
+[PARAMETERS]
+int     | axis | =1 |   | 	across which axis to correlate.
+string  | other | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/saragiotis

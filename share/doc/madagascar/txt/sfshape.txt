@@ -1,0 +1,9 @@
+Program sfshape | Non-stationary smoothing by shaping regularization. 
+[SYNOPSIS]
+sfshape < inp.rsf > out.rsf limit=lim.rsf niter=100 rect#=(1,1,...)
+[PARAMETERS]
+file    | limit | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	number of iterations 
+int     | rect# | =(1,1,...) |   | 	smoothing radius on #-th axis 
+[DIRECTORY]
+user/fomels

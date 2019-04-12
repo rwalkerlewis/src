@@ -1,0 +1,7 @@
+Program sfsthres | soft thresholding function
+[SYNOPSIS]
+sfsthres < input.rsf > output.rsf miu=
+[PARAMETERS]
+        | miu | = |   | 	
+[DIRECTORY]
+user/jingwei

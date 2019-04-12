@@ -1,0 +1,16 @@
+Program sfsin | Simple operations with complex sinusoids 
+[SYNOPSIS]
+sfsin < in.rsf > out.rsf root=root.rsf mask=mask.rsf adj=n verb=n niter=0 rect=1 perc=50. eps=1./n1 oper= type=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+float   | eps | =1./n1 |   | 	scaling for shaping inversion 
+string  | mask | = |   | 	missing data interpolation (auxiliary input file name)
+int     | niter | =0 |   | 	number of iterations 
+string  | oper | = |   | 	operation to perform 
+float   | perc | =50. |   | 	percentage for thresholding (used when oper=t and niter > 0) 
+int     | rect | =1 |   | 	smoothing radius (for oper=s) 
+file    | root | = |   | 	auxiliary input file name
+string  | type | = |   | 	[haar,linear,biortho] type of the seislet transform 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+system/seismic

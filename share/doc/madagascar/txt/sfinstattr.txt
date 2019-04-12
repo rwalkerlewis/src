@@ -1,0 +1,13 @@
+Program sfinstattr | Estimate of instantaneous attributes. 
+[SYNOPSIS]
+sfinstattr < in.rsf > out.rsf order=10 ref=1. hertz=y hires=n der2=n verb=n type=
+[PARAMETERS]
+bool    | der2 | =n |  [y/n] | 	if y, compute 2nd-order derivative to use with hires=y 
+bool    | hertz | =y |  [y/n] | 	if y, convert output to Hertz 
+bool    | hires | =n |  [y/n] | 	if y, compute high resolution instantaneous attributes 
+int     | order | =10 |   | 	Hilbert transformer order 
+float   | ref | =1. |   | 	Hilbert transformer reference (0.5 < ref <= 1) 
+string  | type | = |   | 	[amplitude,phase,frequency] attribute type, the default is amplitude 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,30 @@
+Program sfmpilrmodel | One-step lowrank modeling 
+[SYNOPSIS]
+sfmpilrmodel Fwfld=Fwfld.rsf Fpadvel=Fvel.rsf wantwf=n pad1=1 nb= srctrunc=0.4 rectx=2 rectz=2 repeat=2 scalet=1 snap=100 snapshot=0 ns= ds= s0= rnx= nr=rnx ndr=1 nr0=0 gpz= spx= spz= path1= path2=
+[PARAMETERS]
+file    | Fpadvel | = |   | 	auxiliary input file name
+file    | Fwfld | = |   | 	auxiliary output file name
+float   | ds | = |   | 	shot interval 
+int     | gpz | = |   | 	depth of geophone 
+int     | nb | = |   | 	boundary width 
+int     | ndr | =1 |   | 	receiver interval 
+int     | nr | =rnx |   | 	receiver number 
+int     | nr0 | =0 |   | 	receiver origin 
+int     | ns | = |   | 	shot number 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+string  | path1 | = |   | 	path of left matrices './mat/left' 
+string  | path2 | = |   | 	path of right matrices './mat/left' 
+int     | rectx | =2 |   | 	source smoothing in x-direction 
+int     | rectz | =2 |   | 	source smoothing in z-direction 
+int     | repeat | =2 |   | 	repeat numbers of source smoothing 
+int     | rnx | = |   | 	coverage area of one shot 
+float   | s0 | = |   | 	shot origin 
+int     | scalet | =1 |   | 	wavefield storage interval 
+int     | snap | =100 |   | 	wavefield output interval when wantwf=y 
+int     | snapshot | =0 |   | 	print out the wavefield snapshots of this shot 
+int     | spx | = |   | 	horizontal location of source 
+int     | spz | = |   | 	depth of source 
+float   | srctrunc | =0.4 |   | 	source truncation 
+bool    | wantwf | =n |  [y/n] | 	want wavefield or not 
+[DIRECTORY]
+user/zhiguang

@@ -1,0 +1,126 @@
+
+    <!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <html><head><title>RSF: sftahmakesloc</title>
+    <style type="text/css"><!--
+    TT { font-family: lucidatypewriter, lucida console, courier }
+    --></style></head><body bgcolor="#f0f0f8">
+    
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#7799ee">
+    <td valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sftahmakesloc</strong></big></big> (2.1-git)</font></td
+    ><td align=right valign=bottom
+    ><font color="#ffffff" face="helvetica, arial"><a href="./index.html">index</a><br><a href="https://github.com/ahay/src/blob/madagascar-2.1-git/user/karl/Mtahmakesloc.c">user/karl/Mtahmakesloc.c</a></font></td></tr></table>
+    Trace And Header MAKE SLOC KEY.
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#aa55cc">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">sftahmakesloc < in.rsf > out.rsf verbose=1 slocxy= slockey=</td></tr></table><br>
+tah is the abbreviation of Trace And Header.  Madagascar programs <br>
+that begin with sftah are a designed to:<br>
+1- read trace and headers from separate rsf files and write them to <br>
+standard output (ie sftahread)<br>
+2- filter programs that read and write standard input/output and <br>
+process the tah data (eg sftahnmo, sftahstack)<br>
+3- read tah data from standard input and write separate rsf files for <br>
+the trace and headers data (ie sftahwrite)<br>
+<br>
+These programs allow Seismic Unix (su) like processing in Madagascar.  <br>
+Some programs have su like names.<br>
+<br>
+Some programs in this suite are sftahread, sftahgethw, ftahhdrmath, <br>
+and sftahwrite.<br>
+<br>
+The sftahmakeslockey program will make a sloc keywhic is useful for <br>
+surface consistant scaling, decon, and residal statics.  An sloc is a <br>
+surface location, ie a shot or a receiver location.  Programs could <br>
+be written to drive off the group location (gx,gy), but it is better <br>
+to just have an integer group surface location counts the group <br>
+location from 1 to number group locations.  That allows you to make <br>
+shot record displays where the horizontal coordinate the group <br>
+location index (a handy display to look for consistant receiver statics <br>
+on shots).  You specify input surface coodinate, slocxy=gx,gy and output <br>
+header key, slockey=tracf.<br>
+<br>
+EXAMPLE:<br>
+<br>
+sftahread \<br>
+verbose=1 \<br>
+input=npr3_gathers.rsf \<br>
+| sftahmakeslockey slocxy=gx,gy slockey=tracf verbose=1 \<br>
+| sftahwrite \<br>
+verbose=1                         \<br>
+mode=seq \<br>
+output=npr3_tracf.rsf \<br>
+>/dev/null<br>
+<br>
+In this example the cmp sorted prestack data, npr3_gathers.rsf,  are <br>
+read by sftahread.  The headers are in the file npr3_gathers_hdr.rsf, <br>
+the headers parameter default.  The headers are merged with the trace <br>
+amplitudes and the tah data sent down the pipe for sftahmakeskey.<br>
+sftahmakeskey creates the cdpt header and sftahwrite creates a 4 <br>
+dimensional file.<br>
+<br>
+PARAMETERS<br>
+strings slocxy=<br>
+<br>
+list of 2 header keys that are the input surface location key<br>
+so use to compute the slockey.<br>
+<br>
+string slockey<br>
+<br>
+the name of the output sloc header.<br>
+
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ee77aa">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Parameters</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>string  <strong>slockey=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	The name of the sloc key created by the program. <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>string  <strong>slocxy=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+     two keys that are the trace headers names of the x,y coordinate <br>
+     to use to identify surface locations and compute the trace header<br>
+     value for slockey <br>
+ <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>verbose=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+     flag to control amount of print<br>
+     0 terse, 1 informative, 2 chatty, 3 debug<br>
+  <br>
+</font></td></tr></table>
+    
+</td></tr></table>
+    </body></html>

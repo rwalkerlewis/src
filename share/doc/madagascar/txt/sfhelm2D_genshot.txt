@@ -1,0 +1,21 @@
+Program sfhelm2D_genshot | Generate shot file for Helmholtz solver. 
+[SYNOPSIS]
+sfhelm2D_genshot > out.rsf fmag=fmag.rsf n1=1 n2=1 ns=1 d1=0.1 d2=0.1 nw=1 dw=1.0 ow=1.0 nsource=1 dsource=0 srcz= srcx0= srcdx= mag=1.0
+[PARAMETERS]
+float   | d1 | =0.1 |   | 	
+float   | d2 | =0.1 |   | 	
+int     | dsource | =0 |   | 	
+float   | dw | =1.0 |   | 	
+string  | fmag | = |   | 	auxiliary input file name
+float   | mag | =1.0 |   | 	
+int     | n1 | =1 |   | 	
+int     | n2 | =1 |   | 	
+int     | ns | =1 |   | 	
+int     | nsource | =1 |   | 	
+int     | nw | =1 |   | 	
+float   | ow | =1.0 |   | 	
+int     | srcdx | = |   | 	
+int     | srcx0 | = |   | 	
+int     | srcz | = |   | 	
+[DIRECTORY]
+user/hzhu

@@ -1,0 +1,5 @@
+Program sfckolmog | complex Kolmogoroff spectral factorization. 
+[SYNOPSIS]
+sfckolmog < in.rsf > out.rsf
+[DIRECTORY]
+user/gee

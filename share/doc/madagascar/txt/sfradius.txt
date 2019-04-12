@@ -1,0 +1,9 @@
+Program sfradius | Estimate smoothing radius (min = 1) 
+[SYNOPSIS]
+sfradius < in.rsf freq=freq.rsf > out.rsf c=1. maxrad=1000.
+[PARAMETERS]
+float   | c | =1. |   | 	
+file    | freq | = |   | 	auxiliary input file name
+float   | maxrad | =1000. |   | 	
+[DIRECTORY]
+user/sgreer

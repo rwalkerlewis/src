@@ -1,0 +1,125 @@
+.TH sfunif2 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfunif2 \- Generate 2-D layered velocity model from specified interfaces. 
+.SH SYNOPSIS
+.B sfunif2 < surface.rsf > model.rsf x0= z0= v00= dvdx= dvdz= n1= d1= o1=0. label1= unit1=
+.SH COMMENTS
+
+In each layer, velocity is a linear function of position.
+
+Inspired by SU's unif2.
+
+October 2013 program of the month:
+http://ahay.org/blog/2013/10/03/program-of-the-month-sfunif2/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =
+.R  	Sampling of the depth axis
+.TP
+.I floats 
+.B dvdx
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B dvdz
+.B =
+.R  	 [ninf]
+.TP
+.I string 
+.B label1
+.B =
+.R  	depth axis label
+.TP
+.I int    
+.B n1
+.B =
+.R  	Number of samples on the depth axis
+.TP
+.I float  
+.B o1
+.B =0.
+.R  	Origin of the depth axis
+.TP
+.I string 
+.B unit1
+.B =
+.R  
+.TP
+.I floats 
+.B v00
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B x0
+.B =
+.R  	 [ninf]
+.TP
+.I floats 
+.B z0
+.B =
+.R  	 [ninf]
+.SH USED IN
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2allA
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2oneA
+.TP
+.I cwp/geo2009TTIModeSeparation/fold
+.TP
+.I geo384w/hw1/wave
+.TP
+.I geo384w/hw5/hyper
+.TP
+.I geo384w/hw5/lsmig
+.TP
+.I geo384w/hw6/hyper
+.TP
+.I jlu/txyapf/french
+.TP
+.I osu/shalek/elastic2d
+.TP
+.I osu/shalek/mod2d
+.TP
+.I rsf/reprobook/exam3
+.TP
+.I rsf/reprobook/exam4
+.TP
+.I rsf/reprobook/exam5
+.TP
+.I rsf/rsf/wedge
+.TP
+.I rsf/school2015/modmig
+.TP
+.I rsf/scons/rsf
+.TP
+.I rsf/su/rsflab5
+.TP
+.I rsf/su/rsfmodel
+.TP
+.I rsf/su/rsfsmooth3d
+.TP
+.I rsf/tutorials/tuning
+.TP
+.I rsf/tutorials/wedge
+.TP
+.I sep/angle/agmig
+.TP
+.I sep/geostat/dix
+.TP
+.I sep/oc2/cup
+.TP
+.I tccs/oc3/french
+.TP
+3 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfunif2.html
+.SH SOURCE
+.I system/generic/Munif2.c
+.SH VERSION
+2.1-git

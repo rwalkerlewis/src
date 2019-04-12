@@ -1,0 +1,7 @@
+Program sfcplxloc | Local coherency and dip based on trace-by-trace complex statistical correlation. 
+[SYNOPSIS]
+sfcplxloc < in.rsf > out.rsf nw=
+[PARAMETERS]
+int     | nw | = |   | 	half time-window size 
+[DIRECTORY]
+user/browaeys

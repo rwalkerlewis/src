@@ -1,0 +1,14 @@
+Program sfinvtest | Test inverse rank-1 approximation for lowrank wave propagation: prop1, prop2, prop3, prop4
+[SYNOPSIS]
+sfinvtest < input.rsf > output1.rsf flag= reg= nz= dz= z0= nx= dx= x0=
+[PARAMETERS]
+        | dx | = |   | 	
+        | dz | = |   | 	
+        | flag | = |   | 	
+        | nx | = |   | 	
+        | nz | = |   | 	
+        | reg | = |   | 	
+        | x0 | = |   | 	
+        | z0 | = |   | 	
+[DIRECTORY]
+user/jingwei

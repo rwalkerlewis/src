@@ -1,0 +1,44 @@
+.TH sffwidir 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sffwidir \- Update the conjugate direction in full waveform inversion 
+.SH SYNOPSIS
+.B sffwidir < in.rsf > out.rsf grad0=grad0.rsf grad1=grad1.rsf beta=beta.rsf option=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B beta
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B grad0
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B grad1
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B option
+.B =
+.R  	CG update parameter (Polak, Fletcher-Reeves, Fletcher, Dai-Yuan)
+.SH USED IN
+.TP
+.I tccs/fwiseislet/blend
+.TP
+.I tccs/fwiseislet/encoding-spar
+.TP
+.I tccs/fwiseislet/encoding
+.TP
+.I tccs/fwiseislet/noise-spar
+.TP
+.I tccs/fwiseislet/noise
+.TP
+.I tccs/fwiseislet/timedomain
+.SH SOURCE
+.I user/zhiguang/Mfwidir.c
+.SH VERSION
+2.1-git

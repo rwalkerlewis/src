@@ -1,0 +1,13 @@
+Program sflsprtm2d | least-squares prestack RTM in 2-D 
+[SYNOPSIS]
+sflsprtm2d < shots.rsf vel=velo.rsf > imglsm.rsf imgrtm=imgrtm.rsf verb=y niter=10 nb=20 fromBoundary=y testadj=0
+[PARAMETERS]
+bool    | fromBoundary | =y |  [y/n] | 	if fromBoundary=true, reconstruct source wavefield from stored boundary 
+file    | imgrtm | = |   | 	auxiliary output file name
+int     | nb | =20 |   | 	number (thickness) of ABC on each side 
+int     | niter | =10 |   | 	totol number of least-squares iteration
+int     | testadj | =0 |   | 	if testadj = 1 then program only testadj without calculating 
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =y |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/pyang

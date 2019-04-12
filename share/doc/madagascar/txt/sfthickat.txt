@@ -1,0 +1,7 @@
+Program sfthickat | None
+[SYNOPSIS]
+sfthickat < reflectors.rsf refseis=reference.rsf > thickness.rsf
+[PARAMETERS]
+file    | refseis | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/mehdi

@@ -1,0 +1,8 @@
+Program sffbpwd | omnidirectional plane-wave destruction  
+[SYNOPSIS]
+sffbpwd < in.rsf > out.rsf dip=fp.rsf radius=1.0
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | radius | =1.0 |   | 	interpolating radius for opwd 
+[DIRECTORY]
+user/chen

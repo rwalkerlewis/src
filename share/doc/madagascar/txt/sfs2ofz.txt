@@ -1,0 +1,10 @@
+Program sfs2ofz | Analytical point-source traveltime in a linear slowness squared model. 
+[SYNOPSIS]
+sfs2ofz > out.rsf n= g=-6. v0=4 s=0.5
+[PARAMETERS]
+float   | g | =-6. |   | 	slowness squared gradient 
+int     | n | = |   | 	number of samples 
+float   | s | =0.5 |   | 	shot location at the surface 
+float   | v0 | =4 |   | 	initial slowness squared 
+[DIRECTORY]
+system/seismic

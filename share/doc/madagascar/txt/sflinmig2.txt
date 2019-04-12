@@ -1,0 +1,17 @@
+Program sflinmig2 | 2-D Kirchhoff time migration with antialiasing with adjoint flag. 
+[SYNOPSIS]
+sflinmig2 < in.rsf > mig.rsf vel=fvel.rsf n1= adj=y ps=y doomp=y rho=1.-1./nt hd=y apt=nx angle=90.0 dd=y antialias=
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	adjoint flag 
+float   | angle | =90.0 |   | 	angle aperture 
+string  | antialias | = |   | 	antialiasing type [triangle,flat,steep,none] 
+int     | apt | =nx |   | 	integral aperture 
+bool    | dd | =y |  [y/n] | 	differentiation in the data domain 
+bool    | doomp | =y |  [y/n] | 	perform OpenMP optimization 
+bool    | hd | =y |  [y/n] | 	half derivative 
+int     | n1 | = |   | 	
+bool    | ps | =y |  [y/n] | 	spherical divergence 
+float   | rho | =1.-1./nt |   | 	Leaky integration constant 
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/dmerzlikin

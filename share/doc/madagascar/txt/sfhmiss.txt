@@ -1,0 +1,14 @@
+Program sfhmiss | Multi-dimensional missing data interpolation with shaping regularization. 
+[SYNOPSIS]
+sfhmiss < in.rsf filt=filt.rsf > out.rsf mask=mask.rsf n= ns= niter=100 eps=1. verb=y lag=
+[PARAMETERS]
+float   | eps | =1. |   | 	regularization parameter 
+file    | filt | = |   | 	auxiliary input file name
+string  | lag | = |   | 	
+string  | mask | = |   | 	optional input mask file for known data (auxiliary input file name)
+ints    | n | = |   | 	 [dim]
+int     | niter | =100 |   | 	Number of iterations 
+int     | ns | = |   | 	scaling 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/gee

@@ -1,0 +1,21 @@
+Program sftraveltime2d | Oriented zero-offset migration. 
+[SYNOPSIS]
+sftraveltime2d < dist.rsf time=time.rsf dept=dept.rsf len=lent.rsf > imagt.rsf xsrc= tolz= tolx= frontt0= frontdt= frontnt= fronteps= interpolate= timez0= minpath= front= eik=
+[PARAMETERS]
+file    | dept | = |   | 	auxiliary input file name
+string  | eik | = |   | 	
+string  | front | = |   | 	
+float   | frontdt | = |   | 	
+float   | fronteps | = |   | 	
+int     | frontnt | = |   | 	
+float   | frontt0 | = |   | 	
+int     | interpolate | = |   | 	first arrivals 
+file    | len | = |   | 	auxiliary input file name
+string  | minpath | = |   | 	
+file    | time | = |   | 	auxiliary input file name
+string  | timez0 | = |   | 	
+float   | tolx | = |   | 	
+float   | tolz | = |   | 	
+float   | xsrc | = |   | 	
+[DIRECTORY]
+user/roman

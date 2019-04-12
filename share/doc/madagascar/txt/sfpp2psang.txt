@@ -1,0 +1,12 @@
+Program sfpp2psang | Transform PP angle gathers to PS angle gathers. 
+[SYNOPSIS]
+sfpp2psang < in.rsf > out.rsf vpvs=vpvs.rsf nw=4 inv=n
+[COMMENTS]
+* (designed for absolute offsets)
+
+[PARAMETERS]
+bool    | inv | =n |  [y/n] | 	if y, do inverse transform 
+int     | nw | =4 |   | 	accuracy level 
+file    | vpvs | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

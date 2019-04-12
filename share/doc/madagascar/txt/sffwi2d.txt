@@ -1,0 +1,18 @@
+Program sffwi2d | Time domain full waveform inversion 
+[SYNOPSIS]
+sffwi2d < vinit.rsf shots=shots.rsf > vupdates.rsf grads=grads.rsf illums=illums.rsf objs=objs.rsf verb=y precon=n niter=100 rbell=2
+[COMMENTS]
+Note: This serial FWI is merely designed to help the understanding of 
+beginners. Enquist absorbing boundary condition (A2) is applied!
+
+[PARAMETERS]
+file    | grads | = |   | 	auxiliary output file name
+file    | illums | = |   | 	auxiliary output file name
+int     | niter | =100 |   | 	number of iterations 
+file    | objs | = |   | 	auxiliary output file name
+bool    | precon | =n |  [y/n] | 	precondition or not 
+int     | rbell | =2 |   | 	radius of bell smooth 
+file    | shots | = |   | 	auxiliary input file name
+bool    | verb | =y |  [y/n] | 	vebosity 
+[DIRECTORY]
+user/pyang

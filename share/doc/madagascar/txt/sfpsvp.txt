@@ -1,0 +1,7 @@
+Program sfpsvp | Ps to vplot 
+[SYNOPSIS]
+sfpsvp sep=
+[PARAMETERS]
+string  | sep | = |   | 	cmd separater 
+[DIRECTORY]
+user/chen

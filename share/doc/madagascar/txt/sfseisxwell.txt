@@ -1,0 +1,11 @@
+Program sfseisxwell | Select seismic data cross well position. 
+[SYNOPSIS]
+sfseisxwell < in.rsf > out.rsf path=spath.rsf well=well.rsf wx= wy= nw=0
+[PARAMETERS]
+int     | nw | =0 |   | 	number of well points 
+string  | path | = |   | 	auxiliary output file name
+string  | well | = |   | 	auxiliary input file name
+floats  | wx | = |   | 	well x coordinates  [nw]
+floats  | wy | = |   | 	well y coordinates  [nw]
+[DIRECTORY]
+user/yliu

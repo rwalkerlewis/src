@@ -1,0 +1,51 @@
+.TH sfseisletrgt 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfseisletrgt \- Seislet transform using rgt 
+.SH SYNOPSIS
+.B sfseisletrgt < in.rsf > out.rsf rgt=rgt.rsf inv=n adj=n eps=0.01 unit=n order=1 verb=n type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y, do adjoint transform
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I file   
+.B rgt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is linear
+.TP
+.I bool   
+.B unit
+.B =n
+.R  [y/n]	if y, use unitary scaling
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/zgeng/Mseisletrgt.c
+.SH VERSION
+2.1-git

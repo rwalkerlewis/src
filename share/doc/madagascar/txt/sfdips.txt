@@ -1,0 +1,12 @@
+Program sfdips | Estimate a number of constant dips using plane-wave destruction. 
+[SYNOPSIS]
+sfdips < in.rsf > out.rsf dips= nd= order=1 nj=1 verb=n niter=10
+[PARAMETERS]
+floats  | dips | = |   | 	initial dips  [nd]
+int     | nd | = |   | 	number of dips 
+int     | niter | =10 |   | 	number of iterations 
+int     | nj | =1 |   | 	antialiasing 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/pwd

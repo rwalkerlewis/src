@@ -1,0 +1,51 @@
+Program sfpicks2rsf | Creates a mask from horizons:
+[SYNOPSIS]
+sfpicks2rsf < in.rsf > out.rsf ntic=5 tmask=y extend=n above=n picks=
+[COMMENTS]
+
+horizon format:
+
+x1 h1
+x2 h2
+x3 h3
+x4 h4
+.
+.
+.
+xn hn
+
+
+
+xn> ... >x4 >x3 >x2>x1
+
+picks (file)  ascii file with two columns (x and h(x))
+the x values must be increasing order,
+you can easily achieve that by doing:
+
+sort -k 1  unsorted_picks.txt > sorted_picks.txt
+
+stdin             2D file from which the axes will be read
+extend [false]    Extends picks to the boundaries of the axis
+n Do not extend
+y Extend to boundary
+
+tmask [true]     write a mask (1 if z>h(x))
+false     put a tic on the horizon
+
+above [false] put 1 above the horizon
+true   put 1 below the horizon
+
+ntic [1]     works with tmask=false; put 1 around ntic grid points
+above and below the horizon.   
+
+stdout       It writes a file with the same dimensions as stdin 
+with a mask function, 1 below the horizon 0 above 
+
+[PARAMETERS]
+bool    | above | =n |  [y/n] | 	
+bool    | extend | =n |  [y/n] | 	
+int     | ntic | =5 |   | 	
+string  | picks | = |   | 	parameters from input file
+bool    | tmask | =y |  [y/n] | 	
+[DIRECTORY]
+user/ediazp

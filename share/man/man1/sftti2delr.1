@@ -1,0 +1,48 @@
+.TH sftti2delr 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sftti2delr \- None
+.SH SYNOPSIS
+.B sftti2delr < vp0.rsf > Elasticx.rsf Elasticz=Elasticz.rsf seed=time(NULL eps=1.e-6 npk=20 ns= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Elasticz
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B dt
+.B =
+.R  
+.TP
+.I        
+.B eps
+.B =1.e-6
+.R  	tolerance
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B ns
+.B =
+.R  
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.SH USED IN
+.TP
+.I tongji/decoupledpropagation/twolayer2dti.2nd.coupled.0.5ms
+.TP
+.I tongji/decoupledpropagation/twolayer2dti.2nd.coupled.compare
+.TP
+.I tongji/decoupledpropagation/twolayer2dti.2nd.decoupled.1ms
+.SH SOURCE
+.I user/chengjb/Mtti2delr.cc
+.SH VERSION
+2.1-git

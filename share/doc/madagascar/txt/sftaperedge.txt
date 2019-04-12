@@ -1,0 +1,10 @@
+Program sftaperedge | Taper based on data parameters
+[SYNOPSIS]
+sftaperedge < dataFile.rsf > maskFile.rsf len=11
+[COMMENTS]
+Input - "inline/xline" plane
+
+[PARAMETERS]
+int     | len | =11 |   | 	length of the taper function 
+[DIRECTORY]
+user/aklokov

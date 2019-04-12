@@ -1,0 +1,15 @@
+Program sfbeamsteer | Beam steering for 2D surface array. 
+[SYNOPSIS]
+sfbeamsteer < in.rsf > out.rsf mode=y xref= yref= npx= dpx= opx= npy= dpy= opy=
+[PARAMETERS]
+float   | dpx | = |   | 	px sampling (if mode=y). 
+float   | dpy | = |   | 	py sampling (if mode=y). 
+bool    | mode | =y |  [y/n] | 	if n, beams computed as a function of apparent slowness and azimuth angle. 
+int     | npx | = |   | 	number of px values (if mode=y). 
+int     | npy | = |   | 	number of py values (if mode=y). 
+float   | opx | = |   | 	px origin (if mode=y) 
+float   | opy | = |   | 	py origin (if mode=y) 
+float   | xref | = |   | 	x coordinate where beams are computed 
+float   | yref | = |   | 	y coordinate where beams are computed 
+[DIRECTORY]
+user/browaeys

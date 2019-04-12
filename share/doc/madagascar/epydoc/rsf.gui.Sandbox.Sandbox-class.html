@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.gui.Sandbox.Sandbox</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.gui-module.html">Package&nbsp;gui</a> ::
+        <a href="rsf.gui.Sandbox-module.html">Module&nbsp;Sandbox</a> ::
+        Class&nbsp;Sandbox
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.gui.Sandbox.Sandbox-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Sandbox</h1><p class="nomargin-top"><span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="class_hierarchy_for_sandbox" name="class_hierarchy_for_sandbox">
+<area shape="rect" id="node1" href="javascript:void(0);" title="Tkinter.BaseWidget" alt="" coords="446,60,582,85"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="Tkinter.Widget" alt="" coords="259,115,366,140"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Tkinter.Canvas" alt="" coords="128,169,239,195"/>
+<area shape="rect" id="node10" href="rsf.gui.Sandbox.Sandbox-class.html" title="Sandbox" alt="" coords="147,224,220,249"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Tkinter.Grid" alt="" coords="91,60,180,85"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="Tkinter.Misc" alt="" coords="467,5,561,31"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="Tkinter.Pack" alt="" coords="204,60,299,85"/>
+<area shape="rect" id="node6" href="javascript:void(0);" title="Tkinter.Place" alt="" coords="323,60,422,85"/>
+<area shape="rect" id="node8" href="javascript:void(0);" title="Tkinter.XView" alt="" coords="5,115,108,140"/>
+<area shape="rect" id="node9" href="javascript:void(0);" title="Tkinter.YView" alt="" coords="132,115,235,140"/>
+</map>
+  <img src="class_hierarchy_for_sandbox.gif" alt='' usemap="#class_hierarchy_for_sandbox" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>The Sandbox class contains the Canvas where all of the graphical 
+  action happens.</p>
+  <p>Sandboxes are responsible for keeping track of Flows attached to them,
+  and allow users to decide how to interact with Flows.</p>
+  <p>A Sandbox must be attached to a Toplevel or root widget.</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Nested Classes</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.Misc</code></b>:
+      <code><a href="float-class.html">getdouble</a></code>,
+      <code><a href="int-class.html">getint</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rsf.gui.Sandbox.Sandbox-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">master</span>)</span><br />
+      Construct a canvas widget with the parent MASTER.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rsf.gui.Sandbox.Sandbox-class.html#getItems" class="summary-sig-name">getItems</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return a list of only separate items attached to this canvas.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.getItems">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getFlowID"></a><span class="summary-sig-name">getFlowID</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get a unique ID to identify a flow on this canvas.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.getFlowID">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getLinkID"></a><span class="summary-sig-name">getLinkID</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get a unique ID to identify a linked flow on this canvas.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.getLinkID">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addFlow"></a><span class="summary-sig-name">addFlow</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">program</span>,
+        <span class="summary-sig-arg">ftype</span>)</span><br />
+      Add a Flow on this canvas, but let the user choose where to place it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.addFlow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="loadFlow"></a><span class="summary-sig-name">loadFlow</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">flow</span>)</span><br />
+      Restore a Flow from a pickled state.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.loadFlow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addLinkedFlow"></a><span class="summary-sig-name">addLinkedFlow</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">flow1</span>,
+        <span class="summary-sig-arg">flow2</span>)</span><br />
+      Add a LinkedFlow by attaching two Flows to a new LinkedFlow.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.addLinkedFlow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rsf.gui.Sandbox.Sandbox-class.html#loadLinkedFlow" class="summary-sig-name">loadLinkedFlow</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lf</span>)</span><br />
+      Restore a LinkedFlow from a pickled state.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.loadLinkedFlow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rsf.gui.Sandbox.Sandbox-class.html#reset" class="summary-sig-name">reset</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Reset this canvas.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.reset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.Canvas</code></b>:
+      <code>addtag</code>,
+      <code>addtag_above</code>,
+      <code>addtag_all</code>,
+      <code>addtag_below</code>,
+      <code>addtag_closest</code>,
+      <code>addtag_enclosed</code>,
+      <code>addtag_overlapping</code>,
+      <code>addtag_withtag</code>,
+      <code>bbox</code>,
+      <code>canvasx</code>,
+      <code>canvasy</code>,
+      <code>coords</code>,
+      <code>create_arc</code>,
+      <code>create_bitmap</code>,
+      <code>create_image</code>,
+      <code>create_line</code>,
+      <code>create_oval</code>,
+      <code>create_polygon</code>,
+      <code>create_rectangle</code>,
+      <code>create_text</code>,
+      <code>create_window</code>,
+      <code>dchars</code>,
+      <code>delete</code>,
+      <code>dtag</code>,
+      <code>find</code>,
+      <code>find_above</code>,
+      <code>find_all</code>,
+      <code>find_below</code>,
+      <code>find_closest</code>,
+      <code>find_enclosed</code>,
+      <code>find_overlapping</code>,
+      <code>find_withtag</code>,
+      <code>focus</code>,
+      <code>gettags</code>,
+      <code>icursor</code>,
+      <code>index</code>,
+      <code>insert</code>,
+      <code>itemcget</code>,
+      <code>itemconfig</code>,
+      <code>itemconfigure</code>,
+      <code>lift</code>,
+      <code>lower</code>,
+      <code>move</code>,
+      <code>postscript</code>,
+      <code>scale</code>,
+      <code>scan_dragto</code>,
+      <code>scan_mark</code>,
+      <code>select_adjust</code>,
+      <code>select_clear</code>,
+      <code>select_from</code>,
+      <code>select_item</code>,
+      <code>select_to</code>,
+      <code>tag_bind</code>,
+      <code>tag_lower</code>,
+      <code>tag_raise</code>,
+      <code>tag_unbind</code>,
+      <code>tkraise</code>,
+      <code>type</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.BaseWidget</code></b>:
+      <code>destroy</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.Misc</code></b>:
+      <code>__contains__</code>,
+      <code>__getitem__</code>,
+      <code>__setitem__</code>,
+      <code>__str__</code>,
+      <code>after</code>,
+      <code>after_cancel</code>,
+      <code>after_idle</code>,
+      <code>bell</code>,
+      <code>bind</code>,
+      <code>bind_all</code>,
+      <code>bind_class</code>,
+      <code>bindtags</code>,
+      <code>cget</code>,
+      <code>clipboard_append</code>,
+      <code>clipboard_clear</code>,
+      <code>clipboard_get</code>,
+      <code>colormodel</code>,
+      <code>columnconfigure</code>,
+      <code>config</code>,
+      <code>configure</code>,
+      <code>deletecommand</code>,
+      <code>event_add</code>,
+      <code>event_delete</code>,
+      <code>event_generate</code>,
+      <code>event_info</code>,
+      <code>focus_displayof</code>,
+      <code>focus_force</code>,
+      <code>focus_get</code>,
+      <code>focus_lastfor</code>,
+      <code>focus_set</code>,
+      <code>getboolean</code>,
+      <code>getvar</code>,
+      <code>grab_current</code>,
+      <code>grab_release</code>,
+      <code>grab_set</code>,
+      <code>grab_set_global</code>,
+      <code>grab_status</code>,
+      <code>grid_bbox</code>,
+      <code>grid_columnconfigure</code>,
+      <code>grid_location</code>,
+      <code>grid_propagate</code>,
+      <code>grid_rowconfigure</code>,
+      <code>grid_size</code>,
+      <code>grid_slaves</code>,
+      <code>image_names</code>,
+      <code>image_types</code>,
+      <code>keys</code>,
+      <code>mainloop</code>,
+      <code>nametowidget</code>,
+      <code>option_add</code>,
+      <code>option_clear</code>,
+      <code>option_get</code>,
+      <code>option_readfile</code>,
+      <code>pack_propagate</code>,
+      <code>pack_slaves</code>,
+      <code>place_slaves</code>,
+      <code>propagate</code>,
+      <code>quit</code>,
+      <code>register</code>,
+      <code>rowconfigure</code>,
+      <code>selection_clear</code>,
+      <code>selection_get</code>,
+      <code>selection_handle</code>,
+      <code>selection_own</code>,
+      <code>selection_own_get</code>,
+      <code>send</code>,
+      <code>setvar</code>,
+      <code>size</code>,
+      <code>slaves</code>,
+      <code>tk_bisque</code>,
+      <code>tk_focusFollowsMouse</code>,
+      <code>tk_focusNext</code>,
+      <code>tk_focusPrev</code>,
+      <code>tk_menuBar</code>,
+      <code>tk_setPalette</code>,
+      <code>tk_strictMotif</code>,
+      <code>unbind</code>,
+      <code>unbind_all</code>,
+      <code>unbind_class</code>,
+      <code>update</code>,
+      <code>update_idletasks</code>,
+      <code>wait_variable</code>,
+      <code>wait_visibility</code>,
+      <code>wait_window</code>,
+      <code>waitvar</code>,
+      <code>winfo_atom</code>,
+      <code>winfo_atomname</code>,
+      <code>winfo_cells</code>,
+      <code>winfo_children</code>,
+      <code>winfo_class</code>,
+      <code>winfo_colormapfull</code>,
+      <code>winfo_containing</code>,
+      <code>winfo_depth</code>,
+      <code>winfo_exists</code>,
+      <code>winfo_fpixels</code>,
+      <code>winfo_geometry</code>,
+      <code>winfo_height</code>,
+      <code>winfo_id</code>,
+      <code>winfo_interps</code>,
+      <code>winfo_ismapped</code>,
+      <code>winfo_manager</code>,
+      <code>winfo_name</code>,
+      <code>winfo_parent</code>,
+      <code>winfo_pathname</code>,
+      <code>winfo_pixels</code>,
+      <code>winfo_pointerx</code>,
+      <code>winfo_pointerxy</code>,
+      <code>winfo_pointery</code>,
+      <code>winfo_reqheight</code>,
+      <code>winfo_reqwidth</code>,
+      <code>winfo_rgb</code>,
+      <code>winfo_rootx</code>,
+      <code>winfo_rooty</code>,
+      <code>winfo_screen</code>,
+      <code>winfo_screencells</code>,
+      <code>winfo_screendepth</code>,
+      <code>winfo_screenheight</code>,
+      <code>winfo_screenmmheight</code>,
+      <code>winfo_screenmmwidth</code>,
+      <code>winfo_screenvisual</code>,
+      <code>winfo_screenwidth</code>,
+      <code>winfo_server</code>,
+      <code>winfo_toplevel</code>,
+      <code>winfo_viewable</code>,
+      <code>winfo_visual</code>,
+      <code>winfo_visualid</code>,
+      <code>winfo_visualsavailable</code>,
+      <code>winfo_vrootheight</code>,
+      <code>winfo_vrootwidth</code>,
+      <code>winfo_vrootx</code>,
+      <code>winfo_vrooty</code>,
+      <code>winfo_width</code>,
+      <code>winfo_x</code>,
+      <code>winfo_y</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.Pack</code></b>:
+      <code>forget</code>,
+      <code>info</code>,
+      <code>pack</code>,
+      <code>pack_configure</code>,
+      <code>pack_forget</code>,
+      <code>pack_info</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.Place</code></b>:
+      <code>place</code>,
+      <code>place_configure</code>,
+      <code>place_forget</code>,
+      <code>place_info</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.Grid</code></b>:
+      <code>grid</code>,
+      <code>grid_configure</code>,
+      <code>grid_forget</code>,
+      <code>grid_info</code>,
+      <code>grid_remove</code>,
+      <code>location</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.XView</code></b>:
+      <code>xview</code>,
+      <code>xview_moveto</code>,
+      <code>xview_scroll</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.YView</code></b>:
+      <code>yview</code>,
+      <code>yview_moveto</code>,
+      <code>yview_scroll</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="HEIGHT"></a><span class="summary-name">HEIGHT</span> = <code title="600">600</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="WIDTH"></a><span class="summary-name">WIDTH</span> = <code title="800">800</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SCROLL_HEIGHT"></a><span class="summary-name">SCROLL_HEIGHT</span> = <code title="2400">2400</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SCROLL_WIDTH"></a><span class="summary-name">SCROLL_WIDTH</span> = <code title="3200">3200</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>Tkinter.Misc</code></b>:
+      <code>_noarg_</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">master</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Construct a canvas widget with the parent MASTER.</p>
+  <p>Valid resource names: background, bd, bg, borderwidth, closeenough, 
+  confine, cursor, height, highlightbackground, highlightcolor, 
+  highlightthickness, insertbackground, insertborderwidth, insertofftime, 
+  insertontime, insertwidth, offset, relief, scrollregion, 
+  selectbackground, selectborderwidth, selectforeground, state, takefocus, 
+  width, xscrollcommand, xscrollincrement, yscrollcommand, 
+  yscrollincrement.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        Tkinter.BaseWidget.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getItems"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getItems</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.getItems">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a list of only separate items attached to this canvas.</p>
+  <p>i.e. LinkedFlows and Flows, Plots and Results that are not part of a 
+  LinkedFlow.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="loadLinkedFlow"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">loadLinkedFlow</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lf</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.loadLinkedFlow">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Restore a LinkedFlow from a pickled state. You MUST restore all Flows 
+  that this LinkedFlow has attached to this Canvas before you may call this
+  method.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="reset"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">reset</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rsf.gui.Sandbox-pysrc.html#Sandbox.reset">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reset this canvas.  Delete all objects attached to it.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

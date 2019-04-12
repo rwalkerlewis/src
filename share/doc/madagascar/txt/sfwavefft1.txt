@@ -1,0 +1,11 @@
+Program sfwavefft1 | 1-D finite-difference wave extrapolation 
+[SYNOPSIS]
+sfwavefft1 < inp.rsf > out.rsf vel=vel.rsf grad=grad.rsf opt=y dt= nt=
+[PARAMETERS]
+float   | dt | = |   | 	
+file    | grad | = |   | 	auxiliary input file name
+int     | nt | = |   | 	if y, determine optimal size for efficiency 
+bool    | opt | =y |  [y/n] | 	
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

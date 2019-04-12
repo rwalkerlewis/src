@@ -1,0 +1,8 @@
+Program sfsortdensity | sort density
+[SYNOPSIS]
+sfsortdensity < Fin.rsf > Fout.rsf verb=n thrsh=0.05
+[PARAMETERS]
+float   | thrsh | =0.05 |   | 	verbosity flag 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/jyan

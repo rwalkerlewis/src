@@ -1,0 +1,27 @@
+Program sfmulawefd2d | 2D multisource acoustic time-domain FD modeling for testing
+[SYNOPSIS]
+sfmulawefd2d < Fwav.rsf vel=Fvel.rsf sou1=Fsou1.rsf sou2=Fsou2.rsf rec=Frec.rsf > Fdat.rsf wfl=Fwfl.rsf den=Fden.rsf verb=n snap=n free=n dabc=n cden=n jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax)
+[COMMENTS]
+4th order in space, 2nd order in time. Absorbing boundary conditions.
+Invisible parameter due to self-doc parsing bug: 
+nb=[2] Boundary padding in grid points 
+[PARAMETERS]
+bool    | cden | =n |  [y/n] | 	Constant density 
+bool    | dabc | =n |  [y/n] | 	Absorbing BC 
+file    | den | = |   | 	auxiliary input file name
+bool    | free | =n |  [y/n] | 	Free surface flag 
+int     | jdata | =1 |   | 	# of t steps at which to save receiver data 
+int     | jsnap | =nt |   | 	# of t steps at which to save wavefield 
+int     | nqx | =sf_n(ax) |   | 	Saved wfld window nx 
+int     | nqz | =sf_n(az) |   | 	Saved wfld window nz 
+float   | oqx | =sf_o(ax) |   | 	Saved wfld window ox 
+float   | oqz | =sf_o(az) |   | 	Saved wfld window oz 
+file    | rec | = |   | 	auxiliary input file name
+bool    | snap | =n |  [y/n] | 	Wavefield snapshots flag 
+file    | sou1 | = |   | 	auxiliary input file name
+file    | sou2 | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	Verbosity flag 
+file    | wfl | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/chenyk

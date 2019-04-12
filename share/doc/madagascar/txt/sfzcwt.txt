@@ -1,0 +1,8 @@
+Program sfzcwt | Improve signal resolution using zero-crossing of wavelet transform. 
+[SYNOPSIS]
+sfzcwt < in.rsf > out.rsf maxscale=5 outscale=1
+[PARAMETERS]
+int     | maxscale | =5 |   | 	The maximum decomposition scale (default=5)
+int     | outscale | =1 |   | 	The output scale (default=1)
+[DIRECTORY]
+user/yliu

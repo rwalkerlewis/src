@@ -1,0 +1,5 @@
+Program sfasc2rsf | ERROR : need numpy
+[SYNOPSIS]
+sfasc2rsf > po.rsf
+[DIRECTORY]
+user/chen

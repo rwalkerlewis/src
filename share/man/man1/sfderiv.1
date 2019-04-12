@@ -1,0 +1,81 @@
+.TH sfderiv 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfderiv \- First derivative with a maximally linear FIR differentiator. 
+.SH SYNOPSIS
+.B sfderiv < in.rsf > out.rsf order=6 scale=n
+.SH COMMENTS
+
+May 2012 program of the month:
+http://ahay.org/blog/2012/05/01/program-of-the-month-sfderiv/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B order
+.B =6
+.R  	filter order
+.TP
+.I bool   
+.B scale
+.B =n
+.R  [y/n]	if scale by 1/dx
+.SH USED IN
+.TP
+.I gallery/french/gazdag
+.TP
+.I gallery/french/lowrank
+.TP
+.I gallery/french/model
+.TP
+.I gallery/french/oway
+.TP
+.I gallery/french/stolt
+.TP
+.I gallery/french/vc
+.TP
+.I gallery/gradient/fakirmig
+.TP
+.I gallery/gradient/lowrank
+.TP
+.I gallery/gradient/model
+.TP
+.I gallery/gradient/oway
+.TP
+.I gallery/vofz/gazdag
+.TP
+.I gallery/vofz/kirch
+.TP
+.I gallery/vofz/lowrank
+.TP
+.I gallery/vofz/model
+.TP
+.I gallery/vofz/oway
+.TP
+.I gallery/vofz/stolt
+.TP
+.I gallery/vofz/vc
+.TP
+.I geo384w/hw3/synth
+.TP
+.I geo384w/hw4/synth
+.TP
+.I jlu/txyapf/french
+.TP
+.I milano/taupvel/cmp
+.TP
+.I milano/taupvel/synth
+.TP
+.I rsf/rsf/sfderiv
+.TP
+.I rsf/rsf/sfnderiv
+.TP
+.I rsf/school/trig
+.TP
+22 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfderiv.html
+.SH SOURCE
+.I system/generic/Mderiv.c
+.SH VERSION
+2.1-git

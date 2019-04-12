@@ -1,0 +1,17 @@
+Program sfescfgrid2 | Solution of escape equations by Gauss-Seidel solver on full grid for 2-D (an)isotropic media. 
+[SYNOPSIS]
+sfescfgrid2 < spdom.rsf > out.rsf vspl=vspline.rsf na=360 mdist=SF_HUGE thresh=1e-6 morder=ESC2_MORDER niter=nx atraced=n mtraced=n cmix=n tracebc=y verb=n
+[PARAMETERS]
+bool    | atraced | =n |  [y/n] | 	true - output map of all traced points 
+bool    | cmix | =n |  [y/n] | 	true - check for color mixing 
+float   | mdist | =SF_HUGE |   | 	Maximum distance between points in F-D stencil 
+int     | morder | =ESC2_MORDER |   | 	Maximum order in F-D stencil 
+bool    | mtraced | =n |  [y/n] | 	true - output map of points traced because of mdist criterion 
+int     | na | =360 |   | 	Number of phase angles 
+int     | niter | =nx |   | 	Maximum number of Gauss-Seidel iterations 
+float   | thresh | =1e-6 |   | 	Convergence threshold 
+bool    | tracebc | =y |  [y/n] | 	n - do not trace B.C. points 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | vspl | = |   | 	Spline coefficients for velocity model (auxiliary input file name)
+[DIRECTORY]
+user/cram

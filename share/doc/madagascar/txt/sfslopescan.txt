@@ -1,0 +1,9 @@
+Program sfslopescan | slope estimation by stack scan 
+[SYNOPSIS]
+sfslopescan < in.rsf > out.rsf nw=5 rect1=2 rect2=2
+[PARAMETERS]
+int     | nw | =5 |   | 	window size is 2*nw+1 
+int     | rect1 | =2 |   | 	window size on the 1st dimension 
+int     | rect2 | =2 |   | 	window size on the 2nd dimension 
+[DIRECTORY]
+user/chen

@@ -1,0 +1,23 @@
+Program sfzortmgmres | 2-D FFT-based zero-offset exploding reflector modeling/migration linear operator 
+[SYNOPSIS]
+sfzortmgmres < data.rsf > image.rsf snaps=snaps.rsf leftf=leftf.rsf rightf=rightf.rsf leftb=leftb.rsf rightb=rightb.rsf gmres=n niter=10 mem=20 timer=n verb=n snap=0 pad1=1 gpz=0 nz= dz= nt= dt= nt= dt=
+[PARAMETERS]
+float   | dt | = |   | 	time sampling 
+float   | dz | = |   | 	depth sampling 
+bool    | gmres | =n |  [y/n] | 	
+int     | gpz | =0 |   | 	geophone surface 
+file    | leftb | = |   | 	auxiliary input file name
+file    | leftf | = |   | 	auxiliary input file name
+int     | mem | =20 |   | 	
+int     | niter | =10 |   | 	
+int     | nt | = |   | 	time samples 
+int     | nz | = |   | 	depth samples 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | rightb | = |   | 	auxiliary input file name
+file    | rightf | = |   | 	auxiliary input file name
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+bool    | timer | =n |  [y/n] | 	
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/jsun

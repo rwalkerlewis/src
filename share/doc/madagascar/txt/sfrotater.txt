@@ -1,0 +1,8 @@
+Program sfrotater | Roatation with Interpolation from a regular grid in 2-D. 
+[SYNOPSIS]
+sfrotater < inp.rsf > out.rsf angle=90. interp=
+[PARAMETERS]
+float   | angle | =90. |   | 	rotation angle 
+string  | interp | = |   | 	[n,l,c] interpolation type 
+[DIRECTORY]
+user/zone

@@ -1,0 +1,30 @@
+.TH sfnsmooth1 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnsmooth1 \- 1-D non-stationary smoothing. 
+.SH SYNOPSIS
+.B sfnsmooth1 < in.rsf > out.rsf rect=rect.rsf repeat=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B rect
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat filtering several times
+.SH USED IN
+.TP
+.I tccs/attr/vecta
+.TP
+.I tccs/merge/apache
+.TP
+.I tccs/merge/pcable
+.TP
+.I tccs/merge/pcable2
+.SH SOURCE
+.I user/fomels/Mnsmooth1.c
+.SH VERSION
+2.1-git Msmooth.c 691 2004-07-04 19:28:08Z fomels

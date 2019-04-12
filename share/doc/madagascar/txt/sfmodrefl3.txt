@@ -1,0 +1,20 @@
+Program sfmodrefl3 | Normal reflectivity modeling. 
+[SYNOPSIS]
+sfmodrefl3 < in.rsf > out.rsf sparse=10 moveout=y nt= dt= np= dp= p0= eps=0.01
+[COMMENTS]
+
+In this version, the input contains Vp, Vs, and density into one file. 
+The output contains PP and PS tau-p seismograms.
+
+
+[PARAMETERS]
+float   | dp | = |   | 	slope sampling 
+float   | dt | = |   | 	time sampling 
+float   | eps | =0.01 |   | 	stretch regularization 
+bool    | moveout | =y |  [y/n] | 	if apply moveout 
+int     | np | = |   | 	slope samples 
+int     | nt | = |   | 	time samples 
+float   | p0 | = |   | 	slope origin 
+int     | sparse | =10 |   | 	sparseness of reflectivity 
+[DIRECTORY]
+system/seismic

@@ -1,0 +1,7 @@
+Program sffbpick | First break picking from instantaneous traveltime attribute. 
+[SYNOPSIS]
+sffbpick < in.rsf > out.rsf type=
+[PARAMETERS]
+string  | type | = |   | 	[traveltime,position] type, the default is traveltime  
+[DIRECTORY]
+user/yliu

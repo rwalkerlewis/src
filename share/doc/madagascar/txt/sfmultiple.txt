@@ -1,0 +1,17 @@
+Program sfmultiple | 2-D shot gather multiple prediction (SRMP)
+[SYNOPSIS]
+sfmultiple < in.rsf > out.rsf dif=dif.rsf verb=n stack=n both=n jumpo=1 jumps=1
+[COMMENTS]
+The axes in the input are {offset,shot,frequency}
+The axes in the output are {prediction(if stack=n),offset,shot,frequency}
+Requirement: offset interval = shot interval
+
+[PARAMETERS]
+bool    | both | =n |  [y/n] | 	receiver flag, if y, receiver with both sides 
+string  | dif | = |   | 	auxiliary input file name
+int     | jumpo | =1 |   | 	jump in offset dimension, only for stack=n 
+int     | jumps | =1 |   | 	jump in shot dimension, only for stack=n  
+bool    | stack | =n |  [y/n] | 	stack flag, if y, no common multiple gather 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

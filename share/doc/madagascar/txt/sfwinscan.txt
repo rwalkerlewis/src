@@ -1,0 +1,11 @@
+Program sfwinscan | Picking scanned data window trace by trace with fixed t0
+[SYNOPSIS]
+sfwinscan < cmp.rsf > outf.rsf winsz=200 v0=1000 deltav=20 t0=0.5 n=100
+[PARAMETERS]
+float   | deltav | =20 |   | 	step lenth for velocity scan 
+int     | n | =100 |   | 	numbers of velscan
+float   | t0 | =0.5 |   | 	t0 fixed 
+float   | v0 | =1000 |   | 	init Vel for velocity scan 
+int     | winsz | =200 |   | 	for each trace,the width of window. unit:sample point 
+[DIRECTORY]
+user/yliu

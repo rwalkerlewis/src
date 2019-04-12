@@ -1,0 +1,15 @@
+Program sflinpi | 3D Path-Summation Integral Operator as a Linear Filter
+[SYNOPSIS]
+sflinpi < inp.rsf > out.rsf adj=n v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+float   | eps | =0.001 |   | 	
+float   | epst2 | =0.001 |   | 	
+int     | pad | =nt |   | 	output time samples 
+float   | passthr | =0.001 |   | 	
+float   | v_1 | = |   | 	path-integral range 
+float   | v_2 | = |   | 	
+float   | v_3 | = |   | 	
+float   | v_4 | = |   | 	
+[DIRECTORY]
+user/dmerzlikin

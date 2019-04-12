@@ -1,0 +1,59 @@
+.TH sffwigrad 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sffwigrad \- 2D Gradient Calculation in Full Waveform Inversion 
+.SH SYNOPSIS
+.B sffwigrad < in.rsf > out.rsf misfit=misfit.rsf source=source.rsf receiver=receiver.rsf record=record.rsf npml=20 omega= order=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B misfit
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B npml
+.B =20
+.R  
+.TP
+.I float  
+.B omega
+.B =
+.R  
+.TP
+.I string 
+.B order
+.B =
+.R  	discretization scheme (default optimal 9-point)
+.TP
+.I file   
+.B receiver
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B record
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B source
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I tccs/fwiseislet/blend
+.TP
+.I tccs/fwiseislet/encoding-spar
+.TP
+.I tccs/fwiseislet/encoding
+.TP
+.I tccs/fwiseislet/noise-spar
+.TP
+.I tccs/fwiseislet/noise
+.TP
+.I tccs/fwiseislet/timedomain
+.SH SOURCE
+.I user/zhiguang/Mfwigrad.c
+.SH VERSION
+2.1-git

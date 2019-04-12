@@ -1,0 +1,85 @@
+.TH sfconjgrad 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfconjgrad \- Generic conjugate-gradient solver for linear inversion 
+.SH SYNOPSIS
+.B sfconjgrad < dat.rsf mod=mod.rsf mwt=mwt.rsf known=known.rsf x0=x0.rsf > to.rsf < from.rsf > out.rsf niter=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B known
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B mod
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B mwt
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =1
+.R  	number of iterations
+.TP
+.I string 
+.B x0
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/vela/stack
+.TP
+.I gallery/constant/kirch
+.TP
+.I gee/ajt/cunha
+.TP
+.I gee/lsq/invstack
+.TP
+.I gee/lsq/stest
+.TP
+.I geo384h/hw4/match
+.TP
+.I geo384s/hw4/alaska
+.TP
+.I geo384s/hw4/teapot
+.TP
+.I geo384s/hw4/viking
+.TP
+.I geo384s/hw5/hradon
+.TP
+.I geo384s/hw5/pradon
+.TP
+.I rsf/school2016/radon
+.TP
+.I rsf/su/rsfshape
+.TP
+.I rsf/tutorial2017/radon
+.TP
+.I rsf/tutorials/cg
+.TP
+.I rsf/tutorials/inv
+.TP
+.I sep/stack/velinv
+.TP
+.I tccs/merge/apache
+.TP
+.I tccs/merge/pcable
+.TP
+.I tccs/merge/pcable2
+.TP
+.I tccs/nmo3/azimuthtest
+.TP
+.I tccs/orthogroll/field
+.TP
+.I tccs/ovc/nankai
+.SH SOURCE
+.I system/main/conjgrad.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfconjgrad
+.SH VERSION
+2.1-git

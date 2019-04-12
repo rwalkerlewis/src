@@ -1,0 +1,10 @@
+Program sffindwellcoord | Find well location by using well coordinates. 
+[SYNOPSIS]
+sffindwellcoord xcoord=xcoord.rsf ycoord=ycoord.rsf wellx= welly=
+[PARAMETERS]
+float   | wellx | = |   | 	X coordinate for well 
+float   | welly | = |   | 	Y coordinate for well 
+file    | xcoord | = |   | 	auxiliary input file name
+file    | ycoord | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/yliu

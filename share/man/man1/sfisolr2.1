@@ -1,0 +1,86 @@
+.TH sfisolr2 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfisolr2 \- Lowrank decomposition for 2-D isotropic wave propagation.
+.SH SYNOPSIS
+.B sfisolr2 < vel.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.SH USED IN
+.TP
+.I gallery/bp/lowrank
+.TP
+.I gallery/constant/lowrank
+.TP
+.I gallery/gradient/lowrank
+.TP
+.I gallery/marmousi/lowrank
+.TP
+.I gallery/marmousi/model
+.TP
+.I gallery/overthrust/lowrank
+.TP
+.I gallery/overthrust/model
+.TP
+.I gallery/segsalt/lowrank
+.TP
+.I gallery/segsalt/model
+.TP
+.I gallery/sigsbee/lowrank
+.TP
+.I gallery/sigsbee/model
+.TP
+.I gallery/twohalf/lowrank
+.TP
+.I gallery/twohalf/model
+.TP
+.I gallery/vofz/lowrank
+.TP
+.I geo384s/hw6/rtm
+.TP
+.I sep/fat/green
+.TP
+.I tccs/lfd/twod
+.TP
+.I tccs/lowrank/bp
+.TP
+.I tccs/lowrank/fowler
+.TP
+.I tccs/lowrank/impres
+.TP
+.I tccs/onestep/fowler
+.TP
+.I tccs/optapert/depthMig
+.SH SOURCE
+.I user/fomels/Misolr2.cc
+.SH VERSION
+2.1-git

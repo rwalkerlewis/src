@@ -1,0 +1,8 @@
+Program sfnmo3gmaprep | 3D NMO GMA  linearized operator preparation for lsfit
+[SYNOPSIS]
+sfnmo3gmaprep < inp.rsf coef=inicoef.rsf > out.rsf fit=fit.rsf
+[PARAMETERS]
+file    | coef | = |   | 	auxiliary input file name
+file    | fit | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/zone

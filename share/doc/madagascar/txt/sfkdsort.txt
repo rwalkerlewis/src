@@ -1,0 +1,5 @@
+Program sfkdsort | Sort entries based on k-D tree. 
+[SYNOPSIS]
+sfkdsort < inp.rsf > out.rsf
+[DIRECTORY]
+user/fomels

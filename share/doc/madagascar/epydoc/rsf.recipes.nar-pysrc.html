@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.recipes.nar</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.recipes-module.html">Package&nbsp;recipes</a> ::
+        Module&nbsp;nar
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.recipes.nar-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.recipes.nar-module.html">Module rsf.recipes.nar</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package rsf=rsf-module.html"><a title="rsf" class="py-name" href="#" onclick="return doclink('link-0', 'rsf', 'link-0');">rsf</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module rsf.proj=rsf.proj-module.html"><a title="rsf.proj" class="py-name" href="#" onclick="return doclink('link-1', 'proj', 'link-1');">proj</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">math</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable rsf.recipes.nar.pi2=rsf.recipes.nar-module.html#pi2"><a title="rsf.recipes.nar.pi2" class="py-name" href="#" onclick="return doclink('link-2', 'pi2', 'link-2');">pi2</a></tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">pi</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"> </tt>
+<a name="NAR"></a><div id="NAR-def"><a name="L6"></a><tt class="py-lineno">  6</tt> <a class="py-toggle" href="#" id="NAR-toggle" onclick="return toggle('NAR');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.nar-module.html#NAR">NAR</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line">        <tt class="py-param">dt</tt><tt class="py-op">,</tt>           <tt class="py-comment"># time sampling</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">        <tt class="py-param">tmax</tt><tt class="py-op">,</tt>         <tt class="py-comment"># maximum time</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">        <tt class="py-param">fmax</tt><tt class="py-op">,</tt>         <tt class="py-comment"># maximum frequency</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">        <tt class="py-param">rect1</tt><tt class="py-op">,</tt>        <tt class="py-comment"># smoothing radius for frequency estimation</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">        <tt class="py-param">rect2</tt><tt class="py-op">,</tt>        <tt class="py-comment"># smoothing radius for amplitude estimation</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">        <tt class="py-param">ns</tt><tt class="py-op">=</tt><tt class="py-number">8</tt><tt class="py-op">,</tt>         <tt class="py-comment"># number of components</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">        <tt class="py-param">list</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">,</tt><tt class="py-number">6</tt><tt class="py-op">,</tt><tt class="py-number">7</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-comment"># significant components</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-param">amin</tt><tt class="py-op">=</tt><tt class="py-number">0.2</tt><tt class="py-op">,</tt>     <tt class="py-comment"># minimum amplitude for significant components</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NAR-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="NAR-expanded"><a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">    <tt class="py-docstring">'Non-stationary auto-regressions'</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">n</tt><tt class="py-op">(</tt><tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'%s-%s'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-3" class="py-name" targets="Variable rsf.doc.data=rsf.doc-module.html#data"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-3', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">name</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Function rsf.cluster.Flow()=rsf.cluster-module.html#Flow,Function rsf.flow.Flow()=rsf.flow-module.html#Flow,Module rsf.gui.Flow=rsf.gui.Flow-module.html,Class rsf.gui.Flow.Flow=rsf.gui.Flow.Flow-class.html,Function rsf.proj.Flow()=rsf.proj-module.html#Flow,Method rsf.proj.Project.Flow()=rsf.proj.Project-class.html#Flow"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-4', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'shift'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt id="link-5" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-5', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'shift1 ns=%d'</tt> <tt class="py-op">%</tt> <tt class="py-name">ns</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt class="py-comment"># analytical trace</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt id="link-6" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-6', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'itrace'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt id="link-7" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-7', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-string">'envelope hilb=y'</tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-8', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ctrace'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt id="link-9" class="py-name"><a title="rsf.doc.data" class="py-name" href="#" onclick="return doclink('link-9', 'data', 'link-3');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'itrace'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'cmplx ${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt id="link-10" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-10', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ishift'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'shift'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'envelope hilb=y'</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt id="link-11" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-11', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cshift'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'shift'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ishift'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'cmplx ${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt id="link-12" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-12', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cpef'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cpre'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cshift'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ctrace'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">         <tt class="py-string">'clpf match=${SOURCES[1]} rect1=%d pred=${TARGETS[1]}'</tt> <tt class="py-op">%</tt> <tt class="py-name">rect1</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt id="link-13" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-13', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cerr'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cpre'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ctrace'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'add scale=-1,1 ${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt id="link-14" class="py-name" targets="Function rsf.cluster.Result()=rsf.cluster-module.html#Result,Method rsf.proj.Project.Result()=rsf.proj.Project-class.html#Result,Function rsf.proj.Result()=rsf.proj-module.html#Result"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-14', 'Result', 'link-14');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cerr'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'real | graph title="Nonstationary Deconvolution" '</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-comment"># Find complex polynomial roots</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt id="link-15" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-15', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cpoly'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cpef'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">         <tt class="py-string">'window n2=1 | math output=-1 | cat axis=2 $SOURCE'</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt id="link-16" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-16', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'croots'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cpoly'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">         <tt class="py-string">'transp | roots verb=n niter=100 sort=r | transp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt id="link-17" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-17', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'group'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'croots'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">         <tt class="py-string">'math output="-arg(input)/%g" | real '</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="rsf.recipes.nar.pi2" class="py-name" href="#" onclick="return doclink('link-18', 'pi2', 'link-2');">pi2</a></tt><tt class="py-op">*</tt><tt class="py-name">dt</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt id="link-19" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-19', 'Result', 'link-14');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'group'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">       <tt class="py-string">'''</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string">       graph title=Frequencies yreverse=y pad=n</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-string">       wanttitle=n scalebar=n bartype=v</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-string">       plotfat=3 grid=y label2=Frequency unit2=Hz </tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-string">       min2=0 max2=%g plotcol=6,5,4,6,5,4,6,5,4</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-string">       screenratio=0.8 crowd1=0.75 crowd2=0.3 labelsz=6</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-string">        '''</tt> <tt class="py-op">%</tt> <tt class="py-name">fmax</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt id="link-20" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-20', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'freqs'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'group'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">         <tt class="py-string">'causint | math output="input*%g/(x1+%g)" '</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">dt</tt><tt class="py-op">,</tt><tt class="py-name">dt</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt id="link-21" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-21', 'Result', 'link-14');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'freqs'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">       <tt class="py-string">'''</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-string">       graph title=Frequencies yreverse=y pad=n wanttitle=n</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-string">       scalebar=n bartype=v</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-string">       plotfat=3 grid=y label2=Frequency unit2=Hz </tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string">       min2=0 max2=%g</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string">       '''</tt> <tt class="py-op">%</tt> <tt class="py-name">fmax</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt id="link-22" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-22', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'comps'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'freqs'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">         <tt class="py-string">'rtoc | math output="exp(I*input*x1*%g)" '</tt> <tt class="py-op">%</tt> <tt id="link-23" class="py-name"><a title="rsf.recipes.nar.pi2" class="py-name" href="#" onclick="return doclink('link-23', 'pi2', 'link-2');">pi2</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt id="link-24" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-24', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cwht'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cfit'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'comps'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ctrace'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">         <tt class="py-string">'clpf match=${SOURCES[1]} rect1=%d pred=${TARGETS[1]}'</tt> <tt class="py-op">%</tt> <tt class="py-name">rect2</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt id="link-25" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-25', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cdif'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cfit'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ctrace'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'add scale=1,-1 ${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt id="link-26" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-26', 'Result', 'link-14');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'fit'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cdif'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cfit'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'ctrace'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">           <tt class="py-string">'''</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-string">           cat axis=2 ${SOURCES[1:3]} | real | </tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-string">           dots labels=Difference:Fit:Original gaineach=n</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-string">           '''</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-comment"># mask low amplitudes</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt id="link-27" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-27', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'mask'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'cwht'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">         <tt class="py-string">'math output="abs(input)" | real | mask min=%g'</tt> <tt class="py-op">%</tt> <tt class="py-name">amin</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt id="link-28" class="py-name" targets="Variable rsf.book.group=rsf.book-module.html#group"><a title="rsf.book.group" class="py-name" href="#" onclick="return doclink('link-28', 'group', 'link-28');">group</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">emd</tt> <tt class="py-keyword">in</tt> <tt class="py-name">list</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">mask</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'mask%d'</tt> <tt class="py-op">%</tt> <tt class="py-name">emd</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt id="link-29" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-29', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">mask</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'mask'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'window n2=1 f2=%d'</tt> <tt class="py-op">%</tt> <tt class="py-name">emd</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">grup</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'group%d'</tt> <tt class="py-op">%</tt> <tt class="py-name">emd</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt id="link-30" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-30', 'Flow', 'link-4');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">grup</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'group'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">mask</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">             <tt class="py-string">'''</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-string">             window n2=1 f2=%d | </tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-string">             rtoc | math output="x1+I*input" | </tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-string">             transp plane=12 | headerwindow mask=${SOURCES[1]} | window</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-string">             '''</tt> <tt class="py-op">%</tt> <tt class="py-name">emd</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt id="link-31" class="py-name" targets="Function rsf.cluster.Plot()=rsf.cluster-module.html#Plot,Function rsf.proj.Plot()=rsf.proj-module.html#Plot,Method rsf.proj.Project.Plot()=rsf.proj.Project-class.html#Plot"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-31', 'Plot', 'link-31');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">grup</tt><tt class="py-op">,</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">             <tt class="py-string">'''</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-string">             graph title=Frequencies yreverse=y pad=n</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-string">             wanttitle=n scalebar=n bartype=v</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-string">             plotfat=5 plotcol=%d grid=%d label2=Frequency unit2=Hz</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-string">             min1=0 max1=%g min2=0 max2=150 </tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-string">             '''</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">emd</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">emd</tt><tt class="py-op">==</tt><tt class="py-name">list</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">tmax</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt id="link-32" class="py-name"><a title="rsf.book.group" class="py-name" href="#" onclick="return doclink('link-32', 'group', 'link-28');">group</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">grup</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt id="link-33" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-33', 'Result', 'link-14');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'mgroup'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt id="link-34" class="py-name"><a title="rsf.book.group" class="py-name" href="#" onclick="return doclink('link-34', 'group', 'link-28');">group</a></tt><tt class="py-op">,</tt><tt class="py-string">'Overlay'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

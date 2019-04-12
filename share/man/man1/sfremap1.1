@@ -1,0 +1,98 @@
+.TH sfremap1 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfremap1 \- 1-D ENO interpolation. 
+.SH SYNOPSIS
+.B sfremap1 < in.rsf > out.rsf pattern=pattern.rsf n1=n1 d1=d1 o1=o1 order=3
+.SH COMMENTS
+
+November 2013 program of the month:
+http://ahay.org/blog/2013/11/03/program-of-the-month-sfremap1/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =d1
+.R  	Output sampling
+.TP
+.I int    
+.B n1
+.B =n1
+.R  	Number of output samples
+.TP
+.I float  
+.B o1
+.B =o1
+.R  	Output origin
+.TP
+.I int    
+.B order
+.B =3
+.R  	Interpolation order
+.TP
+.I string 
+.B pattern
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/zicig
+.TP
+.I cwp/geo2011WideAzimuthAngleDecomposition/seam357
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf1
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf2
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf3
+.TP
+.I gallery/french/gazdag
+.TP
+.I gallery/french/lowrank
+.TP
+.I gallery/french/model
+.TP
+.I gallery/french/oway
+.TP
+.I gallery/french/stolt
+.TP
+.I gallery/french/vc
+.TP
+.I gallery/segsalt/lowrank
+.TP
+.I gallery/segsalt/model
+.TP
+.I gallery/sigsbee/ffd
+.TP
+.I gallery/sigsbee/lowrank
+.TP
+.I gallery/sigsbee/lrostep
+.TP
+.I gallery/vofz/lowrank
+.TP
+.I gallery/vofz/stolt
+.TP
+.I gallery/vofz/vc
+.TP
+.I geo384s/hw1/color
+.TP
+.I geo384s/hw3/nmo
+.TP
+.I geo384w/hw6/blake
+.TP
+.I jlu/txyapf/french
+.TP
+.I milano/taupvel/cmp
+.TP
+.I rsf/su/rsflab15
+.TP
+17 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfremap1.html
+.SH SOURCE
+.I system/generic/Mremap1.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfremap1
+.SH VERSION
+2.1-git

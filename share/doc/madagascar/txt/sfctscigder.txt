@@ -1,0 +1,9 @@
+Program sfctscigder | Get the derivative of time-shift gathers 
+[SYNOPSIS]
+sfctscigder < Ftg.rsf > Fder.rsf velocity=Fvel.rsf dt=0.001 pad=30
+[PARAMETERS]
+float   | dt | =0.001 |   | 	
+int     | pad | =30 |   | 	
+file    | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

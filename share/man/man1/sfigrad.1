@@ -1,0 +1,64 @@
+.TH sfigrad 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfigrad \- Gradient on the first axis. 
+.SH SYNOPSIS
+.B sfigrad < in.rsf > out.rsf square=n adj=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I bool   
+.B square
+.B =n
+.R  [y/n]	if y, use gradient squared
+.SH USED IN
+.TP
+.I cwp/jse2006RWEImagingOverturningReflections/sigsbee
+.TP
+.I gee/ajt/igrad1
+.TP
+.I gee/hlx/helderiv
+.TP
+.I gee/hlx/helgal
+.TP
+.I gee/hlx/helocut
+.TP
+.I gee/iin/galilee
+.TP
+.I gee/mda/mad
+.TP
+.I gee/noiz/rbst
+.TP
+.I geo384h/hw2/helix
+.TP
+.I geo384h/hw4/invint
+.TP
+.I rsf/challenge/rain
+.TP
+.I rsf/rsf/sfderiv
+.TP
+.I rsf/school2017/gravity
+.TP
+.I rsf/tutorials/well-tie
+.TP
+.I sep/angle/agmig
+.TP
+.I sep/burg/gtens
+.TP
+.I sep/geostat/dix
+.TP
+.I tccs/lpf/regr
+.TP
+.I tccs/onestep/grad
+.TP
+.I tccs/onestep/grad2
+.TP
+.I tccs/timelapse/timelapse
+.SH SOURCE
+.I system/generic/Migrad.c
+.SH VERSION
+2.1-git

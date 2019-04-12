@@ -1,0 +1,8 @@
+Program sfccrsym | determine symmetry using correlation 
+[SYNOPSIS]
+sfccrsym < in.rsf > out.rsf size=0 pad=SF_EPS
+[PARAMETERS]
+float   | pad | =SF_EPS |   | 	pad for stable devision 
+int     | size | =0 |   | 	sliding window radius 
+[DIRECTORY]
+user/jsun

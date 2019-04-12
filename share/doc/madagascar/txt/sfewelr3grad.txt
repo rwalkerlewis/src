@@ -1,0 +1,22 @@
+Program sfewelr3grad | None
+[SYNOPSIS]
+sfewelr3grad < c11.rsf c14=c14.rsf theta=q1.rsf C11dx=fC11dx.rsf C12dy=fC12dy.rsf C13dz=fC13dz.rsf verb=false tilt=false tric=false grad=false seed=time(NULL mode=0 jump=1 eps=1.e-6 npk=20 nb=0 dt=1.e-3
+[PARAMETERS]
+file    | C11dx | = |   | 	auxiliary output file name
+file    | C12dy | = |   | 	auxiliary output file name
+file    | C13dz | = |   | 	auxiliary output file name
+file    | c14 | = |   | 	auxiliary input file name
+        | dt | =1.e-3 |   | 	time step size
+        | eps | =1.e-6 |   | 	tolerance
+        | grad | =false |   | 	include gradient term
+        | jump | =1 |   | 	jump step for reduced lowrank decomposition
+        | mode | =0 |   | 	mode of decomposition: 0->mixed, 1->p, 2->s
+        | nb | =0 |   | 	boundary padding
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+file    | theta | = |   | 	auxiliary input file name
+        | tilt | =false |   | 	tilting of TTI
+        | tric | =false |   | 	triclinic anisotropy
+        | verb | =false |   | 	verbosity flag
+[DIRECTORY]
+user/jsun

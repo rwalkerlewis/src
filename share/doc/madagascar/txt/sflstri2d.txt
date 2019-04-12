@@ -1,0 +1,28 @@
+Program sflstri2d | 2-D passive seismic RTM and its adjoint 
+[SYNOPSIS]
+sflstri2d < in.rsf > out.rsf velocity=vel.rsf geop=geop.rsf weight=weight.rsf verb=n adj=n abc=n inv=n prec=n sw=n ctr=n depth=0 niter=0 ngrp=1 size=0 rectz=1 rectx=1 rectt=1 repeat=1 stack=1 perc=SF_EPS hard=0.0f cb=0.0f
+[PARAMETERS]
+bool    | abc | =n |  [y/n] | 	absorbing boundary condition 
+bool    | adj | =n |  [y/n] | 	adjoint flag, 0: modeling, 1: migration 
+float   | cb | =0.0f |   | 	allocate arrays 
+bool    | ctr | =n |  [y/n] | 	CTR IC flag 
+int     | depth | =0 |   | 	acquisition surface 
+string  | geop | = |   | 	auxiliary input file name
+float   | hard | =0.0f |   | 	hard thresholding 
+bool    | inv | =n |  [y/n] | 	inversion flag 
+int     | ngrp | =1 |   | 	number of groups of receivers 
+int     | niter | =0 |   | 	number of iterations 
+float   | perc | =SF_EPS |   | 	stable division padding percentage (of max) 
+bool    | prec | =n |  [y/n] | 	use ctr as precondioner 
+int     | rectt | =1 |   | 	smoothing radius in t 
+int     | rectx | =1 |   | 	smoothing radius in x 
+int     | rectz | =1 |   | 	smoothing radius in z 
+int     | repeat | =1 |   | 	smoothing repeatation 
+int     | size | =0 |   | 	sliding window size 
+int     | stack | =1 |   | 	local stacking length 
+bool    | sw | =n |  [y/n] | 	inversion flag 
+file    | velocity | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jsun

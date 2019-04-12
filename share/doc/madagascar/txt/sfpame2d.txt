@@ -1,0 +1,27 @@
+Program sfpame2d | 2-D elasitc wave modeling and vector field decompostion using pseudo-analytical method 
+[SYNOPSIS]
+sfpame2d vp=fvelp.rsf vs=fvels.rsf < fsource.rsf > fwavup.rsf wavwp=fwavwp.rsf wavus=fwavus.rsf wavws=fwavws.rsf wavu=fwavu.rsf wavw=fwavw.rsf opt=0 dt= nt= isx= isz= nbt=44 nbb=44 nxl=44 nxr=44 czt=0.01 czb=0.01 cxl=0.01 cxr=0.01 snap=1
+[PARAMETERS]
+float   | cxl | =0.01 |   | 	decaying parameter
+float   | cxr | =0.01 |   | 	decaying parameter
+float   | czb | =0.01 |   | 	decaying parameter
+float   | czt | =0.01 |   | 	decaying parameter
+float   | dt | = |   | 	
+int     | isx | = |   | 	
+int     | isz | = |   | 	
+int     | nbb | =44 |   | 	
+int     | nbt | =44 |   | 	
+int     | nt | = |   | 	
+int     | nxl | =44 |   | 	
+int     | nxr | =44 |   | 	assume ABC pars are the same 
+int     | opt | =0 |   | 	if y, determine optimal size for efficiency 
+int     | snap | =1 |   | 	
+file    | vp | = |   | 	auxiliary input file name
+file    | vs | = |   | 	auxiliary input file name
+file    | wavu | = |   | 	auxiliary output file name
+file    | wavus | = |   | 	auxiliary output file name
+file    | wavw | = |   | 	auxiliary output file name
+file    | wavwp | = |   | 	auxiliary output file name
+file    | wavws | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/junyan

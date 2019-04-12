@@ -1,0 +1,9 @@
+Program sfnsmooth | N-D non-stationary smoothing. 
+[SYNOPSIS]
+sfnsmooth < in.rsf > out.rsf repeat=1 rect#= shift#=
+[PARAMETERS]
+string  | rect# | = |   | 	size of the smoothing stencil in #-th dimension /auxiliary input file/ 
+int     | repeat | =1 |   | 	repeat filtering several times 
+string  | shift# | = |   | 	shifting of the smoothing stencil in #-th dimension /auxiliary input file/ 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,11 @@
+Program sffowler1 | 2-D velocity-domain DMO (Fowler DMO).
+[SYNOPSIS]
+sffowler1 < inp.rsf > out.rsf eps=0.01
+[COMMENTS]
+
+Input: 2-D cosft of constant-velocity stacks (v,w,k).
+
+[PARAMETERS]
+float   | eps | =0.01 |   | 	stretch regularization 
+[DIRECTORY]
+system/seismic

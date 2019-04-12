@@ -1,0 +1,10 @@
+Program sfstreamiss | Missing data interpolation using streaming PEF 
+[SYNOPSIS]
+sfstreamiss < inp.rsf > out.rsf pef=pef.rsf known=known.rsf na= eps=
+[PARAMETERS]
+float   | eps | = |   | 	regularization 
+file    | known | = |   | 	auxiliary input file name
+int     | na | = |   | 	PEF filter size (not including leading one) 
+string  | pef | = |   | 	output PEF (optional) (auxiliary output file name)
+[DIRECTORY]
+user/fomels

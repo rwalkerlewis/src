@@ -1,0 +1,22 @@
+Program sfint3d | 
+[SYNOPSIS]
+sfint3d < Fw.rsf > Ft.rsf verb=n pick=2 fill=1 nz=100 oz=0. dz=1. nx=100 ox=0. dx=1. ny=1 oy=0. dy=1.
+[COMMENTS]
+* 3-D traveltime interpolation (from rays to Cartesian cube)
+* pcs 2005
+
+[PARAMETERS]
+float   | dx | =1. |   | 	
+float   | dy | =1. |   | 	
+float   | dz | =1. |   | 	
+int     | fill | =1 |   | 	wavefronts file (a,g,h,t) 
+int     | nx | =100 |   | 	
+int     | ny | =1 |   | 	
+int     | nz | =100 |   | 	
+float   | ox | =0. |   | 	
+float   | oy | =0. |   | 	
+float   | oz | =0. |   | 	
+int     | pick | =2 |   | 	
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/psava

@@ -1,0 +1,8 @@
+Program sfdatshift | Calculate datum shift from elevation profile for 2-D shot gathers 
+[SYNOPSIS]
+sfdatshift < in.rsf > out.rsf elev=elev.rsf v0=
+[PARAMETERS]
+string  | elev | = |   | 	auxiliary input file name
+float   | v0 | = |   | 	
+[DIRECTORY]
+user/bash

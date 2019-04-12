@@ -1,0 +1,73 @@
+.TH sfvczo 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvczo \- Post-stack 2-D velocity continuation. 
+.SH SYNOPSIS
+.B sfvczo < in.rsf > out.rsf eps=0.01 pad=n1 pad2=2*kiss_fft_next_fast_size((n2+1)/2) verb=y nv= dv= v0=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dv
+.B =
+.R  	velocity step size
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I int    
+.B nv
+.B =
+.R  	velocity steps
+.TP
+.I int    
+.B pad
+.B =n1
+.R  	padding for stretch
+.TP
+.I int    
+.B pad2
+.B =2*kiss_fft_next_fast_size((n2+1)/2)
+.R  	padding for FFT
+.TP
+.I float  
+.B v0
+.B =
+.R  	starting velocity
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I data/nankai/shots
+.TP
+.I gallery/constant/vc
+.TP
+.I gallery/french/vc
+.TP
+.I gallery/vofz/vc
+.TP
+.I sep/vc2/spec
+.TP
+.I sep/vc2/vcspk
+.TP
+.I sep/velspec/impls
+.TP
+.I sep/velspec/sigvc
+.TP
+.I tccs/diffr/fault
+.TP
+.I tccs/diffr/gom
+.TP
+.I tccs/ovc/nankai
+.TP
+.I tccs/pi/bei
+.TP
+.I tccs/pi/simple-model
+.SH SOURCE
+.I system/seismic/Mvczo.c
+.SH VERSION
+2.1-git

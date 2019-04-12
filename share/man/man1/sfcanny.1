@@ -1,0 +1,30 @@
+.TH sfcanny 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcanny \- Canny-like edge detector. 
+.SH SYNOPSIS
+.B sfcanny < in.rsf > out.rsf min=5.0 max=95.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B max
+.B =95.0
+.R  	maximum threshold
+.TP
+.I float  
+.B min
+.B =5.0
+.R  	minimum threshold
+.SH USED IN
+.TP
+.I rsf/rsf/mona
+.TP
+.I rsf/school2009/channel
+.TP
+.I rsf/school2015/channel
+.TP
+.I rsf/tutorials/parameters
+.SH SOURCE
+.I system/generic/Mcanny.c
+.SH VERSION
+2.1-git

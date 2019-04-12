@@ -1,0 +1,39 @@
+Program sfchaindr | chain diffraction extraction debug version
+[SYNOPSIS]
+sfchaindr < inp.rsf > out.rsf vel=vel.rsf dip=dip.rsf dipim=dipim.rsf diffmod=diffmod.rsf outpwd=outpwdcheck.rsf outdip=outdipcheck.rsf gather=gather.rsf offset=offset.rsf adj=n sm=y domod=y reg=0.0 debug= normalize=y nh= antialias=1.0 apt=nx angle=90.0 half=y verb=y rho=1.-1./nt dh= h0= v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt order=1 nj1=1
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if perform derivative filtering = PWD 
+float   | angle | =90.0 |   | 	angle aperture 
+float   | antialias | =1.0 |   | 	antialiasing 
+int     | apt | =nx |   | 	integral aperture 
+bool    | debug | = |  [y/n] | 	
+float   | dh | = |   | 	offset sampling (for modeling) 
+file    | diffmod | = |   | 	auxiliary input file name
+file    | dip | = |   | 	auxiliary input file name
+file    | dipim | = |   | 	auxiliary input file name
+bool    | domod | =y |  [y/n] | 	get regularization parameter 
+float   | eps | =0.001 |   | 	
+float   | epst2 | =0.001 |   | 	
+string  | gather | = |   | 	auxiliary output file name
+float   | h0 | = |   | 	first offset (for modeling) 
+bool    | half | =y |  [y/n] | 	if y, the third axis is half-offset instead of full offset 
+int     | nh | = |   | 	number of offsets (for modeling) 
+int     | nj1 | =1 |   | 	antialiasing 
+bool    | normalize | =y |  [y/n] | 	normalize for the fold 
+string  | offset | = |   | 	auxiliary input file name
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+file    | outdip | = |   | 	auxiliary output file name
+file    | outpwd | = |   | 	auxiliary output file name
+int     | pad | =nt |   | 	output time samples 
+float   | passthr | =0.001 |   | 	
+float   | reg | =0.0 |   | 	debug flag 
+float   | rho | =1.-1./nt |   | 	Leaky integration constant 
+bool    | sm | =y |  [y/n] | 	if perform modelling via Kirchhoff 
+float   | v_1 | = |   | 	
+float   | v_2 | = |   | 	
+float   | v_3 | = |   | 	
+float   | v_4 | = |   | 	
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/dmerzlikin

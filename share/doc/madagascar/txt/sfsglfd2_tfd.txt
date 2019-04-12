@@ -1,0 +1,12 @@
+Program sfsglfd2_tfd | 2-D 4th-order Staggered Grid Finite-difference wave extrapolation 
+[SYNOPSIS]
+sfsglfd2_tfd < fsource.rsf vel=fvel.rsf den=fden.rsf > fwf.rsf verb=n oo=4 spx= spz=
+[PARAMETERS]
+file    | den | = |   | 	auxiliary input file name
+int     | oo | =4 |   | 	
+int     | spx | = |   | 	source point in x 
+int     | spz | = |   | 	source point in z 
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity
+[DIRECTORY]
+user/fangg

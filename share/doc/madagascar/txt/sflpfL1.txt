@@ -1,0 +1,14 @@
+Program sflpfL1 | Local prediction filter (n-dimensional) in L1 norm. 
+[SYNOPSIS]
+sflpfL1 < dat.rsf match=mat.rsf > flt.rsf pred=pre.rsf liter=10 niter=25 perc=90.0 verb=y pef= lag=
+[PARAMETERS]
+string  | lag | = |   | 	file with PEF lags (optional) 
+int     | liter | =10 |   | 	number of CG iterations 
+file    | match | = |   | 	auxiliary input file name
+int     | niter | =25 |   | 	number of POCS iterations [L1]
+string  | pef | = |   | 	signal PEF file (optional) 
+float   | perc | =90.0 |   | 	percentage for sharpening [L1]
+string  | pred | = |   | 	auxiliary output file name
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/lcasasan

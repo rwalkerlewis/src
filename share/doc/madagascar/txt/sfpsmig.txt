@@ -1,0 +1,11 @@
+Program sfpsmig | 2-D Phase-shift modeling and migration. 
+[SYNOPSIS]
+sfpsmig < inp.rsf > out.rsf vel=vel.rsf adj=n nw= dw= eps=0.1f
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag, 0: modeling, 1: migration 
+float   | dw | = |   | 	
+float   | eps | =0.1f |   | 	stabilization parameter 
+int     | nw | = |   | 	
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/chenyk

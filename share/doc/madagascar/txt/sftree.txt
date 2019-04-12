@@ -1,0 +1,12 @@
+Program sftree | Multiple arrivals with a fast algorithm. 
+[SYNOPSIS]
+sftree < vel.rsf > out.rsf na=361 da=1. a0=-180. vel=y order=3 debug=n
+[PARAMETERS]
+float   | a0 | =-180. |   | 	first angle (in degrees) 
+float   | da | =1. |   | 	angle increment (in degrees) 
+bool    | debug | =n |  [y/n] | 	debugging flag 
+int     | na | =361 |   | 	number of angles 
+int     | order | =3 |   | 	accuracy order 
+bool    | vel | =y |  [y/n] | 	y: theinput is velocity; n: slowness 
+[DIRECTORY]
+user/fomels

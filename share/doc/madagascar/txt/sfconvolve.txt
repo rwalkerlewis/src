@@ -1,0 +1,12 @@
+Program sfconvolve | 
+[SYNOPSIS]
+sfconvolve < _in.rsf > _out.rsf ker=_ker.rsf adj=n wrap=n
+[COMMENTS]
+convolve input 2D image by kernel
+
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y adjoint convolution, if n, convolution 
+string  | ker | = |   | 	convolution kernel file (auxiliary input file name)
+bool    | wrap | =n |  [y/n] | 	if y, perform doughnut wrapping.  if n, no wrapping 
+[DIRECTORY]
+user/luke

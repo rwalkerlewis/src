@@ -1,0 +1,7 @@
+Program sfaddtrace | Add zero trace to original profile in order to improve lateral resolution 
+[SYNOPSIS]
+sfaddtrace < in.rsf > out.rsf ratio=2
+[PARAMETERS]
+int     | ratio | =2 |   | 	
+[DIRECTORY]
+user/chenyk

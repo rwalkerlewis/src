@@ -1,0 +1,5 @@
+Program sfinterf | Create an interferometric matrix 
+[SYNOPSIS]
+sfinterf < inp.rsf > out.rsf
+[DIRECTORY]
+user/fomels

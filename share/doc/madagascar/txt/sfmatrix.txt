@@ -1,0 +1,7 @@
+Program sfmatrix | multiply, for Matrix 
+[SYNOPSIS]
+sfmatrix < inA.rsf B=inB.rsf > outC.rsf
+[PARAMETERS]
+file    | B | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fangg

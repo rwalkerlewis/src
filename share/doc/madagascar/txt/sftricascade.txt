@@ -1,0 +1,8 @@
+Program sftricascade | Triangle filter cascade 
+[SYNOPSIS]
+sftricascade < inp.rsf > out.rsf rect=1 inter=n
+[PARAMETERS]
+int     | inter | =n |   | 	interrupt 
+int     | rect | =1 |   | 	smoothing radius 
+[DIRECTORY]
+user/fomels

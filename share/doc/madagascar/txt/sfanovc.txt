@@ -1,0 +1,24 @@
+Program sfanovc | Oriented anisotropy continuation: shifted hyperbola travel-time approximation. 
+[SYNOPSIS]
+sfanovc < in.rsf > out.rsf eps=0.1 nv=1 lagrange=n plus=y debug=y isotr=n testwarp=n full=n v0= ns=1 ds= s0= smax= epsr=0.001 s0=
+[COMMENTS]
+
+Axis order: t, p, x
+
+[PARAMETERS]
+bool    | debug | =y |  [y/n] | 	Implement debugger: add it later 
+float   | ds | = |   | 	s step size 
+float   | eps | =0.1 |   | 	stretch regularization 
+float   | epsr | =0.001 |   | 	damper for root 
+bool    | full | =n |  [y/n] | 	full accuracy flag - considers all (s-1) terms in any power 
+bool    | isotr | =n |  [y/n] | 	Implement debugger: add it later 
+bool    | lagrange | =n |  [y/n] | 	Use Lagrangian method 
+int     | ns | =1 |   | 	s steps 
+int     | nv | =1 |   | 	number of velocity steps 
+bool    | plus | =y |  [y/n] | 	Plus or minus in coefficients: I have two versions 
+float   | s0 | = |   | 	start 
+float   | smax | = |   | 	
+bool    | testwarp | =n |  [y/n] | 	Implement debugger: add it later 
+float   | v0 | = |   | 	
+[DIRECTORY]
+user/dmerzlikin

@@ -1,0 +1,14 @@
+Program sfkarlistinterp | n-D IST interpolation using a general Lp-norm optimization
+[SYNOPSIS]
+sfkarlistinterp < in.rsf > out.rsf mask=Fmask.rsf verb=n niter=100 pclip=10. n#=
+[COMMENTS]
+Note: acquistion geometry illustrated by mask operator
+
+[PARAMETERS]
+string  | mask | = |   | 	auxiliary input file name
+int     | n# | = |   | 	size of #-th axis 
+int     | niter | =100 |   | 	total number iterations 
+float   | pclip | =10. |   | 	starting data clip percentile (default is 99)
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/karl

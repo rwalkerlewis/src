@@ -1,0 +1,20 @@
+Program sfxtomo | Kjartansson-style tomography 
+[SYNOPSIS]
+sfxtomo < inp.rsf > out.rsf adj=y nz=nh oz=oh dz=dh nx=ny ox=oy dx=dy nh=nz oh=oz dh=dz ny=nx oy=ox dy=dx niter=-1
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	adjoint flag 
+float   | dh | =dz |   | 	
+float   | dx | =dy |   | 	
+float   | dy | =dx |   | 	
+float   | dz | =dh |   | 	
+int     | nh | =nz |   | 	
+int     | niter | =-1 |   | 	number of iterations 
+int     | nx | =ny |   | 	
+int     | ny | =nx |   | 	
+int     | nz | =nh |   | 	
+float   | oh | =oz |   | 	
+float   | ox | =oy |   | 	
+float   | oy | =ox |   | 	
+float   | oz | =oh |   | 	
+[DIRECTORY]
+user/gee

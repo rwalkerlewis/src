@@ -1,0 +1,9 @@
+Program sfofsemb | Objective function of dip estimation with semblance. 
+[SYNOPSIS]
+sfofsemb < in.rsf > of.rsf np=100 p0= dp=2*p0/(1.-np)
+[PARAMETERS]
+float   | dp | =2*p0/(1.-np) |   | 	dip sampling 
+int     | np | =100 |   | 	number of dips 
+float   | p0 | = |   | 	dip origin 
+[DIRECTORY]
+user/fomels

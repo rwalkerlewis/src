@@ -1,0 +1,25 @@
+Program sfflatlinpiwrapper | pi operator building wrapping test function flat gaussian weighting smoothing after pi
+[SYNOPSIS]
+sfflatlinpiwrapper < inp.rsf > out.rsf pifk=pifk.rsf velocity=vel.rsf hd=y domod=y sw=0 adj=n sm=y v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt repeat=1 v0= rect#=(1,1,...) diff#=(n,n,...)
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if perform derivative filtering 
+bool    | diff# | =(n,n,...) |  [y/n] | 	differentiation on #-th axis 
+bool    | domod | =y |  [y/n] | 	if y, apply half-derivative filter 
+float   | eps | =0.001 |   | 	
+float   | epst2 | =0.001 |   | 	
+bool    | hd | =y |  [y/n] | 	
+int     | pad | =nt |   | 	output time samples 
+float   | passthr | =0.001 |   | 	
+string  | pifk | = |   | 	auxiliary output file name
+int     | rect# | =(1,1,...) |   | 	smoothing radius on #-th axis 
+int     | repeat | =1 |   | 	repeat filtering several times 
+bool    | sm | =y |  [y/n] | 	if y, do adjoint integration 
+int     | sw | =0 |   | 	if > 0, select a branch of the antialiasing operation 
+float   | v0 | = |   | 	constant velocity (if no velocity=) 
+float   | v_1 | = |   | 	
+float   | v_2 | = |   | 	
+float   | v_3 | = |   | 	
+float   | v_4 | = |   | 	
+string  | velocity | = |   | 	velocity file (auxiliary input file name)
+[DIRECTORY]
+user/dmerzlikin

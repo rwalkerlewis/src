@@ -1,0 +1,9 @@
+Program sfmlwm | 2D Multistage weighted median filtering. 
+[SYNOPSIS]
+sfmlwm < in.rsf > out.rsf weights=weights.rsf nfw= boundary=n
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw | = |   | 	filter-window length (positive and odd integer)
+file    | weights | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/yliu

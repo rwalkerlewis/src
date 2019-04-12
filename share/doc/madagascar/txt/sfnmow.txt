@@ -1,0 +1,9 @@
+Program sfnmow | Least-squares fitting of t^2-t_0^2 surfaces for elliptical slowness matrix, W.
+[SYNOPSIS]
+sfnmow < inp.rsf > out.rsf offset=offset.rsf half=y nw=3
+[PARAMETERS]
+bool    | half | =y |  [y/n] | 	if y, the second axis is half-offset instead of full offset 
+int     | nw | =3 |   | 	
+string  | offset | = |   | 	If offset file is provided, it must be of the form:(auxiliary input file name)
+[DIRECTORY]
+system/seismic

@@ -1,0 +1,23 @@
+Program sfcheckptdemo | RTM with checkpointing in 2D acoustic media
+[SYNOPSIS]
+sfcheckptdemo < Fv.rsf > Fw.rsf p1=Fp1.rsf p2=Fp2.rsf nb=20 nt= dt= fm=20.0 ft=0 jt=1 verb=n kt= nob=(int)log2f(nt)
+[COMMENTS]
+The real value of checkpointing technology resides in the backpropagation with
+viscoacoustic and viscoelastic wave equation, where the wavefield 
+reconstruction method using saved boundaries fails. Here, we only
+demonstrate how to implement it in acoustic media without dissipation.
+
+[PARAMETERS]
+float   | dt | = |   | 	time sampling interval 
+float   | fm | =20.0 |   | 	dominant freq of Ricker wavelet 
+int     | ft | =0 |   | 	first recorded time 
+int     | jt | =1 |   | 	time interval 
+int     | kt | = |   | 	output px and pz component at kt 
+int     | nb | =20 |   | 	thickness of PML ABC 
+int     | nob | =(int)log2f(nt) |   | 	number of buffers, default=optimal value 
+int     | nt | = |   | 	number of time steps 
+file    | p1 | = |   | 	auxiliary output file name
+file    | p2 | = |   | 	auxiliary output file name
+bool    | verb | =n |  [y/n] | 	verbosity, if y, output px and pz 
+[DIRECTORY]
+user/pyang

@@ -1,0 +1,8 @@
+Program sfadjtest | Ajoint test of prop1, prop2, prop3, prop4
+[SYNOPSIS]
+sfadjtest < fft.rsf flag= reg=
+[PARAMETERS]
+        | flag | = |   | 	
+        | reg | = |   | 	
+[DIRECTORY]
+user/jingwei

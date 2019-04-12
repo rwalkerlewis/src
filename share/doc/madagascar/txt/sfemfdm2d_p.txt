@@ -1,0 +1,23 @@
+Program sfemfdm2d_p | 2D EM FD modeling 
+[SYNOPSIS]
+sfemfdm2d_p < Fwav.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf mag=Fmag.rsf ele=Fele.rsf cdt=Fcdt.rsf verb=n snap=n free=n expl=n dabc=n jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax)
+[PARAMETERS]
+file    | cdt | = |   | 	auxiliary input file name
+bool    | dabc | =n |  [y/n] | 	absorbing BC 
+file    | ele | = |   | 	auxiliary input file name
+bool    | expl | =n |  [y/n] | 	"exploding reflector" 
+bool    | free | =n |  [y/n] | 	free surface flag 
+int     | jdata | =1 |   | 	
+int     | jsnap | =nt |   | 	
+file    | mag | = |   | 	auxiliary input file name
+int     | nqx | =sf_n(ax) |   | 	
+int     | nqz | =sf_n(az) |   | 	
+float   | oqx | =sf_o(ax) |   | 	
+float   | oqz | =sf_o(az) |   | 	
+file    | rec | = |   | 	auxiliary input file name
+bool    | snap | =n |  [y/n] | 	wavefield snapshots flag 
+file    | sou | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+file    | wfl | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/ditthara

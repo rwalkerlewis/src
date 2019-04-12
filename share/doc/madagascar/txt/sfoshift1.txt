@@ -1,0 +1,8 @@
+Program sfoshift1 | Generate shifts with offset for 1-D regularized autoregression. 
+[SYNOPSIS]
+sfoshift1 < in.rsf > shift.rsf ns= nf=1
+[PARAMETERS]
+int     | nf | =1 |   | 	offset of first shift 
+int     | ns | = |   | 	number of shifts 
+[DIRECTORY]
+user/yliu

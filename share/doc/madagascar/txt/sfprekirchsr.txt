@@ -1,0 +1,17 @@
+Program sfprekirchsr | 2-D Prestack Kirchhoff time migration with antialiasing in source-receiver domain. 
+[SYNOPSIS]
+sfprekirchsr vel=vel.rsf < inp.rsf > outp.rsf nz=nt dz=dt z0=t0 adj=n antialias=1.0
+[COMMENTS]
+The axes in the input are {time,receiver,source}
+The axes in the output are {time,receiver}
+I(t0,x0)=\int (W(t0,y0,s,r) * u(s,r,T(s,t0,x0)+T(r,t0,x0)) dsdr
+
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	
+float   | antialias | =1.0 |   | 	antialiasing 
+float   | dz | =dt |   | 	
+int     | nz | =nt |   | 	
+file    | vel | = |   | 	auxiliary input file name
+float   | z0 | =t0 |   | 	
+[DIRECTORY]
+user/chenyk

@@ -1,0 +1,5 @@
+Program sfrich | None
+[SYNOPSIS]
+sfrich
+[DIRECTORY]
+trip/iwave/trace/main

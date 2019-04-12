@@ -1,0 +1,23 @@
+Program sfrwe2d | None
+[SYNOPSIS]
+sfrwe2d rwf=rwfile.rsf swf=swfile.rsf vel=velfile.rsf rays=rays.rsf image=imfile.rsf Rimage=Rimage.rsf forward=0. nref=256 verbose=n kinematic=y norm=1 nsx=3 nsz=3 xmin=ax%o xmax=(ax%n-1 zmax=(az%n-1 dxx=ax%d
+[PARAMETERS]
+file    | Rimage | = |   | 	auxiliary output file name
+        | dxx | =ax%d |   | 	call from_par("dzz",dzz,az%d)
+        | forward | =0. |   | 	Forward scattering option
+file    | image | = |   | 	auxiliary output file name
+        | kinematic | =y |   | 	Kinematic approximation
+        | norm | =1 |   | 	Whether (1) or not (0) to normalize by gnorm
+        | nref | =256 |   | 	starting number of points for calculating reference velocities
+        | nsx | =3 |   | 	
+        | nsz | =3 |   | 	
+file    | rays | = |   | 	auxiliary input file name
+file    | rwf | = |   | 	auxiliary input file name
+file    | swf | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+        | verbose | =n |   | 	level of verbosity
+        | xmax | =(ax%n-1 |   | 	
+        | xmin | =ax%o |   | 	call from_par("zmin",zmin,az%o)
+        | zmax | =(az%n-1 |   | 	
+[DIRECTORY]
+user/jeff

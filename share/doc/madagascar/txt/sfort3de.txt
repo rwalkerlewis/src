@@ -1,0 +1,44 @@
+Program sfort3de | 3-D three-components wavefield modeling using elastic wave equation in tilted ORT media.
+[SYNOPSIS]
+sfort3de < Fvp0.rsf vs0=Fvs0.rsf epsi1=Fep1.rsf epsi2=Fep2.rsf del1=Fde1.rsf del2=Fde2.rsf del3=Fde3.rsf gam1=Fga1.rsf gam2=Fga2.rsf the=Falpha.rsf the=Fthe.rsf phi=Fphi.rsf > Fo1.rsf FDElasticy=Fo2.rsf FDElasticz=Fo3.rsf ns=301 dt=0.001
+[COMMENTS]
+
+Copyright (C) 2012 Tongji University, Shanghai, China 
+
+Authors: Jiubing Cheng and Tengfei Wang
+
+This code is first written by Tengfei Wang at Tongji University,
+and then optimzied by Jiubing Cheng for Madagascar version at BEG,
+University of Texas at Austin.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+[PARAMETERS]
+file    | FDElasticy | = |   | 	auxiliary output file name
+file    | FDElasticz | = |   | 	auxiliary output file name
+file    | del1 | = |   | 	auxiliary input file name
+file    | del2 | = |   | 	auxiliary input file name
+file    | del3 | = |   | 	auxiliary input file name
+float   | dt | =0.001 |   | 	
+file    | epsi1 | = |   | 	auxiliary input file name
+file    | epsi2 | = |   | 	auxiliary input file name
+file    | gam1 | = |   | 	auxiliary input file name
+file    | gam2 | = |   | 	auxiliary input file name
+int     | ns | =301 |   | 	
+file    | phi | = |   | 	auxiliary input file name
+file    | the | = |   | 	auxiliary input file name
+file    | vs0 | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/chengjb

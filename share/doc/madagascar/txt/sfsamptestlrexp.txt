@@ -1,0 +1,19 @@
+Program sfsamptestlrexp | Test sample function lrexp
+[SYNOPSIS]
+sfsamptestlrexp < fft.rsf flag= gpz= zx0= kzx0= nt= dt= t0= nz= dz= z0= nx= dx= x0=
+[PARAMETERS]
+        | dt | = |   | 	
+        | dx | = |   | 	
+        | dz | = |   | 	
+        | flag | = |   | 	
+        | gpz | = |   | 	
+        | kzx0 | = |   | 	
+        | nt | = |   | 	
+        | nx | = |   | 	
+        | nz | = |   | 	
+        | t0 | = |   | 	
+        | x0 | = |   | 	
+        | z0 | = |   | 	
+        | zx0 | = |   | 	
+[DIRECTORY]
+user/jingwei

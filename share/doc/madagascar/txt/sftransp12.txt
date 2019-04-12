@@ -1,0 +1,8 @@
+Program sftransp12 | Transpose 1-2 
+[SYNOPSIS]
+sftransp12 < Fin.rsf > Fou.rsf verb=n memsize=1000.0
+[PARAMETERS]
+float   | memsize | =1000.0 |   | 	
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

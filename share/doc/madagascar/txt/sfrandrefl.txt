@@ -1,0 +1,14 @@
+Program sfrandrefl | Simple synthetics with random reflectivity. 
+[SYNOPSIS]
+sfrandrefl > mod.rsf vpvs=vpvs.rsf fo= nr= n1=3501 d1=0.001 o1=0.0 tscale=1. func=
+[PARAMETERS]
+float   | d1 | =0.001 |   | 	time sampling 
+floats  | fo | = |   | 	 [3]
+string  | func | = |   | 	type of vpvs function 
+int     | n1 | =3501 |   | 	time length 
+int     | nr | = |   | 	number of reflectors 
+float   | o1 | =0.0 |   | 	time origin 
+float   | tscale | =1. |   | 	maximum time 
+file    | vpvs | = |   | 	auxiliary output file name
+[DIRECTORY]
+system/seismic

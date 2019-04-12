@@ -1,0 +1,13 @@
+Program sfctilr2 | Lowrank decomposition for 2-D anisotropic wave propagation using exact phase velocity (2 step time marching). 
+[SYNOPSIS]
+sfctilr2 < velz.rsf fft=fft.rsf left=left.rsf > right.rsf type=1 seed=time(NULL eps=1.e-4 npk=20 dt=
+[PARAMETERS]
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+file    | fft | = |   | 	auxiliary input file name
+file    | left | = |   | 	auxiliary output file name
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+        | type | =1 |   | 	wave mode (1=p wave, 2=Sv wave)
+[DIRECTORY]
+user/jsun

@@ -1,0 +1,8 @@
+Program sfwave1 | 1-D finite-difference wave extrapolation 
+[SYNOPSIS]
+sfwave1 < inp.rsf > out.rsf vel=vel.rsf grad=grad.rsf
+[PARAMETERS]
+file    | grad | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

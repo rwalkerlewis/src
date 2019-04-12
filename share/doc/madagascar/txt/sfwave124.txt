@@ -1,0 +1,9 @@
+Program sfwave124 | 1-D finite-difference wave extrapolation 
+[SYNOPSIS]
+sfwave124 < inp.rsf > out.rsf vel=vel.rsf grad=grad.rsf what=2
+[PARAMETERS]
+file    | grad | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+int     | what | =2 |   | 	2nd or 4th order for FD
+[DIRECTORY]
+user/songxl

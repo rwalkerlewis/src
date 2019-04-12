@@ -1,0 +1,16 @@
+Program sfshapesigk | Signal component separation using plane-wave shaping. 
+[SYNOPSIS]
+sfshapesigk < in.rsf dips=dips.rsf > out.rsf niter=50 eps=1. verb=n rect1=1 rect2=1
+[COMMENTS]
+
+The program works with 2-D data.
+
+[PARAMETERS]
+file    | dips | = |   | 	auxiliary input file name
+float   | eps | =1. |   | 	regularization parameter 
+int     | niter | =50 |   | 	maximum number of iterations 
+int     | rect1 | =1 |   | 	vertical smoothing radius 
+int     | rect2 | =1 |   | 	lateral smoothing radius 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/pwd

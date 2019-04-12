@@ -1,0 +1,106 @@
+.TH sfheadermath 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfheadermath \- Mathematical operations, possibly on header keys. 
+.SH SYNOPSIS
+.B sfheadermath < in.rsf > out.rsf segy=y nkey=-1 memsize=sf_memsize() key= output=
+.SH COMMENTS
+
+Known functions for float data: 
+cos,  sin,  tan,  acos,  asin,  atan, 
+cosh, sinh, tanh, acosh, asinh, atanh,
+exp,  log,  sqrt, abs, erf, erfc, sign
+
+Known functions for int data: sign, abs
+
+See also sfmath.
+
+An addition operation can be performed by sfadd.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B key
+.B =
+.R  	key to replace
+.TP
+.I int    
+.B memsize
+.B =sf_memsize()
+.R  	Max amount of RAM (in Mb) to be used
+.TP
+.I int    
+.B nkey
+.B =-1
+.R  	number of key to replace
+.TP
+.I string 
+.B output
+.B =
+.R  	Describes the output in a mathematical notation.
+.TP
+.I bool   
+.B segy
+.B =y
+.R  [y/n]	if SEGY headers
+.SH USED IN
+.TP
+.I data/sigsbee/data2A
+.TP
+.I data/sigsbee/fs2B
+.TP
+.I data/sigsbee/nfs2B
+.TP
+.I data/sigsbee/ptest
+.TP
+.I data/sigsbee/pwemig
+.TP
+.I data/sigsbee/wemig
+.TP
+.I data/teapotdome/geom
+.TP
+.I data/teapotdome/tahsubset
+.TP
+.I data/viking/basicm8r
+.TP
+.I data/viking/firstlook
+.TP
+.I gallery/bp/model
+.TP
+.I gallery/hessvti/model
+.TP
+.I geo384s/hw1/data
+.TP
+.I geo384s/hw2/groundroll
+.TP
+.I geo384s/hw2/land3d
+.TP
+.I geo384s/hw3/dmo
+.TP
+.I geo384s/hw3/nmo
+.TP
+.I geo384s/hw3/nmo3d
+.TP
+.I geo384s/hw4/teapot
+.TP
+.I geo384s/hw5/pradon
+.TP
+.I geo384s/hw6/gazdag
+.TP
+.I geo384s/hw6/rtm
+.TP
+.I rsf/su/rsflab11
+.TP
+.I rsf/su/rsflab14
+.TP
+.I rsf/su/rsflab15
+.TP
+17 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfheadermath.html
+.SH SOURCE
+.I system/seismic/Mheadermath.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfheadermath
+.SH VERSION
+2.1-git

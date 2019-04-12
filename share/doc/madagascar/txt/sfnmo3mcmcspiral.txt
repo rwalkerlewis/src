@@ -1,0 +1,16 @@
+Program sfnmo3mcmcspiral | 3D NMO GMA MCMC inversion for spiral sorted gather with Metropolis rule (Mosegaard and Tarantola, 1995) 
+[SYNOPSIS]
+sfnmo3mcmcspiral < inp.rsf t0sq=t0sqf.rsf rangecoef=rangecoeff.rsf offsetx=ofx.rsf offsety=ofy.rsf > out.rsf seed=time(NULL) sigma=1.0 saveiter=20 prior=n rational=n nmodel=1000
+[PARAMETERS]
+int     | nmodel | =1000 |   | 	Get the number of MC models
+file    | offsetx | = |   | 	auxiliary input file name
+file    | offsety | = |   | 	auxiliary input file name
+bool    | prior | =n |  [y/n] | 	generate prior or posterior 
+file    | rangecoef | = |   | 	auxiliary input file name
+bool    | rational | =n |  [y/n] | 	use rational approximation form of GMA 
+int     | saveiter | =20 |   | 	save state every iter  
+int     | seed | =time(NULL) |   | 	random seed 
+float   | sigma | =1.0 |   | 	noise variance 
+file    | t0sq | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zone

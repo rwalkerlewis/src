@@ -1,0 +1,11 @@
+Program sfdifferr | Error by substituting numerical solution into equation 
+[SYNOPSIS]
+sfdifferr < in.rsf > out.rsf slow=slow.rsf slowz=slowz.rsf slowx=slowx.rsf err_cutoff=0.2 iq=2
+[PARAMETERS]
+float   | err_cutoff | =0.2 |   | 	
+int     | iq | =2 |   | 	switch for escape variable 0=x, 1=a, 2=t, 3=z 
+file    | slow | = |   | 	auxiliary input file name
+file    | slowx | = |   | 	auxiliary input file name
+file    | slowz | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/browaeys

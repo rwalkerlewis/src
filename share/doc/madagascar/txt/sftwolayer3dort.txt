@@ -1,0 +1,63 @@
+Program sftwolayer3dort | 3-D three-components wavefield modeling using general anisotropy
+[SYNOPSIS]
+sftwolayer3dort > Fo1.rsf vs0=Fo2.rsf eps1=Fo3.rsf eps2=Fo4.rsf del1=Fo5.rsf del2=Fo6.rsf del3=Fo7.rsf gam1=Fo8.rsf gam2=Fo9.rsf the=Fo10.rsf phi=Fo11.rsf ny=201 nx=201 nz=201 dy=0.008 dx=0.008 dz=0.008 vp0_1=3000.0 vs0_1=1200.0 eps1_1=0.2 eps2_1=0.2 del1_1=0.1 del2_1=0.1 del3_1=0.1 gam1_1=0.0 gam2_1=0.0 the_1=0.0 phi_1=0.0 vp0_2=3000.0 vs0_2=1200.0 eps1_2=0.2 eps2_2=0.2 del1_2=0.1 del2_2=0.1 del3_2=0.1 gam1_2=0.0 gam2_2=0.0 the_2=30.0 phi_2=0.0
+[COMMENTS]
+elastic equation in ort media.
+Copyright (C) 2015 Tongji University, Shanghai, China 
+Authors: Jiubing Cheng and Peng Zou
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+[PARAMETERS]
+file    | del1 | = |   | 	auxiliary output file name
+float   | del1_1 | =0.1 |   | 	
+float   | del1_2 | =0.1 |   | 	
+file    | del2 | = |   | 	auxiliary output file name
+float   | del2_1 | =0.1 |   | 	
+float   | del2_2 | =0.1 |   | 	
+file    | del3 | = |   | 	auxiliary output file name
+float   | del3_1 | =0.1 |   | 	
+float   | del3_2 | =0.1 |   | 	
+float   | dx | =0.008 |   | 	
+float   | dy | =0.008 |   | 	
+float   | dz | =0.008 |   | 	
+file    | eps1 | = |   | 	auxiliary output file name
+float   | eps1_1 | =0.2 |   | 	
+float   | eps1_2 | =0.2 |   | 	
+file    | eps2 | = |   | 	auxiliary output file name
+float   | eps2_1 | =0.2 |   | 	
+float   | eps2_2 | =0.2 |   | 	
+file    | gam1 | = |   | 	auxiliary output file name
+float   | gam1_1 | =0.0 |   | 	
+float   | gam1_2 | =0.0 |   | 	
+file    | gam2 | = |   | 	auxiliary output file name
+float   | gam2_1 | =0.0 |   | 	
+float   | gam2_2 | =0.0 |   | 	
+int     | nx | =201 |   | 	
+int     | ny | =201 |   | 	
+int     | nz | =201 |   | 	
+file    | phi | = |   | 	auxiliary output file name
+float   | phi_1 | =0.0 |   | 	
+float   | phi_2 | =0.0 |   | 	
+file    | the | = |   | 	auxiliary output file name
+float   | the_1 | =0.0 |   | 	
+float   | the_2 | =30.0 |   | 	
+float   | vp0_1 | =3000.0 |   | 	
+float   | vp0_2 | =3000.0 |   | 	
+file    | vs0 | = |   | 	auxiliary output file name
+float   | vs0_1 | =1200.0 |   | 	
+float   | vs0_2 | =1200.0 |   | 	
+[DIRECTORY]
+user/chengjb

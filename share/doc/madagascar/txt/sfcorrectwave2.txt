@@ -1,0 +1,18 @@
+Program sfcorrectwave2 | Complex 2-D wave propagation using initial condition 
+[SYNOPSIS]
+sfcorrectwave2 < Fi.rsf > Fo.rsf snaps=Fs.rsf left=left.rsf right=right.rsf alpha=Fa.rsf beta=Fb.rsf verb=y nt= dt= snap=0 correct=n pad1=1 mode=
+[PARAMETERS]
+file    | alpha | = |   | 	auxiliary input file name
+file    | beta | = |   | 	auxiliary input file name
+bool    | correct | =n |  [y/n] | 	jingwei's correction
+float   | dt | = |   | 	
+file    | left | = |   | 	auxiliary input file name
+string  | mode | = |   | 	default mode is pspi 
+int     | nt | = |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | right | = |   | 	auxiliary input file name
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+bool    | verb | =y |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/jsun

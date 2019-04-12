@@ -1,0 +1,16 @@
+Program sftomo | Simple tomography test. 
+[SYNOPSIS]
+sftomo < time.rsf > slow.rsf adj=n niter=100 eps=1. tol=1.e-7 rect1=1 rect2=1 np=11 ns=1 ds=nz
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if n, generate traveltime from slowness; 
+       if y, invert slowness from traveltime 
+int     | ds | =nz |   | 	step size 
+float   | eps | =1. |   | 	scaling parameter 
+int     | niter | =100 |   | 	maximum number of iterations 
+int     | np | =11 |   | 	
+int     | ns | =1 |   | 	number of depth steps 
+int     | rect1 | =1 |   | 	
+int     | rect2 | =1 |   | 	smoothing length in z and x 
+float   | tol | =1.e-7 |   | 	tolerance for stopping iterations 
+[DIRECTORY]
+user/fomels

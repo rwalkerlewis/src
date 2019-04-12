@@ -1,0 +1,11 @@
+Program sfpcrdata3 | Prepare data for 3-D angle-domain migration. 
+[SYNOPSIS]
+sfpcrdata3 < data.rsf > out.rsf verb=n erefl=n filter=y KMAH=y diff=y
+[PARAMETERS]
+bool    | KMAH | =y |  [y/n] | 	y - account for phase shifts due to KMAH index 
+bool    | diff | =y |  [y/n] | 	y - apply differentiation 
+bool    | erefl | =n |  [y/n] | 	y - assume data modeled with exploding reflector 
+bool    | filter | =y |  [y/n] | 	y - antialiasing filter for data 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/cram

@@ -1,0 +1,21 @@
+Program sfvconvert | 2-D velocity mapping from manual picking to rsf RMS format. 
+[SYNOPSIS]
+sfvconvert < in.rsf > out.rsf pattern=pattern.rsf shift=0
+[COMMENTS]
+Covert from
+--------------------------------------
+Time_i(ms) RMS_i(m/s) Lateral_j(trace)
+...        ...        ...
+-1         0          Lateral_j
+...        ...        ...
+--------------------------------------
+to
+regular RSF_RMS velocity grid
+
+Specify either n1= o1= d1= n2= o2= d2= or pattern=
+
+[PARAMETERS]
+string  | pattern | = |   | 	auxiliary input file name
+int     | shift | =0 |   | 	Lateral shift 
+[DIRECTORY]
+user/yliu

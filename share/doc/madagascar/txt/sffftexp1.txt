@@ -1,0 +1,18 @@
+Program sffftexp1 | 2-D FFT-based prestack exploding reflector modeling/migration  
+[SYNOPSIS]
+sffftexp1 < data.rsf > image.rsf left=left.rsf right=right.rsf mig=n snap=0 nz= dz= nt= dt= nh= dh= cmplx=n sub=y
+[PARAMETERS]
+bool    | cmplx | =n |  [y/n] | 	use complex FFT 
+float   | dh | = |   | 	offset sampling (if modeling) 
+float   | dt | = |   | 	time sampling (if modeling) 
+float   | dz | = |   | 	time sampling (if migration) 
+file    | left | = |   | 	auxiliary input file name
+bool    | mig | =n |  [y/n] | 	if n, modeling; if y, migration 
+int     | nh | = |   | 	offset samples (if modeling) 
+int     | nt | = |   | 	time samples (if modeling) 
+int     | nz | = |   | 	time samples (if migration) 
+file    | right | = |   | 	auxiliary input file name
+int     | snap | =0 |   | 	interval for snapshots 
+bool    | sub | =y |  [y/n] | 	if -1 is included in the matrix 
+[DIRECTORY]
+user/fomels

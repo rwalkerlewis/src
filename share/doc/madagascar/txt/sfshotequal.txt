@@ -1,0 +1,10 @@
+Program sfshotequal | sfshotequal projects amplitudes of each shot to Z-score distribution
+[SYNOPSIS]
+sfshotequal < in.rsf > out.rsf mask=msk.rsf scaler=scl.rsf verb=n amp=
+[PARAMETERS]
+float   | amp | = |   | 	Exclude amplitudes greater than amp && less than -amp for statistics computations
+string  | mask | = |   | 	auxiliary input file name
+string  | scaler | = |   | 	auxiliary output file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/salah

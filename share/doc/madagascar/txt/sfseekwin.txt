@@ -1,0 +1,15 @@
+Program sfseekwin | Test for the seek wrapper function in the F90 API
+[SYNOPSIS]
+sfseekwin < in.rsf > out.rsf whence=sf_seek_set nseek=10          nread=10         
+[COMMENTS]
+Works like sfwindow in 1-D. Extracts consecutive sequence of values in N-d.
+The following commands should output the integer sequence from 10 to 19:
+sfmath n1=20 o1=0 d1=1 type=float output=x1 > junk.rsf
+<junk.rsf sfseekwin | sfdisfil col=10 number=n
+Cannot take input from a pipe because stdin cannot be seeked through
+[PARAMETERS]
+        | nread | =10          |   | 	
+        | nseek | =10          |   | 	
+        | whence | =sf_seek_set |   | 	
+[DIRECTORY]
+user/ivlad

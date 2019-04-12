@@ -1,0 +1,13 @@
+Program sfAzsort | None
+[SYNOPSIS]
+sfAzsort < three.rsf > two.rsf out2=two2.rsf common=commonoffset.rsf sectio=sectionf.rsf filt=filtered.rsf dimen= win= radius=
+[PARAMETERS]
+file    | common | = |   | 	auxiliary output file name
+        | dimen | = |   | 	command-line parameter
+file    | filt | = |   | 	auxiliary output file name
+file    | out2 | = |   | 	auxiliary output file name
+        | radius | = |   | 	command-line parameter
+file    | sectio | = |   | 	auxiliary output file name
+        | win | = |   | 	command-line parameter
+[DIRECTORY]
+user/mehdi

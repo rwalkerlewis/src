@@ -1,0 +1,11 @@
+Program sfapefsignoi | Signal and noise separation using adaptive PEFs. 
+[SYNOPSIS]
+sfapefsignoi < in.rsf sfilt=sfilt.rsf nfilt=nfilt.rsf > out.rsf niter=100 eps=0. verb=n
+[PARAMETERS]
+float   | eps | =0. |   | 	regularization parameter 
+file    | nfilt | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	Number of iterations 
+file    | sfilt | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

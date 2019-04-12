@@ -1,0 +1,16 @@
+Program sflinsincos | Solve for angle in equation vx*sin(d) + vy*cos(d) = 1/s0. 
+[SYNOPSIS]
+sflinsincos < in.rsf > out.rsf s0= na= da= oa= nt=180 dt=2. ot=0. nr=nvx/2 dr=dvx extend=4
+[PARAMETERS]
+float   | da | = |   | 	angle sampling. 
+float   | dr | =dvx |   | 	radius sampling. 
+float   | dt | =2. |   | 	polar angle sampling. 
+int     | extend | =4 |   | 	tmp extension 
+int     | na | = |   | 	number of angle values. 
+int     | nr | =nvx/2 |   | 	number of radius on radial lines 
+int     | nt | =180 |   | 	number of polar angle for integration. 
+float   | oa | = |   | 	angle origin 
+float   | ot | =0. |   | 	polar angle origin 
+float   | s0 | = |   | 	reference slowness 
+[DIRECTORY]
+system/seismic

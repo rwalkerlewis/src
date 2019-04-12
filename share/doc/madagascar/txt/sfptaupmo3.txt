@@ -1,0 +1,10 @@
+Program sfptaupmo3 | Slope-based tau-p 3D moveout. 
+[SYNOPSIS]
+sfptaupmo3 < inp.rsf dip1=dip1.rsf dip2=dip2.rsf > nmod.rsf tau0=tau0.rsf eps=0.01
+[PARAMETERS]
+string  | dip1 | = |   | 	slope field mesaure along dimension 2(auxiliary input file name)
+string  | dip2 | = |   | 	slope field mesaure along dimension 3(auxiliary input file name)
+float   | eps | =0.01 |   | 	stretch regularization 
+string  | tau0 | = |   | 	tau0(tau,p) (auxiliary output file name)
+[DIRECTORY]
+system/seismic

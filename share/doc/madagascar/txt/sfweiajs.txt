@@ -1,0 +1,11 @@
+Program sfweiajs | Adjoint source construction for image-domain waveform tomography 
+[SYNOPSIS]
+sfweiajs bwf=Fbwf.rsf < Feic.rsf coo=Fcoo.rsf > Faso.rsf verb=n conj= irun=
+[PARAMETERS]
+file    | bwf | = |   | 	auxiliary input file name
+bool    | conj | = |  [y/n] | 	flag 
+file    | coo | = |   | 	auxiliary input file name
+string  | irun | = |   | 	
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

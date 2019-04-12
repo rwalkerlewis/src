@@ -1,0 +1,166 @@
+.TH sfavvvdwe3d 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfavvvdwe3d \- 3D acoustic variable-velocity variable-density time-domain FD modeling 
+.SH SYNOPSIS
+.B sfavvvdwe3d < Fwav.rsf vel=Fvel.rsf den=Fden.rsf sou=Fsou.rsf rec=Frec.rsf > Fdat.rsf wfl=Fwfl.rsf verb=n snap=n free=n dabc=n adj=n jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) nqy=sf_n(ay) oqz=sf_o(az) oqx=sf_o(ax) oqy=sf_o(ay)
+.SH COMMENTS
+
+The code uses a standard second-order stencil in time.
+The coefficients of the spatial stencil are computed 
+by matching the transfer function of the discretized 
+first-derivative operator to the ideal response. 
+The optimized coefficients minimize dispersion 
+given that particular size of the stencil.
+
+The term 
+	ro div (1/ro grad (u))
+where
+	ro   : density
+	div  : divergence op
+	grad : gradient  op
+	u    : wavefield
+	
+is implemented in order to obtain a positive semi-definite operator.
+
+The code implements both the forward (adj=n) and adjoint (adj=y) modeling operator.
+
+============= FILE DESCRIPTIONS   ========================      
+
+Fdat.rsf - An RSF file containing your data in the following format:
+			axis 1 - Receiver location
+			axis 2 - Time
+			
+Fwav.rsf - An RSF file containing your VOLUME DENSITY INJECTION RATE 
+wavelet information.  The sampling interval, origin time, 
+and number of time samples will be used as the defaults for the modeling code.
+	       i.e. your wavelet needs to have the same length and parameters that you want to model with!
+	       The first axis is the number of source locations.
+	       The second axis is time.
+		   
+Fvel.rsf - An N dimensional RSF file that contains the values for the velocity field at every point in the computational domain.
+		
+Fden.rsf - An N dimensional RSF file that contains the values for density at every point in the computational domain.
+
+Frec.rsf - Coordinates of the receivers
+		axis 1 - (x,z) of the receiver
+		axis 2 - receiver index
+
+Fsou.rsf - Coordinate of the sources
+		axis 1 - (x,y,z) of the source
+		axis 2 - source index
+
+Fwfl.rsf - Output wavefield
+
+verb=y/n - verbose flag
+
+snap=y/n - wavefield snapshots flag
+
+free=y/n - free surface on/off
+
+dabc=y/n - absorbing boundary conditions on/off
+
+jdata    - data sampling 
+
+jsnap    - wavefield snapshots sampling
+
+
+
+Author: Francesco Perrone
+Date: November 2013
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	Adjoint flag
+.TP
+.I bool   
+.B dabc
+.B =n
+.R  [y/n]	Absorbing BC
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B free
+.B =n
+.R  [y/n]	Free surface flag
+.TP
+.I int    
+.B jdata
+.B =1
+.R  	# of t steps at which to save receiver data
+.TP
+.I int    
+.B jsnap
+.B =nt
+.R  	# of t steps at which to save wavefield
+.TP
+.I int    
+.B nqx
+.B =sf_n(ax)
+.R  	Saved wfld window nx
+.TP
+.I int    
+.B nqy
+.B =sf_n(ay)
+.R  	Saved wfld window ny
+.TP
+.I int    
+.B nqz
+.B =sf_n(az)
+.R  	Saved wfld window nz
+.TP
+.I float  
+.B oqx
+.B =sf_o(ax)
+.R  	Saved wfld window ox
+.TP
+.I float  
+.B oqy
+.B =sf_o(ay)
+.R  	Saved wfld window oy
+.TP
+.I float  
+.B oqz
+.B =sf_o(az)
+.R  	Saved wfld window oz
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B snap
+.B =n
+.R  [y/n]	Wavefield snapshots flag
+.TP
+.I file   
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	Verbosity flag
+.TP
+.I file   
+.B wfl
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/fperrone/Mavvvdwe3d.c
+.SH VERSION
+2.1-git

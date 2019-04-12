@@ -1,0 +1,9 @@
+Program sffftwave1dd | 1-D lowrank FFT wave extrapolation using real to complex to real fft (with wavelet injection)
+[SYNOPSIS]
+sffftwave1dd < Fw.rsf > Fo.rsf refl=Fr.rsf left=left.rsf right=right.rsf
+[PARAMETERS]
+file    | left | = |   | 	auxiliary input file name
+file    | refl | = |   | 	auxiliary input file name
+file    | right | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/jsun

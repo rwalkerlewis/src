@@ -1,0 +1,10 @@
+Program sfnlm1 | 1D non-local median filtering. 
+[SYNOPSIS]
+sfnlm1 < in.rsf > out.rsf t=5 f=2 h=0.5 boundary=n
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | f | =2 |   | 	radio of similarity window 
+float   | h | =0.5 |   | 	degree of filtering 
+int     | t | =5 |   | 	radio of search window 
+[DIRECTORY]
+user/chenyk

@@ -1,0 +1,8 @@
+Program sfvipmig0 | Velocity-independent phase-space zero-offset migration. 
+[SYNOPSIS]
+sfvipmig0 < inp.rsf > mig.rsf vmin= vmax=
+[PARAMETERS]
+float   | vmax | = |   | 	convert to slowness 
+float   | vmin | = |   | 	
+[DIRECTORY]
+user/fomels

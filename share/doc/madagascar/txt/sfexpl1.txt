@@ -1,0 +1,8 @@
+Program sfexpl1 | 1-D anisotropic diffusion by explicit cascade. 
+[SYNOPSIS]
+sfexpl1 < in.rsf > out.rsf rect1= pclip=50.
+[PARAMETERS]
+float   | pclip | =50. |   | 	percentage clip for the gradient 
+int     | rect1 | = |   | 	smoothing radius 
+[DIRECTORY]
+system/generic

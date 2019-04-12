@@ -1,0 +1,10 @@
+Program sfc1coh | C1 coherency algorithm. 
+[SYNOPSIS]
+sfc1coh < in.rsf > out.rsf ntw=3 verb=y lag1=3 lag2=3
+[PARAMETERS]
+int     | lag1 | =3 |   | 	Inline time lag (default=3) 
+int     | lag2 | =3 |   | 	Crossline time lag (default=3) 
+int     | ntw | =3 |   | 	Temporal length of the correlation window (default=3) 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

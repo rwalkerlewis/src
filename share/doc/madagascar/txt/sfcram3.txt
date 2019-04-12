@@ -1,0 +1,35 @@
+Program sfcram3 | 3-D angle-domain Kirchhoff migration based on escape tables. 
+[SYNOPSIS]
+sfcram3 < esct.rsf data=data.rsf ddaemon=ddaemon.rsf survey=survey.rsf vz=vz.rsf > imag.rsf hits=hits.rsf agath=oimag.rsf imap=oimap.rsf smap=osmap.rsf dipagath=dimag.rsf dipimap=dimap.rsf dipsmap=dsmap.rsf amp=y extrap=n mute=n outaz=y inorm=n oazmin=180.0 oazmax=180.0 dazmin=180.0 dazmax=180.0 dbx=10.0*dx dby=10.0*dy dxm=5.0*dx dym=5.0*dy armin=0.01*dy*dx armax=100.0*dy*dx np=1 vconst=1.5 nc=0
+[PARAMETERS]
+string  | agath | = |   | 	Scattering angle gathers (angle, azimuth, z, x, y) (auxiliary output file name)
+bool    | amp | =y |  [y/n] | 	n - do not apply amplitude correction weights 
+float   | armax | =100.0*dy*dx |   | 	Maximum allowed area for an exit ray branch 
+float   | armin | =0.01*dy*dx |   | 	Minimum allowed area for an exit ray branch 
+string  | data | = |   | 	Processed prestack data (auxiliary input file name)
+float   | dazmax | =180.0 |   | 	Maximum allowed dip angle at z max 
+float   | dazmin | =180.0 |   | 	Maximum allowed dip angle at z min 
+float   | dbx | =10.0*dx |   | 	Size of search bins in x 
+float   | dby | =10.0*dy |   | 	Size of search bins in y 
+string  | ddaemon | = |   | 	Daemon for distributed data storage (auxiliary input file name)
+string  | dipagath | = |   | 	Dip angle gathers (angle, azimuth, z, x, y) (auxiliary output file name)
+string  | dipimap | = |   | 	Dip gathers illumination (angle, azimuth, z, x, y) (auxiliary output file name)
+string  | dipsmap | = |   | 	Dip gathers energy (angle, azimuth, z, x, y) (auxiliary output file name)
+float   | dxm | =5.0*dx |   | 	Taper length in x 
+float   | dym | =5.0*dy |   | 	Taper length in y 
+bool    | extrap | =n |  [y/n] | 	y - extrapolate migrated samples in gathers 
+string  | hits | = |   | 	Image illumination (z, x, y) (auxiliary output file name)
+string  | imap | = |   | 	SCattering gathers illumination (angle, azimuth, z, x, y) (auxiliary output file name)
+bool    | inorm | =n |  [y/n] | 	y - normalize gathers for illumination 
+bool    | mute | =n |  [y/n] | 	y - mute signal in constant z plane before stacking 
+int     | nc | =0 |   | 	Number of threads to use for ray tracing (OMP_NUM_THREADS by default) 
+int     | np | =1 |   | 	number of image points to buffer before accessing data 
+float   | oazmax | =180.0 |   | 	Maximum allowed scattering angle at z max 
+float   | oazmin | =180.0 |   | 	Maximum allowed scattering angle at z min 
+bool    | outaz | =y |  [y/n] | 	n - stack azimuth direction before output 
+string  | smap | = |   | 	Scattering gathers energy (angle, azimuth, z, x, y) (auxiliary output file name)
+string  | survey | = |   | 	Survey info for input data (auxiliary input file name)
+float   | vconst | =1.5 |   | 	Constant velocity, if vz= is not used 
+string  | vz | = |   | 	Velocity model for amplitude weights (auxiliary input file name)
+[DIRECTORY]
+user/cram

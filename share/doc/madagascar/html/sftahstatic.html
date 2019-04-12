@@ -1,0 +1,142 @@
+
+    <!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <html><head><title>RSF: sftahstatic</title>
+    <style type="text/css"><!--
+    TT { font-family: lucidatypewriter, lucida console, courier }
+    --></style></head><body bgcolor="#f0f0f8">
+    
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#7799ee">
+    <td valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sftahstatic</strong></big></big> (2.1-git)</font></td
+    ><td align=right valign=bottom
+    ><font color="#ffffff" face="helvetica, arial"><a href="./index.html">index</a><br><a href="https://github.com/ahay/src/blob/madagascar-2.1-git/user/karl/Mtahstatic.c">user/karl/Mtahstatic.c</a></font></td></tr></table>
+    Trace And Header STATIC
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#aa55cc">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">sftahstatic < in.rsf > out.rsf verbose=1 sign=1</td></tr></table><br>
+tah is the abbreviation of Trace And Header.  Madagascar programs <br>
+that begin with sftah are a designed to:<br>
+1- read trace and headers from separate rsf files and write them to <br>
+standard output (ie sftahread)<br>
+2- filter programs that read and write standard input/output and <br>
+process the tah data (eg sftahnmo, sftahstack)<br>
+3- read tah data from standard input and write separate rsf files for <br>
+the trace and headers data (ie sftahwrite)<br>
+<br>
+These programs allow Seismic Unix (su) like processing in Madagascar.  <br>
+Some programs have su like names.<br>
+<br>
+Some programs in this suite are sftahread, sftahgethw, ftahhdrmath, <br>
+and sftahwrite.<br>
+<br>
+The sftahstatic applies a static computed using the sstat and gstat trace<br>
+headers. These headers are the source and receiver static in milliseconds.<br>
+The program also uses the input parameter sign. The static applied:<br>
+<br>
+tin=tout+sign*(sstat+gstat)<br>
+<br>
+This means positive sstat+gstat and sign=1 will shift a trace "up".<br>
+<br>
+Interpolation error is less than 1% for frequencies less than 60% of<br>
+the Nyquist frequency. <br>
+<br>
+EXAMPLE:<br>
+<br>
+sftahread \<br>
+verbose=1 \<br>
+input=npr3_gathers.rsf \<br>
+| sftahstatic sign=-1 \<br>
+| sftahnmo \<br>
+verbose=1  \<br>
+tnmo=0,.373,.619,.826,.909,1.017,1.132,1.222,1.716,3.010 \<br>
+vnmo=9086,10244,11085,10803,10969,11578,12252,12669,14590,17116 \<br>
+| sftahstack key=iline,xline verbose=1 \<br>
+| sftahwrite \<br>
+verbose=1                           \<br>
+label2="xline" o2=1 n2=188 d2=1   \<br>
+label3="iline" o3=1 n3=345 d3=1   \<br>
+output=mappedstack.rsf \<br>
+>/dev/null<br>
+<br>
+sfgrey <mappedstack.rsf | sfpen<br>
+<br>
+In this example the cmp sorted prestack data, npr3_gathers.rsf,  are <br>
+read by sftahread.  The headers are in the file npr3_gathers_hdr.rsf, <br>
+the headers parameter default.  The headers are merged with the trace <br>
+amplitudes and the tah data sent down the pipe for statics, nmo, and <br>
+stack.  The sftahstack program uses both the iline and xline keys to <br>
+determine which traces blong to a gather.  Using both keys avoids a <br>
+problem on edges of a survey when uising xline along may merge gathers <br>
+across ilines (a special case that does sometimes happen). sftahwrite <br>
+writes the trace data to mappedstack.rsf and the headers are written <br>
+to the file mappedstack_hdr.rsf.  The order of the data in the output <br>
+file is defined by the iline and xline trace headers, so the  data <br>
+order is (time,xline,iline).  Finally, the output volume is displayed <br>
+using sfgrey.<br>
+
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ee77aa">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Parameters</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>sign=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	put the history from the input file to the output <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>verbose=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+<br>
+     flag to control amount of print<br>
+     0 terse, 1 informative, 2 chatty, 3 debug<br>
+  <br>
+</font></td></tr></table>
+    
+</td></tr></table>
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#eeaa77">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Used In</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ffd8c8">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#000000" face="helvetica, arial"><big><strong>DATA</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ffd8c8"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+                        <a href="book/data/marmousi2mp/modelproc.html">marmousi2mp/modelproc</a><br>
+                        
+                        <a href="book/data/teapotdome/firstlook.html">teapotdome/firstlook</a><br>
+                        
+                        <a href="book/data/teapotdome/scdecon.html">teapotdome/scdecon</a><br>
+                        
+                        <a href="book/data/teapotdome/vels.html">teapotdome/vels</a><br>
+                        
+                        <a href="book/data/teapotdome/zomig.html">teapotdome/zomig</a><br>
+                        </td></tr></table></td></tr></table>
+    </body></html>

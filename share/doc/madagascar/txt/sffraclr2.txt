@@ -1,0 +1,31 @@
+Program sffraclr2 | Complex lowrank decomposition for 2-D viscoacoustic isotropic wave propagation. 
+[SYNOPSIS]
+sffraclr2 < vel.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt= w0= rev=false mode=0 compen=false taper=0.2 cutoff=250. vmax=6000. sign=0 avg=false gamma= abc=0 nbt=0 nbb=0 nbl=0 nbr=0 ct=0.0 cb=0.0 cl=0.0 cr=0.0
+[PARAMETERS]
+        | abc | =0 |   | 	
+        | avg | =false |   | 	whether use average value of gamma
+        | cb | =0.0 |   | 	
+        | cl | =0.0 |   | 	
+        | compen | =false |   | 	compensate attenuation, only works if mode=0,1 (viscoacoustic)
+        | cr | =0.0 |   | 	
+        | ct | =0.0 |   | 	
+        | cutoff | =250. |   | 	cutoff frequency
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+file    | fft | = |   | 	auxiliary input file name
+        | gamma | = |   | 	
+file    | left | = |   | 	auxiliary output file name
+        | mode | =0 |   | 	mode of propagation: 0 is viscoacoustic (default); 1 is loss-dominated; 2 is dispersion dominated; 3 is acoustic
+        | nbb | =0 |   | 	
+        | nbl | =0 |   | 	
+        | nbr | =0 |   | 	
+        | nbt | =0 |   | 	
+        | npk | =20 |   | 	maximum rank
+        | rev | =false |   | 	reverse propagation
+        | seed | =time(NULL |   | 	
+        | sign | =0 |   | 	sign of solution: 0 is positive, 1 is negative
+        | taper | =0.2 |   | 	taper ratio for tukey window
+        | vmax | =6000. |   | 	maximum velocity
+        | w0 | = |   | 	reference frequency
+[DIRECTORY]
+user/jsun

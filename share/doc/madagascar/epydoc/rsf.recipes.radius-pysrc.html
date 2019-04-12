@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.recipes.radius</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.recipes-module.html">Package&nbsp;recipes</a> ::
+        Module&nbsp;radius
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.recipes.radius-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.recipes.radius-module.html">Module rsf.recipes.radius</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package rsf=rsf-module.html"><a title="rsf" class="py-name" href="#" onclick="return doclink('link-0', 'rsf', 'link-0');">rsf</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module rsf.proj=rsf.proj-module.html"><a title="rsf.proj" class="py-name" href="#" onclick="return doclink('link-1', 'proj', 'link-1');">proj</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="radius"></a><div id="radius-def"><a name="L3"></a><tt class="py-lineno">  3</tt> <a class="py-toggle" href="#" id="radius-toggle" onclick="return toggle('radius');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.radius-module.html#radius">radius</a><tt class="py-op">(</tt><tt class="py-param">high</tt><tt class="py-op">,</tt> <tt class="py-param">low</tt><tt class="py-op">,</tt>               <tt class="py-comment"># initial high-resolution and legacy images</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line">           <tt class="py-param">niter</tt><tt class="py-op">,</tt>                   <tt class="py-comment"># number of corrections</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line">           <tt class="py-param">c</tt><tt class="py-op">,</tt>                       <tt class="py-comment"># 'step length' for radius corrections. Can be type int or float for constant c </tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line">                                    <tt class="py-comment"># or type array for changing c.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line">           <tt class="py-param">bias</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">15</tt><tt class="py-op">,</tt> <tt class="py-param">clip</tt><tt class="py-op">=</tt><tt class="py-number">30</tt><tt class="py-op">,</tt>       <tt class="py-comment"># bias and clip for display</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">           <tt class="py-param">rect1</tt><tt class="py-op">=</tt><tt class="py-number">40</tt><tt class="py-op">,</tt> <tt class="py-param">rect2</tt><tt class="py-op">=</tt><tt class="py-number">80</tt><tt class="py-op">,</tt> <tt class="py-param">rect3</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt>     <tt class="py-comment"># radius for local frequency calculation</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">           <tt class="py-param">maxrad</tt><tt class="py-op">=</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt>             <tt class="py-comment"># maximum allowed radius</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">           <tt class="py-param">theor</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt>              <tt class="py-comment"># use theoretical smoothing radius</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">           <tt class="py-param">scale</tt><tt class="py-op">=</tt><tt class="py-number">9</tt><tt class="py-op">,</tt>                 <tt class="py-comment"># scale for theoretical smoothing radius</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">           <tt class="py-param">initial</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">,</tt>              <tt class="py-comment"># initial value for contant smoothing radius </tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">           <tt class="py-param">minval</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">           <tt class="py-param">maxval</tt><tt class="py-op">=</tt><tt class="py-number">25</tt><tt class="py-op">,</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">           <tt class="py-param">titlehigh</tt><tt class="py-op">=</tt><tt class="py-string">"Hires"</tt><tt class="py-op">,</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">           <tt class="py-param">titlelow</tt><tt class="py-op">=</tt><tt class="py-string">"Legacy"</tt><tt class="py-op">,</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">           <tt class="py-param">ind</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radius-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="radius-expanded"><a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt id="link-2" class="py-name" targets="Class float=float-class.html"><a title="float" class="py-name" href="#" onclick="return doclink('link-2', 'float', 'link-2');">float</a></tt> <tt class="py-keyword">or</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt id="link-3" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-3', 'int', 'link-3');">int</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">c</tt><tt class="py-op">]</tt><tt class="py-op">*</tt><tt class="py-name">niter</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">seisplot</tt><tt class="py-op">(</tt><tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'grey title="%s"'</tt><tt class="py-op">%</tt><tt class="py-name">name</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">     </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt class="py-name">locfreq</tt> <tt class="py-op">=</tt> <tt class="py-string">'''iphase order=10 rect1=%d rect2=%d rect3=%d hertz=y complex=y | </tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-string">                 put label="Frequency" unit=Hz'''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">rect1</tt><tt class="py-op">,</tt><tt class="py-name">rect2</tt><tt class="py-op">,</tt><tt class="py-name">rect3</tt><tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">locfreqplot</tt><tt class="py-op">(</tt><tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'grey mean=y color=j scalebar=y title="%s" '</tt><tt class="py-op">%</tt><tt class="py-name">name</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-name">freqdif</tt> <tt class="py-op">=</tt> <tt class="py-string">'add scale=-1,1 ${SOURCES[1]} | put label=Frequency'</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">freqdifplot3</tt><tt class="py-op">(</tt><tt class="py-param">num</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'''byte gainpanel=all bar=bar.rsf allpos=y | </tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-string">                  grey3 frame1=400 frame2=40 frame3=30 allpos=y color=j scalebar=y mean=y </tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-string">                  title="Difference in Local Frequenies %s"'''</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">num</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">freqdifplot</tt><tt class="py-op">(</tt><tt class="py-param">num</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'''grey allpos=y color=j scalebar=y mean=y title="Difference in Local Frequencies %s" </tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-string">                  clip=%d bias=%d minval=%d maxval=%d'''</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">num</tt><tt class="py-op">,</tt><tt class="py-name">clip</tt><tt class="py-op">,</tt><tt class="py-name">bias</tt><tt class="py-op">,</tt><tt class="py-name">minval</tt><tt class="py-op">,</tt><tt class="py-name">maxval</tt><tt class="py-op">)</tt>  </tt>
+</div><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Function rsf.recipes.wplot.specplot()=rsf.recipes.wplot-module.html#specplot"><a title="rsf.recipes.wplot.specplot" class="py-name" href="#" onclick="return doclink('link-4', 'specplot', 'link-4');">specplot</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'''cat axis=2 ${SOURCES[1]} | </tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-string">                  scale axis=1 | window max1=180 |</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-string">                  graph title="Normalized Spectra" label2="Amplitude" unit2=""'''</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">rectplot</tt><tt class="py-op">(</tt><tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'grey color=j mean=y title="%s" scalebar=y barlabel=Radius barunit=samples'</tt><tt class="py-op">%</tt><tt class="py-name">name</tt> </tt>
+</div><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-name">smooth</tt> <tt class="py-op">=</tt> <tt class="py-string">'nsmooth1 rect=${SOURCES[1]}'</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-comment">#Result(high, seisplot(titlehigh))</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-comment">#Result(low, seisplot(titlelow))</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">n</tt><tt class="py-op">(</tt><tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">name</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">ind</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-name">high_freq</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-freq'</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">    <tt class="py-name">low_freq</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'low-freq'</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Function rsf.cluster.Flow()=rsf.cluster-module.html#Flow,Function rsf.flow.Flow()=rsf.flow-module.html#Flow,Module rsf.gui.Flow=rsf.gui.Flow-module.html,Class rsf.gui.Flow.Flow=rsf.gui.Flow.Flow-class.html,Function rsf.proj.Flow()=rsf.proj-module.html#Flow,Method rsf.proj.Project.Flow()=rsf.proj.Project-class.html#Flow"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-5', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">high_freq</tt><tt class="py-op">,</tt><tt class="py-name">high</tt><tt class="py-op">,</tt><tt class="py-name">locfreq</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Function rsf.cluster.Result()=rsf.cluster-module.html#Result,Method rsf.proj.Project.Result()=rsf.proj.Project-class.html#Result,Function rsf.proj.Result()=rsf.proj-module.html#Result"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-6', 'Result', 'link-6');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">high_freq</tt><tt class="py-op">,</tt><tt class="py-name">locfreqplot</tt><tt class="py-op">(</tt><tt class="py-string">'%s Local Frequency'</tt><tt class="py-op">%</tt><tt class="py-name">titlehigh</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt id="link-7" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-7', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">low_freq</tt><tt class="py-op">,</tt><tt class="py-name">low</tt><tt class="py-op">,</tt><tt class="py-name">locfreq</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-8', 'Result', 'link-6');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">low_freq</tt><tt class="py-op">,</tt><tt class="py-name">locfreqplot</tt><tt class="py-op">(</tt><tt class="py-string">'%s Local Frequency'</tt><tt class="py-op">%</tt><tt class="py-name">titlelow</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-name">freqdif_init</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'freqdif-init'</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt id="link-9" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-9', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">freqdif_init</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">low_freq</tt><tt class="py-op">,</tt> <tt class="py-name">high_freq</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">freqdif</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Function rsf.cluster.Plot()=rsf.cluster-module.html#Plot,Function rsf.proj.Plot()=rsf.proj-module.html#Plot,Method rsf.proj.Project.Plot()=rsf.proj.Project-class.html#Plot"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-10', 'Plot', 'link-10');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">freqdif_init</tt><tt class="py-op">,</tt><tt class="py-name">freqdifplot3</tt><tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-comment"># initial smoothing radius</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">rect</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'rect0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">theor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt class="py-name">math</tt> <tt class="py-keyword">import</tt> <tt class="py-name">pi</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt id="link-11" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-11', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">rect</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">low_freq</tt><tt class="py-op">,</tt> <tt class="py-name">high_freq</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'''math f1=${SOURCES[1]} </tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-string">              output="sqrt(%g*(1/(input*input)-1/(f1*f1)))/%g" '''</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">scale</tt><tt class="py-op">,</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">pi</tt><tt class="py-op">*</tt><tt class="py-number">0.001</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt id="link-12" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-12', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">rect</tt><tt class="py-op">,</tt><tt class="py-name">low_freq</tt><tt class="py-op">,</tt><tt class="py-string">'math output=%f'</tt><tt class="py-op">%</tt><tt class="py-name">initial</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt id="link-13" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-13', 'Plot', 'link-10');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">rect</tt><tt class="py-op">,</tt><tt class="py-name">rectplot</tt><tt class="py-op">(</tt><tt class="py-string">"Smoothing Radius 0"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-name">high_smooth</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-smooth0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt id="link-14" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-14', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">high_smooth</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">high</tt><tt class="py-op">,</tt><tt class="py-name">rect</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">smooth</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt id="link-15" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-15', 'Result', 'link-6');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">high_smooth</tt><tt class="py-op">,</tt> <tt class="py-name">seisplot</tt><tt class="py-op">(</tt><tt class="py-string">"%s Smooth 0"</tt><tt class="py-op">%</tt><tt class="py-name">titlehigh</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">high_spec</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-spec'</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">low_spec</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'low-spec'</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt id="link-16" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-16', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">high_spec</tt><tt class="py-op">,</tt><tt class="py-name">high</tt><tt class="py-op">,</tt><tt class="py-string">'spectra all=y'</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt id="link-17" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-17', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">low_spec</tt><tt class="py-op">,</tt><tt class="py-name">low</tt><tt class="py-op">,</tt><tt class="py-string">'spectra all=y'</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-name">high_ss</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-smooth-spec0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-name">nspec</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'nspectra-diff'</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt id="link-18" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-18', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">high_ss</tt><tt class="py-op">,</tt><tt class="py-name">high_smooth</tt><tt class="py-op">,</tt><tt class="py-string">'spectra all=y'</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt id="link-19" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-19', 'Result', 'link-6');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">nspec</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">high_spec</tt><tt class="py-op">,</tt> <tt class="py-name">low_spec</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-20" class="py-name"><a title="rsf.recipes.wplot.specplot" class="py-name" href="#" onclick="return doclink('link-20', 'specplot', 'link-4');">specplot</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt id="link-21" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-21', 'Result', 'link-6');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">high_ss</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">high_ss</tt><tt class="py-op">,</tt> <tt class="py-name">low_spec</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-22" class="py-name"><a title="rsf.recipes.wplot.specplot" class="py-name" href="#" onclick="return doclink('link-22', 'specplot', 'link-4');">specplot</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">     </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">    <tt class="py-name">high_sf</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-smooth-freq0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt id="link-23" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-23', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">high_sf</tt><tt class="py-op">,</tt><tt class="py-name">high_smooth</tt><tt class="py-op">,</tt><tt class="py-name">locfreq</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt id="link-24" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-24', 'Result', 'link-6');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">high_sf</tt><tt class="py-op">,</tt><tt class="py-name">locfreqplot</tt><tt class="py-op">(</tt><tt class="py-string">"%s Local Frequency Smoothed %d"</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">titlehigh</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt class="py-name">freqdif_filt</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'freqdif-filt0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt id="link-25" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-25', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">freqdif_filt</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">low_freq</tt><tt class="py-op">,</tt> <tt class="py-name">high_sf</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">freqdif</tt><tt class="py-op">)</tt>  </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt class="py-comment">#Result('freqdif-filt0',freqdifplot('0')) </tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt id="link-26" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-26', 'Result', 'link-6');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">freqdif_filt</tt><tt class="py-op">,</tt><tt class="py-name">freqdifplot3</tt><tt class="py-op">(</tt><tt class="py-string">'0'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>  </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">niter</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">j</tt> <tt class="py-op">=</tt> <tt class="py-name">i</tt><tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">rect</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'rect%i'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">rectj</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'rect%i'</tt><tt class="py-op">%</tt><tt class="py-name">j</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">fdfj</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'freqdif-filt%i'</tt><tt class="py-op">%</tt><tt class="py-name">j</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt id="link-27" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-27', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">rect</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">rectj</tt><tt class="py-op">,</tt><tt class="py-name">fdfj</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'radius freq=${SOURCES[1]} c=%f'</tt><tt class="py-op">%</tt><tt class="py-name">c</tt><tt class="py-op">[</tt><tt class="py-name">j</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt id="link-28" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-28', 'Plot', 'link-10');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">rect</tt><tt class="py-op">,</tt><tt class="py-name">rectplot</tt><tt class="py-op">(</tt><tt class="py-string">"Smoothing Radius %d"</tt><tt class="py-op">)</tt><tt class="py-op">%</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">         </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">hs</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-smooth%i'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">hss</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-smooth-spec%i'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">hsf</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'high-smooth-freq%i'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-name">fdf</tt> <tt class="py-op">=</tt> <tt class="py-name">n</tt><tt class="py-op">(</tt><tt class="py-string">'freqdif-filt%i'</tt><tt class="py-op">%</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt id="link-29" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-29', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">hs</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">high</tt><tt class="py-op">,</tt><tt class="py-name">rect</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">smooth</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt id="link-30" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-30', 'Plot', 'link-10');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">hs</tt><tt class="py-op">,</tt> <tt class="py-name">seisplot</tt><tt class="py-op">(</tt><tt class="py-string">'%s Smooth %d'</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">titlehigh</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt id="link-31" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-31', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">hss</tt><tt class="py-op">,</tt><tt class="py-name">hs</tt><tt class="py-op">,</tt><tt class="py-string">'spectra all=y'</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt id="link-32" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-32', 'Plot', 'link-10');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">hss</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">hss</tt><tt class="py-op">,</tt><tt class="py-name">low_spec</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-33" class="py-name"><a title="rsf.recipes.wplot.specplot" class="py-name" href="#" onclick="return doclink('link-33', 'specplot', 'link-4');">specplot</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">         </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt id="link-34" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-34', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">hsf</tt><tt class="py-op">,</tt><tt class="py-name">hs</tt><tt class="py-op">,</tt><tt class="py-name">locfreq</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt id="link-35" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-35', 'Plot', 'link-10');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">hsf</tt><tt class="py-op">,</tt><tt class="py-name">locfreqplot</tt><tt class="py-op">(</tt><tt class="py-string">'%s Local Frequency Smoothed %d'</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">titlehigh</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt id="link-36" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-36', 'Flow', 'link-5');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-name">fdf</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">low_freq</tt><tt class="py-op">,</tt> <tt class="py-name">hsf</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">freqdif</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt id="link-37" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-37', 'Plot', 'link-10');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">fdf</tt><tt class="py-op">,</tt><tt class="py-name">freqdifplot</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

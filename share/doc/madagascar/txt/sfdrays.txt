@@ -1,0 +1,26 @@
+Program sfdrays | 2D dynamic ray tracing by a Runge-Kutta integrator. 
+[SYNOPSIS]
+sfdrays < vel.rsf > gbeam.rsf shotfile=shots.rsf anglefile=angles.rsf rays=rays.rsf dmat=dmat.rsf proj=proj.rsf mask=mask.rsf vel=y order=4 nt= dt= verb=y shift=0.5 zshot=0. yshot=o[1]+0.5*(n[1]-1)*d[1] nr= a0=0. amax=360.
+[COMMENTS]
+Angle is 90 deg along y-axis and 180 deg along z-axis, clockwise.
+
+[PARAMETERS]
+float   | a0 | =0. |   | 	minimum angle (if no anglefile) 
+float   | amax | =360. |   | 	maximum angle (if no anglefile) 
+string  | anglefile | = |   | 	file with initial angles [nr,nshot] (auxiliary input file name)
+string  | dmat | = |   | 	auxiliary output file name
+float   | dt | = |   | 	Sampling in time 
+string  | mask | = |   | 	auxiliary output file name
+int     | nr | = |   | 	number of angles (if no anglefile) 
+int     | nt | = |   | 	Number of time steps 
+int     | order | =4 |   | 	Interpolation order 
+string  | proj | = |   | 	auxiliary output file name
+string  | rays | = |   | 	auxiliary output file name
+float   | shift | =0.5 |   | 	Complex source shift 
+string  | shotfile | = |   | 	file with shot locations [zshot,yshot,nshot] (auxiliary input file name)
+bool    | vel | =y |  [y/n] | 	If y, input is velocity; if n, slowness 
+bool    | verb | =y |  [y/n] | 	Verbosity flag 
+float   | yshot | =o[1]+0.5*(n[1]-1)*d[1] |   | 	
+float   | zshot | =0. |   | 	
+[DIRECTORY]
+user/llisiw

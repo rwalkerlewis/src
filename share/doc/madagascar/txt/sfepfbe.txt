@@ -1,0 +1,10 @@
+Program sfepfbe | Bi-Exponential Edge Preserving Smoothing 
+[SYNOPSIS]
+sfepfbe < in.rsf > out.rsf twod=n sigma=1.0 lamda=0.8 kernel=
+[PARAMETERS]
+string  | kernel | = |   | 	similarity: gaussian 
+float   | lamda | =0.8 |   | 	lamda 
+float   | sigma | =1.0 |   | 	normalizing parameter 
+bool    | twod | =n |  [y/n] | 	y, 2D smoothing 
+[DIRECTORY]
+user/chen

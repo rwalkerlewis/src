@@ -1,0 +1,15 @@
+Program sfsglfdc1a | 1D Lowrank FD coefficient of d/dx on staggered grid (optimized)
+[SYNOPSIS]
+sfsglfdc1a < velf.rsf > outm.rsf sx=fsx.rsf Mexact=Mexactfile.rsf seed=time(NULL taper=1.e-3 eps=1.e-4 npk=20 dt= wavnumcut=1.0 size=6
+[PARAMETERS]
+file    | Mexact | = |   | 	auxiliary output file name
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+        | size | =6 |   | 	stencil length
+file    | sx | = |   | 	auxiliary output file name
+        | taper | =1.e-3 |   | 	taper for stability
+        | wavnumcut | =1.0 |   | 	wavenumber cut percentile
+[DIRECTORY]
+user/fangg

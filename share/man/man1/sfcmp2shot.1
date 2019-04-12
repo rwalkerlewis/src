@@ -1,0 +1,31 @@
+.TH sfcmp2shot 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcmp2shot \- Convert CMPs to shots for regular 2-D geometry. 
+.SH SYNOPSIS
+.B sfcmp2shot < in.rsf > out.rsf positive=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B positive
+.B =y
+.R  [y/n]	initial offset orientation
+.SH USED IN
+.TP
+.I sep/oc2/cup
+.TP
+.I sep/oc2/elfshot
+.TP
+.I tccs/nmodeblend/class
+.TP
+.I tccs/svmf/bei
+.TP
+.I tccs/svmf/class
+.TP
+.I tccs/t2dweak/field
+.TP
+.I tccs/time2depth2/beinew
+.SH SOURCE
+.I system/seismic/Mcmp2shot.c
+.SH VERSION
+2.1-git

@@ -1,0 +1,19 @@
+Program sfmaskval | Mask values inside or outside of a range.
+[SYNOPSIS]
+sfmaskval < in.rsf > out.rsf upper=+FLT_MAX lower=-FLT_MAX upperval=+FLT_MAX lowerval=-FLT_MAX
+[COMMENTS]
+
+sfmaskval < in.rsf > out.rsf upper=ul lower=ll upperval=uv lowerval=lv
+
+If upper > lower, then values larger than ul will be changed to uv and
+values belowe ll will be changed to lv.
+If upper < lower, then values inside [ul;ll] will be changed to lv.
+
+
+[PARAMETERS]
+float   | lower | =-FLT_MAX |   | 	lower range limit 
+float   | lowerval | =-FLT_MAX |   | 	lower range value 
+float   | upper | =+FLT_MAX |   | 	upper range limit 
+float   | upperval | =+FLT_MAX |   | 	upper range value 
+[DIRECTORY]
+user/bash

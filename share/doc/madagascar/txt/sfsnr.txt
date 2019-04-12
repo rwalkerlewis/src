@@ -1,0 +1,11 @@
+Program sfsnr | Display dataset signal-noise-ratio.
+[SYNOPSIS]
+sfsnr < in.rsf ntw1=1 ntw2=n2 nsw1=1 nsw2=n1 type=
+[PARAMETERS]
+int     | nsw1 | =1 |   | 	sample-window beginning position (default=1)
+int     | nsw2 | =n1 |   | 	sample-window end position (default=n1)
+int     | ntw1 | =1 |   | 	trace-window beginning position (default=1)
+int     | ntw2 | =n2 |   | 	trace-window end position (default=n2)
+string  | type | = |   | 	[stack] method type, the default is stack 
+[DIRECTORY]
+user/yliu

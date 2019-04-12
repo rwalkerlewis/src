@@ -1,0 +1,5 @@
+Program sfaddimag | Convert large-size (with n3=) real data to complex (by adding zero imaginary part) 
+[SYNOPSIS]
+sfaddimag < in.rsf > out.rsf
+[DIRECTORY]
+user/zhiguang

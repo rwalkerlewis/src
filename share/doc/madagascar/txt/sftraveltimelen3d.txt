@@ -1,0 +1,12 @@
+Program sftraveltimelen3d | Oriented zero-offset migration. 
+[SYNOPSIS]
+sftraveltimelen3d < dist.rsf disty=distY.rsf time=time.rsf dept=dept.rsf len=lent.rsf > imagt.rsf xsrc= ysrc=
+[PARAMETERS]
+file    | dept | = |   | 	auxiliary input file name
+file    | disty | = |   | 	auxiliary input file name
+file    | len | = |   | 	auxiliary input file name
+file    | time | = |   | 	auxiliary input file name
+float   | xsrc | = |   | 	
+float   | ysrc | = |   | 	
+[DIRECTORY]
+user/roman

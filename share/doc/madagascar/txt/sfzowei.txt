@@ -1,0 +1,10 @@
+Program sfzowei | 3-D zero-offset modeling/migration 
+[SYNOPSIS]
+sfzowei slo=Fslo.rsf < Fdat.rsf > Fcic.rsf sou=Fsou.rsf verb=n adj=y
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	adjoint flag, true for migration, false for modeling 
+file    | slo | = |   | 	auxiliary input file name
+file    | sou | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

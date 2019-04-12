@@ -1,0 +1,101 @@
+.TH sfnoise 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnoise \- Add random noise to the data.
+.SH SYNOPSIS
+.B sfnoise < in.rsf > out.rsf seed=time(NULL) type=y var= range= mean=0 rep=n
+.SH COMMENTS
+
+July 2011 program of the month:
+http://ahay.org/blog/2011/07/03/program-of-the-month-sfnoise/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B mean
+.B =0
+.R  	noise mean
+.TP
+.I float  
+.B range
+.B =
+.R  	noise range (default=1)
+.TP
+.I bool   
+.B rep
+.B =n
+.R  [y/n]	if y, replace data with noise
+.TP
+.I int    
+.B seed
+.B =time(NULL)
+.R  	random seed
+.TP
+.I bool   
+.B type
+.B =y
+.R  [y/n]	noise distribution, y: normal, n: uniform
+.TP
+.I float  
+.B var
+.B =
+.R  	noise variance
+.SH USED IN
+.TP
+.I bei/ft1/autocor
+.TP
+.I chen/test/xtime
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.TP
+.I cup/rna3d/shot
+.TP
+.I cup/rna3d/sin
+.TP
+.I cwp/geo2008InterferometricImagingCondition/circle
+.TP
+.I cwp/geo2008InterferometricImagingCondition/sact1
+.TP
+.I cwp/geo2009TTIModeSeparation/fold
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf1
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf3
+.TP
+.I gee/lsq/puck
+.TP
+.I gee/mda/elita
+.TP
+.I gee/mda/geostat
+.TP
+.I gee/mda/morgan
+.TP
+.I gee/pch/signoi
+.TP
+.I geo384h/hw5/pattern
+.TP
+.I geo384h/hw5/seabeam
+.TP
+.I geo384w/hw3/synth
+.TP
+.I geo384w/hw4/synth
+.TP
+.I geostats/simulate/rfield
+.TP
+.I geostats/simulate/simple
+.TP
+.I geostats/spatial_stats/correlogram
+.TP
+.I geostats/spatial_stats/covariance
+.TP
+.I geostats/spatial_stats/gr_variogram
+.TP
+155 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfnoise.html
+.SH SOURCE
+.I system/generic/Mnoise.c
+.SH VERSION
+2.1-git

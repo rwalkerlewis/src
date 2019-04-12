@@ -1,0 +1,10 @@
+Program sfresamp | 2D data resampling. 
+[SYNOPSIS]
+sfresamp < in.rsf > out.rsf o1=o[0] d1=d[0] o2=o[1] d2=d[1]
+[PARAMETERS]
+float   | d1 | =d[0] |   | 	sample interval on 1st axis 
+float   | d2 | =d[1] |   | 	sample interval on 2nd axis 
+float   | o1 | =o[0] |   | 	first sample sample on 1st axis 
+float   | o2 | =o[1] |   | 	first sample on 2nd axis 
+[DIRECTORY]
+user/chengjb

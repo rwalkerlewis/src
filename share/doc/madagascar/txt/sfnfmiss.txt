@@ -1,0 +1,12 @@
+Program sfnfmiss | Missing data interpolation in freq domain. 
+[SYNOPSIS]
+sfnfmiss < in.rsf > out.rsf filt=filt.rsf mask=mask.rsf exact=y verb=n niter=n1 ty=
+[PARAMETERS]
+bool    | exact | =y |  [y/n] | 	If y, preserve the known data values 
+file    | filt | = |   | 	auxiliary input file name
+string  | mask | = |   | 	optional input mask file for known data (auxiliary input file name)
+int     | niter | =n1 |   | 	number of iterations 
+string  | ty | = |   | 	Prediction type: all=backward+forward
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/gchliu

@@ -1,0 +1,13 @@
+Program sffourvc0 | Velocity continuation after NMO. 
+[SYNOPSIS]
+sffourvc0 < in.rsf > out.rsf eps=0.01 pad=n1 pad2=2*kiss_fft_next_fast_size((n2+1)/2) verb=n nv= dv= extend=4
+[PARAMETERS]
+float   | dv | = |   | 	
+float   | eps | =0.01 |   | 	
+int     | extend | =4 |   | 	trace extension 
+int     | nv | = |   | 	
+int     | pad | =n1 |   | 	
+int     | pad2 | =2*kiss_fft_next_fast_size((n2+1)/2) |   | 	
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+system/seismic

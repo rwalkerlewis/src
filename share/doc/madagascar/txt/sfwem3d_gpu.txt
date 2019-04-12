@@ -1,0 +1,17 @@
+Program sfwem3d_gpu | 3D ISOTROPIC wave-equation finite-difference migration on GPU 
+[SYNOPSIS]
+sfwem3d_gpu < Fxig.rsf vel=Fvel.rsf swf=Fswf.rsf rwf=Frwf.rsf swfout=Fswfo.rsf rwfout=Frwfo.rsf kxmap=Fkxmap.rsf > Fxigo.rsf gpu=0 nxtap=40 nytap=40 verbose=n wantwf=n
+[PARAMETERS]
+int     | gpu | =0 |   | 	ID of the GPU to be used 
+file    | kxmap | = |   | 	auxiliary output file name
+int     | nxtap | =40 |   | 	TAPER size 
+int     | nytap | =40 |   | 	TAPER size 
+file    | rwf | = |   | 	auxiliary input file name
+file    | rwfout | = |   | 	auxiliary output file name
+file    | swf | = |   | 	auxiliary input file name
+file    | swfout | = |   | 	auxiliary output file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verbose | =n |  [y/n] | 	VERBOSITY flag 
+bool    | wantwf | =n |  [y/n] | 	Want output wavefields 
+[DIRECTORY]
+user/rweiss

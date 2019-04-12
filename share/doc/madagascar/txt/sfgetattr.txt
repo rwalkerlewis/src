@@ -1,0 +1,7 @@
+Program sfgetattr | Output dataset attributes. 
+[SYNOPSIS]
+sfgetattr < Fi.rsf > Fo.rsf want=
+[PARAMETERS]
+string  | want | = |   | 	
+[DIRECTORY]
+user/psava

@@ -1,0 +1,20 @@
+Program sfdiparti | diparti
+[SYNOPSIS]
+sfdiparti < piFile.rsf vel=velFile.rsf > resFile.rsf semb=sembFile.rsf apert=1000 sembWindow=11 gamma=1.f ppn=dipNum_ ppo=dipStart_ ppd=dipStep_ itn=tNum_ ixn=xNum_ ito=tStart_ ixo=xStart_ itd=tStep_ ixd=xStep_
+[PARAMETERS]
+float   | apert | =1000 |   | 	diffraction summation aperture 
+float   | gamma | =1.f |   | 	velocity-model-accuracy parameter 
+float   | itd | =tStep_ |   | 	step in time (in ms) 
+int     | itn | =tNum_ |   | 	number of imaged depth samples 
+float   | ito | =tStart_ |   | 	first imaged time (in ms) 
+float   | ixd | =xStep_ |   | 	step in positions (in m) 
+int     | ixn | =xNum_ |   | 	number of imaged positions 
+float   | ixo | =xStart_ |   | 	first imaged position (in m) 
+float   | ppd | =dipStep_ |   | 	step in processed partial images 
+int     | ppn | =dipNum_ |   | 	number of processed partial images 
+float   | ppo | =dipStart_ |   | 	first processed partial image 
+string  | semb | = |   | 	output file containing semblance (auxiliary output file name)
+int     | sembWindow | =11 |   | 	vertical window for semblance calculation (in samples) 
+string  | vel | = |   | 	velocity model file (velocity in km/s) (auxiliary input file name)
+[DIRECTORY]
+user/aklokov

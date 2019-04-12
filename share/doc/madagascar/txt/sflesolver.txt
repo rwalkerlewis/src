@@ -1,0 +1,7 @@
+Program sflesolver | Linear equations solver using Gauss Elimination 
+[SYNOPSIS]
+sflesolver < in.rsf d=d.rsf > out.rsf
+[PARAMETERS]
+file    | d | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/chenyk

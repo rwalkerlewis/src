@@ -1,0 +1,13 @@
+Program sfdistpaint | Geologic distance painting by plane-wave construction. 
+[SYNOPSIS]
+sfdistpaint < dip.rsf > out.rsf seed=seed.rsf flt=flt.rsf verb=n eps=0.01 i0=0 order=1 faultscale=100.
+[PARAMETERS]
+float   | eps | =0.01 |   | 	regularization 
+float   | faultscale | =100. |   | 	Fault attribute scaling factor (0.0 ~ factor) 
+string  | flt | = |   | 	auxiliary input file name
+int     | i0 | =0 |   | 	reference trace 
+int     | order | =1 |   | 	accuracy order 
+string  | seed | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/pwd

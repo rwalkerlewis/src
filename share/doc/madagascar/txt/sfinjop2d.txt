@@ -1,0 +1,15 @@
+Program sfinjop2d | inject/extract in/from 2D wavefield 
+[SYNOPSIS]
+sfinjop2d coo=Fcoo.rsf < Fwfl.rsf > Ftrc.rsf verb=n adj=n nz=1 oz=0.0 dz=1.0 nx=1 ox=0.0 dx=1.0
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | coo | = |   | 	auxiliary input file name
+float   | dx | =1.0 |   | 	
+float   | dz | =1.0 |   | 	
+int     | nx | =1 |   | 	
+int     | nz | =1 |   | 	
+float   | ox | =0.0 |   | 	
+float   | oz | =0.0 |   | 	
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

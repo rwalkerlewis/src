@@ -1,0 +1,10 @@
+Program sffd1 | 1-D Optimized finite-difference wave extrapolation 
+[SYNOPSIS]
+sffd1 < in.rsf vel=vel.rsf > out.rsf isx=(int)(nx/2) nt= dt=
+[PARAMETERS]
+float   | dt | = |   | 	
+int     | isx | =(int)(nx/2) |   | 	
+int     | nt | = |   | 	
+file    | vel | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/songxl

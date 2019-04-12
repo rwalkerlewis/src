@@ -1,0 +1,98 @@
+.TH sfhpef 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhpef \- Multi-dimensional PEF (prediction error filter) estimation on a helix. 
+.SH SYNOPSIS
+.B sfhpef < in.rsf > filt.rsf maskin=mask.rsf a= center= gap= n= na=0 tol=1.e-6 niter=2*(aa->nh) lag= maskout=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B center
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B gap
+.B =
+.R  	 [dim]
+.TP
+.I string 
+.B lag
+.B =
+.R  	output file for filter lags
+.TP
+.I string 
+.B maskin
+.B =
+.R  	optional input mask file (auxiliary input file name)
+.TP
+.I string 
+.B maskout
+.B =
+.R  	optional output mask file
+.TP
+.I ints   
+.B n
+.B =
+.R  	 [dim]
+.TP
+.I int    
+.B na
+.B =0
+.R  	filter size
+.TP
+.I int    
+.B niter
+.B =2*(aa->nh)
+.R  	number of iterations
+.TP
+.I float  
+.B tol
+.B =1.e-6
+.R  	tolerance for filter compression
+.SH USED IN
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.TP
+.I gee/mda/elita
+.TP
+.I gee/mda/geostat
+.TP
+.I gee/mda/hole
+.TP
+.I gee/mda/miss3
+.TP
+.I gee/mda/morgan
+.TP
+.I gee/mda/pefex
+.TP
+.I gee/mda/seabeam
+.TP
+.I gee/pch/signoi
+.TP
+.I geo384h/hw5/pattern
+.TP
+.I geo384h/hw5/seabeam
+.TP
+.I rsf/tutorials/spitz
+.TP
+.I sep/geostat/miss
+.TP
+.I sep/precon/seab
+.TP
+.I sep/spitz/sign
+.TP
+.I sep/texture/fft
+.SH SOURCE
+.I user/gee/Mhpef.c
+.SH VERSION
+2.1-git

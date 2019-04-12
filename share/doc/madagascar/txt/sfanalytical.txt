@@ -1,0 +1,10 @@
+Program sfanalytical | First-arrival traveltime table using analytical traveltimes 
+[SYNOPSIS]
+sfanalytical < in.rsf > out.rsf vel=y order=3 yshot=x0 + 0.5*(nx-1)*dx zshot=z0
+[PARAMETERS]
+int     | order | =3 |   | 	interpolation accuracy for velocity 
+bool    | vel | =y |  [y/n] | 	y, input is velocity; n, slowness 
+float   | yshot | =x0 + 0.5*(nx-1)*dx |   | 	
+float   | zshot | =z0 |   | 	read velocity or slowness 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,15 @@
+Program sfzortholr3 | Lowrank decomposition for 3-D orthorhombic wave propagation. 
+[SYNOPSIS]
+sfzortholr3 < c11.rsf seta1=seta1.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt= mode=0 tilt=false
+[PARAMETERS]
+        | dt | = |   | 	time step
+        | eps | =1.e-4 |   | 	tolerance
+file    | fft | = |   | 	auxiliary input file name
+file    | left | = |   | 	auxiliary output file name
+        | mode | =0 |   | 	'0' means quasi-P (default),'1' means quasi-S, '2' means quasi-S2
+        | npk | =20 |   | 	maximum rank
+        | seed | =time(NULL |   | 	
+file    | seta1 | = |   | 	auxiliary input file name
+        | tilt | =false |   | 	
+[DIRECTORY]
+user/jsun

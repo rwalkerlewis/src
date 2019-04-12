@@ -1,0 +1,12 @@
+Program sfproj | Projection filter. 
+[SYNOPSIS]
+sfproj < in.rsf > out.rsf filt=filt.rsf single=y lag=1 eps=1.0f niter=100 verb=n
+[PARAMETERS]
+float   | eps | =1.0f |   | 	regularizion parameter 
+file    | filt | = |   | 	auxiliary input file name
+int     | lag | =1 |   | 	lag for internal convolution 
+int     | niter | =100 |   | 	number of iterations 
+bool    | single | =y |  [y/n] | 	single channel or multichannel 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/gee

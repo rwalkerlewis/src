@@ -1,0 +1,16 @@
+Program sfgammapick2d | 2D picking for gamma=Vm/V panels
+[SYNOPSIS]
+sfgammapick2d < dataFile_.rsf > outFile_.rsf eps=0 xApp=1
+[COMMENTS]
+
+Input:
+dataFile_.rsf - parameter spectrum (semblance) panel
+
+Output:
+outFile_.rsf - picked optimal values
+
+[PARAMETERS]
+float   | eps | =0 |   | 	line-freedom measure 
+int     | xApp | =1 |   | 	x-aperture 
+[DIRECTORY]
+user/aklokov

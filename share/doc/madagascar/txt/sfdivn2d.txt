@@ -1,0 +1,11 @@
+Program sfdivn2d | 2D divn 
+[SYNOPSIS]
+sfdivn2d < inp.rsf den=den.rsf > out.rsf rect1=1 rect2=1 niter=100 verb=n
+[PARAMETERS]
+file    | den | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	number of iterations 
+int     | rect1 | =1 |   | 	
+int     | rect2 | =1 |   | 	smoothing radius 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/chen

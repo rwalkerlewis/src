@@ -1,0 +1,12 @@
+Program sffwiobj | Calculate the misfit fuction  in Full Waveform Inversion 
+[SYNOPSIS]
+sffwiobj < in.rsf > out.rsf source=source.rsf receiver=receiver.rsf record=record.rsf npml=20 omega= order=
+[PARAMETERS]
+int     | npml | =20 |   | 	
+float   | omega | = |   | 	
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+file    | receiver | = |   | 	auxiliary input file name
+file    | record | = |   | 	auxiliary input file name
+file    | source | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

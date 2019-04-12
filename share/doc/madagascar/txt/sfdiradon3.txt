@@ -1,0 +1,16 @@
+Program sfdiradon3 | direct 3to3 reflection/diffraction Radon transform
+[SYNOPSIS]
+sfdiradon3 < input.rsf > output.rsf fi= ntau= np= nq= tau0= dtau= p0= dp= q0= dq=
+[PARAMETERS]
+        | dp | = |   | 	
+        | dq | = |   | 	
+        | dtau | = |   | 	
+        | fi | = |   | 	
+        | np | = |   | 	
+        | nq | = |   | 	
+        | ntau | = |   | 	
+        | p0 | = |   | 	
+        | q0 | = |   | 	
+        | tau0 | = |   | 	
+[DIRECTORY]
+user/jingwei

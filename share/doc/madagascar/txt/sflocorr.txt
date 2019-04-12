@@ -1,0 +1,9 @@
+Program sflocorr | Local correlation measure between two datasets. 
+[SYNOPSIS]
+sflocorr < in.rsf > out.rsf other=other.rsf verb=n rect#=(1,1,1)
+[PARAMETERS]
+file    | other | = |   | 	auxiliary input file name
+int     | rect# | =(1,1,1) |   | 	smoothing radius on #-th axis 
+bool    | verb | =n |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/yliu

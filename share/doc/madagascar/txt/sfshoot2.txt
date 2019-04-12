@@ -1,0 +1,15 @@
+Program sfshoot2 | 2-D ray shooting. 
+[SYNOPSIS]
+sfshoot2 < vel.rsf > out.rsf shotfile=shots.rsf vel=y order=4 lsint=n nt=nx*nz nr=1 r0=x0 dr=dx tol=0.01
+[PARAMETERS]
+float   | dr | =dx |   | 	receiver increment 
+bool    | lsint | =n |  [y/n] | 	if use least-squares interpolation 
+int     | nr | =1 |   | 	number of recievers 
+int     | nt | =nx*nz |   | 	Maximum number of time steps 
+int     | order | =4 |   | 	Interpolation order 
+float   | r0 | =x0 |   | 	first receiver 
+string  | shotfile | = |   | 	file with shot locations (auxiliary input file name)
+float   | tol | =0.01 |   | 	Shooting tolerance (in degrees) 
+bool    | vel | =y |  [y/n] | 	If y, the input is velocity; if n, slowness 
+[DIRECTORY]
+system/seismic

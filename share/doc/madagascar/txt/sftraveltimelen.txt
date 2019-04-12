@@ -1,0 +1,14 @@
+Program sftraveltimelen | Oriented zero-offset migration. 
+[SYNOPSIS]
+sftraveltimelen < dist.rsf time=time.rsf dept=dept.rsf len=lent.rsf > imagt.rsf xsrc= tolz= tolx= interpolate= timez0=
+[PARAMETERS]
+file    | dept | = |   | 	auxiliary input file name
+int     | interpolate | = |   | 	
+file    | len | = |   | 	auxiliary input file name
+file    | time | = |   | 	auxiliary input file name
+string  | timez0 | = |   | 	
+float   | tolx | = |   | 	
+float   | tolz | = |   | 	
+float   | xsrc | = |   | 	
+[DIRECTORY]
+user/roman

@@ -1,0 +1,9 @@
+Program sfepfws | Edge preserving (smoothing) filter by window selection 
+[SYNOPSIS]
+sfepfws < in.rsf > out.rsf nfw=5 order=nfw-1 filter=
+[PARAMETERS]
+string  | filter | = |   | 	filter: mean,median,poly,fir 
+int     | nfw | =5 |   | 	window size 
+int     | order | =nfw-1 |   | 	filter order (<= nfw, only for polynomial and fir filters) 
+[DIRECTORY]
+user/chen

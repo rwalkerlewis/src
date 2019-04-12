@@ -1,0 +1,7 @@
+Program sfdpeiko | 2-D eikonal solver based on dynamic programming. 
+[SYNOPSIS]
+sfdpeiko < vel.rsf > ttime.rsf ishot=(n1-1)/2
+[PARAMETERS]
+int     | ishot | =(n1-1)/2 |   | 	shot location 
+[DIRECTORY]
+user/fomels

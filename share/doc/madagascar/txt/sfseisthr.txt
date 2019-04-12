@@ -1,0 +1,14 @@
+Program sfseisthr | Seislet Transform Denoising using Thresholding
+[SYNOPSIS]
+sfseisthr < in.rsf > out.rsf dip=dip.rsf slet=slet.rsf sletthr=sletthr.rsf eps=0.01 pclip=99. order1=1 eps=0.01 type= thrtype=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+int     | order1 | =1 |   | 	accuracy order for seislet transform
+float   | pclip | =99. |   | 	data clip percentile (default is 99)
+string  | slet | = |   | 	seismic domain (auxiliary output file name)
+string  | sletthr | = |   | 	thresholded seislet domain (auxiliary output file name)
+string  | thrtype | = |   | 	[soft,hard] thresholding type, the default is soft  
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+[DIRECTORY]
+user/chenyk

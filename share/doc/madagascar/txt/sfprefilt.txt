@@ -1,0 +1,11 @@
+Program sfprefilt | prefilter bank of pwd
+[SYNOPSIS]
+sfprefilt < input.rsf > dip.rsf coef=coef.rsf pf=pf.rsf nf=1 iter=5 eta=0.05
+[PARAMETERS]
+file    | coef | = |   | 	auxiliary output file name
+float   | eta | =0.05 |   | 	
+int     | iter | =5 |   | 	
+int     | nf | =1 |   | 	
+file    | pf | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/chen

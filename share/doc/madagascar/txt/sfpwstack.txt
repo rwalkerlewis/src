@@ -1,0 +1,11 @@
+Program sfpwstack | Recursive stacking by plane-wave construction. 
+[SYNOPSIS]
+sfpwstack < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 order=1 mode=1
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+float   | eps | =0.01 |   | 	regularization 
+int     | mode | =1 |   | 	1: predict backward, 2: predict forward then backward 
+int     | order | =1 |   | 	accuracy order 
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/pwd

@@ -1,0 +1,9 @@
+Program sffbank1 | 1d filter bank  
+[SYNOPSIS]
+sffbank1 < in.rsf > out.rsf m=1 n=1 interp=
+[PARAMETERS]
+string  | interp | = |   | 	interpolation method: maxflat lagrange bspline 
+int     | m | =1 |   | 	b[-m, ... ,n] 
+int     | n | =1 |   | 	b[-m, ... ,n] 
+[DIRECTORY]
+user/chen

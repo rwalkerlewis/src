@@ -1,0 +1,11 @@
+Program sflint1 | Linear interpolation 
+[SYNOPSIS]
+sflint1 coord=coord.rsf < dat.rsf > mod.rsf adj=n n1= o1= d1=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+file    | coord | = |   | 	auxiliary input file name
+float   | d1 | = |   | 	regular axis sampling (for adj=y) 
+int     | n1 | = |   | 	regular axis size (for adj=y) 
+float   | o1 | = |   | 	regular axis origin (for adj=y) 
+[DIRECTORY]
+user/gee

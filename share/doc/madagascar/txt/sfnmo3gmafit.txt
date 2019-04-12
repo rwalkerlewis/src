@@ -1,0 +1,12 @@
+Program sfnmo3gmafit | 3D NMO GMA  linearized operator preparation for lsfit
+[SYNOPSIS]
+sfnmo3gmafit < inp.rsf coef=inicoef.rsf > out.rsf fit=fit.rsf offsetx=offsx.rsf offsety=offsy.rsf verb=n gather=n
+[PARAMETERS]
+file    | coef | = |   | 	auxiliary input file name
+file    | fit | = |   | 	auxiliary output file name
+bool    | gather | =n |  [y/n] | 	Memory allocation
+file    | offsetx | = |   | 	auxiliary input file name
+file    | offsety | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/zone

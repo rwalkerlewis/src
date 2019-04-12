@@ -1,0 +1,86 @@
+.TH sfhalfint 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhalfint \- Half-order integration or differentiation. 
+.SH SYNOPSIS
+.B sfhalfint < in.rsf > out.rsf adj=n inv=n rho=1.-1./n1
+.SH COMMENTS
+
+December 2012 program of the month:
+http://ahay.org/blog/2012/12/23/program-of-the-month-sfhalfint/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	If y, apply adjoint
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	If y, do differentiation instead of integration
+.TP
+.I float  
+.B rho
+.B =1.-1./n1
+.R  	Leaky integration constant
+.SH USED IN
+.TP
+.I bei/ft1/hankel
+.TP
+.I bei/trimo/mig
+.TP
+.I bei/trimo/mod
+.TP
+.I gallery/constant/lowrank
+.TP
+.I gallery/gradient/fakirmig
+.TP
+.I gallery/vofz/lowrank
+.TP
+.I geo384w/hw4/synth
+.TP
+.I jlu/txyapf/french
+.TP
+.I sep/angle/agmig
+.TP
+.I sep/antial/mod
+.TP
+.I sep/antial/sig
+.TP
+.I sep/oc2/cup
+.TP
+.I sep/passive/synth
+.TP
+.I sep/vc2/beivc
+.TP
+.I sep/vc2/elfvc
+.TP
+.I sep/vc2/sigvc
+.TP
+.I tccs/eikods/migration
+.TP
+.I tccs/fraclapl/diffq
+.TP
+.I tccs/fraclapl/marmq
+.TP
+.I tccs/fraclapl/twolayer
+.TP
+.I tccs/gmresq/bpgas
+.TP
+.I tccs/gmresq/exploding
+.TP
+.I tccs/group3/bptti
+.TP
+.I tccs/nmodeblend/synth
+.TP
+.I tccs/oc3/french
+.TP
+16 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfhalfint.html
+.SH SOURCE
+.I system/seismic/Mhalfint.c
+.SH VERSION
+2.1-git

@@ -1,0 +1,22 @@
+Program sfzolsrtm2 | 2-D FFT-based zero-offset exploding reflector modeling/migration linear operator 
+[SYNOPSIS]
+sfzolsrtm2 < data.rsf > image.rsf snaps=snaps.rsf left=left.rsf right=right.rsf adj=n timer=n verb=n snap=0 pad1=1 gpz=0 taper=0 thresh=0.92 oz=0. nz= dz= nt= dt=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if n, modeling; if y, migration 
+float   | dt | = |   | 	time sampling 
+float   | dz | = |   | 	depth sampling 
+int     | gpz | =0 |   | 	geophone surface 
+file    | left | = |   | 	auxiliary input file name
+int     | nt | = |   | 	time samples 
+int     | nz | = |   | 	depth samples 
+float   | oz | =0. |   | 	
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+file    | right | = |   | 	auxiliary input file name
+int     | snap | =0 |   | 	interval for snapshots 
+file    | snaps | = |   | 	auxiliary output file name
+int     | taper | =0 |   | 	tapering in the frequency domain 
+float   | thresh | =0.92 |   | 	tapering threshold 
+bool    | timer | =n |  [y/n] | 	
+bool    | verb | =n |  [y/n] | 	
+[DIRECTORY]
+user/jsun

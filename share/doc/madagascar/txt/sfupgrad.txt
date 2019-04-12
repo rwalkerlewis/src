@@ -1,0 +1,10 @@
+Program sfupgrad | Causal gradient operator 
+[SYNOPSIS]
+sfupgrad < inp.rsf ref=ref.rsf > out.rsf adj=n grad=y dim=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+int     | dim | = |   | 	
+bool    | grad | =y |  [y/n] | 	if y, gradient; if n, Laplacian 
+file    | ref | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/fomels

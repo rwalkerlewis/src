@@ -1,0 +1,9 @@
+Program sfbackus | None
+[SYNOPSIS]
+sfbackus < infile.rsf > outfile.rsf navg=201 all=n ang=30.
+[PARAMETERS]
+        | all | =n |   | 	Print extra information
+        | ang | =30. |   | 	Input angle
+        | navg | =201 |   | 	Number of samples to average over
+[DIRECTORY]
+user/jeff

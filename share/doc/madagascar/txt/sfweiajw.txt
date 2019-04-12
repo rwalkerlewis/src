@@ -1,0 +1,10 @@
+Program sfweiajw | 3-D wave-equation wavefield continuation with adjoint-source 
+[SYNOPSIS]
+sfweiajw slo=Fslo.rsf < Fsou.rsf > Fwfl.rsf verb=n down=y causal=
+[PARAMETERS]
+bool    | causal | = |  [y/n] | 	causality flag 
+bool    | down | =y |  [y/n] | 	up/down   flag 
+file    | slo | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

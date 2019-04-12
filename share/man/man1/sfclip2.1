@@ -1,0 +1,90 @@
+.TH sfclip2 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfclip2 \- One- or two-sided data clipping.
+.SH SYNOPSIS
+.B sfclip2 < in.rsf > out.rsf upper=+FLT_MAX lower=-FLT_MAX
+.SH COMMENTS
+
+sfclip2 is a generalization of sfclip.
+
+Clip values above xu:         sfclip2 < in.rsf > out.rsf upper=xu
+Clip values below xl:         sfclip2 < in.rsf > out.rsf lower=xl
+Clip values outside [xu,xl]:  sfclip2 < in.rsf > out.rsf upper=xu lower=xl
+
+sfclip2 < in.rsf > out.rsf upper=x lower=-x
+
+is equivalent to
+
+sfclip < in.rsf > out.rsf clip=x
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B lower
+.B =-FLT_MAX
+.R  	lower clip value
+.TP
+.I float  
+.B upper
+.B =+FLT_MAX
+.R  	upper clip value
+.SH USED IN
+.TP
+.I cwp/geo2008InterferometricImagingCondition/circle
+.TP
+.I cwp/geo2008InterferometricImagingCondition/sact1
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf1
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf3
+.TP
+.I data/teapotdome/scdecon
+.TP
+.I data/teapotdome/vels
+.TP
+.I data/teapotdome/zomig
+.TP
+.I gee/lsq/antoine
+.TP
+.I gee/lsq/lomask
+.TP
+.I geo384h/hw2/helix
+.TP
+.I geo384h/hw5/seabeam
+.TP
+.I geostats/simulate/rfield
+.TP
+.I geostats/simulate/simple
+.TP
+.I geostats/spatial_stats/correlogram
+.TP
+.I geostats/spatial_stats/covariance
+.TP
+.I geostats/spatial_stats/gr_variogram
+.TP
+.I geostats/spatial_stats/variogram
+.TP
+.I rsf/school/complex
+.TP
+.I rsf/school/single
+.TP
+.I rsf/school2016/synth
+.TP
+.I rsf/tutorial2017/radon
+.TP
+.I rsf/tutorial2017/synth
+.TP
+.I rsf/tutorials/sthelens
+.TP
+.I rsf/tutorials/wedge
+.TP
+.I rsf/tutorials/well-tie
+.TP
+36 more examples listed in:
+.TP
+/home/raptor/rsfsrc/share/doc/madagascar/html/sfclip2.html
+.SH SOURCE
+.I system/generic/Mclip2.c
+.SH VERSION
+2.1-git

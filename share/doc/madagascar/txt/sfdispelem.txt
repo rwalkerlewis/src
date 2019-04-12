@@ -1,0 +1,8 @@
+Program sfdispelem | Display element of rsf files. 
+[SYNOPSIS]
+sfdispelem < in.rsf > out.rsf i1= i2=
+[PARAMETERS]
+int     | i1 | = |   | 	get the index of first axis 
+int     | i2 | = |   | 	get the index of second axis 
+[DIRECTORY]
+user/chenyk

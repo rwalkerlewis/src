@@ -1,0 +1,9 @@
+Program sftxspf | Streaming prediction filter in t-x domain. 
+[SYNOPSIS]
+sftxspf < in.rsf > out.rsf a= lambda1= lambda2=
+[PARAMETERS]
+ints    | a | = |   | 	Get filter size from input, a0 is 2M+1, a1 is N in equation 3  [dim]
+float   | lambda1 | = |   | 	Regularization in t direction, lambda_t in equations 1 and 5 
+float   | lambda2 | = |   | 	Regularization in x direction, lambda_x in equations 1 and 5 
+[DIRECTORY]
+user/yliu

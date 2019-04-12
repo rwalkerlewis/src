@@ -1,0 +1,9 @@
+Program sfstack3 | OpenMP stack on axis 1,2 or 3 
+[SYNOPSIS]
+sfstack3 < Fi.rsf > Fo.rsf verb=n axis=2 verb=y nbuf=1
+[PARAMETERS]
+int     | axis | =2 |   | 	stack axis 
+int     | nbuf | =1 |   | 	buffer size 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

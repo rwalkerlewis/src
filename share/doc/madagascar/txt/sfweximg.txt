@@ -1,0 +1,26 @@
+Program sfweximg | 3-D modeling/migration with extended SSF 
+[SYNOPSIS]
+sfweximg slo=Fs.rsf swfl=Fws.rsf < Fm.rsf cc=Fc.rsf > Fd.rsf rwfl=Fwr.rsf adj= save=0 feic=0 verb=n eps=0.01 nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0 nhx=0 nhy=0 nhz=0 nht=0 dht=
+[PARAMETERS]
+int     | adj | = |   | 	y=ADJ migration; n=FWD modeling 
+file    | cc | = |   | 	auxiliary input file name
+float   | dht | = |   | 	
+float   | dtmax | =0.004 |   | 	max time error 
+float   | eps | =0.01 |   | 	stability parameter 
+int     | feic | =0 |   | 	extended I.C. flag 
+int     | nht | =0 |   | 	number of lags on the t axis 
+int     | nhx | =0 |   | 	number of lags on the x axis 
+int     | nhy | =0 |   | 	number of lags on the y axis 
+int     | nhz | =0 |   | 	number of lags on the z axis 
+int     | nrmax | =1 |   | 	maximum references 
+int     | pmx | =0 |   | 	padding on x 
+int     | pmy | =0 |   | 	padding on y
+string  | rwfl | = |   | 	auxiliary output file name
+int     | save | =0 |   | 	save wfld flag 
+file    | slo | = |   | 	auxiliary input file name
+file    | swfl | = |   | 	auxiliary input file name
+int     | tmx | =0 |   | 	taper on x
+int     | tmy | =0 |   | 	taper on y 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/cwp

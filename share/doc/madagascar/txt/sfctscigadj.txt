@@ -1,0 +1,12 @@
+Program sfctscigadj | Correcting time-shift gathers and its adjoint 
+[SYNOPSIS]
+sfctscigadj < Ftg.rsf Fdertau=Fdertau.rsf > Fcg.rsf Fder0=Fder0.rsf velocity=Fvel.rsf adj=y dt=0.001 pad=100
+[PARAMETERS]
+file    | Fder0 | = |   | 	auxiliary output file name
+file    | Fdertau | = |   | 	auxiliary input file name
+bool    | adj | =y |  [y/n] | 	
+float   | dt | =0.001 |   | 	
+int     | pad | =100 |   | 	files 
+file    | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

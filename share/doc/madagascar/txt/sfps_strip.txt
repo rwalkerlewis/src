@@ -1,0 +1,5 @@
+Program sfps_strip | None
+[SYNOPSIS]
+sfps_strip
+[DIRECTORY]
+trip/iwave/base/main

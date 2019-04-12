@@ -1,0 +1,20 @@
+Program sftestcasoper | Test linear cascading matching-Radon operator. 
+[SYNOPSIS]
+sftestcasoper < in.rsf > out.rsf filt=fil.rsf adj=n inv=n verb=n np= dp= p0= niter=100 freq=y parab=n x0=1. rho=y anti=1. p1=0.
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	if y, perform adjoint operation 
+float   | anti | =1. |   | 	antialiasing, only when freq=n 
+float   | dp | = |   | 	p sampling 
+file    | filt | = |   | 	auxiliary input file name
+bool    | freq | =y |  [y/n] | 	if y, parabolic Radon transform 
+bool    | inv | =n |  [y/n] | 	if y, perform inverse operation 
+int     | niter | =100 |   | 	
+int     | np | = |   | 	number of p values 
+float   | p0 | = |   | 	p origin 
+float   | p1 | =0. |   | 	reference slope, only when freq=n 
+bool    | parab | =n |  [y/n] | 	if y, parabolic Radon transform, only when freq=y 
+bool    | rho | =y |  [y/n] | 	rho filtering, only when freq=n 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | x0 | =1. |   | 	reference offset 
+[DIRECTORY]
+user/yliu

@@ -1,0 +1,12 @@
+Program sflocov | Local covariance filter 
+[SYNOPSIS]
+sflocov < inp.rsf > out.rsf na=1 nb=1 a0= b0= a1=a0 b1=b0
+[PARAMETERS]
+float   | a0 | = |   | 	
+float   | a1 | =a0 |   | 	
+float   | b0 | = |   | 	
+float   | b1 | =b0 |   | 	
+int     | na | =1 |   | 	
+int     | nb | =1 |   | 	
+[DIRECTORY]
+user/fomels

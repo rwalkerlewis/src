@@ -1,0 +1,16 @@
+Program sfradonoper | Linear Radon operator. 
+[SYNOPSIS]
+sfradonoper < in.rsf > out.rsf adj=y verb=n np= dp= p0= nx= ox= dx= parab=n x0=1.
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	if y, perform adjoint operation 
+float   | dp | = |   | 	p sampling (if adj=y) 
+float   | dx | = |   | 	
+int     | np | = |   | 	number of p values (if adj=y) 
+int     | nx | = |   | 	number of offsets (if adj=n) 
+float   | ox | = |   | 	
+float   | p0 | = |   | 	p origin (if adj=y) 
+bool    | parab | =n |  [y/n] | 	if y, parabolic Radon transform 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | x0 | =1. |   | 	reference offset 
+[DIRECTORY]
+user/yliu

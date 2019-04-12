@@ -1,0 +1,16 @@
+Program sflsLU | Local similarity filter (direct solving) 
+[SYNOPSIS]
+sflsLU obs=dat.rsf < mat.rsf > flt.rsf adj1=adj1.rsf adj2=adj2.rsf verb=y shift=n adjsrc=n rect1=50 nw= dw= w0=
+[PARAMETERS]
+file    | adj1 | = |   | 	auxiliary output file name
+file    | adj2 | = |   | 	auxiliary output file name
+bool    | adjsrc | =n |  [y/n] | 	use shift instead of stretch 
+float   | dw | = |   | 	omega sampling 
+int     | nw | = |   | 	number of omega values 
+file    | obs | = |   | 	auxiliary input file name
+int     | rect1 | =50 |   | 	smoothing along first axis 
+bool    | shift | =n |  [y/n] | 	use shift instead of stretch 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+float   | w0 | = |   | 	omega origin 
+[DIRECTORY]
+user/zhiguang

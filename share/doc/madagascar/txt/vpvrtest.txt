@@ -1,0 +1,20 @@
+Program vpvrtest | Plot impulse responses in 2 dimensions 
+[SYNOPSIS]
+vpvrtest > plot.vpl dash=0.0 francis=n invert=n groupscale=1. phasescale=1. norm=1. inc=0.5 c11=1. c13=.5 c33=1. c55=.25 m=-1 which=n flip=n
+[PARAMETERS]
+float   | c11 | =1. |   | 	
+float   | c13 | =.5 |   | 	
+float   | c33 | =1. |   | 	
+float   | c55 | =.25 |   | 	
+float   | dash | =0.0 |   | 	
+bool    | flip | =n |  [y/n] | 	reciprocal of W's used in Francis' approximation 
+bool    | francis | =n |  [y/n] | 	
+float   | groupscale | =1. |   | 	scales only the group stuff 
+float   | inc | =0.5 |   | 	increment of phi sub w in degrees 
+bool    | invert | =n |  [y/n] | 	reciprocal of plotting radius 
+int     | m | =-1 |   | 	
+float   | norm | =1. |   | 	
+float   | phasescale | =1. |   | 	scales only the phase stuff 
+bool    | which | =n |  [y/n] | 	transform from phase to group domain or vice versa 
+[DIRECTORY]
+user/dellinger

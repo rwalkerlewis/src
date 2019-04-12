@@ -1,0 +1,17 @@
+Program sfpseudo | Generate rank-1 approximation for lowrank wave propagation: prop1, prop2, prop3, prop4
+[SYNOPSIS]
+sfpseudo < fft.rsf > alpha.rsf flag= reg= nz= dz= z0= nx= dx= x0= seed= eps= npk=
+[PARAMETERS]
+        | dx | = |   | 	
+        | dz | = |   | 	
+        | eps | = |   | 	tolerance
+        | flag | = |   | 	
+        | npk | = |   | 	maximum sample rows/columns
+        | nx | = |   | 	
+        | nz | = |   | 	
+        | reg | = |   | 	
+        | seed | = |   | 	seed for random number generator
+        | x0 | = |   | 	Get lowrank parameters
+        | z0 | = |   | 	
+[DIRECTORY]
+user/jingwei

@@ -1,0 +1,11 @@
+Program sffowler2 | 2-D ensemble of Stolt migrations.
+[SYNOPSIS]
+sffowler2 < inp.rsf > out.rsf eps=0.01
+[COMMENTS]
+
+Input: 2-D cosft of constant-velocity stacks (w,v,k).
+
+[PARAMETERS]
+float   | eps | =0.01 |   | 	stretch regularization 
+[DIRECTORY]
+system/seismic

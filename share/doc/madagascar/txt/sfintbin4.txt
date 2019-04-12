@@ -1,0 +1,28 @@
+Program sfintbin4 | 5-D data binning. 
+[SYNOPSIS]
+sfintbin4 < in.rsf > out.rsf xkey= ykey= skey= rkey= xmin= xmax= ymin= ymax= smin= smax= rmin= rmax= dx=1 dy=1 ds=1 dr=1 head= xk= yk= sk= rk= fold=
+[PARAMETERS]
+int     | dr | =1 |   | 	
+int     | ds | =1 |   | 	
+int     | dx | =1 |   | 	
+int     | dy | =1 |   | 	
+string  | fold | = |   | 	output fold file 
+string  | head | = |   | 	header file 
+string  | rk | = |   | 	r key name 
+int     | rkey | = |   | 	r key number (if no rk), default is gwdep 
+int     | rmax | = |   | 	r maximum 
+int     | rmin | = |   | 	r minimum 
+string  | sk | = |   | 	s key name 
+int     | skey | = |   | 	s key number (if no sk), default is swdep 
+int     | smax | = |   | 	s maximum 
+int     | smin | = |   | 	s minimum 
+string  | xk | = |   | 	x key name 
+int     | xkey | = |   | 	x key number (if no xk), default is fldr 
+int     | xmax | = |   | 	x maximum 
+int     | xmin | = |   | 	x minimum 
+string  | yk | = |   | 	y key name 
+int     | ykey | = |   | 	y key number (if no yk), default is tracf 
+int     | ymax | = |   | 	y maximum 
+int     | ymin | = |   | 	y minimum 
+[DIRECTORY]
+user/yliu

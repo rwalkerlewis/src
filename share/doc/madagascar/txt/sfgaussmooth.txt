@@ -1,0 +1,9 @@
+Program sfgaussmooth | Recursive Gaussian smoothing on the fast axis. 
+[SYNOPSIS]
+sfgaussmooth < in.rsf > out.rsf der=n rect=1 repeat=1
+[PARAMETERS]
+bool    | der | =n |  [y/n] | 	compute derivative 
+float   | rect | =1 |   | 	smoothing radius 
+int     | repeat | =1 |   | 	repeat filtering several times 
+[DIRECTORY]
+user/fomels

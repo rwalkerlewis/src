@@ -1,0 +1,21 @@
+Program sfmpifd2d | Acoustic wave equation forward modeling with MPI and OpenMP 
+[SYNOPSIS]
+sfmpifd2d rho=Frho.rsf wavelet=Fw.rsf verb=n ns= ds= s0= sz=5 nr= dr= r0= rz=sz nb=80 coef=0.003 rectx=2 rectz=2
+[PARAMETERS]
+float   | coef | =0.003 |   | 	absorbing boundary coefficient 
+float   | dr | = |   | 	receiver interval 
+float   | ds | = |   | 	shot interval 
+int     | nb | =80 |   | 	boundary width 
+int     | nr | = |   | 	number of receiver 
+int     | ns | = |   | 	shot number 
+float   | r0 | = |   | 	receiver origin 
+int     | rectx | =2 |   | 	source smooothing parameter 
+int     | rectz | =2 |   | 	source smooothing parameter 
+file    | rho | = |   | 	auxiliary input file name
+int     | rz | =sz |   | 	receiver depth 
+float   | s0 | = |   | 	shot origin 
+int     | sz | =5 |   | 	source depth 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+file    | wavelet | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.cluster</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        Module&nbsp;cluster
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.cluster-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cluster</h1><p class="nomargin-top"><span class="codelink"><a href="rsf.cluster-pysrc.html">source&nbsp;code</a></span></p>
+<p>This python module overrides the standard Madagascar python SCons 
+  methods.  We do this, carefully so that the SCons methods still work 
+  unless we set the Global variable CSCONS.  If CSCONS is set, then SCons 
+  does not work, and rather we generate a series of PBS job wrappers for 
+  our commands.</p>
+  <p>This file is customized in a number of areas.  To quickly find all 
+  changes, search for the tag:  CWPONLY</p>
+  <p>The python executable cscons automatically turns on the PBS 
+  capabilities of this module.  See the documentation online for Mio (on 
+  the iTeam website) to learn how to configure your SConstructs to use this
+  module.</p>
+  <p>author:  Jeff Godwin, Jan 12 2011, CWP</p>
+  <p>Some new functions are added to make cscons working in an iterative 
+  inversion scheme. These functions include reading user input from command
+  line, setup different pbs directory name at each iteration, executing an 
+  command line input, etc.</p>
+  <p>author: Tonging Yang, Jun 16 2011, CWP</p>
+  <p>Adapted for the FORNAX cluster @ IVEC</p>
+  <p>author: Jeffrey Shragge, 16 AUG 2011, UWA</p>
+  <p>Adapted for the EULER cluster at ETH Zuerich</p>
+  <p>author: Filippo Broggini, 23 JUN 2016, ETHZ</p>
+  <p>Adapted for the Piz Daint cluster at CSCS, Switzerland</p>
+  <p>author: Filippo Broggini, 5 JUL 2018, ETHZ</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rsf.cluster.FakeOptionParser-class.html" class="summary-name">FakeOptionParser</a><br />
+      A do-nothing option parser, used for the initial OptionsParser 
+        variable.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rsf.cluster.Job-class.html" class="summary-name">Job</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rsf.cluster.Parallel-class.html" class="summary-name">Parallel</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="NamePbsDirectory"></a><span class="summary-sig-name">NamePbsDirectory</span>(<span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#NamePbsDirectory">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="OptionInitial"></a><span class="summary-sig-name">OptionInitial</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#OptionInitial">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="AddOption"></a><span class="summary-sig-name">AddOption</span>(<span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#AddOption">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetOption"></a><span class="summary-sig-name">GetOption</span>(<span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#GetOption">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="createSlurmfile"></a><span class="summary-sig-name">createSlurmfile</span>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">email</span>,
+        <span class="summary-sig-arg">nodes</span>,
+        <span class="summary-sig-arg">ppn</span>,
+        <span class="summary-sig-arg">time</span>,
+        <span class="summary-sig-arg">last</span>,
+        <span class="summary-sig-arg">next</span>,
+        <span class="summary-sig-arg">tasks</span>,
+        <span class="summary-sig-arg">relaunch</span>,
+        <span class="summary-sig-arg">run</span>,
+        <span class="summary-sig-arg">content</span>,
+        <span class="summary-sig-arg">nodetype</span>=<span class="summary-sig-default">'psava'</span>,
+        <span class="summary-sig-arg">parallel</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cluster</span>=<span class="summary-sig-default">None</span>)</span><br />
+      This function creates the sumsission job for the Slurm scheduler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#createSlurmfile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="createSlurmfileCSCS"></a><span class="summary-sig-name">createSlurmfileCSCS</span>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">email</span>,
+        <span class="summary-sig-arg">nodes</span>,
+        <span class="summary-sig-arg">ppn</span>,
+        <span class="summary-sig-arg">time</span>,
+        <span class="summary-sig-arg">last</span>,
+        <span class="summary-sig-arg">next</span>,
+        <span class="summary-sig-arg">tasks</span>,
+        <span class="summary-sig-arg">relaunch</span>,
+        <span class="summary-sig-arg">run</span>,
+        <span class="summary-sig-arg">content</span>,
+        <span class="summary-sig-arg">nodetype</span>=<span class="summary-sig-default">'psava'</span>,
+        <span class="summary-sig-arg">parallel</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cluster</span>=<span class="summary-sig-default">None</span>)</span><br />
+      This function creates the sumsission job for the Slurm scheduler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#createSlurmfileCSCS">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rsf.cluster-module.html#createPBSfile" class="summary-sig-name">createPBSfile</a>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">email</span>,
+        <span class="summary-sig-arg">nodes</span>,
+        <span class="summary-sig-arg">ppn</span>,
+        <span class="summary-sig-arg">time</span>,
+        <span class="summary-sig-arg">last</span>,
+        <span class="summary-sig-arg">next</span>,
+        <span class="summary-sig-arg">tasks</span>,
+        <span class="summary-sig-arg">relaunch</span>,
+        <span class="summary-sig-arg">run</span>,
+        <span class="summary-sig-arg">content</span>,
+        <span class="summary-sig-arg">nodetype</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">parallel</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Where we actually create our pbs job files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#createPBSfile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rsf.cluster-module.html#createLSFfile" class="summary-sig-name">createLSFfile</a>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">email</span>,
+        <span class="summary-sig-arg">nodes</span>,
+        <span class="summary-sig-arg">ppn</span>,
+        <span class="summary-sig-arg">time</span>,
+        <span class="summary-sig-arg">last</span>,
+        <span class="summary-sig-arg">next</span>,
+        <span class="summary-sig-arg">tasks</span>,
+        <span class="summary-sig-arg">relaunch</span>,
+        <span class="summary-sig-arg">run</span>,
+        <span class="summary-sig-arg">content</span>,
+        <span class="summary-sig-arg">nodetype</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">parallel</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Where we actually create our LSF job files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#createLSFfile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Cluster"></a><span class="summary-sig-name">Cluster</span>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">email</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">cluster</span>=<span class="summary-sig-default">'mio'</span>,
+        <span class="summary-sig-arg">time</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">ppn</span>=<span class="summary-sig-default">12</span>,
+        <span class="summary-sig-arg">nodetype</span>=<span class="summary-sig-default">'psava'</span>,
+        <span class="summary-sig-arg">submit</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">scheduler</span>=<span class="summary-sig-default">'slurm'</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Cluster">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Serial"></a><span class="summary-sig-name">Serial</span>(<span class="summary-sig-arg">time</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ppn</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">tasks</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Serial">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Fork"></a><span class="summary-sig-name">Fork</span>(<span class="summary-sig-arg">time</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">nodes</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">ipn</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">ppn</span>=<span class="summary-sig-default">0</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Fork">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Iterate"></a><span class="summary-sig-name">Iterate</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Iterate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Join"></a><span class="summary-sig-name">Join</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Join">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Flow"></a><span class="summary-sig-name">Flow</span>(<span class="summary-sig-arg">target</span>,
+        <span class="summary-sig-arg">source</span>,
+        <span class="summary-sig-arg">flow</span>,
+        <span class="summary-sig-arg">**kw</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Flow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Plot"></a><span class="summary-sig-name">Plot</span>(<span class="summary-sig-arg">target</span>,
+        <span class="summary-sig-arg">source</span>,
+        <span class="summary-sig-arg">flow</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**kw</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Plot">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Result"></a><span class="summary-sig-name">Result</span>(<span class="summary-sig-arg">target</span>,
+        <span class="summary-sig-arg">source</span>,
+        <span class="summary-sig-arg">flow</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**kw</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Result">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Force"></a><span class="summary-sig-name">Force</span>(<span class="summary-sig-arg">content</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Force">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Run"></a><span class="summary-sig-name">Run</span>(<span class="summary-sig-arg">content</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Run">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Fetch"></a><span class="summary-sig-name">Fetch</span>(<span class="summary-sig-arg">file</span>,
+        <span class="summary-sig-arg">dir</span>,
+        <span class="summary-sig-arg">private</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">**kw</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Fetch">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Save"></a><span class="summary-sig-name">Save</span>(<span class="summary-sig-arg">file</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#Save">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="End"></a><span class="summary-sig-name">End</span>(<span class="summary-sig-arg">**kw</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rsf.cluster-pysrc.html#End">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="project"></a><span class="summary-name">project</span> = <code title="rsf.proj.Project()">rsf.proj.Project()</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="JOB_NAME"></a><span class="summary-name">JOB_NAME</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="EMAIL"></a><span class="summary-name">EMAIL</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="DEFAULT_TIME"></a><span class="summary-name">DEFAULT_TIME</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="DEFAULT_PPN"></a><span class="summary-name">DEFAULT_PPN</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="NODETYPE"></a><span class="summary-name">NODETYPE</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CLUSTER"></a><span class="summary-name">CLUSTER</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="AUTO_SUBMIT"></a><span class="summary-name">AUTO_SUBMIT</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SAVED"></a><span class="summary-name">SAVED</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="JOB_QUEUE"></a><span class="summary-name">JOB_QUEUE</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CURRENT_JOB"></a><span class="summary-name">CURRENT_JOB</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CSCONS"></a><span class="summary-name">CSCONS</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CLUSTER_CONFIGURED"></a><span class="summary-name">CLUSTER_CONFIGURED</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SCONSIGNS"></a><span class="summary-name">SCONSIGNS</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="QDEFAULT"></a><span class="summary-name">QDEFAULT</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rsf.cluster-module.html#QCOMMAND" class="summary-name">QCOMMAND</a> = <code title="{'slurm': 'sbatch ', 'slurmcscs': 'sbatch ', 'pbs': 'qsub ', 'lsf': 'b\
+sub'}">{'slurm': 'sbatch ', 'slurmcscs': 'sbatch ', 'pbs':<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="NAMED"></a><span class="summary-name">NAMED</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptionsParser"></a><span class="summary-name">OptionsParser</span> = <code title="FakeOptionParser()">FakeOptionParser()</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rsf.cluster-module.html#QSYS" class="summary-name">QSYS</a> = <code title="{'slurm': createSlurmfile, 'slurmcscs': createSlurmfileCSCS, 'pbs': cr\
+eatePBSfile, 'lsf': createLSFfile}">{'slurm': createSlurmfile, 'slurmcscs': createSlurmfile<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="createPBSfile"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createPBSfile</span>(<span class="sig-arg">name</span>,
+        <span class="sig-arg">email</span>,
+        <span class="sig-arg">nodes</span>,
+        <span class="sig-arg">ppn</span>,
+        <span class="sig-arg">time</span>,
+        <span class="sig-arg">last</span>,
+        <span class="sig-arg">next</span>,
+        <span class="sig-arg">tasks</span>,
+        <span class="sig-arg">relaunch</span>,
+        <span class="sig-arg">run</span>,
+        <span class="sig-arg">content</span>,
+        <span class="sig-arg">nodetype</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">parallel</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rsf.cluster-pysrc.html#createPBSfile">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Where we actually create our pbs job files. Modify this to change this
+  to fit your cluster, or changes to Mio and Ra.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="createLSFfile"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createLSFfile</span>(<span class="sig-arg">name</span>,
+        <span class="sig-arg">email</span>,
+        <span class="sig-arg">nodes</span>,
+        <span class="sig-arg">ppn</span>,
+        <span class="sig-arg">time</span>,
+        <span class="sig-arg">last</span>,
+        <span class="sig-arg">next</span>,
+        <span class="sig-arg">tasks</span>,
+        <span class="sig-arg">relaunch</span>,
+        <span class="sig-arg">run</span>,
+        <span class="sig-arg">content</span>,
+        <span class="sig-arg">nodetype</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">parallel</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rsf.cluster-pysrc.html#createLSFfile">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Where we actually create our LSF job files. Modify this to change this
+  to fit your cluster, or changes to Mio and Ra.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables Details</span></td>
+</tr>
+</table>
+<a name="QCOMMAND"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">QCOMMAND</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{'slurm': 'sbatch ', 'slurmcscs': 'sbatch ', 'pbs': 'qsub ', 'lsf': 'b<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+sub'}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="QSYS"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">QSYS</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{'slurm': createSlurmfile, 'slurmcscs': createSlurmfileCSCS, 'pbs': cr<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+eatePBSfile, 'lsf': createLSFfile}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+Program sfsuplane | Create common offset data file with up to 3 planes 
+[SYNOPSIS]
+sfsuplane > out.rsf nt=NT ntr=NTR dt=DT offset=OFF npl=NPL taper=0 dip1=0 len1=3*ntr/4 ct1=nt/2-1 cx1=ntr/2-1 dip2=4 len2=3*ntr/4 ct2=nt/2-1 cx2=ntr/2-1 dip3=8 len3=3*ntr/4 ct3=nt/2-1 cx3=ntr/2-1 liner=0
+[COMMENTS]
+Command line should be: sfsuplane in=NULL >file.rsf 
+(There should be at least one parameter in command line because of sf_init(argc,argv))
+
+[PARAMETERS]
+int     | ct1 | =nt/2-1 |   | 	
+int     | ct2 | =nt/2-1 |   | 	
+int     | ct3 | =nt/2-1 |   | 	
+int     | cx1 | =ntr/2-1 |   | 	set defaults and/or get parameters for plane 2 
+int     | cx2 | =ntr/2-1 |   | 	set defaults and/or get parameters for plane 3 
+int     | cx3 | =ntr/2-1 |   | 	check if user wants the special output specified 
+float   | dip1 | =0 |   | 	
+float   | dip2 | =4 |   | 	
+float   | dip3 | =8 |   | 	
+float   | dt | =DT |   | 	
+int     | len1 | =3*ntr/4 |   | 	
+int     | len2 | =3*ntr/4 |   | 	
+int     | len3 | =3*ntr/4 |   | 	
+int     | liner | =0 |   | 	
+int     | npl | =NPL |   | 	
+int     | nt | =NT |   | 	
+int     | ntr | =NTR |   | 	
+float   | offset | =OFF |   | 	
+int     | taper | =0 |   | 	set defaults and/or get parameters for plane 1 
+[DIRECTORY]
+user/chenyk

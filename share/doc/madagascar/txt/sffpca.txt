@@ -1,0 +1,9 @@
+Program sffpca | Fast PCA by iterative algorithm
+[SYNOPSIS]
+sffpca < pin.rsf > pout.rsf nc=1 niter=1 seed=2012
+[PARAMETERS]
+int     | nc | =1 |   | 	component number
+int     | niter | =1 |   | 	iterations for each component
+int     | seed | =2012 |   | 	seed for random number
+[DIRECTORY]
+user/chen

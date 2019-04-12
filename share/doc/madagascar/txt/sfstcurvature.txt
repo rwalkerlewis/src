@@ -1,0 +1,10 @@
+Program sfstcurvature | Curvature in stratigraphic coordinates 
+[SYNOPSIS]
+sfstcurvature < xhor.rsf yh=yhor.rsf zh=zhor.rsf > cur.rsf scale=1.0 what=
+[PARAMETERS]
+float   | scale | =1.0 |   | 	scaling (from time to depth) 
+string  | what | = |   | 	what to compute 
+file    | yh | = |   | 	auxiliary input file name
+file    | zh | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/parvaneh

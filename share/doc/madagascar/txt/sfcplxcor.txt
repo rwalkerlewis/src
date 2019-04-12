@@ -1,0 +1,5 @@
+Program sfcplxcor | Statistical complex correlation for circular data. 
+[SYNOPSIS]
+sfcplxcor < in.rsf > out.rsf
+[DIRECTORY]
+user/browaeys

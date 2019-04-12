@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.tkvpconvert</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        Module&nbsp;tkvpconvert
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.tkvpconvert-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.tkvpconvert-module.html">Module rsf.tkvpconvert</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">'''GUI for vpconvert'''</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">##   Copyright (C) 2012 University of Texas at Austin</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">##</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">##   This program is free software; you can redistribute it and/or modify</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">##   it under the terms of the GNU General Public License as published by</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">##   the Free Software Foundation; either version 2 of the License, or</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">##   (at your option) any later version.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">##</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">##   This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">##   but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">##   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">##   GNU General Public License for more details.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment">##</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment">##   You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment">##   along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment">##   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">version_info</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">3</tt><tt class="py-op">:</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt class="py-name">tkinter</tt> <tt class="py-keyword">as</tt> <tt class="py-name">tk</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt class="py-name">tkinter</tt><tt class="py-op">.</tt><tt class="py-name">filedialog</tt> <tt class="py-keyword">import</tt> <tt class="py-name">askopenfilename</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt class="py-name">tkinter</tt><tt class="py-op">.</tt><tt class="py-name">messagebox</tt> <tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Method rsf.wxvpconvert.MainFrame.showerror()=rsf.wxvpconvert.MainFrame-class.html#showerror"><a title="rsf.wxvpconvert.MainFrame.showerror" class="py-name" href="#" onclick="return doclink('link-0', 'showerror', 'link-0');">showerror</a></tt><tt class="py-op">,</tt> <tt id="link-1" class="py-name" targets="Method rsf.wxvpconvert.MainFrame.showinfo()=rsf.wxvpconvert.MainFrame-class.html#showinfo"><a title="rsf.wxvpconvert.MainFrame.showinfo" class="py-name" href="#" onclick="return doclink('link-1', 'showinfo', 'link-1');">showinfo</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt class="py-name">Tkinter</tt> <tt class="py-keyword">as</tt> <tt class="py-name">tk</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt class="py-name">tkFileDialog</tt> <tt class="py-keyword">import</tt> <tt class="py-name">askopenfilename</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt class="py-name">tkMessageBox</tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name"><a title="rsf.wxvpconvert.MainFrame.showerror" class="py-name" href="#" onclick="return doclink('link-2', 'showerror', 'link-0');">showerror</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name"><a title="rsf.wxvpconvert.MainFrame.showinfo" class="py-name" href="#" onclick="return doclink('link-3', 'showinfo', 'link-1');">showinfo</a></tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">'Please install Tkinter!\n\n'</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Package rsf=rsf-module.html"><a title="rsf" class="py-name" href="#" onclick="return doclink('link-4', 'rsf', 'link-4');">rsf</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Module rsf.vpconvert=rsf.vpconvert-module.html"><a title="rsf.vpconvert" class="py-name" href="#" onclick="return doclink('link-5', 'vpconvert', 'link-5');">vpconvert</a></tt> <tt class="py-keyword">as</tt> <tt id="link-6" class="py-name"><a title="rsf.vpconvert" class="py-name" href="#" onclick="return doclink('link-6', 'vpconvert', 'link-5');">vpconvert</a></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="select_file"></a><div id="select_file-def"><a name="L37"></a><tt class="py-lineno"> 37</tt> <a class="py-toggle" href="#" id="select_file-toggle" onclick="return toggle('select_file');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.tkvpconvert-module.html#select_file">select_file</a><tt class="py-op">(</tt><tt class="py-param">entry</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="select_file-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="select_file-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-docstring">'''Select a file into entry'''</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">askopenfilename</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">filename</tt><tt class="py-op">:</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-name">entry</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method rsf.gui.Flow.Flow.delete()=rsf.gui.Flow.Flow-class.html#delete,Method rsf.gui.Flow.LinkedFlow.delete()=rsf.gui.Flow.LinkedFlow-class.html#delete"><a title="rsf.gui.Flow.Flow.delete
+rsf.gui.Flow.LinkedFlow.delete" class="py-name" href="#" onclick="return doclink('link-7', 'delete', 'link-7');">delete</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">END</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt class="py-name">entry</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Variable rsf.latex2wiki.insert=rsf.latex2wiki-module.html#insert"><a title="rsf.latex2wiki.insert" class="py-name" href="#" onclick="return doclink('link-8', 'insert', 'link-8');">insert</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="convert"></a><div id="convert-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="convert-toggle" onclick="return toggle('convert');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.tkvpconvert-module.html#convert">convert</a><tt class="py-op">(</tt><tt class="py-param">vpl</tt><tt class="py-op">,</tt><tt class="py-param">format</tt><tt class="py-op">,</tt><tt class="py-param">opts</tt><tt class="py-op">,</tt><tt class="py-param">pars</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="convert-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="convert-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt class="py-docstring">'''Convert a VPL file'''</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Module rsf.path=rsf.path-module.html"><a title="rsf.path" class="py-name" href="#" onclick="return doclink('link-9', 'path', 'link-9');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">vpl</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt id="link-10" class="py-name"><a title="rsf.wxvpconvert.MainFrame.showerror" class="py-name" href="#" onclick="return doclink('link-10', 'showerror', 'link-0');">showerror</a></tt><tt class="py-op">(</tt><tt class="py-string">"ERROR"</tt><tt class="py-op">,</tt> <tt class="py-string">"Can't find "</tt> <tt class="py-op">+</tt> <tt class="py-name">vpl</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Function rsf.recipes.itest.new()=rsf.recipes.itest-module.html#new"><a title="rsf.recipes.itest.new" class="py-name" href="#" onclick="return doclink('link-11', 'new', 'link-11');">new</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'.'</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="rsf.path" class="py-name" href="#" onclick="return doclink('link-12', 'path', 'link-9');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">splitext</tt><tt class="py-op">(</tt><tt class="py-name">vpl</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-13" class="py-name" targets="Method rsf.wxvpconvert.MainFrame.format()=rsf.wxvpconvert.MainFrame-class.html#format"><a title="rsf.wxvpconvert.MainFrame.format" class="py-name" href="#" onclick="return doclink('link-13', 'format', 'link-13');">format</a></tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-name">opts</tt> <tt class="py-op">=</tt> <tt class="py-string">' '</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-string">'='</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt id="link-14" class="py-name" targets="Variable rsf.gallery.constant.x=rsf.gallery.constant-module.html#x,Variable rsf.latex2wiki.x=rsf.latex2wiki-module.html#x"><a title="rsf.gallery.constant.x
+rsf.latex2wiki.x" class="py-name" href="#" onclick="return doclink('link-14', 'x', 'link-14');">x</a></tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name" targets="Variable rsf.gallery.bptti.pars=rsf.gallery.bptti-module.html#pars,Variable rsf.recipes.bptti2007.pars=rsf.recipes.bptti2007-module.html#pars"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-15', 'pars', 'link-15');">pars</a></tt><tt class="py-op">[</tt><tt id="link-16" class="py-name"><a title="rsf.gallery.constant.x
+rsf.latex2wiki.x" class="py-name" href="#" onclick="return doclink('link-16', 'x', 'link-14');">x</a></tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt id="link-17" class="py-name"><a title="rsf.gallery.constant.x
+rsf.latex2wiki.x" class="py-name" href="#" onclick="return doclink('link-17', 'x', 'link-14');">x</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-18', 'pars', 'link-15');">pars</a></tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">' '</tt> <tt class="py-op">+</tt> <tt class="py-name">opts</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">    <tt class="py-name">fail</tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="rsf.vpconvert" class="py-name" href="#" onclick="return doclink('link-19', 'vpconvert', 'link-5');">vpconvert</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Function rsf.latex2wiki.convert()=rsf.latex2wiki-module.html#convert,Function rsf.tkvpconvert.convert()=rsf.tkvpconvert-module.html#convert,Function rsf.vpconvert.convert()=rsf.vpconvert-module.html#convert,Method rsf.wxvpconvert.MainFrame.convert()=rsf.wxvpconvert.MainFrame-class.html#convert"><a title="rsf.latex2wiki.convert
+rsf.tkvpconvert.convert
+rsf.vpconvert.convert
+rsf.wxvpconvert.MainFrame.convert" class="py-name" href="#" onclick="return doclink('link-20', 'convert', 'link-20');">convert</a></tt><tt class="py-op">(</tt><tt class="py-name">vpl</tt><tt class="py-op">,</tt><tt id="link-21" class="py-name"><a title="rsf.recipes.itest.new" class="py-name" href="#" onclick="return doclink('link-21', 'new', 'link-11');">new</a></tt><tt class="py-op">,</tt><tt id="link-22" class="py-name"><a title="rsf.wxvpconvert.MainFrame.format" class="py-name" href="#" onclick="return doclink('link-22', 'format', 'link-13');">format</a></tt><tt class="py-op">,</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-name">opts</tt><tt class="py-op">,</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt id="link-23" class="py-name" targets="Function rsf.recipes.dpt.run()=rsf.recipes.dpt-module.html#run,Function rsf.recipes.itest.run()=rsf.recipes.itest-module.html#run,Function rsf.recipes.sgmig.run()=rsf.recipes.sgmig-module.html#run,Function rsf.recipes.sigsbeewemva.run()=rsf.recipes.sigsbeewemva-module.html#run,Function rsf.recipes.spmig.run()=rsf.recipes.spmig-module.html#run"><a title="rsf.recipes.dpt.run
+rsf.recipes.itest.run
+rsf.recipes.sgmig.run
+rsf.recipes.sigsbeewemva.run
+rsf.recipes.spmig.run" class="py-name" href="#" onclick="return doclink('link-23', 'run', 'link-23');">run</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"%s to %s using \"%s\""</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">vpl</tt><tt class="py-op">,</tt><tt id="link-24" class="py-name"><a title="rsf.recipes.itest.new" class="py-name" href="#" onclick="return doclink('link-24', 'new', 'link-11');">new</a></tt><tt class="py-op">,</tt><tt class="py-name">opts</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">fail</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt id="link-25" class="py-name"><a title="rsf.wxvpconvert.MainFrame.showerror" class="py-name" href="#" onclick="return doclink('link-25', 'showerror', 'link-0');">showerror</a></tt><tt class="py-op">(</tt><tt class="py-string">"Could not convert"</tt><tt class="py-op">,</tt><tt id="link-26" class="py-name"><a title="rsf.recipes.dpt.run
+rsf.recipes.itest.run
+rsf.recipes.sgmig.run
+rsf.recipes.sigsbeewemva.run
+rsf.recipes.spmig.run" class="py-name" href="#" onclick="return doclink('link-26', 'run', 'link-23');">run</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt id="link-27" class="py-name"><a title="rsf.wxvpconvert.MainFrame.showinfo" class="py-name" href="#" onclick="return doclink('link-27', 'showinfo', 'link-1');">showinfo</a></tt><tt class="py-op">(</tt><tt class="py-string">"Converted"</tt><tt class="py-op">,</tt><tt id="link-28" class="py-name"><a title="rsf.recipes.dpt.run
+rsf.recipes.itest.run
+rsf.recipes.sgmig.run
+rsf.recipes.sigsbeewemva.run
+rsf.recipes.spmig.run" class="py-name" href="#" onclick="return doclink('link-28', 'run', 'link-23');">run</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L63"></a><tt class="py-lineno"> 63</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.tkvpconvert-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="main-expanded"><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-name">root</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Tk</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-name">root</tt><tt class="py-op">.</tt><tt class="py-name">title</tt><tt class="py-op">(</tt><tt class="py-string">"Vplot Converter"</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-comment"># Vplot File: _________________ [...]</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-name">frame</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Frame</tt><tt class="py-op">(</tt><tt class="py-name">root</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Label</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt> <tt id="link-29" class="py-name" targets="Method rsf.doc.rsfpar.text()=rsf.doc.rsfpar-class.html#text,Method rsf.doc.rsfprog.text()=rsf.doc.rsfprog-class.html#text"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-29', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Vplot File:"</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-name">vpl</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Entry</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt> <tt class="py-name">width</tt><tt class="py-op">=</tt><tt class="py-number">60</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt class="py-name">vpl</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Button</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt> <tt id="link-30" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-30', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"..."</tt><tt class="py-op">,</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">              <tt id="link-31" class="py-name" targets="Variable rsf.book.command=rsf.book-module.html#command"><a title="rsf.book.command" class="py-name" href="#" onclick="return doclink('link-31', 'command', 'link-31');">command</a></tt><tt class="py-op">=</tt><tt class="py-keyword">lambda</tt><tt class="py-op">:</tt> <tt id="link-32" class="py-name" targets="Function rsf.tkvpconvert.select_file()=rsf.tkvpconvert-module.html#select_file,Method rsf.wxvpconvert.MainFrame.select_file()=rsf.wxvpconvert.MainFrame-class.html#select_file"><a title="rsf.tkvpconvert.select_file
+rsf.wxvpconvert.MainFrame.select_file" class="py-name" href="#" onclick="return doclink('link-32', 'select_file', 'link-32');">select_file</a></tt><tt class="py-op">(</tt><tt class="py-name">vpl</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-name">frame</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt id="link-33" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-33', 'pars', 'link-15');">pars</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-comment"># Format</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-name">fmt</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">StringVar</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-name">fmt</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method rsf.gui.Parameter.Parameter.set()=rsf.gui.Parameter.Parameter-class.html#set"><a title="rsf.gui.Parameter.Parameter.set" class="py-name" href="#" onclick="return doclink('link-34', 'set', 'link-34');">set</a></tt><tt class="py-op">(</tt><tt class="py-string">"png"</tt><tt class="py-op">)</tt> <tt class="py-comment"># default value</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-name">frame</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Frame</tt><tt class="py-op">(</tt><tt class="py-name">root</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Label</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt> <tt id="link-35" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-35', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Format:"</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">subframe</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Frame</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt id="link-36" class="py-name" targets="Variable rsf.vpconvert.formats=rsf.vpconvert-module.html#formats"><a title="rsf.vpconvert.formats" class="py-name" href="#" onclick="return doclink('link-36', 'formats', 'link-36');">formats</a></tt> <tt class="py-op">=</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="rsf.vpconvert" class="py-name" href="#" onclick="return doclink('link-37', 'vpconvert', 'link-5');">vpconvert</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Variable rsf.vpconvert.pens=rsf.vpconvert-module.html#pens"><a title="rsf.vpconvert.pens" class="py-name" href="#" onclick="return doclink('link-38', 'pens', 'link-38');">pens</a></tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt id="link-39" class="py-name"><a title="rsf.vpconvert.formats" class="py-name" href="#" onclick="return doclink('link-39', 'formats', 'link-36');">formats</a></tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-name">nf</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-40" class="py-name"><a title="rsf.vpconvert.formats" class="py-name" href="#" onclick="return doclink('link-40', 'formats', 'link-36');">formats</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">nf</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt id="link-41" class="py-name"><a title="rsf.wxvpconvert.MainFrame.format" class="py-name" href="#" onclick="return doclink('link-41', 'format', 'link-13');">format</a></tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="rsf.vpconvert.formats" class="py-name" href="#" onclick="return doclink('link-42', 'formats', 'link-36');">formats</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">rb</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Radiobutton</tt><tt class="py-op">(</tt><tt class="py-name">subframe</tt><tt class="py-op">,</tt><tt id="link-43" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-43', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt id="link-44" class="py-name"><a title="rsf.wxvpconvert.MainFrame.format" class="py-name" href="#" onclick="return doclink('link-44', 'format', 'link-13');">format</a></tt><tt class="py-op">.</tt><tt class="py-name">upper</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">value</tt><tt class="py-op">=</tt><tt id="link-45" class="py-name"><a title="rsf.wxvpconvert.MainFrame.format" class="py-name" href="#" onclick="return doclink('link-45', 'format', 'link-13');">format</a></tt><tt class="py-op">,</tt><tt class="py-name">variable</tt><tt class="py-op">=</tt><tt class="py-name">fmt</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">rb</tt><tt class="py-op">.</tt><tt class="py-name">grid</tt><tt class="py-op">(</tt><tt class="py-name">row</tt><tt class="py-op">=</tt><tt class="py-name">i</tt><tt class="py-op">%</tt><tt class="py-number">2</tt><tt class="py-op">,</tt><tt class="py-name">column</tt><tt class="py-op">=</tt><tt class="py-name">i</tt><tt class="py-op">/</tt><tt class="py-number">2</tt><tt class="py-op">,</tt><tt class="py-name">sticky</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">W</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-name">subframe</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">    <tt class="py-name">frame</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">fill</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">X</tt><tt class="py-op">,</tt><tt class="py-name">pady</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt id="link-46" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-46', 'pars', 'link-15');">pars</a></tt><tt class="py-op">[</tt><tt class="py-string">'format'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">fmt</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-comment"># Fat</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt id="link-47" class="py-name" targets="Method rsf.wxvpconvert.MainFrame.fat()=rsf.wxvpconvert.MainFrame-class.html#fat"><a title="rsf.wxvpconvert.MainFrame.fat" class="py-name" href="#" onclick="return doclink('link-47', 'fat', 'link-47');">fat</a></tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">IntVar</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt id="link-48" class="py-name"><a title="rsf.wxvpconvert.MainFrame.fat" class="py-name" href="#" onclick="return doclink('link-48', 'fat', 'link-47');">fat</a></tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="rsf.gui.Parameter.Parameter.set" class="py-name" href="#" onclick="return doclink('link-49', 'set', 'link-34');">set</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt class="py-name">frame</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Frame</tt><tt class="py-op">(</tt><tt class="py-name">root</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Label</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt> <tt id="link-50" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-50', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Fat:"</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt class="py-name">scale</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Scale</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt class="py-name">orient</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">HORIZONTAL</tt><tt class="py-op">,</tt><tt class="py-name">variable</tt><tt class="py-op">=</tt><tt id="link-51" class="py-name"><a title="rsf.wxvpconvert.MainFrame.fat" class="py-name" href="#" onclick="return doclink('link-51', 'fat', 'link-47');">fat</a></tt><tt class="py-op">,</tt><tt class="py-name">from_</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">to</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">,</tt><tt class="py-name">length</tt><tt class="py-op">=</tt><tt class="py-number">330</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-name">scale</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt class="py-name">frame</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">fill</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">X</tt><tt class="py-op">,</tt><tt class="py-name">pady</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt id="link-52" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-52', 'pars', 'link-15');">pars</a></tt><tt class="py-op">[</tt><tt class="py-string">'fat'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-53" class="py-name"><a title="rsf.wxvpconvert.MainFrame.fat" class="py-name" href="#" onclick="return doclink('link-53', 'fat', 'link-47');">fat</a></tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt class="py-comment"># bgcolor</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt id="link-54" class="py-name" targets="Method rsf.wxvpconvert.MainFrame.bgcolor()=rsf.wxvpconvert.MainFrame-class.html#bgcolor"><a title="rsf.wxvpconvert.MainFrame.bgcolor" class="py-name" href="#" onclick="return doclink('link-54', 'bgcolor', 'link-54');">bgcolor</a></tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">StringVar</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt id="link-55" class="py-name"><a title="rsf.wxvpconvert.MainFrame.bgcolor" class="py-name" href="#" onclick="return doclink('link-55', 'bgcolor', 'link-54');">bgcolor</a></tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="rsf.gui.Parameter.Parameter.set" class="py-name" href="#" onclick="return doclink('link-56', 'set', 'link-34');">set</a></tt><tt class="py-op">(</tt><tt class="py-string">"light"</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-name">frame</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Frame</tt><tt class="py-op">(</tt><tt class="py-name">root</tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Label</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt> <tt id="link-57" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-57', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Background Color:"</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Radiobutton</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt id="link-58" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-58', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Light"</tt><tt class="py-op">,</tt><tt class="py-name">value</tt><tt class="py-op">=</tt><tt class="py-string">"light"</tt><tt class="py-op">,</tt><tt class="py-name">variable</tt><tt class="py-op">=</tt><tt id="link-59" class="py-name"><a title="rsf.wxvpconvert.MainFrame.bgcolor" class="py-name" href="#" onclick="return doclink('link-59', 'bgcolor', 'link-54');">bgcolor</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Radiobutton</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt id="link-60" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-60', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Dark"</tt><tt class="py-op">,</tt><tt class="py-name">value</tt><tt class="py-op">=</tt><tt class="py-string">"dark"</tt><tt class="py-op">,</tt><tt class="py-name">bg</tt><tt class="py-op">=</tt><tt class="py-string">"gray50"</tt><tt class="py-op">,</tt><tt class="py-name">fg</tt><tt class="py-op">=</tt><tt class="py-string">"white"</tt><tt class="py-op">,</tt><tt class="py-name">variable</tt><tt class="py-op">=</tt><tt id="link-61" class="py-name"><a title="rsf.wxvpconvert.MainFrame.bgcolor" class="py-name" href="#" onclick="return doclink('link-61', 'bgcolor', 'link-54');">bgcolor</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Radiobutton</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt id="link-62" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-62', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Black"</tt><tt class="py-op">,</tt><tt class="py-name">value</tt><tt class="py-op">=</tt><tt class="py-string">"black"</tt><tt class="py-op">,</tt><tt class="py-name">bg</tt><tt class="py-op">=</tt><tt class="py-string">"black"</tt><tt class="py-op">,</tt><tt class="py-name">fg</tt><tt class="py-op">=</tt><tt class="py-string">"white"</tt><tt class="py-op">,</tt><tt class="py-name">variable</tt><tt class="py-op">=</tt><tt id="link-63" class="py-name"><a title="rsf.wxvpconvert.MainFrame.bgcolor" class="py-name" href="#" onclick="return doclink('link-63', 'bgcolor', 'link-54');">bgcolor</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Radiobutton</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt id="link-64" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-64', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"White"</tt><tt class="py-op">,</tt><tt class="py-name">value</tt><tt class="py-op">=</tt><tt class="py-string">"white"</tt><tt class="py-op">,</tt><tt class="py-name">bg</tt><tt class="py-op">=</tt><tt class="py-string">"white"</tt><tt class="py-op">,</tt><tt class="py-name">variable</tt><tt class="py-op">=</tt><tt id="link-65" class="py-name"><a title="rsf.wxvpconvert.MainFrame.bgcolor" class="py-name" href="#" onclick="return doclink('link-65', 'bgcolor', 'link-54');">bgcolor</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt id="link-66" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-66', 'pars', 'link-15');">pars</a></tt><tt class="py-op">[</tt><tt class="py-string">'bgcolor'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-67" class="py-name"><a title="rsf.wxvpconvert.MainFrame.bgcolor" class="py-name" href="#" onclick="return doclink('link-67', 'bgcolor', 'link-54');">bgcolor</a></tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-comment"># Serifs</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-name">serifs</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">IntVar</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">    <tt class="py-name">serifs</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="rsf.gui.Parameter.Parameter.set" class="py-name" href="#" onclick="return doclink('link-68', 'set', 'link-34');">set</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Checkbutton</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt id="link-69" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-69', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Serifs"</tt><tt class="py-op">,</tt><tt class="py-name">variable</tt><tt class="py-op">=</tt><tt class="py-name">serifs</tt><tt class="py-op">,</tt><tt class="py-name">padx</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">RIGHT</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-name">frame</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">fill</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">X</tt><tt class="py-op">,</tt><tt class="py-name">pady</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt id="link-70" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-70', 'pars', 'link-15');">pars</a></tt><tt class="py-op">[</tt><tt class="py-string">'serifs'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">serifs</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt class="py-comment"># Other options</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt id="link-71" class="py-name" targets="Function rsf.conf.options()=rsf.conf-module.html#options,Method rsf.wxvpconvert.MainFrame.options()=rsf.wxvpconvert.MainFrame-class.html#options"><a title="rsf.conf.options
+rsf.wxvpconvert.MainFrame.options" class="py-name" href="#" onclick="return doclink('link-71', 'options', 'link-71');">options</a></tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">StringVar</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">    <tt id="link-72" class="py-name"><a title="rsf.conf.options
+rsf.wxvpconvert.MainFrame.options" class="py-name" href="#" onclick="return doclink('link-72', 'options', 'link-71');">options</a></tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="rsf.gui.Parameter.Parameter.set" class="py-name" href="#" onclick="return doclink('link-73', 'set', 'link-34');">set</a></tt><tt class="py-op">(</tt><tt class="py-string">""</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt class="py-name">frame</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Frame</tt><tt class="py-op">(</tt><tt class="py-name">root</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Label</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt> <tt id="link-74" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-74', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Other Options:"</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Entry</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt class="py-name">textvariable</tt><tt class="py-op">=</tt><tt id="link-75" class="py-name"><a title="rsf.conf.options
+rsf.wxvpconvert.MainFrame.options" class="py-name" href="#" onclick="return doclink('link-75', 'options', 'link-71');">options</a></tt><tt class="py-op">,</tt><tt class="py-name">width</tt><tt class="py-op">=</tt><tt class="py-number">60</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">    <tt class="py-name">frame</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">fill</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">X</tt><tt class="py-op">,</tt><tt class="py-name">pady</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">    <tt class="py-comment"># [Convert] [Quit]</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt class="py-name">frame</tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Frame</tt><tt class="py-op">(</tt><tt class="py-name">root</tt><tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">    <tt id="link-76" class="py-name"><a title="rsf.recipes.dpt.run
+rsf.recipes.itest.run
+rsf.recipes.sgmig.run
+rsf.recipes.sigsbeewemva.run
+rsf.recipes.spmig.run" class="py-name" href="#" onclick="return doclink('link-76', 'run', 'link-23');">run</a></tt> <tt class="py-op">=</tt> <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Button</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt id="link-77" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-77', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Convert"</tt><tt class="py-op">,</tt><tt class="py-name">background</tt><tt class="py-op">=</tt><tt class="py-string">"yellow"</tt><tt class="py-op">,</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">                    <tt id="link-78" class="py-name"><a title="rsf.book.command" class="py-name" href="#" onclick="return doclink('link-78', 'command', 'link-31');">command</a></tt><tt class="py-op">=</tt><tt class="py-keyword">lambda</tt><tt class="py-op">:</tt> <tt id="link-79" class="py-name"><a title="rsf.latex2wiki.convert
+rsf.tkvpconvert.convert
+rsf.vpconvert.convert
+rsf.wxvpconvert.MainFrame.convert" class="py-name" href="#" onclick="return doclink('link-79', 'convert', 'link-20');">convert</a></tt><tt class="py-op">(</tt><tt class="py-name">vpl</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">                                            <tt class="py-name">fmt</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                                            <tt id="link-80" class="py-name"><a title="rsf.conf.options
+rsf.wxvpconvert.MainFrame.options" class="py-name" href="#" onclick="return doclink('link-80', 'options', 'link-71');">options</a></tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">                                            <tt id="link-81" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-81', 'pars', 'link-15');">pars</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">    <tt id="link-82" class="py-name"><a title="rsf.recipes.dpt.run
+rsf.recipes.itest.run
+rsf.recipes.sgmig.run
+rsf.recipes.sigsbeewemva.run
+rsf.recipes.spmig.run" class="py-name" href="#" onclick="return doclink('link-82', 'run', 'link-23');">run</a></tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT</tt><tt class="py-op">)</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">    <tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">Button</tt><tt class="py-op">(</tt><tt class="py-name">frame</tt><tt class="py-op">,</tt><tt id="link-83" class="py-name"><a title="rsf.doc.rsfpar.text
+rsf.doc.rsfprog.text" class="py-name" href="#" onclick="return doclink('link-83', 'text', 'link-29');">text</a></tt><tt class="py-op">=</tt><tt class="py-string">"Quit"</tt><tt class="py-op">,</tt><tt id="link-84" class="py-name"><a title="rsf.book.command" class="py-name" href="#" onclick="return doclink('link-84', 'command', 'link-31');">command</a></tt><tt class="py-op">=</tt><tt class="py-name">root</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name" targets="Method rsf.wxvpconvert.MainFrame.quit()=rsf.wxvpconvert.MainFrame-class.html#quit"><a title="rsf.wxvpconvert.MainFrame.quit" class="py-name" href="#" onclick="return doclink('link-85', 'quit', 'link-85');">quit</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">side</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">RIGHT</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-name">frame</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">fill</tt><tt class="py-op">=</tt><tt class="py-name">tk</tt><tt class="py-op">.</tt><tt class="py-name">X</tt><tt class="py-op">,</tt><tt class="py-name">pady</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">    <tt class="py-name">root</tt><tt class="py-op">.</tt><tt class="py-name">mainloop</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">    <tt id="link-86" class="py-name" targets="Function rsf.tkvpconvert.main()=rsf.tkvpconvert-module.html#main"><a title="rsf.tkvpconvert.main" class="py-name" href="#" onclick="return doclink('link-86', 'main', 'link-86');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

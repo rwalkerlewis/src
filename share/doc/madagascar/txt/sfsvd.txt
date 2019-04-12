@@ -1,0 +1,10 @@
+Program sfsvd | Singular value decomposition (SVD)
+[SYNOPSIS]
+sfsvd < in.rsf > out.rsf left=outu.rsf right=outv.rsf
+[COMMENTS]
+Compute [U,O,V]=SVD(A), A=UOV, a little bit different from A=UoV' 
+[PARAMETERS]
+string  | left | = |   | 	auxiliary output file name
+string  | right | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/yliu

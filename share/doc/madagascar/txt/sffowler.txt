@@ -1,0 +1,11 @@
+Program sffowler | 2-D velocity-domain imaging (Fowler DMO + Stolt migration).
+[SYNOPSIS]
+sffowler < inp.rsf > out.rsf eps=0.01
+[COMMENTS]
+
+Input: 2-D cosft of constant-velocity stacks (v,w,k).
+
+[PARAMETERS]
+float   | eps | =0.01 |   | 	stretch regularization 
+[DIRECTORY]
+system/seismic

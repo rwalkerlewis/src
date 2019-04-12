@@ -1,0 +1,17 @@
+Program sfahpef | Adaptive multidimensional nonstationary PEF. 
+[SYNOPSIS]
+sfahpef < in.rsf > filt.rsf maskin=mask.rsf a= center= gap= n= dim=ndim na=0 niter=100 verb=y lag= res=
+[PARAMETERS]
+ints    | a | = |   | 	 [dim]
+ints    | center | = |   | 	 [dim]
+int     | dim | =ndim |   | 	number of dimensions 
+ints    | gap | = |   | 	 [dim]
+string  | lag | = |   | 	output file for filter lags 
+string  | maskin | = |   | 	optional input mask file (auxiliary input file name)
+ints    | n | = |   | 	 [dim]
+int     | na | =0 |   | 	filter size 
+int     | niter | =100 |   | 	number of iterations 
+string  | res | = |   | 	output residual (optional) 
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/gee

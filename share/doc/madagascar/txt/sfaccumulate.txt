@@ -1,0 +1,8 @@
+Program sfaccumulate | Accumulate 
+[SYNOPSIS]
+sfaccumulate < Fin.rsf > Fou.rsf verb=n axis=3
+[PARAMETERS]
+int     | axis | =3 |   | 	accumulate axis 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

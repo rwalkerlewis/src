@@ -1,0 +1,37 @@
+Program sfmpifwigradlr | Conventional FWI misfit and gradient calculation using one-step low-rank wave extrapolation 
+[SYNOPSIS]
+sfmpifwigradlr Fvel=Fvel.rsf Fsrc=Fsrc.rsf Fleft=Fleft.rsf Fright=Fright.rsf Fdat=Fdat.rsf Fmisfit=Fmisfit.rsf Fleftb=Fleftb.rsf Frightb=Frightb.rsf Fq=Fq.rsf Fgrad=Fgrad.rsf Fwav=Fwav.rsf Fwav2=Fwav2.rsf Fres=Fres.rsf function=3 ns= ds= s0= sz=5 nr=rnx dr=dx r0=x0 rz=5 verb=n scomp=n adjtest=n pad1=1 nb= w0= rectx=3 rectz=3 scalet=1
+[PARAMETERS]
+file    | Fdat | = |   | 	auxiliary output file name
+file    | Fgrad | = |   | 	auxiliary output file name
+file    | Fleft | = |   | 	auxiliary input file name
+file    | Fleftb | = |   | 	auxiliary input file name
+file    | Fmisfit | = |   | 	auxiliary output file name
+file    | Fq | = |   | 	auxiliary input file name
+file    | Fres | = |   | 	auxiliary output file name
+file    | Fright | = |   | 	auxiliary input file name
+file    | Frightb | = |   | 	auxiliary input file name
+file    | Fsrc | = |   | 	auxiliary input file name
+file    | Fvel | = |   | 	auxiliary input file name
+file    | Fwav | = |   | 	auxiliary output file name
+file    | Fwav2 | = |   | 	auxiliary output file name
+bool    | adjtest | =n |  [y/n] | 	test of adjointness 
+float   | dr | =dx |   | 	receiver interval 
+float   | ds | = |   | 	shot interval 
+int     | function | =3 |   | 	if 1, forward modeling; if 2, only calculate misfit; if 3, calculate gradient 
+int     | nb | = |   | 	
+int     | nr | =rnx |   | 	number of receiver 
+int     | ns | = |   | 	shot number 
+int     | pad1 | =1 |   | 	padding factor on the first axis 
+float   | r0 | =x0 |   | 	receiver origin 
+int     | rectx | =3 |   | 	
+int     | rectz | =3 |   | 	
+int     | rz | =5 |   | 	receiver depth 
+float   | s0 | = |   | 	shot origin 
+int     | scalet | =1 |   | 	time interval 
+bool    | scomp | =n |  [y/n] | 	source wavefield compensation flag 
+int     | sz | =5 |   | 	source depth 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+float   | w0 | = |   | 	reference frequency 
+[DIRECTORY]
+user/zhiguang

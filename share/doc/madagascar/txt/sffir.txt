@@ -1,0 +1,8 @@
+Program sffir | FIR filter 
+[SYNOPSIS]
+sffir < in.rsf > out.rsf fir=fir.rsf axis=1
+[PARAMETERS]
+int     | axis | =1 |   | 	apply fir filter on which dimension 
+file    | fir | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/chen

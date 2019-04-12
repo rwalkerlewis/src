@@ -1,0 +1,14 @@
+Program sfpwdchain | Nonstationary Prony by chain of PEFs 
+[SYNOPSIS]
+sfpwdchain < inp.rsf dip=dip.rsf > out.rsf nc=1 order=1 verb=(bool) (1 == nt) niter=0 liter=50 rect1=1 rect2=1
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary output file name
+int     | liter | =50 |   | 	number of linear iterations 
+int     | nc | =1 |   | 	number of components 
+int     | niter | =0 |   | 	number of iterations 
+int     | order | =1 |   | 	PWD order 
+int     | rect1 | =1 |   | 	
+int     | rect2 | =1 |   | 	smoothing radius 
+bool    | verb | =(bool) (1 == nt) |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/pwd

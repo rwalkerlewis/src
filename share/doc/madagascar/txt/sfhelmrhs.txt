@@ -1,0 +1,9 @@
+Program sfhelmrhs | Reconstruct right-hand side from wavefield. 
+[SYNOPSIS]
+sfhelmrhs < in.rsf > out.rsf model=modl.rsf uts=0 order=
+[PARAMETERS]
+string  | model | = |   | 	auxiliary input file name
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+int     | uts | =0 |   | 	number of OMP threads 
+[DIRECTORY]
+user/sparse

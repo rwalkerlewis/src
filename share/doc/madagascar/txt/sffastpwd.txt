@@ -1,0 +1,11 @@
+Program sffastpwd | 2-D dip estimation using analytical equation. 
+[SYNOPSIS]
+sffastpwd < inp.rsf > out.rsf rect1=1 rect2=1 niter=100 verb=y eps=0.0f
+[PARAMETERS]
+float   | eps | =0.0f |   | 	regularization 
+int     | niter | =100 |   | 	number of iterations 
+int     | rect1 | =1 |   | 	
+int     | rect2 | =1 |   | 	smoothing radius 
+bool    | verb | =y |  [y/n] | 	verbosity 
+[DIRECTORY]
+user/chen

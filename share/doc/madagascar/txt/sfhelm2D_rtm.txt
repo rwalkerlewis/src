@@ -1,0 +1,13 @@
+Program sfhelm2D_rtm | 2D Frequency Domain Reverse Time Migration. 
+[SYNOPSIS]
+sfhelm2D_rtm < in.rsf > out.rsf receiver=receiver.rsf source=source.rsf record=record.rsf nh=0 uts=0 npml=20 order=
+[PARAMETERS]
+int     | nh | =0 |   | 	
+int     | npml | =20 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+string  | receiver | = |   | 	auxiliary input file name
+string  | record | = |   | 	auxiliary input file name
+string  | source | = |   | 	auxiliary input file name
+int     | uts | =0 |   | 	
+[DIRECTORY]
+user/hzhu

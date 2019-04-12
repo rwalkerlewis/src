@@ -1,0 +1,10 @@
+Program sfpwd2 | 2-D plane wave destruction. 
+[SYNOPSIS]
+sfpwd2 < in.rsf dip=dip.rsf > out.rsf order=1 verb=n nj1=1
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+int     | nj1 | =1 |   | 	aliasing 
+int     | order | =1 |   | 	accuracy 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

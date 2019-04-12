@@ -1,0 +1,91 @@
+.TH sffxdecon 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sffxdecon \- Random noise attenuation using f-x deconvolution 
+.SH SYNOPSIS
+.B sffxdecon < in.rsf > out.rsf verb=n taper=.1 fmin=1. fmax=1./(2*dt) twlen=(float)(n1-1)*dt n2w=10 lenf=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B fmax
+.B =1./(2*dt)
+.R  	maximum frequency to process in Hz
+.TP
+.I float  
+.B fmin
+.B =1.
+.R  	minimum frequency to process in Hz
+.TP
+.I int    
+.B lenf
+.B =4
+.R  	number of traces for filter
+.TP
+.I int    
+.B n2w
+.B =10
+.R  	number of traces in window
+.TP
+.I float  
+.B taper
+.B =.1
+.R  	length of taper
+.TP
+.I float  
+.B twlen
+.B =(float)(n1-1)*dt
+.R  	time window length
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	flag to get advisory messages
+.SH USED IN
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.TP
+.I jlu/txyapf/curve
+.TP
+.I jlu/txyapf/sigmoid
+.TP
+.I rsf/school2017/seismic
+.TP
+.I tccs/dbortho/hyper
+.TP
+.I tccs/deblend/fairfield-initmfnew
+.TP
+.I tccs/deblend/linear
+.TP
+.I tccs/deblend/synthcomplex
+.TP
+.I tccs/deblend/synthhyper
+.TP
+.I tccs/dsd/conflict
+.TP
+.I tccs/dsd/demo
+.TP
+.I tccs/dsd/demo2
+.TP
+.I tccs/dsd/field1
+.TP
+.I tccs/dsd/field2
+.TP
+.I tccs/dsd/real
+.TP
+.I tccs/dsd/sig
+.TP
+.I tccs/eseis/field
+.TP
+.I tccs/ortho/orthocomplex
+.TP
+.I tccs/ortho/orthofair
+.TP
+.I tccs/ortho/orthonine
+.SH SOURCE
+.I user/chenyk/Mfxdecon.c
+.SH VERSION
+2.1-git

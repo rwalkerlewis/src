@@ -1,0 +1,13 @@
+Program sfvidattr | Slope-based velocity-independent data attributes. 
+[SYNOPSIS]
+sfvidattr < xdip.rsf hdip=hdip.rsf > out.rsf half=y what=
+[COMMENTS]
+
+The axis order is time-midpoint-offset.
+
+[PARAMETERS]
+bool    | half | =y |  [y/n] | 	if y, the second axis is half-offset instead of full offset 
+file    | hdip | = |   | 	auxiliary input file name
+string  | what | = |   | 	what attribute to compute 
+[DIRECTORY]
+user/fomels

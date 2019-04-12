@@ -1,0 +1,20 @@
+Program sfewelr3 | None
+[SYNOPSIS]
+sfewelr3 < c11.rsf c14=c14.rsf theta=q1.rsf verb=false tilt=false tric=false tstp=false pseu=false seed=time(NULL mode=0 jump=1 eps=1.e-6 npk=20 nb=0 dt=1.e-3
+[PARAMETERS]
+file    | c14 | = |   | 	auxiliary input file name
+        | dt | =1.e-3 |   | 	time step size
+        | eps | =1.e-6 |   | 	tolerance
+        | jump | =1 |   | 	jump step for reduced lowrank decomposition
+        | mode | =0 |   | 	mode of decomposition: 0->mixed, 1->p, 2->s
+        | nb | =0 |   | 	boundary padding
+        | npk | =20 |   | 	maximum rank
+        | pseu | =false |   | 	pseudo-spectral propagator
+        | seed | =time(NULL |   | 	
+file    | theta | = |   | 	auxiliary input file name
+        | tilt | =false |   | 	tilting of TTI
+        | tric | =false |   | 	triclinic anisotropy
+        | tstp | =false |   | 	twostep propagator
+        | verb | =false |   | 	verbosity flag
+[DIRECTORY]
+user/jsun

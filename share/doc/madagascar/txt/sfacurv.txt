@@ -1,0 +1,12 @@
+Program sfacurv | Azimuth CURVature 
+[SYNOPSIS]
+sfacurv < in.rsf > out.rsf rect1=1 rect2=1 rect3=1 order=2 nazmuth=10 interp=
+[PARAMETERS]
+string  | interp | = |   | 	interpolation method: maxflat lagrange bspline 
+int     | nazmuth | =10 |   | 	azimuth number 
+int     | order | =2 |   | 	approximating order of finite difference 
+int     | rect1 | =1 |   | 	smoothness on 1st axis 
+int     | rect2 | =1 |   | 	smoothness on 2nd axis 
+int     | rect3 | =1 |   | 	smoothness on 3rd axis 
+[DIRECTORY]
+user/chen

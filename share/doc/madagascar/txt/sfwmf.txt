@@ -1,0 +1,10 @@
+Program sfwmf | 1D weighted median filtering. 
+[SYNOPSIS]
+sfwmf < in.rsf > out.rsf weights=weights.rsf verb=n nfw= boundary=n
+[PARAMETERS]
+bool    | boundary | =n |  [y/n] | 	if y, boundary is data, whereas zero
+int     | nfw | = |   | 	filter-window length (positive and odd integer)
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+string  | weights | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/yliu

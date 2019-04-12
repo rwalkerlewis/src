@@ -1,0 +1,9 @@
+Program sfdecibel | Decibel 
+[SYNOPSIS]
+sfdecibel < Fin.rsf > Fou.rsf verb=n aref=1.0 inv=n
+[PARAMETERS]
+float   | aref | =1.0 |   | 	reference amplitude 
+bool    | inv | =n |  [y/n] | 	inverse transform 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

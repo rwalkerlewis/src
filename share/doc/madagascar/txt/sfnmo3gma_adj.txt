@@ -1,0 +1,11 @@
+Program sfnmo3gma_adj | Fwd-Adj of 3D NMO GMA for iterative LS coefficient solve 
+[SYNOPSIS]
+sfnmo3gma_adj < inp.rsf > out.rsf gather=gather.rsf mod=inicoef.rsf t0sq=t0sqf.rsf adj=y nw=16
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	
+file    | gather | = |   | 	auxiliary input file name
+file    | mod | = |   | 	auxiliary input file name
+int     | nw | =16 |   | 	16 parameters of 3D GMA
+file    | t0sq | = |   | 	auxiliary input file name
+[DIRECTORY]
+system/seismic

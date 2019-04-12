@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.recipes.lines</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.recipes-module.html">Package&nbsp;recipes</a> ::
+        Module&nbsp;lines
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.recipes.lines-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.recipes.lines-module.html">Module rsf.recipes.lines</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package rsf=rsf-module.html"><a title="rsf" class="py-name" href="#" onclick="return doclink('link-0', 'rsf', 'link-0');">rsf</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module rsf.proj=rsf.proj-module.html"><a title="rsf.proj" class="py-name" href="#" onclick="return doclink('link-1', 'proj', 'link-1');">proj</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">math</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="vlines"></a><div id="vlines-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="vlines-toggle" onclick="return toggle('vlines');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.lines-module.html#vlines">vlines</a><tt class="py-op">(</tt><tt class="py-param">out</tt><tt class="py-op">,</tt><tt class="py-param">inp</tt><tt class="py-op">,</tt><tt class="py-param">max</tt><tt class="py-op">=</tt><tt class="py-number">1.</tt><tt class="py-op">,</tt><tt class="py-param">axes</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">,</tt><tt class="py-param">plot</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="vlines-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="vlines-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">   <tt class="py-docstring">''' Plot with vertical lines on specific positions'''</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">    </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">   <tt class="py-name">max</tt> <tt class="py-op">=</tt> <tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">max</tt><tt class="py-op">)</tt><tt class="py-op">;</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">   <tt id="link-2" class="py-name" targets="Function rsf.cluster.Plot()=rsf.cluster-module.html#Plot,Function rsf.proj.Plot()=rsf.proj-module.html#Plot,Method rsf.proj.Project.Plot()=rsf.proj.Project-class.html#Plot"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-2', 'Plot', 'link-2');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt><tt class="py-name">inp</tt><tt class="py-op">,</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-string">'''spray axis=2 n=2 o=%g d=%g | rtoc | math output="input+I*x2" | transp | </tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-string">           graph %s wanttitle=n wantaxis=n %s'''</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-name">max</tt><tt class="py-op">,</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">max</tt><tt class="py-op">,</tt><tt class="py-name">axes</tt><tt class="py-op">,</tt><tt id="link-3" class="py-name" targets="Function rsf.recipes.tiles.plot()=rsf.recipes.tiles-module.html#plot"><a title="rsf.recipes.tiles.plot" class="py-name" href="#" onclick="return doclink('link-3', 'plot', 'link-3');">plot</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="hlines"></a><div id="hlines-def"><a name="L13"></a><tt class="py-lineno">13</tt> <a class="py-toggle" href="#" id="hlines-toggle" onclick="return toggle('hlines');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.lines-module.html#hlines">hlines</a><tt class="py-op">(</tt><tt class="py-param">out</tt><tt class="py-op">,</tt><tt class="py-param">inp</tt><tt class="py-op">,</tt><tt class="py-param">max</tt><tt class="py-op">=</tt><tt class="py-number">1.</tt><tt class="py-op">,</tt><tt class="py-param">axes</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">,</tt><tt class="py-param">plot</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="hlines-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="hlines-expanded"><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">   <tt class="py-docstring">''' Plot with vertical lines on specific positions'''</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">   <tt class="py-name">max</tt> <tt class="py-op">=</tt> <tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">max</tt><tt class="py-op">)</tt><tt class="py-op">;</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">   <tt id="link-4" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-4', 'Plot', 'link-2');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt><tt class="py-name">inp</tt><tt class="py-op">,</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-string">'''spray axis=2 n=2 o=%g d=%g | rtoc | math output="x2 + I*input" | transp | </tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-string">           graph %s wanttitle=n wantaxis=n %s transpose=y'''</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-name">max</tt><tt class="py-op">,</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">max</tt><tt class="py-op">,</tt><tt class="py-name">axes</tt><tt class="py-op">,</tt><tt id="link-5" class="py-name"><a title="rsf.recipes.tiles.plot" class="py-name" href="#" onclick="return doclink('link-5', 'plot', 'link-3');">plot</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-comment"># def hlines2(out,inp,axes:w</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

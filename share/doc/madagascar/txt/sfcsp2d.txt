@@ -1,0 +1,31 @@
+Program sfcsp2d | 2-D common scattering-point gathers mapping and its adjoint
+[SYNOPSIS]
+sfcsp2d < in.rsf > out.rsf ompchunk=1 ompnth=0 adj=y weight=n linear=n v=2000. half=n verb=n nhe=nh dhe=dh he0=h0 nxs=nxm dxs=dxm xs0=xm0 nh=nhe dh=dhe h0=he0 nxm=nxs dxm=dxs xm0=xs0 apt=SF_MAX(fabsf(he0),fabsf(he0+(nhe-1)*dhe))
+[COMMENTS]
+The axes in the data space are {time,offset,cmp}
+The axes in the image space are {time,equiv_offset,csp}
+
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	yes: CSP mapping, no: CMP building 
+float   | apt | =SF_MAX(fabsf(he0),fabsf(he0+(nhe-1)*dhe)) |   | 	aperture 
+float   | dh | =dhe |   | 	
+float   | dhe | =dh |   | 	
+float   | dxm | =dxs |   | 	
+float   | dxs | =dxm |   | 	
+float   | h0 | =he0 |   | 	
+bool    | half | =n |  [y/n] | 	half offset flag 
+float   | he0 | =h0 |   | 	
+bool    | linear | =n |  [y/n] | 	yes: linear interpolation, no: nearest-neighbor interpolation 
+int     | nh | =nhe |   | 	
+int     | nhe | =nh |   | 	
+int     | nxm | =nxs |   | 	
+int     | nxs | =nxm |   | 	
+int     | ompchunk | =1 |   | 	OpenMP data chunk size 
+int     | ompnth | =0 |   | 	OpenMP available threads 
+float   | v | =2000. |   | 	velocity 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+bool    | weight | =n |  [y/n] | 	weighting flag 
+float   | xm0 | =xs0 |   | 	
+float   | xs0 | =xm0 |   | 	
+[DIRECTORY]
+user/seisinv

@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.recipes.rules</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.recipes-module.html">Package&nbsp;recipes</a> ::
+        Module&nbsp;rules
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.recipes.rules-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.recipes.rules-module.html">Module rsf.recipes.rules</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package rsf=rsf-module.html"><a title="rsf" class="py-name" href="#" onclick="return doclink('link-0', 'rsf', 'link-0');">rsf</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module rsf.proj=rsf.proj-module.html"><a title="rsf.proj" class="py-name" href="#" onclick="return doclink('link-1', 'proj', 'link-1');">proj</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Module rsf.recipes.fdmod=rsf.recipes.fdmod-module.html"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-2', 'fdmod', 'link-2');">fdmod</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"> </tt>
+<a name="param"></a><div id="param-def"><a name="L4"></a><tt class="py-lineno">  4</tt> <a class="py-toggle" href="#" id="param-toggle" onclick="return toggle('param');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.rules-module.html#param">param</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="param-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="param-expanded"><a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Method rsf.doc.rsfprog.par()=rsf.doc.rsfprog-class.html#par,Variable rsf.gallery.gradient.par=rsf.gallery.gradient-module.html#par,Variable rsf.gallery.vofz.par=rsf.gallery.vofz-module.html#par,Variable rsf.recipes.bptti2007.par=rsf.recipes.bptti2007-module.html#par"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-3', 'par', 'link-3');">par</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line">        <tt class="py-string">'nx'</tt><tt class="py-op">:</tt><tt class="py-number">501</tt><tt class="py-op">,</tt>  <tt class="py-string">'ox'</tt><tt class="py-op">:</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-string">'dx'</tt><tt class="py-op">:</tt><tt class="py-number">0.002</tt><tt class="py-op">,</tt>  <tt class="py-string">'lx'</tt><tt class="py-op">:</tt><tt class="py-string">'x'</tt><tt class="py-op">,</tt> <tt class="py-string">'ux'</tt><tt class="py-op">:</tt><tt class="py-string">'km'</tt><tt class="py-op">,</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line">        <tt class="py-string">'nz'</tt><tt class="py-op">:</tt><tt class="py-number">501</tt><tt class="py-op">,</tt>   <tt class="py-string">'oz'</tt><tt class="py-op">:</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-string">'dz'</tt><tt class="py-op">:</tt><tt class="py-number">0.002</tt><tt class="py-op">,</tt>  <tt class="py-string">'lz'</tt><tt class="py-op">:</tt><tt class="py-string">'z'</tt><tt class="py-op">,</tt> <tt class="py-string">'uz'</tt><tt class="py-op">:</tt><tt class="py-string">'km'</tt><tt class="py-op">,</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">        <tt class="py-string">'nt'</tt><tt class="py-op">:</tt><tt class="py-number">5000</tt><tt class="py-op">,</tt>  <tt class="py-string">'ot'</tt><tt class="py-op">:</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-string">'dt'</tt><tt class="py-op">:</tt><tt class="py-number">0.0002</tt><tt class="py-op">,</tt> <tt class="py-string">'lt'</tt><tt class="py-op">:</tt><tt class="py-string">'t'</tt><tt class="py-op">,</tt> <tt class="py-string">'ut'</tt><tt class="py-op">:</tt><tt class="py-string">'s'</tt><tt class="py-op">,</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">        <tt class="py-string">'kt'</tt><tt class="py-op">:</tt><tt class="py-number">150</tt><tt class="py-op">,</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">        <tt class="py-string">'jsnap'</tt><tt class="py-op">:</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">        <tt class="py-string">'nb'</tt><tt class="py-op">:</tt><tt class="py-number">100</tt><tt class="py-op">,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">        <tt class="py-string">'frq'</tt><tt class="py-op">:</tt><tt class="py-number">45</tt><tt class="py-op">,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">        <tt class="py-string">'ssou'</tt><tt class="py-op">:</tt><tt class="py-string">'y'</tt><tt class="py-op">,</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-string">'vscale'</tt><tt class="py-op">:</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-string">'hscale'</tt><tt class="py-op">:</tt><tt class="py-number">0</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt class="py-op">}</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt id="link-4" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-4', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Variable rsf.doc.param=rsf.doc-module.html#param,Function rsf.recipes.awe.param()=rsf.recipes.awe-module.html#param,Function rsf.recipes.bpait.param()=rsf.recipes.bpait-module.html#param,Function rsf.recipes.fdmod.param()=rsf.recipes.fdmod-module.html#param,Function rsf.recipes.fdmodds.param()=rsf.recipes.fdmodds-module.html#param,Function rsf.recipes.itest.param()=rsf.recipes.itest-module.html#param,Function rsf.recipes.marm.param()=rsf.recipes.marm-module.html#param,Function rsf.recipes.rules.param()=rsf.recipes.rules-module.html#param,Function rsf.recipes.rwedemo.param()=rsf.recipes.rwedemo-module.html#param,Function rsf.recipes.rwezo.param()=rsf.recipes.rwezo-module.html#param,Function rsf.recipes.sgmig.param()=rsf.recipes.sgmig-module.html#param,Function rsf.recipes.sigsbee.param()=rsf.recipes.sigsbee-module.html#param,Function rsf.recipes.sigsbeewemva.param()=rsf.recipes.sigsbeewemva-module.html#param,Function rsf.recipes.spmig.param()=rsf.recipes.spmig-module.html#param,Function rsf.recipes.wei.param()=rsf.recipes.wei-module.html#param,Function rsf.recipes.wemig.param()=rsf.recipes.wemig-module.html#param,Function rsf.recipes.weximg.param()=rsf.recipes.weximg-module.html#param,Function rsf.recipes.wplot.param()=rsf.recipes.wplot-module.html#param,Function rsf.recipes.zomig.param()=rsf.recipes.zomig-module.html#param"><a title="rsf.doc.param
+rsf.recipes.awe.param
+rsf.recipes.bpait.param
+rsf.recipes.fdmod.param
+rsf.recipes.fdmodds.param
+rsf.recipes.itest.param
+rsf.recipes.marm.param
+rsf.recipes.rules.param
+rsf.recipes.rwedemo.param
+rsf.recipes.rwezo.param
+rsf.recipes.sgmig.param
+rsf.recipes.sigsbee.param
+rsf.recipes.sigsbeewemva.param
+rsf.recipes.spmig.param
+rsf.recipes.wei.param
+rsf.recipes.wemig.param
+rsf.recipes.weximg.param
+rsf.recipes.wplot.param
+rsf.recipes.zomig.param" class="py-name" href="#" onclick="return doclink('link-5', 'param', 'link-5');">param</a></tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-6', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-7" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-7', 'par', 'link-3');">par</a></tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment"># ------------------------------------------------------------</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"># acoustic modeling</tt> </tt>
+<a name="amodel"></a><div id="amodel-def"><a name="L23"></a><tt class="py-lineno"> 23</tt> <a class="py-toggle" href="#" id="amodel-toggle" onclick="return toggle('amodel');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.rules-module.html#amodel">amodel</a><tt class="py-op">(</tt><tt class="py-param">dat</tt><tt class="py-op">,</tt><tt class="py-param">wfl</tt><tt class="py-op">,</tt>  <tt class="py-param">wav</tt><tt class="py-op">,</tt><tt class="py-param">vel</tt><tt class="py-op">,</tt><tt class="py-param">den</tt><tt class="py-op">,</tt><tt class="py-param">sou</tt><tt class="py-op">,</tt><tt class="py-param">rec</tt><tt class="py-op">,</tt><tt class="py-param">custom</tt><tt class="py-op">,</tt><tt class="py-param">par</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="amodel-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="amodel-expanded"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-8', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'fdcustom'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">custom</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">     </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt id="link-9" class="py-name" targets="Function rsf.cluster.Flow()=rsf.cluster-module.html#Flow,Function rsf.flow.Flow()=rsf.flow-module.html#Flow,Module rsf.gui.Flow=rsf.gui.Flow-module.html,Class rsf.gui.Flow.Flow=rsf.gui.Flow.Flow-class.html,Function rsf.proj.Flow()=rsf.proj-module.html#Flow,Method rsf.proj.Project.Flow()=rsf.proj.Project-class.html#Flow"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-9', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt> <tt class="py-op">[</tt><tt class="py-name">dat</tt><tt class="py-op">,</tt><tt id="link-10" class="py-name" targets="Function rsf.recipes.wei.wfl()=rsf.recipes.wei-module.html#wfl,Function rsf.recipes.weximg.wfl()=rsf.recipes.weximg-module.html#wfl"><a title="rsf.recipes.wei.wfl
+rsf.recipes.weximg.wfl" class="py-name" href="#" onclick="return doclink('link-10', 'wfl', 'link-10');">wfl</a></tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">wav</tt><tt class="py-op">,</tt><tt class="py-name">vel</tt><tt class="py-op">,</tt><tt class="py-name">den</tt><tt class="py-op">,</tt><tt class="py-name">sou</tt><tt class="py-op">,</tt><tt class="py-name">rec</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-string">         awefd2d</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-string">         verb=y free=n snap=%(snap)s jsnap=%(jsnap)d nb=%(nb)d</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-string">         vel=${SOURCES[1]}</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-string">         den=${SOURCES[2]}</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-string">         sou=${SOURCES[3]}</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-string">         rec=${SOURCES[4]}</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-string">         wfl=${TARGETS[1]}</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-string">         %(fdcustom)s</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-string">         '''</tt> <tt class="py-op">%</tt> <tt id="link-11" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-11', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-comment"># elastic modeling</tt> </tt>
+<a name="emodel"></a><div id="emodel-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="emodel-toggle" onclick="return toggle('emodel');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.rules-module.html#emodel">emodel</a><tt class="py-op">(</tt><tt class="py-param">dat</tt><tt class="py-op">,</tt><tt class="py-param">wfl</tt><tt class="py-op">,</tt>  <tt class="py-param">wav</tt><tt class="py-op">,</tt><tt class="py-param">ccc</tt><tt class="py-op">,</tt><tt class="py-param">den</tt><tt class="py-op">,</tt><tt class="py-param">sou</tt><tt class="py-op">,</tt><tt class="py-param">rec</tt><tt class="py-op">,</tt><tt class="py-param">custom</tt><tt class="py-op">,</tt><tt class="py-param">par</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="emodel-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="emodel-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt id="link-12" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-12', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'fdcustom'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">custom</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">     </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt id="link-13" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-13', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt> <tt class="py-op">[</tt><tt class="py-name">dat</tt><tt class="py-op">,</tt><tt id="link-14" class="py-name"><a title="rsf.recipes.wei.wfl
+rsf.recipes.weximg.wfl" class="py-name" href="#" onclick="return doclink('link-14', 'wfl', 'link-10');">wfl</a></tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">wav</tt><tt class="py-op">,</tt><tt class="py-name">ccc</tt><tt class="py-op">,</tt><tt class="py-name">den</tt><tt class="py-op">,</tt><tt class="py-name">sou</tt><tt class="py-op">,</tt><tt class="py-name">rec</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-string">         ewefd2d</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-string">         verb=y free=n snap=%(snap)s jsnap=%(jsnap)d nb=%(nb)d</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-string">         ccc=${SOURCES[1]}</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string">         den=${SOURCES[2]}</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-string">         sou=${SOURCES[3]}</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-string">         rec=${SOURCES[4]}</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-string">         wfl=${TARGETS[1]}</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-string">         %(fdcustom)s</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-string">         '''</tt> <tt class="py-op">%</tt> <tt id="link-15" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-15', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-comment"># elastic modeling with free surface</tt> </tt>
+<a name="emodelfs"></a><div id="emodelfs-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="emodelfs-toggle" onclick="return toggle('emodelfs');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.rules-module.html#emodelfs">emodelfs</a><tt class="py-op">(</tt><tt class="py-param">dat</tt><tt class="py-op">,</tt><tt class="py-param">wfl</tt><tt class="py-op">,</tt><tt class="py-param">wav</tt><tt class="py-op">,</tt><tt class="py-param">ccc</tt><tt class="py-op">,</tt><tt class="py-param">den</tt><tt class="py-op">,</tt><tt class="py-param">sou</tt><tt class="py-op">,</tt><tt class="py-param">rec</tt><tt class="py-op">,</tt><tt class="py-param">custom</tt><tt class="py-op">,</tt><tt class="py-param">par</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="emodelfs-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="emodelfs-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt id="link-16" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-16', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'fdcustom'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">custom</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt id="link-17" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-17', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt> <tt class="py-op">[</tt><tt class="py-name">dat</tt><tt class="py-op">,</tt><tt id="link-18" class="py-name"><a title="rsf.recipes.wei.wfl
+rsf.recipes.weximg.wfl" class="py-name" href="#" onclick="return doclink('link-18', 'wfl', 'link-10');">wfl</a></tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">wav</tt><tt class="py-op">,</tt><tt class="py-name">ccc</tt><tt class="py-op">,</tt><tt class="py-name">den</tt><tt class="py-op">,</tt><tt class="py-name">sou</tt><tt class="py-op">,</tt><tt class="py-name">rec</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-string">         ewefd2d</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-string">         verb=y free=y snap=%(snap)s jsnap=%(jsnap)d nb=%(nb)d</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string">         ccc=${SOURCES[1]}</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string">         den=${SOURCES[2]}</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-string">         sou=${SOURCES[3]}</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-string">         rec=${SOURCES[4]}</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-string">         wfl=${TARGETS[1]}</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-string">         %(fdcustom)s</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-string">         '''</tt> <tt class="py-op">%</tt> <tt id="link-19" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-19', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="test"></a><div id="test-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="test-toggle" onclick="return toggle('test');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.recipes.rules-module.html#test">test</a><tt class="py-op">(</tt><tt class="py-param">vp</tt><tt class="py-op">,</tt><tt class="py-param">vs</tt><tt class="py-op">,</tt><tt class="py-param">ro</tt><tt class="py-op">,</tt><tt class="py-param">epsilon</tt><tt class="py-op">,</tt><tt class="py-param">delta</tt><tt class="py-op">,</tt><tt class="py-param">ss</tt><tt class="py-op">,</tt><tt class="py-param">rr</tt><tt class="py-op">,</tt><tt class="py-param">par</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="test-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="test-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt class="py-comment"># ------------------------------------------------------------</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-comment"># source/receiver coordinates</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt id="link-20" class="py-name" targets="Function rsf.cluster.Plot()=rsf.cluster-module.html#Plot,Function rsf.proj.Plot()=rsf.proj-module.html#Plot,Method rsf.proj.Project.Plot()=rsf.proj.Project-class.html#Plot"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-20', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">rr</tt><tt class="py-op">,</tt><tt class="py-string">'window n1=2 | dd type=complex | window j2=10 | '</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">         <tt class="py-op">+</tt> <tt id="link-21" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-21', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Function rsf.recipes.fdmod.cgraph()=rsf.recipes.fdmod-module.html#cgraph,Function rsf.recipes.fdmodds.cgraph()=rsf.recipes.fdmodds-module.html#cgraph,Function rsf.recipes.rwedemo.cgraph()=rsf.recipes.rwedemo-module.html#cgraph,Function rsf.recipes.rwezo.cgraph()=rsf.recipes.rwezo-module.html#cgraph"><a title="rsf.recipes.fdmod.cgraph
+rsf.recipes.fdmodds.cgraph
+rsf.recipes.rwedemo.cgraph
+rsf.recipes.rwezo.cgraph" class="py-name" href="#" onclick="return doclink('link-22', 'cgraph', 'link-22');">cgraph</a></tt><tt class="py-op">(</tt><tt class="py-string">'wantscalebar=y symbol=o plotcol=1'</tt><tt class="py-op">,</tt><tt id="link-23" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-23', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt id="link-24" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-24', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-string">'window n1=2 | dd type=complex | window | '</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">         <tt class="py-op">+</tt> <tt id="link-25" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-25', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="rsf.recipes.fdmod.cgraph
+rsf.recipes.fdmodds.cgraph
+rsf.recipes.rwedemo.cgraph
+rsf.recipes.rwezo.cgraph" class="py-name" href="#" onclick="return doclink('link-26', 'cgraph', 'link-22');">cgraph</a></tt><tt class="py-op">(</tt><tt class="py-string">'wantscalebar=y symbol=x plotcol=2'</tt><tt class="py-op">,</tt><tt id="link-27" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-27', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-comment"># ------------------------------------------------------------</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-comment"># acoustic source</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt id="link-28" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-28', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Function rsf.recipes.awe.wavelet()=rsf.recipes.awe-module.html#wavelet,Function rsf.recipes.fdmod.wavelet()=rsf.recipes.fdmod-module.html#wavelet,Function rsf.recipes.fdmodds.wavelet()=rsf.recipes.fdmodds-module.html#wavelet,Module rsf.recipes.wavelet=rsf.recipes.wavelet-module.html"><a title="rsf.recipes.awe.wavelet
+rsf.recipes.fdmod.wavelet
+rsf.recipes.fdmodds.wavelet
+rsf.recipes.wavelet" class="py-name" href="#" onclick="return doclink('link-29', 'wavelet', 'link-29');">wavelet</a></tt><tt class="py-op">(</tt><tt class="py-string">'wava0'</tt><tt class="py-op">,</tt><tt id="link-30" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-30', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'frq'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-31" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-31', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt id="link-32" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-32', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt>  <tt class="py-string">'wava'</tt><tt class="py-op">,</tt><tt class="py-string">'wava0'</tt><tt class="py-op">,</tt><tt class="py-string">'transp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt id="link-33" class="py-name" targets="Function rsf.cluster.Result()=rsf.cluster-module.html#Result,Method rsf.proj.Project.Result()=rsf.proj.Project-class.html#Result,Function rsf.proj.Result()=rsf.proj-module.html#Result"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-33', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'wava'</tt><tt class="py-op">,</tt><tt class="py-string">'transp | window n1=500 |'</tt> <tt class="py-op">+</tt> <tt id="link-34" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-34', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Function rsf.recipes.fdmod.waveplot()=rsf.recipes.fdmod-module.html#waveplot,Function rsf.recipes.fdmodds.waveplot()=rsf.recipes.fdmodds-module.html#waveplot,Function rsf.recipes.wplot.waveplot()=rsf.recipes.wplot-module.html#waveplot"><a title="rsf.recipes.fdmod.waveplot
+rsf.recipes.fdmodds.waveplot
+rsf.recipes.wplot.waveplot" class="py-name" href="#" onclick="return doclink('link-35', 'waveplot', 'link-35');">waveplot</a></tt><tt class="py-op">(</tt><tt class="py-string">'title="Acoustic source"'</tt><tt class="py-op">,</tt><tt id="link-36" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-36', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">     </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-comment"># ------------------------------------------------------------</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-comment"># elastic source</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt id="link-37" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-37', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="rsf.recipes.awe.wavelet
+rsf.recipes.fdmod.wavelet
+rsf.recipes.fdmodds.wavelet
+rsf.recipes.wavelet" class="py-name" href="#" onclick="return doclink('link-38', 'wavelet', 'link-29');">wavelet</a></tt><tt class="py-op">(</tt><tt class="py-string">'hor0'</tt><tt class="py-op">,</tt><tt id="link-39" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-39', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'frq'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-40" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-40', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt id="link-41" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-41', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="rsf.recipes.awe.wavelet
+rsf.recipes.fdmod.wavelet
+rsf.recipes.fdmodds.wavelet
+rsf.recipes.wavelet" class="py-name" href="#" onclick="return doclink('link-42', 'wavelet', 'link-29');">wavelet</a></tt><tt class="py-op">(</tt><tt class="py-string">'ver0'</tt><tt class="py-op">,</tt><tt id="link-43" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-43', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'frq'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-44" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-44', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt id="link-45" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-45', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'hor'</tt><tt class="py-op">,</tt><tt class="py-string">'hor0'</tt><tt class="py-op">,</tt><tt class="py-string">'math output=input*%(hscale)g'</tt> <tt class="py-op">%</tt> <tt id="link-46" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-46', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt id="link-47" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-47', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'ver'</tt><tt class="py-op">,</tt><tt class="py-string">'ver0'</tt><tt class="py-op">,</tt><tt class="py-string">'math output=input*%(vscale)g'</tt> <tt class="py-op">%</tt> <tt id="link-48" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-48', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt id="link-49" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-49', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'wave0'</tt><tt class="py-op">,</tt><tt class="py-string">'ver hor'</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=2 space=n ${SOURCES[1:2]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt id="link-50" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-50', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'wave'</tt><tt class="py-op">,</tt><tt class="py-string">'wave0'</tt><tt class="py-op">,</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-string">         transp plane=12 |</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-string">         transp plane=23 |</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-string">         transp plane=12</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-string">         '''</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">     </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt id="link-51" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-51', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-string">'ver'</tt><tt class="py-op">,</tt><tt class="py-string">'wave'</tt><tt class="py-op">,</tt><tt class="py-string">'window n2=1 f2=0 | window n1=500 |'</tt> <tt class="py-op">+</tt> <tt id="link-52" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-52', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="rsf.recipes.fdmod.waveplot
+rsf.recipes.fdmodds.waveplot
+rsf.recipes.wplot.waveplot" class="py-name" href="#" onclick="return doclink('link-53', 'waveplot', 'link-35');">waveplot</a></tt><tt class="py-op">(</tt><tt class="py-string">'title="Elastic vertical source"'</tt><tt class="py-op">,</tt><tt id="link-54" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-54', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt id="link-55" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-55', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-string">'hor'</tt><tt class="py-op">,</tt><tt class="py-string">'wave'</tt><tt class="py-op">,</tt><tt class="py-string">'window n2=1 f2=1 | window n1=500 |'</tt> <tt class="py-op">+</tt> <tt id="link-56" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-56', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="rsf.recipes.fdmod.waveplot
+rsf.recipes.fdmodds.waveplot
+rsf.recipes.wplot.waveplot" class="py-name" href="#" onclick="return doclink('link-57', 'waveplot', 'link-35');">waveplot</a></tt><tt class="py-op">(</tt><tt class="py-string">'title="Elastic horizontal source"'</tt><tt class="py-op">,</tt><tt id="link-58" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-58', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt id="link-59" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-59', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'wave'</tt><tt class="py-op">,</tt><tt class="py-string">'hor ver'</tt><tt class="py-op">,</tt><tt class="py-string">'Movie'</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-comment"># ------------------------------------------------------------</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt id="link-60" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-60', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">vp</tt><tt class="py-op">,</tt>     <tt id="link-61" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-61', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Function rsf.recipes.fdmod.cgrey()=rsf.recipes.fdmod-module.html#cgrey,Function rsf.recipes.fdmodds.cgrey()=rsf.recipes.fdmodds-module.html#cgrey,Function rsf.recipes.rwedemo.cgrey()=rsf.recipes.rwedemo-module.html#cgrey,Function rsf.recipes.rwezo.cgrey()=rsf.recipes.rwezo-module.html#cgrey"><a title="rsf.recipes.fdmod.cgrey
+rsf.recipes.fdmodds.cgrey
+rsf.recipes.rwedemo.cgrey
+rsf.recipes.rwezo.cgrey" class="py-name" href="#" onclick="return doclink('link-62', 'cgrey', 'link-62');">cgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'wantscalebar=y allpos=y bias=1.0    pclip=100'</tt><tt class="py-op">,</tt><tt id="link-63" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-63', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt id="link-64" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-64', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">vs</tt><tt class="py-op">,</tt>     <tt id="link-65" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-65', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="rsf.recipes.fdmod.cgrey
+rsf.recipes.fdmodds.cgrey
+rsf.recipes.rwedemo.cgrey
+rsf.recipes.rwezo.cgrey" class="py-name" href="#" onclick="return doclink('link-66', 'cgrey', 'link-62');">cgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'wantscalebar=y allpos=y bias=1.0    pclip=100'</tt><tt class="py-op">,</tt><tt id="link-67" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-67', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt id="link-68" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-68', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">ro</tt><tt class="py-op">,</tt>     <tt id="link-69" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-69', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="rsf.recipes.fdmod.cgrey
+rsf.recipes.fdmodds.cgrey
+rsf.recipes.rwedemo.cgrey
+rsf.recipes.rwezo.cgrey" class="py-name" href="#" onclick="return doclink('link-70', 'cgrey', 'link-62');">cgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'wantscalebar=y allpos=y bias=100000 pclip=100'</tt><tt class="py-op">,</tt><tt id="link-71" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-71', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt id="link-72" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-72', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">epsilon</tt><tt class="py-op">,</tt><tt id="link-73" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-73', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="rsf.recipes.fdmod.cgrey
+rsf.recipes.fdmodds.cgrey
+rsf.recipes.rwedemo.cgrey
+rsf.recipes.rwezo.cgrey" class="py-name" href="#" onclick="return doclink('link-74', 'cgrey', 'link-62');">cgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'wantscalebar=y allpos=y             pclip=100'</tt><tt class="py-op">,</tt><tt id="link-75" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-75', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt id="link-76" class="py-name"><a title="rsf.cluster.Plot
+rsf.proj.Plot
+rsf.proj.Project.Plot" class="py-name" href="#" onclick="return doclink('link-76', 'Plot', 'link-20');">Plot</a></tt><tt class="py-op">(</tt><tt class="py-name">delta</tt><tt class="py-op">,</tt>  <tt id="link-77" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-77', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="rsf.recipes.fdmod.cgrey
+rsf.recipes.fdmodds.cgrey
+rsf.recipes.rwedemo.cgrey
+rsf.recipes.rwezo.cgrey" class="py-name" href="#" onclick="return doclink('link-78', 'cgrey', 'link-62');">cgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'wantscalebar=y allpos=y             pclip=100'</tt><tt class="py-op">,</tt><tt id="link-79" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-79', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt id="link-80" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-80', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">vp</tt><tt class="py-op">,</tt>     <tt class="py-op">[</tt><tt class="py-name">vp</tt><tt class="py-op">,</tt>     <tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-name">rr</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'Overlay'</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt id="link-81" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-81', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">vs</tt><tt class="py-op">,</tt>     <tt class="py-op">[</tt><tt class="py-name">vs</tt><tt class="py-op">,</tt>     <tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-name">rr</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'Overlay'</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt id="link-82" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-82', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">ro</tt><tt class="py-op">,</tt>     <tt class="py-op">[</tt><tt class="py-name">ro</tt><tt class="py-op">,</tt>     <tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-name">rr</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'Overlay'</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt id="link-83" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-83', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">epsilon</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">epsilon</tt><tt class="py-op">,</tt><tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-name">rr</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'Overlay'</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt id="link-84" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-84', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-name">delta</tt><tt class="py-op">,</tt>  <tt class="py-op">[</tt><tt class="py-name">delta</tt><tt class="py-op">,</tt>  <tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-name">rr</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'Overlay'</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt id="link-85" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-85', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt class="py-name">anisotropic</tt><tt class="py-op">(</tt><tt class="py-string">'cc'</tt><tt class="py-op">,</tt><tt class="py-string">'vp'</tt><tt class="py-op">,</tt><tt class="py-string">'vs'</tt><tt class="py-op">,</tt><tt class="py-string">'ro'</tt><tt class="py-op">,</tt><tt class="py-string">'epsilon'</tt><tt class="py-op">,</tt><tt class="py-string">'delta'</tt><tt class="py-op">,</tt><tt id="link-86" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-86', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-comment"># ------------------------------------------------------------</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-comment"># acoustic modeling</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt id="link-87" class="py-name" targets="Function rsf.recipes.rules.amodel()=rsf.recipes.rules-module.html#amodel"><a title="rsf.recipes.rules.amodel" class="py-name" href="#" onclick="return doclink('link-87', 'amodel', 'link-87');">amodel</a></tt><tt class="py-op">(</tt><tt class="py-string">'da'</tt><tt class="py-op">,</tt><tt class="py-string">'wa'</tt><tt class="py-op">,</tt><tt class="py-string">'wava'</tt><tt class="py-op">,</tt><tt class="py-name">vp</tt><tt class="py-op">,</tt><tt class="py-name">ro</tt><tt class="py-op">,</tt><tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-name">rr</tt><tt class="py-op">,</tt><tt class="py-string">''</tt><tt class="py-op">,</tt><tt id="link-88" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-88', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">     </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt id="link-89" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-89', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'waw'</tt><tt class="py-op">,</tt><tt class="py-string">'wa'</tt><tt class="py-op">,</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">         <tt class="py-string">'''</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-string">         window min1=%g max1=%g min2=%g max2=%g |</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-string">         scale axis=123</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-string">         '''</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-90" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-90', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'zmin'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-91" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-91', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'zmax'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-92" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-92', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'xmin'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-93" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-93', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'xmax'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">     </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">    <tt id="link-94" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-94', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'wa'</tt><tt class="py-op">,</tt>          <tt id="link-95" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-95', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-96" class="py-name" targets="Function rsf.recipes.fdmod.wgrey()=rsf.recipes.fdmod-module.html#wgrey,Function rsf.recipes.fdmodds.wgrey()=rsf.recipes.fdmodds-module.html#wgrey"><a title="rsf.recipes.fdmod.wgrey
+rsf.recipes.fdmodds.wgrey" class="py-name" href="#" onclick="return doclink('link-96', 'wgrey', 'link-96');">wgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'pclip=99 title="Acoustic wavefield"'</tt><tt class="py-op">,</tt><tt id="link-97" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-97', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">    <tt id="link-98" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-98', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'da'</tt><tt class="py-op">,</tt><tt class="py-string">'transp | window f1=%(kt)d | put o1=%(ot)g | pad end1=%(kt)d |'</tt> <tt class="py-op">%</tt> <tt id="link-99" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-99', 'par', 'link-3');">par</a></tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">           <tt class="py-op">+</tt> <tt id="link-100" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-100', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-101" class="py-name" targets="Function rsf.recipes.fdmod.dgrey()=rsf.recipes.fdmod-module.html#dgrey,Function rsf.recipes.fdmodds.dgrey()=rsf.recipes.fdmodds-module.html#dgrey,Function rsf.recipes.rwezo.dgrey()=rsf.recipes.rwezo-module.html#dgrey"><a title="rsf.recipes.fdmod.dgrey
+rsf.recipes.fdmodds.dgrey
+rsf.recipes.rwezo.dgrey" class="py-name" href="#" onclick="return doclink('link-101', 'dgrey', 'link-101');">dgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'pclip=99 title="Acoustic data" grid=y'</tt><tt class="py-op">,</tt><tt id="link-102" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-102', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-comment"># elastic modeling</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt id="link-103" class="py-name" targets="Function rsf.recipes.rules.emodel()=rsf.recipes.rules-module.html#emodel"><a title="rsf.recipes.rules.emodel" class="py-name" href="#" onclick="return doclink('link-103', 'emodel', 'link-103');">emodel</a></tt><tt class="py-op">(</tt><tt class="py-string">'de'</tt><tt class="py-op">,</tt><tt class="py-string">'we'</tt><tt class="py-op">,</tt><tt class="py-string">'wave'</tt><tt class="py-op">,</tt><tt class="py-string">'cc'</tt><tt class="py-op">,</tt><tt class="py-name">ro</tt><tt class="py-op">,</tt><tt class="py-name">ss</tt><tt class="py-op">,</tt><tt class="py-name">rr</tt><tt class="py-op">,</tt><tt class="py-string">'ssou=%(ssou)s opot=n'</tt> <tt class="py-op">%</tt> <tt id="link-104" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-104', 'par', 'link-3');">par</a></tt><tt class="py-op">,</tt><tt id="link-105" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-105', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">     </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt id="link-106" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-106', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'we'</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'we'</tt><tt class="py-op">,</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">             <tt class="py-string">'''</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-string">             window n3=1 f3=%d |</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-string">             window min1=%g max1=%g min2=%g max2=%g |</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-string">             scale axis=123</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-string">             '''</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt id="link-107" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-107', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'zmin'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-108" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-108', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'zmax'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-109" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-109', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'xmin'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-110" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-110', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'xmax'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">         </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt id="link-111" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-111', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'we'</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">               <tt id="link-112" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-112', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-113" class="py-name"><a title="rsf.recipes.fdmod.wgrey
+rsf.recipes.fdmodds.wgrey" class="py-name" href="#" onclick="return doclink('link-113', 'wgrey', 'link-96');">wgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'title=u%s pclip=99'</tt> <tt class="py-op">%</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt id="link-114" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-114', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt id="link-115" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-115', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'de'</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'de'</tt><tt class="py-op">,</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">               <tt class="py-string">'''</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-string">               window n2=1 f2=%d |</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-string">               transp |</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-string">               window f1=%d | put o1=%g | pad end1=%d |</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-string">               '''</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt id="link-116" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-116', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'kt'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-117" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-117', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'ot'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-118" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-118', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'kt'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">               <tt class="py-op">+</tt> <tt id="link-119" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-119', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-120" class="py-name"><a title="rsf.recipes.fdmod.dgrey
+rsf.recipes.fdmodds.dgrey
+rsf.recipes.rwezo.dgrey" class="py-name" href="#" onclick="return doclink('link-120', 'dgrey', 'link-101');">dgrey</a></tt><tt class="py-op">(</tt><tt class="py-string">'title=u%s pclip=99 grid=y'</tt> <tt class="py-op">%</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt id="link-121" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-121', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">     </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">    <tt id="link-122" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-122', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt>  <tt class="py-string">'weall'</tt><tt class="py-op">,</tt><tt class="py-string">'we1 we2'</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=1 space=n ${SOURCES[1]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt id="link-123" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-123', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'weall'</tt><tt class="py-op">,</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">           <tt class="py-string">'''</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-string">           grey title="Elastic Wavefields" wantaxis=y screenratio=%f screenht=8</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-string">           gainpanel=a pclip=99</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-string">           grid1=y grid2=y g1num=0.25 g2num=0.25</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-string">           '''</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt id="link-124" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-124', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'ratio'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt id="link-125" class="py-name"><a title="rsf.cluster.Flow
+rsf.flow.Flow
+rsf.gui.Flow
+rsf.gui.Flow.Flow
+rsf.proj.Flow
+rsf.proj.Project.Flow" class="py-name" href="#" onclick="return doclink('link-125', 'Flow', 'link-9');">Flow</a></tt><tt class="py-op">(</tt><tt class="py-string">'wall'</tt><tt class="py-op">,</tt><tt class="py-string">'waw we1 we2'</tt><tt class="py-op">,</tt><tt class="py-string">'cat axis=1 space=n ${SOURCES[1:3]}'</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">    <tt id="link-126" class="py-name"><a title="rsf.cluster.Result
+rsf.proj.Project.Result
+rsf.proj.Result" class="py-name" href="#" onclick="return doclink('link-126', 'Result', 'link-33');">Result</a></tt><tt class="py-op">(</tt><tt class="py-string">'wall'</tt><tt class="py-op">,</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">           <tt class="py-string">'''</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-string">           grey title="" wantaxis=y screenratio=%f screenht=10</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-string">           gainpanel=a pclip=99</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-string">           grid1=y grid2=y g1num=0.1 g2num=0.1</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-string">           '''</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">*</tt><tt id="link-127" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-127', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'ratio'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt class="py-comment"># wavefield movie frames</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">j</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt id="link-128" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-128', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'nt'</tt><tt class="py-op">]</tt><tt class="py-op">/</tt><tt id="link-129" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-129', 'par', 'link-3');">par</a></tt><tt class="py-op">[</tt><tt class="py-string">'jsnap'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt id="link-130" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-130', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-131" class="py-name" targets="Function rsf.recipes.fdmod.wframe()=rsf.recipes.fdmod-module.html#wframe,Function rsf.recipes.fdmodds.wframe()=rsf.recipes.fdmodds-module.html#wframe"><a title="rsf.recipes.fdmod.wframe
+rsf.recipes.fdmodds.wframe" class="py-name" href="#" onclick="return doclink('link-131', 'wframe', 'link-131');">wframe</a></tt><tt class="py-op">(</tt><tt class="py-string">'wa-'</tt> <tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">j</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'wa'</tt><tt class="py-op">,</tt> <tt class="py-name">j</tt><tt class="py-op">,</tt><tt class="py-string">'pclip=99.9'</tt><tt class="py-op">,</tt><tt id="link-132" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-132', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt id="link-133" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-133', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-134" class="py-name"><a title="rsf.recipes.fdmod.wframe
+rsf.recipes.fdmodds.wframe" class="py-name" href="#" onclick="return doclink('link-134', 'wframe', 'link-131');">wframe</a></tt><tt class="py-op">(</tt><tt class="py-string">'we1-'</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">j</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'we1'</tt><tt class="py-op">,</tt><tt class="py-name">j</tt><tt class="py-op">,</tt><tt class="py-string">'pclip=99.9'</tt><tt class="py-op">,</tt><tt id="link-135" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-135', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt id="link-136" class="py-name"><a title="rsf.recipes.fdmod" class="py-name" href="#" onclick="return doclink('link-136', 'fdmod', 'link-2');">fdmod</a></tt><tt class="py-op">.</tt><tt id="link-137" class="py-name"><a title="rsf.recipes.fdmod.wframe
+rsf.recipes.fdmodds.wframe" class="py-name" href="#" onclick="return doclink('link-137', 'wframe', 'link-131');">wframe</a></tt><tt class="py-op">(</tt><tt class="py-string">'we2-'</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">j</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'we2'</tt><tt class="py-op">,</tt><tt class="py-name">j</tt><tt class="py-op">,</tt><tt class="py-string">'pclip=99.9'</tt><tt class="py-op">,</tt><tt id="link-138" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-138', 'par', 'link-3');">par</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Program sflpad2 | 2D pad and interleave traces.
+[SYNOPSIS]
+sflpad2 < in.rsf > out.rsf mask=mask.rsf jump=2
+[COMMENTS]
+
+Each initial trace is followed by "jump" zero traces.
+
+[PARAMETERS]
+int     | jump | =2 |   | 	aliasing 
+file    | mask | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/yliu

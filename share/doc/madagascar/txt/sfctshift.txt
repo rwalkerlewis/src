@@ -1,0 +1,9 @@
+Program sfctshift | Correct time-shift gathers 
+[SYNOPSIS]
+sfctshift < tgather.rsf > cgather.rsf velocity=vel.rsf dt=0.001 pad=30
+[PARAMETERS]
+float   | dt | =0.001 |   | 	
+int     | pad | =30 |   | 	
+file    | velocity | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/zhiguang

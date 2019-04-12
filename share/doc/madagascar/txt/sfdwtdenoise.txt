@@ -1,0 +1,8 @@
+Program sfdwtdenoise | 2D Digital Wavelet Transoform Denoising 
+[SYNOPSIS]
+sfdwtdenoise < in.rsf > out.rsf pclip=99. type=
+[PARAMETERS]
+float   | pclip | =99. |   | 	data clip percentile (default is 99)
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is linear  
+[DIRECTORY]
+user/chenyk

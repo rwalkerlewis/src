@@ -1,0 +1,25 @@
+Program sfmpifdlsrtm | 2-D prestack reverse time migration and its adjoint with MPI for full coverage
+[SYNOPSIS]
+sfmpifdlsrtm input=in.rsf velocity=vel.rsf wavelet=wavelet.rsf output=out.rsf snapshot=snapshot.rsf adj=y verb=n snap=n nr= dr= r0= ns= ds= s0= zr=0.0 zs=0.0 jt=100 padz=nz padx=nz
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	
+float   | dr | = |   | 	
+float   | ds | = |   | 	
+file    | input | = |   | 	auxiliary input file name
+int     | jt | =100 |   | 	
+int     | nr | = |   | 	
+int     | ns | = |   | 	
+file    | output | = |   | 	auxiliary output file name
+int     | padx | =nz |   | 	
+int     | padz | =nz |   | 	
+float   | r0 | = |   | 	
+float   | s0 | = |   | 	
+bool    | snap | =n |  [y/n] | 	
+file    | snapshot | = |   | 	auxiliary output file name
+file    | velocity | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	
+file    | wavelet | = |   | 	auxiliary input file name
+float   | zr | =0.0 |   | 	
+float   | zs | =0.0 |   | 	
+[DIRECTORY]
+user/zhiguang

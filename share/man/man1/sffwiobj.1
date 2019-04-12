@@ -1,0 +1,54 @@
+.TH sffwiobj 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sffwiobj \- Calculate the misfit fuction  in Full Waveform Inversion 
+.SH SYNOPSIS
+.B sffwiobj < in.rsf > out.rsf source=source.rsf receiver=receiver.rsf record=record.rsf npml=20 omega= order=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B npml
+.B =20
+.R  
+.TP
+.I float  
+.B omega
+.B =
+.R  
+.TP
+.I string 
+.B order
+.B =
+.R  	discretization scheme (default optimal 9-point)
+.TP
+.I file   
+.B receiver
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B record
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B source
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I tccs/fwiseislet/blend
+.TP
+.I tccs/fwiseislet/encoding-spar
+.TP
+.I tccs/fwiseislet/encoding
+.TP
+.I tccs/fwiseislet/noise-spar
+.TP
+.I tccs/fwiseislet/noise
+.TP
+.I tccs/fwiseislet/timedomain
+.SH SOURCE
+.I user/zhiguang/Mfwiobj.c
+.SH VERSION
+2.1-git

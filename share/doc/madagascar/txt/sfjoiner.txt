@@ -1,0 +1,8 @@
+Program sfjoiner | Join two selected points along the first dimension 
+[SYNOPSIS]
+sfjoiner < in.rsf index=index_FILE.rsf > out.rsf nw=
+[PARAMETERS]
+file    | index | = |   | 	auxiliary input file name
+int     | nw | = |   | 	length of joining window 
+[DIRECTORY]
+user/lcasasan

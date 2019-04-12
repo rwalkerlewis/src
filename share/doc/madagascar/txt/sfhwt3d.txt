@@ -1,0 +1,25 @@
+Program sfhwt3d | 
+[SYNOPSIS]
+sfhwt3d < Fv.rsf > Fw.rsf verb=n forceray=n scaleray=1. xsou=sf_o(ax) + sf_n(ax)*sf_d(ax)/2 ysou=sf_o(ay) + sf_n(ay)*sf_d(ay)/2 zsou=sf_o(az) + sf_n(az)*sf_d(az)/2 nt=100 ot=0 dt=0.001 ng=360 og=-180 dg=1 nh=360 oh=-180 dh=1
+[COMMENTS]
+* 3-D Huygens wavefront tracing traveltimes 
+* pcs 2005
+
+[PARAMETERS]
+float   | dg | =1 |   | 	
+float   | dh | =1 |   | 	
+float   | dt | =0.001 |   | 	
+bool    | forceray | =n |  [y/n] | 	
+int     | ng | =360 |   | 	
+int     | nh | =360 |   | 	
+int     | nt | =100 |   | 	
+float   | og | =-180 |   | 	
+float   | oh | =-180 |   | 	
+float   | ot | =0 |   | 	
+int     | scaleray | =1. |   | 	velocity file 
+bool    | verb | =n |  [y/n] | 	
+float   | xsou | =sf_o(ax) + sf_n(ax)*sf_d(ax)/2 |   | 	
+float   | ysou | =sf_o(ay) + sf_n(ay)*sf_d(ay)/2 |   | 	
+float   | zsou | =sf_o(az) + sf_n(az)*sf_d(az)/2 |   | 	
+[DIRECTORY]
+user/psava

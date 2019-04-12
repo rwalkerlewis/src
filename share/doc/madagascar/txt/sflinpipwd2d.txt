@@ -1,0 +1,31 @@
+Program sflinpipwd2d | pi operator building wrapping test function flat gaussian weighting smoothing after pi
+[SYNOPSIS]
+sflinpipwd2d < inp.rsf > out.rsf vel=vel.rsf dip=dip.rsf adj=n sm=y domod=y doomp=y dopi=y ps=y dd=y apt=nx angle=90.0 hd=y verb=y rho=1.-1./nt v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt order=1 nj1=1 antialias=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+float   | angle | =90.0 |   | 	angle aperture 
+string  | antialias | = |   | 	antialiasing type [triangle,flat,steep,none] 
+int     | apt | =nx |   | 	integral aperture 
+bool    | dd | =y |  [y/n] | 	differentiation in the data domain 
+file    | dip | = |   | 	auxiliary input file name
+bool    | domod | =y |  [y/n] | 	if perform modeling via Kirchhoff 
+bool    | doomp | =y |  [y/n] | 	OMP is forced currently 
+bool    | dopi | =y |  [y/n] | 	if do pi 
+float   | eps | =0.001 |   | 	damper for pi 
+float   | epst2 | =0.001 |   | 	damper for t2warp 
+bool    | hd | =y |  [y/n] | 	half differentiation 
+int     | nj1 | =1 |   | 	antialiasing 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+int     | pad | =nt |   | 	output time samples 
+float   | passthr | =0.001 |   | 	threshold for tail elimination 
+bool    | ps | =y |  [y/n] | 	spherical divergence 
+float   | rho | =1.-1./nt |   | 	Leaky integration constant 
+bool    | sm | =y |  [y/n] | 	if perform derivative filtering = PWD 
+float   | v_1 | = |   | 	
+float   | v_2 | = |   | 	
+float   | v_3 | = |   | 	
+float   | v_4 | = |   | 	
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/dmerzlikin

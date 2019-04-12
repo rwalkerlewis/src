@@ -1,0 +1,15 @@
+Program sfdimag | Diffraction imaging in the plane-wave domain. 
+[SYNOPSIS]
+sfdimag < cmp.rsf > scan.rsf semblance=n nb=2 v0= dv= nv= extend=4 mute=12 str=0. x0=
+[PARAMETERS]
+float   | dv | = |   | 	
+int     | extend | =4 |   | 	trace extension 
+int     | mute | =12 |   | 	mute zone 
+int     | nb | =2 |   | 	semblance averaging 
+int     | nv | = |   | 	
+bool    | semblance | =n |  [y/n] | 	if y, compute semblance; if n, stack 
+float   | str | =0. |   | 	maximum stretch allowed 
+float   | v0 | = |   | 	
+float   | x0 | = |   | 	
+[DIRECTORY]
+system/seismic

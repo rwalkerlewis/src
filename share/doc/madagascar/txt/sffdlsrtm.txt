@@ -1,0 +1,5 @@
+Program sffdlsrtm | Finite difference RTM as a linear operator
+[SYNOPSIS]
+sffdlsrtm
+[DIRECTORY]
+user/zhiguang

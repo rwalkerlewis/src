@@ -1,0 +1,10 @@
+Program sftristack2 | 2-D resampling with triangle weights. 
+[SYNOPSIS]
+sftristack2 < in.rsf > out.rsf adj=y rect1=1 rect2=1 gauss=n
+[PARAMETERS]
+bool    | adj | =y |  [y/n] | 	adjoint flag 
+bool    | gauss | =n |  [y/n] | 	use pseudo-gaussian 
+int     | rect1 | =1 |   | 	
+int     | rect2 | =1 |   | 	smoothing radius 
+[DIRECTORY]
+user/fomels

@@ -1,0 +1,12 @@
+Program sfextend1 | 
+[SYNOPSIS]
+sfextend1 < loga.rsf > log_eo.rsf num=
+[COMMENTS]
+Dataset padding - maintains dataset dims.
+
+Pads dataset by first and last nonzero sample. This helps reduce artifacts introduced by PP well log interpolation.
+
+[PARAMETERS]
+int     | num | = |   | 	Number of samples
+[DIRECTORY]
+user/sbader

@@ -1,0 +1,7 @@
+Program sftrapepass | Trapezoid bandpass filter in the frequency domain. 
+[SYNOPSIS]
+sftrapepass < in.rsf > out.rsf
+[COMMENTS]
+f1, f2, f3, f4 correspond to four key points of the trapezoid bandpass filter.
+[DIRECTORY]
+user/chenyk

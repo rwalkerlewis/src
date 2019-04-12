@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rsf.gui.Program</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rsf-module.html">Package&nbsp;rsf</a> ::
+        <a href="rsf.gui-module.html">Package&nbsp;gui</a> ::
+        Module&nbsp;Program
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rsf.gui.Program-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rsf.gui.Program-module.html">Module rsf.gui.Program</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable rsf.gui.Program.plotPrograms=rsf.gui.Program-module.html#plotPrograms"><a title="rsf.gui.Program.plotPrograms" class="py-name" href="#" onclick="return doclink('link-0', 'plotPrograms', 'link-0');">plotPrograms</a></tt> <tt class="py-op">=</tt> <tt class="py-docstring">'''box contour contour3 dots graph graph3 grey grey3 plas pldb plotrays thplot vplotdiff wiggle'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable rsf.gui.Program.plotCommands=rsf.gui.Program-module.html#plotCommands"><a title="rsf.gui.Program.plotCommands" class="py-name" href="#" onclick="return doclink('link-1', 'plotCommands', 'link-1');">plotCommands</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'Overlay SideBySideIso SideBySideAniso OverUnderAniso OverUnderIso TwoRows TwoColumns Movie'</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="Program"></a><div id="Program-def"><a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="Program-toggle" onclick="return toggle('Program');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="rsf.gui.Program.Program-class.html">Program</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Program-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Program-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    A Program is just a wrapper for an RSF Program, that contains</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    all of the information from the RSF self-documentation construct.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    Ideally, this would be replaced with the rsfprog class from rsf.doc</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">    but that class is not designed to be used with this, and has a lot</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">    of extra methods that are not necessary.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">     </tt>
+<a name="Program.__init__"></a><div id="Program.__init__-def"><a name="L15"></a><tt class="py-lineno">15</tt> <a class="py-toggle" href="#" id="Program.__init__-toggle" onclick="return toggle('Program.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.gui.Program.Program-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">name</tt><tt class="py-op">,</tt><tt class="py-param">synopsis</tt><tt class="py-op">,</tt><tt class="py-param">comments</tt><tt class="py-op">,</tt><tt class="py-param">desc</tt><tt class="py-op">,</tt><tt class="py-param">uses</tt><tt class="py-op">,</tt><tt class="py-param">also</tt><tt class="py-op">,</tt><tt class="py-param">wiki</tt><tt class="py-op">,</tt><tt class="py-param">file</tt><tt class="py-op">,</tt><tt class="py-param">vers</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Program.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Program.__init__-expanded"><a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">name</tt> <tt class="py-op">=</tt> <tt class="py-name">name</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method rsf.doc.rsfprog.synopsis()=rsf.doc.rsfprog-class.html#synopsis,Variable rsf.doc.synopsis=rsf.doc-module.html#synopsis"><a title="rsf.doc.rsfprog.synopsis
+rsf.doc.synopsis" class="py-name" href="#" onclick="return doclink('link-2', 'synopsis', 'link-2');">synopsis</a></tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="rsf.doc.rsfprog.synopsis
+rsf.doc.synopsis" class="py-name" href="#" onclick="return doclink('link-3', 'synopsis', 'link-2');">synopsis</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">comments</tt> <tt class="py-op">=</tt> <tt class="py-name">comments</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">desc</tt>     <tt class="py-op">=</tt> <tt class="py-name">desc</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Variable rsf.gallery.bptti.pars=rsf.gallery.bptti-module.html#pars,Variable rsf.recipes.bptti2007.pars=rsf.recipes.bptti2007-module.html#pars"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-4', 'pars', 'link-4');">pars</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">also</tt> <tt class="py-op">=</tt> <tt class="py-name">also</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">wiki</tt> <tt class="py-op">=</tt> <tt class="py-name">wiki</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">uses</tt> <tt class="py-op">=</tt> <tt class="py-name">uses</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">file</tt> <tt class="py-op">=</tt> <tt class="py-name">file</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">vers</tt> <tt class="py-op">=</tt> <tt class="py-name">vers</tt> </tt>
+</div><a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">           </tt>
+<a name="Program.add"></a><div id="Program.add-def"><a name="L27"></a><tt class="py-lineno">27</tt> <a class="py-toggle" href="#" id="Program.add-toggle" onclick="return toggle('Program.add');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.gui.Program.Program-class.html#add">add</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">par</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Program.add-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Program.add-expanded"><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">        Add a Parameter instance to this program.</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-5', 'pars', 'link-4');">pars</a></tt><tt class="py-op">[</tt><tt id="link-6" class="py-name" targets="Method rsf.doc.rsfprog.par()=rsf.doc.rsfprog-class.html#par,Variable rsf.gallery.gradient.par=rsf.gallery.gradient-module.html#par,Variable rsf.gallery.vofz.par=rsf.gallery.vofz-module.html#par,Variable rsf.recipes.bptti2007.par=rsf.recipes.bptti2007-module.html#par"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-6', 'par', 'link-6');">par</a></tt><tt class="py-op">.</tt><tt class="py-name">name</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-7" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-7', 'par', 'link-6');">par</a></tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">     </tt>
+<a name="Program.selfdoc"></a><div id="Program.selfdoc-def"><a name="L33"></a><tt class="py-lineno">33</tt> <a class="py-toggle" href="#" id="Program.selfdoc-toggle" onclick="return toggle('Program.selfdoc');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.gui.Program.Program-class.html#selfdoc">selfdoc</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Program.selfdoc-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Program.selfdoc-expanded"><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">        Convert this Program to a self-documentation string.</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-name">desc</tt> <tt class="py-op">=</tt> <tt class="py-string">'\n[NAME]:\n\t%s - %s \n\n'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">name</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">desc</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-name">snps</tt> <tt class="py-op">=</tt> <tt class="py-string">'[SYNOPSIS]:\n\t%s \n\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="rsf.doc.rsfprog.synopsis
+rsf.doc.synopsis" class="py-name" href="#" onclick="return doclink('link-8', 'synopsis', 'link-2');">synopsis</a></tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-name">cmts</tt> <tt class="py-op">=</tt> <tt class="py-string">'[COMMENTS]:\n\t%s\n\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">comments</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt id="link-9" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-9', 'pars', 'link-4');">pars</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'[PARAMETERS]:\n\n'</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-name">names</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-10', 'pars', 'link-4');">pars</a></tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-name">names</tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">name</tt> <tt class="py-keyword">in</tt> <tt class="py-name">names</tt><tt class="py-op">:</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">            <tt id="link-11" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-11', 'par', 'link-6');">par</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-12', 'pars', 'link-4');">pars</a></tt><tt class="py-op">[</tt><tt class="py-name">name</tt><tt class="py-op">]</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt id="link-13" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-13', 'pars', 'link-4');">pars</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">'\t'</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="rsf.doc.rsfprog.par
+rsf.gallery.gradient.par
+rsf.gallery.vofz.par
+rsf.recipes.bptti2007.par" class="py-name" href="#" onclick="return doclink('link-14', 'par', 'link-6');">par</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">'\n'</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-name">uses</tt> <tt class="py-op">=</tt> <tt class="py-string">'\n[USED IN]:\n'</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-name">books</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">uses</tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-name">books</tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-15" class="py-name" targets="Module rsf.book=rsf.book-module.html,Variable rsf.book.book=rsf.book-module.html#book"><a title="rsf.book
+rsf.book.book" class="py-name" href="#" onclick="return doclink('link-15', 'book', 'link-15');">book</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">uses</tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">            <tt class="py-name">chapters</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">uses</tt><tt class="py-op">[</tt><tt id="link-16" class="py-name"><a title="rsf.book
+rsf.book.book" class="py-name" href="#" onclick="return doclink('link-16', 'book', 'link-15');">book</a></tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">            <tt class="py-name">chapters</tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">chapter</tt> <tt class="py-keyword">in</tt> <tt class="py-name">chapters</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt id="link-17" class="py-name" targets="Variable rsf.cluster.project=rsf.cluster-module.html#project,Variable rsf.proj.project=rsf.proj-module.html#project"><a title="rsf.cluster.project
+rsf.proj.project" class="py-name" href="#" onclick="return doclink('link-17', 'project', 'link-17');">project</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">uses</tt><tt class="py-op">[</tt><tt id="link-18" class="py-name"><a title="rsf.book
+rsf.book.book" class="py-name" href="#" onclick="return doclink('link-18', 'book', 'link-15');">book</a></tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-name">chapter</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">                    <tt class="py-name">uses</tt> <tt class="py-op">+=</tt> <tt class="py-string">'\t%s/%s/%s\n'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="rsf.book
+rsf.book.book" class="py-name" href="#" onclick="return doclink('link-19', 'book', 'link-15');">book</a></tt><tt class="py-op">,</tt><tt class="py-name">chapter</tt><tt class="py-op">,</tt><tt id="link-20" class="py-name"><a title="rsf.cluster.project
+rsf.proj.project" class="py-name" href="#" onclick="return doclink('link-20', 'project', 'link-17');">project</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-name">source</tt> <tt class="py-op">=</tt> <tt class="py-string">'\n[SOURCE]:\n\t%s\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">file</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">        <tt class="py-name">wiki</tt>   <tt class="py-op">=</tt> <tt class="py-string">'\n[WIKI]:\n\t%s\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">wiki</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">wiki</tt> <tt class="py-keyword">or</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">wiki</tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> <tt class="py-name">wiki</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-name">vers</tt>   <tt class="py-op">=</tt> <tt class="py-string">'\n[VERSION]:\n\t%s\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">vers</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">vers</tt> <tt class="py-keyword">or</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">vers</tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> <tt class="py-name">vers</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-name">also</tt>   <tt class="py-op">=</tt> <tt class="py-string">'\n[SEE ALSO]:\n\t%s\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">also</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">also</tt> <tt class="py-keyword">or</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">also</tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> <tt class="py-name">also</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">desc</tt><tt class="py-op">+</tt><tt class="py-name">snps</tt><tt class="py-op">+</tt><tt class="py-name">cmts</tt><tt class="py-op">+</tt><tt id="link-21" class="py-name"><a title="rsf.gallery.bptti.pars
+rsf.recipes.bptti2007.pars" class="py-name" href="#" onclick="return doclink('link-21', 'pars', 'link-4');">pars</a></tt><tt class="py-op">+</tt><tt class="py-name">uses</tt><tt class="py-op">+</tt><tt class="py-name">source</tt><tt class="py-op">+</tt><tt class="py-name">wiki</tt><tt class="py-op">+</tt><tt class="py-name">vers</tt><tt class="py-op">+</tt><tt class="py-name">also</tt> </tt>
+</div><a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">         </tt>
+<a name="Program.__str__"></a><div id="Program.__str__-def"><a name="L64"></a><tt class="py-lineno">64</tt> <a class="py-toggle" href="#" id="Program.__str__-toggle" onclick="return toggle('Program.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rsf.gui.Program.Program-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Program.__str__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Program.__str__-expanded"><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method rsf.gui.Program.Program.selfdoc()=rsf.gui.Program.Program-class.html#selfdoc"><a title="rsf.gui.Program.Program.selfdoc" class="py-name" href="#" onclick="return doclink('link-22', 'selfdoc', 'link-22');">selfdoc</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rsf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Apr  5 21:51:55 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

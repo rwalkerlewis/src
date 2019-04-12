@@ -1,0 +1,16 @@
+Program sfnmodips | Slopes for constant-velocity normal moveout. 
+[SYNOPSIS]
+sfnmodips < cmp.rsf > dip.rsf offset=offset.rsf half=y nv= v0= dv= CDPtype= slowness=n squared=n h0=0. extend=4
+[PARAMETERS]
+int     | CDPtype | = |   | 	
+float   | dv | = |   | 	step in velocity 
+int     | extend | =4 |   | 	trace extension 
+float   | h0 | =0. |   | 	reference offset 
+bool    | half | =y |  [y/n] | 	if y, the second axis is half-offset instead of full offset 
+int     | nv | = |   | 	number of velocities 
+string  | offset | = |   | 	auxiliary input file name
+bool    | slowness | =n |  [y/n] | 	if y, use slowness instead of velocity 
+bool    | squared | =n |  [y/n] | 	if y, the slowness or velocity is squared 
+float   | v0 | = |   | 	first velocity 
+[DIRECTORY]
+system/seismic

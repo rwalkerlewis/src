@@ -1,0 +1,12 @@
+Program sfepot | compute quasi-static electric potential 
+[SYNOPSIS]
+sfepot < Feso.rsf > Fepo.rsf con=Fcon.rsf verb=n cbnd=y csrf=n meth=0 nit=100000
+[PARAMETERS]
+bool    | cbnd | =y |  [y/n] | 	conductive boundary 
+file    | con | = |   | 	auxiliary input file name
+bool    | csrf | =n |  [y/n] | 	conductive  surface 
+int     | meth | =0 |   | 	method flag 
+int     | nit | =100000 |   | 	Jacobi iterations 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

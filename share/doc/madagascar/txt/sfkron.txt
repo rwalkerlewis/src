@@ -1,0 +1,13 @@
+Program sfkron | Kroneker product with square matrices 
+[SYNOPSIS]
+sfkron < in.rsf > out.rsf mat1=mat1.rsf mat2=mat2.rsf adj=n inv=n niter=100 eps=0. nliter=1
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+float   | eps | =0. |   | 	regularization 
+bool    | inv | =n |  [y/n] | 	inversion flag 
+file    | mat1 | = |   | 	auxiliary input file name
+file    | mat2 | = |   | 	auxiliary input file name
+int     | niter | =100 |   | 	maximum number of iterations 
+int     | nliter | =1 |   | 	number of nonlinear iterations 
+[DIRECTORY]
+user/fomels

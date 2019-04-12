@@ -1,0 +1,20 @@
+Program sfsrbin3d | 4-D data binning from traces at irregular coordinates 
+[SYNOPSIS]
+sfsrbin3d < Ftrc.rsf > Fbin.rsf key=Fkey.rsf verb=n n1= o1= d1= n2= o2= d2= on1= oo1= od1= on2= oo2= od2=
+[PARAMETERS]
+float   | d1 | = |   | 	
+float   | d2 | = |   | 	
+file    | key | = |   | 	auxiliary input file name
+int     | n1 | = |   | 	
+int     | n2 | = |   | 	
+float   | o1 | = |   | 	
+float   | o2 | = |   | 	
+float   | od1 | = |   | 	
+float   | od2 | = |   | 	
+int     | on1 | = |   | 	
+int     | on2 | = |   | 	
+float   | oo1 | = |   | 	
+float   | oo2 | = |   | 	
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/psava

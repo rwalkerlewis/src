@@ -1,0 +1,8 @@
+Program sffindmin2 | Find minimum in 2-D 
+[SYNOPSIS]
+sffindmin2 < inp.rsf > out.rsf gate1=3 gate2=3
+[PARAMETERS]
+int     | gate1 | =3 |   | 	
+int     | gate2 | =3 |   | 	picking gate 
+[DIRECTORY]
+user/fomels

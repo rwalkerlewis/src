@@ -1,0 +1,18 @@
+Program sfiwioper | Image-domain waveform tomography (linear operator). 
+[SYNOPSIS]
+sfiwioper < in.rsf > out.rsf model=model.rsf us=us.rsf ur=ur.rsf weight=weight.rsf precon=precon.rsf adj=n nh=0 load=n uts=0 npml=10 mass=n order=
+[PARAMETERS]
+bool    | adj | =n |  [y/n] | 	adjoint flag 
+bool    | load | =n |  [y/n] | 	load LU 
+bool    | mass | =n |  [y/n] | 	if y, use discretization-based mass term 
+string  | model | = |   | 	auxiliary input file name
+int     | nh | =0 |   | 	horizontal space-lag 
+int     | npml | =10 |   | 	PML width 
+string  | order | = |   | 	discretization scheme (default optimal 9-point) 
+string  | precon | = |   | 	auxiliary input file name
+string  | ur | = |   | 	auxiliary input file name
+string  | us | = |   | 	auxiliary input file name
+int     | uts | =0 |   | 	number of OMP threads 
+string  | weight | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/sparse

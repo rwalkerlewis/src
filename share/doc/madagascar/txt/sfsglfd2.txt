@@ -1,0 +1,17 @@
+Program sfsglfd2 | 2-D Low Rank Finite-difference wave extrapolation 
+[SYNOPSIS]
+sfsglfd2 < fsource.rsf vel=fvel.rsf den=fden.rsf > fwf.rsf Gx=fGx.rsf Gz=fGz.rsf sxx=fsxx.rsf sxz=fsxz.rsf szx=fszx.rsf szz=fszz.rsf verb=n spx= spz=
+[PARAMETERS]
+file    | Gx | = |   | 	auxiliary input file name
+file    | Gz | = |   | 	auxiliary input file name
+file    | den | = |   | 	auxiliary input file name
+int     | spx | = |   | 	source point in x 
+int     | spz | = |   | 	source point in z 
+file    | sxx | = |   | 	auxiliary input file name
+file    | sxz | = |   | 	auxiliary input file name
+file    | szx | = |   | 	auxiliary input file name
+file    | szz | = |   | 	auxiliary input file name
+file    | vel | = |   | 	auxiliary input file name
+bool    | verb | =n |  [y/n] | 	verbosity
+[DIRECTORY]
+user/fangg

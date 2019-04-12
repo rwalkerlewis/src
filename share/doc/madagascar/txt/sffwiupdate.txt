@@ -1,0 +1,10 @@
+Program sffwiupdate | Update model with search direction and step length in FWI
+[SYNOPSIS]
+sffwiupdate < in.rsf > out.rsf direction=dir.rsf alpha=alpha.rsf alpha0= max=0.
+[PARAMETERS]
+string  | alpha | = |   | 	auxiliary input file name
+float   | alpha0 | = |   | 	
+file    | direction | = |   | 	auxiliary input file name
+float   | max | =0. |   | 	if max=0, no normalization; if max!=0, normalization by alpha*max/dmax 
+[DIRECTORY]
+user/zhiguang

@@ -1,0 +1,16 @@
+Program sftelemig2d | None
+[SYNOPSIS]
+sftelemig2d < infile.rsf Svel=Svelfile.rsf rwf=rwffile.rsf swf=swffile.rsf > outfile.rsf cig=cigfile.rsf nh=0 source_norm=n verbose=n forward=n ntaper=40 eps=0.01
+[PARAMETERS]
+file    | Svel | = |   | 	auxiliary input file name
+file    | cig | = |   | 	auxiliary output file name
+        | eps | =0.01 |   | 	Taper on the side boundaries (npts)
+        | forward | =n |   | 	Forward scattering (T/F)
+        | nh | =0 |   | 	Number of subsurface offsets (between 1 and 128)
+        | ntaper | =40 |   | 	Taper on the side boundaries (npts)
+file    | rwf | = |   | 	auxiliary input file name
+        | source_norm | =n |   | 	Normalize the image by the power of the SWF (T/F)
+file    | swf | = |   | 	auxiliary input file name
+        | verbose | =n |   | 	Verbose (T/F)
+[DIRECTORY]
+user/jeff

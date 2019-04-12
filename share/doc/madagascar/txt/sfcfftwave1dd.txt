@@ -1,0 +1,12 @@
+Program sfcfftwave1dd | 1-D complex lowrank FFT wave extrapolation using complex to complex fft using initial condition
+[SYNOPSIS]
+sfcfftwave1dd < Fw.rsf > Fo.rsf left=left.rsf right=right.rsf prop=prop.rsf sub=n nt= dt=
+[PARAMETERS]
+float   | dt | = |   | 	
+file    | left | = |   | 	auxiliary input file name
+int     | nt | = |   | 	
+file    | prop | = |   | 	auxiliary input file name
+string  | right | = |   | 	auxiliary input file name
+bool    | sub | =n |  [y/n] | 	if -1 is included in the matrix 
+[DIRECTORY]
+user/jsun

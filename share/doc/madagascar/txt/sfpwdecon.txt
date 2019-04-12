@@ -1,0 +1,24 @@
+Program sfpwdecon | Deconvolution with known wavelelt using pwc to control sparsity. 
+[SYNOPSIS]
+sfpwdecon < in.rsf dips=dips.rsf wav=wav.rsf > out.rsf weight=weight.rsf sparse=y reg=0 cut_p=y order=1 niter=50 nliter=1 eps=0. verb=y
+[COMMENTS]
+
+
+[PARAMETERS]
+bool    | cut_p | =y |  [y/n] | 	cut off value of precondition 
+file    | dips | = |   | 	auxiliary input file name
+float   | eps | =0. |   | 	regularization parameter 
+int     | niter | =50 |   | 	maximum number of iterations 
+int     | nliter | =1 |   | 	number of reweighting iterations 
+int     | order | =1 |   | 	accuracy order 
+int     | reg | =0 |   | 	cut off value of precondition 
+bool    | sparse | =y |  [y/n] | 	if sparse = ture   sparse deconvolution cauchy-norm
+          if reg = 0: regularization A = |I|
+          if reg = 1:  regularization A = |PWD|
+       if sparse = false  2-norn deconvolution regularization A = ||I||
+    
+bool    | verb | =y |  [y/n] | 	verbosity flag 
+file    | wav | = |   | 	auxiliary input file name
+string  | weight | = |   | 	auxiliary output file name
+[DIRECTORY]
+user/gchliu

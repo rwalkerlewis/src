@@ -1,0 +1,13 @@
+Program sfmtres | Calculate apparent resistivity and phase of MT data. 
+[SYNOPSIS]
+sfmtres < in.rsf Ey=Ey.rsf Hx=Hx.rsf Hy=Hy.rsf > out.rsf opt=y comp=y verb=n phase=n
+[PARAMETERS]
+file    | Ey | = |   | 	auxiliary input file name
+file    | Hx | = |   | 	auxiliary input file name
+file    | Hy | = |   | 	auxiliary input file name
+bool    | comp | =y |  [y/n] | 	component selection 
+bool    | opt | =y |  [y/n] | 	if y, determine optimal size for efficiency 
+bool    | phase | =n |  [y/n] | 	if y, calculate apparent resistivity, otherwise calculate phase 
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

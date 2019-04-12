@@ -1,0 +1,5 @@
+Program sfgeopar | Generate geometry parameters for 2d/3d RTM
+[SYNOPSIS]
+sfgeopar > output.rsf
+[DIRECTORY]
+user/jsun

@@ -1,0 +1,19 @@
+Program sfdiradon34 | direct azimuthally anisotropic 3to4 full Radon transform (double integral, nearest point interpolation)
+[SYNOPSIS]
+sfdiradon34 < input.rsf > output.rsf fi= ntau= np= nq= ns= tau0= dtau= p0= dp= q0= dq= s0= ds=
+[PARAMETERS]
+        | dp | = |   | 	
+        | dq | = |   | 	
+        | ds | = |   | 	
+        | dtau | = |   | 	
+        | fi | = |   | 	
+        | np | = |   | 	
+        | nq | = |   | 	
+        | ns | = |   | 	
+        | ntau | = |   | 	
+        | p0 | = |   | 	
+        | q0 | = |   | 	
+        | s0 | = |   | 	
+        | tau0 | = |   | 	
+[DIRECTORY]
+user/jingwei

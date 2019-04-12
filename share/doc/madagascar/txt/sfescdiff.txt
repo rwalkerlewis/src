@@ -1,0 +1,10 @@
+Program sfescdiff | Compute distance and traveltime difference between two escape tables. 
+[SYNOPSIS]
+sfescdiff < esct0.rsf > out.rsf esct=esct1.rsf maxd=SF_HUGE maxt=SF_HUGE mask=SF_HUGE
+[PARAMETERS]
+string  | esct | = |   | 	Second set of escape tables (auxiliary input file name)
+float   | mask | =SF_HUGE |   | 	Mask for values above maxd= and maxt= thresholds 
+float   | maxd | =SF_HUGE |   | 	Maximum allowed distance 
+float   | maxt | =SF_HUGE |   | 	Maximum allowed time 
+[DIRECTORY]
+user/cram

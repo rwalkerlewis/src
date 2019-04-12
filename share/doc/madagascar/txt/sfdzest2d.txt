@@ -1,0 +1,16 @@
+Program sfdzest2d | Estimation of depth-delay of common-image gathers 
+[SYNOPSIS]
+sfdzest2d Fp=Fp.rsf < Fnp.rsf > Fs.rsf adj=n inv=n shape=n niter=100 eps1=0. rect1=3 rect2=3 seed=0 eps2=1e3
+[PARAMETERS]
+file    | Fp | = |   | 	auxiliary input file name
+bool    | adj | =n |  [y/n] | 	if adj=y, adjoint operator 
+float   | eps1 | =0. |   | 	shaping regularization parameter 
+float   | eps2 | =1e3 |   | 	regularization parameter in model constraint 
+bool    | inv | =n |  [y/n] | 	if inv=y, perform inversion 
+int     | niter | =100 |   | 	number of iterations 
+int     | rect1 | =3 |   | 	shaping smoothing parameter in 1st axis 
+int     | rect2 | =3 |   | 	shaping smoothing parameter in 2nd axis 
+int     | seed | =0 |   | 	index of reference trace 
+bool    | shape | =n |  [y/n] | 	if shape=y, use projection method 
+[DIRECTORY]
+user/zhiguang

@@ -1,0 +1,15 @@
+Program sfovc | Oriented velocity continuation. 
+[SYNOPSIS]
+sfovc < in.rsf > out.rsf eps=0.1 nv=1 lagrange=n v0=0. vmax=
+[COMMENTS]
+
+Axis order: t, p, x
+
+[PARAMETERS]
+float   | eps | =0.1 |   | 	stretch regularization 
+bool    | lagrange | =n |  [y/n] | 	Use Lagrangian method 
+int     | nv | =1 |   | 	number of velocity steps 
+float   | v0 | =0. |   | 	starting velocity 
+float   | vmax | = |   | 	end velocity 
+[DIRECTORY]
+system/seismic

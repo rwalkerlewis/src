@@ -1,0 +1,30 @@
+.TH sfriesz 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfriesz \- Compute 2-D Riesz transform. 
+.SH SYNOPSIS
+.B sfriesz < in.rsf > out.rsf order=10 ref=1.
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B order
+.B =10
+.R  	Hilbert transformer order
+.TP
+.I float  
+.B ref
+.B =1.
+.R  	Hilbert transformer reference (0.5 < ref <= 1)
+.SH USED IN
+.TP
+.I jlu/riesz/fieldata
+.TP
+.I jlu/riesz/sigmdenoi
+.TP
+.I jlu/riesz/sigmoid
+.TP
+.I jlu/vdseislet/nmo
+.SH SOURCE
+.I user/fomels/Mriesz.c
+.SH VERSION
+2.1-git

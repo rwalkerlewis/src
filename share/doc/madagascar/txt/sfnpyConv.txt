@@ -1,0 +1,19 @@
+Program sfnpyConv | 
+[SYNOPSIS]
+sfnpyConv < Fa.rsf flt=Fb.rsf > Fc.rsf norm=n mode=same
+[COMMENTS]
+Implements conv(a,b) along the fast axis 
+a [file] : is taken from stdin
+b [file] : is taken from  "flt"
+Requires both files to have the same sampling interval
+
+mode [string]:
+'full': returns an M+N-1 array, boundary effects are visible.
+'same': returns a max(M,N) array, boundary effects are visible.
+
+[PARAMETERS]
+file    | flt | = |   | 	auxiliary input file name
+string  | mode | =same |   | 	
+bool    | norm | =n |  [y/n] | 	normalize output
+[DIRECTORY]
+user/ediazp

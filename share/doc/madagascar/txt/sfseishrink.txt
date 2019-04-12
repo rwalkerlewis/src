@@ -1,0 +1,17 @@
+Program sfseishrink | 2-D Seislet shrinkage denoising. 
+[SYNOPSIS]
+sfseishrink < in.rsf > out.rsf dip=dip.rsf lcurve=lcurve.rsf hcurve=hcurve.rsf norm=norm.rsf order=1 verb=n dwt=n eps=0.01 perc=90. nperc=1 type=
+[PARAMETERS]
+file    | dip | = |   | 	auxiliary input file name
+bool    | dwt | =n |  [y/n] | 	if y, dwt in vertical axis 
+float   | eps | =0.01 |   | 	regularization parameter 
+string  | hcurve | = |   | 	auxiliary output file name
+string  | lcurve | = |   | 	auxiliary output file name
+string  | norm | = |   | 	auxiliary output file name
+int     | nperc | =1 |   | 	number of percentage dimension 
+int     | order | =1 |  [1,2,3] | 	accuracy order 
+float   | perc | =90. |   | 	percentage for shrinkage 
+string  | type | = |   | 	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal  
+bool    | verb | =n |  [y/n] | 	verbosity flag 
+[DIRECTORY]
+user/yliu

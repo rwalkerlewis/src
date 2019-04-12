@@ -1,0 +1,7 @@
+Program sfcomblist | Create masks to remove combinations of k elements out of n 
+[SYNOPSIS]
+sfcomblist < in.rsf > out.rsf k=
+[PARAMETERS]
+int     | k | = |   | 	combination of k elements 
+[DIRECTORY]
+user/browaeys

@@ -1,0 +1,21 @@
+.TH sfexpl1 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfexpl1 \- 1-D anisotropic diffusion by explicit cascade. 
+.SH SYNOPSIS
+.B sfexpl1 < in.rsf > out.rsf rect1= pclip=50.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B pclip
+.B =50.
+.R  	percentage clip for the gradient
+.TP
+.I int    
+.B rect1
+.B =
+.R  	smoothing radius
+.SH SOURCE
+.I system/generic/Mexpl1.c
+.SH VERSION
+2.1-git

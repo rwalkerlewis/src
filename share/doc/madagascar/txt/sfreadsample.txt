@@ -1,0 +1,10 @@
+Program sfreadsample | Oriented zero-offset migration. 
+[SYNOPSIS]
+sfreadsample > so1.rsf init=so2.rsf final=so3.rsf N= sample=
+[PARAMETERS]
+int     | N | = |   | 	
+file    | final | = |   | 	auxiliary output file name
+file    | init | = |   | 	auxiliary output file name
+string  | sample | = |   | 	
+[DIRECTORY]
+user/roman

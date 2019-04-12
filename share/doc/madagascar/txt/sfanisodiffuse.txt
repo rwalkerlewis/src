@@ -1,0 +1,13 @@
+Program sfanisodiffuse | Anisotropic diffusion by regularized inversion. Applied in 3D in a slice by slice fashion: set of
+[SYNOPSIS]
+sfanisodiffuse < in.rsf > out.rsf vx=fvx.rsf vy=fvy.rsf niter=10 repeat=1 eps=1.
+[COMMENTS]
+2D diffusions for a fixed time sample. 
+[PARAMETERS]
+float   | eps | =1. |   | 	regularization parameter 
+int     | niter | =10 |   | 	number of conjugate-gradient iterations 
+int     | repeat | =1 |   | 	number of smoothing iterations 
+file    | vx | = |   | 	auxiliary input file name
+file    | vy | = |   | 	auxiliary input file name
+[DIRECTORY]
+user/dmerzlikin
