@@ -739,29 +739,90 @@ for (ix=0; ix<fdm->nxpad; ix++) {
     private(iz,ix) \
     shared(fdm,p,tzz,txz,txx,voz,vox,qoz,qox,alpha,biotmod,shm,lambdau,idz,idx)
 #endif
-   for (ix = NOP; ix < fdm->nxpad-NOP; ix++) {
-     for (iz = NOP; iz < fdm->nzpad-NOP; iz++) {
+   for (ix = NOP; ix < fdm->nxpad-NOP - 1; ix++) {
+     for (iz = NOP + 1; iz < fdm->nzpad-NOP; iz++) {
        /* p(i+1/2,j+1/2), m */
-       p[ix][iz]    =   p[ix][iz]   - ( alpha[ix][iz] * biotmod[ix][iz] * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) -
-                                                        biotmod[ix][iz] * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) ) * dt;
 
-       /* txz(i,j+1), m */
-       txz[ix][iz] =    txz[ix][iz] + shm[ix][iz] * ( Dz(vox,ix,iz,idz) + Dx(voz,ix,iz,idx) ) * dt;
+			 memory_dx_sigmaxx[ix][iz] = b_x_half_x[ix] * memory_dx_sigmaxx[ix][iz] + a_x_half_x[i] *  Dx(vox,ix,iz,idx);
+			 memory_dz_sigmaxx[ix][iz] = b_z[iz] * memory_dz_sigmaxx[ix][iz] + a_z[iz] * Dz(voz,ix,iz,idz);
+
+			 gamma11[ix][iz] = gamma[ix][iz] + dt * ( Dx(vox,ix,iz,idx) / K_x_half_x[ix] + memory_dy_sigmaxx[ix][iz]);
+			 gamma22[ix][iz] = gamma[ix][iz] + dt * ( Dz(voz,ix,iz,idz) / K_z[iz] + memory_dz_sigmaxx[ix][iz]);
+
+			 // p = sigma2
+			 memory_dx_sigma2vxf[ix][iz] = b_x_half_x[ix] * memory_dx_sigmavxf[ix][iz] + a_x_half_x[ix] * Dx(qox,ix,iz,idx);
+			 memory_dz_sigma2vxf[ix][iz] = b_z[iz] * memory_dz_sigma2vzf[ix][iz] + a_z[iz] * Dz(qoz,ix,iz,idz);
+
+			 xi_1[ix][iz] = xi_1[ix][iz] - ( Dx(qox,ix,iz,idx) / K_x_half_x[ix] + memory_dx_sigma2vxf[ix][iz]) * dt;
+			 xi_2[ix][iz] = xi_2[ix][iz] - ( Dz(qoz,ix,iz,idz) / K_z[iz] + memory_dz_sigma2vzf[ix,iz]) * dt;
+
+			 p[ix][iz] = -1.0*alpha[ix][iz]*biotmod[ix][iz]*(gamma11[ix][iz] + gamma22[ix][iz]) + biotmod[ix][iz]*(xi_1[ix][iz] + xi_2[ix][iz]);
+		 }
+	 }
+
+
+			 /* Add pressures sources here */
+
+			 for (ix = NOP + 1; ix < fdm->nxpad-NOP; ix++) {
+		     for (iz = NOP; iz < fdm->nzpad-NOP - 1; iz++) {
+		       /* p(i+1/2,j+1/2), m */
+
+			 /* interpolate material parameters at the right location in the staggered grid cell */
+			 c33_half_z = 2.0 / (1.0 / shm[ix][iz] + 1.0 / shm[ix][iz+1])
+
+			 memory_dx_sigmaxz[ix][iz] = b_x[ix] * memory_dx_sigmaxz[ix][iz] + a_x[ix] * Dx(voz,ix,iz,idx);
+			 memory_dz_sigmaxz[ix][iz] = b_z_half_z[iz] * memory_dz_sigmaxz[ix][iz] + a_z_half_z[iz] * Dz(vox,ix,iz,idz);
+
+	      /* txz(i,j+1), m */
+       txz[ix][iz] =    txz[ix][iz] + shm[ix][iz] * ( Dx(voy,ix,iz,idx); / K_x[ix] + memory_dx_sigmaxy[ix][iz] + Dz(vox,ix,iz,idz) ) * dt;
 
 			 /* txz(i,j+1), m */
-			 tzx[ix][iz] =    tzx[ix][iz] + shm[ix][iz] * ( Dx(voz,ix,iz,idx) + Dz(vox,ix,iz,idz) ) * dt;
+		 }
+	 }
+
+
+	 for (ix = NOP; ix < fdm->nxpad-NOP - 1; ix++) {
+     for (iz = NOP + 1; iz < fdm->nzpad-NOP; iz++) {
 
        /* txx(i+1/2,j+1/2), m */
-       txx[ix][iz] =    txx[ix][iz] +        ( shm[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dx(vox,ix,iz,idx) ) +
-                                           lambdau[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) +
-                        ( alpha[ix][iz]  * biotmod[ix][iz] ) * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) ) * dt;
+
+
+       txx[ix][iz] =                           shm[ix][iz]   * ( gamma[ix][iz] ) +
+                                            lambda[ix][iz]   * ( gamma11[ix][iz] + gamma22[ix][iz] ) -
+                        										( alpha[ix][iz]  * p[ix][iz] );
 
        /* tzz(i+1/2,j+1/2), m */
-       tzz[ix][iz] =    tzz[ix][iz] +        ( shm[ix][iz]   * ( Dz(voz,ix,iz,idz) + Dz(voz,ix,iz,idz) ) +
-                                           lambdau[ix][iz]   * ( Dx(vox,ix,iz,idx) + Dz(voz,ix,iz,idz) ) +
-                        ( alpha[ix][iz]  * biotmod[ix][iz] ) * ( Dx(qox,ix,iz,idx) + Dz(qoz,ix,iz,idz) ) ) * dt;
+
+			 txx[ix][iz] =                           shm[ix][iz]   * ( gamma11[ix][iz] + gamma22[ix][iz] ) +
+                                            lambda[ix][iz]   * ( gamma11[ix][iz] ) -
+                        										( alpha[ix][iz]  * p[ix][iz] );
      }
    }
+
+	 /* Compute velocity and update memory variables for C-PML */
+	 for (ix = NOP + 1; ix < fdm->nxpad-NOP; ix++) {
+     for (iz = NOP + 1; iz < fdm->nzpad-NOP; iz++) {
+
+			 co = (rhob[ix][iz] * shm[ix][iz] - rhof[ix][iz]*rhof[ix][iz])/dt;
+			 c1 = co + rhob[ix][iz] * fvs[ix][iz]/prm[ix][iz]*0.5;
+			 c2 = co - rhob[ix][iz] * fvs[ix][iz]/prm[ix][iz]*0.5;
+
+			 memory_dx_vx1[ix][iz] = b_x[ix] * memory_dx_vx1[ix][iz] + a_x[ix] * Dx(txx,ix,iz,idx);
+			 memory_dx_vx2[ix][iz] = b_x[ix] * memory_dx_vx2[ix][iz] + a_x[ix] * Dx(p,ix,iz,idx);
+			 memory_dz_vx[ix][iz] = b_z[iz] * memory_dz_vx[ix][iz] + a_z[iz] * Dz(txz,ix,iz,idz);
+
+			 qpx[ix][iz] = (c2*qox[ix][iz] + ( -1.0*rhof[ix][iz] * ( Dx(txx,ix,iz,idz) / K_x[ix] + memory_dx_vx1[ix][iz] + Dz(txy,ix,iz,idz) / K_z[iz] + memory_dz_vz[ix][iz]))) / c1;
+
+			 vpx[ix][iz] = vox[iz][iz] + ( shm[ix][iz]*(Dx(txx,ix,iz,idx) / K_x[ix] + memory_dx_vx1[ix][iz] + Dz(txz,ix,iz,idz) / K_z[iz] + memory_dz_vx[ix][iz]) + rhof[ix][iz]*(Dx(p,ix,iz,idx) / K_x[ix] + memory_dx_vx2[ix][iz]) + rhof[ix][iz]*fvs[ix][iz]/prm[ix][iz]*(qox[ix][iz] + qpx[ix][iz])/2) / co;
+
+
+		 }
+	 }
+
+
+
+ +
+
     /*------------------------------------------------------------*/
     /* free surface */
     /*------------------------------------------------------------*/
@@ -884,6 +945,7 @@ pnormmax_iz = 0;
 	if (abcpml){
 				if (debug) fprintf(stderr,"pml to velocity.. ");
 				pml2d_velApply(vpz,vpx,dt,sigma,fdm);
+				pml2d_velApply(qpz,qpx,dt,sigma,fdm);
 				if (debug) fprintf(stderr,"DONE\n");
 	    }
 
