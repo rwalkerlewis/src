@@ -1486,6 +1486,7 @@ sfdtw-track
 sfdtw2
 sflskernel
 sfovczop
+sfpathmin
 sftransconv
 sftranslate
 
@@ -1716,6 +1717,7 @@ sfspecfac
 [user/rlwalker]
 
 sfpwefd2D
+sfpwefd2D_PML
 
 [user/roman]
 

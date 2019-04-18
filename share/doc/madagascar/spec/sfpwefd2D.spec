@@ -18,6 +18,7 @@ Port:   sro rsf r  -  		auxiliary input file name (containing unspecified data)
 Port:   tor rsf r  -  		auxiliary input file name (containing unspecified data)
 Port:   wfl rsf w  -  		auxiliary output file name (containing unspecified data)
 Param:  abcone enum-bool  -  n 		use sharp brake at end of boundary layer 
+Param:  abcpml enum-bool  -  n 		'PML ABC' 
 Param:  ani int  -  -1 		Anisotropy type, see comments 
 Param:  cfl enum-bool  -  y 		use CFL check, will cause program to fail if not satisfied 
 Param:  dabc enum-bool  -  y 		use sponge absorbing BC 
@@ -33,6 +34,8 @@ Param:  nqx int  -   -
 LDesc:  (defaults to: sf_n(ax))
 Param:  nqz int  -   -  		
 LDesc:  (defaults to: sf_n(az))
+Param:  ompchunk int  -  1 		OpenMP data chunk size 
+Param:  ompnth int  -  0 		OpenMP available threads 
 Param:  opot enum-bool  -  n 		output potentials 
 Param:  oqx float  -   -  		
 LDesc:  (defaults to: sf_o(ax))

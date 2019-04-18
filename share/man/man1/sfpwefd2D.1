@@ -2,7 +2,7 @@
 .SH NAME
 sfpwefd2D \- Short description line
 .SH SYNOPSIS
-.B sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=
+.B sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n abcpml=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=
 .SH COMMENTS
 Comments here blablabla lorem ipsum dolores sit amet...
 
@@ -14,6 +14,11 @@ You can use several paragraphs for comments, no problem.
 .B abcone
 .B =n
 .R  [y/n]	use sharp brake at end of boundary layer
+.TP
+.I bool   
+.B abcpml
+.B =n
+.R  [y/n]	"PML ABC"
 .TP
 .I int    
 .B ani
@@ -99,6 +104,16 @@ You can use several paragraphs for comments, no problem.
 .B nqz
 .B =sf_n(az)
 .R  
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I int    
+.B ompnth
+.B =0
+.R  	OpenMP available threads
 .TP
 .I bool   
 .B opot

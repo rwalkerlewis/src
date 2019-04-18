@@ -1,6 +1,6 @@
 import rsf.doc
 
-sfpysvd = rsf.doc.rsfprog('sfpysvd','user/godwinj/Mpysvd.py','''Perform SVD on a matrix using SCIPY.  ''')
+sfpysvd = rsf.doc.rsfprog('sfpysvd','user/godwinj/Mpysvd.py','''Perform SVD on a matrix using SCIPY.''')
 sfpysvd.par('vectors',rsf.doc.rsfpar('bool','n','','''Output singular vectors?'''))
 sfpysvd.par('left',rsf.doc.rsfpar('string','','','''File to store left singular vectors'''))
 sfpysvd.par('right',rsf.doc.rsfpar('string','','','''File to store right singular vectors'''))
@@ -10,7 +10,7 @@ REQUIRES the PYTHON API, NUMPY AND SCIPY
 ''')
 rsf.doc.progs['sfpysvd']=sfpysvd
 
-sfthreedcube = rsf.doc.rsfprog('sfthreedcube','user/godwinj/Mthreedcube.py','''Interactively displays a 3D cube of RSF data using Python + MayaVi2 + VTK.  ''')
+sfthreedcube = rsf.doc.rsfprog('sfthreedcube','user/godwinj/Mthreedcube.py','''Interactively displays a 3D cube of RSF data using Python + MayaVi2 + VTK.''')
 sfthreedcube.version('2.1-git')
 sfthreedcube.synopsis('''sfthreedcube < fin.rsf''','''
 REQUIRES NUMPY, SCIPY, and MAyaVi2

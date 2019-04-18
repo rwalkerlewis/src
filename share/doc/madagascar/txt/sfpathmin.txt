@@ -1,0 +1,19 @@
+Program sfpathmin | One dimensional path minimization for optimization input file has first coordinate parameter, second coordinate time 
+[SYNOPSIS]
+sfpathmin < _in.rsf > _out.rsf k=1 kink=1 lr=.3 g=.1 knots=11 niter=10 damp=.5 shove=1000 aniso1=D[1]/D[0] dorder=6 srad=2 nsmooth=1 eps=0.
+[PARAMETERS]
+float   | aniso1 | =D[1]/D[0] |   | 	aniso of 2nd axis relative to first   
+float   | damp | =.5 |   | 	if the path goes out of bounds, we reflect and dampen the rate of change by this much 
+int     | dorder | =6 |   | 	derivative order 
+float   | eps | =0. |   | 	if the change and gradient are simultaneously lower than this, terminate  early 
+float   | g | =.1 |   | 	scaling the gradient by how much 
+float   | k | =1 |   | 	stiffness relative to attraction
+float   | kink | =1 |   | 	resistance to kinks  
+int     | knots | =11 |   | 	number of knots 
+float   | lr | =.3 |   | 	learning rate 
+int     | niter | =10 |   | 	
+int     | nsmooth | =1 |   | 	number of gradient smoothings  
+float   | shove | =1000 |   | 	size of initial random lateral shove 
+int     | srad | =2 |   | 	smoothing radius for gradient 
+[DIRECTORY]
+user/luke

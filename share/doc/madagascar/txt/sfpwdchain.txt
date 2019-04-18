@@ -1,8 +1,10 @@
 Program sfpwdchain | Nonstationary Prony by chain of PEFs 
 [SYNOPSIS]
-sfpwdchain < inp.rsf dip=dip.rsf > out.rsf nc=1 order=1 verb=(bool) (1 == nt) niter=0 liter=50 rect1=1 rect2=1
+sfpwdchain < inp.rsf dip=dip.rsf > out.rsf dipin=dipin.rsf nc=1 order=1 verb=(bool) (1 == nt) niter=0 liter=50 rect1=1 rect2=1 lambda=1.0f
 [PARAMETERS]
 file    | dip | = |   | 	auxiliary output file name
+string  | dipin | = |   | 	auxiliary input file name
+float   | lambda | =1.0f |   | 	scaling 
 int     | liter | =50 |   | 	number of linear iterations 
 int     | nc | =1 |   | 	number of components 
 int     | niter | =0 |   | 	number of iterations 

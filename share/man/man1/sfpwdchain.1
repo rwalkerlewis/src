@@ -2,7 +2,7 @@
 .SH NAME
 sfpwdchain \- Nonstationary Prony by chain of PEFs 
 .SH SYNOPSIS
-.B sfpwdchain < inp.rsf dip=dip.rsf > out.rsf nc=1 order=1 verb=(bool) (1 == nt) niter=0 liter=50 rect1=1 rect2=1
+.B sfpwdchain < inp.rsf dip=dip.rsf > out.rsf dipin=dipin.rsf nc=1 order=1 verb=(bool) (1 == nt) niter=0 liter=50 rect1=1 rect2=1 lambda=1.0f
 .SH PARAMETERS
 .PD 0
 .TP
@@ -10,6 +10,16 @@ sfpwdchain \- Nonstationary Prony by chain of PEFs
 .B dip
 .B =
 .R  	auxiliary output file name
+.TP
+.I string 
+.B dipin
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B lambda
+.B =1.0f
+.R  	scaling
 .TP
 .I int    
 .B liter

@@ -1,4 +1,4 @@
-Program sfpysvd | Perform SVD on a matrix using SCIPY.  
+Program sfpysvd | Perform SVD on a matrix using SCIPY.
 [SYNOPSIS]
 sfpysvd < fin.rsf > fout.rsf > lout.rsf > rout.rsf vectors=n left= right=
 [COMMENTS]

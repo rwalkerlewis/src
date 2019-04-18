@@ -1,0 +1,464 @@
+
+    <!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <html><head><title>RSF: sfpwefd2D_PML</title>
+    <style type="text/css"><!--
+    TT { font-family: lucidatypewriter, lucida console, courier }
+    --></style></head><body bgcolor="#f0f0f8">
+    
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#7799ee">
+    <td valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sfpwefd2D_PML</strong></big></big> (2.1-git)</font></td
+    ><td align=right valign=bottom
+    ><font color="#ffffff" face="helvetica, arial"><a href="./index.html">index</a><br><a href="https://github.com/ahay/src/blob/madagascar-2.1-git/user/rlwalker/Mpwefd2D_PML.c">user/rlwalker/Mpwefd2D_PML.c</a></font></td></tr></table>
+    Short description line
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#aa55cc">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">sfpwefd2D_PML < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n abcpml=n USE_PML_TOP=n USE_PML_BOTTOM=n USE_PML_LEFT=n USE_PML_RIGHT=n NPOINTS_PML=10 Rcoef=0.001f NPOWER=2.0f K_MAX_PML=1.0f nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=</td></tr></table>Comments here blablabla lorem ipsum dolores sit amet...<br>
+<br>
+You can use several paragraphs for comments, no problem.
+    <p>
+    <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+    <tr bgcolor="#ee77aa">
+    <td colspan=3 valign=bottom>&nbsp;<br>
+    <font color="#ffffff" face="helvetica, arial"><big><strong>Parameters</strong></big></font></td></tr>
+    
+        <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>K_MAX_PML=1.0f</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	! from Stephen Gedney's unpublished class notes for class EE699, lecture 8, slide 8-11 <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>NPOINTS_PML=10</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>NPOWER=2.0f</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	power to compute d0 profile <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>Rcoef=0.001f</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	Reflection coefficient <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>USE_PML_BOTTOM=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	"PML ABC" <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>USE_PML_LEFT=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	"PML ABC" <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>USE_PML_RIGHT=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	"PML ABC" <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>USE_PML_TOP=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	"PML ABC" <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>abcone=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	use sharp brake at end of boundary layer <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>abcpml=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	"PML ABC" <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ani=-1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	Anisotropy type, see comments <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>cfl=y</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	use CFL check, will cause program to fail if not satisfied <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>dabc=y</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	use sponge absorbing BC <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>debug=y</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	print debugging info <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>fmax=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>free=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	free surface flag <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>fro=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>fvs=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>jdata=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	Absorbing Boundary <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>jsnap=nt</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>kdr=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>kfl=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>ksg=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nb=100</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	padding size for absorbing boundary <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nbell=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	bell size <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nqx=sf_n(ax)</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nqz=sf_n(az)</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ompchunk=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	OpenMP data chunk size <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ompnth=0</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	OpenMP available threads <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>opot=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	output potentials <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>oqx=sf_o(ax)</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>oqz=sf_o(az)</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>phi=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>prm=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>rec=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>shm=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>snap=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	wavefield snapshots flag <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>sou=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>srctype=0</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	source type, see comments <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>sro=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>tor=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary input file name<br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>verb=y</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	verbosity flag <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>wfl=</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	auxiliary output file name<br>
+</font></td></tr></table>
+    
+</td></tr></table>
+    </body></html>

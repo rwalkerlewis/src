@@ -4,9 +4,10 @@ sfbargraph = rsf.doc.rsfprog('sfbargraph','plot/main/bargraph.c','''Bar plot.'''
 sfbargraph.par('wantframenum',rsf.doc.rsfpar('bool','(bool) (n3 > 1)','','''if y, display third axis position in the corner '''))
 sfbargraph.par('pclip',rsf.doc.rsfpar('float','100.','','''clip percentile '''))
 sfbargraph.par('width',rsf.doc.rsfpar('float','0.8','','''bar width '''))
+sfbargraph.par('stack',rsf.doc.rsfpar('bool','y','','''if stack bars on top '''))
 sfbargraph.par('transp',rsf.doc.rsfpar('bool','n','','''if y, transpose the axes '''))
 sfbargraph.version('2.1-git')
-sfbargraph.synopsis('''sfbargraph < in.rsf wantframenum=(bool) (n3 > 1) pclip=100. width=0.8 transp=n > plot.vpl''','''Run "sfdoc stdplot" for more parameters.
+sfbargraph.synopsis('''sfbargraph < in.rsf wantframenum=(bool) (n3 > 1) pclip=100. width=0.8 stack=y transp=n > plot.vpl''','''Run "sfdoc stdplot" for more parameters.
 ''')
 rsf.doc.progs['sfbargraph']=sfbargraph
 

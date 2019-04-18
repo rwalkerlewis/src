@@ -389,6 +389,7 @@ rsf.doc.progs['sfpwd1']=sfpwd1
 
 sfpwdchain = rsf.doc.rsfprog('sfpwdchain','user/pwd/Mpwdchain.c','''Nonstationary Prony by chain of PEFs ''')
 sfpwdchain.par('dip',rsf.doc.rsfpar('file   ',desc='''auxiliary output file name'''))
+sfpwdchain.par('dipin',rsf.doc.rsfpar('file   ',desc='''auxiliary input file name'''))
 sfpwdchain.par('nc',rsf.doc.rsfpar('int','1','','''number of components '''))
 sfpwdchain.par('order',rsf.doc.rsfpar('int','1','','''PWD order '''))
 sfpwdchain.par('verb',rsf.doc.rsfpar('bool','(bool) (1 == nt)','','''verbosity flag '''))
@@ -396,8 +397,10 @@ sfpwdchain.par('niter',rsf.doc.rsfpar('int','0','','''number of iterations '''))
 sfpwdchain.par('liter',rsf.doc.rsfpar('int','50','','''number of linear iterations '''))
 sfpwdchain.par('rect1',rsf.doc.rsfpar('int','1','',''''''))
 sfpwdchain.par('rect2',rsf.doc.rsfpar('int','1','','''smoothing radius '''))
+sfpwdchain.par('lambda',rsf.doc.rsfpar('float','1.0f','','''scaling '''))
+sfpwdchain.par('dipin',rsf.doc.rsfpar('string ',desc='''auxiliary input file name'''))
 sfpwdchain.version('2.1-git')
-sfpwdchain.synopsis('''sfpwdchain < inp.rsf dip=dip.rsf > out.rsf nc=1 order=1 verb=(bool) (1 == nt) niter=0 liter=50 rect1=1 rect2=1''','''''')
+sfpwdchain.synopsis('''sfpwdchain < inp.rsf dip=dip.rsf > out.rsf dipin=dipin.rsf nc=1 order=1 verb=(bool) (1 == nt) niter=0 liter=50 rect1=1 rect2=1 lambda=1.0f''','''''')
 rsf.doc.progs['sfpwdchain']=sfpwdchain
 
 sfpwdchain1 = rsf.doc.rsfprog('sfpwdchain1','user/pwd/Mpwdchain1.c','''Chain of PWDs - linear operator ''')

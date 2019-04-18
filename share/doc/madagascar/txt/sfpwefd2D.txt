@@ -1,12 +1,13 @@
 Program sfpwefd2D | Short description line
 [SYNOPSIS]
-sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=
+sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n abcpml=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=
 [COMMENTS]
 Comments here blablabla lorem ipsum dolores sit amet...
 
 You can use several paragraphs for comments, no problem.
 [PARAMETERS]
 bool    | abcone | =n |  [y/n] | 	use sharp brake at end of boundary layer 
+bool    | abcpml | =n |  [y/n] | 	"PML ABC" 
 int     | ani | =-1 |   | 	Anisotropy type, see comments 
 bool    | cfl | =y |  [y/n] | 	use CFL check, will cause program to fail if not satisfied 
 bool    | dabc | =y |  [y/n] | 	use sponge absorbing BC 
@@ -24,6 +25,8 @@ int     | nb | =100 |   | 	padding size for absorbing boundary
 int     | nbell | =1 |   | 	bell size 
 int     | nqx | =sf_n(ax) |   | 	
 int     | nqz | =sf_n(az) |   | 	
+int     | ompchunk | =1 |   | 	OpenMP data chunk size 
+int     | ompnth | =0 |   | 	OpenMP available threads 
 bool    | opot | =n |  [y/n] | 	output potentials 
 float   | oqx | =sf_o(ax) |   | 	
 float   | oqz | =sf_o(az) |   | 	

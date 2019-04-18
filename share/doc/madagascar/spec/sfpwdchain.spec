@@ -5,6 +5,9 @@ DocCmd: sfpwdchain | cat
 Port:   stdin  rsf r req 	RSF standard input (containing inp data)
 Port:   stdout rsf w req 	RSF standard output (no hint on content)
 Port:   dip rsf w  -  		auxiliary output file name (containing unspecified data)
+Param:  dipin string  -   -  		auxiliary input file name
+Param:  lambda float  -   -  		scaling 
+LDesc:  (defaults to: 1.0f)
 Param:  liter int  -  50 		number of linear iterations 
 Param:  nc int  -  1 		number of components 
 Param:  niter int  -  0 		number of iterations 

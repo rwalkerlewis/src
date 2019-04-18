@@ -1,0 +1,76 @@
+.TH sfpathmin 1  "APRIL 2019" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpathmin \- One dimensional path minimization for optimization input file has first coordinate parameter, second coordinate time 
+.SH SYNOPSIS
+.B sfpathmin < _in.rsf > _out.rsf k=1 kink=1 lr=.3 g=.1 knots=11 niter=10 damp=.5 shove=1000 aniso1=D[1]/D[0] dorder=6 srad=2 nsmooth=1 eps=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B aniso1
+.B =D[1]/D[0]
+.R  	aniso of 2nd axis relative to first
+.TP
+.I float  
+.B damp
+.B =.5
+.R  	if the path goes out of bounds, we reflect and dampen the rate of change by this much
+.TP
+.I int    
+.B dorder
+.B =6
+.R  	derivative order
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	if the change and gradient are simultaneously lower than this, terminate  early
+.TP
+.I float  
+.B g
+.B =.1
+.R  	scaling the gradient by how much
+.TP
+.I float  
+.B k
+.B =1
+.R  	stiffness relative to attraction
+.TP
+.I float  
+.B kink
+.B =1
+.R  	resistance to kinks
+.TP
+.I int    
+.B knots
+.B =11
+.R  	number of knots
+.TP
+.I float  
+.B lr
+.B =.3
+.R  	learning rate
+.TP
+.I int    
+.B niter
+.B =10
+.R  
+.TP
+.I int    
+.B nsmooth
+.B =1
+.R  	number of gradient smoothings
+.TP
+.I float  
+.B shove
+.B =1000
+.R  	size of initial random lateral shove
+.TP
+.I int    
+.B srad
+.B =2
+.R  	smoothing radius for gradient
+.SH SOURCE
+.I user/luke/Mpathmin.c
+.SH VERSION
+2.1-git

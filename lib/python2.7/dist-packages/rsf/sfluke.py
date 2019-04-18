@@ -314,3 +314,21 @@ sflskernel.synopsis('''sflskernel < _in.rsf > _out.rsf match=_match.rsf adj=n wr
 ''')
 rsf.doc.progs['sflskernel']=sflskernel
 
+sfpathmin = rsf.doc.rsfprog('sfpathmin','user/luke/Mpathmin.c','''One dimensional path minimization for optimization input file has first coordinate parameter, second coordinate time ''')
+sfpathmin.par('k',rsf.doc.rsfpar('float','1','','''stiffness relative to attraction'''))
+sfpathmin.par('kink',rsf.doc.rsfpar('float','1','','''resistance to kinks  '''))
+sfpathmin.par('lr',rsf.doc.rsfpar('float','.3','','''learning rate '''))
+sfpathmin.par('g',rsf.doc.rsfpar('float','.1','','''scaling the gradient by how much '''))
+sfpathmin.par('knots',rsf.doc.rsfpar('int','11','','''number of knots '''))
+sfpathmin.par('niter',rsf.doc.rsfpar('int','10','',''''''))
+sfpathmin.par('damp',rsf.doc.rsfpar('float','.5','','''if the path goes out of bounds, we reflect and dampen the rate of change by this much '''))
+sfpathmin.par('shove',rsf.doc.rsfpar('float','1000','','''size of initial random lateral shove '''))
+sfpathmin.par('aniso1',rsf.doc.rsfpar('float','D[1]/D[0]','','''aniso of 2nd axis relative to first   '''))
+sfpathmin.par('dorder',rsf.doc.rsfpar('int','6','','''derivative order '''))
+sfpathmin.par('srad',rsf.doc.rsfpar('int','2','','''smoothing radius for gradient '''))
+sfpathmin.par('nsmooth',rsf.doc.rsfpar('int','1','','''number of gradient smoothings  '''))
+sfpathmin.par('eps',rsf.doc.rsfpar('float','0.','','''if the change and gradient are simultaneously lower than this, terminate  early '''))
+sfpathmin.version('2.1-git')
+sfpathmin.synopsis('''sfpathmin < _in.rsf > _out.rsf k=1 kink=1 lr=.3 g=.1 knots=11 niter=10 damp=.5 shove=1000 aniso1=D[1]/D[0] dorder=6 srad=2 nsmooth=1 eps=0.''','''''')
+rsf.doc.progs['sfpathmin']=sfpathmin
+

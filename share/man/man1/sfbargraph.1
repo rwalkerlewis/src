@@ -2,7 +2,7 @@
 .SH NAME
 sfbargraph \- Bar plot.
 .SH SYNOPSIS
-.B sfbargraph < in.rsf wantframenum=(bool) (n3 > 1) pclip=100. width=0.8 transp=n > plot.vpl
+.B sfbargraph < in.rsf wantframenum=(bool) (n3 > 1) pclip=100. width=0.8 stack=y transp=n > plot.vpl
 .SH COMMENTS
 Run "sfdoc stdplot" for more parameters.
 
@@ -13,6 +13,11 @@ Run "sfdoc stdplot" for more parameters.
 .B pclip
 .B =100.
 .R  	clip percentile
+.TP
+.I bool   
+.B stack
+.B =y
+.R  [y/n]	if stack bars on top
 .TP
 .I bool   
 .B transp
@@ -29,6 +34,8 @@ Run "sfdoc stdplot" for more parameters.
 .B =0.8
 .R  	bar width
 .SH USED IN
+.TP
+.I rsf/rsf/sfnoise
 .TP
 .I rsf/tutorials/cg
 .SH SOURCE

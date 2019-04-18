@@ -20,7 +20,7 @@
     <font color="#fffff" face="helvetica, arial"><big><strong>Synopsis</strong></big></font></td></tr>
     
         <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=</td></tr></table>Comments here blablabla lorem ipsum dolores sit amet...<br>
+<td width="100%">sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n abcpml=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=</td></tr></table>Comments here blablabla lorem ipsum dolores sit amet...<br>
 <br>
 You can use several paragraphs for comments, no problem.
     <p>
@@ -45,6 +45,16 @@ You can use several paragraphs for comments, no problem.
     summary="heading">
     <tr bgcolor="#f0f0f8">
     <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>abcpml=n</strong> [y/n]</font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	"PML ABC" <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ani=-1</strong> </font></td
     ><td align=right valign=bottom
     ><font color="#000000" face="helvetica, arial">	Anisotropy type, see comments <br>
@@ -53,7 +63,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>cfl=y</strong> [y/n]</font></td
     ><td align=right valign=bottom
@@ -63,7 +73,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>dabc=y</strong> [y/n]</font></td
     ><td align=right valign=bottom
@@ -73,7 +83,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>debug=y</strong> [y/n]</font></td
     ><td align=right valign=bottom
@@ -83,7 +93,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>fmax=</strong> </font></td
     ><td align=right valign=bottom
@@ -93,7 +103,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>free=n</strong> [y/n]</font></td
     ><td align=right valign=bottom
@@ -103,7 +113,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>fro=</strong> </font></td
     ><td align=right valign=bottom
@@ -113,7 +123,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>fvs=</strong> </font></td
     ><td align=right valign=bottom
@@ -123,7 +133,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>jdata=1</strong> </font></td
     ><td align=right valign=bottom
@@ -133,7 +143,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>jsnap=nt</strong> </font></td
     ><td align=right valign=bottom
@@ -143,7 +153,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>kdr=</strong> </font></td
     ><td align=right valign=bottom
@@ -153,7 +163,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>kfl=</strong> </font></td
     ><td align=right valign=bottom
@@ -163,7 +173,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>ksg=</strong> </font></td
     ><td align=right valign=bottom
@@ -173,7 +183,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nb=100</strong> </font></td
     ><td align=right valign=bottom
@@ -183,7 +193,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nbell=1</strong> </font></td
     ><td align=right valign=bottom
@@ -193,7 +203,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nqx=sf_n(ax)</strong> </font></td
     ><td align=right valign=bottom
@@ -203,7 +213,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>nqz=sf_n(az)</strong> </font></td
     ><td align=right valign=bottom
@@ -213,7 +223,27 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
+    <tr bgcolor="#f0f0f8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ompchunk=1</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	OpenMP data chunk size <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
     <tr bgcolor="#ffc8d8">
+    <td valign=bottom>
+    <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>ompnth=0</strong> </font></td
+    ><td align=right valign=bottom
+    ><font color="#000000" face="helvetica, arial">	OpenMP available threads <br>
+</font></td></tr></table>
+    
+
+    <table width="100%" cellspacing=0 cellpadding=2 border=0
+    summary="heading">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>opot=n</strong> [y/n]</font></td
     ><td align=right valign=bottom
@@ -223,7 +253,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>oqx=sf_o(ax)</strong> </font></td
     ><td align=right valign=bottom
@@ -233,7 +263,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>float   <strong>oqz=sf_o(az)</strong> </font></td
     ><td align=right valign=bottom
@@ -243,7 +273,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>phi=</strong> </font></td
     ><td align=right valign=bottom
@@ -253,7 +283,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>prm=</strong> </font></td
     ><td align=right valign=bottom
@@ -263,7 +293,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>rec=</strong> </font></td
     ><td align=right valign=bottom
@@ -273,7 +303,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>shm=</strong> </font></td
     ><td align=right valign=bottom
@@ -283,7 +313,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>snap=n</strong> [y/n]</font></td
     ><td align=right valign=bottom
@@ -293,7 +323,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>sou=</strong> </font></td
     ><td align=right valign=bottom
@@ -303,7 +333,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>int     <strong>srctype=0</strong> </font></td
     ><td align=right valign=bottom
@@ -313,7 +343,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>sro=</strong> </font></td
     ><td align=right valign=bottom
@@ -323,7 +353,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>tor=</strong> </font></td
     ><td align=right valign=bottom
@@ -333,7 +363,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#ffc8d8">
+    <tr bgcolor="#f0f0f8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>bool    <strong>verb=y</strong> [y/n]</font></td
     ><td align=right valign=bottom
@@ -343,7 +373,7 @@ You can use several paragraphs for comments, no problem.
 
     <table width="100%" cellspacing=0 cellpadding=2 border=0
     summary="heading">
-    <tr bgcolor="#f0f0f8">
+    <tr bgcolor="#ffc8d8">
     <td valign=bottom>
     <font color="#000000" face="helvetica, arial">&nbsp;<br>file    <strong>wfl=</strong> </font></td
     ><td align=right valign=bottom

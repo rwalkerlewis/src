@@ -185,7 +185,7 @@ rsf.tex.default" class="py-name" href="#" onclick="return doclink('link-33', 'de
 </div><div id="get_title-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_title-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-name">title</tt> <tt class="py-op">=</tt> <tt id="link-36" class="py-name"><a title="rsf.recipes.fdmod.default
 rsf.tex.default" class="py-name" href="#" onclick="return doclink('link-36', 'default', 'link-29');">default</a></tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-name">tag</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
 <a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">title</tt><tt class="py-op">:</tt> </tt>
-<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">paper</tt> <tt class="py-op">=</tt> <tt class="py-name">source</tt><tt class="py-op">.</tt><tt class="py-name">get_contents</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">paper</tt> <tt class="py-op">=</tt> <tt class="py-name">source</tt><tt class="py-op">.</tt><tt class="py-name">get_contents</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">decode</tt><tt class="py-op">(</tt><tt class="py-string">'utf-8'</tt><tt class="py-op">)</tt> </tt>
 <a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-comment"># remove comments</tt> </tt>
 <a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">paper</tt> <tt class="py-op">=</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt class="py-name">sub</tt><tt class="py-op">(</tt><tt class="py-string">r'[%][^\n]+'</tt><tt class="py-op">,</tt><tt class="py-string">''</tt><tt class="py-op">,</tt><tt class="py-name">paper</tt><tt class="py-op">)</tt> </tt>
 <a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-name">title</tt> <tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="rsf.book.re_title" class="py-name" href="#" onclick="return doclink('link-37', 're_title', 'link-18');">re_title</a></tt><tt class="py-op">.</tt><tt class="py-name">search</tt><tt class="py-op">(</tt><tt class="py-name">paper</tt><tt class="py-op">)</tt> </tt>
@@ -254,7 +254,7 @@ rsf.book.book" class="py-name" href="#" onclick="return doclink('link-45', 'book
 <a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">author</tt> <tt class="py-op">=</tt> <tt class="py-string">'\ '</tt> </tt>
 <a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">src</tt> <tt class="py-keyword">in</tt> <tt class="py-name">source</tt><tt class="py-op">:</tt> </tt>
 <a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">tag</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="rsf.book.paper_tag" class="py-name" href="#" onclick="return doclink('link-46', 'paper_tag', 'link-39');">paper_tag</a></tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">src</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
-<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">paper</tt> <tt class="py-op">=</tt> <tt class="py-name">src</tt><tt class="py-op">.</tt><tt class="py-name">get_contents</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">paper</tt> <tt class="py-op">=</tt> <tt class="py-name">src</tt><tt class="py-op">.</tt><tt class="py-name">get_contents</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">decode</tt><tt class="py-op">(</tt><tt class="py-string">'utf-8'</tt><tt class="py-op">)</tt> </tt>
 <a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-comment"># remove comments</tt> </tt>
 <a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">paper</tt> <tt class="py-op">=</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt class="py-name">sub</tt><tt class="py-op">(</tt><tt class="py-string">r'[%][^\n]+'</tt><tt class="py-op">,</tt><tt class="py-string">''</tt><tt class="py-op">,</tt><tt class="py-name">paper</tt><tt class="py-op">)</tt> </tt>
 <a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-47" class="py-name"><a title="rsf.book
@@ -881,7 +881,7 @@ expandto(location.href);
   <tr>
     <td align="left" class="footer">
     Generated by Epydoc 3.0.1
-    on Fri Apr  5 21:51:55 2019
+    on Thu Apr 18 21:49:43 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
