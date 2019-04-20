@@ -41,7 +41,7 @@ You can use several paragraphs for comments, no problem.*/
 
 
 enum AniType {ORTHORHOMBIC=0,TRICLINIC=1};
-enum SourceType {STRESS=2, DISPLACEMENT=1, ACCELERATION=0, TENSOR=3};
+enum SourceType {STRESS=2, DISPLACEMENT=1, ACCELERATION=0, TENSOR=3, PRESSURE=4};
 /* ========================================================================== */
 /* Aid Functions                                                              */
 /* ========================================================================== */
@@ -788,7 +788,10 @@ for (ix=0; ix<fdm->nxpad; ix++) {
     // }
     /* Debug pressure source */
     //p[nx/2][nz/2] = p[nx/2][nz/2] + ((exp( -1.0 * (80.0f*80.0f*PI*PI) * pow((t - 0.0f),2.0f) ) / (-2.0f * (80.0f*80.0f*PI*PI) ) )*1e2 ) * biotmod[nx/2][nz/2];
-    lint2d_bell(p,ww[it][0],cs);
+		if (srctype == PRESSURE) {
+			lint2d_bell(p,ww[it][0],cs);
+		}
+
 
 
 
@@ -865,18 +868,20 @@ pnormmax_iz = 0;
        }
       }
     }
-    if (verb) sf_warning("vnorm  max: %f, [%i,%i]",vnormmax, vnormmax_ix, vnormmax_iz);
-    if (verb) sf_warning("pnorm  max: %f, [%i,%i]",pnormmax, pnormmax_ix, pnormmax_iz);
-    if (verb) sf_warning("Center txx: %f",txx[mpx][mpz]);
-    if (verb) sf_warning("Center txz: %f",txz[mpx][mpz]);
-    if (verb) sf_warning("Center tzz: %f",tzz[mpx][mpz]);
-    if (verb) sf_warning("Center   p: %f",  p[mpx][mpz]);
-    if (verb) sf_warning("Center  vx: %f",vpx[mpx][mpz]);
-    if (verb) sf_warning("Center  vz: %f",vpz[mpx][mpz]);
-    if (verb) sf_warning("Center  qx: %f",qpx[mpx][mpz]);
-    if (verb) sf_warning("Center  qz: %f",qpz[mpx][mpz]);
-    if (verb) sf_warning("End Iteration %i", it);
-    if (verb) sf_warning("===================================================");
+		if (verb) fprintf(stderr,"%d/%d \r",it,nt);
+
+    if (verb) fprintf(stderr,"vnorm  max: %f, [%i,%i]",vnormmax, vnormmax_ix, vnormmax_iz);
+    if (verb) fprintf(stderr,"pnorm  max: %f, [%i,%i]",pnormmax, pnormmax_ix, pnormmax_iz);
+    if (verb) fprintf(stderr,"Center txx: %f",txx[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center txz: %f",txz[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center tzz: %f",tzz[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center   p: %f",  p[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  vx: %f",vpx[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  vz: %f",vpz[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  qx: %f",qpx[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  qz: %f",qpz[mpx][mpz]);
+    if (verb) fprintf(stderr,"End Iteration %i", it);
+    if (verb) fprintf(stderr,"===================================================");
 
 		/******************************/
 	/* PML FOR THE VELOCITY FIELD */
@@ -884,6 +889,9 @@ pnormmax_iz = 0;
 	if (abcpml){
 				if (debug) fprintf(stderr,"pml to velocity.. ");
 				pml2d_velApply(vpz,vpx,dt,sigma,fdm);
+				if (debug) fprintf(stderr,"pml to filtration.. ");
+				pml2d_velApply(qpz,qpx,dt,sigma,fdm);
+
 				if (debug) fprintf(stderr,"DONE\n");
 	    }
 
@@ -891,14 +899,19 @@ pnormmax_iz = 0;
     /* apply the dirichlet boundary condition                               */
     /* undrained, fixed all around                                */
     /*------------------------------------------------------------*/
-    for (ix = 0; ix < fdm->nxpad; ix++){
-      for (iz = 0; iz < NOP; iz++){
-    	vpz[ix][iz] = 0.0f;
-    	vpx[ix][iz] = 0.0f;
-    	qpz[ix][iz] = 0.0f;
-    	qpx[ix][iz] = 0.0f;
-      }
-    }
+		// top
+		if (!fsrf)
+		{
+			for (ix = 0; ix < fdm->nxpad; ix++){
+	      for (iz = 0; iz < NOP; iz++){
+	    	vpz[ix][iz] = 0.0f;
+	    	vpx[ix][iz] = 0.0f;
+	    	qpz[ix][iz] = 0.0f;
+	    	qpx[ix][iz] = 0.0f;
+	      }
+	    }
+		}
+		// bottom
     for (ix = 0; ix < fdm->nxpad; ix++){
       for (iz = fdm->nzpad-NOP; iz < fdm->nzpad; iz++){
     	vpz[ix][iz] = 0.0f;
@@ -907,6 +920,7 @@ pnormmax_iz = 0;
     	qpx[ix][iz] = 0.0f;
       }
     }
+		// left
     for (ix = 0; ix < NOP; ix++){
       for (iz = 0; iz < fdm->nzpad; iz++){
     	vpz[ix][iz] = 0.0f;
@@ -915,6 +929,7 @@ pnormmax_iz = 0;
     	qpx[ix][iz] = 0.0f;
       }
     }
+		// right
     for (ix = fdm->nxpad-NOP; ix < fdm->nxpad; ix++){
       for (iz = 0; iz < fdm->nzpad; iz++){
     	vpz[ix][iz] = 0.0f;
@@ -1018,8 +1033,8 @@ pnormmax_iz = 0;
     /* cut wavefield and save */
     /*------------------------------------------------------------*/
 /*    if (verb) sf_warning("Saving wavefield");*/
-    lint2d_extract(p,dd[0],cr);
-    lint2d_extract(txz,dd[1],cr);
+    lint2d_extract(vox,dd[0],cr);
+    lint2d_extract(voz,dd[1],cr);
 /*    if (verb) sf_warning("Wavefield Saved");*/
 
 

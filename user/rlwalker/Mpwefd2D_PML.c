@@ -18,7 +18,7 @@ You can use several paragraphs for comments, no problem.*/
 /* ========================================================================== */
 /* FD Coefficients                                                            */
 /* ========================================================================== */
-#define NOP 4 /* derivative operator half-size */
+#define NOP 2 /* derivative operator half-size */
 #define mPML 100 /* max value of the PML*/
 
 /* Coefficients are:  (-1)^(k+1)/k * (n!)^2 / (n+k)!(n-k)!
@@ -203,7 +203,7 @@ int main(int argc, char* argv[])
 
 	/*----------------------PML Parameters-------------------------*/
 	/* 2D */
-	float **gamma11, **gamma22, **gamma12_1, **xi_1, **xi_2;
+	float **gamma11, **gamma22, **xi_1, **xi_2;
 	float **memory_dx_vx1, **memory_dx_vx2, **memory_dz_vx;
 	float **memory_dx_vz, **memory_dz_vz1, **memory_dz_vz2;
 	float **memory_dx_sigmaxx, **memory_dx_sigmazz, **memory_dx_sigmaxz;
@@ -223,7 +223,7 @@ int main(int argc, char* argv[])
 	/* 0D */
 	float thickness_PML_x, thickness_PML_z, xoriginleft, xoriginright;
 	float zoriginbottom, zorigintop;
-	float Rcoef, d0_x, d0_z, xval, zval, abscissa_in_PML, abscissa_normalized;
+	float Rcoef, d0_x, d0_z, xval, zval, abscissa_in_PML, abscissa_normalized=0.0f;
 	float c33_half_z;
 	float co,c1a, c2, K_MAX_PML, NPOWER, ALPHA_MAX_PML, Vp_max, Vs_max;
 	float value_dx_sigmaxx, value_dz_sigmaxx, value_dx_sigma2vxf, value_dz_sigma2vzf;
@@ -337,7 +337,7 @@ int main(int argc, char* argv[])
 	if (! sf_getint("jdata",&jdata)) jdata=1;
 
 	/* Absorbing Boundary */
-	if ( !sf_getint("nb",&nb)) nb=100; /* padding size for absorbing boundary */
+	if ( !sf_getint("nb",&nb)) nb=NOP; /* padding size for absorbing boundary */
 	if (nb < NOP) nb = NOP;
 
 
@@ -677,28 +677,28 @@ int main(int argc, char* argv[])
 	}
 
 	if (verb) sf_warning("all wavefield structures allocated and zeroed\n");
-  /* ----------------------zero memory variables------------------------------*/
+	/* ----------------------zero memory variables------------------------------*/
 	for (ix=0; ix<fdm->nxpad; ix++) {
 		for (iz=0; iz<fdm->nzpad; iz++) {
 			memory_dx_vx1[ix][iz] = 0.0f;
-      memory_dx_vx2[ix][iz] = 0.0f;
-      memory_dz_vx[ix][iz] = 0.0f;
-      memory_dx_vz[ix][iz] = 0.0f;
-      memory_dz_vz1[ix][iz] = 0.0f;
-      memory_dz_vz2[ix][iz] = 0.0f;
-      memory_dx_sigmaxx[ix][iz] = 0.0f;
-      memory_dx_sigmazz[ix][iz] = 0.0f;
-      memory_dx_sigmaxz[ix][iz] = 0.0f;
-      memory_dx_sigma2vx[ix][iz] = 0.0f;
-      memory_dx_sigma2vxf[ix][iz] = 0.0f;
-      memory_dz_sigmaxx[ix][iz] = 0.0f;
-      memory_dz_sigmazz[ix][iz] = 0.0f;
-      memory_dz_sigmaxz[ix][iz] = 0.0f;
-      memory_dz_sigma2vz[ix][iz] = 0.0f;
-      memory_dz_sigma2vzf[ix][iz] = 0.0f;
+			memory_dx_vx2[ix][iz] = 0.0f;
+			memory_dz_vx[ix][iz] = 0.0f;
+			memory_dx_vz[ix][iz] = 0.0f;
+			memory_dz_vz1[ix][iz] = 0.0f;
+			memory_dz_vz2[ix][iz] = 0.0f;
+			memory_dx_sigmaxx[ix][iz] = 0.0f;
+			memory_dx_sigmazz[ix][iz] = 0.0f;
+			memory_dx_sigmaxz[ix][iz] = 0.0f;
+			memory_dx_sigma2vx[ix][iz] = 0.0f;
+			memory_dx_sigma2vxf[ix][iz] = 0.0f;
+			memory_dz_sigmaxx[ix][iz] = 0.0f;
+			memory_dz_sigmazz[ix][iz] = 0.0f;
+			memory_dz_sigmaxz[ix][iz] = 0.0f;
+			memory_dz_sigma2vz[ix][iz] = 0.0f;
+			memory_dz_sigma2vzf[ix][iz] = 0.0f;
 		}
 	}
-if (verb) sf_warning("memory variables zeroed\n");
+	if (verb) sf_warning("memory variables zeroed\n");
 
 	/* free work vector */
 	free(*tt); free(tt);
@@ -706,8 +706,6 @@ if (verb) sf_warning("memory variables zeroed\n");
 
 	/*------------------------------------------------------------*/
 	/* calculate local parameters */
-	/* for    (ix = NOP; ix < fdm->nxpad - NOP; ix++) { */
-	/*   for    (iz = NOP; iz < fdm->nzpad - NOP; iz++) { */
 	for (ix = 0; ix < fdm->nxpad; ix++) {
 		for (iz = 0; iz < fdm->nzpad; iz++) {
 			/* bulk density */
@@ -755,7 +753,7 @@ if (verb) sf_warning("memory variables zeroed\n");
 			CFL_RHS[ix][iz] = 1.0 / ( ( 9.0 / 8.0 + 1.0 / 24.0 ) * sqrtf(2.0));
 		}
 	}
-		if (verb) sf_warning("Velocity information generated\n");
+	if (verb) sf_warning("Velocity information generated\n");
 	/* ------------------------------------------------------------------------ */
 	/* Boundary Conditions */
 	/* ------------------------------------------------------------------------ */
@@ -787,32 +785,32 @@ if (verb) sf_warning("memory variables zeroed\n");
 			}
 		}
 	}
-		if (verb) sf_warning("Maximum Vp determined\n");
+	if (verb) sf_warning("Maximum Vp determined\n");
 	/* compute d0 */
 	d0_x = -1.0f * (NPOWER + 1) * Vp_max * logf(Rcoef) / (2.0f * thickness_PML_x);
 	d0_z = -1.0f * (NPOWER + 1) * Vp_max * logf(Rcoef) / (2.0f * thickness_PML_z);
 
 	/* set up buffer arrays */
 	for (ix=0; ix<fdm->nxpad; ix++){
-		d_x[ix] = 0.0f;
-		d_x_half_x[ix] = 0.0f;
-		K_x[ix] = 1.0f;
-		K_x_half_x[ix] = 1.0f;
-		alpha_x[ix] = 0.0f;
+		d_x[ix]            = 0.0f;
+		d_x_half_x[ix]     = 0.0f;
+		K_x[ix]            = 1.0f;
+		K_x_half_x[ix]     = 1.0f;
+		alpha_x[ix]        = 0.0f;
 		alpha_x_half_x[ix] = 0.0f;
-		a_x[ix] = 0.0f;
-		a_x_half_x[ix] = 0.0f;
+		a_x[ix]            = 0.0f;
+		a_x_half_x[ix]     = 0.0f;
 	}
 
 	for (iz=0; iz<fdm->nxpad; iz++){
-		d_z[iz] = 0.0f;
-		d_z_half_z[iz] = 0.0f;
-		K_z[iz] = 1.0f;
-		K_z_half_z[iz] = 1.0f;
-		alpha_z[iz] = 0.0f;
+		d_z[iz]            = 0.0f;
+		d_z_half_z[iz]     = 0.0f;
+		K_z[iz]            = 1.0f;
+		K_z_half_z[iz]     = 1.0f;
+		alpha_z[iz]        = 0.0f;
 		alpha_z_half_z[iz] = 0.0f;
-		a_z[iz] = 0.0f;
-		a_z_half_z[iz] = 0.0f;
+		a_z[iz]            = 0.0f;
+		a_z_half_z[iz]     = 0.0f;
 	}
 
 	/* origin of the PML layer (position of right edge minus thickness, in meters) */
@@ -826,6 +824,7 @@ if (verb) sf_warning("memory variables zeroed\n");
 
 		/* Left Edge */
 		if (USE_PML_LEFT) {
+			// if (verb) sf_warning("Left PML Enabled\n");
 			/* define damping profile at the grid points */
 			abscissa_in_PML = xoriginleft - xval;
 			if (abscissa_in_PML >= 0.0f) {
@@ -849,6 +848,7 @@ if (verb) sf_warning("memory variables zeroed\n");
 
 		/* Right Edge */
 		if (USE_PML_RIGHT) {
+			// if (verb) sf_warning("Right PML Enabled\n");
 			/* define damping profile at the grid points */
 			abscissa_in_PML = xval - xoriginright;
 			if (abscissa_in_PML >= 0.0f) {
@@ -887,12 +887,18 @@ if (verb) sf_warning("memory variables zeroed\n");
 			a_x_half_x[ix] = d_x_half_x[ix] * (b_x_half_x[ix] - 1.0f) / (K_x_half_x[ix] * (d_x_half_x[ix] + K_x_half_x[ix] * alpha_x_half_x[ix]));
 		}
 	}
-			if (verb) sf_warning("X Damping Profile Generated\n");
+	if (verb) sf_warning("X Damping Profile Generated\n");
 	/* -----------------------Z Damping Profile-----------------------------------*/
 
 	/* Bottom Edge */
+	if (USE_PML_BOTTOM) {
+		// if (verb) sf_warning("Bottom PML Enabled\n");
+	}
 
 	/* Top Edge */
+	if (USE_PML_TOP) {
+		// if (verb) sf_warning("Top PML Enabled\n");
+	}
 
 
 
@@ -912,77 +918,68 @@ if (verb) sf_warning("memory variables zeroed\n");
 
 		/* Time for Time Step */
 		t = (double) it*dt;
-		if (verb) sf_warning("Iteration #%i\n",it);
+		// if (verb) sf_warning("Iteration #%i",it);
 
 
 		/* Calculate constituitive relations */
-		for (ix = NOP; ix < fdm->nxpad-NOP - 1; ix++) {
-			for (iz = NOP + 1; iz < fdm->nzpad-NOP; iz++) {
+		for (ix = nb; ix < fdm->nx - nb - 1; ix++) {
+			for (iz = nb + 1; iz < fdm->nz - nb; iz++) {
 				/* p(i+1/2,j+1/2), m */
-				value_dx_sigmaxx =(27.0f*vx[ix+1][iz]-27.0f*vx[ix][iz]-vx[ix+2][iz]+vx[ix-1][iz])/dx/24.0f;
-				value_dz_sigmaxx =(27.0f*vz[ix][iz]-27.0f*vz[ix][iz-1]-vz[ix][iz+1]+vz[ix][iz-2])/dz/24.0f;
+				value_dx_sigmaxx = ( 27.0f*vox[ix+1][iz] - 27.0f*vox[ix][iz]   - vox[ix+2][iz] + vox[ix-1][iz] ) / dx / 24.0f;
+				value_dz_sigmaxx = ( 27.0f*voz[ix][iz]   - 27.0f*voz[ix][iz-1] - voz[ix][iz+1] + voz[ix][iz-2] ) / dz / 24.0f;
 
-				memory_dx_sigmaxx[ix][iz] = b_x_half_x[ix] * memory_dx_sigmaxx[ix][iz] + a_x_half_x[ix] *  Dx(vox,ix,iz,idx);
-				memory_dz_sigmaxx[ix][iz] = b_z[iz] * memory_dz_sigmaxx[ix][iz] + a_z[iz] * Dz(voz,ix,iz,idz);
+				memory_dx_sigmaxx[ix][iz] = b_x_half_x[ix] * memory_dx_sigmaxx[ix][iz] + a_x_half_x[ix] * value_dx_sigmaxx;
+				memory_dz_sigmaxx[ix][iz] = b_z[iz]        * memory_dz_sigmaxx[ix][iz] + a_z[iz]        * value_dz_sigmaxx;
 
-				gamma11[ix][iz] = gamma11[ix][iz] + dt * ( Dx(vox,ix,iz,idx) / K_x_half_x[ix] + memory_dz_sigmaxx[ix][iz]);
-				gamma22[ix][iz] = gamma22[ix][iz] + dt * ( Dz(voz,ix,iz,idz) / K_z[iz] + memory_dz_sigmaxx[ix][iz]);
+				gamma11[ix][iz] = gamma11[ix][iz] + dt * ( value_dx_sigmaxx / K_x_half_x[ix] + memory_dz_sigmaxx[ix][iz] );
+				gamma22[ix][iz] = gamma22[ix][iz] + dt * ( value_dz_sigmaxx / K_z[iz]        + memory_dz_sigmaxx[ix][iz] );
 
 				// p = sigma2
 
-				value_dx_sigma2vxf=(27.0f*vxf[ix+1][iz]-27.0f* vxf(i,j)-vxf(i+2,j)+vxf(i-1,j)) / DELTAX/24.D0
-				value_dz_sigma2vzf=(27.0f*vzf[ix,iz]-27.0f*vzf(i,j-1)-vyf(i,j+1)+vyf(i,j-2)) / DELTAY/24.D0
+				value_dx_sigma2vxf=( 27.0f*qox[ix+1][iz] - 27.0f*qox[ix][iz]   - qox[ix+2][iz] + qox[ix-1][iz] ) / dx / 24.0f;
+				value_dz_sigma2vzf=( 27.0f*qoz[ix][iz]   - 27.0f*qoz[ix][iz-1] - qoz[ix][iz+1] + qoz[ix][iz-2] ) / dz / 24.0f;
 
-				memory_dx_sigma2vxf[ix][iz] = b_x_half_x[ix] * memory_dx_sigma2vxf[ix][iz] + a_x_half_x[ix] * Dx(qox,ix,iz,idx);
-				memory_dz_sigma2vzf[ix][iz] = b_z[iz] * memory_dz_sigma2vzf[ix][iz] + a_z[iz] * Dz(qoz,ix,iz,idz);
+				memory_dx_sigma2vxf[ix][iz] = b_x_half_x[ix] * memory_dx_sigma2vxf[ix][iz] + a_x_half_x[ix] * value_dx_sigma2vxf;
+				memory_dz_sigma2vzf[ix][iz] = b_z[iz]        * memory_dz_sigma2vzf[ix][iz] + a_z[iz]        * value_dz_sigma2vzf;
 
-				xi_1[ix][iz] = xi_1[ix][iz] - ( Dx(qox,ix,iz,idx) / K_x_half_x[ix] + memory_dx_sigma2vxf[ix][iz]) * dt;
-				xi_2[ix][iz] = xi_2[ix][iz] - ( Dz(qoz,ix,iz,idz) / K_z[iz] + memory_dz_sigma2vzf[ix][iz]) * dt;
+				xi_1[ix][iz] = xi_1[ix][iz] - ( value_dx_sigma2vxf / K_x_half_x[ix] + memory_dx_sigma2vxf[ix][iz]) * dt;
+				xi_2[ix][iz] = xi_2[ix][iz] - ( value_dz_sigma2vzf / K_z[iz]        + memory_dz_sigma2vzf[ix][iz]) * dt;
 
 				p[ix][iz] = -1.0*alpha[ix][iz]*biotmod[ix][iz]*(gamma11[ix][iz] + gamma22[ix][iz]) + biotmod[ix][iz]*(xi_1[ix][iz] + xi_2[ix][iz]);
 			}
 		}
-		if (verb) sf_warning("Pressure information generated\n");
-
-
-		/*------------------------------------------------------------*/
-		/* inject stress source                                       */
-		/*------------------------------------------------------------*/
-		// if (srctype == STRESS || srctype == TENSOR) {
-		//   if (verb) sf_warning("Injecting stress source");
-		//   lint2d_bell(tzz,ww[it][0],cs);
-		//   lint2d_bell(txx,ww[it][0],cs);
-		//   lint2d_bell(  p,ww[it][1],cs);
-		// }
-		/* Debug pressure source */
-		//p[nx/2][nz/2] = p[nx/2][nz/2] + ((exp( -1.0 * (80.0f*80.0f*PI*PI) * pow((t - 0.0f),2.0f) ) / (-2.0f * (80.0f*80.0f*PI*PI) ) )*1e2 ) * biotmod[nx/2][nz/2];
-
+		// if (verb) sf_warning("Pressure information generated\n");
 
 		/* Add pressures sources here */
-		lint2d_bell(p,ww[it][0],cs);
-
-		for (ix = NOP + 1; ix < fdm->nxpad-NOP; ix++) {
-			for (iz = NOP; iz < fdm->nzpad-NOP - 1; iz++) {
+		// lint2d_bell(p,ww[it][0],cs);
+		/* ===========================================================================*/
+		for (ix = nb + 1; ix < fdm->nx - nb; ix++) {
+			for (iz = nb; iz < fdm->nz - nb - 1; iz++) {
 				/* p(i+1/2,j+1/2), m */
 
 				/* interpolate material parameters at the right location in the staggered grid cell */
-				c33_half_z = 2.0 / (1.0 / shm[ix][iz] + 1.0 / shm[ix][iz+1]);
+				// c33_half_z = 2.0 / (1.0 / shm[ix][iz] + 1.0 / shm[ix][iz+1]);
 
-				memory_dx_sigmaxz[ix][iz] = b_x[ix] * memory_dx_sigmaxz[ix][iz] + a_x[ix] * Dx(voz,ix,iz,idx);
-				memory_dz_sigmaxz[ix][iz] = b_z_half_z[iz] * memory_dz_sigmaxz[ix][iz] + a_z_half_z[iz] * Dz(vox,ix,iz,idz);
+				value_dx_sigmaxz = ( 27.0f*voz[ix][iz]   - 27.0f*voz[ix-1][iz] - voz[ix+1][iz] + voz[ix-2][iz] ) / dx / 24.0f;
+				value_dz_sigmaxz = ( 27.0f*vox[ix][iz+1] - 27.0f*vox[ix][iz]   - vox[ix][iz+2] + vox[ix][iz-1] ) / dz / 24.0f;
+
+				memory_dx_sigmaxz[ix][iz] = b_x[ix]        * memory_dx_sigmaxz[ix][iz] + a_x[ix]        * value_dx_sigmaxz;
+				memory_dz_sigmaxz[ix][iz] = b_z_half_z[iz] * memory_dz_sigmaxz[ix][iz] + a_z_half_z[iz] * value_dz_sigmaxz;
 
 				/* txz(i,j+1), m */
-				txz[ix][iz] =    txz[ix][iz] + c33_half_z / 1.0f * ( Dx(voz,ix,iz,idx) / K_x[ix] + memory_dx_sigmaxz[ix][iz] + Dz(vox,ix,iz,idz) ) * dt;
+				txz[ix][iz] =    txz[ix][iz] + shm[ix][iz+1] / 1.0f * ( value_dx_sigmaxz / K_x[ix] + memory_dx_sigmaxz[ix][iz] + value_dz_sigmaxz / K_z[iz] ) * dt;
 
 				/* txz(i,j+1), m */
+				tzx[ix][iz] =    tzx[ix][iz] + shm[ix][iz+1] / 1.0f * ( value_dx_sigmaxz / K_x[ix] + memory_dx_sigmaxz[ix][iz] + value_dz_sigmaxz / K_z[iz] ) * dt;
+
 			}
 		}
-		if (verb) sf_warning("Shear stress generated\n");
+		// if (verb) sf_warning("Shear stress generated\n");
 
 
 		/* ========================================================================== */
-		for (ix = NOP; ix < fdm->nxpad-NOP - 1; ix++) {
-			for (iz = NOP + 1; iz < fdm->nzpad-NOP; iz++) {
+		for (ix = nb; ix < fdm->nx - nb - 1; ix++) {
+			for (iz = nb + 1; iz < fdm->nz - nb; iz++) {
 
 				/* txx(i+1/2,j+1/2), m */
 
@@ -998,247 +995,257 @@ if (verb) sf_warning("memory variables zeroed\n");
 			}
 		}
 
-		if (verb) sf_warning("Principal stresses generated\n");
+		// if (verb) sf_warning("Principal stresses generated\n");
 		/* ========================================================================== */
 		/* Compute velocity and update memory variables for C-PML */
 		/* X - Component */
-		for (ix = NOP + 1; ix < fdm->nxpad-NOP; ix++) {
-			for (iz = NOP + 1; iz < fdm->nzpad-NOP; iz++) {
+		for (ix = nb + 1; ix < fdm->nx - nb; ix++) {
+			for (iz = nb + 1; iz < fdm->nz - nb; iz++) {
 
 				co  = (bro[ix][iz] * shm[ix][iz] - fro[ix][iz]*fro[ix][iz])/dt;
 				c1a = co + bro[ix][iz] * fvs[ix][iz]/prm[ix][iz]*0.5f;
 				c2  = co - bro[ix][iz] * fvs[ix][iz]/prm[ix][iz]*0.5f;
 
-				memory_dx_vx1[ix][iz] = b_x[ix] * memory_dx_vx1[ix][iz] + a_x[ix] * Dx(txx,ix,iz,idx);
-				memory_dx_vx2[ix][iz] = b_x[ix] * memory_dx_vx2[ix][iz] + a_x[ix] * Dx(p,ix,iz,idx);
-				memory_dz_vx[ix][iz]  = b_z[iz] * memory_dz_vx[ix][iz]  + a_z[iz] * Dz(txz,ix,iz,idz);
+				value_dx_vx1 = ( 27.0f*txx[ix][iz] - 27.0f*txx[ix-1][iz] - txx[ix+1][iz] + txx[ix-2][iz] ) / dx / 24.0f;
+				value_dx_vx2 = ( 27.0f*p[ix][iz]   - 27.0f*p[ix-1][iz]   - p[ix+1][iz]   + p[ix-1][iz]   ) / dx / 24.0f;
+				value_dz_vx  = ( 27.0f*txz[ix][iz] - 27.0f*txz[ix][iz-1] - txz[ix][iz+1] + txz[ix][iz-2] ) / dz / 24.0f;
 
-				qpx[ix][iz] = (c2*qox[ix][iz] + ( -1.0f*fro[ix][iz] * ( Dx(txx,ix,iz,idz) / K_x[ix] +
-				memory_dx_vx1[ix][iz] + Dz(txz,ix,iz,idz) / K_z[iz] + memory_dz_vx[ix][iz]))) / c1a;
+				memory_dx_vx1[ix][iz] = b_x[ix] * memory_dx_vx1[ix][iz] + a_x[ix] * value_dx_vx1;
+				memory_dx_vx2[ix][iz] = b_x[ix] * memory_dx_vx2[ix][iz] + a_x[ix] * value_dx_vx2;
+				memory_dz_vx[ix][iz]  = b_z[iz] * memory_dz_vx[ix][iz]  + a_z[iz] * value_dz_vx;
 
-				vpx[ix][iz] = vox[ix][iz] + ( shm[ix][iz]*(Dx(txx,ix,iz,idx) / K_x[ix] + memory_dx_vx1[ix][iz] + Dz(txz,ix,iz,idz) / K_z[iz] +
-				memory_dz_vx[ix][iz]) + fro[ix][iz]*(Dx(p,ix,iz,idx) / K_x[ix] + memory_dx_vx2[ix][iz]) +
-				fro[ix][iz]*fvs[ix][iz]/prm[ix][iz]*(qox[ix][iz] + qpx[ix][iz])/2.0f) / co;
-			}
-		}
-		if (verb) sf_warning("X Component Velocities Generated\n");
-		/* ======================================================================= */
-		/* Z - Component */
-		for (ix = NOP; ix < fdm->nxpad-NOP-1; ix++) {
-			for (iz = NOP; iz < fdm->nzpad-NOP-1; iz++) {
+				qpx[ix][iz] = (c2*qox[ix][iz] + ( -1.0f*fro[ix][iz] * ( value_dx_vx1 / K_x[ix] +
+					memory_dx_vx1[ix][iz] + value_dx_vx2 / K_z[iz] + memory_dz_vx[ix][iz]))) / c1a;
 
-				co = (bro[ix][iz+1] * shm[ix][iz+1] - fro[ix][iz+1]*fro[ix][iz+1])/dt;
-				c1a = co + bro[ix][iz+1] * fvs[ix][iz+1]/prm[ix][iz+1]*0.5f;
-				c2 = co - bro[ix][iz+1] * fvs[ix][iz+1]/prm[ix][iz+1]*0.5f;
-
-				memory_dx_vz[ix][iz]  = b_x_half_x[ix] * memory_dx_vz[ix][iz]  + a_x_half_x[ix] * Dx(txz,ix,iz,idx);
-				memory_dz_vz1[ix][iz] = b_z_half_z[iz] * memory_dz_vz1[ix][iz] + a_z_half_z[iz] * Dz(tzz,ix,iz,idz);
-				memory_dz_vz2[ix][iz] = b_z_half_z[iz] * memory_dz_vz2[ix][iz] + a_z_half_z[iz] * Dz(p,ix,iz,idz);
-
-				qpz[ix][iz] = (c2*qoz[ix][iz] + ( -1.0f*fro[ix][iz+1] * ( Dx(txz,ix,iz,idx) / K_x_half_x[ix] + memory_dx_vz[ix][iz] +
-				Dz(tzz,ix,iz,idz) / K_z_half_z[iz] + memory_dz_vz1[ix][iz]))) / c1a;
-
-				vpz[ix][iz] = voz[ix][iz] + ( shm[ix][iz+1]*(Dx(txz,ix,iz,idx) / K_x_half_x[ix] + memory_dx_vz[ix][iz] + Dz(tzz,ix,iz,idz) / K_z_half_z[iz] +
-				memory_dz_vz1[ix][iz]) + fro[ix][iz+1]*(Dz(p,ix,iz,idz) / K_z_half_z[ix] + memory_dz_vz2[ix][iz]) +
-				fro[ix][iz+1]*fvs[ix][iz+1]/prm[ix][iz+1]*(qoz[ix][iz] + qpz[ix][iz])/2.0f) / co;
-			}
-		}
-		if (verb) sf_warning("Z Component Velocities Generated\n");
-		/* ======================================================================= */
-		/* apply the dirichlet boundary condition                               */
-		/* undrained, fixed all around                                */
-		/*------------------------------------------------------------*/
-		for (ix = 0; ix < fdm->nxpad; ix++){
-			for (iz = 0; iz < NOP; iz++){
-				vpz[ix][iz] = 0.0f;
-				vpx[ix][iz] = 0.0f;
-				qpz[ix][iz] = 0.0f;
-				qpx[ix][iz] = 0.0f;
-			}
-		}
-		for (ix = 0; ix < fdm->nxpad; ix++){
-			for (iz = fdm->nzpad-NOP; iz < fdm->nzpad; iz++){
-				vpz[ix][iz] = 0.0f;
-				vpx[ix][iz] = 0.0f;
-				qpz[ix][iz] = 0.0f;
-				qpx[ix][iz] = 0.0f;
-			}
-		}
-		for (ix = 0; ix < NOP; ix++){
-			for (iz = 0; iz < fdm->nzpad; iz++){
-				vpz[ix][iz] = 0.0f;
-				vpx[ix][iz] = 0.0f;
-				qpz[ix][iz] = 0.0f;
-				qpx[ix][iz] = 0.0f;
-			}
-		}
-		for (ix = fdm->nxpad-NOP; ix < fdm->nxpad; ix++){
-			for (iz = 0; iz < fdm->nzpad; iz++){
-				vpz[ix][iz] = 0.0f;
-				vpx[ix][iz] = 0.0f;
-				qpz[ix][iz] = 0.0f;
-				qpx[ix][iz] = 0.0f;
-			}
-		}
-		if (verb) sf_warning("dirichlet condition applied\n");
-		/*------------------------------------------------------------*/
-		/* free surface */
-		/*------------------------------------------------------------*/
-		/* Francesco: the z component of the traction must be zero at the free surface */
-		if (fsrf) {
-			for (ix=0; ix < fdm->nxpad; ix++) {
-				for (iz=0; iz < fdm->nb; iz++) {
-					txx[ix][iz] = 0.0f;
-					txz[ix][iz] = 0.0f;
-					tzx[ix][iz] = 0.0f;
-					tzz[ix][iz] = 0.0f;
-					p[ix][iz] = 0.0f;
-				}
-			}
-		}
-
-		/* ========================================================================== */
-		/* Check Stability */
-
-		/* ========================================================================== */
-		/* circulate wavefield arrays */
-		/* Change pointers around */
-
-		/* particle displacement */
-		utz=umz; utx=umx;
-		umz=uoz; umx=uox;
-		uoz=upz; uox=upx;
-		upz=utz; upx=utx;
-
-		/* relative displacement */
-		wtz=wmz; wtx=wmx;
-		wmz=woz; wmx=wox;
-		woz=wpz; wox=wpx;
-		wpz=wtz; wpx=wtx;
-
-		/* partcle velocity */
-		vtz=vmz; vtx=vmx;
-		vmz=voz; vmx=vox;
-		voz=vpz; vox=vpx;
-		vpz=vtz; vpx=vtx;
-
-		/* relative velocity */
-		qtz=qmz; qtx=qmx;
-		qmz=qoz; qmx=qox;
-		qoz=qpz; qox=qpx;
-		qpz=qtz; qpx=qtx;
-
-		/*------------------------------------------------------------*/
-		/* cut wavefield and save */
-		/*------------------------------------------------------------*/
-		/*    if (verb) sf_warning("Saving wavefield");*/
-		lint2d_extract(p,dd[0],cr);
-		lint2d_extract(txz,dd[1],cr);
-		/*    if (verb) sf_warning("Wavefield Saved");*/
-
-
-		/* Output Potentials */
-		if (opot){
-			if (snap && it%jsnap==0) {
-				for  (ix = NOP; ix < fdm->nxpad - NOP; ix++) {
-					for (iz = NOP; iz < fdm->nzpad - NOP; iz++) {
-						qp[ix][iz] = Dz( voz,ix,iz,idz ) + Dx( vox,ix,iz,idx );
-						qs[ix][iz] = Dz( vox,ix,iz,idz ) - Dx( voz,ix,iz,idx );
+					vpx[ix][iz] = vox[ix][iz] + ( shm[ix][iz]*(value_dx_vx1 / K_x[ix] + memory_dx_vx1[ix][iz] + value_dz_vx / K_z[iz] +
+						memory_dz_vx[ix][iz]) + fro[ix][iz]*(value_dx_vx2 / K_x[ix] + memory_dx_vx2[ix][iz]) +
+						fro[ix][iz]*fvs[ix][iz]/prm[ix][iz]*(qox[ix][iz] + qpx[ix][iz])/2.0f) / co;
 					}
 				}
-				cut2d(qp,uc,fdm,acz,acx);
-				sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
+				// if (verb) sf_warning("X Component Velocities Generated\n");
+				/* ======================================================================= */
+				/* Z - Component */
+				for (ix = nb; ix < fdm->nx - nb - 1; ix++) {
+					for (iz = nb; iz < fdm->nz - nb - 1; iz++) {
 
-				cut2d(qs,uc,fdm,acz,acx);
-				sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
-			}
-			if (it%jdata==0) sf_floatwrite(dd[0],nr*nc,Fdat);
-		}
-		else {
-			/* Save snapshots of wavefield if selected */
-			if (snap && it%jsnap==0) {
-				/* Export Vz */
-				cut2d(voz,uc,fdm,acz,acx);
-				sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
+						co = (bro[ix][iz+1] * shm[ix][iz+1] - fro[ix][iz+1]*fro[ix][iz+1])/dt;
+						c1a = co + bro[ix][iz+1] * fvs[ix][iz+1]/prm[ix][iz+1]*0.5f;
+						c2 = co - bro[ix][iz+1] * fvs[ix][iz+1]/prm[ix][iz+1]*0.5f;
 
-				/* Export Vx */
-				cut2d(vox,uc,fdm,acz,acx);
-				sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
-			}
-			if (it%jdata==0) sf_floatwrite(dd[0],nr*nc,Fdat);
-		}
-		/* Save data snapshots*/
-	}
-	/* ========================================================================== */
-	if (verb) sf_warning("End iterations");
-	if (verb) fprintf(stderr,"\n");
+						value_dx_vz  = ( 27.0f*txz[ix+1][iz] - 27.0f*txz[ix][iz] - txz[ix+2][iz] + txz[ix-1][iz] ) / dx / 24.0f;
+						value_dz_vz1 = ( 27.0f*tzz[ix][iz+1] - 27.0f*tzz[ix][iz] - tzz[ix][iz+2] + tzz[ix][iz-1] ) / dz / 24.0f;
+						value_dz_vz2 = ( 27.0f*p[ix][iz+1]   - 27.0f*p[ix][iz]   - p[ix][iz+2]   + p[ix][iz-1]   ) / dz / 24.0f;
 
-	/* ------------------------------------------------------------ */
-	/* deallocate arrays */
-	/* ------------------------------------------------------------ */
-	if (debug) fprintf(stderr,"Finished loop, trying to deallocate...\n");
-	free(**ww); free(*ww); free(ww);
-	free(ss);
-	free(rr);
-	free(*dd);  free(dd);
-	if (debug) fprintf(stderr,"Deallocating coefficient matrices...\n");
+						memory_dx_vz[ix][iz]  = b_x_half_x[ix] * memory_dx_vz[ix][iz]  + a_x_half_x[ix] * value_dx_vz;
+						memory_dz_vz1[ix][iz] = b_z_half_z[iz] * memory_dz_vz1[ix][iz] + a_z_half_z[iz] * value_dz_vz1;
+						memory_dz_vz2[ix][iz] = b_z_half_z[iz] * memory_dz_vz2[ix][iz] + a_z_half_z[iz] * value_dz_vz2;
 
-	/*free(**ww); free(*ww); free(ww);*/
-	/* free(ss); */
-	/* /\* free(rr); *\/ */
-	/* free(*dd);  free(dd); */
-	/* /\* Only free double pointers that are not null... *\/ */
+						qpz[ix][iz] = (c2*qoz[ix][iz] + ( -1.0f*fro[ix][iz+1] * ( value_dx_vz / K_x_half_x[ix] + memory_dx_vz[ix][iz] +
+							value_dz_vz1 / K_z_half_z[iz] + memory_dz_vz1[ix][iz]))) / c1a;
 
-	/* /\* Free all outstanding parameters *\/ */
+							vpz[ix][iz] = voz[ix][iz] + ( shm[ix][iz+1]*(value_dx_vz / K_x_half_x[ix] + memory_dx_vz[ix][iz] +
+								value_dz_vz1 / K_z_half_z[iz] + memory_dz_vz1[ix][iz]) +
+								fro[ix][iz+1]*(value_dz_vz2 / K_z_half_z[ix] + memory_dz_vz2[ix][iz]) +
+								fro[ix][iz+1]*fvs[ix][iz+1]/prm[ix][iz+1]*(qoz[ix][iz] + qpz[ix][iz])/2.0f) / co;
+							}
+						}
+						// if (verb) sf_warning("Z Component Velocities Generated\n");
+						/* ======================================================================= */
+						/* apply the dirichlet boundary condition                               */
+						/* undrained, fixed all around                                */
+						/*------------------------------------------------------------*/
+						for (ix = 0; ix < fdm->nxpad; ix++){
+							for (iz = 0; iz < nb; iz++){
+								vpz[ix][iz] = 0.0f;
+								vpx[ix][iz] = 0.0f;
+								qpz[ix][iz] = 0.0f;
+								qpx[ix][iz] = 0.0f;
+							}
+						}
+						for (ix = 0; ix < fdm->nxpad; ix++){
+							for (iz = fdm->nzpad-nb; iz < fdm->nzpad; iz++){
+								vpz[ix][iz] = 0.0f;
+								vpx[ix][iz] = 0.0f;
+								qpz[ix][iz] = 0.0f;
+								qpx[ix][iz] = 0.0f;
+							}
+						}
+						for (ix = 0; ix < nb; ix++){
+							for (iz = 0; iz < fdm->nzpad; iz++){
+								vpz[ix][iz] = 0.0f;
+								vpx[ix][iz] = 0.0f;
+								qpz[ix][iz] = 0.0f;
+								qpx[ix][iz] = 0.0f;
+							}
+						}
+						for (ix = fdm->nxpad-nb; ix < fdm->nxpad; ix++){
+							for (iz = 0; iz < fdm->nzpad; iz++){
+								vpz[ix][iz] = 0.0f;
+								vpx[ix][iz] = 0.0f;
+								qpz[ix][iz] = 0.0f;
+								qpx[ix][iz] = 0.0f;
+							}
+						}
+						// if (verb) sf_warning("dirichlet condition applied\n");
+						/*------------------------------------------------------------*/
+						/* free surface */
+						/*------------------------------------------------------------*/
+						/* Francesco: the z component of the traction must be zero at the free surface */
+						if (fsrf) {
+							for (ix=0; ix < fdm->nxpad; ix++) {
+								for (iz=0; iz < fdm->nb; iz++) {
+									txx[ix][iz] = 0.0f;
+									txz[ix][iz] = 0.0f;
+									tzx[ix][iz] = 0.0f;
+									tzz[ix][iz] = 0.0f;
+									p[ix][iz]   = 0.0f;
+								}
+							}
+							// if (verb) sf_warning("free surface condition applied\n");
+						}
 
-	free(*umz); free(umz);
-	free(*uoz); free(uoz);
-	free(*upz); free(upz);
-	free(*uaz); free(uaz);
+						/* ========================================================================== */
+						/* Check Stability */
 
-	free(*umx); free(umx);
-	free(*uox); free(uox);
-	free(*upx); free(upx);
-	free(*uax); free(uax);
+						/* ========================================================================== */
+						/* circulate wavefield arrays */
+						/* Change pointers around */
 
-	free(*vmz); free(vmz);
-	free(*voz); free(voz);
-	free(*vpz); free(vpz);
-	free(*vaz); free(vaz);
+						/* particle displacement */
+						utz=umz; utx=umx;
+						umz=uoz; umx=uox;
+						uoz=upz; uox=upx;
+						upz=utz; upx=utx;
 
-	free(*vmx); free(vmx);
-	free(*vox); free(vox);
-	free(*vpx); free(vpx);
-	free(*vax); free(vax);
+						/* relative displacement */
+						wtz=wmz; wtx=wmx;
+						wmz=woz; wmx=wox;
+						woz=wpz; wox=wpx;
+						wpz=wtz; wpx=wtx;
 
-	free(*wmz); free(wmz);
-	free(*woz); free(woz);
-	free(*wpz); free(wpz);
-	free(*waz); free(waz);
+						/* partcle velocity */
+						vtz=vmz; vtx=vmx;
+						vmz=voz; vmx=vox;
+						voz=vpz; vox=vpx;
+						vpz=vtz; vpx=vtx;
 
-	free(*wmx); free(wmx);
-	free(*wox); free(wox);
-	free(*wpx); free(wpx);
-	free(*wax); free(wax);
+						/* relative velocity */
+						qtz=qmz; qtx=qmx;
+						qmz=qoz; qmx=qox;
+						qoz=qpz; qox=qpx;
+						qpz=qtz; qpx=qtx;
 
-	free(*qmz); free(qmz);
-	free(*qoz); free(qoz);
-	free(*qpz); free(qpz);
-	free(*qaz); free(qaz);
-
-	free(*qmx); free(qmx);
-	free(*qox); free(qox);
-	free(*qpx); free(qpx);
-	free(*qax); free(qax);
-
-	free(*tzz); free(tzz);
-	free(*txx); free(txx);
-	free(*tzx); free(tzx);
-	free(*txz); free(txz);
-	if (snap) {free(*uc);  free(uc);}
-	if (opot) {free(*qp);  free(qp);}
+						/*------------------------------------------------------------*/
+						/* cut wavefield and save */
+						/*------------------------------------------------------------*/
+						/*    if (verb) sf_warning("Saving wavefield");*/
+						lint2d_extract(vox,dd[0],cr);
+						lint2d_extract(voz,dd[1],cr);
+						/*    if (verb) sf_warning("Wavefield Saved");*/
 
 
-	exit (0);
-	/* ------------end 2d ------------------ */
-}
+						/* Output Potentials */
+						if (opot){
+							if (snap && it%jsnap==0) {
+								for  (ix = nb; ix < fdm->nxpad - nb; ix++) {
+									for (iz = nb; iz < fdm->nzpad - nb; iz++) {
+										qp[ix][iz] = Dz( voz,ix,iz,idz ) + Dx( vox,ix,iz,idx );
+										qs[ix][iz] = Dz( vox,ix,iz,idz ) - Dx( voz,ix,iz,idx );
+									}
+								}
+								cut2d(qp,uc,fdm,acz,acx);
+								sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
+
+								cut2d(qs,uc,fdm,acz,acx);
+								sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
+							}
+							if (it%jdata==0) sf_floatwrite(dd[0],nr*nc,Fdat);
+						}
+						else {
+							/* Save snapshots of wavefield if selected */
+							if (snap && it%jsnap==0) {
+								/* Export Vz */
+								cut2d(voz,uc,fdm,acz,acx);
+								sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
+
+								/* Export Vx */
+								cut2d(vox,uc,fdm,acz,acx);
+								sf_floatwrite(uc[0],sf_n(acz)*sf_n(acx),Fwfl);
+							}
+							if (it%jdata==0) sf_floatwrite(dd[0],nr*nc,Fdat);
+						}
+						/* Save data snapshots*/
+					}
+					/* ========================================================================== */
+					if (verb) sf_warning("End iterations");
+					if (verb) fprintf(stderr,"\n");
+
+					/* ------------------------------------------------------------ */
+					/* deallocate arrays */
+					/* ------------------------------------------------------------ */
+					if (debug) fprintf(stderr,"Finished loop, trying to deallocate...\n");
+					free(**ww); free(*ww); free(ww);
+					free(ss);
+					free(rr);
+					free(*dd);  free(dd);
+					if (debug) fprintf(stderr,"Deallocating coefficient matrices...\n");
+
+					/*free(**ww); free(*ww); free(ww);*/
+					/* free(ss); */
+					/* /\* free(rr); *\/ */
+					/* free(*dd);  free(dd); */
+					/* /\* Only free double pointers that are not null... *\/ */
+
+					/* /\* Free all outstanding parameters *\/ */
+
+					free(*umz); free(umz);
+					free(*uoz); free(uoz);
+					free(*upz); free(upz);
+					free(*uaz); free(uaz);
+
+					free(*umx); free(umx);
+					free(*uox); free(uox);
+					free(*upx); free(upx);
+					free(*uax); free(uax);
+
+					free(*vmz); free(vmz);
+					free(*voz); free(voz);
+					free(*vpz); free(vpz);
+					free(*vaz); free(vaz);
+
+					free(*vmx); free(vmx);
+					free(*vox); free(vox);
+					free(*vpx); free(vpx);
+					free(*vax); free(vax);
+
+					free(*wmz); free(wmz);
+					free(*woz); free(woz);
+					free(*wpz); free(wpz);
+					free(*waz); free(waz);
+
+					free(*wmx); free(wmx);
+					free(*wox); free(wox);
+					free(*wpx); free(wpx);
+					free(*wax); free(wax);
+
+					free(*qmz); free(qmz);
+					free(*qoz); free(qoz);
+					free(*qpz); free(qpz);
+					free(*qaz); free(qaz);
+
+					free(*qmx); free(qmx);
+					free(*qox); free(qox);
+					free(*qpx); free(qpx);
+					free(*qax); free(qax);
+
+					free(*tzz); free(tzz);
+					free(*txx); free(txx);
+					free(*tzx); free(tzx);
+					free(*txz); free(txz);
+					if (snap) {free(*uc);  free(uc);}
+					if (opot) {free(*qp);  free(qp);}
+
+
+					exit (0);
+					/* ------------end 2d ------------------ */
+				}

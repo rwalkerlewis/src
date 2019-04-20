@@ -73,6 +73,7 @@ sfpwefd2D_PML.par('USE_PML_TOP',rsf.doc.rsfpar('bool','n','','''"PML ABC" '''))
 sfpwefd2D_PML.par('USE_PML_BOTTOM',rsf.doc.rsfpar('bool','n','','''"PML ABC" '''))
 sfpwefd2D_PML.par('USE_PML_LEFT',rsf.doc.rsfpar('bool','n','','''"PML ABC" '''))
 sfpwefd2D_PML.par('USE_PML_RIGHT',rsf.doc.rsfpar('bool','n','','''"PML ABC" '''))
+sfpwefd2D_PML.par('jsnap',rsf.doc.rsfpar('int','nt','',''''''))
 sfpwefd2D_PML.par('NPOINTS_PML',rsf.doc.rsfpar('int','10','',''''''))
 sfpwefd2D_PML.par('Rcoef',rsf.doc.rsfpar('float','0.001f','','''Reflection coefficient '''))
 sfpwefd2D_PML.par('NPOWER',rsf.doc.rsfpar('float','2.0f','','''power to compute d0 profile '''))
@@ -83,11 +84,9 @@ sfpwefd2D_PML.par('oqz',rsf.doc.rsfpar('float','sf_o(az)','',''''''))
 sfpwefd2D_PML.par('oqx',rsf.doc.rsfpar('float','sf_o(ax)','',''''''))
 sfpwefd2D_PML.par('nbell',rsf.doc.rsfpar('int','1','','''bell size '''))
 sfpwefd2D_PML.par('jdata',rsf.doc.rsfpar('int','1','','''Absorbing Boundary '''))
-sfpwefd2D_PML.par('nb',rsf.doc.rsfpar('int','100','','''padding size for absorbing boundary '''))
-sfpwefd2D_PML.par('jsnap',rsf.doc.rsfpar('int','nt','',''''''))
-sfpwefd2D_PML.par('fmax',rsf.doc.rsfpar('float','','',''''''))
+sfpwefd2D_PML.par('nb',rsf.doc.rsfpar('int','NOP','','''padding size for absorbing boundary '''))
 sfpwefd2D_PML.version('2.1-git')
-sfpwefd2D_PML.synopsis('''sfpwefd2D_PML < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n abcpml=n USE_PML_TOP=n USE_PML_BOTTOM=n USE_PML_LEFT=n USE_PML_RIGHT=n NPOINTS_PML=10 Rcoef=0.001f NPOWER=2.0f K_MAX_PML=1.0f nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=''','''Comments here blablabla lorem ipsum dolores sit amet...
+sfpwefd2D_PML.synopsis('''sfpwefd2D_PML < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n abcpml=n USE_PML_TOP=n USE_PML_BOTTOM=n USE_PML_LEFT=n USE_PML_RIGHT=n jsnap=nt NPOINTS_PML=10 Rcoef=0.001f NPOWER=2.0f K_MAX_PML=1.0f nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=NOP''','''Comments here blablabla lorem ipsum dolores sit amet...
 
 You can use several paragraphs for comments, no problem.''')
 rsf.doc.progs['sfpwefd2D_PML']=sfpwefd2D_PML
