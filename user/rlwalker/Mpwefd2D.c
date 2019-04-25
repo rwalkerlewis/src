@@ -57,6 +57,60 @@ void zero2d(int n1, int n2, float **array)
 }
 
 
+void properties_set_2D(float **fro,
+		float **sro,
+		float **kfl,
+		float **kdr,
+		float **ksg,
+		float **shm,
+		float **tor,
+		float **fvs,
+		fdm2d fdm,
+		float **phi,
+		float **prm,
+		float **alpha,
+		float **skem,
+		float **biotmod,
+		float **lambdau,
+		float **lambda,
+		float **mro,
+		float **bro,
+		float **kud,
+		float **fmo,
+		float **r_bar)
+{
+	/*------------------------------------------------------------*/
+	/* calculate local parameters */
+	/*------------------------------------------------------------*/
+	/* for    (ix = NOP; ix < fdm->nxpad - NOP; ix++) { */
+	/*   for    (iz = NOP; iz < fdm->nzpad - NOP; iz++) { */
+	int ix, iz;
+
+	for (ix = 0; ix < fdm->nxpad; ix++) {
+		for (iz = 0; iz < fdm->nzpad; iz++) {
+			/* bulk density */
+			bro[ix][iz] = phi[ix][iz]*fro[ix][iz] + (1.0 - phi[ix][iz])*sro[ix][iz];
+			/* biot coefficient */
+			alpha[ix][iz] = 1.0 - kdr[ix][iz]/ksg[ix][iz];
+			/* skempton coefficient */
+			skem[ix][iz] = (1.0/kdr[ix][iz] - 1.0/ksg[ix][iz])/(1.0/kdr[ix][iz] - 1.0/ksg[ix][iz] + phi[ix][iz]*(1.0/kfl[ix][iz] - 1.0/ksg[ix][iz]));
+			/* undrained bulk modulus */
+			kud[ix][iz] = kdr[ix][iz] / (1.0 - skem[ix][iz]*(1.0 - kdr[ix][iz]/ksg[ix][iz]));
+			/* biot modulus */
+			biotmod[ix][iz] = skem[ix][iz] * kud[ix][iz]/alpha[ix][iz];
+			/* undrained lame # 1 */
+			lambdau[ix][iz] = kud[ix][iz] - 2.0*shm[ix][iz]/3.0;
+			/* solid matrix lame # 1 */
+			lambda[ix][iz] = kdr[ix][iz] - 2.0*shm[ix][iz]/3.0;
+			/* Poroelastodynamic Values */
+			mro[ix][iz] = tor[ix][iz]*fro[ix][iz] / phi[ix][iz];
+			r_bar[ix][iz] = mro[ix][iz]*bro[ix][iz] - fro[ix][iz]*fro[ix][iz];
+			/* fluid mobility / coefficient of friction */
+			fmo[ix][iz] = fvs[ix][iz]/prm[ix][iz];
+		}
+	}
+}
+
 /* ========================================================================== */
 /* Main Loop                                                                  */
 /* ========================================================================== */
@@ -462,32 +516,9 @@ if(! sf_getint("ompchunk",&ompchunk)) ompchunk=1;
 
   /*------------------------------------------------------------*/
   /* calculate local parameters */
-  /* for    (ix = NOP; ix < fdm->nxpad - NOP; ix++) { */
-  /*   for    (iz = NOP; iz < fdm->nzpad - NOP; iz++) { */
-  for (ix = 0; ix < fdm->nxpad; ix++) {
-    for (iz = 0; iz < fdm->nzpad; iz++) {
-      /* bulk density */
-      bro[ix][iz] = phi[ix][iz]*fro[ix][iz] + (1.0 - phi[ix][iz])*sro[ix][iz];
-      /* biot coefficient */
-      alpha[ix][iz] = 1.0 - kdr[ix][iz]/ksg[ix][iz];
-      /* skempton coefficient */
-      skem[ix][iz] = (1.0/kdr[ix][iz] - 1.0/ksg[ix][iz])/(1.0/kdr[ix][iz] - 1.0/ksg[ix][iz] + phi[ix][iz]*(1.0/kfl[ix][iz] - 1.0/ksg[ix][iz]));
-      /* undrained bulk modulus */
-      kud[ix][iz] = kdr[ix][iz] / (1.0 - skem[ix][iz]*(1.0 - kdr[ix][iz]/ksg[ix][iz]));
-      /* biot modulus */
-      biotmod[ix][iz] = skem[ix][iz] * kud[ix][iz]/alpha[ix][iz];
-      /* undrained lame # 1 */
-      lambdau[ix][iz] = kud[ix][iz] - 2.0*shm[ix][iz]/3.0;
-      /* solid matrix lame # 1 */
-      lambda[ix][iz] = kdr[ix][iz] - 2.0*shm[ix][iz]/3.0;
-      /* Poroelastodynamic Values */
-      mro[ix][iz] = tor[ix][iz]*fro[ix][iz] / phi[ix][iz];
-      r_bar[ix][iz] = mro[ix][iz]*bro[ix][iz] - fro[ix][iz]*fro[ix][iz];
-      /* fluid mobility / coefficient of friction */
-      fmo[ix][iz] = fvs[ix][iz]/prm[ix][iz];
-    }
-  }
-  if (verb) sf_warning("local parameters generated\n");
+	properties_set_2D(fro,sro,kfl,kdr,ksg,shm,tor,fvs,fdm,phi,prm,alpha,skem,
+		biotmod,lambdau,lambda,mro,bro,kud,fmo,r_bar);
+	if (verb) sf_warning("local parameters generated\n");
 
   /* ------------------------------------------------------------------------ */
   /* Boundary Conditions */
@@ -715,6 +746,10 @@ for (ix=0; ix<fdm->nxpad; ix++) {
   }
   if (verb) sf_warning("all wavefield structures allocated and zeroed\n");
 
+/* ======================================================================== */
+/* Set initial pore pressure and stress distributions */
+/* ======================================================================== */
+
   /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /*------------------------------------------------------------*/
   /*
@@ -870,18 +905,17 @@ pnormmax_iz = 0;
     }
 		if (verb) fprintf(stderr,"%d/%d \r",it,nt);
 
-    if (verb) fprintf(stderr,"vnorm  max: %f, [%i,%i]",vnormmax, vnormmax_ix, vnormmax_iz);
-    if (verb) fprintf(stderr,"pnorm  max: %f, [%i,%i]",pnormmax, pnormmax_ix, pnormmax_iz);
-    if (verb) fprintf(stderr,"Center txx: %f",txx[mpx][mpz]);
-    if (verb) fprintf(stderr,"Center txz: %f",txz[mpx][mpz]);
-    if (verb) fprintf(stderr,"Center tzz: %f",tzz[mpx][mpz]);
-    if (verb) fprintf(stderr,"Center   p: %f",  p[mpx][mpz]);
-    if (verb) fprintf(stderr,"Center  vx: %f",vpx[mpx][mpz]);
-    if (verb) fprintf(stderr,"Center  vz: %f",vpz[mpx][mpz]);
-    if (verb) fprintf(stderr,"Center  qx: %f",qpx[mpx][mpz]);
-    if (verb) fprintf(stderr,"Center  qz: %f",qpz[mpx][mpz]);
-    if (verb) fprintf(stderr,"End Iteration %i", it);
-    if (verb) fprintf(stderr,"===================================================");
+    if (verb) fprintf(stderr,"vnorm  max: %f, [%i,%i]\n",vnormmax, vnormmax_ix, vnormmax_iz);
+    if (verb) fprintf(stderr,"pnorm  max: %f, [%i,%i]\n",pnormmax, pnormmax_ix, pnormmax_iz);
+    if (verb) fprintf(stderr,"Center txx: %f\n",txx[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center txz: %f\n",txz[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center tzz: %f\n",tzz[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center   p: %f\n",  p[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  vx: %f\n",vpx[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  vz: %f\n",vpz[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  qx: %f\n",qpx[mpx][mpz]);
+    if (verb) fprintf(stderr,"Center  qz: %f\n",qpz[mpx][mpz]);
+    if (verb) fprintf(stderr,"===================================================\n");
 
 		/******************************/
 	/* PML FOR THE VELOCITY FIELD */
@@ -1077,12 +1111,12 @@ pnormmax_iz = 0;
   /* ------------------------------------------------------------ */
   /* deallocate arrays */
   /* ------------------------------------------------------------ */
-	if(debug) fprintf(stderr,"Finished loop, trying to deallocate...\n");
+	if (debug) fprintf(stderr,"Finished loop, trying to deallocate...\n");
 	free(**ww); free(*ww); free(ww);
 	free(ss);
 	free(rr);
 	free(*dd);  free(dd);
-	if(debug) fprintf(stderr,"Deallocating coefficient matrices...\n");
+	if (debug) fprintf(stderr,"Deallocating coefficient matrices...\n");
 
   /*free(**ww); free(*ww); free(ww);*/
   /* free(ss); */
@@ -1136,8 +1170,8 @@ pnormmax_iz = 0;
 	free(*txx); free(txx);
 	free(*tzx); free(tzx);
 	free(*txz); free(txz);
-	if(snap) {free(*uc);  free(uc);}
-	if(opot) {free(*qp);  free(qp);}
+	if (snap) {free(*uc);  free(uc);}
+	if (opot) {free(*qp);  free(qp);}
 
 
   exit (0);
