@@ -26,7 +26,9 @@ sfpwefd2D.par('abcone',rsf.doc.rsfpar('bool','n','','''use sharp brake at end of
 sfpwefd2D.par('debug',rsf.doc.rsfpar('bool','y','','''print debugging info '''))
 sfpwefd2D.par('cfl',rsf.doc.rsfpar('bool','y','','''use CFL check, will cause program to fail if not satisfied '''))
 sfpwefd2D.par('opot',rsf.doc.rsfpar('bool','n','','''output potentials '''))
+sfpwefd2D.par('opar',rsf.doc.rsfpar('bool','n','','''output parameters '''))
 sfpwefd2D.par('abcpml',rsf.doc.rsfpar('bool','n','','''"PML ABC" '''))
+sfpwefd2D.par('update',rsf.doc.rsfpar('bool','n','','''"iteratively update parameters" '''))
 sfpwefd2D.par('nqz',rsf.doc.rsfpar('int','sf_n(az)','',''''''))
 sfpwefd2D.par('nqx',rsf.doc.rsfpar('int','sf_n(ax)','',''''''))
 sfpwefd2D.par('oqz',rsf.doc.rsfpar('float','sf_o(az)','',''''''))
@@ -37,7 +39,7 @@ sfpwefd2D.par('nb',rsf.doc.rsfpar('int','100','','''padding size for absorbing b
 sfpwefd2D.par('jsnap',rsf.doc.rsfpar('int','nt','',''''''))
 sfpwefd2D.par('fmax',rsf.doc.rsfpar('float','','',''''''))
 sfpwefd2D.version('2.1-git')
-sfpwefd2D.synopsis('''sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n abcpml=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=''','''Comments here blablabla lorem ipsum dolores sit amet...
+sfpwefd2D.synopsis('''sfpwefd2D < Fwav.rsf sro=Fsro.rsf fro=Ffro.rsf phi=Fphi.rsf kdr=Fkdr.rsf kfl=Fkfl.rsf ksg=Fksg.rsf prm=Fprm.rsf fvs=Ffvs.rsf shm=Fshm.rsf tor=Ftor.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ompchunk=1 ompnth=0 srctype=0 ani=-1 verb=y snap=n free=n dabc=y abcone=n debug=y cfl=y opot=n opar=n abcpml=n update=n nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax) nbell=1 jdata=1 nb=100 jsnap=nt fmax=''','''Comments here blablabla lorem ipsum dolores sit amet...
 
 You can use several paragraphs for comments, no problem.''')
 rsf.doc.progs['sfpwefd2D']=sfpwefd2D
